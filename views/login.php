@@ -98,7 +98,7 @@ if($User->verifyLoginUserON()) {
                                 <a href="cadastro">Fazer cadastro!</a>
                             </p>
                             <p class="register">
-                                <a href="<?= BASE ?>/login">Painel Administrativo</a>
+                                <a href="<?= BASE ?>/admin">Painel Administrativo</a>
                             </p>
 
                             <div class="clear"></div>
