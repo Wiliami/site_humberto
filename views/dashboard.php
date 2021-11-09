@@ -36,7 +36,7 @@ $User->verifyExistLoginUser();
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
@@ -48,7 +48,7 @@ $User->verifyExistLoginUser();
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="#">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Administrativo</span></a>
             </li>
@@ -741,21 +741,21 @@ $User->verifyExistLoginUser();
     </div>
 
     <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="<?= BASE ?>/res/site/js/jquery.min.js"></script>
+    <script src="<?= BASE ?>/res/site/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="<?= BASE ?>/res/site/js/jquery.easing.min.js"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="<?= BASE ?>/res/site/js/sb-admin-2.min.js"></script>
+    <script src="<?= BASE ?>/res/site/js/sb-admin-2.min.js"></script>   
 
     <!-- Page level plugins -->
-    <script src="vendor/chart.js/Chart.min.js"></script>
+    <script src="<?= BASE ?>/res/site/js/chart.js/Chart.min.js"></script>
 
     <!-- Page level custom scripts -->
-    <script src="js/demo/chart-area-demo.js"></script>
-    <script src="js/demo/chart-pie-demo.js"></script>
+    <script src="<?= BASE ?>/res/site/js/chart-area-demo.js"></script>
+    <script src="<?= BASE ?>res/site/js/chart-pie-demo.js"></script>
 
 </body>
 
