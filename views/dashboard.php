@@ -71,8 +71,8 @@ $User->verifyExistLoginUser();
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Àrea Cursos:</h6>
-                        <a class="collapse-item" href="buttons.html">Curso Administrativo</a>
-                        <a class="collapse-item" href="cards.html">Curso de leitura</a>
+                        <a class="collapse-item" href="#">Curso Administrativo</a>
+                        <a class="collapse-item" href="#">Curso de leitura</a>
                     </div>
                 </div>
             </li>
@@ -737,11 +737,11 @@ $User->verifyExistLoginUser();
     <script src="<?= BASE ?>/res/site/js/sb-admin-2.min.js"></script>   
 
     <!-- Page level plugins -->
-    <script src="<?= BASE ?>/res/site/js/chart.js/Chart.min.js"></script>
+    <!-- <script src="/res/site/js/Chart.min.js"></script> -->
 
     <!-- Page level custom scripts -->
-    <script src="<?= BASE ?>/res/site/js/chart-area-demo.js"></script>
-    <script src="<?= BASE ?>res/site/js/chart-pie-demo.js"></script>
+    <!-- <script src="/res/site/js/chart-area-demo.js"></script>
+    <script src="res/site/js/chart-pie-demo.js"></script> -->
 
 </body>
 
