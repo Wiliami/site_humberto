@@ -42,7 +42,7 @@
     <?php 
 
     $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
-    if(empty($Post['name'])) {
+    if(!empty($Post['name'])) {
         $DataCreate['user_name'] = $Post['name'];
         $DataCreate['user_email'] = $Post['email'];
         $DataCreate['user_password'] = $Post['password'];
@@ -51,6 +51,7 @@
         $User->createUser($DataCreate);
         if($User->getResult()) {
             Error("Cadastrado com o id {$User->getResult()}");
+            header('Location:' . BASE . '/dashboard');
         } else {
             Error($User->getError(), 'danger');
         }

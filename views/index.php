@@ -310,9 +310,9 @@
         <!-- Comentários -->
         <section class="testimonials text-center">
             <div class="container">
-                <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-center">
+                <!-- <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-center">
                     <a class="btn btn-outline-dark btn-lg px-4 me-sm-3" href="/">Feedback</a>
-                </div>
+                </div> -->
 
                 <div class="row">
                     <div class="col-lg-4">

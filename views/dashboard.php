@@ -58,7 +58,7 @@ $User->verifyExistLoginUser();
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                Interface
+                Atividades
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
@@ -66,13 +66,13 @@ $User->verifyExistLoginUser();
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-cog"></i>
-                    <span>Components</span>
+                    <span>cursos</span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Custom Components:</h6>
-                        <a class="collapse-item" href="buttons.html">Buttons</a>
-                        <a class="collapse-item" href="cards.html">Cards</a>
+                        <h6 class="collapse-header">Àrea Cursos:</h6>
+                        <a class="collapse-item" href="buttons.html">Curso Administrativo</a>
+                        <a class="collapse-item" href="cards.html">Curso de leitura</a>
                     </div>
                 </div>
             </li>
@@ -82,7 +82,7 @@ $User->verifyExistLoginUser();
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
                     aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fas fa-fw fa-wrench"></i>
-                    <span>Utilities</span>
+                    <span>cursos</span>
                 </a>
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
                     data-parent="#accordionSidebar">
@@ -101,7 +101,7 @@ $User->verifyExistLoginUser();
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                Addons
+                Serviços
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
@@ -109,34 +109,22 @@ $User->verifyExistLoginUser();
                 <a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#collapsePages"
                     aria-expanded="true" aria-controls="collapsePages">
                     <i class="fas fa-fw fa-folder"></i>
-                    <span>Pages</span>
+                    <span>Páginas</span>
                 </a>
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Login Screens:</h6>
+                        <h6 class="collapse-header">Página Login:</h6>
                         <a class="collapse-item" href="<?= BASE ?>/login">Login</a>
-                        <a class="collapse-item" href="<?= BASE  ?>/cadastro">Register</a>
-                        <a class="collapse-item" href="<?= BASE ?>/forgot">Forgot Password</a>
+                        <a class="collapse-item" href="<?= BASE  ?>/cadastro">Cadastro</a>
+                        <a class="collapse-item" href="<?= BASE ?>/forgot">Esqueci senha</a>
                         <div class="collapse-divider"></div>
-                        <h6 class="collapse-header">Other Pages:</h6>
-                        <a class="collapse-item" href="<?= BASE ?>/notFound">404 Page</a>
+                        <h6 class="collapse-header">Outras páginas:</h6>
+                        <a class="collapse-item" href="<?= BASE ?>/404">404 Página</a>
                     </div>
                 </div>
             </li>
 
-            <!-- Nav Item - Charts -->
-            <li class="nav-item">
-                <a class="nav-link" href="/">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Charts</span></a>
-            </li>
-
-            <!-- Nav Item - Tables -->
-            <li class="nav-item">
-                <a class="nav-link" href="/">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Tables</span></a>
-            </li>
+            
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
@@ -334,9 +322,8 @@ $User->verifyExistLoginUser();
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Seja bem-vindo(a), nome Dashboard! </span>
-                                <!-- $_SESSION['login']['user_name'] -->
-                                <!-- <a href="<?= BASE ?>/logout">Sair</a> -->
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Seja bem-vindo(a), <?= $_SESSION['login']['user_name'] ?>! </span>
+                            
                                 <img class="img-profile rounded-circle" src="<?= BASE ?>/src/images/undraw_profile.svg">
                             </a>
                             <!-- Dropdown - User Information -->
@@ -702,7 +689,7 @@ $User->verifyExistLoginUser();
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2021</span>
+                        <span>Copyright &copy; unitplus.com 2021</span>
                     </div>
                 </div>
             </footer>
@@ -730,7 +717,7 @@ $User->verifyExistLoginUser();
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
-                <div class="modal-body">Selecione "Sair" para se deslogar do site!</div>
+                <div class="modal-body">Selecione "sair" para se deslogar do site!</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
                     <a class="btn btn-primary" href="<?= BASE ?>/logout">Sair</a>
