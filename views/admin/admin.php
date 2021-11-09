@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 
 <head>
   <meta charset="utf-8">
@@ -90,8 +90,8 @@
     </div> -->
     <!-- /.social-auth-links -->
 
-    <a href="/">Esqueci minha senha</a><br>
-    <a href="/" class="text-center">Faça seu cadastro!</a>
+    <a href="<?= BASE ?>/forgot">Esqueci minha senha</a><br>
+    <a href="<?= BASE ?>/cadastro" class="text-center">Faça seu cadastro!</a>
 
   </div>
   <!-- /.login-box-body -->

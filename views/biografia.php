@@ -21,7 +21,7 @@ echo $Component->getMenu();
                 </div>
 
                 <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center">
-                    <img class="img-fluid rounded-3 my-5 bg-warning rounded-circle w-290 h-290" src="<?= BASE ?>/src/images/humberto.png" alt="image de Humbetto Oliveir" />
+                    <img class="img-fluid rounded-3 my-5 bg-warning rounded-circle w-290 h-290" src="<?= BASE ?>/src/images/humberto.png" alt="image de Humbetto Oliveira" />
                 </div>
 
 

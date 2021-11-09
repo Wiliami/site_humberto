@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -55,7 +55,7 @@ echo $Component->getMenu();
         <div class="container h-100">
             <div class="d-flex h-100 text-center align-items-center">
                 <div class="my-5 text-center text-xl-start">
-                    <h1 class="display-5 fw-bolder text-white mb-2">Descubra um mundo <br/>da facilidades ao <br/>estudar no exterior</h1>
+                    <h1 class="display-5 fw-bolder text-white mb-2">Descubra um mundo <br/>de facilidades ao <br/>estudar no exterior</h1>
                     <p class="lead fw-normal text-white-50 mb-4">Conheça mais sobre a <br /> Unitbrasil acessando o nosso site!</p>
                 <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
                     <a class="btn btn-primary btn-lg px-4 me-sm-3" href="https://www.unitbrasil.com/">Visitar UNITBRASIL!</a>
