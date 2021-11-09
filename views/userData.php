@@ -33,6 +33,11 @@ $User->verifyExistLoginUser();
     <?php
         $Component = new Component();
         echo $Component->getMenuDashboard();
+        
+    ?>
+
+    <?php 
+        $Comoponent = new Component();
         echo $Component->getSideBarDashboard();
     ?>
 

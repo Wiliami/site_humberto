@@ -179,7 +179,7 @@ class Component {
         return '
         <div class=\"container\">
             <nav class=\"d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3\">
-                <a href=" . BASE . ">Logo</a>
+                <a href=" '. BASE .' ">Logo</a>
             </nav>
         </div>
         ';
@@ -393,18 +393,18 @@ class Component {
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Seja bem-vindo(a), <?= $_SESSION["login"]["user_name"] ?>! </span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Seja bem-vindo(a), ' . $_SESSION["login"]["user_name"] . '! </span>
                             
-                                <img class="img-profile rounded-circle" src="<?= BASE ?>/src/images/undraw_profile.svg">
+                                <img class="img-profile rounded-circle" src="' . BASE . '/src/images/undraw_profile.svg">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="<?= BASE ?>/user-dados">
+                                <a class="dropdown-item" href="' . BASE . '/user-dados">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Meus dados
                                 </a>
-                                <a class="dropdown-item" href="<?= BASE ?>/forgot">
+                                <a class="dropdown-item" href=" '. BASE .'/forgot">
                                     <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Mudar senha
                                 </a>
@@ -433,7 +433,7 @@ class Component {
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href=" ' . BASE . ' /dashboard">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
@@ -511,12 +511,12 @@ class Component {
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Página Login:</h6>
-                        <a class="collapse-item" href="<?= BASE ?>/login">Login</a>
-                        <a class="collapse-item" href="<?= BASE  ?>/cadastro">Cadastro</a>
-                        <a class="collapse-item" href="<?= BASE ?>/forgot">Esqueci senha</a>
+                        <a class="collapse-item" href=" ' . BASE . '/login">Login</a>
+                        <a class="collapse-item" href="' . BASE . '/cadastro">Cadastro</a>
+                        <a class="collapse-item" href="' . BASE . '/forgot">Esqueci senha</a>
                         <div class="collapse-divider"></div>
                         <h6 class="collapse-header">Outras páginas:</h6>
-                        <a class="collapse-item" href="<?= BASE ?>/404">404 Página</a>
+                        <a class="collapse-item" href="' . BASE . '/404">404 Página</a>
                     </div>
                 </div>
             </li>
@@ -533,7 +533,7 @@ class Component {
 
             <!-- Sidebar Message -->
             <div class="sidebar-card d-none d-lg-flex">
-                <img class="sidebar-card-illustration mb-2" src="<?= BASE ?>/src/images/undraw_rocket.svg" alt="...">
+                <img class="sidebar-card-illustration mb-2" src="' . BASE . '/src/images/undraw_rocket.svg" alt="...">
                 <p class="text-center mb-2"><strong>SB Admin Pro</strong> is packed with premium features, components, and more!</p>
                 <a class="btn btn-success btn-sm" href="https://startbootstrap.com/theme/sb-admin-pro">Upgrade to Pro!</a>
             </div>
