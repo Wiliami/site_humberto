@@ -32,14 +32,8 @@
     <?php
     
     $Component = new Component();
+
     echo $Component->getMenu();
-    
-    ?>
-
-
-    <?php
-
-    $Component = new Component();
     echo $Component->getHeader();
 
     ?>
@@ -352,7 +346,7 @@
 
 
     <?php
-    //Component Footer
+    
     $Component = new Component();
     echo $Component-> getFooter();
     ?>
