@@ -66,10 +66,7 @@ switch ($URL[0]) {
         require_once('./views/userData.php');
         break;
     case 'forgot-reset-success':  
-        require_once('./views/forgot-reset-sucess.php');
-        break;
-    case 'forgot-reset':  
-        require_once('./views/forgot-reset.php');
+        require_once('./views/forgot-reset-success.php');
         break;
     case 'forgot-sent':  
         require_once('./views/forgot-sent.php');

@@ -547,13 +547,21 @@ class Component {
 
                 <!-- </div> -->
                 <!-- End of Main Content -->
-
+                <!-- <footer class="sticky-footer bg-white">
+                    <div class="container my-auto">
+                        <div class="copyright text-center my-auto">
+                            <span>Copyright &copy; unitplus.com 2021</span>
+                        </div>
+                    </div>
+                </footer> -->
 
             <!-- </div> -->
             <!-- End of Content Wrapper -->
 
         <!-- </div> -->
         <!-- End of Page Wrapper -->
+
+        
 
         <!-- Scroll to Top Button-->
         <!-- <a class="scroll-to-top rounded" href="#page-top">
@@ -599,11 +607,11 @@ class Component {
     public function getFooterDashboard() {
         return '
         <footer class="sticky-footer bg-white">
-        <div class="container my-auto">
-            <div class="copyright text-center my-auto">
-                <span>Copyright &copy; unitplus.com 2021</span>
+            <div class="container my-auto">
+                <div class="copyright text-center my-auto">
+                    <span>Copyright &copy; unitplus.com 2021</span>
+                </div>
             </div>
-        </div>
         </footer>
         
         ';

@@ -38,7 +38,7 @@ $User->verifyExistLoginUser();
 
 
     <form>
-    <h1 style="margin-left: 30px;">Recuperar senha!</h1>
+    <h1 style="margin-left: 30px;">Redefinir senha!</h1>
     <div class="form-group row" style="margin-left: 20px;">
         <label for="inputPassword" class="col-sm-2 col-form-label">Senha antiga</label>
         <div class="col-sm-10">
@@ -58,16 +58,10 @@ $User->verifyExistLoginUser();
             <input type="password" class="form-control" id="inputPassword">
         </div>
     </div>
+    <button type="submit" class="btn btn-primary mb-2" style="margin: 30px;">Redefinir</button>
     </form>
 
 
-    <!-- <footer class="sticky-footer bg-white">
-        <div class="container my-auto">
-            <div class="copyright text-center my-auto">
-                <span>Copyright &copy; unitplus.com 2021</span>
-            </div>
-        </div>
-    </footer> -->
 
     <?php
         

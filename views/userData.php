@@ -54,19 +54,21 @@ $User->verifyExistLoginUser();
         <div class="form-group row" style="margin-left: 20px;">
             <label for="inputPassword" class="col-sm-2 col-form-label">Telefone</label>
             <div class="col-sm-10">
-                <input type="password" class="form-control" id="inputPassword">
+                <input type="text" class="form-control" id="inputPassword">
             </div>
         </div>
+
+        <button type="submit" class="btn btn-primary mb-2" style="margin: 30px;">Continuar</button>
     </form>
 
 
     <?php 
 
-        $Component = new Component();
-        echo $Component->getFooterDashboard();
+            $Component = new Component();
+            echo $Component->getFooterDashboard();
     
     ?>
-
+    
 
     </body>
 </html>
