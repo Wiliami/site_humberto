@@ -343,6 +343,7 @@ class Component {
                         <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                             <i class="fa fa-bars"></i>
                         </button>
+                        
 
                         <!-- Topbar Search -->
                         <form
@@ -359,6 +360,7 @@ class Component {
                         </form>
 
                         <!-- Topbar Navbar -->
+                        
                         <ul class="navbar-nav ml-auto">
 
                             <!-- Nav Item - Search Dropdown (Visible Only XS) -->
@@ -533,26 +535,30 @@ class Component {
                             </li>
 
                         </ul>
+            
 
                     </nav>
+
+                    <!-- <h1>Ola</h1> -->
+
                     <!-- End of Topbar -->
 
 
 
-                </div>
+                <!-- </div> -->
                 <!-- End of Main Content -->
 
 
-            </div>
+            <!-- </div> -->
             <!-- End of Content Wrapper -->
 
-        </div>
+        <!-- </div> -->
         <!-- End of Page Wrapper -->
 
         <!-- Scroll to Top Button-->
-        <a class="scroll-to-top rounded" href="#page-top">
+        <!-- <a class="scroll-to-top rounded" href="#page-top">
             <i class="fas fa-angle-up"></i>
-        </a>
+        </a> -->
 
         <!-- Logout Modal-->
         <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
@@ -574,6 +580,8 @@ class Component {
             </div>
         </div>
 
+
+        
         <!-- Bootstrap core JavaScript-->
         <script src="'. BASE .'/res/site/js/jquery.min.js"></script>
         <script src="'. BASE .'/res/site/js/bootstrap.bundle.min.js"></script>

@@ -35,17 +35,17 @@ $User->verifyExistLoginUser();
 
     ?>
 
-    <!-- <h1 style="margin-left: 30px;">Recuperar senha!</h1>; -->
 
 
-    <!-- <form>
+    <form>
+    <h1 style="margin-left: 30px;">Recuperar senha!</h1>
     <div class="form-group row" style="margin-left: 20px;">
         <label for="inputPassword" class="col-sm-2 col-form-label">Senha antiga</label>
         <div class="col-sm-10">
             <input type="password" class="form-control" id="inputPassword">
         </div>
     </div>
-   
+
     <div class="form-group row" style="margin-left: 20px;">
         <label for="inputPassword" class="col-sm-2 col-form-label">Nova senha</label>
         <div class="col-sm-10">
@@ -53,12 +53,12 @@ $User->verifyExistLoginUser();
         </div>
     </div>
     <div class="form-group row" style="margin-left: 20px;">
-        <label for="inputPassword" class="col-sm-2 col-form-label">Repetir senha</label>
+        <label for="inputPassword" class="col-sm-2 col-form-label">Confirmar senha</label>
         <div class="col-sm-10">
             <input type="password" class="form-control" id="inputPassword">
         </div>
     </div>
-    </form> -->
+    </form>
 
 
     <!-- <footer class="sticky-footer bg-white">
