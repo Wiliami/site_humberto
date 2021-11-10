@@ -31,14 +31,40 @@ $User->verifyExistLoginUser();
 
 
     <?php
+
         $Component = new Component();
-        echo $Component->getMenuDashboard();
-        
+        echo $Component->getMenuAndSideBarDashboard();
+
     ?>
 
+    <!-- <form>
+        <h1 style="margin-left: 30px;">Meus dados</h1>
+        <div class="form-group row" style="margin-left: 20px;">
+            <label for="inputPassword" class="col-sm-2 col-form-label">Nome</label>
+            <div class="col-sm-10">
+                <input type="password" class="form-control" id="inputPassword">
+            </div>
+        </div>
+        <div class="form-group row" style="margin-left: 20px;">
+            <label for="inputPassword" class="col-sm-2 col-form-label">Email</label>
+            <div class="col-sm-10">
+                <input type="password" class="form-control" id="inputPassword">
+            </div>
+        </div>
+        <div class="form-group row" style="margin-left: 20px;">
+            <label for="inputPassword" class="col-sm-2 col-form-label">Telefone</label>
+            <div class="col-sm-10">
+                <input type="password" class="form-control" id="inputPassword">
+            </div>
+        </div>
+    </form> -->
+
+
     <?php 
-        $Comoponent = new Component();
-        echo $Component->getSideBarDashboard();
+
+        $Component = new Component();
+        echo $Component->getFooterDashboard();
+    
     ?>
 
 
