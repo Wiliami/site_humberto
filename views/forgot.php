@@ -35,7 +35,7 @@ $User->verifyExistLoginUser();
 
     ?>
 
-    <h1 style="margin-left: 30px;">Recuperar senha!</h1>;
+    <!-- <h1 style="margin-left: 30px;">Recuperar senha!</h1>; -->
 
 
     <!-- <form>
@@ -60,12 +60,21 @@ $User->verifyExistLoginUser();
     </div>
     </form> -->
 
-    <!-- <?php
-        
-        // $Component = new Component();
-        // echo $Component->getFooterDashboard();
 
-    ?> -->
+    <!-- <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+            <div class="copyright text-center my-auto">
+                <span>Copyright &copy; unitplus.com 2021</span>
+            </div>
+        </div>
+    </footer> -->
+
+    <?php
+        
+        $Component = new Component();
+        echo $Component->getFooterDashboard();
+
+    ?>
 
 
     </body>
