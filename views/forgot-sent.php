@@ -4,8 +4,10 @@ $User = new User();
 $User->verifyExistLoginUser();
 
 $Component = new Component();
-echo $Component->getHtmlDashboard();
+
+echo $Component->getHeadHtmlDashboard();
 echo $Component->getMenuAndSideBarDashboard();
+echo $Component->getBarraMenuOptions();
 
 ?>
 
@@ -39,8 +41,8 @@ echo $Component->getMenuAndSideBarDashboard();
 
 <?php
 
-$Component = new Component();
-echo $Component->getFooterDashboard();
+    $Component = new Component();
+    echo $Component->getFooterDashboard();
 
 ?>
 

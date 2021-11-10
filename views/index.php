@@ -87,7 +87,7 @@
 
                             </div>
                             <div class="col mb-5 h-100">
-                                <div class="feature bg-dark bg-gradient text-white rounded-3 mb-3"><i
+                                <div class="feature bg-secondary bg-gradient text-white rounded-3 mb-3"><i
                                         class="bi bi-building"></i>
                                     <h2 class="h5">Família</h2>
                                     <p class="mb-0">Este curso aborda a importância da família na educação de crianças e
@@ -97,7 +97,7 @@
 
                             </div>
                             <div class="col mb-5 mb-md-0 h-100">
-                                <div class="feature bg-dark bg-gradient text-white rounded-3 mb-3"><i
+                                <div class="feature bg-secondary bg-gradient text-white rounded-3 mb-3"><i
                                         class="bi bi-toggles2"></i>
                                     <h2 class="h5">Vida financeira</h2>
                                     <p class="mb-0">Estude o curso de Planejamento Financeiro Familiar Grátis com

@@ -61,6 +61,7 @@ $User->verifyExistLoginUser();
         
 
         <?php
+        
             $Component = new Component();
             echo $Component->getFooterDashboard();
         ?>
