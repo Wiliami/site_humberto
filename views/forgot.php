@@ -61,13 +61,10 @@ $User->verifyExistLoginUser();
     <button type="submit" class="btn btn-primary mb-2" style="margin: 30px;">Redefinir</button>
     </form>
 
-
-
+    
     <?php
-        
         $Component = new Component();
         echo $Component->getFooterDashboard();
-
     ?>
 
 

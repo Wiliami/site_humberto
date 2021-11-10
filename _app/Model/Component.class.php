@@ -539,14 +539,13 @@ class Component {
 
                     </nav>
 
-                    <!-- <h1>Ola</h1> -->
-
                     <!-- End of Topbar -->
 
 
 
                 <!-- </div> -->
                 <!-- End of Main Content -->
+
                 <!-- <footer class="sticky-footer bg-white">
                     <div class="container my-auto">
                         <div class="copyright text-center my-auto">
@@ -606,17 +605,25 @@ class Component {
 
     public function getFooterDashboard() {
         return '
-        <footer class="sticky-footer bg-white">
-            <div class="container my-auto">
-                <div class="copyright text-center my-auto">
-                    <span>Copyright &copy; unitplus.com 2021</span>
-                </div>
+
+                </div> 
+                <!-- End of Main Content -->
+
+                <footer class="sticky-footer bg-white">
+                    <div class="container my-auto">
+                        <div class="copyright text-center my-auto">
+                            <span>Copyright &copy; unitplus.com 2021</span>
+                        </div>
+                    </div>
+                </footer>
+
             </div>
-        </footer>
-        
+            <!-- End of Content Wrapper -->
+
+        </div>
+        <!-- End of Page Wrapper -->
         ';
     }
 
-
-
+    
 }
