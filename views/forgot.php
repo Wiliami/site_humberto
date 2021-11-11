@@ -40,14 +40,14 @@ $User->verifyExistLoginUser();
     <form>
     <h1 style="margin-left: 30px;">Redefinir senha!</h1>
     <div class="form-group row" style="margin-left: 20px;">
-        <label for="inputPassword" class="col-sm-2 col-form-label">Senha antiga</label>
+        <label for="inputPassword" class="col-sm-2 col-form-label" name="current_pass">Senha antiga</label>
         <div class="col-sm-10">
             <input type="password" class="form-control" id="inputPassword">
         </div>
     </div>
 
     <div class="form-group row" style="margin-left: 20px;">
-        <label for="inputPassword" class="col-sm-2 col-form-label">Nova senha</label>
+        <label for="inputPassword" class="col-sm-2 col-form-label" name="new_pass">Nova senha</label>
         <div class="col-sm-10">
             <input type="password" class="form-control" id="inputPassword">
         </div>
