@@ -614,6 +614,14 @@ class User {
 		return "ok";
 	}
 
+	private function verifyUserPassword() {
+		if(!isset($_POST['password']) || $_POST['password'] === '') {
+			$this-> Erro = 'Digite a senha atual!';
+			$this-> Result = false;
+		}
+
+	}
+
 
 
 
