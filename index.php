@@ -62,8 +62,8 @@ switch ($URL[0]) {
     case '404':
         require_once('./views/notFound.php');
         break;
-    case 'user-profile':  
-        require_once('./views/userData.php');
+    case 'profile':  
+        require_once('./views/profile.php');
         break;
     case 'forgot-reset-success':  
         require_once('./views/forgot-reset-success.php');
