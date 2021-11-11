@@ -14,7 +14,7 @@ $Create = new Create();
 //LER
 $Read = new Read();
 $Read->FullRead("SELECT * FROM users WHERE user_id=1");
-Check::var_dump_json($Read->getResult());
+//Check::var_dump_json($Read->getResult());
 
 
 //ATUALIZAR
