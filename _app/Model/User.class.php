@@ -132,6 +132,7 @@ class User {
 		die();
 	}
 
+	//classe de alteração de senha do usuário
 	private function resetUserPassword($current_pass, $new_pass) {
 		if(!isset($current_pass) ||  $current_pass === '') {
 			$this-> Erro = 'Digite a senha atual!';
@@ -146,12 +147,25 @@ class User {
 			$this-> Error = "Confirme a nova senha!";
 			$this-> Result = false;	
 			// header('Location: ' . BASE . '/');
+		}elseif($this->verifyExistUserPassword()) {
+			$this->Result = false;
 		}
+
 		if($current_pass === $new_pass ) {
 			$this-> Error = "Sua senha deve ser diferente!";
 			$this-> Result = false;
 
 			// header('Location: ' . BASE . '/');
+		}
+	}
+
+	private function verifyExistUserPassword($pass) {
+		$Read= new Read();
+
+		$Read->FullRead('SELECT user_password FROM users WHERE user_password = :pss', "pss={$pass}" );
+		if($Read->getResult()) {
+			$this->Error = "A senha está inválida!";
+			$this->Result = false;
 		}
 
 	}
