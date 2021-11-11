@@ -74,10 +74,10 @@ class User {
     }
 
 	public function exeLogin($email, $password) {
-		if(empty($email)) {
+		if(!empty($email)) {
 			$this->Error = "Os campos são obrigatórios!!";
 			$this->Result = false;
-		} elseif (empty($password)) {
+		} elseif (!empty($password)) {
 			$this->Error = "Os campo são obrigatórios!";
 			$this->Result = false;
 		} else {
@@ -134,18 +134,18 @@ class User {
 
 	//classe de alteração de senha do usuário
 	private function resetUserPassword($current_pass, $new_pass) {
-		if(!isset($current_pass) ||  $current_pass === '') {
-			$this-> Erro = 'Digite a senha atual!';
-			$this-> Result = false;
+		if(!empty($current_pass)) {
+			$this->Error = 'Digite a senha atual!';
+			$this->Result = false;
 
 			// header('Location: ' . BASE . '/forgot');
 			// exit();
 		} elseif (!empty($new_pass) || $new_pass === '' ) {
-			$this-> Error = "Digite a nova senha!";
-			$this-> Result = false;
+			$this->Error = "Digite a nova senha!";
+			$this->Result = false;
 		} elseif(!empty($new_pass) || $new_pass === '' ) {
-			$this-> Error = "Confirme a nova senha!";
-			$this-> Result = false;	
+			$this->Error = "Confirme a nova senha!";
+			$this->Result = false;	
 			// header('Location: ' . BASE . '/');
 			
 		} elseif($this->verifyExistUserPassword()) {
@@ -153,8 +153,8 @@ class User {
 		}
 
 		if($current_pass === $new_pass ) {
-			$this-> Error = "Sua senha deve ser diferente!";
-			$this-> Result = false;
+			$this->Error = "Sua senha deve ser diferente!";
+			$this->Result = false;
 
 			// header('Location: ' . BASE . '/');
 		}
