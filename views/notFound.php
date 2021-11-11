@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Admin - 404</title>
+    <title>Página | 404</title>
 
     <!-- Custom fonts for this template -->
     <link href="<?= BASE ?>/src/css/all.min.css" rel="stylesheet" type="text/css">

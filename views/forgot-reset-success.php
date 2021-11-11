@@ -7,6 +7,8 @@ $Component = new Component();
 
 echo $Component->getHeadHtmlDashboard();
 echo $Component->getMenuAndSideBarDashboard();
+echo $Component->getBarraMenuOptions();
+
 
 ?>
 

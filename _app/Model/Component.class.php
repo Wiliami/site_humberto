@@ -224,7 +224,7 @@ class Component {
             <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
                 <!-- Sidebar - Brand -->
-                <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
+                <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
                     <div class="sidebar-brand-icon rotate-n-15">
                         <i class="fas fa-laugh-wink"></i>
                     </div>
@@ -580,7 +580,7 @@ class Component {
                             <span aria-hidden="true">×</span>
                         </button>
                     </div>
-                    <div class="modal-body">Selecione "sair" para se deslogar do site!</div>
+                    <div class="modal-body">Selecione "sair" para se deslogar!</div>
                     <div class="modal-footer">
                         <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
                         <a class="btn btn-primary" href="'. BASE .'/logout">Sair</a>
@@ -608,16 +608,16 @@ class Component {
     public function getFooterDashboard() {
         return '
 
-                </div> 
-                <!-- End of Main Content -->
+                    </div> 
+                    <!-- End of Main Content -->
 
-                <footer class="sticky-footer bg-white">
-                    <div class="container my-auto">
-                        <div class="copyright text-center my-auto">
-                            <span>Copyright &copy; unitplus.com 2021</span>
-                        </div>
-                    </div>
-                </footer>
+                        <footer class="sticky-footer bg-white">
+                            <div class="container my-auto">
+                                <div class="copyright text-center my-auto">
+                                    <span>Copyright &copy; unitplus.com 2021</span>
+                                </div>
+                            </div>
+                        </footer>
 
             </div>
             <!-- End of Content Wrapper -->
@@ -662,12 +662,7 @@ class Component {
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
-            <!-- Page Heading -->
-            <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                <h1 class="h3 mb-0 text-gray-800">Painel Administrativo</h1>
-                <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                        class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
-            </div>
+            
 
             <!-- Content Row -->
             <div class="row">
@@ -679,8 +674,8 @@ class Component {
                             <div class="row no-gutters align-items-center">
                                 <div class="col mr-2">
                                     <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                        Earnings (Monthly)</div>
-                                    <div class="h5 mb-0 font-weight-bold text-gray-800">$40,000</div>
+                                        Cursos</div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800"></div>
                                 </div>
                                 <div class="col-auto">
                                     <i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -697,8 +692,8 @@ class Component {
                             <div class="row no-gutters align-items-center">
                                 <div class="col mr-2">
                                     <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                        Earnings (Annual)</div>
-                                    <div class="h5 mb-0 font-weight-bold text-gray-800">$215,000</div>
+                                        Palestras</div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800"></div>
                                 </div>
                                 <div class="col-auto">
                                     <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
@@ -714,11 +709,11 @@ class Component {
                         <div class="card-body">
                             <div class="row no-gutters align-items-center">
                                 <div class="col mr-2">
-                                    <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Tasks
+                                    <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Revistas
                                     </div>
                                     <div class="row no-gutters align-items-center">
                                         <div class="col-auto">
-                                            <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">50%</div>
+                                            <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"></div>
                                         </div>
                                         <div class="col">
                                             <div class="progress progress-sm mr-2">
@@ -744,8 +739,8 @@ class Component {
                             <div class="row no-gutters align-items-center">
                                 <div class="col mr-2">
                                     <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                        Pending Requests</div>
-                                    <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+                                        Contato</div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800"></div>
                                 </div>
                                 <div class="col-auto">
                                     <i class="fas fa-comments fa-2x text-gray-300"></i>

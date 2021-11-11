@@ -17,7 +17,7 @@ $User->verifyExistLoginUser();
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>Forgot Password</title>
+        <title>Página | Alterar Senha </title>
 
         <!-- Custom fonts for this template-->
         <link href="<?= BASE ?>/res/site/css/all.min.css" rel="stylesheet" type="text/css">
@@ -32,13 +32,14 @@ $User->verifyExistLoginUser();
         
         $Component = new Component();
         echo $Component->getMenuAndSideBarDashboard();
+        echo $Component->getBarraMenuOptions();
 
     ?>
 
 
 
     <form>
-    <h1 style="margin-left: 30px;">Redefinir senha!</h1>
+    <h1 style="margin-left: 30px; margin-top: 30px;">Redefinir senha!</h1>
     <div class="form-group row" style="margin-left: 20px;">
         <label for="inputPassword" class="col-sm-2 col-form-label" name="current_pass">Senha antiga</label>
         <div class="col-sm-10">

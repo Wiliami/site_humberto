@@ -16,7 +16,7 @@ $User->verifyExistLoginUser();
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>Profile</title>
+        <title>Página | Profile</title>
 
         <!-- Custom fonts for this template-->
         <link href="<?= BASE ?>/res/site/css/all.min.css" rel="stylesheet" type="text/css">
@@ -31,7 +31,9 @@ $User->verifyExistLoginUser();
     <?php
 
         $Component = new Component();
+        
         echo $Component->getMenuAndSideBarDashboard();
+        echo $Component->getBarraMenuOptions();
 
     ?>
 
