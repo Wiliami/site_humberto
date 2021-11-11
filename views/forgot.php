@@ -37,14 +37,14 @@ $User->verifyExistLoginUser();
     ?>
     <?php
 
-    $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+        $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
         if(!empty($Post['current_pass'])) {
             $ResetPassword['user_password'] = $Post['current_pass'];
             $ResetPassword['user_password'] = $Post['new_pass'];
             $ResetPassword['user_password'] = $Post['confirm_new_pass'];
 
             $User = new User();
-            $User->resetUserPassword($reset);
+            $User->resetUserPassword($ResetPassword);
             if($User->getResult()) {
                 $this->Error = "Senha alterada com sucesso!";
                 header('Location: ' . BASE.  '/forgot-reset-success');
@@ -52,8 +52,6 @@ $User->verifyExistLoginUser();
                 Error($User->getError(), 'danger'); 
             }
         }
-    
-
 
     ?>
 
@@ -67,7 +65,7 @@ $User->verifyExistLoginUser();
 
 
 
-    <form>
+    <form action="" method="post">
     <h1 style="margin-left: 30px; margin-top: 30px;">Redefinir senha!</h1>
     <div class="form-group row" style="margin-left: 20px;">
         <label for="inputPassword" class="col-sm-2 col-form-label" name="current_pass">Senha antiga</label>

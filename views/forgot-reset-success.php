@@ -12,7 +12,9 @@ echo $Component->getBarraMenuOptions();
 
 ?>
 
-
+    <?php
+        
+    ?> 
 
         <div class="product-big-title-area">
             <div class="container">

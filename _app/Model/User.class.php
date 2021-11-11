@@ -74,10 +74,10 @@ class User {
     }
 
 	public function exeLogin($email, $password) {
-		if(!empty($email)) {
+		if(empty($email)) {
 			$this->Error = "Os campos são obrigatórios!!";
 			$this->Result = false;
-		} elseif (!empty($password)) {
+		} elseif (empty($password)) {
 			$this->Error = "Os campo são obrigatórios!";
 			$this->Result = false;
 		} else {
