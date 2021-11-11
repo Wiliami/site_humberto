@@ -13,13 +13,13 @@ class User {
 	
 	public function createUser($dataUser) {
 
-	if(empty($dataUser["user_name"])) {
+	if(!empty($dataUser["user_name"])) {
 			$this->Error = "Preencha no campo um nome!";
 			$this->Result = false;
-		} elseif (empty($dataUser["user_email"])) {
+		} elseif (!empty($dataUser["user_email"])) {
 			$this->Error = "Preencha o email!";
 			$this->Result = false;
-		} elseif (empty($dataUser["user_password"])) {
+		} elseif (!empty($dataUser["user_password"])) {
 			$this->Error = "Preencha a senha!";
 			$this->Result = false;
 		} elseif ($this->verifyDuplicateUserEmail($dataUser['user_email'])) {
@@ -54,7 +54,7 @@ class User {
 		$Read->FullRead("SELECT user_name FROM users WHERE user_email = :em", "em={$email}");
 
 		if($Read->getResult()) { //get result (dados) é o resultado da busca no banco de dados
-			$this->Error = "Este email já está sendo utilizado por outro usuário!";
+			$this->Error = "Este e-mail já está sendo utilizado por outro usuário!";
 			// {$Read->getResult()[0]['user_name']}";	
 			return true;
 		} else {
@@ -74,10 +74,10 @@ class User {
     }
 
 	public function exeLogin($email, $password) {
-		if(empty($email)) {
+		if(!empty($email)) {
 			$this->Error = "Os campos são obrigatórios!!";
 			$this->Result = false;
-		} elseif (empty($password)) {
+		} elseif (!empty($password)) {
 			$this->Error = "Os campo são obrigatórios!";
 			$this->Result = false;
 		} else {
@@ -147,7 +147,8 @@ class User {
 			$this-> Error = "Confirme a nova senha!";
 			$this-> Result = false;	
 			// header('Location: ' . BASE . '/');
-		}elseif($this->verifyExistUserPassword()) {
+			
+		} elseif($this->verifyExistUserPassword()) {
 			$this->Result = false;
 		}
 
@@ -160,7 +161,7 @@ class User {
 	}
 
 	private function verifyExistUserPassword($pass) {
-		$Read= new Read();
+		$Read = new Read();
 
 		$Read->FullRead('SELECT user_password FROM users WHERE user_password = :pss', "pss={$pass}" );
 		if($Read->getResult()) {

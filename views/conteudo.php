@@ -19,7 +19,7 @@
 
             <div class="d-flex h-100 text-center align-items-center">
                 <div class="my-5 text-center text-xl-start">           
-                    <h1 class="display-5 fw-bolder text-white mb-2">Se inscreva no <br /> canal de <br /> Humberto Oliveira.</h1>
+                    <h1 class="display-5 fw-bolder text-white mb-2">Se inscreva no <br /> canal de <br />Humberto Oliveira.</h1>
                 <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
                     <a class="btn btn-danger btn-lg px-4 me-sm-3" href="https://www.youtube.com/watch?v=ti4LSu-ro44">INSCREVA-SE NO CANAL</a>
                 </div>  

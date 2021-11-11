@@ -35,6 +35,35 @@ $User->verifyExistLoginUser();
         echo $Component->getBarraMenuOptions();
 
     ?>
+    <?php
+
+    $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+        if(!empty($Post['current_pass'])) {
+            $ResetPassword['user_password'] = $Post['current_pass'];
+            $ResetPassword['user_password'] = $Post['new_pass'];
+            $ResetPassword['user_password'] = $Post['confirm_new_pass'];
+
+            $User = new User();
+            $User->resetUserPassword($reset);
+            if($User->getResult()) {
+                $this->Error = "Senha alterada com sucesso!";
+                header('Location: ' . BASE.  '/forgot-reset-success');
+            } else {
+                Error($User->getError(), 'danger'); 
+            }
+        }
+    
+
+
+    ?>
+
+    <!-- 
+        - Enviar esse arquivo para o arquivo forgot-reset-sucesss
+        - 
+
+
+    -->
+
 
 
 
@@ -54,7 +83,7 @@ $User->verifyExistLoginUser();
         </div>
     </div>
     <div class="form-group row" style="margin-left: 20px;">
-        <label for="inputPassword" class="col-sm-2 col-form-label" name="new_pass">Confirmar a nova senha</label>
+        <label for="inputPassword" class="col-sm-2 col-form-label" name="confirm_new_pass">Confirmar a nova senha</label>
         <div class="col-sm-10">
             <input type="password" class="form-control" id="inputPassword">
         </div>
@@ -64,6 +93,7 @@ $User->verifyExistLoginUser();
 
     
     <?php
+
         $Component = new Component();
         echo $Component->getFooterDashboard();
     ?>

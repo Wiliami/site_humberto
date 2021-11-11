@@ -43,7 +43,7 @@
         } else {
             Error($User->getError(), 'danger');
           }
-        }
+      }
     ?>
 
 
