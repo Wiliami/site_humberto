@@ -1,3 +1,10 @@
+<?php 
+
+if ($_SESSION['inadmin'] != 2);
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 

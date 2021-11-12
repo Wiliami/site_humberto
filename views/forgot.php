@@ -35,25 +35,7 @@ $User->verifyExistLoginUser();
         echo $Component->getBarraMenuOptions();
 
     ?>
-    <?php
-
-        $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
-        if(!empty($Post['current-pass'])) {
-            $ResetPassword['user_password'] = $Post['current-pass'];
-            $ResetPassword['user_password'] = $Post['new-pass'];
-            $ResetPassword['user_password'] = $Post['confirm-new-pass'];
-
-            $User = new User();
-            $User->resetUserPassword($ResetPassword);
-            if($User->getResult()) {
-                $this->Error = "Senha alterada com sucesso!";
-                header('Location: ' . BASE.  '/forgot-reset-success');
-            } else {
-                Error($User->getError(), 'danger'); 
-            }
-        }
-
-    ?>
+    
 
 
 
