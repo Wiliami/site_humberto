@@ -57,23 +57,24 @@ if($User->verifyLoginUserON()) {
             <div class="container">
                 <div class="row">                
                     <div class="col-md-6">
-                    <?php 
-
-                    $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
-                    if(!empty($Post['login'])) {
-                        $User = new User();
-                        $User->exeLogin($Post['email'], $Post['password']);
-                        if($User->getResult()) {
-                            Error($User->getError());
-                            header('Location: ' . BASE . '/dashboard');
-                            die();
-                        } else {
-                            Error($User->getError(), 'danger');
-                        }
-                    } 
-
-                    ?>
+                    
                         <form action="" id="login-form-wrap" class="login" method="post">
+                        <?php 
+
+                            $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+                            if(!empty($Post['login'])) {
+                                $User = new User();
+                                $User->exeLogin($Post['email'], $Post['password']);
+                                if($User->getResult()) {
+                                    Error($User->getError());
+                                    header('Location: ' . BASE . '/dashboard');
+                                    die();
+                                } else {
+                                    Error($User->getError(), 'danger');
+                                }
+                            } 
+
+                            ?>
                             <h2>Acessar</h2>
                             <p class="form-row form-row-first">
                                 <label for="login">E-mail <span class="required">*</span>

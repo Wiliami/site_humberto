@@ -28,7 +28,7 @@ class User {
 			$this->Error = "Preencha no campo um nome!";
 			$this->Result = false;
 		} elseif (empty($dataUser["user_email"])) {
-			$this->Error = "Preencha o email!";
+			$this->Error = "Preencha o e-mail!";
 			$this->Result = false;
 		} elseif (empty($dataUser["user_password"])) {
 			$this->Error = "Preencha a senha!";
@@ -87,7 +87,7 @@ class User {
 
 	public function exeLogin($email, $password) {
 		if(empty($email)) {
-			$this->Error = "O email é obrigatório!!";
+			$this->Error = "O e-mail é obrigatório!";
 			$this->Result = false;
 		} elseif (empty($password)) {
 			$this->Error = "A senha é obrigatória!";

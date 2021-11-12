@@ -9,7 +9,7 @@ $DataCreate['user_name' ] = 'carlos';
 $DataCreate['user_email'] = 'carlos123a@gmail.com';
 $DataCreate['user_password'] = date('Y-m-d H:i:s');
 $DataCreate['user_create_date'] = date('Y-m-d H:i:s');
-$DataCreate['level'] = '9';
+$DataCreate['user_level'] = '9';
 $Create = new Create();
 $Create->ExeCreate('users', $DataCreate);
 
