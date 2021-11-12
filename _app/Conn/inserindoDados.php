@@ -5,26 +5,28 @@ include ('_app/Config.inc.php');
 //BANCO DE DADOS
 
 //CADASTRAR
-$DataCreate['user_admin' ] = 'Juca';
-$DataCreate['user_email'] = 'juliano@gmail.com';
+$DataCreate['user_name' ] = 'carlos';
+$DataCreate['user_email'] = 'carlos123a@gmail.com';
 $DataCreate['user_password'] = date('Y-m-d H:i:s');
+$DataCreate['user_create_date'] = date('Y-m-d H:i:s');
+$DataCreate['level'] = '9';
 $Create = new Create();
-$Create->ExeCreate('users_tipo', $DataCreate);
+$Create->ExeCreate('users', $DataCreate);
 
 //LER
 // $Read = new Read();
-// $Read->FullRead("SELECT * FROM users_tipo WHERE 2=1");
-// //Check::var_dump_json($Read->getResult());
+// $Read->FullRead("SELECT * FROM users WHERE user_id=31");
+// Check::var_dump_json($Read->getResult());
 
 
 // //ATUALIZAR
-// $DataUpdate['user_admin'] = 'Carlos';
-// $DataUpdate['user_email'] = 'Sampaio';
+// $DataUpdate['user_name'] = 'abbaa';
+// $DataUpdate['user_email'] = 'abba@gmail.com';
 // $DataUpdate['user_update_date'] = date('Y-m-d H:i:s');
 // $Update = new Update();
 
 
-// $Id=2;
+// $Id=31;
 // $Update->ExeUpdate("users", $DataUpdate, "WHERE user_id = :id", "id={$Id}");
 // Check::var_dump_json($Update->getResult());
 

@@ -35,6 +35,26 @@ $User->verifyExistLoginUser();
         echo $Component->getBarraMenuOptions();
 
     ?>
+
+    <?php 
+        $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+            if(!empty($Post['reset-password'])) {
+            $Reset['user_password'] = $Post['current-pass'];
+            $Reset['user-password'] = $Post['new-pass'];
+            $Reset['user-password'] = $Post['confirm-new-pass'];
+
+            $User = new User();
+            $User->resetUserPassword($Reset);
+            if($User->getResult()) {
+                Error("A senha foi alterada!");
+            } else {
+                Error($User->getResult, 'danger');
+            }
+        }
+            
+
+        ?>
+
     
 
 
@@ -60,7 +80,7 @@ $User->verifyExistLoginUser();
             <input type="password" class="form-control" id="inputPassword" name="confirm-new-pass">
         </div>
     </div>
-    <button type="submit" class="btn btn-primary mb-2" style="margin: 30px;">Redefinir</button>
+    <button type="submit" class="btn btn-primary mb-2" name="reset-password" style="margin: 30px;">Redefinir</button>
     </form>
 
     

@@ -9,8 +9,8 @@ echo $Component->getHeadHtmlDashboard();
 echo $Component->getMenuAndSideBarDashboard();
 echo $Component->getBarraMenuOptions();
 
-
 ?>
+        
     
 
         <div class="product-big-title-area">

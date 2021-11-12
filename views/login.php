@@ -50,23 +50,6 @@ if($User->verifyLoginUserON()) {
         // echo $Component->getMenu();
         ?> -->
 
-        <?php 
-
-        $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
-        if(!empty($Post['email'])) {
-            $User = new User();
-            $User->exeLogin($Post['email'], $Post['password']);
-            if($User->getResult()) {
-                Error($User->getError());
-                header('Location: ' . BASE . '/dashboard');
-                die();
-            } else {
-                Error($User->getError(), 'danger');
-            }
-        } 
-
-        ?>
-
 
 
         <div class="single-product-area">
@@ -74,21 +57,37 @@ if($User->verifyLoginUserON()) {
             <div class="container">
                 <div class="row">                
                     <div class="col-md-6">
+                    <?php 
+
+                    $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+                    if(!empty($Post['login'])) {
+                        $User = new User();
+                        $User->exeLogin($Post['email'], $Post['password']);
+                        if($User->getResult()) {
+                            Error($User->getError());
+                            header('Location: ' . BASE . '/dashboard');
+                            die();
+                        } else {
+                            Error($User->getError(), 'danger');
+                        }
+                    } 
+
+                    ?>
                         <form action="" id="login-form-wrap" class="login" method="post">
                             <h2>Acessar</h2>
                             <p class="form-row form-row-first">
                                 <label for="login">E-mail <span class="required">*</span>
                                 </label>
-                                <input type="text" id="login" name="email" class="input-text">
+                                <input type="text" id="login" name="email" value="<?= $Post['email'] ?>" class="input-text" >
                                 </p>
                             <p class="form-row form-row-last">
                                 <label for="senha">Senha <span class="required">*</span>
                                 </label>
-                                <input type="password" id="senha" name="password" class="input-text">
+                                <input type="password" id="senha" name="password" value="<?= $Post['password']; ?>" class="input-text" >
                             </p>
                             <div class="clear"></div>
                             <p class="form-row">
-                                <input type="submit" value="Login" class="button">
+                                <input type="submit" name="login" value="Login" class="button">
                                 <label class="inline" for="rememberme"><input type="checkbox" value="forever" id="rememberme" name="rememberme"> Manter conectado </label>
                             </p>
                             <p class="lost_password">

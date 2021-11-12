@@ -13,7 +13,7 @@ class User {
 	private $Result;
 
 
-	public function verifyTypeUser() {
+	public function verifyUserAdmin() {
 		if($_SESSION['login'] != 2) {
 
 			// header('Location:' . BASE . '/login');
@@ -38,10 +38,11 @@ class User {
 		} else {
 			$dataUser['user_password'] = md5($dataUser['user_password']);
 			$dataUser['user_create_date'] = date('Y-m-d H:i:s');
+			$dataUser['user_level'] = '1';
 			$Create = new Create();
 			$Create->ExeCreate("users", $dataUser); // cadastrando usuário no banco de dados
 			if($Create->getResult()) { // resutado
-				$this->Result = 		$Create->getResult();
+				$this->Result = $Create->getResult();
 				$this->Error =  "Cadadastro realizado com sucesso!";
 			} else {
 				$this->Result = false;
@@ -85,16 +86,16 @@ class User {
     }
 
 	public function exeLogin($email, $password) {
-		if(!empty($email)) {
-			$this->Error = "Os campos são obrigatórios!!";
+		if(empty($email)) {
+			$this->Error = "O email é obrigatório!!";
 			$this->Result = false;
-		} elseif (!empty($password)) {
-			$this->Error = "Os campo são obrigatórios!";
+		} elseif (empty($password)) {
+			$this->Error = "A senha é obrigatória!";
 			$this->Result = false;
 		} else {
 			$password = md5($password);
 			$Read = new Read();
-			$Read->FullRead("SELECT user_id, user_name, user_email FROM users WHERE user_email = :em AND user_password = :ps", "em={$email}&ps={$password}");
+			$Read->FullRead("SELECT user_id, user_name, user_email, user_level FROM users WHERE user_email = :em AND user_password = :ps", "em={$email}&ps={$password}");
 
 			if($Read->getResult()) {
 				$_SESSION['login'] = $Read->getResult()[0];
@@ -145,14 +146,14 @@ class User {
 
 	//classe de alteração de senha do usuário
 	public function resetUserPassword($current_pass, $new_pass) {
-		if(!empty($current_pass)) {
+		if(empty($current_pass)) {
 			$this->Error = 'Digite a senha atual!';
 			$this->Result = false;
 
-		} elseif (!empty($new_pass) || $new_pass === '' ) {
+		} elseif (empty($new_pass)) {
 			$this->Error = "Digite a nova senha!";
 			$this->Result = false;
-		} elseif(!empty($new_pass) || $new_pass === '' ) {
+		} elseif(empty($new_pass)) {
 			$this->Error = "Confirme a nova senha!";
 			$this->Result = false;	
 			
