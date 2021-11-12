@@ -62,7 +62,7 @@ $User->verifyExistLoginUser();
     <div class="form-group row" style="margin-left: 20px;">
         <label for="inputPassword" class="col-sm-2 col-form-label">Senha antiga</label>
         <div class="col-sm-10">
-            <input type="password" class="form-control" id="inputPassword" value="<?= $Post['current-pass']?>" name="current-pass" required />
+            <input type="password" class="form-control" id="inputPassword" value="<?= $Post['current-pass']; ?>" name="current-pass" required />
         </div>
     </div>
 

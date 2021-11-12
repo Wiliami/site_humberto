@@ -60,12 +60,12 @@
                     <p class="form-row form-row-first">
                         <label for="nome">Nome<span class="required">*</span>
                         </label>
-                        <input type="text" id="nome" name="name" class="input-text" value="<?= $Post['name']?>" maxlength="25" minlength="2" />
+                        <input type="text" id="nome" name="name" class="input-text" value="<?= $Post['name']; ?>" maxlength="25" minlength="2" />
                     </p>
                     <p class="form-row form-row-first">
                         <label for="email">E-mail <span class="required">*</span>
                         </label>
-                        <input type="email" id="email" name="email" class="input-text" value="<?= $Post['email']?>" maxlength="50" />
+                        <input type="email" id="email" name="email" class="input-text" value="<?= $Post['email']; ?>" maxlength="50" />
                     </p>
                     <!-- <p class="form-row form-row-first">
                         <label for="phone">Telefone
@@ -75,7 +75,7 @@
                     <p class="form-row form-row-las t">
                         <label for="senha">Senha<span class="required">*</span>
                         </label>
-                        <input type="password" id="senha" name="password" class="input-text" value="<?= $Post['password']?>"maxlength="50" minlength="8" />
+                        <input type="password" id="senha" name="password" class="input-text" value="<?= $Post['password']; ?>"maxlength="50" minlength="8" />
                     </p>
                         <div class="clear"></div>
 
