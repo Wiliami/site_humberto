@@ -78,12 +78,12 @@ if($User->verifyLoginUserON()) {
                             <p class="form-row form-row-first">
                                 <label for="login">E-mail <span class="required">*</span>
                                 </label>
-                                <input type="text" id="login" name="email" value="<?= $Post['email'] ?>" class="input-text">
+                                <input type="text" id="login" name="email" class="input-text">
                                 </p>
                             <p class="form-row form-row-last">
                                 <label for="senha">Senha <span class="required">*</span>
                                 </label>
-                                <input type="password" id="senha" name="password" value="<?= $Post['password']; ?>" class="input-text">
+                                <input type="password" id="senha" name="password" class="input-text">
                             </p>
                             <div class="clear"></div>
                             <p class="form-row">
@@ -96,9 +96,7 @@ if($User->verifyLoginUserON()) {
                             <p class="register">
                                 <a href="cadastro">Fazer cadastro!</a>
                             </p>
-                            <p class="register">
-                                <a href="<?= BASE ?>/admin">Painel Administrativo</a>
-                            </p>
+    
 
                             <div class="clear"></div>
                             

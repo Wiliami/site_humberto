@@ -523,7 +523,7 @@ class Component {
                                         <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                         Meus dados
                                     </a>
-                                    <a class="dropdown-item" href="'. BASE .'/forgot">
+                                    <a class="dropdown-item" href="'. BASE .'/reset-password">
                                         <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                                         Mudar senha
                                     </a>

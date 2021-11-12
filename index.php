@@ -29,8 +29,8 @@ switch ($URL[0]) {
     case 'dashboard':
         require_once('./views/dashboard.php');
         break;
-    case 'forgot':
-        require_once('./views/forgot.php');
+    case 'reset-password':
+        require_once('./views/reset-password.php');
         break;
     case 'logout':
         require_once('./views/logout.php');
