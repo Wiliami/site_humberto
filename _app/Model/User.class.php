@@ -105,6 +105,7 @@ class User {
 				$this->Error = "Usuário inexistente ou senha inválida!";
 				$this->Result = false;
 			}
+			
 		} 
 
 	}
@@ -146,6 +147,7 @@ class User {
 
 	//classe de alteração de senha do usuário
 	public function resetUserPassword($current_pass, $new_pass) {
+		$this->verifyExistLoginUser();
 		if(empty($current_pass)) {
 			$this->Error = 'Digite a senha atual!';
 			$this->Result = false;
@@ -171,18 +173,16 @@ class User {
 	private function verifyExistUserPassword($pass) {
 		$Read = new Read();
 
-		$Read->FullRead('SELECT user_password FROM users WHERE user_password = :pss', "pss={$pass}" );
+		$Read->FullRead('SELECT user_password FROM users WHERE user_password = :pss', "pss={$pass}");
 		if($Read->getResult()) {
 			$this->Error = "A senha está inválida!";
 			$this->Result = false;
+			
 		}
-
 	}
 
 
 	//Método para enviar email de recuperação de senha
-
-
 	private function getForgot($password) {
 
 		$Read = new Read();
