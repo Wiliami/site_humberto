@@ -24,13 +24,13 @@ class User {
 
 	public function createUser($dataUser) {
 
-	if(!empty($dataUser["user_name"])) {
+	if(empty($dataUser["user_name"])) {
 			$this->Error = "Preencha no campo um nome!";
 			$this->Result = false;
-		} elseif (!empty($dataUser["user_email"])) {
+		} elseif (empty($dataUser["user_email"])) {
 			$this->Error = "Preencha o email!";
 			$this->Result = false;
-		} elseif (!empty($dataUser["user_password"])) {
+		} elseif (empty($dataUser["user_password"])) {
 			$this->Error = "Preencha a senha!";
 			$this->Result = false;
 		} elseif ($this->verifyDuplicateUserEmail($dataUser['user_email'])) {

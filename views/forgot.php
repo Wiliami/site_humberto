@@ -48,7 +48,7 @@ $User->verifyExistLoginUser();
             if($User->getResult()) {
                 Error("A senha foi alterada!");
             } else {
-                Error($User->getResult, 'danger');
+                Error($User->getResult(), 'danger');
             }
         }
     ?>
@@ -62,20 +62,20 @@ $User->verifyExistLoginUser();
     <div class="form-group row" style="margin-left: 20px;">
         <label for="inputPassword" class="col-sm-2 col-form-label">Senha antiga</label>
         <div class="col-sm-10">
-            <input type="password" class="form-control" id="inputPassword" name="current-pass" required />
+            <input type="password" class="form-control" id="inputPassword" value="<?= $Post['current-pass']?>" name="current-pass" required />
         </div>
     </div>
 
     <div class="form-group row" style="margin-left: 20px;">
         <label for="inputPassword" class="col-sm-2 col-form-label">Nova senha</label>
         <div class="col-sm-10">
-            <input type="password" class="form-control" id="inputPassword" name="new-pass" required>
+            <input type="password" class="form-control" id="inputPassword" value="<?= $Post['new-pass']?>" name="new-pass" required>
         </div>
     </div>
     <div class="form-group row" style="margin-left: 20px;">
         <label for="inputPassword" class="col-sm-2 col-form-label">Confirmar a nova senha</label>
         <div class="col-sm-10">
-            <input type="password" class="form-control" id="inputPassword" name="confirm-new-pass" required>
+            <input type="password" class="form-control" id="inputPassword" value="<?= $Post['confirm-new-pass']?>" name="confirm-new-pass" required>
         </div>
     </div>
     <button type="submit" class="btn btn-primary mb-2" name="reset-password" style="margin: 30px;">Redefinir</button>
