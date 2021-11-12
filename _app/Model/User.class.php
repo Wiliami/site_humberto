@@ -6,6 +6,7 @@ class User {
 //métodos da classe:
 // - verifyDuplicateUserEmail(); -> verificar se o usuário digitou o email que já está em uso. 
 // - resetUserPassword(); -> alterar a senha do usuário
+// - getForgot = envia o emial de recuperção de senha ao usuário
 
 	private $Error;
 	private $Result;
@@ -133,20 +134,17 @@ class User {
 	}
 
 	//classe de alteração de senha do usuário
-	private function resetUserPassword($current_pass, $new_pass) {
+	public function resetUserPassword($current_pass, $new_pass) {
 		if(!empty($current_pass)) {
 			$this->Error = 'Digite a senha atual!';
 			$this->Result = false;
 
-			// header('Location: ' . BASE . '/forgot');
-			// exit();
 		} elseif (!empty($new_pass) || $new_pass === '' ) {
 			$this->Error = "Digite a nova senha!";
 			$this->Result = false;
 		} elseif(!empty($new_pass) || $new_pass === '' ) {
 			$this->Error = "Confirme a nova senha!";
 			$this->Result = false;	
-			// header('Location: ' . BASE . '/');
 			
 		} elseif($this->verifyExistUserPassword()) {
 			$this->Result = false;
@@ -156,7 +154,6 @@ class User {
 			$this->Error = "Sua senha deve ser diferente!";
 			$this->Result = false;
 
-			// header('Location: ' . BASE . '/');
 		}
 	}
 
@@ -169,6 +166,17 @@ class User {
 			$this->Result = false;
 		}
 
+	}
+
+
+	//Método para enviar email de recuperação de senha
+
+
+	private function getForgot() {
+
+		$Read = new Read();
+
+		$Rear->FullRead('SELECT FROM WHERE');
 	}
 
 
