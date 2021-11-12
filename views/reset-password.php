@@ -36,7 +36,7 @@ $User->verifyExistLoginUser();
 
 
 
-    <form action="" method="post">
+    <form action="reset-password-success" method="post">
     <?php 
         $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
             if(!empty($Post['reset-password'])) {
