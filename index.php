@@ -71,6 +71,9 @@ switch ($URL[0]) {
     case 'forgot-sent':  
         require_once('./views/forgot-sent.php');
         break;
+    case 'verifica':
+        require_once('./views/verifica_tipo.php');
+        break;
 }
 
 
