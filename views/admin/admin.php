@@ -5,6 +5,7 @@ $User->verifyTypeUser();
 
 ?>
 
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
