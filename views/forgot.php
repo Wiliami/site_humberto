@@ -40,8 +40,8 @@ $User->verifyExistLoginUser();
         $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
             if(!empty($Post['reset-password'])) {
             $Reset['user_password'] = $Post['current-pass'];
-            $Reset['user-password'] = $Post['new-pass'];
-            $Reset['user-password'] = $Post['confirm-new-pass'];
+            $Reset['user_password'] = $Post['new-pass'];
+            $Reset['user_password'] = $Post['confirm-new-pass'];
 
             $User = new User();
             $User->resetUserPassword($Reset);
@@ -51,9 +51,7 @@ $User->verifyExistLoginUser();
                 Error($User->getResult, 'danger');
             }
         }
-            
-
-        ?>
+    ?>
 
     
 
@@ -64,20 +62,20 @@ $User->verifyExistLoginUser();
     <div class="form-group row" style="margin-left: 20px;">
         <label for="inputPassword" class="col-sm-2 col-form-label">Senha antiga</label>
         <div class="col-sm-10">
-            <input type="password" class="form-control" id="inputPassword" name="current-pass">
+            <input type="password" class="form-control" id="inputPassword" name="current-pass" required />
         </div>
     </div>
 
     <div class="form-group row" style="margin-left: 20px;">
         <label for="inputPassword" class="col-sm-2 col-form-label">Nova senha</label>
         <div class="col-sm-10">
-            <input type="password" class="form-control" id="inputPassword" name="new-pass">
+            <input type="password" class="form-control" id="inputPassword" name="new-pass" required>
         </div>
     </div>
     <div class="form-group row" style="margin-left: 20px;">
         <label for="inputPassword" class="col-sm-2 col-form-label">Confirmar a nova senha</label>
         <div class="col-sm-10">
-            <input type="password" class="form-control" id="inputPassword" name="confirm-new-pass">
+            <input type="password" class="form-control" id="inputPassword" name="confirm-new-pass" required>
         </div>
     </div>
     <button type="submit" class="btn btn-primary mb-2" name="reset-password" style="margin: 30px;">Redefinir</button>
