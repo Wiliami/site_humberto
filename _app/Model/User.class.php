@@ -3,15 +3,25 @@
 
 class User {
 
-//métodos da classe:
-// - verifyDuplicateUserEmail(); -> verificar se o usuário digitou o email que já está em uso. 
-// - resetUserPassword(); -> alterar a senha do usuário
-// - getForgot = envia o emial de recuperção de senha ao usuário
+	//métodos da classe:
+	// - verifyTypeUser -> verifica o tipo de usuario
+	// - verifyDuplicateUserEmail(); -> verificar se o usuário digitou o email que já está em uso. 
+	// - resetUserPassword(); -> alterar a senha do usuário
+	// - getForgot -> envia o emial de recuperção de senha ao usuário
 
 	private $Error;
 	private $Result;
 
+
+	public function verifyTypeUser() {
+		if($_SESSION['login'] != 2) {
+
+			// header('Location:' . BASE . '/login');
+		}
+	}
+
 	
+
 	public function createUser($dataUser) {
 
 	if(!empty($dataUser["user_name"])) {
@@ -172,11 +182,12 @@ class User {
 	//Método para enviar email de recuperação de senha
 
 
-	private function getForgot() {
+	private function getForgot($password) {
 
 		$Read = new Read();
 
-		$Rear->FullRead('SELECT FROM WHERE');
+		$Rear->FullRead('SELECT user_password FROM users WHERE user_password = :pw', "pw={$password}");
+		
 	}
 
 

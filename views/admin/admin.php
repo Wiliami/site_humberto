@@ -1,7 +1,7 @@
 <?php 
 
-if ($_SESSION['inadmin'] != 2);
-
+$User = new User();
+$User->verifyTypeUser();
 
 ?>
 
