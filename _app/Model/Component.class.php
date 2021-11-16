@@ -10,9 +10,8 @@ class Component {
                     <ul class=\"nav col-12 col-md-auto mb-2 justify-content-center mb-md-0\">
                         <li><a href='" . BASE . "' class=\"nav-link px-2 link-secondary\">Home</a></li>
                         <li><a href='" . BASE . "/sobre' class=\"nav-link px-2 link-secondary\">Sobre</a></li>
-                        <li><a href='" . BASE . "/contato' class=\"nav-link px-2 link-secondary\">Contato</a></li>
                         <li><a href='" . BASE . "/conteudo' class=\"nav-link px-2 link-secondary\">Conteúdo</a></li>
-                        <li><a href='" . BASE . "/unitbrasil' class=\"nav-link px-2 link-secondary\">Unitbrasil</a></li>
+                        <li><a href='" . BASE . "/unitbrasil' class=\"nav-link px-2 link-secondary\">A Unitbrasil</a></li>
                     </ul>
 
 
@@ -62,7 +61,7 @@ class Component {
     public function getFooter() {
         return '
                 <!-- Footer -->
-                <div class="container my-5">
+                <div class="header-2" style="margin-top: 40px;">
                     <footer class="bg-dark text-center text-lg-start text-white">
 
                         <div class="container p-4 w-100">
@@ -174,8 +173,43 @@ class Component {
                 </body>
             </html>
         ';
-    } 
+    }
 
+    public function getFooterExampleTest() {
+        return '
+        <div class="footer-dark">
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3>Services</h3>
+                        <ul>
+                            <li><a href="#">Web design</a></li>
+                            <li><a href="#">Development</a></li>
+                            <li><a href="#">Hosting</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3>About</h3>
+                        <ul>
+                            <li><a href="#">Company</a></li>
+                            <li><a href="#">Team</a></li>
+                            <li><a href="#">Careers</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 item text">
+                        <h3>Company Name</h3>
+                        <p>Praesent sed lobortis mi. Suspendisse vel placerat ligula. Vivamus ac sem lacus. Ut vehicula rhoncus elementum. Etiam quis tristique lectus. Aliquam in arcu eget velit pulvinar dictum vel in justo.</p>
+                    </div>
+                    <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a></div>
+                </div>
+                <p class="copyright">Company Name © 2018</p>
+            </div>
+        </footer>
+    </div>
+        ';
+    }
+ 
     public function getLogo() {
         return '
         <div class=\"container\">
@@ -312,7 +346,7 @@ class Component {
                     </div>
                 </li>
 
-                
+                fe
 
                 <!-- Divider -->
                 <hr class="sidebar-divider d-none d-md-block">

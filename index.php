@@ -35,9 +35,6 @@ switch ($URL[0]) {
     case 'logout':
         require_once('./views/logout.php');
         break;
-    case 'contato':
-        require_once('./views/contato.php');
-        break;   
     case 'sobre':
         require_once('./views/sobre.php');
         break;  

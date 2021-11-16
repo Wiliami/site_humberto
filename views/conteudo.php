@@ -30,16 +30,19 @@
 
    </header> -->
 
-   <header class="header-2">
-        <div class="page-header min-vh-100 relative" style="background-image: url('<?= BAES ?>/src/images/bg2.jpg')">
+   <header class="header-2" style="height: 698px;">
+        <div class="page-header min-vh-100 relative" style="background-image: url('<?= BASE ?>/src/images/page-youtube.jpg')">
             <span class="mask bg-gradient-primary opacity-4"></span>
             <div class="container">
-            <div class="row">
-                <div class="col-lg-7 text-center mx-auto">
-                <h1 class="text-white pt-3 mt-n5">Material Kit 2</h1>
-                <p class="lead text-white mt-3">Free & Open Source Web UI Kit built over Bootstrap 5. <br/> Join over 1.6 million developers around the world. </p>
+                <div class="row">
+                    <div class="my-5 text-center text-xl-start">
+                        <h1 class="display-5 fw-bolder text-black mb-2">Junte-se a nós!</h1>
+                        <p class="lead text-black mt-3">Se inscreva no canal de <br />Humberto Oliveira.</p>
+                    </div>
+                    <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
+                        <a class="btn btn-danger btn-lg px-4 me-sm-3" href="https://www.youtube.com/channel/UClFMwemd5j7EsXlV-gTw5Xg">INSCREVA-SE</a>
+                    </div>  
                 </div>
-            </div>
             </div>
         </div>
     </header>
