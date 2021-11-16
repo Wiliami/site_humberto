@@ -3,9 +3,10 @@
 class Component {
     public function getMenu ($MenuActive = 'index') {
         return "
-        <div class=\"container\">
+        <div class=\"container\" >
             <nav class=\"d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3\">
-                <a href='" . BASE . "'>Logo</a>
+            <a href=" . BASE . "/ type=\"button\" class=\"btn btn-black\">Logo</a>
+
 
                     <ul class=\"nav col-12 col-md-auto mb-2 justify-content-center mb-md-0\">
                         <li><a href='" . BASE . "' class=\"nav-link px-2 link-secondary\">Home</a></li>

@@ -46,38 +46,6 @@
         </header>
 
 
-
-
-        <header class="bg-white py-5" style="height: 698px;">
-       
-            <!-- This div is intentionally blank. It creates the transparent black overlay over the video which you can modify in the CSS -->
-            
-            
-            <!-- The HTML5 video element that will create the background video on the header -->
-            <!-- <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
-                <source src="https://storage.googleapis.com/coverr-main/mp4/Mt_Baker.mp4" type="video/mp4">
-            </video> -->
-            
-            
-            <div class="overlay"></div>
-            
-            <div class="container h-100">
-                <div class="d-flex h-100 text-center align-items-center">
-                        <div class="my-5 text-center text-xl-start">
-                            <h1 class="display-5 fw-bolder text-white mb-2">Plataforma de <br /> evangelismo online <br />e desenvolvimento<br /> pessoal.</h1>
-                            <p class="lead fw-normal text-white-50 mb-4">Saiba como funciona o evangelismo web.</p>
-                        <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
-                            <a class="btn btn-warning btn-lg px-4 me-sm-3" href="login">Começar</a>
-                            <a class="btn btn-outline-light btn-lg px-4" href="#content-overview">Saiba mais</a>
-                        </div>  
-                        </div>
-                </div>
-            </div>
-    
-
-    </header>
-
-
         
 
 

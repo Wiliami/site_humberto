@@ -31,7 +31,7 @@ echo $Component->getMenu();
 <?php 
 
 $Component = new Component();
-echo $Component->getFooter();
+echo $Component->getFooterExampleTest();
 
 ?>
 
