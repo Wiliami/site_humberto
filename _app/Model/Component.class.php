@@ -3,25 +3,24 @@
 class Component {
     public function getMenu ($MenuActive = 'index') {
         return "
-        <div class=\"container\" >
-            <nav class=\"d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3\">
-            <a href=" . BASE . "/ type=\"button\" class=\"btn btn-black\">Logo</a>
+            <div class=\"container bg-dark\">
+                <nav class=\"d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3\">
+                <a href=" . BASE . "/ type=\"button\" class=\"btn btn-black\">Logo</a>
+
+                        <ul class=\"nav col-12 col-md-auto mb-2 justify-content-center mb-md-0\">
+                            <li><a href='" . BASE . "'/ class=\"nav-link px-2 link-secondary\">Home</a></li>
+                            <li><a href='" . BASE . "/sobre' class=\"nav-link px-2 link-secondary\">Sobre</a></li>
+                            <li><a href='" . BASE . "/conteudo' class=\"nav-link px-2 link-secondary\">Conteúdo</a></li>
+                            <li><a href='" . BASE . "/unitbrasil' class=\"nav-link px-2 link-secondary\">A Unitbrasil</a></li>
+                        </ul>
 
 
-                    <ul class=\"nav col-12 col-md-auto mb-2 justify-content-center mb-md-0\">
-                        <li><a href='" . BASE . "'/ class=\"nav-link px-2 link-secondary\">Home</a></li>
-                        <li><a href='" . BASE . "/sobre' class=\"nav-link px-2 link-secondary\">Sobre</a></li>
-                        <li><a href='" . BASE . "/conteudo' class=\"nav-link px-2 link-secondary\">Conteúdo</a></li>
-                        <li><a href='" . BASE . "/unitbrasil' class=\"nav-link px-2 link-secondary\">A Unitbrasil</a></li>
-                    </ul>
-
-
-                    <div class=\"col-md-3 text-end\">
-                        <a href='" . BASE . "/cadastro' type=\"button\" class=\"btn me-2\">Cadastrar</a>
-                        <a href=" . BASE . "/login type=\"button\" class=\"btn btn-warning\">Login</a>
-                    </div>
-            </nav>
-        </div>
+                        <div class=\"col-md-3 text-end\">
+                            <a href='" . BASE . "/cadastro' type=\"button\" class=\"btn me-2\">Cadastrar</a>
+                            <a href=" . BASE . "/login type=\"button\" class=\"btn btn-warning\">Login</a>
+                        </div>
+                </nav>
+            </div>
         ";
     }
     
@@ -183,24 +182,24 @@ class Component {
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-6 col-md-3 item">
-                            <h3>Services</h3>
+                            <h3>Serviços</h3>
                             <ul>
-                                <li><a href="#">Web design</a></li>
-                                <li><a href="#">Development</a></li>
-                                <li><a href="#">Hosting</a></li>
+                                <li><a href="https://www.adventistas.org/pt/">IASD</a></li>
+                                <li><a href="https://www.unitplus.com.br/">UNITPLUS</a></li>
+                                <li><a href="/">EVENTOS</a></li>
                             </ul>
                         </div>
                         <div class="col-sm-6 col-md-3 item">
-                            <h3>About</h3>
+                            <h3>Sobre</h3>
                             <ul>
-                                <li><a href="#">Company</a></li>
-                                <li><a href="#">Team</a></li>
-                                <li><a href="#">Careers</a></li>
+                                <li><a href="#">MINISTÉRIO PASTORAL</a></li>
+                                <li><a href="#">EQUIPE</a></li>
+                                <li><a href="#">PROJETOS</a></li>
                             </ul>
                         </div>
                         <div class="col-md-6 item text">
-                            <h3>Company Name</h3>
-                            <p>Praesent sed lobortis mi. Suspendisse vel placerat ligula. Vivamus ac sem lacus. Ut vehicula rhoncus elementum. Etiam quis tristique lectus. Aliquam in arcu eget velit pulvinar dictum vel in justo.</p>
+                            <h3>UNITBRASIL</h3>
+                            <p>Transforme positivamente a maneira como você pensa e age, não só em relação ao dinheiro, mas nas suas relações pessoais e profissionais, com você mesmo e com as pessoas que você ama.</p>
                         </div>
                         <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a></div>
                     </div>

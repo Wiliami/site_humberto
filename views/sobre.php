@@ -29,7 +29,7 @@
 
 
         <header class="header-2" style="height: 698px;">
-            <div class="page-header min-vh-100 relative" style="background-image: url('<?= BASE ?>/src/images/humberto-background.jpeg')">
+            <div class="page-header min-vh-100 relative" style="background-image: url('<?= BASE ?>/src/images/page-youtube1.jpg')">
                 <span class="mask bg-gradient-primary opacity-4"></span>
                 <div class="container">
                     <div class="row">
@@ -38,7 +38,7 @@
                             <p class="lead text-white mt-3">Comece um tour pelo site<br /> e saiba como funciona o evangelismo web.</p>
                         </div>
                         <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
-                            <a class="btn btn-primary btn-lg px-4 me-sm-3" href="/">Começar</a>
+                            <a class="btn btn-primary btn-lg px-4 me-sm-3" href="<?= BASE ?>/cadastro">Começar</a>
                         </div>  
                     </div>
                 </div>
