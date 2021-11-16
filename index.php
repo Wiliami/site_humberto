@@ -23,9 +23,6 @@ switch ($URL[0]) {
     case 'cadastro':
         require_once('./views/cadastro.php');
         break;
-    case 'validate':
-        require_once('.views/validateLogin.php');
-        break;
     case 'dashboard':
         require_once('./views/dashboard.php');
         break;
