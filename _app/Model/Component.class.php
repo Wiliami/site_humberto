@@ -29,7 +29,7 @@ class Component {
         return '
         <header class="bg-white py-5" style="height: 698px;">
        
-            <!-- This div is  intentionally blank. It creates the transparent black overlay over the video which you can modify in the CSS -->
+            <!-- This div is intentionally blank. It creates the transparent black overlay over the video which you can modify in the CSS -->
             
             <div class="overlay"></div>
 

@@ -52,11 +52,11 @@ echo $Component->getMenu();
             <div class="container">
                 <div class="row">
                     <div class="my-5 text-center text-xl-start">
-                        <h1 class="display-5 fw-bolder text-white mb-2">Descubra um mundo <br/>de facilidades ao <br/>estudar no exterior</h1>
-                        <p class="lead text-black mt-3">Descubra um mundo <br/>de facilidades ao <br/>estudar no exterior</p>
+                        <h1 class="display-5 fw-bolder text-white mb-2">Educação!</h1>
+                        <p class="lead text-white mt-3">Descubra um mundo <br/>de facilidades ao <br/>estudar no exterior.</p>
                     </div>
                     <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
-                        <a class="btn btn-primary btn-lg px-4 me-sm-3" href="https://www.unitbrasil.com/">visitar UNITBRASIL!</a>
+                        <a class="btn btn-primary btn-lg px-4 me-sm-3" href="https://www.unitbrasil.com/">visitar Unitbrasil</a>
                     </div>  
                 </div>
             </div>
