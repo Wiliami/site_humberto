@@ -95,7 +95,7 @@ if($User->verifyLoginUserON()) {
                                 <a href="forgot">Esqueceu a senha?</a>
                             </p>
                             <p class="register">
-                                <a href="cadastro">Fazer cadastro!</a>
+                                <a href="cadastro">Criar conta!</a>
                             </p>
     
 

@@ -299,7 +299,7 @@
 
                     <!-- Button -->
                     <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-center">
-                        <a class="btn btn-warning btn-lg px-4 me-sm-3" href="<?= BASE ?>/pagevideo">Veja todos os
+                        <a class="btn btn-outline-dark btn-lg px-4 me-sm-3" href="<?= BASE ?>/pagevideo">Veja todos os
                             cursos</a>
                     </div>
 
@@ -310,43 +310,48 @@
 
 
         <!-- Comentários -->
-        <section class="testimonials text-center">
-            <div class="container">
-                <!-- <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-center">
-                    <a class="btn btn-outline-dark btn-lg px-4 me-sm-3" href="/">Feedback</a>
-                </div> -->
-
-                <div class="row">
-                    <div class="col-lg-4">
-                        <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-                            <img class="img-fluid rounded-circle mb-3 h-20 w-20"
-                                src="<?= BASE ?>/src/images/andre-sebastian.jpg" alt="imagem de André Silva"
-                                style="height: 50px; width: 50px;" />
-                            <h5>André Silva</h5>
-                            <p class="font-weight-light mb-0">"O conteúdo é muito bom! Muito obrigado, pessoal!."</p>
+        <div class="section section-testimonial">
+                <div class="container">
+                    <h4 class="header-text text-center">What people think</h4>
+                    <div id="carousel-example-generic" class="carousel fade" data-ride="carousel">
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner" role="listbox">
+                            <div class="item">
+                                <div class="mask">
+                                    <img src="<?= BASE ?>/src/images/face-4.jpg">
+                                </div>
+                                <div class="carousel-testimonial-caption">
+                                    <p>Jay Z, Producer</p>
+                                    <h3>"I absolutely love your app! It's truly amazing and looks awesome!"</h3>
+                                </div>
+                            </div>
+                            <div class="item active">
+                                <div class="mask">
+                                    <img src="<?= BASE ?>/src/images/face-3.jpg">
+                                </div>
+                                <div class="carousel-testimonial-caption">
+                                    <p>Drake, Artist</p>
+                                    <h3>"This is one of the most awesome apps I've ever seen! Wish you luck Creative Tim!"</h3>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="mask">
+                                    <img src="<?= BASE ?>/src/images/face-2.jpg">
+                                </div>
+                                <div class="carousel-testimonial-caption">
+                                    <p>Rick Ross, Musician</p>
+                                    <h3>"Loving this! Just picked it up the other day. Thank you for the work you put into this."</h3>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-                            <img class="img-fluid rounded-circle mb-3" src="<?= BASE ?>/src/images/lauren.jpg"
-                                alt="imagem de Lauren" style="height: 50px; width: 50px;" />
-                            <h5>Lauren Fontes</h5>
-                            <p class="font-weight-light mb-0">"Agradeço muito pela incentivo e aprendizado."</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-                            <img class="img-fluid rounded-circle mb-3"
-                                src="<?= BASE ?>/src/images/stephanie-liverani.jpg" alt="imagem de Stephanie"
-                                style="height: 50px; width: 50px;" />
-                            <h5>Sarah W.</h5>
-                            <p class="font-weight-light mb-0">"Muito obrigado por disponibilizar esses conteúdos aqui!."
-                            </p>
-                        </div>
+                        <ol class="carousel-indicators carousel-indicators-blue">
+                            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="2"></li> 
+                        </ol>
                     </div>
                 </div>
             </div>
-        </section>
     </main>
 
 

@@ -34,7 +34,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="my-5 text-center text-xl-start">
-                            <h1 class="display-5 fw-bolder text-white mb-2">Esta é uma <br /> plataforma de <br /> evangelismo online.</h1>
+                            <h1 class="display-5 fw-bolder text-white mb-2">Plataforma de <br />evangelismo <br /> online.</h1>
                             <p class="lead text-white mt-3">Comece um tour pelo site<br /> e saiba como funciona o evangelismo web.</p>
                         </div>
                         <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">

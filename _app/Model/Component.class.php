@@ -3,22 +3,22 @@
 class Component {
     public function getMenu ($MenuActive = 'index') {
         return "
-            <div class=\"container bg-dark\">
+            <div class=\"container\">
                 <nav class=\"d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3\">
-                <a href=" . BASE . "/ type=\"button\" class=\"btn btn-black\">Logo</a>
+                    <a href='" . BASE . "/' type=\"button\" class=\"btn btn-black\">Logo</a>
 
-                        <ul class=\"nav col-12 col-md-auto mb-2 justify-content-center mb-md-0\">
-                            <li><a href='" . BASE . "'/ class=\"nav-link px-2 link-secondary\">Home</a></li>
-                            <li><a href='" . BASE . "/sobre' class=\"nav-link px-2 link-secondary\">Sobre</a></li>
-                            <li><a href='" . BASE . "/conteudo' class=\"nav-link px-2 link-secondary\">Conteúdo</a></li>
-                            <li><a href='" . BASE . "/unitbrasil' class=\"nav-link px-2 link-secondary\">A Unitbrasil</a></li>
-                        </ul>
+                            <ul class=\"nav col-12 col-md-auto mb-2 justify-content-center mb-md-0\">
+                                <li><a href='" . BASE . "/' class=\"nav-link px-2 link-secondary\">Home</a></li>
+                                <li><a href='" . BASE . "/sobre' class=\"nav-link px-2 link-secondary\">Sobre</a></li>
+                                <li><a href='" . BASE . "/conteudo' class=\"nav-link px-2 link-secondary\">Conteúdo</a></li>
+                                <li><a href='" . BASE . "/unitbrasil' class=\"nav-link px-2 link-secondary\">A Unitbrasil</a></li>
+                            </ul>
 
 
-                        <div class=\"col-md-3 text-end\">
-                            <a href='" . BASE . "/cadastro' type=\"button\" class=\"btn me-2\">Cadastrar</a>
-                            <a href=" . BASE . "/login type=\"button\" class=\"btn btn-warning\">Login</a>
-                        </div>
+                            <div class=\"col-md-3 text-end\">
+                                <a href='" . BASE . "/cadastro' type=\"button\" class=\"btn me-2\">Cadastrar</a>
+                                <a href=" . BASE . "/login type=\"button\" class=\"btn btn-warning\">Login</a>
+                            </div>
                 </nav>
             </div>
         ";
@@ -61,7 +61,7 @@ class Component {
     public function getFooter() {
         return '
                 <!-- Footer -->
-                <div class="header-2" style="margin-top: 40px;">
+                <div class="header-2">
                     <footer class="bg-dark text-center text-lg-start text-white">
 
                         <div class="container p-4 w-100">
@@ -387,7 +387,7 @@ class Component {
                         </button>
                         
 
-                        <!-- Topbar Search -->
+                        <!-- Topbar Search
                         <form
                             class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                             <div class="input-group">
@@ -401,7 +401,7 @@ class Component {
                             </div>
                         </form>
 
-                        <!-- Topbar Navbar -->
+                        Topbar Navbar -->
                         
                         <ul class="navbar-nav ml-auto">
 

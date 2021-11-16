@@ -327,12 +327,6 @@
                         </div>
                     </div>
                 </div>
-
-
-                <!-- Button -->
-                <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-center">
-                    <a class="btn btn-warning btn-lg px-4 me-sm-3" href="/class">Veja todos os cursos</a>
-                </div>
             </div>
         </div>
     </section>
