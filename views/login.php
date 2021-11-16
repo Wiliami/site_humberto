@@ -87,10 +87,7 @@ if($User->verifyLoginUserON()) {
                                 <input type="password" id="senha" name="password" class="input-text">
                             </p>
                             <div class="clear"></div>
-                            <p class="form-row">
-                                <input type="submit" name="login" value="Login" class="button">
-                                <label class="inline" for="rememberme"><input type="checkbox" value="forever" id="rememberme" name="rememberme"> Manter conectado </label>
-                            </p>
+                
                             <p class="lost_password">
                                 <a href="forgot">Esqueceu a senha?</a>
                             </p>
