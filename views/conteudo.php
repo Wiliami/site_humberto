@@ -9,9 +9,9 @@
 
 
 
-    <header class="bg-dark py-5" style="height: 698px;">
+    <!-- <header class="bg-dark py-5" style="height: 698px;">
 
-       <!-- <div class="overlay"></div> -->
+        <div class="overlay"></div>
 
        <img src="<?= BASE ?>/src/images/youtube-white.png" class="" style="width: 230px; height: 130px;"/> 
 
@@ -28,7 +28,21 @@
         </div>
 
 
-   </header>
+   </header> -->
+
+   <header class="header-2">
+        <div class="page-header min-vh-100 relative" style="background-image: url('<?= BAES ?>/src/images/bg2.jpg')">
+            <span class="mask bg-gradient-primary opacity-4"></span>
+            <div class="container">
+            <div class="row">
+                <div class="col-lg-7 text-center mx-auto">
+                <h1 class="text-white pt-3 mt-n5">Material Kit 2</h1>
+                <p class="lead text-white mt-3">Free & Open Source Web UI Kit built over Bootstrap 5. <br/> Join over 1.6 million developers around the world. </p>
+                </div>
+            </div>
+            </div>
+        </div>
+    </header>
 
 
    <!-- <header class="" style="height: 698px;">            
