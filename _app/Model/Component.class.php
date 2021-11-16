@@ -9,7 +9,7 @@ class Component {
 
 
                     <ul class=\"nav col-12 col-md-auto mb-2 justify-content-center mb-md-0\">
-                        <li><a href='" . BASE . "' class=\"nav-link px-2 link-secondary\">Home</a></li>
+                        <li><a href='" . BASE . "'/ class=\"nav-link px-2 link-secondary\">Home</a></li>
                         <li><a href='" . BASE . "/sobre' class=\"nav-link px-2 link-secondary\">Sobre</a></li>
                         <li><a href='" . BASE . "/conteudo' class=\"nav-link px-2 link-secondary\">Conteúdo</a></li>
                         <li><a href='" . BASE . "/unitbrasil' class=\"nav-link px-2 link-secondary\">A Unitbrasil</a></li>
@@ -179,35 +179,35 @@ class Component {
     public function getFooterExampleTest() {
         return '
         <div class="footer-dark">
-        <footer>
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-6 col-md-3 item">
-                        <h3>Serviços</h3>
-                        <ul>
-                            <li><a href="#">Igreja Adventista do sétimo dia</a></li>
-                            <li><a href="#">UnitPlus </a></li>
-                           
-                        </ul>
+            <footer>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-6 col-md-3 item">
+                            <h3>Services</h3>
+                            <ul>
+                                <li><a href="#">Web design</a></li>
+                                <li><a href="#">Development</a></li>
+                                <li><a href="#">Hosting</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6 col-md-3 item">
+                            <h3>About</h3>
+                            <ul>
+                                <li><a href="#">Company</a></li>
+                                <li><a href="#">Team</a></li>
+                                <li><a href="#">Careers</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6 item text">
+                            <h3>Company Name</h3>
+                            <p>Praesent sed lobortis mi. Suspendisse vel placerat ligula. Vivamus ac sem lacus. Ut vehicula rhoncus elementum. Etiam quis tristique lectus. Aliquam in arcu eget velit pulvinar dictum vel in justo.</p>
+                        </div>
+                        <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a></div>
                     </div>
-                    <div class="col-sm-6 col-md-3 item">
-                        <h3>Sobre</h3>
-                        <ul>
-                            <li><a href="#">Ministério Pastoral</a></li>
-                            <li><a href="#"Contato</a></li>
-                            <li><a href="#">Agenda</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-6 item text">
-                        <h3>Unitbrasil</h3>
-                        <p>A UnitBrasil ajuda a encontrar seu norte!</p>
-                    </div>
-                    <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a></div>
+                    <p class="copyright">Unitbrasil © 2021</p>
                 </div>
-                <p class="copyright">UnitPlus © 2021</p>
-            </div>
-        </footer>
-    </div>
+            </footer>
+        </div>
         ';
     }
  

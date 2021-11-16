@@ -11,8 +11,8 @@ $URL  = explode('/', $getURL);
 $URL[0] = (!empty($URL[0]) ? $URL[0] : 'index');
 
 switch ($URL[0]) {
-    case 'index':
-        require_once('./views/index.php');
+    case 'app':
+        require_once('./views/app.php');
         break; 
     case 'admin':
         require_once('./views/admin/admin.php');
