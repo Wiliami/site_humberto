@@ -68,6 +68,9 @@ switch ($URL[0]) {
     case 'verifica':
         require_once('./views/verifica_tipo.php');
         break;
+    case 'forgot-password':
+        require_once('./views/forgot-password.php');
+        break;
 }
 
 
