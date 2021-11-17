@@ -15,7 +15,7 @@ echo $Component->getMenu();
                             <p class="lead fw-normal text-black-50 mb-4">Além de ser Empresário e Professor, Pr. Humberto Oliveira dedica também parte do seu tempo para o evangelismo e ministério pastoral.</p>
                         <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
                             <a class="btn btn-outline-primary btn-lg px-4" href="https://www.facebook.com/educacaoetreinamentos/">Facebook</a>
-                            <a class="btn btn-outline-danger btn-lg px-4" href="/">Instagram</a>
+                            <a class="btn btn-outline-danger btn-lg px-4" href="https://instagram.com/humberto.olliveira?utm_medium=copy_link">Instagram</a>
                         </div>
                     </div>
                 </div>

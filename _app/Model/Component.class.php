@@ -5,10 +5,10 @@ class Component {
         return "
             <div class=\"container\">
                 <nav class=\"d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3\">
-                    <a href='" . BASE . "/' type=\"button\" class=\"btn btn-black\">Logo</a>
+                    <a href='" . BASE . "/app' type=\"button\" class=\"btn btn-black\">Logo</a>
 
                             <ul class=\"nav col-12 col-md-auto mb-2 justify-content-center mb-md-0\">
-                                <li><a href='" . BASE . "/' class=\"nav-link px-2 link-secondary\">Home</a></li>
+                                <li><a href='" . BASE . "/app' class=\"nav-link px-2 link-secondary\">Home</a></li>
                                 <li><a href='" . BASE . "/sobre' class=\"nav-link px-2 link-secondary\">Sobre</a></li>
                                 <li><a href='" . BASE . "/conteudo' class=\"nav-link px-2 link-secondary\">Conteúdo</a></li>
                                 <li><a href='" . BASE . "/unitbrasil' class=\"nav-link px-2 link-secondary\">A Unitbrasil</a></li>
