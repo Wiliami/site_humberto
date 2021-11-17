@@ -9,46 +9,25 @@
 </head>
 
 <body>
-        <div class="container">
-        <a href="#" data-target="#pwdModal" data-toggle="modal">Esqueci minha senha!</a>
+    
+    <!-- Criando o formulário de esqueci minha senha -->
+    <form>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
         </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1">
+        </div>
+        <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
 
-        <!--modal-->
-        <div id="pwdModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                <h1 class="text-center">Qual é a minha senha?</h1>
-            </div>
-            <div class="modal-body">
-                <div class="col-md-12">
-                        <div class="panel panel-default">
-                            <div class="panel-body">
-                                <div class="text-center">
-                                
-                                <p>Se você esqueceu a sua senha siga as instruções abaixo para recuperá-la.</p>
-                                    <div class="panel-body">
-                                        <fieldset>
-                                            <div class="form-group">
-                                                <input class="form-control input-lg" placeholder="E-mail" name="email" type="email">
-                                            </div>
-                                            <input class="btn btn-lg btn-primary btn-block" value="Enviar senha" type="submit">
-                                        </fieldset>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-            </div>
-            <div class="modal-footer">
-                <div class="col-md-12">
-                <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
-                </div>	
-            </div>
-        </div>
-        </div>
-        </div>
 
 </body>
 </html>
