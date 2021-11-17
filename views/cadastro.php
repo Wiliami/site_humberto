@@ -83,9 +83,7 @@
                             <input type="submit" value="Criar Conta" name="cadastro" class="button">
                     </p>
 
-
-                        
-                        <div class="clear"></div>
+                    <div class="clear"></div>
 
             </form>               
     </div>
