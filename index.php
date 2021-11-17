@@ -11,11 +11,8 @@ $URL  = explode('/', $getURL);
 $URL[0] = (!empty($URL[0]) ? $URL[0] : 'index');
 
 switch ($URL[0]) {
-    case 'app':
-        require_once('./views/app.php');
-        break; 
-    case 'admin':
-        require_once('./views/admin/admin.php');
+    case 'index':
+        require_once('./views/index.php');
         break;
     case 'login':
         require_once('./views/login.php');
@@ -49,9 +46,6 @@ switch ($URL[0]) {
         break;
     case 'pagevideo':
         require_once('./views/pagevideo.php');
-        break;
-    case 'admin':
-        require_once('./views/admin/admin.php');
         break;
     case '404':
         require_once('./views/notFound.php');
