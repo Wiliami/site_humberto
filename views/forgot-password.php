@@ -42,7 +42,7 @@
                         <form action="" id="login-form-wrap" class="login" method="post">
                             <h2>Recuperar senha</h2>
                             <p class="form-row form-row-first">
-                                <input type="text" id="login" name="email" class="input-text" placeholder="Digite seu e-mail">
+                                <input type="text" id="login" value="<?= isset($_POST['email'])?$_POST['email']: '' ?>" name="email" class="input-text" placeholder="Digite seu e-mail">
                             </p>
                             <div class="clear"></div>
 

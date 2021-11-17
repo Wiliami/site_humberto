@@ -38,17 +38,17 @@ switch ($URL[0]) {
     case 'unitbrasil':
         require_once('./views/unitbrasil.php');
         break;
-    case 'biografia':
-        require_once('./views/biografia.php');
+    case 'page-profile':
+        require_once('./views/pege-profile.php');
         break;
     case 'cursos':
         require_once('./views/cursos.php');
         break;
-    case 'pagevideo':
+    case 'page-video':
         require_once('./views/pagevideo.php');
         break;
     case '404':
-        require_once('./views/notFound.php');
+        require_once('./views/not-found.php');
         break;
     case 'profile':  
         require_once('./views/profile.php');
