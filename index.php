@@ -54,7 +54,7 @@ switch ($URL[0]) {
         require_once('./views/profile.php');
         break;
     case 'reset-password-success':  
-        require_once('./views/forgot-reset-success.php');
+        require_once('./views/reset-password-success.php');
         break;
     case 'forgot-sent':  
         require_once('./views/forgot-sent.php');

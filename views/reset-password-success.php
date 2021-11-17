@@ -33,7 +33,7 @@ echo $Component->getBarraMenuOptions();
                     <div class="col-md-12">
                         <div class="alert alert-success" role="alert">
                             <h4 class="alert-heading">Senha Alterada!</h4>
-                            <p>Tente fazer o login com sua nova senha.<br><a href="<?= BASE ?> /login">Clique aqui</a> para fazer o login.</p>
+                            <p>Tente fazer o login com sua nova senha.<br><a href="<?= BASE ?>/login">Clique aqui</a> para fazer o login.</p>
                         </div>                  
                     </div>
                 </div>

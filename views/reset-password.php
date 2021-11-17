@@ -21,6 +21,7 @@ $User->verifyExistLoginUser();
         <!-- Custom fonts for this template-->
         <link href="<?= BASE ?>/res/site/css/all.min.css" rel="stylesheet" type="text/css">
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
         <!-- Custom styles for this template-->
         <link href="<?= BASE ?>/res/site/css/sb-admin-2.min.css" rel="stylesheet">
     </head>
@@ -36,7 +37,7 @@ $User->verifyExistLoginUser();
 
 
 
-    <form action="reset-password-success" method="post">
+    <form action="" method="post">
     <?php 
         $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
             if(!empty($Post['reset-password'])) {
@@ -55,6 +56,7 @@ $User->verifyExistLoginUser();
             }   
         }
     ?>
+    
     <h1 style="margin-left: 30px; margin-top: 30px;">Redefinir senha!</h1>
     <div class="form-group row" style="margin-left: 20px;">
         <label for="inputPassword" class="col-sm-2 col-form-label">Senha antiga</label>
