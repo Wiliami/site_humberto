@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -42,7 +42,6 @@
                         <form action="" id="login-form-wrap" class="login" method="post">
                             <h2>Recuperar senha</h2>
                             <p class="form-row form-row-first">
-                                <label for="login">E-mail <span class="required">*</span></label>
                                 <input type="text" id="login" name="email" class="input-text" placeholder="Digite seu e-mail">
                             </p>
                             <div class="clear"></div>

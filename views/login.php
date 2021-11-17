@@ -77,19 +77,17 @@ if($User->verifyLoginUserON()) {
                             ?>
                             <h2>Acessar</h2>
                             <p class="form-row form-row-first">
-                                <label for="login">E-mail <span class="required">*</span>
-                                </label>
+                                <label for="login">E-mail <span class="required">*</span></label>
                                 <input type="text" id="login" name="email" class="input-text">
-                                </p>
+                            </p>
                             <p class="form-row form-row-last">
-                                <label for="senha">Senha <span class="required">*</span>
-                                </label>
+                                <label for="senha">Senha <span class="required">*</span></label>
                                 <input type="password" id="senha" name="password" class="input-text">
                             </p>
                             <div class="clear"></div>
                 
                             <p class="lost_password">
-                                <a href="<?= BASE ?>forgot-password">Esqueci minha senha</a>
+                                <a href="<?= BASE ?>/forgot-password">Esqueci minha senha</a>
                             </p>
                             <p class="form-row">
                                 <input type="submit" value="Entrar" name="login" class="button">
