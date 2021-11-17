@@ -13,7 +13,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
     <link rel="stylesheet" href="<?= BASE ?>/src/css/index.css" type="text/css">
     <link rel="stylesheet" href="<?= BASE ?>/src/css/footer.css" type="text/css">
-    <link rel="stylesheet" href="<?= BASE ?>/src/css/global.css" type="text/css">
 
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
@@ -113,8 +112,8 @@
                                 <div class="feature bg-warning bg-gradient text-black rounded-3 mb-3"><i
                                         class="bi bi-toggles2"></i>
                                     <h2 class="h5">Vida conjugal</h2>
-                                    <p class="mb-0">Neste curso você conhecerá as bases do casamento ao modo de Deus.
-                                        Serão ministradas disciplinas como:
+                                    <p class="mb-0">Neste curso você conhecerá as bases do casamento segunda a Bíblia.
+                                        Serão ministradas assuntos como:
                                         <li>A aliança do casamento;</li>
                                         <li>O propósito de Deus para o casamento.</li>
                                     </p>
@@ -305,48 +304,7 @@
 
 
         <!-- Comentários -->
-        <div class="section section-testimonial">
-                <div class="container">
-                    <h4 class="header-text text-center">What people think</h4>
-                    <div id="carousel-example-generic" class="carousel fade" data-ride="carousel">
-                        <!-- Wrapper for slides -->
-                        <div class="carousel-inner" role="listbox">
-                            <div class="item">
-                                <div class="mask">
-                                    <img src="<?= BASE ?>/src/images/face-4.jpg">
-                                </div>
-                                <div class="carousel-testimonial-caption">
-                                    <p>Jay Z, Producer</p>
-                                    <h3>"I absolutely love your app! It's truly amazing and looks awesome!"</h3>
-                                </div>
-                            </div>
-                            <div class="item active">
-                                <div class="mask">
-                                    <img src="<?= BASE ?>/src/images/face-3.jpg">
-                                </div>
-                                <div class="carousel-testimonial-caption">
-                                    <p>Drake, Artist</p>
-                                    <h3>"This is one of the most awesome apps I've ever seen! Wish you luck Creative Tim!"</h3>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="mask">
-                                    <img src="<?= BASE ?>/src/images/face-2.jpg">
-                                </div>
-                                <div class="carousel-testimonial-caption">
-                                    <p>Rick Ross, Musician</p>
-                                    <h3>"Loving this! Just picked it up the other day. Thank you for the work you put into this."</h3>
-                                </div>
-                            </div>
-                        </div>
-                        <ol class="carousel-indicators carousel-indicators-blue">
-                            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                            <li data-target="#carousel-example-generic" data-slide-to="2"></li> 
-                        </ol>
-                    </div>
-                </div>
-            </div>
+        
     </main>
 
 

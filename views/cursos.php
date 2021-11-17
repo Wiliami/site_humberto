@@ -3,7 +3,6 @@
 
     echo $Component->getHeadHtml();
     echo $Component->getMenu();
-
 ?>
     
     

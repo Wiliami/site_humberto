@@ -1,9 +1,9 @@
 <?php
  
-//finalizando a sessão do usuário
-session_start();
-session_destroy();
+    //finalizando a sessão do usuário
+    session_start();
+    session_destroy();
 
-header('Location: ' . BASE . '/login');
+    header('Location: ' . BASE . '/login');
 
 ?>
