@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página | Esqueci senha</title>
     <link rel="stylesheet" href="<?= BASE ?>/src/css/forgot-password.css" type="text/css">
-
 </head>
 
 <body>

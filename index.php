@@ -62,9 +62,9 @@ switch ($URL[0]) {
     case 'reset-password-success':  
         require_once('./views/forgot-reset-success.php');
         break;
-    // case 'forgot-sent':  
-    //     require_once('./views/forgot-sent.php');
-    //     break;
+    case 'forgot-sent':  
+        require_once('./views/forgot-sent.php');
+        break;
     case 'verifica':
         require_once('./views/verifica_tipo.php');
         break;
