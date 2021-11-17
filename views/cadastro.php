@@ -54,7 +54,7 @@
     }
     
     ?>
-
+    
             <form id="register-form-wrap" action="" class="register" method="post">
                 <h2>Criar conta</h2>
                     <p class="form-row form-row-first">
