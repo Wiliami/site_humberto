@@ -647,23 +647,24 @@ class Component {
 
     public function getFooterDashboard() {
         return '
+                            </div> 
+                            <!-- End of Main Content -->
 
-                    </div> 
-                    <!-- End of Main Content -->
+                                <footer class="sticky-footer bg-white">
+                                    <div class="container my-auto">
+                                        <div class="copyright text-center my-auto">
+                                            <span>Copyright &copy; unitplus.com 2021</span>
+                                        </div>
+                                    </div>
+                                </footer>
 
-                        <footer class="sticky-footer bg-white">
-                            <div class="container my-auto">
-                                <div class="copyright text-center my-auto">
-                                    <span>Copyright &copy; unitplus.com 2021</span>
-                                </div>
-                            </div>
-                        </footer>
+                    </div>
+                    <!-- End of Content Wrapper -->
 
-            </div>
-            <!-- End of Content Wrapper -->
+                </div>
+                <!-- End of Page Wrapper -->
 
-        </div>
-        <!-- End of Page Wrapper -->
+         
         ';
     }
     

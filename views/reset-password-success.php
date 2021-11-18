@@ -10,8 +10,7 @@
     echo $Component->getBarraMenuOptions();
 
 ?>
-        
-    
+
 
         <div class="product-big-title-area">
             <div class="container">
@@ -40,12 +39,9 @@
             </div>
         </div> 
 
-<?php
+        <?php
 
-    $Component = new Component();
-    echo $Component->getFooterDashboard();
-    
-?>
+            $Component = new Component();
+            echo $Component->getFooterDashboard();
 
-    </body>
-</html>
+        ?>
