@@ -4,7 +4,6 @@
     $User->verifyExistLoginUser();
 
     $Component = new Component();
-
     echo $Component->getHeadHtmlDashboard(); // Estrutura do Html
     echo $Component->getMenuAndSideBarDashboard(); // Menu e Barra lateral
     echo $Component->getBarraMenuOptions(); //Barra de opções
