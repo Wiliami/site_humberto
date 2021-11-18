@@ -188,6 +188,14 @@ class User {
 		$Read = new Read();
 
 		$Rear->FullRead('SELECT user_password FROM users WHERE user_password = :pw', "pw={$password}");
+		if($Read->getResult()) {
+			$this->Error = "Não possível alterar a senha de acesso!";
+			// trecho de código de não é utilizado para nada neste momento
+
+			return true;
+		} else {
+			return false;
+		}
 
 	}
 
