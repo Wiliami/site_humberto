@@ -91,7 +91,7 @@ if($User->verifyLoginUserON()) {
                                 <a href="<?= BASE ?>/forgot-password">Esqueci minha senha</a>
                             </p>
                             <p class="form-row">
-                                <input type="submit" value="Entrar" name="login" class="button">
+                                <input type="submit" value="Entrar" name="login" class="button" required>
                             </p>
     
 
