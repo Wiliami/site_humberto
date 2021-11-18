@@ -60,12 +60,12 @@
                     <p class="form-row form-row-first">
                         <label for="nome">Nome<span class="required">*</span>
                         </label>
-                        <input type="text" id="nome" value="<?=isset($_POST['name'])?$_POST['name']:''?>" name="name" class="input-text" maxlength="25" minlength="2" />
+                        <input type="text" id="nome" value="<?=isset($Post['name'])?$Post['name']:''?>" name="name" class="input-text" maxlength="25" minlength="2" />
                     </p>
                     <p class="form-row form-row-first">
                         <label for="email">E-mail <span class="required">*</span>
                         </label>
-                        <input type="email" id="email" value="<?=isset($_POST['email'])?$_POST['email']:''?>" name="email" class="input-text" maxlength="50" />
+                        <input type="email" id="email" value="<?=isset($Post['email'])?$Post['email']:''?>" name="email" class="input-text" maxlength="50" />
                     </p>
                     <!-- <p class="form-row form-row-first">
                         <label for="phone">Telefone
@@ -75,7 +75,7 @@
                     <p class="form-row form-row-las t">
                         <label for="senha">Senha<span class="required">*</span>
                         </label>
-                        <input type="password" id="senha" value="<?=isset($_POST['password'])?$_POST['password']:''?>" name="password" class="input-text" maxlength="50" minlength="8" />
+                        <input type="password" id="senha" value="<?=isset($Post['password'])?$Post['password']:''?>" name="password" class="input-text" maxlength="50" minlength="8" />
                     </p>
                         <div class="clear"></div>
 

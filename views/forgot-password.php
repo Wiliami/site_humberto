@@ -33,6 +33,15 @@
     </head>
     <body>
 
+        <?php
+        
+            $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+            if(empty($Post['email'])) {
+                $this->Error = "Informe um e-mail!";
+                $this->Result = false;
+            }
+        ?>
+
         <div class="single-product-area">
             <div class="zigzag-bottom"></div>
             <div class="container">
@@ -42,7 +51,7 @@
                         <form action="" id="login-form-wrap" class="login" method="post">
                             <h2>Recuperar senha</h2>
                             <p class="form-row form-row-first">
-                                <input type="text" id="login" value="<?= isset($_POST['email'])?$_POST['email']: '' ?>" name="email" class="input-text" placeholder="Digite seu e-mail">
+                                <input type="text" id="login" value="<?= isset($Post['email'])?$Post['email']: '' ?>" name="email" class="input-text" placeholder="Digite seu e-mail">
                             </p>
                             <div class="clear"></div>
 

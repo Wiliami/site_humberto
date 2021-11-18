@@ -79,17 +79,18 @@ if($User->verifyLoginUserON()) {
                             <h2>Acessar</h2>
                             <p class="form-row form-row-first">
                                 <label for="login">E-mail <span class="required">*</span></label>
-                                <input type="text" id="login" name="email" value="<?= isset($_POST['email'])?$_POST['email']:''?>" class="input-text" required>
+                                <input type="text" id="login" name="email" value="<?= isset($Post['email'])?$Post['email']: '' ?>" class="input-text" required>
                             </p>
                             <p class="form-row form-row-last">
                                 <label for="senha">Senha <span class="required">*</span></label>
-                                <input type="password" id="senha" name="password" value="<?=isset($_POST['password'])?$_POST['password']:''?>" class="input-text" required>
+                                <input type="password" id="senha" name="password" value="<?= isset($Post['password'])?$Post['password']: '' ?>" class="input-text" required>
                             </p>
                             <div class="clear"></div>
                 
                             <p class="lost_password">
                                 <a href="<?= BASE ?>/forgot-password">Esqueci minha senha</a>
                             </p>
+
                             <p class="form-row">
                                 <input type="submit" value="Entrar" name="login" class="button">
                             </p>
