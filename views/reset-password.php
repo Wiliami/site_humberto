@@ -51,6 +51,7 @@ $User->verifyExistLoginUser();
                 Error("A senha foi alterada!");
                 header('Location: ' . BASE . '/reset-password-success');
                 exit();
+                Check::var_dump_json($User->getResult());
             } else {
                 Error($User->getResult(), 'danger');
             }   
