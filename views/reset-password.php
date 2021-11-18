@@ -25,6 +25,7 @@ $User->verifyExistLoginUser();
         <!-- Custom styles for this template-->
         <link href="<?= BASE ?>/res/site/css/sb-admin-2.min.css" rel="stylesheet">
     </head>
+
     <body>
         
     <?php
@@ -45,13 +46,12 @@ $User->verifyExistLoginUser();
             $Reset['user_password'] = $Post['new-pass'];
             $Reset['user_password'] = $Post['confirm-new-pass'];
 
-            $User = new User();
+            $User = new User(); 
             $User->resetUserPassword($Reset);
             if($User->getResult()) {
-                Error("A senha foi alterada!");
+                // Error("A senha foi alterada!");
                 header('Location: ' . BASE . '/reset-password-success');
                 exit();
-                Check::var_dump_json($User->getResult());
             } else {
                 Error($User->getResult(), 'danger');
             }   

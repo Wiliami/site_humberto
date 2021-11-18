@@ -1,13 +1,13 @@
 <?php
 
-$User = new User();
-$User->verifyExistLoginUser();
+    $User = new User();
+    $User->verifyExistLoginUser();
 
-$Component = new Component();
+    $Component = new Component();
 
-echo $Component->getHeadHtmlDashboard();
-echo $Component->getMenuAndSideBarDashboard();
-echo $Component->getBarraMenuOptions();
+    echo $Component->getHeadHtmlDashboard();
+    echo $Component->getMenuAndSideBarDashboard();
+    echo $Component->getBarraMenuOptions();
 
 ?>
         
@@ -33,7 +33,7 @@ echo $Component->getBarraMenuOptions();
                     <div class="col-md-12">
                         <div class="alert alert-success" role="alert">
                             <h4 class="alert-heading">Senha Alterada!</h4>
-                            <p>Tente fazer o login com sua nova senha.<br><a href="<?= BASE ?>/login">Clique aqui</a> para fazer o login.</p>
+                            <p>Tente fazer o com sua nova senha.<br><a href="<?= BASE ?>/login">Clique aqui</a> para fazer o login.</p>
                         </div>                  
                     </div>
                 </div>

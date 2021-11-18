@@ -173,6 +173,7 @@ class User {
 	private function verifyExistUserPassword($pass) {
 		$Read = new Read();
 
+		$pass = md5($pass);
 		$Read->FullRead('SELECT user_password FROM users WHERE user_password = :pss', "pss={$pass}");
 		if($Read->getResult()) {
 			$this->Error = "A senha está inválida!";
@@ -187,9 +188,11 @@ class User {
 
 		$Read = new Read();
 
+		$password = md5($password);
 		$Rear->FullRead('SELECT user_password FROM users WHERE user_password = :pw', "pw={$password}");
 		if($Read->getResult()) {
 			$this->Error = "Não possível alterar a senha de acesso!";
+			$this->Result = false;
 			// trecho de código de não é utilizado para nada neste momento
 
 			return true;
