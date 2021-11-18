@@ -5,9 +5,9 @@
 
     $Component = new Component();
 
-    echo $Component->getHeadHtmlDashboard();
-    echo $Component->getMenuAndSideBarDashboard();
-    echo $Component->getBarraMenuOptions();
+    echo $Component->getHeadHtmlDashboard(); // Estrutura do Html
+    echo $Component->getMenuAndSideBarDashboard(); // Menu e Barra lateral
+    echo $Component->getBarraMenuOptions(); //Barra de opções
 
 ?>
 
