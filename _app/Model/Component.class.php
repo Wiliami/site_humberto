@@ -249,7 +249,7 @@ class Component {
                 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
                 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
             </head>
-            <body>
+            <body?>
         
         ';
     }
@@ -647,24 +647,25 @@ class Component {
 
     public function getFooterDashboard() {
         return '
-                            </div> 
-                            <!-- End of Main Content -->
-
-                                <footer class="sticky-footer bg-white">
-                                    <div class="container my-auto">
-                                        <div class="copyright text-center my-auto">
-                                            <span>Copyright &copy; unitplus.com 2021</span>
-                                        </div>
                                     </div>
-                                </footer>
+                                    <!-- End of Main Content -->
 
-                    </div>
-                    <!-- End of Content Wrapper -->
+                                        <footer class="sticky-footer bg-white">
+                                            <div class="container my-auto">
+                                                <div class="copyright text-center my-auto">
+                                                    <span>Copyright &copy; unitplus.com 2021</span>
+                                                </div>
+                                            </div>
+                                        </footer>
 
-                </div>
-                <!-- End of Page Wrapper -->
+                            </div>
+                            <!-- End of Content Wrapper -->
 
-         
+                        </div>
+                        <!-- End of Page Wrapper -->
+
+                    </body>
+                </html>
         ';
     }
     
