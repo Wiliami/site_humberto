@@ -14,7 +14,7 @@ class User {
 
 
 	public function verifyUserAdmin() {
-		if($_SESSION['login'] != 2) {
+		if($_SESSION['login'] != 9) { //
 
 			// header('Location:' . BASE . '/login');
 		}
