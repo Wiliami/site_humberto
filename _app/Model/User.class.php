@@ -9,10 +9,11 @@ class User {
 	// - resetUserPassword(); -> alterar a senha do usuário
 	// - getForgot -> envia o emial de recuperção de senha ao usuário
 
+	
 	private $Error;
 	private $Result;
 
-
+	// Este método é para verificar os nivéis dos usuários
 	public function verifyUserAdmin() {
 		if($_SESSION['login'] != 9) { //
 
