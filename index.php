@@ -64,19 +64,11 @@ switch ($URL[0]) {
     case 'forgot-password':
         require_once('./views/forgot-password.php');
         break;
+    default:
+        require_once('./views/not-found.php');
+        break;
 }
 
-
-
-if ($URL != [0]) {
-
-    // $Component = new Component();
-    // echo $Component->get_not_found_error_404();
-    // exit();
-    echo 'Página nao encontrada!';
-    die();
-
-}
 
 
 ?>
