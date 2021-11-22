@@ -10,6 +10,8 @@ $URL  = explode('/', $getURL);
 
 $URL[0] = (!empty($URL[0]) ? $URL[0] : 'index');
 
+
+
 switch ($URL[0]) {
     case 'index':
         require_once('./views/index.php');
@@ -64,6 +66,9 @@ switch ($URL[0]) {
         break;
     case 'forgot-password':
         require_once('./views/forgot-password.php');
+        break;
+    case 'not-found':
+        require_once('./views/naoencontrei.php');
         break;
 }
 
