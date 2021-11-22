@@ -3,13 +3,10 @@
 session_start();
 require_once '_app/Config.inc.php';
 
-
 $getURL = strip_tags(trim(filter_input(INPUT_GET, 'url', FILTER_DEFAULT)));
 $setURL = (empty($getURL) ? 'index' : $getURL);
 $URL  = explode('/', $getURL);
-
 $URL[0] = (!empty($URL[0]) ? $URL[0] : 'index');
-
 
 
 switch ($URL[0]) {
@@ -67,9 +64,14 @@ switch ($URL[0]) {
     case 'forgot-password':
         require_once('./views/forgot-password.php');
         break;
-    case 'not-found':
-        require_once('./views/naoencontrei.php');
-        break;
+}
+
+
+if ($URL != [0]) {
+
+    // echo 'Página nao encontrada!';
+    include '../views/not-found.php';
+
 }
 
 

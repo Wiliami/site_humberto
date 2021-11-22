@@ -1,6 +1,6 @@
 <?php 
 
-echo "Tudo certo, pode mandar o boot!";
+echo "Ok!";
 if($_SESSION['login'] != 2) {
     
     // header('Location: ' . BASE . '/login');
