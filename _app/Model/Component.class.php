@@ -45,7 +45,7 @@ class Component {
                         <h1 class="display-5 fw-bolder text-white mb-2">Plataforma de <br /> evangelismo online <br />e desenvolvimento<br /> pessoal.</h1>
                         <p class="lead fw-normal text-white-50 mb-4">Comece um tour pelo site<br /> e saiba como funciona o evangelismo web.<br /> Faça o seu login!</p>
                         <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
-                            <a class="btn btn-warning btn-lg px-4 me-sm-3" href="login">Começar</a>
+                            <a class="btn btn-warning btn-lg px-4 me-sm-3" href=" '. BASE .'/login">Começar</a>
                             <a class="btn btn-outline-light btn-lg px-4" href="#content-overview">Saiba mais</a>
                         </div>  
                     </div>
@@ -792,26 +792,6 @@ class Component {
                     </div>
                 </div>
             </div>
-        
-        ';
-    }
-
-
-
-    public function get_not_found_error_404() {
-        return '
-        
-                <div class="container-fluid">
-
-                    <!-- 404 Error Text -->
-                    <div class="text-center">
-                        <div class="error mx-auto" data-text="404">404</div>
-                        <p class="lead text-gray-800 mb-5">Página não encontrada!</p>
-                        <p class="text-gray-500 mb-0">It looks like you found a glitch in the matrix...</p>
-                        <a href=" '. BASE.'/dashboard">&larr; Back to Dashboard</a>
-                    </div>
-
-                </div>
         
         ';
     }

@@ -64,6 +64,9 @@ switch ($URL[0]) {
     case 'forgot-password':
         require_once('./views/forgot-password.php');
         break;
+    case 'teste';
+        require_once('./views/test_email.php');
+        break;
     default:
         require_once('./views/not-found.php');
         break;
