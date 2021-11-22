@@ -1,7 +1,7 @@
 <?php
 
-$User = new User();
-$User->verifyExistLoginUser();
+    $User = new User();
+    $User->verifyExistLoginUser();
 
 ?>
 

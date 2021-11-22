@@ -67,10 +67,14 @@ switch ($URL[0]) {
 }
 
 
+
 if ($URL != [0]) {
 
-    // echo 'Página nao encontrada!';
-    include '../views/not-found.php';
+    // $Component = new Component();
+    // echo $Component->get_not_found_error_404();
+    // exit();
+    echo 'Página nao encontrada!';
+    die();
 
 }
 
