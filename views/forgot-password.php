@@ -36,10 +36,13 @@
         <?php
         
             $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
-            if(empty($Post['email'])) {
-                $this->Error = "Informe um e-mail!";
-                $this->Result = false;
+            if(!empty($Post['cadastro'])) {
+                if(empty($Post['email'])) {
+                    $this->Error = "Informe um e-mail!";
+                    $this->Result = false;
+                }
             }
+            
         ?>
 
         <div class="single-product-area">
