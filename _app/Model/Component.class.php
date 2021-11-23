@@ -49,9 +49,9 @@ class Component {
                             <a class="btn btn-warning btn-lg px-4 me-sm-3" href=" '. BASE .'/login">Começar</a>
                             <a class="btn btn-outline-light btn-lg px-4" href="#content-overview">Saiba mais</a>
 
-                            <div class="justify-content-sm-center justify-content-xl-end">
+                            <!-- <div class="justify-content-sm-center justify-content-xl-end">
                                 <a class="btn btn-success text-black btn-lg px-4" href="/">Suporte</a>
-                            </div>
+                            </div> -->
 
                         </div>  
                     </div>
@@ -215,7 +215,7 @@ class Component {
         </div>
         ';
     }
- 
+    
     public function getLogo() {
         return '
         <div class=\"container\">
@@ -670,8 +670,8 @@ class Component {
                         </div>
                         <!-- End of Page Wrapper -->
 
-                    </body>
-                </html>
+                        <!-- Obs.: Já existe um final para body e html no fim do arquivo -->
+
         ';
     }
     
