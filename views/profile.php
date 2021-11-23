@@ -67,6 +67,7 @@
         
             $Component = new Component();
             echo $Component->getFooterDashboard();
+            
         ?>
 
     </body>

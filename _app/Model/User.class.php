@@ -4,7 +4,7 @@
 class User {
 
 	//métodos da classe:
-	// - verifyTypeUser -> verifica o tipo de usuario
+	// - verifyLevelUser -> verifica o nível de usuario
 	// - verifyDuplicateUserEmail(); -> verificar se o usuário digitou o email que já está em uso. 
 	// - resetUserPassword(); -> alterar a senha do usuário
 	// - getForgot -> envia o emial de recuperção de senha ao usuário
@@ -13,11 +13,11 @@ class User {
 	private $Error;
 	private $Result;
 
-	// Este método é para verificar os nivéis dos usuários
-	public function verifyUserAdmin() {
-		if($_SESSION['login'] != 9) { //
+	// Método para verificar os nivéis dos usuários
+	private function verifyLevelUser() {
+		if($_SESSION['login'] != 9) {
 
-			// header('Location:' . BASE . '/login');
+			header('Location:' . BASE . '/login');
 		}
 	}
 
