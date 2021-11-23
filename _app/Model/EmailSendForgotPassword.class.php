@@ -1,6 +1,6 @@
 <?php 
 
-class EmailSend {
+class EmailSendForgotPassword {
 
     private $Result;
     private $Error;
