@@ -215,6 +215,7 @@ class Component {
         </div>
         ';
     }
+    
  
     public function getLogo() {
         return '
@@ -670,8 +671,8 @@ class Component {
                         </div>
                         <!-- End of Page Wrapper -->
 
-                    </body>
-                </html>
+                        <!-- Obs.: Já existe um final para body e html no fim do arquivo -->
+
         ';
     }
     
