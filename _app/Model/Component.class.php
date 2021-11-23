@@ -216,6 +216,10 @@ class Component {
         ';
     }
     
+<<<<<<< HEAD
+=======
+ 
+>>>>>>> c383466ab71ba491285cc005b28c191464f436fe
     public function getLogo() {
         return '
         <div class=\"container\">

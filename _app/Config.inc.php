@@ -1,5 +1,10 @@
 <?php
+<<<<<<< HEAD
 require_once 'ENV.php';
+=======
+
+require_once ENV.php;
+>>>>>>> c383466ab71ba491285cc005b28c191464f436fe
 
 function MyAutoLoad($Class) {
     $cDir = ['Conn', 'Helpers', 'Model'];
@@ -39,6 +44,3 @@ function Error ($Error, $type = 'success') {
 
 set_error_handler('error_handler');
 set_exception_handler('exception_handler');
-
-
-
