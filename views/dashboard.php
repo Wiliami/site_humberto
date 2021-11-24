@@ -110,6 +110,7 @@
                         <i class="fas fa-fw fa-folder"></i>
                         <span>Páginas</span>
                     </a>
+
                     <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
                             <h6 class="collapse-header">Página Login:</h6>
@@ -121,6 +122,7 @@
                             <a class="collapse-item" href="<?= BASE ?>/404">404 Página</a>
                         </div>
                     </div>
+
                 </li>
 
                 
@@ -363,11 +365,11 @@
                     
                     <!-- <div class="container-fluid"> -->
                    
-
-
+                    
                     <?php 
                     
                         $Component = new Component();
+                        echo $Component->getBarraMenuOptions();
                         echo $Component->getFooterDashboard();
                 
                     ?>
