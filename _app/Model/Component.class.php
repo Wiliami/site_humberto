@@ -308,11 +308,11 @@ class Component {
             </head>
             <body?>
         
-        ';
+        ;
     }
 
     public function getMenuAndSideBarDashboard() {
-        return '
+        return "
 
         <!-- Page Wrapper -->
         <div id="wrapper">
