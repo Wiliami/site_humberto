@@ -264,7 +264,7 @@ class Component {
         return '
 
         <!-- Page Wrapper -->
-        < id="wrapper">
+        <div id="wrapper">
 
             <!-- Sidebar -->
             <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
@@ -382,7 +382,7 @@ class Component {
             <div id="content-wrapper" class="d-flex flex-column">
 
                 <!-- Main Content -->
-                < id="content">
+                <div id="content">
 
                     <!-- Topbar -->
                     <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
@@ -558,7 +558,8 @@ class Component {
                             <li class="nav-item dropdown no-arrow">
                                 <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <span class="mr-2 d-none d-lg-inline text-gray-600 small">Seja bem-vindo(a), '. $_SESSION['login']['user_name'] .'! </span>
+                                    <span class="mr-2 d-none d-lg-inline text-gray-600 small">Seja bem-vindo(a), </span>
+                                    <!-- $_SESSION["login"]["user_name"] -->
                                 
                                     <img class="img-profile rounded-circle" src="'. BASE .'/src/images/undraw_profile.svg">
                                 </a>
@@ -594,18 +595,12 @@ class Component {
                 <!-- </div> -->
                 <!-- End of Main Content -->
 
-                <!-- <footer class="sticky-footer bg-white">
-                    <div class="container my-auto">
-                        <div class="copyright text-center my-auto">
-                            <span>Copyright &copy; unitplus.com 2021</span>
-                        </div>
-                    </div>
-                </footer> -->
+            
 
             <!-- </div> -->
             <!-- End of Content Wrapper -->
 
-        <!-- </div> -->
+        </div>
         <!-- End of Page Wrapper -->
 
         
@@ -653,31 +648,21 @@ class Component {
 
     public function getFooterDashboard() {
         return '
-                                    
-                                        <!-- End of Main Content -->
 
-                                            <footer class="sticky-footer bg-white">
-                                                <div class="container my-auto">
-                                                    <div class="copyright text-center my-auto">
-                                                        <span>Copyright &copy; unitplus.com 2021</span>
-                                                    </div>
-                                                </div>
-                                            </footer>
-
-                                <!-- </div> -->
-                                <!-- End of Content Wrapper -->
-
-                
-                            <!-- End of Page Wrapper -->
-
-
-
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; unitplus.com 2021</span>
+                    </div>
+                </div>
+            </footer>
         ';
     }
     
 
     public function getHeadHtmlDashboard() {
         return '
+
         <!DOCTYPE html>
         <html lang="pt-BR">
         
@@ -707,6 +692,7 @@ class Component {
 
     public function getBarraMenuOptions() {
         return '
+
         <!-- Begin Page Content -->
         <div class="container-fluid">
 

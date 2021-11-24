@@ -1,7 +1,7 @@
 <?php
 
-    $User = new User();
-    $User->verifyExistLoginUser();
+    // $User = new User();
+    // $User->verifyExistLoginUser();
 
 ?>
 
@@ -32,7 +32,6 @@
     <?php
 
         $Component = new Component();
-        
         echo $Component->getMenuAndSideBarDashboard();
         echo $Component->getBarraMenuOptions();
 
@@ -43,13 +42,15 @@
         <div class="form-group row" style="margin-left: 20px;">
             <label for="inputPassword" class="col-sm-2 col-form-label">Nome</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="inputPassword" value='<?= $_SESSION['login'] ['user_name'] ?>'>
+                <input type="text" class="form-control" id="inputPassword">
+                <!-- value=  $_SESSION['login'] ['user_name'] -->
             </div>
         </div>
         <div class="form-group row" style="margin-left: 20px;">
             <label for="inputPassword" class="col-sm-2 col-form-label">E-mail</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="inputPassword" value='<?= $_SESSION['login'] ['user_email'] ?>'>
+                <input type="text" class="form-control" id="inputPassword">
+                <!-- value= $_SESSION['login'] ['user_email'] -->
             </div>
         </div>
         <div class="form-group row" style="margin-left: 20px;">

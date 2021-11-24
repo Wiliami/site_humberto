@@ -36,22 +36,22 @@
 
     <?php 
 
-    $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
-    if(!empty($Post['cadastro'])) {
-        $DataCreate['user_name'] = $Post['name'];
-        $DataCreate['user_email'] = $Post['email'];
-        $DataCreate['user_password'] = $Post['password'];
+        $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+        if(!empty($Post['cadastro'])) {
+            $DataCreate['user_name'] = $Post['name'];
+            $DataCreate['user_email'] = $Post['email'];
+            $DataCreate['user_password'] = $Post['password'];
 
-        $User = new User();
-        $User->createUser($DataCreate);
-        if($User->getResult()) {
-            Error("Cadastrado com o id {$User->getResult()}");
-            header('Location:' . BASE . '/dashboard');
-        } else {
-            Error($User->getError(), 'danger');
+            $User = new User();
+            $User->createUser($DataCreate);
+            if($User->getResult()) {
+                Error("Cadastrado com o id {$User->getResult()}");
+                header('Location:' . BASE . '/dashboard');
+            } else {
+                Error($User->getError(), 'danger');
+            }
+            // Check::var_dump_json($Post);
         }
-        // Check::var_dump_json($Post);
-    }
     
     ?>
     
