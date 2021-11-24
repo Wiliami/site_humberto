@@ -48,7 +48,7 @@ switch ($URL[0]) {
         require_once('./views/cursos.php');
         break;
     case 'page-video':
-        require_once('./views/pagevideo.php');
+        require_once('./views/page-video.php');
         break;
     case '404':
         require_once('./views/not-found.php');

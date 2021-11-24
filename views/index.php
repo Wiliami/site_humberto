@@ -156,7 +156,7 @@
 
 
 
-            <!-- Carousel -->
+            <!-- carrosel -->
             <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-indicators">
                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -180,7 +180,7 @@
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img class="d-block w-100" src="<?= BASE ?>/src/images/speech-post.jpg" alt="imagem de palestra" />
+                        <img class="d-block w-100" src="<?= BASE ?>/src/images/humberto-background-carrousel.jpeg" alt="imagem de palestra" />
                         <div class="carousel-caption d-none d-md-block">
                             <h5>Religião e Ciência</h5>
                             <p>Qual a relação da Religião com a Ciência.</p>
@@ -310,7 +310,7 @@
 
                         <!-- Button -->
                         <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-center">
-                            <a class="btn btn-outline-dark btn-lg px-4 me-sm-3" href="<?= BASE ?>/pagevideo">Veja todos os
+                            <a class="btn btn-outline-dark btn-lg px-4 me-sm-3" href="<?= BASE ?>/page-video">Veja todos os
                                 cursos</a>
                         </div>
 
