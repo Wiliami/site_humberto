@@ -264,7 +264,7 @@ class Component {
         return '
 
         <!-- Page Wrapper -->
-        <div id="wrapper">
+        < id="wrapper">
 
             <!-- Sidebar -->
             <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
@@ -382,7 +382,7 @@ class Component {
             <div id="content-wrapper" class="d-flex flex-column">
 
                 <!-- Main Content -->
-                <div id="content">
+                < id="content">
 
                     <!-- Topbar -->
                     <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
@@ -653,24 +653,24 @@ class Component {
 
     public function getFooterDashboard() {
         return '
-                                    </div>
-                                    <!-- End of Main Content -->
+                                    
+                                        <!-- End of Main Content -->
 
-                                        <footer class="sticky-footer bg-white">
-                                            <div class="container my-auto">
-                                                <div class="copyright text-center my-auto">
-                                                    <span>Copyright &copy; unitplus.com 2021</span>
+                                            <footer class="sticky-footer bg-white">
+                                                <div class="container my-auto">
+                                                    <div class="copyright text-center my-auto">
+                                                        <span>Copyright &copy; unitplus.com 2021</span>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </footer>
+                                            </footer>
 
-                            </div>
-                            <!-- End of Content Wrapper -->
+                                <!-- </div> -->
+                                <!-- End of Content Wrapper -->
 
-                        </div>
-                        <!-- End of Page Wrapper -->
+                
+                            <!-- End of Page Wrapper -->
 
-                        <!-- Obs.: Já existe um final para body e html no fim do arquivo -->
+
 
         ';
     }
