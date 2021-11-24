@@ -352,7 +352,12 @@
 
 
                          
-                   
+                    <?php 
+                    
+                        $Component = new Component();
+                        echo $Component->getBarraMenuOptions();
+            
+                    ?>  
 
                 <!-- Fim do Main Content -->
                 </div>
@@ -366,16 +371,17 @@
                     <!-- <div class="container-fluid"> -->
                    
                     
-                    <?php 
                     
-                        $Component = new Component();
-                        echo $Component->getBarraMenuOptions();
-                        echo $Component->getFooterDashboard();
-                
-                    ?>
 
 
         </div>
+
+        <?php 
+                                
+            $Component = new Component();
+            echo $Component->getFooterDashboard();
+                            
+        ?>
         <!-- End of Content Wrapper -->
 
 
