@@ -107,7 +107,7 @@
                             <div class="card-body pt-7 text-center">
                                 <h3 class="text-white">Mais detalhes</h3>
                                 <p class="text-white opacity-8">Esta é uma plataforma vérsatil para cursos completos para quem deseja trabalhar com o público e com a igreja. Conhecimento para conquistar seus objetivos.</p>
-                                <a href=".//sections/page-sections/hero-sections.html" target="_blank" class="btn btn-white btn-sm w-50 mx-auto mt-3">Saiba mais!</a>
+                                <a href="#page-course" target="" class="btn btn-white btn-sm w-50 mx-auto mt-3">Saiba mais!</a>
                             </div>
                             </div>
                         </div>
@@ -205,7 +205,7 @@
 
 
 
-            <section class="py-5 bg-white">
+            <section class="py-5 bg-white" id="page-course">
                 <div class="container px-5 my-5">
                     <div class="row gx-5 justify-content-center">
                         <div class="col-lg-8 col-xl-6">
