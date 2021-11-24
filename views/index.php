@@ -28,7 +28,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
 
     <!-- CSS Files -->
-
+    <!-- Estiliza o card de curso -->
     <link id="pagestyle" href="<?= BASE ?>/src/css/material-kit.css?v=3.0.0" rel="stylesheet" />
 
 
@@ -90,6 +90,11 @@
 
 
             <!-- Cursos box -->
+            <!-- <?php 
+
+               
+            
+            ?> -->
             <section class="my-5 py-5">
                 <div class="container">
                     <div class="row align-items-center">
@@ -311,7 +316,8 @@
                         <!-- Button -->
                         <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-center">
                             <a class="btn btn-outline-dark btn-lg px-4 me-sm-3" href="<?= BASE ?>/page-video">Veja todos os
-                                cursos</a>
+                                cursos
+                            </a>
                         </div>
 
                     </div>

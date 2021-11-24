@@ -2,51 +2,102 @@
 
 class Component {
     public function getMenu ($MenuActive = 'index') {
-        return "
+        return '
+
+        <!DOCTYPE html>
+            <html lang="pt-BR">
+
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Página | Home</title>
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;700&display=swap" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+            <link rel="stylesheet" href="<?= BASE ?>/src/css/index.css" type="text/css">
+            <link rel="stylesheet" href="<?= BASE ?>/src/css/footer.css" type="text/css">
+
+
+            <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
+
+            <!-- Nucleo Icons -->
+            <link href="<?= BASE ?>/src/css/nucleo-icons.css" rel="stylesheet" />
+            <link href="<?= BASE ?>/src/css/nucleo-svg.css" rel="stylesheet" />
+
+            <!-- Font Awesome Icons -->
+            <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+
+            <!-- Material Icons -->
+            <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+
+            <!-- CSS Files -->
+            <!-- Estiliza o card de curso -->
+            <link id="pagestyle" href="<?= BASE ?>/src/css/material-kit.css?v=3.0.0" rel="stylesheet" />
+
+
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+
+            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+
+            
+            <!-- CSS do Footer da Home -->
+            <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+        </head>
+
+        <body>
+
             <div class=\"container\">
                 <nav class=\"d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3\">
-                    <a href='" . BASE . "/' type=\"button\" class=\"btn btn-black\">Logo</a>
+                    <a href='/" . BASE . "/' type=\"button\" class=\"btn btn-black\">Logo</a>
 
                             <ul class=\"nav col-12 col-md-auto mb-2 justify-content-center mb-md-0\">
-                                <li><a href='" . BASE . "/' class=\"nav-link px-2 link-secondary\">Home</a></li>
-                                <li><a href='" . BASE . "/sobre' class=\"nav-link px-2 link-secondary\">Sobre</a></li>
-                                <li><a href='" . BASE . "/conteudo' class=\"nav-link px-2 link-secondary\">Conteúdo</a></li>
-                                <li><a href='" . BASE . "/unitbrasil' class=\"nav-link px-2 link-secondary\">A Unitbrasil</a></li>
+                                <li><a href=' . BASE . '/ class=\"nav-link px-2 link-secondary\">Home</a></li>
+                                <li><a href='  . BASE . " '/sobre' class=\"nav-link px-2 link-secondary\">Sobre</a></li>
+                                <li><a href=' " . BASE . " '/conteudo' class=\"nav-link px-2 link-secondary\">Conteúdo</a></li>
+                                <li><a href='" . BASE . " '/unitbrasil' class=\"nav-link px-2 link-secondary\">A Unitbrasil</a></li>
                             </ul>
 
 
                             <div class=\"col-md-3 text-end\">
-                                <a href='" . BASE . "/cadastro' type=\"button\" class=\"btn me-2\">Cadastrar</a>
-                                <a href=" . BASE . "/login type=\"button\" class=\"btn btn-warning\">Login</a>
+                                <a href=' ". BASE . " '/cadastro' type=\"button\" class=\"btn me-2\">Cadastrar</a>
+                                <a href=' " . BASE . " '/login' type=\"button\" class=\"btn btn-warning\">Login</a>
                             </div>
                 </nav>
             </div>
-        ";
+        ';
     }
     
 
     public function getHeader() {
         return '
-        <header class="bg-white py-5" style="height: 698px;">
+        <header class='bg-white py-5' style='height: 698px;'>
        
             <!-- This div is intentionally blank. It creates the transparent black overlay over the video which you can modify in the CSS -->
             
-            <div class="overlay"></div>
+            <div class='overlay'></div>
 
             <!-- The HTML5 video element that will create the background video on the header -->
-            <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
-                <source src="https://storage.googleapis.com/coverr-main/mp4/Mt_Baker.mp4" type="video/mp4">
+            <video playsinline='playsinline' autoplay='autoplay' muted='muted' loop='loop'>
+                <source src='https://storage.googleapis.com/coverr-main/mp4/Mt_Baker.mp4' type='video/mp4'>
             </video>
 
         
-            <div class="container h-100">
-                 <div class="d-flex h-100 text-center align-items-center">
-                    <div class="my-5 text-center text-xl-start">
-                        <h1 class="display-5 fw-bolder text-white mb-2">Plataforma de <br /> evangelismo online <br />e desenvolvimento<br /> pessoal.</h1>
-                        <p class="lead fw-normal text-white-50 mb-4">Comece um tour pelo site<br /> e saiba como funciona o evangelismo web.<br /> Faça o seu login!</p>
+            <div class='container h-100'>
+                 <div class='d-flex h-100 text-center align-items-center'>
+                    <div class='my-5 text-center text-xl-start'>
+                        <h1 class='display-5 fw-bolder text-white mb-2'>Plataforma de <br /> evangelismo online <br />e desenvolvimento<br /> pessoal.</h1>
+                        <p class='lead fw-normal text-white-50 mb-4'>Comece um tour pelo site<br /> e saiba como funciona o evangelismo web.<br /> Faça o seu login!</p>
 
-                        <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
-                            <a class="btn btn-warning btn-lg px-4 me-sm-3" href=" '. BASE .'/login">Começar</a>
+                        <div class='d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start'>
+                            <a class='btn btn-warning btn-lg px-4 me-sm-3' href=" . BASE . '/login">Começar</a>
                             <a class="btn btn-outline-light btn-lg px-4" href="#content-overview">Saiba mais</a>
 
                             <!-- <div class="justify-content-sm-center justify-content-xl-end">
@@ -781,6 +832,36 @@ class Component {
                     </div>
                 </div>
             </div>
+        
+        ';
+    }
+
+
+    public function getHeadHtmlPro() {
+        return '
+            <!DOCTYPE html>
+            <html lang="en" itemscope itemtype="http://schema.org/WebPage">
+            
+                <head>
+                <meta charset="utf-8" />
+                <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+                <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+                <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+                <title>
+                    Page | Biografia
+                </title>
+                <!-- Fonts and icons -->
+                <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
+                <!-- Nucleo Icons -->
+                <link href="' . BASE . '/src/css/nucleo-icons.css" rel="stylesheet" />
+                <link href="' . BASE . '/src/css/nucleo-svg.css" rel="stylesheet" />
+                <!-- Font Awesome Icons -->
+                <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+                <!-- Material Icons -->
+                <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+                <!-- CSS Files -->
+                <link id="pagestyle" href="' . BASE . '/src/css/material-kit.css?v=3.0.0" rel="stylesheet" />
+                </head>
         
         ';
     }
