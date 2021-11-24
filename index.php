@@ -35,6 +35,9 @@ switch ($URL[0]) {
     case 'conteudo':
         require_once('./views/conteudo.php');
         break;
+    case 'biografia':
+        require_once('./views/biografia.php');
+        break;
     case 'unitbrasil':
         require_once('./views/unitbrasil.php');
         break;
