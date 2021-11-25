@@ -210,7 +210,7 @@
                     <div class="row gx-5 justify-content-center">
                         <div class="col-lg-8 col-xl-6">
                             <div class="text-center">
-                                <h2 class="fw-bolder">Conheça os nosso cursos</h2>
+                                <h2 class="fw-bolder">Conheça os nossos cursos</h2>
                                 <p class="lead fw-normal text-muted mb-5">Cursos em diversas áreas</p>
                             </div>
                         </div>
