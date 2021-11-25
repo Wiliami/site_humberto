@@ -63,8 +63,8 @@
 
 
         <header>
-                <div class="page-header min-vh-100" style="background-image: url(<?= BASE ?>/src/images/unitbrasil-background.jpeg;);" loading="lazy">
-                    <span class="mask bg-gradient-dark opacity-5"></span>
+                <div class="page-header min-vh-100" style="background-image: url(<?= BASE ?>/src/images/page-youtube1.jpg;);" loading="lazy">
+                    <span class="mask bg-gradient-info opacity-4"></span>
                     <div class="container">
                     <div class="row">
                         <div class="col-lg-6 col-md-7 d-flex justify-content-center flex-column">

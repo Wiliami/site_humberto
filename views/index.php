@@ -12,16 +12,16 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
     <link rel="stylesheet" href="<?= BASE ?>/src/css/index.css" type="text/css">
-    <link rel="stylesheet" href="<?= BASE ?>/src/css/footer.css" type="text/css">
+    <!-- <link rel="stylesheet" href="<?= BASE ?>/src/css/footer.css" type="text/css"> -->
 
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
 
 
-    <link href="<?= BASE ?>/src/css/nucleo-icons.css" rel="stylesheet" /> 
-    <link href="<?= BASE ?>/src/css/nucleo-svg.css" rel="stylesheet" />
+    <!-- <link href="<?= BASE ?>/src/css/nucleo-icons.css" rel="stylesheet" />  -->
+    <!-- <link href="<?= BASE ?>/src/css/nucleo-svg.css" rel="stylesheet" /> -->
 
     <!-- Font Awesome Icons -->
-    <!-- <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script> -->
+    <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
 
 
 

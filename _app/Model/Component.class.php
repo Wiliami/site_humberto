@@ -828,41 +828,23 @@ class Component {
           <div class=" row">
             <div class="col-md-3 mb-4 ms-auto">
               <div>
-                <a href=" ' . BASE . '/">Logo</a>
+                <!-- <a href=" ' . BASE . '/">Logo</a> -->
                 <h6 class="font-weight-bolder mb-4">Pr. Humberto Oliveira</h6>
               </div>
               <div>
                 <ul class="d-flex flex-row ms-n3 nav">
                   <li class="nav-item">
-                    <a class="nav-link pe-1" href="https://www.facebook.com/CreativeTim" target="_blank">
+                    <a class="nav-link pe-1" href="https://www.facebook.com/educacaoetreinamentos/" target="_blank">
                       <i class="fab fa-facebook text-lg opacity-8"></i>
                     </a>
                   </li>
       
                   <li class="nav-item">
-                    <a class="nav-link pe-1" href="https://twitter.com/creativetim" target="_blank">
-                      <i class="fab fa-twitter text-lg opacity-8"></i>
-                    </a>
-                  </li>
-      
-                  <li class="nav-item">
-                    <a class="nav-link pe-1" href="https://dribbble.com/creativetim" target="_blank">
-                      <i class="fab fa-dribbble text-lg opacity-8"></i>
-                    </a>
-                  </li>
-      
-      
-                  <li class="nav-item">
-                    <a class="nav-link pe-1" href="https://github.com/creativetimofficial" target="_blank">
-                      <i class="fab fa-github text-lg opacity-8"></i>
-                    </a>
-                  </li>
-      
-                  <li class="nav-item">
-                    <a class="nav-link pe-1" href="https://www.youtube.com/channel/UCVyTG4sCw-rOvB9oHkzZD1w" target="_blank">
+                    <a class="nav-link pe-1" href="https://www.youtube.com/channel/UClFMwemd5j7EsXlV-gTw5Xg" target="_blank">
                         <i class="fab fa-youtube text-lg opacity-8"></i>
                     </a>
                   </li>
+
                 </ul>
               </div>
             </div>
@@ -979,7 +961,7 @@ class Component {
             <div class="col-12">
               <div class="text-center">
                 <p class="text-dark my-4 text-sm font-weight-normal">
-                  Todos os direitos reservados. Copyright © Unitplus by <a href="/" target="_blank">Unitplus</a>.
+                  Todos os direitos reservados. Copyright © Unitplus by <a href="https://www.unitplus.com.br/" target="_blank">Unitplus</a>.
                 </p>
               </div>
             </div>
