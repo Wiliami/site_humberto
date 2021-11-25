@@ -6,7 +6,6 @@ class Component {
 
         <!-- <link id='pagestyle' href=' " . BASE . "/src/css/material-kit.css?v=3.0.0' rel='stylesheet' /> -->
 
-
             <div class=\"container\">
                 <nav class=\"d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3\">
                     <a href=' " . BASE . "/' type=\"button\" class=\"btn btn-black\">Logo</a>
