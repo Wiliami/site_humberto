@@ -17,10 +17,11 @@
         <link rel="stylesheet" href="<?= BASE ?>/src/css/footer.css" type="text/css">
 
         <!-- Font Awesome Icons -->
-        <!-- <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script> -->
+        <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
         <!-- Material Icons -->
         <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet"> -->
         <!-- CSS Files -->
+
         <link id="pagestyle" href="<?= BASE ?>/src/css/material-kit.css?v=3.0.0" rel="stylesheet" />
     </head>
     
@@ -183,12 +184,13 @@
             </div>
             </div>
         </section>
+
+
+        <?php
         
-
-        <?php 
-
             $Component = new Component();
-            echo $Component->getFooterExampleTest();
+            // echo $Component-> getFooterExampleTest();
+            echo $Component->getFooterHomeTeste();
 
         ?>
         <!-- -------- END FOOTER 5 w/ DARK BACKGROUND ------- -->
