@@ -1,12 +1,10 @@
-    <?php 
+        <?php 
 
-        $Component = new Component();
+            $Component = new Component();
+            echo $Component->getHeadHtmlPro();
+            echo $Component->getMenu();
 
-        echo $Component->getHeadHtml();
-        echo $Component->getMenu();
-
-    ?>
-
+        ?>
 
     <!-- <header class="bg-dark py-5" style="height: 698px;"> -->
        
@@ -70,17 +68,20 @@
                     <div class="container">
                     <div class="row">
                         <div class="col-lg-6 col-md-7 d-flex justify-content-center flex-column">
-                            <h1 class="display-5 fw-bolder text-white mb-2">Educação!</h1>
-                            <p class="lead text-white mt-3">Descubra um mundo <br/>de facilidades ao <br/>estudar no exterior.</p>
+                            <h1 class="display-5 fw-bolder text-white mb-2">Educação & Sonhos!</h1>
+                            <p class="lead text-white mt-3">Descubra um mundo de facilidades ao <br/>estudar no exterior.</p>
                         <div class="buttons">
-                            <button type="button" class="btn btn-white mt-4">Get Started</button>
-                            <button type="button" class="btn text-white shadow-none mt-4">Read more</button>
+                            <a class="btn btn-info btn-lg px-4 me-sm-3" href="https://www.unitbrasil.com/">visitar Unitbrasil</a>
                         </div>
                         </div>
                     </div>
                     </div>
                 </div>
-        </header
+        </header>
+
+        
+
+    
 
 
     <?php 
@@ -89,4 +90,7 @@
         echo $Component->getFooterExampleTest();
 
     ?>
+
+    </body>
+</html>
 

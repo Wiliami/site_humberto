@@ -4,8 +4,6 @@ class Component {
     public function getMenu ($MenuActive = 'index') {
         return "
 
-        <!-- <link id='pagestyle' href=' " . BASE . "/src/css/material-kit.css?v=3.0.0' rel='stylesheet' /> -->
-
             <div class=\"container\">
                 <nav class=\"d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3\">
                     <a href=' " . BASE . "/' type=\"button\" class=\"btn btn-black\">Logo</a>
@@ -795,25 +793,29 @@ class Component {
             <html lang="en" itemscope itemtype="http://schema.org/WebPage">
             
                 <head>
-                <meta charset="utf-8" />
-                <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-                <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
-                <link rel="icon" type="image/png" href="../assets/img/favicon.png">
-                <title>
-                    Page | Biografia
-                </title>
-                <!-- Fonts and icons -->
-                <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
-                <!-- Nucleo Icons -->
-                <link href="' . BASE . '/src/css/nucleo-icons.css" rel="stylesheet" />
-                <link href="' . BASE . '/src/css/nucleo-svg.css" rel="stylesheet" />
-                <!-- Font Awesome Icons -->
-                <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
-                <!-- Material Icons -->
-                <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
-                <!-- CSS Files -->
-                <link id="pagestyle" href="' . BASE . '/src/css/material-kit.css?v=3.0.0" rel="stylesheet" />
+                    <meta charset="utf-8" />
+                    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+                    <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+                    <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+                    <title>
+                        Page | Biografia
+                    </title>
+                    <!-- Fonts and icons -->
+                    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
+                    <!-- Nucleo Icons -->
+                    <link href="' . BASE . '/src/css/nucleo-icons.css" rel="stylesheet" />
+                    <link href="' . BASE . '/src/css/nucleo-svg.css" rel="stylesheet" />
+                    <!-- Font Awesome Icons -->
+                    <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+                    <!-- Material Icons -->
+                    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+                    <!-- CSS Files -->
+                    <link id="pagestyle" href="' . BASE . '/src/css/material-kit.css?v=3.0.0" rel="stylesheet" />
                 </head>
+            <body>
+
+                <!-- após isso vem o getMenu -->
+        
         
         ';
     }
@@ -858,7 +860,7 @@ class Component {
       
                   <li class="nav-item">
                     <a class="nav-link pe-1" href="https://www.youtube.com/channel/UCVyTG4sCw-rOvB9oHkzZD1w" target="_blank">
-                      <i class="fab fa-youtube text-lg opacity-8"></i>
+                        <i class="fab fa-youtube text-lg opacity-8"></i>
                     </a>
                   </li>
                 </ul>

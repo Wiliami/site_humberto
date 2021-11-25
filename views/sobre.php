@@ -2,7 +2,7 @@
 
     $Component = new Component();
 
-    echo $Component->getHeadHtml();
+    echo $Component->getHeadHtmlPro();
     echo $Component->getMenu();
 
 ?>
@@ -29,12 +29,10 @@
         </header> -->
         <!-- -------- END HEADER 1 w/ text and image on right ------- -->
 
-  
 
-
-        <!-- <header class="header-2" style="height: 698px;">
-            <div class="page-header min-vh-100 relative" style="background-image: url('<?= BASE ?>/src/images/page-youtube1.jpg')">
-                <span class="mask bg-gradient-primary opacity-4"></span>
+        <header class="header-2" style="height: 698px;">
+            <div class="page-header min-vh-100 relative" style="background-image: url('<?= BASE ?>/src/images/bg-2.jpg')">
+                <span class="mask bg-gradient-info opacity-4"></span>
                 <div class="container">
                     <div class="row">
                         <div class="my-5 text-center text-xl-start">
@@ -42,25 +40,18 @@
                             <p class="lead text-white mt-3">Comece um tour pelo site<br /> e saiba como funciona o evangelismo web.</p>
                         </div>
                         <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
-                            <a class="btn btn-primary btn-lg px-4 me-sm-3" href="<?= BASE ?>/cadastro">Começar</a>
+                            <a class="btn btn-info btn-lg px-4 me-sm-3" href="<?= BASE ?>/cadastro">Começar</a>
                         </div>  
                     </div>
                 </div>
             </div>
-        </header> -->
-
-        <?php 
-
-            $Component = new Component();
-            echo $Component->getHeaderPage();
-        
-        ?>
+        </header> 
 
 
         <?php
 
-        $Component = new Component();
-        echo $Component->getFooterExampleTest();
+            $Component = new Component();
+            echo $Component->getFooterExampleTest();
 
         ?>
 
