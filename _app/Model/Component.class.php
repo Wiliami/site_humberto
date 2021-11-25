@@ -4,7 +4,7 @@ class Component {
     public function getMenu ($MenuActive = 'index') {
         return "
 
-        <link id='pagestyle' href=' " . BASE . "/src/css/material-kit.css?v=3.0.0' rel='stylesheet' />
+        <!-- <link id='pagestyle' href=' " . BASE . "/src/css/material-kit.css?v=3.0.0' rel='stylesheet' /> -->
 
 
             <div class=\"container\">

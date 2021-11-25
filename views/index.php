@@ -89,7 +89,6 @@
 
 
             <!-- Cursos box -->
-            <?php $Component = new Component(); echo $Component->getStyleAreaCurso(); ?>
             <section class="my-5 py-5">
                 <div class="container">
                     <div class="row align-items-center">
