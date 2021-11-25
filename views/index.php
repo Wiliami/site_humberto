@@ -12,14 +12,13 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
     <link rel="stylesheet" href="<?= BASE ?>/src/css/index.css" type="text/css">
-    <!-- CSS do Footer (Home) -->
     <link rel="stylesheet" href="<?= BASE ?>/src/css/footer.css" type="text/css">
 
 
-    <!-- <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" /> -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
 
     <!-- Nucleo Icons -->
-    <!-- <link href="<?= BASE ?>/src/css/nucleo-icons.css" rel="stylesheet" />
+    <!-- <link href="<?= BASE ?>/src/css/nucleo-icons.css" rel="stylesheet" /> 
     <link href="<?= BASE ?>/src/css/nucleo-svg.css" rel="stylesheet" /> -->
 
     <!-- Font Awesome Icons -->
@@ -31,7 +30,6 @@
     <!-- CSS Files -->
     <!-- Estiliza o card de curso -->
     <!-- <link id="pagestyle" href="<?= BASE ?>/src/css/material-kit.css?v=3.0.0" rel="stylesheet" /> -->
-
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
@@ -91,11 +89,7 @@
 
 
             <!-- Cursos box -->
-            <!-- <?php 
-
-               
-            
-            ?> -->
+            <?php $Component = new Component(); echo $Component->getStyleAreaCurso(); ?>
             <section class="my-5 py-5">
                 <div class="container">
                     <div class="row align-items-center">

@@ -4,55 +4,8 @@ class Component {
     public function getMenu ($MenuActive = 'index') {
         return "
 
-        <!DOCTYPE html>
-            <html lang='pt-BR'>
+        <link id='pagestyle' href=' " . BASE . "/src/css/material-kit.css?v=3.0.0' rel='stylesheet' />
 
-        <head>
-            <meta charset='UTF-8'>
-            <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-            <title>Página | Home</title>
-            <link rel='preconnect' href='https://fonts.googleapis.com'>
-            <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
-            <link href='https://fonts.googleapis.com/css2?family=Roboto:wght@100;700&display=swap' rel='stylesheet'>
-            <link href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet'>
-            <link href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css' rel='stylesheet' />
-            <link rel='stylesheet' href='<?= BASE ?>/src/css/index.css' type='text/css'>
-            <link rel='stylesheet' href='<?= BASE ?>/src/css/footer.css' type='text/css'>
-
-
-            <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700' />
-
-            <!-- Nucleo Icons -->
-            <link href='<?= " .BASE . " '/src/css/nucleo-icons.css' rel='stylesheet' />
-            <link href='" .BASE . " '/src/css/nucleo-svg.css' rel='stylesheet' />
-
-            <!-- Font Awesome Icons -->
-            <script src='https://kit.fontawesome.com/42d5adcbca.js' crossorigin='anonymous'></script>
-
-            <!-- Material Icons -->
-            <link href='https://fonts.googleapis.com/icon?family=Material+Icons+Round' rel='stylesheet'>
-
-            <!-- CSS Files -->
-            <!-- Estiliza o card de curso -->
-            <link id='pagestyle' href='" .BASE . "'/src/css/material-kit.css?v=3.0.0' rel='stylesheet' />
-
-
-            <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU' crossorigin='anonymous'>
-            <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js' integrity='sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ' crossorigin='anonymous'></script>
-
-            <script src='https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js' integrity='sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN' crossorigin='anonymous'></script>
-            <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js' integrity='sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/' crossorigin='anonymous'></script>
-
-            
-            <!-- CSS do Footer da Home -->
-            <script src='https://code.jquery.com/jquery-3.5.1.slim.min.js' integrity='sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj' crossorigin='anonymous'></script>
-            <script src='https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js' integrity='sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN' crossorigin='anonymous'></script>
-            <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js' integrity='sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV' crossorigin='anonymous'></script>
-
-        </head>
-
-        <body>
 
             <div class=\"container\">
                 <nav class=\"d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3\">
@@ -60,9 +13,9 @@ class Component {
 
                             <ul class=\"nav col-12 col-md-auto mb-2 justify-content-center mb-md-0\">
                                 <li><a href=' " . BASE . "/' class=\"nav-link px-2 link-secondary\">Home</a></li>
-                                <li><a href='  " . BASE . "/sobre' class=\"nav-link px-2 link-secondary\">Sobre</a></li>
+                                <li><a href=' " . BASE . "/sobre' class=\"nav-link px-2 link-secondary\">Sobre</a></li>
                                 <li><a href=' " . BASE . "/conteudo' class=\"nav-link px-2 link-secondary\">Conteúdo</a></li>
-                                <li><a href='" . BASE . "/unitbrasil' class=\"nav-link px-2 link-secondary\">A Unitbrasil</a></li>
+                                <li><a href='"  . BASE . "/unitbrasil' class=\"nav-link px-2 link-secondary\">A Unitbrasil</a></li>
                             </ul>
 
 
@@ -118,6 +71,7 @@ class Component {
 
     public function getFooter() {
         return '
+
                 <!-- Footer -->
                 <div class="header-2">
                     <footer class="bg-dark text-center text-lg-start text-white">
@@ -235,36 +189,36 @@ class Component {
 
     public function getFooterExampleTest() {
         return '
-        <div class="footer-dark">
-            <footer>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-6 col-md-3 item">
-                            <h3>Serviços</h3>
-                            <ul>
-                                <li><a href="https://www.adventistas.org/pt/">IASD</a></li>
-                                <li><a href="https://www.unitplus.com.br/">UNITPLUS</a></li>
-                                <li><a href="/">EVENTOS</a></li>
-                            </ul>
+                <div class="footer-dark">
+                    <footer>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-sm-6 col-md-3 item">
+                                    <h3>Serviços</h3>
+                                    <ul>
+                                        <li><a href="https://www.adventistas.org/pt/">IASD</a></li>
+                                        <li><a href="https://www.unitplus.com.br/">UNITPLUS</a></li>
+                                        <li><a href="/">EVENTOS</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-sm-6 col-md-3 item">
+                                    <h3>Sobre</h3>
+                                    <ul>
+                                        <li><a href="#">MINISTÉRIO PASTORAL</a></li>
+                                        <li><a href="#">EQUIPE</a></li>
+                                        <li><a href="#">PROJETOS</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6 item text">
+                                    <h3>UNITBRASIL</h3>
+                                    <p>Transforme positivamente a maneira como você pensa e age, não só em relação ao dinheiro, mas nas suas relações pessoais e profissionais, com você mesmo e com as pessoas que você ama.</p>
+                                </div>
+                                <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a></div>
+                            </div>
+                            <p class="copyright">Unitbrasil © 2021</p>
                         </div>
-                        <div class="col-sm-6 col-md-3 item">
-                            <h3>Sobre</h3>
-                            <ul>
-                                <li><a href="#">MINISTÉRIO PASTORAL</a></li>
-                                <li><a href="#">EQUIPE</a></li>
-                                <li><a href="#">PROJETOS</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-md-6 item text">
-                            <h3>UNITBRASIL</h3>
-                            <p>Transforme positivamente a maneira como você pensa e age, não só em relação ao dinheiro, mas nas suas relações pessoais e profissionais, com você mesmo e com as pessoas que você ama.</p>
-                        </div>
-                        <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a></div>
-                    </div>
-                    <p class="copyright">Unitbrasil © 2021</p>
+                    </footer>
                 </div>
-            </footer>
-        </div>
         ';
     }
     
@@ -863,6 +817,15 @@ class Component {
                 <!-- CSS Files -->
                 <link id="pagestyle" href="' . BASE . '/src/css/material-kit.css?v=3.0.0" rel="stylesheet" />
                 </head>
+        
+        ';
+    }
+
+    public function getStyleAreaCurso() {
+        return '
+
+            <link id="pagestyle" href=" ' .BASE . '/src/css/material-kit.css?v=3.0.0" rel="stylesheet" />
+
         
         ';
     }
