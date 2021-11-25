@@ -1,11 +1,11 @@
-<?php 
+    <?php 
 
-$Component = new Component();
+        $Component = new Component();
 
-echo $Component->getHeadHtml();
-echo $Component->getMenu();
+        echo $Component->getHeadHtml();
+        echo $Component->getMenu();
 
-?>
+    ?>
 
 
     <!-- <header class="bg-dark py-5" style="height: 698px;"> -->
@@ -44,7 +44,7 @@ echo $Component->getMenu();
         </div>
         
     </header> -->
-    <div class="overlay"></div>
+    <!-- <div class="overlay"></div>
     
     <header class="header-2" style="height: 698px;">
         <div class="page-header min-vh-100 relative" style="background-image: url('<?= BASE ?>/src/images/unitbrasil-background.jpeg')">
@@ -61,14 +61,32 @@ echo $Component->getMenu();
                 </div>
             </div>
         </div>
-    </header>
+    </header> -->
 
 
+        <header>
+                <div class="page-header min-vh-100" style="background-image: url(<?= BASE ?>/src/images/unitbrasil-background.jpeg;);" loading="lazy">
+                    <span class="mask bg-gradient-dark opacity-5"></span>
+                    <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-7 d-flex justify-content-center flex-column">
+                            <h1 class="display-5 fw-bolder text-white mb-2">Educação!</h1>
+                            <p class="lead text-white mt-3">Descubra um mundo <br/>de facilidades ao <br/>estudar no exterior.</p>
+                        <div class="buttons">
+                            <button type="button" class="btn btn-white mt-4">Get Started</button>
+                            <button type="button" class="btn text-white shadow-none mt-4">Read more</button>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+        </header
 
-<?php 
 
-$Component = new Component();
-echo $Component->getFooterExampleTest();
+    <?php 
 
-?>
+        $Component = new Component();
+        echo $Component->getFooterExampleTest();
+
+    ?>
 

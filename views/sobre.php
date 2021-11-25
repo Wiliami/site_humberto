@@ -32,8 +32,7 @@
   
 
 
-        <div class="overlay"></div>
-        <header class="header-2" style="height: 698px;">
+        <!-- <header class="header-2" style="height: 698px;">
             <div class="page-header min-vh-100 relative" style="background-image: url('<?= BASE ?>/src/images/page-youtube1.jpg')">
                 <span class="mask bg-gradient-primary opacity-4"></span>
                 <div class="container">
@@ -48,7 +47,14 @@
                     </div>
                 </div>
             </div>
-        </header>
+        </header> -->
+
+        <?php 
+
+            $Component = new Component();
+            echo $Component->getHeaderPage();
+        
+        ?>
 
 
         <?php

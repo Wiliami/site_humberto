@@ -29,7 +29,7 @@
 
    </header> -->
 
-   <header class="header-2" style="height: 698px;">
+   <!-- <header class="header-2" style="height: 698px;">
         <div class="page-header min-vh-100 relative" style="background-image: url('<?= BASE ?>/src/images/page-youtube.jpg')">
             <span class="mask bg-gradient-primary opacity-4"></span>
             <div class="container">
@@ -44,7 +44,15 @@
                 </div>
             </div>
         </div>
-    </header>
+    </header> -->
+
+
+    <?php
+
+        $Component = new Component();
+        echo $Component->getHeaderPage();
+
+    ?>
 
 
    <!-- <header class="" style="height: 698px;">            
