@@ -25,13 +25,12 @@
     </header> 
 
 
-   <?php 
-
+    <?php
+    
         $Component = new Component();
-        echo $Component->getFooterExampleTest();
+        echo $Component->getFooterHomeTeste();
 
     ?>
-
     </body>
 </html>
 

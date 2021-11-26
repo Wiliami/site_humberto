@@ -28,12 +28,12 @@
     
 
 
-    <?php 
+        <?php
 
-        $Component = new Component();
-        echo $Component->getFooterExampleTest();
+            $Component = new Component();
+            echo $Component->getFooterHomeTeste();
 
-    ?>
+        ?>
 
     </body>
 </html>

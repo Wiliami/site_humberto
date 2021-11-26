@@ -1,12 +1,15 @@
 <?php
 
+
+// top
+
 class Component {
     public function getMenu ($MenuActive = 'index') {
         return "
 
             <div class=\"container\">
                 <nav class=\"d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3\">
-                    <a href=' " . BASE . "/' type=\"button\" class=\" nav btn btn-black mb-2 mb-md-0\" style='width: 250; height: 100;'>
+                    <a href=' " . BASE . "/' type=\"button\" class=\" nav btn btn-black mb-2 mb-md-0\">
                         <img src='" . BASE . "/src/images/icon_small.png' alt='Logo' style=' width: 50px; height: 50px;'>
                     </a>
                             <ul class=\"nav col-12 col-md-auto mb-2 justify-content-center mb-md-0\">
@@ -179,41 +182,6 @@ class Component {
                     </div>
                 </body>
             </html>
-        ';
-    }
-
-    public function getFooterExampleTest() {
-        return '
-                <div class="footer-dark">
-                    <footer>
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-sm-6 col-md-3 item">
-                                    <h3>Serviços</h3>
-                                    <ul>
-                                        <li><a href="https://www.adventistas.org/pt/">IASD</a></li>
-                                        <li><a href="https://www.unitplus.com.br/">UNITPLUS</a></li>
-                                        <li><a href="/">EVENTOS</a></li>
-                                    </ul>
-                                </div>
-                                <div class="col-sm-6 col-md-3 item">
-                                    <h3>Sobre</h3>
-                                    <ul>
-                                        <li><a href="#">MINISTÉRIO PASTORAL</a></li>
-                                        <li><a href="#">EQUIPE</a></li>
-                                        <li><a href="#">PROJETOS</a></li>
-                                    </ul>
-                                </div>
-                                <div class="col-md-6 item text">
-                                    <h3>UNITBRASIL</h3>
-                                    <p>Transforme positivamente a maneira como você pensa e age, não só em relação ao dinheiro, mas nas suas relações pessoais e profissionais, com você mesmo e com as pessoas que você ama.</p>
-                                </div>
-                                <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a></div>
-                            </div>
-                            <p class="copyright">Unitbrasil © 2021</p>
-                        </div>
-                    </footer>
-                </div>
         ';
     }
     
@@ -827,11 +795,11 @@ class Component {
             <div class="col-md-3 mb-4 ms-auto">
               <div>
 
-                <a href=" ' . BASE . '/" type=\"button\" class=\" nav btn btn-black mb-2 mb-md-0\" style="width: 250; height: 100;">
+                <!-- <a href=" ' . BASE . '/" type=\"button\" class=\" nav btn btn-black mb-2 mb-md-0\" style="width: 250; height: 100;">
                     <img src="' . BASE . '/src/images/icon_small.png" alt="Logo" style=" width: 50px; height: 50px;">
-                </a>
+                </a> -->
 
-                <!-- <h6 class="font-weight-bolder mb-4">Pr. Humberto Oliveira</h6> -->
+                <h6 class="font-weight-bolder mb-4">Pr. Humberto Oliveira</h6>
               </div>
               <div>
                 <ul class="d-flex flex-row ms-n3 nav">
@@ -972,8 +940,6 @@ class Component {
       </footer>
         ';
     }
-
-
 
     
 }

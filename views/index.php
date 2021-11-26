@@ -50,12 +50,12 @@
 
         <?php
         
-            $Component = new Component();
-            echo $Component->getMenu();
+            $Component = new Component(); 
+            echo $Component->getHeadHtmlPro();
+            echo $Component->getMenu();   
             echo $Component->getHeaderOficial();
-
+            
         ?>
-
 
 
         <!-- conteúdo principal -->
