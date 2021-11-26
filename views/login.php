@@ -8,13 +8,13 @@
 
 ?>
 
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="pt-BR">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Página | Login</title>
+        <title>Página | Login</title> -->
         
         <!-- Google Fonts -->
         <!-- <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,200,300,700,600' rel='stylesheet' type='text/css'>
@@ -49,7 +49,7 @@
             <link rel="icon" type="image/png" href="./assets/img//favicon.png">
             <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
             <title>
-                Paper Kit by Creative Tim
+                Page | Login
             </title>
             <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
 
@@ -76,23 +76,7 @@
                     <div class="col-md-6">
                     
                         <form action="" id="login-form-wrap" class="login" method="post">
-                        <?php 
-
-                            $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
-                            if(!empty($Post['login'])) {
-                              
-                                $User = new User();
-                                $User->exeLogin($Post['email'], $Post['password']);
-                                if($User->getResult()) {
-                                    Error($User->getError());
-                                    header('Location: ' . BASE . '/dashboard');
-                                    die();
-                                } else {
-                                    Error($User->getError(), 'danger');
-                                }
-                            } 
-
-                            ?>
+                        
                             
                             <h2>Acessar</h2>
                             <p class="form-row form-row-first">
@@ -126,6 +110,24 @@
             </div>
         </div> -->
 
+            <?php 
+
+                            $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+                            if(!empty($Post['login'])) {
+                              
+                                $User = new User();
+                                $User->exeLogin($Post['email'], $Post['password']);
+                                if($User->getResult()) {
+                                    Error($User->getError());
+                                    header('Location: ' . BASE . '/dashboard');
+                                    die();
+                                } else {
+                                    Error($User->getError(), 'danger');
+                                }
+                            } 
+
+            ?>
+
 
             <div class="section section-image section-login" style="background-image: url('<?= BASE ?>/src/images/login-image.jpg')">
             <div class="container">
@@ -134,18 +136,18 @@
                     <div class="card card-register">
                     <h3 class="title mx-auto">Seja bem-vindo(a)</h3>
                 
-                    <form class="register-form">
+                    <form class="" method="post">
                         <label>Email</label>
                         <div class="input-group form-group-no-border">
                         <div class="input-group-prepend">
                         </div>
-                            <input type="email" class="form-control" name="email" placeholder="Email">
+                            <input type="email" class="form-control" name="email" value="<?= isset($Post['email'])?$Post['email']: '' ?>" placeholder="Email">
                         </div>
                         <label>Senha</label>
                         <div class="input-group form-group-no-border">
                         <div class="input-group-prepend">
                         </div>
-                            <input type="password" class="form-control" name="password" placeholder="Senha">
+                            <input type="password" class="form-control" name="password" value="<?= isset($Post['password'])?$Post['password']: '' ?>" placeholder="Senha">
                         </div>
                         <button class="btn btn-danger btn-block btn-round" name="login">Entrar</button>
                     </form>
