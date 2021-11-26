@@ -1,5 +1,5 @@
         <?php 
-
+        
             $Component = new Component();
             echo $Component->getHeadHtmlPro();
             echo $Component->getMenu();
@@ -8,7 +8,7 @@
     
         <header>
                 <div class="page-header min-vh-100" style="background-image: url('<?= BASE ?>/src/images/unitbrasil-background.jpeg')" loading="lazy">
-                    <span class="mask bg-gradient-info opacity-4"></span>
+                    <span class="mask bg-gradient-secondary opacity-4"></span>
                     <div class="container">
                     <div class="row">
                         <div class="col-lg-6 col-md-7 d-flex justify-content-center flex-column">

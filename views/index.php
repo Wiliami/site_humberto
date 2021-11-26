@@ -165,15 +165,14 @@
                 </div>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img class="d-block w-100" src="<?= BASE ?>/src/images/man-speaker-post.jpg"
-                            alt="imagem de palestra" />
+                        <img class="d-block w-100" src="<?= BASE ?>/src/images/humberto-background-bio.jpeg" alt="imagem de palestra" />
                         <div class="carousel-caption d-none d-md-block">
                             <h5>Como ser uma pessoa confiante?</h5>
                             <p>Saiba quais são as melhores ferramentas sobre perfomance e influência social.</p>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img class="d-block w-100" src="<?= BASE ?>/src/images/man-speech.jpg" alt="imagem de palestra" />
+                        <img class="d-block w-100" src="<?= BASE ?>/src/images/man-speec.jpg" alt="imagem de palestra" />
                         <div class="carousel-caption d-none d-md-block">
                             <h5>Família, vida financeira e social.</h5>
                             <p>Saiba como ter uma feliz nessas três áreas importantes.</p>

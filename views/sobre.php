@@ -30,9 +30,9 @@
         <!-- -------- END HEADER 1 w/ text and image on right ------- -->
 
 
-        <header class="header-2" style="height: 698px;">
+        <header class="header-2">
             <div class="page-header min-vh-100 relative" style="background-image: url('<?= BASE ?>/src/images/page-youtube1.jpg')">
-                <span class="mask bg-gradient-info opacity-4"></span>
+                <span class="mask bg-gradient-secondary opacity-4"></span>
                 <div class="container">
                     <div class="row">
                         <div class="my-5 text-center text-xl-start">

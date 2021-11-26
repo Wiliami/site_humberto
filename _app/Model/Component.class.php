@@ -6,7 +6,7 @@ class Component {
 
             <div class=\"container\">
                 <nav class=\"d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3\">
-                    <a href=' " . BASE . "/' type=\"button\" class=\" nav btn btn-black\">Logo</a>
+                    <a href=' " . BASE . "/' type=\"button\" class=\" nav btn btn-black mb-2 mb-md-0\">Logo</a>
 
                             <ul class=\"nav col-12 col-md-auto mb-2 justify-content-center mb-md-0\">
                                 <li><a href=' " . BASE . "/' class=\"nav-link px-2 link-secondary\">Home</a></li>

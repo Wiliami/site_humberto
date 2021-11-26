@@ -37,8 +37,8 @@
         ?>
     
         <header>
-            <div class="page-header min-height-400" style="background-image: url('<?= BASE ?>/src/images/humberto-background-bio.jpeg');" loading="lazy">
-            <span class="mask bg-gradient-dark opacity-8"></span>
+            <div class="page-header min-height-400" style="background-image: url('<?= BASE ?>/src/images/humberto-background-bio.jpeg')" loading="lazy">
+                <span class="mask bg-gradient-secondary opacity-4"></span>
             </div>
         </header>
         <!-- -------- END HEADER 4 w/ search book a ticket form ------- -->
@@ -126,20 +126,7 @@
                                 <span class="text-sm opacity-8">Manaus, AM 69090-090</span>
                             </div>
                             </div>
-                            <div class="mt-4">
-                            <button type="button" class="btn btn-icon-only btn-link text-white btn-lg mb-0" data-toggle="tooltip" data-placement="bottom" data-original-title="Log in with Facebook">
-                                <i class="fab fa-facebook"></i>
-                            </button>
-                            <button type="button" class="btn btn-icon-only btn-link text-white btn-lg mb-0" data-toggle="tooltip" data-placement="bottom" data-original-title="Log in with Twitter">
-                                <i class="fab fa-twitter"></i>
-                            </button>
-                            <button type="button" class="btn btn-icon-only btn-link text-white btn-lg mb-0" data-toggle="tooltip" data-placement="bottom" data-original-title="Log in with Dribbble">
-                                <i class="fab fa-dribbble"></i>
-                            </button>
-                            <button type="button" class="btn btn-icon-only btn-link text-white btn-lg mb-0" data-toggle="tooltip" data-placement="bottom" data-original-title="Log in with Instagram">
-                                <i class="fab fa-instagram"></i>
-                            </button>
-                            </div>
+                           
                         </div>
                         </div>
                     </div>
