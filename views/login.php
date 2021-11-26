@@ -41,7 +41,7 @@ if($User->verifyLoginUserON()) {
 
 
 
-        <div class="single-product-area">
+        <!-- <div class="single-product-area">
             <div class="zigzag-bottom"></div>
             <div class="container">
                 <div class="row">                
@@ -52,6 +52,7 @@ if($User->verifyLoginUserON()) {
 
                             $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
                             if(!empty($Post['login'])) {
+                              
                                 $User = new User();
                                 $User->exeLogin($Post['email'], $Post['password']);
                                 if($User->getResult()) {
@@ -68,11 +69,11 @@ if($User->verifyLoginUserON()) {
                             <h2>Acessar</h2>
                             <p class="form-row form-row-first">
                                 <label for="login">E-mail <span class="required">*</span></label>
-                                <input type="text" id="login" name="email" value="<?= isset($Post['email'])?$Post['email']: '' ?>" class="input-text" required>
+                                <input type="text" id="login" name="email" value="<?= isset($Post['email'])?$Post['email']: '' ?>" class="input-text" >
                             </p>
                             <p class="form-row form-row-last">
                                 <label for="senha">Senha <span class="required">*</span></label>
-                                <input type="password" id="senha" name="password" value="<?= isset($Post['password'])?$Post['password']: '' ?>" class="input-text" required>
+                                <input type="password" id="senha" name="password" value="<?= isset($Post['password'])?$Post['password']: '' ?>" class="input-text" >
                             </p>
                             <div class="clear"></div>
                 
@@ -93,6 +94,58 @@ if($User->verifyLoginUserON()) {
                         </form>                    
                     </div>
                 
+                </div>
+            </div>
+        </div> -->
+
+
+
+            <div class="section section-image section-login" style="background-image: url('./assets/img/login-image.jpg');">
+            <div class="container">
+                <div class="row">
+                <div class="col-lg-4 col-md-6 mx-auto">
+                    <div class="card card-register">
+                    <h3 class="title mx-auto">Welcome</h3>
+                    <div class="social-line text-center">
+                        <a href="#pablo" class="btn btn-neutral btn-facebook btn-just-icon mt-0">
+                        <i class="fa fa-facebook-square"></i>
+                        </a>
+                        <a href="#pablo" class="btn btn-neutral btn-google btn-just-icon mt-0">
+                        <i class="fa fa-google-plus"></i>
+                        </a>
+                        <a href="#pablo" class="btn btn-neutral btn-twitter btn-just-icon mt-0">
+                        <i class="fa fa-twitter"></i>
+                        </a>
+                    </div>
+                    <form class="register-form">
+                        <label>Email</label>
+                        <div class="input-group form-group-no-border">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                            <i class="nc-icon nc-email-85"></i>
+                            </span>
+                        </div>
+                        <input type="email" class="form-control" placeholder="Email">
+                        </div>
+                        <label>Password</label>
+                        <div class="input-group form-group-no-border">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                            <i class="nc-icon nc-key-25"></i>
+                            </span>
+                        </div>
+                        <input type="password" class="form-control" placeholder="Password">
+                        </div>
+                        <button class="btn btn-danger btn-block btn-round">Register</button>
+                    </form>
+                    <div class="forgot">
+                        <a href="#" class="btn btn-link btn-danger">Forgot password?</a>
+                    </div>
+                    </div>
+                    <div class="col text-center">
+                    <a href="./examples/register-page.html" class="btn btn-outline-neutral btn-round btn-lg" target="_blank">View Register Page</a>
+                    </div>
+                </div>
                 </div>
             </div>
         </div>

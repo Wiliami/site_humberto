@@ -6,8 +6,9 @@ class Component {
 
             <div class=\"container\">
                 <nav class=\"d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3\">
-                    <a href=' " . BASE . "/' type=\"button\" class=\" nav btn btn-black mb-2 mb-md-0\">Logo</a>
-
+                    <a href=' " . BASE . "/' type=\"button\" class=\" nav btn btn-black mb-2 mb-md-0\" style='width: 250; height: 100;'>
+                        <img src='" . BASE . "/src/images/icon_small.png' alt='Logo' style=' width: 50px; height: 50px;'>
+                    </a>
                             <ul class=\"nav col-12 col-md-auto mb-2 justify-content-center mb-md-0\">
                                 <li><a href=' " . BASE . "/' class=\"nav-link px-2 link-secondary\">Home</a></li>
                                 <li><a href=' " . BASE . "/sobre' class=\"nav-link px-2 link-secondary\">Sobre</a></li>
@@ -217,13 +218,11 @@ class Component {
     }
     
     public function getLogo() {
-        return '
-        <div class=\"container\">
-            <nav class=\"d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3\">
-                <a href=" '. BASE .' ">Logo</a>
-            </nav>
-        </div>
-        ';
+        return "
+            <a href=' " . BASE . "/' type=\"button\" class=\" nav btn btn-black mb-2 mb-md-0\" style='width: 250; height: 100;'>
+                <img src='" . BASE . "/src/images/icon_small.png' alt='Logo' style=' width: 50px; height: 50px;'>
+            </a>             
+        ";
     }
 
 
@@ -827,8 +826,12 @@ class Component {
           <div class=" row">
             <div class="col-md-3 mb-4 ms-auto">
               <div>
-                <!-- <a href=" ' . BASE . '/">Logo</a> -->
-                <h6 class="font-weight-bolder mb-4">Pr. Humberto Oliveira</h6>
+
+                <a href=" ' . BASE . '/" type=\"button\" class=\" nav btn btn-black mb-2 mb-md-0\" style="width: 250; height: 100;">
+                    <img src="' . BASE . '/src/images/icon_small.png" alt="Logo" style=" width: 50px; height: 50px;">
+                </a>
+
+                <!-- <h6 class="font-weight-bolder mb-4">Pr. Humberto Oliveira</h6> -->
               </div>
               <div>
                 <ul class="d-flex flex-row ms-n3 nav">
