@@ -31,6 +31,8 @@
     
     <!-- Estiliza o card de curso -->
     <link id="pagestyle" href="<?= BASE ?>/src/css/material-kit.css?v=3.0.0" rel="stylesheet" />
+
+
     
     <!-- Estiliza o index -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
@@ -157,50 +159,51 @@
 
 
             <!-- carrosel -->
-            <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <div class="section pt-o" id="carousel">
+            <div class="container">
+                <div class="row">
+                <div class="col-md-8 ml-auto mr-auto">
+                    <div class="card page-carousel">
+                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner" role="listbox">
+                        <div class="carousel-item active">
+                            <img class="d-block img-fluid" src="<?= BASE ?>/src/images/humberto-background-bio.jpeg" alt="First slide">
+                            <div class="carousel-caption d-none d-md-block">
+                            <p>Somewhere</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block img-fluid" src="<?= BASE ?>/src/images/humberto-background-carrousel.jpeg" alt="Second slide">
+                            <div class="carousel-caption d-none d-md-block">
+                            <p>Somewhere else</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block img-fluid" src="<?= BASE ?>/src/images/humberto-background-bio.jpeg" alt="Third slide">
+                            <div class="carousel-caption d-none d-md-block">
+                            <p>Here it is</p>
+                            </div>
+                        </div>
+                        </div>
+                        <a class="left carousel-control carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                        <span class="fa fa-angle-left"></span>
+                        <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="right carousel-control carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                        <span class="fa fa-angle-right"></span>
+                        <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                    </div>
                 </div>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img class="d-block w-100" src="<?= BASE ?>/src/images/humberto-background-bio.jpeg" alt="imagem de palestra" />
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5>Como ser uma pessoa confiante?</h5>
-                            <p>Saiba quais são as melhores ferramentas sobre perfomance e influência social.</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100" src="<?= BASE ?>/src/images/man-speec.jpg" alt="imagem de palestra" />
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5>Família, vida financeira e social.</h5>
-                            <p>Saiba como ter uma feliz nessas três áreas importantes.</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100" src="<?= BASE ?>/src/images/humberto-background-carrousel.jpeg" alt="imagem de palestra" />
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5>Religião e Ciência</h5>
-                            <p>Qual a relação da Religião com a Ciência.</p>
-                        </div>
-                    </div>
                 </div>
-
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
-                    data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
-                    data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-
             </div>
-
-
+            </div>
 
 
 
