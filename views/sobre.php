@@ -1,11 +1,10 @@
-<?php 
+        <?php 
 
-    $Component = new Component();
+            $Component = new Component();
+            echo $Component->getHeadHtmlPro();
+            echo $Component->getMenu();
 
-    echo $Component->getHeadHtmlPro();
-    echo $Component->getMenu();
-
-?>
+        ?>
 
 
         <header class="header-2">
