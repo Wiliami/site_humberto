@@ -9,7 +9,6 @@
         <link rel="stylesheet" href="<?= BASE ?>/src/css/list-user.css" type="text/css">
         <link id="pagestyle" href="<?= BASE ?>/src/css/material-kit.css?v=3.0.0" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
-
     </head>
 
 <body>

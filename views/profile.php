@@ -34,20 +34,20 @@
     ?>
  
 
-    <form>
+    <!-- <form>
         <h1 style="margin-left: 30px;">Meus dados</h1>
         <div class="form-group row" style="margin-left: 20px;">
             <label for="inputPassword" class="col-sm-2 col-form-label">Nome</label>
             <div class="col-sm-10">
                 <input type="text" class="form-control" id="inputPassword">
-                <!-- value=  $_SESSION['login'] ['user_name'] -->
+                value=  $_SESSION['login'] ['user_name']
             </div>
         </div>
         <div class="form-group row" style="margin-left: 20px;">
             <label for="inputPassword" class="col-sm-2 col-form-label">E-mail</label>
             <div class="col-sm-10">
                 <input type="text" class="form-control" id="inputPassword">
-                <!-- value= $_SESSION['login'] ['user_email'] -->
+                 value= $_SESSION['login'] ['user_email'] 
             </div>
         </div>
         <div class="form-group row" style="margin-left: 20px;">
@@ -58,7 +58,7 @@
         </div>
 
         <button type="submit" class="btn btn-primary mb-2" style="margin: 30px;">Continuar</button>
-    </form>
+    </form> -->
         
 
         <?php
