@@ -27,12 +27,12 @@
 
     <body id="page-top">
     
-
     <?php
         $Component = new Component();
         echo $Component->getMenuAndSideBarDashboard();
         echo $Component->getBarraMenuOptions();
     ?>
+ 
 
     <form>
         <h1 style="margin-left: 30px;">Meus dados</h1>
