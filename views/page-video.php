@@ -36,7 +36,8 @@
     <?php 
 
         $Component = new Component();
-        echo $Component->getMenu();
+        echo $Component->getHeadHtmlPro();
+        echo $Component->getMenu();   
 
     ?>
 
@@ -338,7 +339,7 @@
     <?php 
 
         $Component = new Component();
-        echo $Component->getFooterExampleTest();
+        echo $Component->getFooterHomeTeste();
 
     ?>
 

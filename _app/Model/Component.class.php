@@ -47,8 +47,8 @@ class Component {
             <div class="container h-100">
                  <div class="d-flex h-100 text-center align-items-center">
                     <div class="my-5 text-center text-xl-start">
-                        <h1 class="display-5 fw-bolder text-white mb-2">Plataforma de <br /> evangelismo online <br />e desenvolvimento<br /> pessoal.</h1>
-                        <p class="lead fw-normal text-white-50 mb-4">Comece um tour pelo site<br /> e saiba como funciona o evangelismo web.<br /> Faça o seu login!</p>
+                        <h1 class="display-5 fw-bolder text-white mb-2">Plataforma de <br /> evangelismo online <br />e desenvolvimento <br>pesssoal.</h1>
+                        <p class="lead fw-normal text-white-50 mb-4">Comece um tour pelo site<br /> e saiba como funciona o <br> evangelismo web.</p>
 
                         <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
                             <a class="btn btn-warning btn-lg px-4 me-sm-3" href=" ' . BASE . '/cadastro">Começar</a>
@@ -931,7 +931,7 @@ class Component {
             <div class="col-12">
               <div class="text-center">
                 <p class="text-dark my-4 text-sm font-weight-normal">
-                  Todos os direitos reservados. Copyright © Unitplus by <a href="https://www.unitplus.com.br/" target="_blank">Unitplus</a>.
+                  Todos os direitos reservados. Copyright © Feito by <a href="https://www.unitplus.com.br/" target="_blank">Unitplus</a>.
                 </p>
               </div>
             </div>
