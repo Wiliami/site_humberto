@@ -71,6 +71,9 @@ switch ($URL[0]) {
     case 'teste';
         require_once('./views/test_email.php');
         break;
+    case 'list-user';
+        require_once('./views/list-user.php');
+        break;
     default:
         require_once('./views/not-found.php');
         break;

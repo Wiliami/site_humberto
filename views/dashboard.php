@@ -5,6 +5,8 @@
 
 ?>
 
+
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -114,12 +116,12 @@
                     <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
                             <h6 class="collapse-header">Página Login:</h6>
-                            <a class="collapse-item" href="<?= BASE ?>/login">Login</a>
-                            <a class="collapse-item" href="<?= BASE  ?>/cadastro">Cadastro</a>
-                            <a class="collapse-item" href="<?= BASE ?>/forgot">Esqueci senha</a>
+                            <a class="collapse-item" href="<?= BASE ?>/">Lista de usuários</a>
+                            <a class="collapse-item" href="<?= BASE  ?>/">Informações</a>
+                            <a class="collapse-item" href="<?= BASE ?>/">Eventos</a>
                             <div class="collapse-divider"></div>
                             <h6 class="collapse-header">Outras páginas:</h6>
-                            <a class="collapse-item" href="<?= BASE ?>/404">404 Página</a>
+                            <a class="collapse-item" href="<?= BASE ?>/">Suporte</a>
                         </div>
                     </div>
 

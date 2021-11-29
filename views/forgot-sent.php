@@ -1,13 +1,14 @@
 <?php
 
-$Component = new Component();
-
-echo $Component->getHeadHtmlDashboard();
-echo $Component->getMenuAndSideBarDashboard();
-echo $Component->getBarraMenuOptions();
+    $Component = new Component();
+    echo $Component->getHeadHtmlDashboard();
+    echo $Component->getMenuAndSideBarDashboard();
+    echo $Component->getBarraMenuOptions();
 
 ?>
 
+    <!-- lógica de envio do email de recuperação de senha -->
+    
 
     <div class="product-big-title-area">
         <div class="container">

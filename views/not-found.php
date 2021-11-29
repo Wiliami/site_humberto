@@ -16,11 +16,13 @@
 
         <!-- Custom styles for this template -->
         <link href="<?= BASE ?>/res/site/css/sb-admin-2.min.css" rel="stylesheet">
+        <link href="<?= BASE ?>/res/site/css/paper-kit.css?v=2.2.0" rel="stylesheet" />
+
     </head>
 
     <body>
 
-        <div class="container-fluid">
+        <div class="container-fluid" style="margin-top: 18%;">
 
               <div class="text-center">
                 <div class="error mx-auto" data-text="404">404</div>
