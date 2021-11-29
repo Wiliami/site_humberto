@@ -68,48 +68,6 @@
         </head>
 
         <body class="index-page sidebar-collapse">
-
-        <!-- <div class="single-product-area">
-            <div class="zigzag-bottom"></div>
-            <div class="container">
-                <div class="row">                
-                    <div class="col-md-6">
-                    
-                        <form action="" id="login-form-wrap" class="login" method="post">
-                        
-                            
-                            <h2>Acessar</h2>
-                            <p class="form-row form-row-first">
-                                <label for="login">E-mail <span class="required">*</span></label>
-                                <input type="text" id="login" name="email" value="<?= isset($Post['email'])?$Post['email']: '' ?>" class="input-text" >
-                            </p>
-                            <p class="form-row form-row-last">
-                                <label for="senha">Senha <span class="required">*</span></label>
-                                <input type="password" id="senha" name="password" value="<?= isset($Post['password'])?$Post['password']: '' ?>" class="input-text" >
-                            </p>
-                            <div class="clear"></div>
-                
-                            <p class="lost_password">
-                                <a href="<?= BASE ?>/forgot-password">Esqueci minha senha</a>
-                            </p>
-                            <p class="">
-                                <a href="<?= BASE ?>/cadastro">Criar conta</a>
-                            </p>
-
-                            <p class="form-row">
-                                <input type="submit" value="Entrar" name="login" class="button">
-                            </p>
-    
-
-                            <div class="clear"></div>
-                            
-                        </form>                    
-                    </div>
-                
-                </div>
-            </div>
-        </div> -->
-
             <?php 
 
                             $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
@@ -149,7 +107,7 @@
                         </div>
                             <input type="password" class="form-control" name="password" value="<?= isset($Post['password'])?$Post['password']: '' ?>" placeholder="Senha">
                         </div>
-                        <button class="btn btn-danger btn-block btn-round" name="login">Entrar</button>
+                        <input class="btn btn-danger btn-block btn-round" type="submit" value="Entrar" name="login">
                     </form>
                     <div class="forgot">
                         <a href="<?= BASE ?>/forgot-password" class="btn btn-link btn-danger">Esqueci a senha</a>

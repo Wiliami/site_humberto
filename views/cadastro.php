@@ -74,8 +74,15 @@
             $User = new User();
             $User->createUser($DataCreate);
             if($User->getResult()) {
-                Error("Cadastrado com o id {$User->getResult()}");
-                header('Location:' . BASE . '/dashboard');
+                $User->exeLogin($Post['email'], $Post['password']);
+                if($User->getResult()) {
+                    Error($User->getError());
+                    header('Location: ' . BASE . '/dashboard');
+                    die();
+                } else {
+                    Error($User->getError(), 'danger');
+                }
+
             } else {
                 Error($User->getError(), 'danger');
             }
@@ -145,7 +152,7 @@
                             <input type="password" class="form-control" name="password" value="<?= isset($Post['password'])?$Post['password']: '' ?>" placeholder="Senha">
                         </div>
 
-                        <button class="btn btn-danger btn-block btn-round" name="Cadastrar">Cadastrar</button>
+                        <input class="btn btn-danger btn-block btn-round" type="submit" value="Cadatrar" name="cadastro">
                     </form>
                    
                     </div>

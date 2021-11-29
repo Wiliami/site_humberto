@@ -40,7 +40,7 @@
                 if(empty($Post['email'])) {
                     $this->Error = "Informe um e-mail!";
                     $this->Result = false;
-                }
+                } 
             }
             
         ?>

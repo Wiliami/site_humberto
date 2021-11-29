@@ -1,7 +1,7 @@
 <?php
 
-    // $User = new User();
-    // $User->verifyExistLoginUser();
+    $User = new User();
+    $User->verifyExistLoginUser();
 
 ?>
 
@@ -47,11 +47,18 @@
                 <hr class="sidebar-divider my-0 ">
 
                 <!-- Nav Item - Dashboard -->
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">
-                        <i class="fas fa-fw fa-tachometer-alt"></i>
-                        <span>Administrativo</span></a>
-                </li>
+                <?php 
+                    if($_SESSION['login']['user_level'] >= 6) {
+                        ?>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="<?= BASE ?>/admin">
+                                <i class="fas fa-fw fa-tachometer-alt"></i>
+                                <span>Administrativo</span>
+                            </a>
+                        </li> 
+                <?php
+                }?>
+                
 
                 <!-- Divider -->
                 <hr class="sidebar-divider">
@@ -324,8 +331,8 @@
                             <li class="nav-item dropdown no-arrow">
                                 <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <span class="mr-2 d-none d-lg-inline text-gray-600 small">Seja bem-vindo(a),  </span>
-                                    <!--  $_SESSION["login"]["user_name"] ?>! -->
+                                    <span class="mr-2 d-none d-lg-inline text-gray-600 small">Seja bem-vindo(a), <?= $_SESSION["login"]["user_name"] ?>! </span>
+                                   
                                 
                                     <img class="img-profile rounded-circle" src="<?= BASE ?>/src/images/undraw_profile.svg">
                                 </a>
