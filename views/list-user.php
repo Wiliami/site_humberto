@@ -13,12 +13,13 @@
     </head>
 
 <body>
-    <?php
 
-    $Component = new Component();
-    $Component->getMenuDashboard();
-    $Component->getMenuAndSideBarDashboard();
+    <?php
+        $Component = new Component();
+        echo $Component->getMenuAndSideBarDashboard();
+        echo $Component->getBarraMenuOptions();
     ?>
+
     <div class="container">
     <div class="row">
         <div class="col-lg-12">

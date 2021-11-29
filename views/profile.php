@@ -30,11 +30,9 @@
     
 
     <?php
-
         $Component = new Component();
         echo $Component->getMenuAndSideBarDashboard();
         echo $Component->getBarraMenuOptions();
-
     ?>
 
     <form>
