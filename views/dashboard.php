@@ -116,7 +116,7 @@
                     <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
                             <h6 class="collapse-header">Página Login:</h6>
-                            <a class="collapse-item" href="<?= BASE ?>/">Lista de usuários</a>
+                            <a class="collapse-item" href="<?= BASE ?>/list-user">Lista de usuários</a>
                             <a class="collapse-item" href="<?= BASE  ?>/">Informações</a>
                             <a class="collapse-item" href="<?= BASE ?>/">Eventos</a>
                             <div class="collapse-divider"></div>
