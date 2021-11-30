@@ -80,6 +80,12 @@ switch ($URL[0]) {
     case 'suporte':
         require_once('./views/suporte.php');
         break;
+    case 'historico-compras':
+        require_once('./views/historico-compras.php');
+        break;
+    case 'suporte':
+        require_once('./views/suporte.php');
+        break;
     default:
         require_once('./views/not-found.php');
         break;

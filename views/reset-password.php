@@ -1,7 +1,7 @@
 <?php
 
-    // $User = new User();
-    // $User->verifyExistLoginUser();
+    $User = new User();
+    $User->verifyExistLoginUser();
 
 ?>
 
@@ -75,10 +75,10 @@
     <div class="form-group row" style="margin-left: 20px;">
         <label for="inputPassword" class="col-sm-2 col-form-label">Confirme a nova senha</label>
         <div class="col-sm-10">
-            <input type="password" class="form-control" id="inputPassword3" name="confirm-new-pass" required autocomplete="off">
+            <input typ  e="password" class="form-control" id="inputPassword3" name="confirm-new-pass" required autocomplete="off">
         </div>
     </div>
-    <button type="submit" class="btn btn-primary mb-2" name="reset-password" style="margin: 30px;">Redefinir</button>
+    <input type="submit" class="btn btn-primary mb-2" value="Redefinir" name="reset-password" style="margin: 30px;">
     </form>
 
     
@@ -87,7 +87,3 @@
         $Component = new Component();
         echo $Component->getFooterDashboard();
     ?>
-
-
-    </body>
-</html>

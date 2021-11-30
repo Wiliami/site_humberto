@@ -9,10 +9,11 @@ echo $Component->getMenuAndSideBarDashboard();
 echo $Component->getBarraMenuOptions();  
 ?>
 
-<h3 style="margin-left: 30px;">Suporte</h3>
+<h3 style="margin-left: 30px;">Historico de compras de cursos</h3>
 
 <?php
 
 echo $Component->getFooterDashboard();
 
 ?>
+

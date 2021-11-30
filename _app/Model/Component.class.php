@@ -247,32 +247,17 @@ class Component {
                 <!-- Divider -->
                 <hr class="sidebar-divider my-0 ">
 
-                <!-- Nav Item - Dashboard -->
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">
-                        <i class="fas fa-fw fa-tachometer-alt"></i>
-                        <span>Administrativo</span></a>
-                </li>
-
-                <!-- Divider -->
-                <hr class="sidebar-divider">
-
-                <!-- Heading -->
-                <div class="sidebar-heading">
-                    Atividades
-                </div>
-
                 <!-- Nav Item - Pages Collapse Menu -->
                 <li class="nav-item">
                     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                         aria-expanded="true" aria-controls="collapseTwo">
                         <i class="fas fa-fw fa-cog"></i>
-                        <span>cursos</span>
+                        <span>Cursos</span>
                     </a>
                     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
-                            <h6 class="collapse-header">Àrea Cursos:</h6>
-                            <a class="collapse-item" href="#">Curso Administrativo</a>
+                            
+                            <a class="collapse-item" href="#">Pagina</a>
                             <a class="collapse-item" href="#">Curso de leitura</a>
                         </div>
                     </div>
@@ -280,67 +265,30 @@ class Component {
 
                 <!-- Nav Item - Utilities Collapse Menu -->
                 <li class="nav-item">
-                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-                        aria-expanded="true" aria-controls="collapseUtilities">
-                        <i class="fas fa-fw fa-wrench"></i>
-                        <span>cursos</span>
-                    </a>
-                    <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-                        data-parent="#accordionSidebar">
-                        <div class="bg-white py-2 collapse-inner rounded">
-                            <h6 class="collapse-header">Custom Utilities:</h6>
-                            <a class="collapse-item" href="utilities-color.html">Colors</a>
-                            <a class="collapse-item" href="utilities-border.html">Borders</a>
-                            <a class="collapse-item" href="utilities-animation.html">Animations</a>
-                            <a class="collapse-item" href="utilities-other.html">Other</a>
-                        </div>
-                    </div>
-                </li>
+                                <a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#collapsePages"
+                                    aria-expanded="true" aria-controls="collapsePages">
+                                    <i class="fas fa-fw fa-folder"></i>
+                                    <span>Administrativo</span>
+                                </a>
 
-                <!-- Divider -->
-                <hr class="sidebar-divider">
+                                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                                    <div class="bg-white py-2 collapse-inner rounded">
+                                        <a class="collapse-item" href="'. BASE .'/list-user">Lista de usuários</a>
+                                        <a class="collapse-item" href="'. BASE .'/cursos-aprovacao">Cursos em análise</a>
+                                        <a class="collapse-item" href="'. BASE .'/">Histórico de compras</a>
+                                        <a class="collapse-item" href="'. BASE .'/suporte">Suporte</a>
+                                        <a class="collapse-item" href="'. BASE .'/settings">Configurações</a>
+                                        
+                                    </div>
+                                </div>
 
-                <!-- Heading -->
-                <div class="sidebar-heading">
-                    Serviços
-                </div>
+                            </li>
 
-                <!-- Nav Item - Pages Collapse Menu -->
-                <li class="nav-item">
-                    <a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#collapsePages"
-                        aria-expanded="true" aria-controls="collapsePages">
-                        <i class="fas fa-fw fa-folder"></i>
-                        <span>Páginas</span>
-                    </a>
-                    <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-                        <div class="bg-white py-2 collapse-inner rounded">
-                            <h6 class="collapse-header">Página Login:</h6>
-                            <a class="collapse-item" href=' . BASE . '/login">Login</a>
-                            <a class="collapse-item" href=' . BASE . '/cadastro">Cadastro</a>
-                            <a class="collapse-item" href=' . BASE . '/forgot">Esqueci senha</a>
-                            <div class="collapse-divider"></div>
-                            <h6 class="collapse-header">Outras páginas:</h6>
-                            <a class="collapse-item" href=' . BASE . '/404">404 Página</a>
-                        </div>
-                    </div>
-                </li>
-
-                fe
 
                 <!-- Divider -->
                 <hr class="sidebar-divider d-none d-md-block">
 
-                <!-- Sidebar Toggler (Sidebar) -->
-                <div class="text-center d-none d-md-inline">
-                    <button class="rounded-circle border-0" id="sidebarToggle"></button>
-                </div>
-
-                <!-- Sidebar Message -->
-                <div class="sidebar-card d-none d-lg-flex">
-                    <img class="sidebar-card-illustration mb-2" src="' . BASE . '/src/images/undraw_rocket.svg" alt="...">
-                    <p class="text-center mb-2"><strong>SB Admin Pro</strong> is packed with premium features, components, and more!</p>
-                    <a class="btn btn-success btn-sm" href="https://startbootstrap.com/theme/sb-admin-pro">Upgrade to Pro!</a>
-                </div>
+              
 
             </ul>
             <!-- End of Sidebar -->
@@ -522,7 +470,7 @@ class Component {
                             <li class="nav-item dropdown no-arrow">
                                 <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <span class="mr-2 d-none d-lg-inline text-gray-600 small">Seja bem-vindo(a), <?= $_SESSION["login"]["user_name"]; ?></span>
+                                    <span class="mr-2 d-none d-lg-inline text-gray-600 small">Seja bem-vindo(a), ' . $_SESSION['login']['user_name'] .'</span>
                                  
                                     <img class="img-profile rounded-circle" src="'. BASE .'/src/images/undraw_profile.svg">
                                 </a>
@@ -552,10 +500,15 @@ class Component {
                     </nav>
 
                     <!-- End of Topbar -->
+        
+        ';
 
+    }
 
+    public function getFooterDashboard() {
+        return '
 
-                </div>
+        </div>
                 <!-- End of Main Content -->
 
             
@@ -593,9 +546,14 @@ class Component {
             </div>
         </div>
 
-
-        
-        <!-- Bootstrap core JavaScript-->
+        <footer class="sticky-footer bg-white">
+            <div class="container my-auto">
+                <div class="copyright text-center my-auto">
+                    <span>Copyright &copy; unitplus.com 2021</span>
+                </div>
+            </div>
+        </footer>
+            <!-- Bootstrap core JavaScript-->
         <script src="'. BASE .'/res/site/js/jquery.min.js"></script>
         <script src="'. BASE .'/res/site/js/bootstrap.bundle.min.js"></script>
 
@@ -603,22 +561,9 @@ class Component {
         <script src="'. BASE .'/res/site/js/jquery.easing.min.js"></script>
 
         <!-- Custom scripts for all pages-->
-        <script src="'. BASE .'/res/site/js/sb-admin-2.min.js"></script>   
-        
-        ';
-
-    }
-
-    public function getFooterDashboard() {
-        return '
-
-            <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; unitplus.com 2021</span>
-                    </div>
-                </div>
-            </footer>
+        <script src="'. BASE .'/res/site/js/sb-admin-2.min.js"></script> 
+    </body>
+</html> 
         ';
     }
     
@@ -747,7 +692,8 @@ class Component {
                     </div>
                 </div>
             </div>
-        
+        </div> 
+    
         ';
     }
 
@@ -940,5 +886,32 @@ class Component {
         ';
     }
 
+    public function getHeadHtmlPags($title = 'Dashboard') {
+        return '
+        <!DOCTYPE html>
+        <html lang="pt-BR">
+            <head>
+                <meta charset="utf-8">
+                <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+                <meta name="description" content="">
+                <meta name="author" content="">
+        
+                <title>' . $title . '</title>
+        
+                <!-- Custom fonts for this template-->
+                <link href="' . BASE .'/res/site/css/all.min.css" rel="stylesheet" type="text/css">
+                <link href="' . BASE .'/res/site/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        
+                <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+                <!-- Custom styles for this template-->
+                <link href="' .  BASE . '/res/site/css/sb-admin-2.min.css" rel="stylesheet">
+            </head>
+        
+            <body id="page-top">
+            ';
+    }
+
     
 }
+
