@@ -44,9 +44,6 @@ switch ($URL[0]) {
     case 'page-profile':
         require_once('./views/pege-profile.php');
         break;
-    case 'cursos':
-        require_once('./views/cursos.php');
-        break;
     case 'page-video':
         require_once('./views/page-video.php');
         break;
@@ -71,8 +68,17 @@ switch ($URL[0]) {
     case 'teste';
         require_once('./views/test_email.php');
         break;
-    case 'list-user';
+    case 'list-user':
         require_once('./views/list-user.php');
+        break;
+    case 'cursos-aprovacao':
+        require_once('./views/cursos-aprovacao.php');
+        break;
+    case 'settings':
+        require_once('./views/settings.php');
+        break;
+    case 'suporte':
+        require_once('./views/suporte.php');
         break;
     default:
         require_once('./views/not-found.php');

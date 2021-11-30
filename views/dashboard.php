@@ -44,7 +44,7 @@
                 </a>
 
                 <!-- Divider -->
-                <hr class="sidebar-divider my-0 ">
+                <hr class="sidebar-divider my-0">
 
                 <!-- Nav Item - Dashboard -->
                 <?php 
@@ -124,13 +124,11 @@
 
                                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                                     <div class="bg-white py-2 collapse-inner rounded">
-                                        
                                         <a class="collapse-item" href="<?= BASE ?>/list-user">Lista de usuários</a>
-                                        <a class="collapse-item" href="<?= BASE ?>/">Cursos completos</a>
-                                        <a class="collapse-item" href="<?= BASE ?>/">Cursos pendentes</a>
+                                        <a class="collapse-item" href="<?= BASE ?>/cursos-aprovacao">Cursos em análise</a>
                                         <a class="collapse-item" href="<?= BASE ?>/">Histórico de compras</a>
                                         <a class="collapse-item" href="<?= BASE ?>/">Suporte</a>
-                                        <a class="collapse-item" href="<?= BASE ?>/">Configurações da conta</a>
+                                        <a class="collapse-item" href="<?= BASE ?>/">Configurações</a>
                                         
                                     </div>
                                 </div>
@@ -264,6 +262,17 @@
                                             Spending Alert: We've noticed unusually high spending for your account.
                                         </div>
                                     </a>
+                                    <a class="dropdown-item d-flex align-items-center" href="#">
+                                        <div class="mr-3">
+                                            <div class="icon-circle bg-warning">
+                                                <i class="fas fa-exclamation-triangle text-white"></i>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="small text-gray-500">December 2, 2019</div>
+                                            Spending Alert: We've noticed unusually high spending for your account.
+                                        </div>
+                                    </a>
                                     <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
                                 </div>
                             </li>
@@ -378,7 +387,7 @@
                     ?>  
 
                 <!-- Fim do Main Content -->
-                </div>
+                </div>  
 
 
 
@@ -392,7 +401,9 @@
                     
 
 
-        </div>
+                <h1>Dashboard</h1>
+            </div>
+                        
 
         <?php 
                                 

@@ -38,8 +38,8 @@
                             <tr>
                                 <td>
                                     <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="">
-                                    <a href="#" class="user-link"><?= $_SESSION['name']['user_name'] ?></a>
-                                    
+                                    <a href="#" class="user-link">Mila</a>
+                                    <!-- $_SESSION['name']['user_name'] -->
                                     <span class="user-subhead">Admin</span>
                                 </td>
                                 <td>
@@ -49,10 +49,10 @@
                                     <span class="label label-default">Inativo</span>
                                 </td>
                                 <td>
-                                    <a href="#">mila@gmail.com</a>
+                                    <a href="/">mila@gmail.com</a>
                                 </td>
                                 <td style="width: 20%;">
-                                    <a href="#" class="table-link">
+                                    <a href="/" class="table-link">
                                         <span class="fa-stack">
                                             <i class="fa fa-square fa-stack-2x"></i>
                                             <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>

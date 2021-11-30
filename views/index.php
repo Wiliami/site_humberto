@@ -17,13 +17,13 @@
 
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
     <link href="<?= BASE ?>/src/css/nucleo-icons.css" rel="stylesheet" />
-    <link href="<?= BASE ?>/src/css/nucleo-svg.css" rel="stylesheet" />
+    <link href="<?= BASE ?>/src/css/nucleo-svg.css" rel="stylesheet" /> 
 
     <!-- Font Awesome Icons -->
     <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
     
     <!-- Estiliza as letras do card cursos -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet"> -->
     
     <!-- Estiliza o card de curso -->
     <link id="pagestyle" href="<?= BASE ?>/src/css/material-kit.css?v=3.0.0" rel="stylesheet" />
