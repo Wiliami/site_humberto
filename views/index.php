@@ -16,8 +16,6 @@
     <!-- <link rel="stylesheet" href="<?= BASE ?>/src/css/footer.css" type="text/css"> -->
 
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
-
-
     <link href="<?= BASE ?>/src/css/nucleo-icons.css" rel="stylesheet" />
     <link href="<?= BASE ?>/src/css/nucleo-svg.css" rel="stylesheet" />
 
