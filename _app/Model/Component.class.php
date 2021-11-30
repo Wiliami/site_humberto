@@ -604,8 +604,6 @@ class Component {
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
-            
-
             <!-- Content Row -->
             <div class="row">
 

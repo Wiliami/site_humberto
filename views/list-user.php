@@ -1,22 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Page | Lista de usuários</title>
-        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="<?= BASE ?>/src/css/list-user.css" type="text/css">
-        <link id="pagestyle" href="<?= BASE ?>/src/css/material-kit.css?v=3.0.0" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
-    </head>
+    <?php
 
-<body>
+        $User = new User();
+        $User->verifyExistLoginUser();
+
+    ?>
+
 
     <?php
-        // $Component = new Component();
-        // echo $Component->getMenuAndSideBarDashboard();
-        // echo $Component->getBarraMenuOptions();
+
+        $Component = new Component();
+        echo $Component->getHeadHtmlPags();
+        echo $Component->getMenuAndSideBarDashboard();
+        echo $Component->getBarraMenuOptions();
+
+    ?>
+
+
+    <?php
+        function dataUser($dataUsers) {
+            $Read = new Read();
+            $Read->FullRead("SELECT * FROM users WHERE users = :dt", "dt={$dataUsers}");
+            if($Read->getResult()){
+                return true;
+            } else {
+                return false;
+            }
+
+        }
+
     ?>
 
     <div class="container">
@@ -37,19 +48,58 @@
                         <tbody>
                             <tr>
                                 <td>
-                                    <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="">
-                                    <a href="#" class="user-link">Mila</a>
-                                    <!-- $_SESSION['name']['user_name'] -->
-                                    <span class="user-subhead">Admin</span>
+                                    <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="avatar" style="width: 50px; height: 50px">
+                                    <?php foreach($user as $name): ?>
+                                    <a href="/" class="user-link"><?php echo $_SESSION['login']['user_name'] ?></a>
+                                    
+                                    <span class="user-subhead"><?php echo $_SESSION['login']['user_id'] ?></span>
                                 </td>
                                 <td>
-                                    2013/08/08
+                                    2021/12/01  
                                 </td>
                                 <td class="text-center">
                                     <span class="label label-default">Inativo</span>
                                 </td>
                                 <td>
-                                    <a href="/">mila@gmail.com</a>
+                                    <a href="/"><?php echo $_SESSION['login']['user_email'] ?></a>
+                                </td>
+                                <td style="width: 20%;">
+                                    <a href="/" class="table-link">
+                                        <span class="fa-stack">
+                                            <i class="fa fa-square fa-stack-2x"></i>
+                                            <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
+                                        </span>
+                                    </a>
+                                    <a href="#" class="table-link">
+                                        <span class="fa-stack">
+                                            <i class="fa fa-square fa-stack-2x"></i>
+                                            <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
+                                        </span>
+                                    </a>
+                                    <a href="/" class="table-link danger">
+                                        <span class="fa-stack">
+                                            <i class="fa fa-square fa-stack-2x"></i>
+                                            <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
+                                        </span>
+                                    </a>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="avatar" style="width: 50px; height: 50px">
+                                    <a href="#" class="user-link">Carlos</a>
+                                    <!-- $_SESSION['name']['user_name'] -->
+                                    <span class="user-subhead">Membro</span>
+                                </td>
+                                <td>
+                                    2021/12/12
+                                </td>
+                                <td class="text-center">
+                                    <span class="label label-default">Inativo</span>
+                                </td>
+                                <td>
+                                    <a href="/">carlos@gmail.com</a>
                                 </td>
                                 <td style="width: 20%;">
                                     <a href="/" class="table-link">
@@ -75,15 +125,17 @@
                             
                         </tbody>
                     </table>
-                </div>
-
-                <!-- Botões de ir para próxima página  -->
-                
+                </div>                
         </div>
     </div>
     </div>
 
+
+    <!--
+        // $Component = new Component();
+        // echo $Component->getFooterDashboard();
+        
+     -->
+
 </body>
 </html>
-
-
