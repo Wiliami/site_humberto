@@ -14,9 +14,9 @@
 <body>
 
     <?php
-        $Component = new Component();
-        echo $Component->getMenuAndSideBarDashboard();
-        echo $Component->getBarraMenuOptions();
+        // $Component = new Component();
+        // echo $Component->getMenuAndSideBarDashboard();
+        // echo $Component->getBarraMenuOptions();
     ?>
 
     <div class="container">
@@ -27,10 +27,10 @@
                     <table class="table user-list">
                         <thead>
                             <tr>
-                                <th><span>User</span></th>
-                                <th><span>Created</span></th>
+                                <th><span>Usuário</span></th>
+                                <th><span>Criado</span></th>
                                 <th class="text-center"><span>Status</span></th>
-                                <th><span>Email</span></th>
+                                <th><span>E-mail</span></th>
                                 <th>&nbsp;</th>
                             </tr>
                         </thead>
@@ -38,17 +38,18 @@
                             <tr>
                                 <td>
                                     <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="">
-                                    <a href="#" class="user-link">Mila Kunis</a>
+                                    <a href="#" class="user-link"><?= $_SESSION['name']['user_name'] ?></a>
+                                    
                                     <span class="user-subhead">Admin</span>
                                 </td>
                                 <td>
                                     2013/08/08
                                 </td>
                                 <td class="text-center">
-                                    <span class="label label-default">Inactive</span>
+                                    <span class="label label-default">Inativo</span>
                                 </td>
                                 <td>
-                                    <a href="#">mila@kunis.com</a>
+                                    <a href="#">mila@gmail.com</a>
                                 </td>
                                 <td style="width: 20%;">
                                     <a href="#" class="table-link">

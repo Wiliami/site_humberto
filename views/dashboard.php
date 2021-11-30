@@ -73,12 +73,12 @@
                     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                         aria-expanded="true" aria-controls="collapseTwo">
                         <i class="fas fa-fw fa-cog"></i>
-                        <span>cursos</span>
+                        <span>Páginas</span>
                     </a>
                     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
                             <h6 class="collapse-header">Àrea Cursos:</h6>
-                            <a class="collapse-item" href="#">Curso Administrativo</a>
+                            <a class="collapse-item" href="#">Pagina</a>
                             <a class="collapse-item" href="#">Curso de leitura</a>
                         </div>
                     </div>
@@ -112,26 +112,35 @@
                 </div>
 
                 <!-- Nav Item - Pages Collapse Menu -->
-                <li class="nav-item">
-                    <a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#collapsePages"
-                        aria-expanded="true" aria-controls="collapsePages">
-                        <i class="fas fa-fw fa-folder"></i>
-                        <span>Páginas</span>
-                    </a>
+                <?php 
+                    if($_SESSION['login']['user_level'] >= 1) {
+                        ?>
+                            <li class="nav-item">
+                                <a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#collapsePages"
+                                    aria-expanded="true" aria-controls="collapsePages">
+                                    <i class="fas fa-fw fa-folder"></i>
+                                    <span>Administrativo</span>
+                                </a>
 
-                    <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-                        <div class="bg-white py-2 collapse-inner rounded">
-                            <h6 class="collapse-header">Página Login:</h6>
-                            <a class="collapse-item" href="<?= BASE ?>/list-user">Lista de usuários</a>
-                            <a class="collapse-item" href="<?= BASE  ?>/">Informações</a>
-                            <a class="collapse-item" href="<?= BASE ?>/">Eventos</a>
-                            <div class="collapse-divider"></div>
-                            <h6 class="collapse-header">Outras páginas:</h6>
-                            <a class="collapse-item" href="<?= BASE ?>/">Suporte</a>
-                        </div>
-                    </div>
+                                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                                    <div class="bg-white py-2 collapse-inner rounded">
+                                        
+                                        <a class="collapse-item" href="<?= BASE ?>/list-user">Lista de usuários</a>
+                                        <a class="collapse-item" href="<?= BASE ?>/">Cursos completos</a>
+                                        <a class="collapse-item" href="<?= BASE ?>/">Cursos pendentes</a>
+                                        <a class="collapse-item" href="<?= BASE ?>/">Histórico de compras</a>
+                                        <a class="collapse-item" href="<?= BASE ?>/">Suporte</a>
+                                        <a class="collapse-item" href="<?= BASE ?>/">Configurações da conta</a>
+                                        
+                                    </div>
+                                </div>
 
-                </li>
+                            </li>
+                        
+                <?php
+                }?>
+
+               
 
                 
 
