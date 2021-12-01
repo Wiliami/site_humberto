@@ -261,6 +261,7 @@ class Component {
                             <a class="collapse-item" href="'. BASE .'/minhas-compras">Minhas compras</a>
                             <a class="collapse-item" href="'. BASE .'/cursos-finalizados">Cursos finalizados</a>
                             <a class="collapse-item" href="'. BASE .'/cursos-pendentes">Cursos pendentes</a>
+
                         </div>
                     </div>
                 </li>

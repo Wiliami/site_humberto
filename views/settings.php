@@ -6,6 +6,7 @@ $Component = new Component();
 
 echo $Component->getHeadHtmlPages();
 echo $Component->getMenuAndSideBarDashboard();
+echo $Component->getBarraMenuOptions();
 ?>
 Configurações
 <?php

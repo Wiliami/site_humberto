@@ -136,14 +136,6 @@ echo $Component->getBarraMenuOptions();
 </html>
 
 
-
-
-
-<?php
-echo $Component->getFooterDashboard();
-
-?>
-
             
 
            

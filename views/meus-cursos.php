@@ -21,7 +21,7 @@
 
     <div style="margin-left: 20px;">
         <h3>Olá, <?= $_SESSION['login']['user_name'] ?></h3>
-        <span>Minhas compras</span>
+        <span>Meus cursos</span>
     </div>
 
 

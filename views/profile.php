@@ -51,7 +51,7 @@
             </div>
         </div>
         <div class="form-group row" style="margin-left: 20px;">
-            <label for="inputPassword" class="col-sm-2 col-form-label">Telefone</label>
+            <label for="inputPassword" class="col-sm-2 col-form-label">Contato</label>
             <div class="col-sm-10">
                 <input type="text" class="form-control" id="inputPassword">
             </div>
