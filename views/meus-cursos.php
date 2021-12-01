@@ -33,7 +33,7 @@
                 </video>
                 <div class="card-body p-4">
                     <div class="badge bg-success bg-gradient rounded-pill mb-2 text-white">Curso</div>
-                    <a class="text-decoration-none link-dark stretched-link" href="/">
+                    <a class="text-decoration-none link-dark stretched-link" href="#">
                         <h5 class="card-title mb-3">Técnicas e perfomance.</h5>
                     </a>
                     <p class="card-text mb-0">Saiba como falar em público e como dominar a timidez na hora
@@ -46,7 +46,7 @@
                                 src="https://dummyimage.com/40x40/ced4da/6c757d" alt="..." />
                             <div class="small">
                                 <div class="fw-bold">unitbrasil</div>
-                                <div class="text-muted">March 12, 2021 &middot; 6 min read</div>
+                                <div class="text-muted">March 12, 2021</div>
                             </div>
                         </div>
                     </div>

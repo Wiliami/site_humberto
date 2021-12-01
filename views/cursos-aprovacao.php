@@ -47,7 +47,7 @@ echo $Component->getBarraMenuOptions();
                                 <span class="label label-default">Aguardando aprovação</span>
                             </td>
                             <td>
-                                <a href="/">Nome do usuário</a>
+                                <a href="/"><?= $User['user_name']?></a>
                             </td>
                             <td style="width: 20%;">
                                 <a href="/" class="table-link">

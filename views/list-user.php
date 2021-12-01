@@ -10,12 +10,14 @@
 
     ?>
 
+    
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
             <div class="main-box clearfix">
                 <div class="table-responsive">
                     <table class="table user-list">
+                    <h2>Lista de usuários</h2>
                         <thead>
                             <tr>
                                 <th><span>Usuário</span></th>
