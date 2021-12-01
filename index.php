@@ -89,6 +89,12 @@ switch ($URL[0]) {
     case 'meus-cursos':
         require_once('./views/meus-cursos.php');
         break;
+    case 'cursos-finalizados':
+        require_once('./views/cursos-finalizados.php');
+        break;
+    case 'cursos-pendentes':
+        require_once('./views/cursos-pendentes.php');
+        break;
     default:
         require_once('./views/not-found.php');
         break;
