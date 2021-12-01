@@ -45,7 +45,7 @@
                                     <?= $User['user_create_date'] ?>  
                                 </td>
                                 <td class="text-center">
-                                    <span class="label label-default">Inativo</span>
+                                    <span class="label label-default">Situação</span>
                                 </td>
                                 <td>
                                     <a href="/"><?= $User['user_email']?></a>

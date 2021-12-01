@@ -1,12 +1,12 @@
 <?php
 
-$User = new User();
-$User->verifyExistLoginUser();
-$Component = new Component();
+    $User = new User();
+    $User->verifyExistLoginUser();
+    $Component = new Component();
 
-echo $Component->getHeadHtmlPages();
-echo $Component->getMenuAndSideBarDashboard();
-echo $Component->getBarraMenuOptions();  
+    echo $Component->getHeadHtmlPages();
+    echo $Component->getMenuAndSideBarDashboard();
+    echo $Component->getBarraMenuOptions();  
 ?>
 
 <div class="container">
