@@ -884,7 +884,7 @@ class Component {
         ';
     }
 
-    public function getHeadHtmlPags($title = 'Dashboard') {
+    public function getHeadHtmlPages($title = 'Dashboard') {
         return '
         <!DOCTYPE html>
         <html lang="pt-BR">

@@ -1,25 +1,25 @@
     <?php
 
-        $User = new User();
-        $User->verifyExistLoginUser();
+    $User = new User();
+    $User->verifyExistLoginUser();
 
-        $Component = new Component();
-        echo $Component->getHeadHtmlPags();
-        echo $Component->getMenuAndSideBarDashboard();
-        echo $Component->getBarraMenuOptions();
+    $Component = new Component();
+    echo $Component->getHeadHtmlPages();
+    echo $Component->getMenuAndSideBarDashboard();
+    echo $Component->getBarraMenuOptions();
 
 
-        function dataUser($dataUsers) {
-            $Read = new Read();
-            $Read->FullRead("SELECT * FROM users WHERE users = :dt", "dt={$dataUsers}");
-            if($Read->getResult()) {
-                return true;
-            } else {
-                return false;
-            }   
+    function dataUser($dataUsers) {
+        $Read = new Read();
+        $Read->FullRead("SELECT * FROM users WHERE users = :dt", "dt={$dataUsers}");
+        if($Read->getResult()) {
+            return true;
             Check::var_dump_json($Read->getResult());
+        } else {
+            return false;
+        }   
 
-        }
+    }
 
     ?>
 
@@ -81,7 +81,7 @@
                                 <td>
                                     <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="avatar" style="width: 50px; height: 50px">
                                     <a href="#" class="user-link">Carlos</a>
-                                     
+                                        
                                     <span class="user-subhead">Membro</span>
                                 </td>
                                 <td>
