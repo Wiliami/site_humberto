@@ -10,14 +10,7 @@
 
 
     function dataUser($dataUsers) {
-        $Read = new Read();
-        $Read->FullRead("SELECT * FROM users WHERE users = :dt", "dt={$dataUsers}");
-        if($Read->getResult()) {
-            return true;
-            Check::var_dump_json($Read->getResult());
-        } else {
-            return false;
-        }   
+        
 
     }
 
@@ -39,21 +32,27 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
+                            <?php
+                            $Read = new Read();
+                            $Read->FullRead("SELECT * FROM users");
+                            if($Read->getResult()) {
+                                foreach($Read->getResult() as $User) {
+                                    ?>
+                                    <tr>
                                 <td>
                                     <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="avatar" style="width: 50px; height: 50px">
-                                    <a href="/" class="user-link"><?php echo $_SESSION['login']['user_name'] ?></a>
+                                    <a href="/" class="user-link"><?= $User['user_name'] ?></a>
                                     
-                                    <span class="user-subhead"><?php echo $_SESSION['login']['user_id'] ?></span>
+                                    <span class="user-subhead"><?= $User['user_id'] ?></span>
                                 </td>
                                 <td>
-                                    2021/12/01  
+                                    <?= $User['user_create_date'] ?>  
                                 </td>
                                 <td class="text-center">
                                     <span class="label label-default">Inativo</span>
                                 </td>
                                 <td>
-                                    <a href="/"><?php echo $_SESSION['login']['user_email']; ?></a>
+                                    <a href="/"><?= $User['user_email']?></a>
                                 </td>
                                 <td style="width: 20%;">
                                     <a href="/" class="table-link">
@@ -77,7 +76,14 @@
                                 </td>
                             </tr>
 
-                            <tr>
+                                    <?php
+                                }
+                            } else {
+                                Error("Ainda não existem usuários!");
+                            }   
+                            ?>
+                        
+                            <!-- <tr>
                                 <td>
                                     <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="avatar" style="width: 50px; height: 50px">
                                     <a href="#" class="user-link">Carlos</a>
@@ -113,7 +119,7 @@
                                         </span>
                                     </a>
                                 </td>
-                            </tr>
+                            </tr> -->
                             
                         </tbody>
                     </table>

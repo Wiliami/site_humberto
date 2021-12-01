@@ -1,40 +1,3 @@
-<!-- <!DOCTYPE html>
-    
-<html lang="pt-br">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Página | Cadastro</title>              
-    
-     Google Fonts -->
-    <!-- <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,200,300,700,600' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Raleway:400,100' rel='stylesheet' type='text/css'> -->
-    
-    <!-- Bootstrap -->
-    <!-- <link rel="stylesheet" href="<?= BASE ?>/res/site/css/bootstrap.min.css"> -->
-    
-    <!-- Font Awesome -->
-    <!-- <link rel="stylesheet" href="<?= BASE ?>/res/site/css/font-awesome.min.css"> -->
-    
-    <!-- Custom CSS -->
-    <!-- <link rel="stylesheet" href="<?= BASE ?>/res/site/css/owl.carousel.css"> 
-    <link rel="stylesheet" href="<?= BASE ?>/res/site/css/style.css">
-    <link rel="stylesheet" href="<?= BASE ?>/res/site/css/responsive.css">  -->
-
-  
-  <!-- </head>
-
-
-
-    <body>
-
-    <div class="col-md-6"> -->
-
-
-
-
     <!DOCTYPE html>
      <html lang="pt-BR">
         <head>
@@ -62,74 +25,41 @@
         </head>
 
         <body class="index-page sidebar-collapse">
+            <div class="section section-image section-login" style="background-image: url('<?= BASE ?>/src/images/login-image.jpg')">
+        
+                <div class="container">
+                    <div class="row">
+                    <div class="col-lg-4 col-md-6 mx-auto">
+                        <div class="card card-register">
 
-    <?php 
+            <?php 
+            $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+            if(!empty($Post['cadastro'])) {
+                $DataCreate['user_name'] = $Post['name'];
+                $DataCreate['user_email'] = $Post['email'];
+                $DataCreate['user_password'] = $Post['password'];
 
-        $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
-        if(!empty($Post['cadastro'])) {
-            $DataCreate['user_name'] = $Post['name'];
-            $DataCreate['user_email'] = $Post['email'];
-            $DataCreate['user_password'] = $Post['password'];
-
-            $User = new User();
-            $User->createUser($DataCreate);
-            if($User->getResult()) {
-                $User->exeLogin($Post['email'], $Post['password']);
+                $User = new User();
+                $User->createUser($DataCreate);
                 if($User->getResult()) {
-                    Error($User->getError());
-                    header('Location: ' . BASE . '/dashboard');
-                    die();
+                    $User->exeLogin($Post['email'], $Post['password']);
+                    if($User->getResult()) {
+                        Error($User->getError());
+                        header('Location: ' . BASE . '/dashboard');
+                        die();
+                    } else {
+                        Error($User->getError(), 'danger');
+                    }
+
                 } else {
                     Error($User->getError(), 'danger');
                 }
-
-            } else {
-                Error($User->getError(), 'danger');
+                // Check::var_dump_json($Post);
             }
-            // Check::var_dump_json($Post);
-        }
-    
-    ?>
-    
-            <!-- <form id="register-form-wrap" action="" class="register" method="post">
-                <h2>Criar conta</h2>
-                    <p class="form-row form-row-first">
-                        <label for="nome">Nome<span class="required">*</span>
-                        </label>
-                        <input type="text" id="nome" value="<?=isset($Post['name'])?$Post['name']:''?>" name="name" class="input-text" maxlength="25" minlength="2" />
-                    </p>
-                    <p class="form-row form-row-first">
-                        <label for="email">E-mail <span class="required">*</span>
-                        </label>
-                        <input type="email" id="email" value="<?=isset($Post['email'])?$Post['email']:''?>" name="email" class="input-text" maxlength="50" />
-                    </p> -->
-                    <!-- <p class="form-row form-row-first">
-                        <label for="phone">Telefone
-                        </label>
-                        <input type="text" id="phone" name="phone" class="input-text" value="">
-                    </p> -->
-                    <!-- <p class="form-row form-row-las t">
-                        <label for="senha">Senha<span class="required">*</span>
-                        </label>
-                        <input type="password" id="senha" value="<?=isset($Post['password'])?$Post['password']:''?>" name="password" class="input-text" maxlength="50" minlength="8" />
-                    </p>
-                        <div class="clear"></div>
 
-                    <p class="form-row">
-                            <input type="submit" value="Criar Conta" name="cadastro" class="button">
-                    </p>
+            ?>
 
-                    <div class="clear"></div>
-
-            </form>               
-    </div> -->
-    <div class="section section-image section-login" style="background-image: url('<?= BASE ?>/src/images/login-image.jpg')">
-            <div class="container">
-                <div class="row">
-                <div class="col-lg-4 col-md-6 mx-auto">
-                    <div class="card card-register">
                     <h3 class="title mx-auto">Faça o seu cadastro</h3>
-                
                     <form class="" method="post">
                         <label>Nome</label>
                         <div class="input-group form-group-no-border">
@@ -152,7 +82,7 @@
                             <input type="password" class="form-control" name="password" value="<?= isset($Post['password'])?$Post['password']: '' ?>" placeholder="Senha">
                         </div>
 
-                        <input class="btn btn-danger btn-block btn-round" type="submit" value="Cadatrar" name="cadastro">
+                        <input class="btn btn-danger btn-block btn-round" type="submit" value="Cadastrar" name="cadastro">
                     </form>
                    
                     </div>
@@ -160,11 +90,6 @@
                 </div>
             </div>
         </div>
-
-
-
-
-
     </body>
 </html>
 

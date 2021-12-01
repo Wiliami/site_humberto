@@ -68,30 +68,28 @@
         </head>
 
         <body class="index-page sidebar-collapse">
-            <?php 
-
-                            $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
-                            if(!empty($Post['login'])) {
-                              
-                                $User = new User();
-                                $User->exeLogin($Post['email'], $Post['password']);
-                                if($User->getResult()) {
-                                    Error($User->getError());
-                                    header('Location: ' . BASE . '/dashboard');
-                                    die();
-                                } else {
-                                    Error($User->getError(), 'danger');
-                                }
-                            } 
-
-            ?>
-
-
             <div class="section section-image section-login" style="background-image: url('<?= BASE ?>/src/images/login-image.jpg')">
             <div class="container">
                 <div class="row">
                 <div class="col-lg-4 col-md-6 mx-auto">
                     <div class="card card-register">
+                    <?php 
+
+                        $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+                        if(!empty($Post['login'])) {
+                        
+                            $User = new User();
+                            $User->exeLogin($Post['email'], $Post['password']);
+                            if($User->getResult()) {
+                                Error($User->getError());
+                                header('Location: ' . BASE . '/dashboard');
+                                die();
+                            } else {
+                                Error($User->getError(), 'danger');
+                            }
+                        } 
+
+                    ?>
                     <h3 class="title mx-auto">Seja bem-vindo(a)</h3>
                 
                     <form class="" method="post">
@@ -109,9 +107,14 @@
                         </div>
                         <input class="btn btn-danger btn-block btn-round" type="submit" value="Entrar" name="login">
                     </form>
+                    
                     <div class="forgot">
                         <a href="<?= BASE ?>/forgot-password" class="btn btn-link btn-danger">Esqueci a senha</a>
                     </div>
+                    <div class="forgot">
+                        <a href="<?= BASE ?>/cadastro" class="btn btn-link btn-danger">Criar conta</a>
+                    </div>
+
                     </div>
                 </div>
                 </div>

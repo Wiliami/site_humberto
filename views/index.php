@@ -139,8 +139,8 @@
                             <i class="material-icons text-gradient text-primary text-3xl">devices</i>
                             <h5 class="font-weight-bolder mt-3">Vida conjugal</h5>
                             <p class="pe-3">Neste curso você conhecerá as bases do casamento segunda a Bíblia. Serão ministradas assuntos como:
-                                            <li>A aliança do casamento;</li>
-                                            <li>O propósito de Deus para o casamento.</li>
+                                <li>A aliança do casamento;</li>
+                                <li>O propósito de Deus para o casamento.</li>
                             </p>
                             </div>
                         </div>

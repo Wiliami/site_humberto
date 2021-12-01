@@ -4,10 +4,10 @@ $User = new User();
 $User->verifyExistLoginUser();
 $Component = new Component();
 
-echo $Component->getHeadHtmlPags();
+echo $Component->getHeadHtmlPages();
 echo $Component->getMenuAndSideBarDashboard();
 ?>
-Settings
+Configurações
 <?php
 echo $Component->getFooterDashboard();
 

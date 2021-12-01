@@ -20,7 +20,7 @@
 
         <!-- Custom fonts for this template-->
         <link href="<?= BASE ?>/res/site/css/all.min.css" rel="stylesheet" type="text/css">
-        <!-- <link href="<?= BASE ?>/res/site/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+        <link href="<?= BASE ?>/res/site/css/font-awesome.min.css" rel="stylesheet" type="text/css"> 
 
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
         <!-- Custom styles for this template-->
@@ -75,8 +75,8 @@
                     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
                             
-                            <a class="collapse-item" href="#">Pagina</a>
-                            <a class="collapse-item" href="#">Curso de leitura</a>
+                            <a class="collapse-item" href="<?= BASE ?>/my-courses">Todos os cursos</a>
+                            <a class="collapse-item" href="#">Páginas</a>
                         </div>
                     </div>
                 </li>
@@ -376,28 +376,7 @@
             echo $Component->getFooterDashboard();
                             
         ?>
-        <!-- End of Content Wrapper -->
-
-
-
-                   
-                <!-- Footer -->
-                <!-- <footer class="sticky-footer bg-white">
-                    <div class="container my-auto">
-                        <div class="copyright text-center my-auto">
-                            <span>Copyright &copy; unitplus.com 2021</span>
-                        </div>
-                    </div>
-                </footer> -->
-
-                <!-- End of Footer -->
-
-            <!-- </div> -->
-            <!-- End of Content Wrapper -->
-
-        
-        <!-- End of Page Wrapper -->    
-
+       
         <!-- Scroll to Top Button-->
         <a class="scroll-to-top rounded" href="#page-top">
             <i class="fas fa-angle-up"></i>
