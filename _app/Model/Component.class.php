@@ -257,7 +257,7 @@ class Component {
                     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
                             
-                            <a class="collapse-item" href="'. BASE .'meus-cursos/">Meus cursos</a>
+                            <a class="collapse-item" href="'. BASE .'/meus-cursos">Meus cursos</a>
                             <a class="collapse-item" href="'. BASE .'/historico-compras">Histórico de compras</a>
                             <a class="collapse-item" href="'. BASE .'/cursos-finalizados">Cursos finalizados</a>
                             <a class="collapse-item" href="'. BASE .'/cursos-pendentes">Cursos pendentes</a>
