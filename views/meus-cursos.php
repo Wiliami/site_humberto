@@ -1,11 +1,10 @@
 <?php
 
-$User = new User();
-$User->verifyExistLoginUser();
-$Component = new Component();
-
-echo $Component->getHeadHtmlPages();
-echo $Component->getMenuAndSideBarDashboard();  
+    $User = new User();
+    $User->verifyExistLoginUser();
+    $Component = new Component();
+    echo $Component->getHeadHtmlPages();
+    echo $Component->getMenuAndSideBarDashboard();  
 
 ?>
 
@@ -19,19 +18,21 @@ echo $Component->getMenuAndSideBarDashboard();
     <title>Página | Cursos</title>
 </head>
 <body>
-    <div class="" style="margin-left: 20px;">
+
+    <div style="margin-left: 20px;">
         <h3>Olá, <?= $_SESSION['login']['user_name'] ?></h3>
         <span>Minhas compras</span>
     </div>
 
-    <div class="row gx-5">
+
+    <div class="row gx-5" style="margin-left: 8px; margin-top: 20px;">
         <div class="col-lg-4 mb-5">
             <div class="card h-100 shadow border-0">
                 <video class="card-img-top" muted>
-                    <source type="video/mp4" />
+                    <source src="" type="video/mp4" />
                 </video>
                 <div class="card-body p-4">
-                    <div class="badge bg-primary bg-gradient rounded-pill mb-2">Curso</div>
+                    <div class="badge bg-success bg-gradient rounded-pill mb-2 text-white">Curso</div>
                     <a class="text-decoration-none link-dark stretched-link" href="/">
                         <h5 class="card-title mb-3">Técnicas e perfomance.</h5>
                     </a>
@@ -52,18 +53,14 @@ echo $Component->getMenuAndSideBarDashboard();
                 </div>
             </div>
         </div>
+    </div> 
 
-    <div class="text-center">
-        <video width="320" height="240" controls>
-            <source src="movie.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-        </video>
-    </div>
+    
 
-    </div>
+
 
 <?php
 
-echo $Component->getFooterDashboard();
+    echo $Component->getFooterDashboard();
 
 ?>
