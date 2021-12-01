@@ -3,36 +3,29 @@
         $User = new User();
         $User->verifyExistLoginUser();
 
-    ?>
-
-
-    <?php
-
         $Component = new Component();
         echo $Component->getHeadHtmlPags();
         echo $Component->getMenuAndSideBarDashboard();
         echo $Component->getBarraMenuOptions();
 
-    ?>
 
-
-    <?php
         function dataUser($dataUsers) {
             $Read = new Read();
             $Read->FullRead("SELECT * FROM users WHERE users = :dt", "dt={$dataUsers}");
-            if($Read->getResult()){
+            if($Read->getResult()) {
                 return true;
             } else {
                 return false;
-            }
+            }   
+            Check::var_dump_json($Read->getResult());
 
         }
 
     ?>
 
     <div class="container">
-    <div class="row">
-        <div class="col-lg-12">
+        <div class="row">
+            <div class="col-lg-12">
             <div class="main-box clearfix">
                 <div class="table-responsive">
                     <table class="table user-list">
@@ -49,7 +42,6 @@
                             <tr>
                                 <td>
                                     <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="avatar" style="width: 50px; height: 50px">
-                                    <?php foreach($user as $name): ?>
                                     <a href="/" class="user-link"><?php echo $_SESSION['login']['user_name'] ?></a>
                                     
                                     <span class="user-subhead"><?php echo $_SESSION['login']['user_id'] ?></span>
@@ -61,7 +53,7 @@
                                     <span class="label label-default">Inativo</span>
                                 </td>
                                 <td>
-                                    <a href="/"><?php echo $_SESSION['login']['user_email'] ?></a>
+                                    <a href="/"><?php echo $_SESSION['login']['user_email']; ?></a>
                                 </td>
                                 <td style="width: 20%;">
                                     <a href="/" class="table-link">
@@ -89,7 +81,7 @@
                                 <td>
                                     <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="avatar" style="width: 50px; height: 50px">
                                     <a href="#" class="user-link">Carlos</a>
-                                    <!-- $_SESSION['name']['user_name'] -->
+                                     
                                     <span class="user-subhead">Membro</span>
                                 </td>
                                 <td>
@@ -126,16 +118,18 @@
                         </tbody>
                     </table>
                 </div>                
-        </div>
+            </div>
+            </div>
+        </div>  
     </div>
-    </div>
 
 
-    <!--
-        // $Component = new Component();
-        // echo $Component->getFooterDashboard();
-        
-     -->
+    <?php 
 
-</body>
+        $Component = new Component();
+        echo $Component->getFooterDashboard();
+    
+    ?>
+
+    </body>
 </html>

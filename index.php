@@ -86,6 +86,7 @@ switch ($URL[0]) {
     case 'suporte':
         require_once('./views/suporte.php');
         break;
+   
     default:
         require_once('./views/not-found.php');
         break;
