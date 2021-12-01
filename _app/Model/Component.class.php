@@ -257,8 +257,10 @@ class Component {
                     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
                             
-                            <a class="collapse-item" href="#">Pagina</a>
-                            <a class="collapse-item" href="#">Curso de leitura</a>
+                            <a class="collapse-item" href="'. BASE .'meus-cursos/">Meus cursos</a>
+                            <a class="collapse-item" href="'. BASE .'/historico-compras">Histórico de compras</a>
+                            <a class="collapse-item" href="'. BASE .'/cursos-finalizados">Cursos finalizados</a>
+                            <a class="collapse-item" href="'. BASE .'/cursos-pendentes">Cursos pendentes</a>
                         </div>
                     </div>
                 </li>
@@ -275,7 +277,7 @@ class Component {
                                     <div class="bg-white py-2 collapse-inner rounded">
                                         <a class="collapse-item" href="'. BASE .'/list-user">Lista de usuários</a>
                                         <a class="collapse-item" href="'. BASE .'/cursos-aprovacao">Cursos em análise</a>
-                                        <a class="collapse-item" href="'. BASE .'/">Histórico de compras</a>
+                                        <a class="collapse-item" href="'. BASE .'/historico-compras">Histórico de compras</a>
                                         <a class="collapse-item" href="'. BASE .'/suporte">Suporte</a>
                                         <a class="collapse-item" href="'. BASE .'/settings">Configurações</a>
                                         

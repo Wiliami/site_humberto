@@ -26,13 +26,13 @@ echo $Component->getBarraMenuOptions();
                         </tr>
                     </thead>
                     <tbody>
-                        <!-- <?php
+                        <?php
                         $Read = new Read();
                         $Read->FullRead("SELECT * FROM users");
                         if($Read->getResult()) {
                             foreach($Read->getResult() as $User) {
                                 ?> 
-                        -->
+                        
                                 <tr>
                             <td>
                                 <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="avatar" style="width: 50px; height: 50px">
@@ -44,7 +44,7 @@ echo $Component->getBarraMenuOptions();
                                 <?= $User['user_create_date'] ?>  
                             </td>
                             <td class="text-center">
-                                <span class="label label-default">Aguradando aprovação</span>
+                                <span class="label label-default">Aguardando aprovação</span>
                             </td>
                             <td>
                                 <a href="/">Nome do usuário</a>
