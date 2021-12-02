@@ -79,6 +79,7 @@
                 </li>
 
                 <hr class="sidebar-divider my-0 ">
+                
                 <li class="nav-item">
                     <a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#collapseUtilities"
                         aria-expanded="true" aria-controls="collapseUtilities">
@@ -277,9 +278,13 @@
                                         <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                         Meus dados
                                     </a>
-                                    <a class="dropdown-item" href="<?= BASE ?>/reset-password">
+                                    <a class="dropdown-item" href="<?= BASE ?>/meus-cursos">
                                         <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                        Mudar senha
+                                        Meus cursos
+                                    </a>
+                                    <a class="dropdown-item" href="<?= BASE ?>/suporte">
+                                        <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                                        Suporte
                                     </a>
 
                                     <div class="dropdown-divider"></div>
