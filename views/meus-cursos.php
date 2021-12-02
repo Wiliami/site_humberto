@@ -14,7 +14,6 @@
         <span>Meus cursos</span>
     </div>
 
-
     <div class="row gx-5" style="margin-left: 8px; margin-top: 20px;">
         <div class="col-lg-4 mb-5">
             <div class="card h-100 shadow border-0">
@@ -44,6 +43,8 @@
             </div>
         </div>
     </div> 
+
+    <!-- Esse mesmo conteudo exixte no dashboard -->
 
     
 

@@ -38,14 +38,6 @@
                 <!-- Divider -->
                 <hr class="sidebar-divider my-0 ">
 
-            
-
-                <!-- Divider -->
-                <hr class="sidebar-divider">
-
-            
-               
-
                 
                 <!-- Nav Item - Pages Collapse Menu -->
                 <li class="nav-item">
@@ -56,7 +48,6 @@
                     </a>
                     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
-                        
                             <a class="collapse-item" href="<?= BASE ?>/cursos-aprovacao">Aprovação de cursos</a>
                             <a class="collapse-item" href="<?= BASE ?>/historico-compras">Histórico de compras</a>
                             <a class="collapse-item" href="<?= BASE ?>/settings">Configurações</a>
@@ -74,7 +65,6 @@
                     <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
                         data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
-                            
                             <a class="collapse-item" href="<?= BASE ?>/meus-cursos">Meus cursos</a>
                             <a class="collapse-item" href="<?= BASE ?>/historico-compras">Histórico de compras</a>
                             <a class="collapse-item" href="<?= BASE ?>/cursos-finalizados">Cursos finalizados</a>
@@ -82,22 +72,6 @@
                         </div>
                     </div>
                 </li>
-
-               
-
-                <!-- Divider -->
-                <hr class="sidebar-divider">
-
-              
-     
-
-                
-
-                <!-- Divider -->
-                <hr class="sidebar-divider d-none d-md-block">
-
-                
-
 
             </ul>
             <!-- End of Sidebar -->
