@@ -57,7 +57,6 @@
 
                 <hr class="sidebar-divider my-0 ">
 
-
                 <!-- Nav Item - Pages Collapse Menu -->
     
                 <li class="nav-item">
@@ -79,7 +78,7 @@
                 </li>
 
                 <hr class="sidebar-divider my-0 ">
-                
+
                 <li class="nav-item">
                     <a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#collapseUtilities"
                         aria-expanded="true" aria-controls="collapseUtilities">

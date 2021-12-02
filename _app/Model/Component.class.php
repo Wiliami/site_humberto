@@ -237,7 +237,7 @@ class Component {
             <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
                 <!-- Sidebar - Brand -->
-                <a class="sidebar-brand d-flex align-items-center justify-content-center" href="' . BASE . '/dashboard">
+                <a class="sidebar-brand d-flex align-items-center justify-content-center" href=" ' . BASE . '/dashboard">
                     <div class="sidebar-brand-icon rotate-n-15">
                         <i class="fas fa-laugh-wink"></i>
                     </div>
@@ -512,7 +512,7 @@ class Component {
 
     }
 
-    public function getFooterDashboard() {
+    public function getFooterDashboard() {                                                                                                                              
         return '
 
         </div>
@@ -520,7 +520,7 @@ class Component {
 
             
 
-            </div>
+            </div>                                                              
             <!-- End of Content Wrapper -->
 
         </div>
@@ -560,7 +560,7 @@ class Component {
                 </div>
             </div>
         </footer>
-            <!-- Bootstrap core JavaScript-->
+        <!-- Bootstrap core JavaScript-->
         <script src="'. BASE .'/res/site/js/jquery.min.js"></script>
         <script src="'. BASE .'/res/site/js/bootstrap.bundle.min.js"></script>
 

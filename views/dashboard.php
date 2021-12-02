@@ -281,12 +281,20 @@
                         </ul>
 
                     </nav>
-                    <!-- End of Topbar -->
 
-                    <!-- Begin Page Content -->
+                    Dashboard
+                 
+
+        <?php
+        $Component = new Component();
+        echo $Component->getFooterDashboard();
+        ?>
+
                     <div class="container-fluid">
 
-                    ...
+
+
+                    
 
 
 
@@ -297,6 +305,7 @@
             <i class="fas fa-angle-up"></i>
         </a>
 
+            
         <!-- Logout Modal-->
         <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
             aria-hidden="true">
