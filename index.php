@@ -104,6 +104,9 @@ switch ($URL[0]) {
     case 'help':
         require_once('./views/help.php');
         break;
+    case 'page':
+        require_once('./views/page.php');
+        break;
     default:
         require_once('./views/not-found.php');
         break;

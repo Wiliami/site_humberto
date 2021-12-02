@@ -5,9 +5,9 @@
     $Component = new Component();
 
     echo $Component->getHeadHtmlPages();
-    echo $Component->getMenuAndSideBarDashboard();
+    
     echo $Component->getBarraMenuOptions();  
-    echo $Component->getBarraMenuOptions();  
+   
 ?>
 
 <div class="container">
