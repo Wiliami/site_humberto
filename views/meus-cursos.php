@@ -22,7 +22,7 @@
                 </video>
                 <div class="card-body p-4">
                     <div class="badge bg-success bg-gradient rounded-pill mb-2 text-white">Curso</div>
-                    <a class="text-decoration-none link-dark stretched-link" href="#">
+                    <a class="text-decoration-none link-dark stretched-link" href="<?= BASE ?>/aulas">
                         <h5 class="card-title mb-3">Técnicas e perfomance.</h5>
                     </a>
                     <p class="card-text mb-0">Saiba como falar em público e como dominar a timidez na hora
@@ -43,12 +43,6 @@
             </div>
         </div>
     </div> 
-
-    <!-- Esse mesmo conteudo exixte no dashboard -->
-
-    
-
-
 
 <?php
 

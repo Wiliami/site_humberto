@@ -98,6 +98,12 @@ switch ($URL[0]) {
     case 'minhas-compras':
         require_once('./views/minhas-compras.php');
         break;
+    case 'aulas':
+        require_once('./views/aulas.php');
+        break;
+    case 'help':
+        require_once('./views/help.php');
+        break;
     default:
         require_once('./views/not-found.php');
         break;
