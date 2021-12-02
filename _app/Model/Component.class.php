@@ -700,7 +700,7 @@ class Component {
         ';
     }
 
-    public function getFooterHomeTeste() {
+    public function getFooterHome() {
         return '
 
         <footer class="footer pt-5 mt-5">
@@ -740,28 +740,24 @@ class Component {
                 <h6 class="text-sm">Parcerias</h6>
                 <ul class="flex-column ms-n3 nav">
                   <li class="nav-item">
-                    <a class="nav-link" href="" target="_blank">
+                    <a class="nav-link" href="https://www.unitbrasil.com/" target="_blank">
                       UNITBRASIL
                     </a>
                   </li>
       
                   <li class="nav-item">
-                    <a class="nav-link" href="" target="_blank">
+                    <a class="nav-link" href="https://www.adventistas.org/pt/" target="_blank">
                       Igreja Aventista
                     </a>
                   </li>
       
                   <li class="nav-item">
-                    <a class="nav-link" href="" target="_blank">
+                    <a class="nav-link" href="https://www.unitplus.com.br/" target="_blank">
                       Unitplus
                     </a>
                   </li>
       
-                  <li class="nav-item">
-                    <a class="nav-link" href="" target="_blank">
-                      Contato
-                    </a>
-                  </li>
+                  
                 </ul>
               </div>
             </div>
@@ -845,7 +841,7 @@ class Component {
             <div class="col-12">
               <div class="text-center">
                 <p class="text-dark my-4 text-sm font-weight-normal">
-                  Todos os direitos reservados. Copyright © Feito by <a href="https://www.unitplus.com.br/" target="_blank">Unitplus</a>.
+                  Todos os direitos reservados. Copyright © Feito por <a href="https://www.unitplus.com.br/" target="_blank">Unitplus</a>.
                 </p>
               </div>
             </div>

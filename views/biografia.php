@@ -72,7 +72,7 @@ echo $Component->getMenu();
                         <div class="mask bg-gradient-dark opacity-8"></div>
                         <div class="p-5 ps-sm-8 position-relative text-start my-auto z-index-2">
                             <h3 class="text-white">Informação de contato</h3>
-                            <p class="text-white opacity-8 mb-4">Preencha o formulário e nossa equipe irá entrar em contato com você em 24h.</p>
+                            <p class="text-white opacity-8 mb-4">Preencha o formulário e nossa equipe irá entrar em contato com você em atualizações em até 24h.</p>
                             <div class="d-flex p-2 text-white">
                             <div>
                                 <i class="fas fa-phone text-sm"></i>
@@ -94,7 +94,7 @@ echo $Component->getMenu();
                                 <i class="fas fa-map-marker-alt text-sm"></i>
                             </div>
                             <div class="ps-3">
-                                <span class="text-sm opacity-8">Manaus, AM 69090-090</span>
+                                <span class="text-sm opacity-8">Manaus, AM 00000-000</span>
                             </div>
                             </div>
                            
