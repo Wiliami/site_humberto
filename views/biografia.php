@@ -1,28 +1,12 @@
-<!DOCTYPE html>
-<html lang="pt-BR" itemscope itemtype="http://schema.org/WebPage">
+<?php
 
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>
-            Page | Biografia
-        </title>
+$Component = new Component();
+echo $Component->getHeadHtmlReset();
+echo $Component->getMenu();
 
-        <link id="pagestyle" href="<?= BASE ?>/src/css/material-kit.css?v=3.0.0" rel="stylesheet" />
-        <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
-    </head>
+?>
     
-
     <body class="blog-author bg-gray-200">
-
-
-        <?php
-
-            $Component = new Component();
-            echo $Component->getMenu();
-
-        ?>
-    
         <header>
             <div class="page-header min-height-400" style="background-image: url('<?= BASE ?>/src/images/humberto-background-bio.jpeg')" loading="lazy">
                 <span class="mask bg-gradient-secondary opacity-4"></span>
@@ -163,22 +147,9 @@
         <?php
         
             $Component = new Component();
-            // echo $Component-> getFooterExampleTest();
             echo $Component->getFooterHomeTeste();
 
         ?>
-        <!-- -------- END FOOTER 5 w/ DARK BACKGROUND ------- -->
-        <!--   Core JS Files   -->
-        <script src="../assets/js/core/popper.min.js" type="text/javascript"></script>
-        <script src="../assets/js/core/bootstrap.min.js" type="text/javascript"></script>
-        <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
-        <!--  Plugin for Parallax, full documentation here: https://github.com/wagerfield/parallax  -->
-        <script src="../assets/js/plugins/parallax.min.js"></script>
-        <!-- Control Center for Material UI Kit: parallax effects, scripts for the example pages etc -->
-        <!--  Google Maps Plugin    -->
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTTfWur0PDbZWPr7Pmq8K3jiDp0_xUziI"></script>
-        <script src="../assets/js/material-kit.min.js?v=3.0.0" type="text/javascript"></script>
-
     </body>
 </html>
 

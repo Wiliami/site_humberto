@@ -9,6 +9,7 @@
         <!-- Estiliza o background do Header -->
         <link rel="stylesheet" href="<?= BASE ?>/src/css/index.css" type="text/css">
 
+
         <!-- Template oficial do projeto -->
         <link id="pagestyle" href="<?= BASE ?>/src/css/material-kit.css?v=3.0.0" rel="stylesheet" />
 
@@ -22,7 +23,7 @@
         
             $Component = new Component();                               
             echo $Component->getMenu();   
-            echo $Component->getHeaderOficial();
+            echo $Component->getHeader();
             
             
         ?>
@@ -67,7 +68,6 @@
                         <div class="card card-rotate card-background card-background-mask-primary shadow-primary mt-md-0 mt-5">
                             <div class="front front-background" style="background-image: url(https://images.unsplash.com/photo-1569683795645-b62e50fbf103?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80); background-size: cover;">
                             <div class="card-body py-7 text-center">
-                                <i class="material-icons text-white text-4xl my-3">touch_app</i>
                                 <h3 class="text-white">Cursos em <br /> diversas àreas.</h3>
                                 <p class="text-white opacity-8">Esta é uma plataforma vérsatil para cursos completos para quem deseja trabalhar com o público e com a igreja. Conhecimento para conquistar seus objetivos.</p>
                             </div>
@@ -86,14 +86,12 @@
                         <div class="row justify-content-start">
                         <div class="col-md-6">
                             <div class="info">
-                            <i class="material-icons text-gradient text-primary text-3xl">content_copy</i>
                             <h5 class="font-weight-bolder mt-3">Religião</h5>
                             <p class="pe-5">Trabalhamos para constituir uma trajetória sólida com base em valores éticos e morais, com a finalidade de formar cidadãos como você. </p>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="info">
-                            <i class="material-icons text-gradient text-primary text-3xl">flip_to_front</i>
                             <h5 class="font-weight-bolder mt-3">Família</h5>
                             <p class="pe-3">Este curso aborda a importância da família na educação de crianças e jovens além de mostrar o papel decisivo desta influência ao longo de toda vida escolar para o crescimento dos filhos.</p>
                             </div>
@@ -101,13 +99,11 @@
                         </div>
                         <div class="row justify-content-start mt-5">
                         <div class="col-md-6 mt-3">
-                            <i class="material-icons text-gradient text-primary text-3xl">price_change</i>
                             <h5 class="font-weight-bolder mt-3">Vida financeira</h5>
                             <p class="pe-5">Estude o curso de Planejamento Financeiro Familiar Grátis com certificado válido em todo Brasil. Curso grátis online de Planejamento Financeiro Familiar.</p>
                         </div>
                         <div class="col-md-6 mt-3">
                             <div class="info">
-                            <i class="material-icons text-gradient text-primary text-3xl">devices</i>
                             <h5 class="font-weight-bolder mt-3">Vida conjugal</h5>
                             <p class="pe-3">Neste curso você conhecerá as bases do casamento segunda a Bíblia. Serão ministradas assuntos como:
                                 <li>A aliança do casamento;</li>
@@ -121,15 +117,7 @@
                 </div>
             </section>
             
-            
-
-
-
-            <!-- carrosel -->
-            
-
-
-
+        
             <section class="py-5 bg-white" id="page-course">
                 <div class="container px-5 my-5">
                     <div class="row gx-5 justify-content-center">

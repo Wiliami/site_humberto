@@ -1,7 +1,7 @@
     <?php
 
         $Component = new Component();
-        echo $Component->getHeadHtmlPro();
+        echo $Component->getHeadHtmlReset();
         echo $Component->getMenu();
     
     ?>

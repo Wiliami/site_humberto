@@ -1,16 +1,3 @@
-/* body,
-html {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    background: #DFE7E9;
-} */
-
-
-
 header {
     position: relative;
     background-color: black;
@@ -63,15 +50,5 @@ header {
     header video {
       display: none;
     }
-
-
-
-  .bg-cover {
-    background-attachment: static;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-
     
   }
