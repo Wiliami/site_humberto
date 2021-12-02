@@ -81,8 +81,6 @@
                             <a class="collapse-item" href="<?= BASE ?>/cursos-pendentes">Cursos pendentes</a>
                             <a class="collapse-item" href="<?= BASE ?>/help">Ajuda</a>
                             <a class="collapse-item" href="<?= BASE ?>/suporte">Suporte</a>
-
-
                         </div>
                     </div>
                 </li>
