@@ -25,7 +25,7 @@
         <body id="page-top">
 
          <!-- Page Wrapper -->
-         <div id="wrapper">
+        <div id="wrapper">
 
             <!-- Sidebar -->
             <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
@@ -42,9 +42,8 @@
 
                 <!-- Nav Item - Pages Collapse Menu -->
                 <li class="nav-item">
-                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                        aria-expanded="true" aria-controls="collapseTwo">
-                        <span>Noções de finanças</span>
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                        <span>Noções de Finanças</span>
                     </a>
                 
                 </li>
@@ -342,10 +341,10 @@
 
                     <!-- Barra de opções de aula (Avançar e Anterior) -->
                     <header class="navbar navbar-expand navbar-light bg-dark topbar static-top shadow d-flex align-items-center justify-content-center justify-content-md-between">
-                        <ul style="list-style: none;">
+                        <ul class="header1" style="list-style: none;">
                             <li>
-                                <a href="#" class="small text-gray-500">
-                                    <i class="fas fa-angle-double-left fa-sm fa-fw mr-2 text-gray-400"></i>
+                                <a href="#" class="small text-gray-200">
+                                    <i class="fas fa-arrow-circle-left mr-2 text-gray-200"></i>
                                     Anterior 
                                     <span>Título da aula anterior</span>
                                 </a>
@@ -355,11 +354,11 @@
 
                         <div class="topbar-divider d-none d-sm-block"></div>
 
-                        <ul style="list-style: none;">  
+                        <ul class="header2" style="list-style: none;">  
                             <li>  
-                                <a href="#" class="small text-gray-500">Próximo 
+                                <a href="#" class="small text-gray-200">Próximo 
                                     <span>Título da próxima aula</span>
-                                    <i class="fas fa-angle-double-right fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    <i class="fas fa-arrow-circle-right mr-2 text-gray-200"></i>
                                 </a>
                             </li>
                         </ul>     
@@ -371,6 +370,17 @@
                     </div>
 
 
+                    
+                    </div>
+                <!-- End of Main Content -->
+
+            
+
+            </div>
+            <!-- End of Content Wrapper -->
+
+        </div>
+        <!-- End of Page Wrapper -->
 
         <?php 
         
