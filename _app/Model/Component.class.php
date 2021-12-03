@@ -512,7 +512,7 @@ class Component {
 
     }
 
-    public function getFooterDashboard() {                                                                                                                              
+    public function getFooterDashboard() {
         return '
 
         </div>
@@ -520,7 +520,7 @@ class Component {
 
             
 
-            </div>                                                              
+            </div>
             <!-- End of Content Wrapper -->
 
         </div>
@@ -560,7 +560,7 @@ class Component {
                 </div>
             </div>
         </footer>
-        <!-- Bootstrap core JavaScript-->
+            <!-- Bootstrap core JavaScript-->
         <script src="'. BASE .'/res/site/js/jquery.min.js"></script>
         <script src="'. BASE .'/res/site/js/bootstrap.bundle.min.js"></script>
 
@@ -841,7 +841,7 @@ class Component {
             <div class="col-12">
               <div class="text-center">
                 <p class="text-dark my-4 text-sm font-weight-normal">
-                  Todos os direitos reservados. Copyright © Feito por <a href="https://www.unitplus.com.br/" target="_blank">Unitplus</a>.
+                  Todos os direitos reservados. Copyright © Feito by <a href="https://www.unitplus.com.br/" target="_blank">Unitplus</a>.
                 </p>
               </div>
             </div>
