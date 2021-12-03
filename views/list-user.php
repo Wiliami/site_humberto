@@ -4,7 +4,7 @@
     $User->verifyExistLoginUser();
 
     $Component = new Component();
-    echo $Component->getHeadHtmlPages();
+    echo $Component->getHeadHtmlReset();
     echo $Component->getMenuAndSideBarDashboard();
     echo $Component->getBarraMenuOptions();
 

@@ -22,9 +22,9 @@
         <link href="<?= BASE ?>/res/site/css/all.min.css" rel="stylesheet" type="text/css">
         <link href="<?= BASE ?>/res/site/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
         <!-- Custom styles for this template -->
         <link href="<?= BASE ?>/res/site/css/sb-admin-2.min.css" rel="stylesheet">
+
         
     </head>
 
@@ -61,11 +61,11 @@
 
                                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                                     <div class="bg-white py-2 collapse-inner rounded">
-                                        <a class="collapse-item" href="'.  BASE .'/list-user">Lista de usuários</a>
-                                        <a class="collapse-item" href="'.  BASE .'/cursos-aprovacao">Cursos em análise</a>
-                                        <a class="collapse-item" href="'.  BASE .'/historico-compras">Histórico de compras</a>
-                                        <a class="collapse-item" href="'.  BASE .'/suporte">Suporte</a>
-                                        <a class="collapse-item" href="'.  BASE .'/settings">Configurações</a>
+                                        <a class="collapse-item" href="<?= BASE ?>/list-user">Lista de usuários</a>
+                                        <a class="collapse-item" href="<?= BASE ?>/cursos-aprovacao">Cursos em análise</a>
+                                        <a class="collapse-item" href="<?= BASE ?>/historico-compras">Histórico de compras</a>
+                                        <a class="collapse-item" href="<?= BASE ?>/suporte">Suporte</a>
+                                        <a class="collapse-item" href="<?= BASE ?>/settings">Configurações</a>
                                     </div>
                                 </div>
 

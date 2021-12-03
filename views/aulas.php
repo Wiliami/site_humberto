@@ -2,8 +2,6 @@
 
     $User = new User();
     $User->verifyExistLoginUser();
-    $Component = new Component();
-    echo $Component->getHeadHtmlReset();
 
 ?>
 
@@ -16,16 +14,12 @@
             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
             <meta name="description" content="">
             <meta name="author" content="">
-
             <title>Página | Aulas</title>
 
-            <!-- Custom fonts for this template-->
-            <link href="<?= BASE ?>/res/site/css/all.min.css" rel="stylesheet" type="text/css">
-            <link href="<?= BASE ?>/res/site/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
-            <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
             <!-- Custom styles for this template-->
             <link href="<?= BASE ?>/res/site/css/sb-admin-2.min.css" rel="stylesheet">
+            <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+
         </head>
 
         <body id="page-top">
@@ -50,7 +44,7 @@
                 <li class="nav-item">
                     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                         aria-expanded="true" aria-controls="collapseTwo">
-                        <span>Nome do curso</span>
+                        <span>Noções de finanças</span>
                     </a>
                 
                 </li>
@@ -60,48 +54,104 @@
                 <!-- Nav Item - Pages Collapse Menu -->
     
                 <li class="nav-item">
-                    <a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#collapsePages"
+                    <a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#collapsePages1"
                         aria-expanded="true" aria-controls="collapsePages">
                         <i class="fas fa-fw fa-folder"></i>
-                        <span>Módulo 1 - Título da aula</span>
+                        <span>Módulo 1 - Título do primeiro módulo</span>
                     </a>
 
-                    <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div id="collapsePages1" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
-                            <a class="collapse-item" href="<?= BASE ?>/list-user">Aula 1</a>
-                            <a class="collapse-item" href="<?= BASE ?>/cursos-aprovacao">Aula 2</a>
-                            <a class="collapse-item" href="<?= BASE ?>/historico-compras">Aula 3</a>
-                            <a class="collapse-item" href="<?= BASE ?>/suporte">Aula 4</a>
-                            <a class="collapse-item" href="<?= BASE ?>/settings">Aula 5</a>
+                            <a class="collapse-item" href="<?= BASE ?>/">Aula 1</a>
+                            <a class="collapse-item" href="<?= BASE ?>/">Aula 2</a>
+                            <a class="collapse-item" href="<?= BASE ?>/">Aula 3</a>
+                            <a class="collapse-item" href="<?= BASE ?>/">Aula 4</a>
+                            <a class="collapse-item" href="<?= BASE ?>/">Aula 5</a>
                         </div>
                     </div>
                 </li>
 
                 <hr class="sidebar-divider my-0 ">
 
+                <!-- Nav Item - Pages Collapse Menu -->
+    
                 <li class="nav-item">
-                    <a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#collapseUtilities"
-                        aria-expanded="true" aria-controls="collapseUtilities">
+                    <a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#collapsePages2"
+                        aria-expanded="true" aria-controls="collapsePages">
                         <i class="fas fa-fw fa-folder"></i>
-                        <span>Módulo 2 - Título da aula</span>
+                        <span>Módulo 2 - Título do Segundo módulo</span>
                     </a>
 
-                    <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div id="collapsePages2" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
-                            <a class="collapse-item" href="<?= BASE ?>/list-user">Aula 1</a>
-                            <a class="collapse-item" href="<?= BASE ?>/cursos-aprovacao">Aula 2</a>
-                            <a class="collapse-item" href="<?= BASE ?>/historico-compras">Aula 3</a>
-                            <a class="collapse-item" href="<?= BASE ?>/suporte">Aula 4</a>
-                            <a class="collapse-item" href="<?= BASE ?>/settings">Aula 5</a>
+                            <a class="collapse-item" href="<?= BASE ?>/">Primeira aula</a>
+                            <a class="collapse-item" href="<?= BASE ?>/">Segunda aula</a>
+                            <a class="collapse-item" href="<?= BASE ?>/">Terceira aula</a>
+                            <a class="collapse-item" href="<?= BASE ?>/">Quarta aula</a>
+                            <a class="collapse-item" href="<?= BASE ?>/">Quinta aula</a>
                         </div>
                     </div>
                 </li>
 
-             
 
+                <li class="nav-item">
+                    <a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#collapsePages3"
+                        aria-expanded="true" aria-controls="collapsePages">
+                        <i class="fas fa-fw fa-folder"></i>
+                        <span>Módulo 3 - Título do Terceiro módulo</span>
+                    </a>
+
+                    <div id="collapsePages3" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                        <div class="bg-white py-2 collapse-inner rounded">
+                            <a class="collapse-item" href="<?= BASE ?>/">Primeira aula</a>
+                            <a class="collapse-item" href="<?= BASE ?>/">Segunda aula</a>
+                            <a class="collapse-item" href="<?= BASE ?>/">Terceira aula</a>
+                            <a class="collapse-item" href="<?= BASE ?>/">Quarta aula</a>
+                            <a class="collapse-item" href="<?= BASE ?>/">Quinta aula</a>
+                        </div>
+                    </div>
+                </li>
+
+
+
+                <li class="nav-item">
+                    <a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#collapsePages4"
+                        aria-expanded="true" aria-controls="collapsePages">
+                        <i class="fas fa-fw fa-folder"></i>
+                        <span>Módulo 4 - Título do Quarto módulo</span>
+                    </a>
+
+                    <div id="collapsePages4" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                        <div class="bg-white py-2 collapse-inner rounded">
+                            <a class="collapse-item" href="<?= BASE ?>/">Primeira aula</a>
+                            <a class="collapse-item" href="<?= BASE ?>/">Segunda aula</a>
+                            <a class="collapse-item" href="<?= BASE ?>/">Terceira aula</a>
+                            <a class="collapse-item" href="<?= BASE ?>/">Quarta aula</a>
+                            <a class="collapse-item" href="<?= BASE ?>/">Quinta aula</a>
+                        </div>
+                    </div>
+                </li>
+
+
+                <li class="nav-item">
+                    <a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#collapsePages5"
+                        aria-expanded="true" aria-controls="collapsePages">
+                        <i class="fas fa-fw fa-folder"></i>
+                        <span>Módulo 5 - Título do Quinto módulo</span>
+                    </a>
+
+                    <div id="collapsePages5" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                        <div class="bg-white py-2 collapse-inner rounded">
+                            <a class="collapse-item" href="<?= BASE ?>/">Primeira aula</a>
+                            <a class="collapse-item" href="<?= BASE ?>/">Segunda aula</a>
+                            <a class="collapse-item" href="<?= BASE ?>/">Terceira aula</a>
+                            <a class="collapse-item" href="<?= BASE ?>/">Quarta aula</a>
+                            <a class="collapse-item" href="<?= BASE ?>/">Quinta aula</a>
+                        </div>
+                    </div>
+                </li>
             </ul>
           
-
             
             <!-- End of Sidebar -->
 
@@ -113,13 +163,6 @@
 
                     <!-- Topbar -->
                     <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-
-                        <!-- Sidebar Toggle (Topbar) -->
-                        <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                            <i class="fa fa-bars"></i>
-                        </button>
-
-                        
                         <ul class="navbar-nav ml-auto">
 
                             <!-- Nav Item - Search Dropdown (Visible Only XS) -->
@@ -293,20 +336,53 @@
                                     </a>   
                                 </div>
                             </li>
-
                         </ul>
-
-
                     </nav>
 
-                    <div class="v-100">
-                        <video class="card-img-top" muted>
-                            <source src="" type="video/mp4" />
-                        </video>
-                    </div>
 
+
+
+
+
+
+                    <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                    <ul class="navbar-nav ml-auto">
+
+                            <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+                            <li class="nav-item dropdown no-arrow d-sm-none">
+                                <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fas fa-search fa-fw"></i>
+                                </a>
+                                <!-- Dropdown - Messages -->
+                                <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                                    aria-labelledby="searchDropdown">
+                                    <form class="form-inline mr-auto w-100 navbar-search">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control bg-light border-0 small"
+                                                placeholder="Search for..." aria-label="Search"
+                                                aria-describedby="basic-addon2">
+                                            <div class="input-group-append">
+                                                <button class="btn btn-primary" type="button">
+                                                    <i class="fas fa-search fa-sm"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </li>
+
+                            
+                           
+
+                            <div class="topbar-divider d-none d-sm-block"></div>
+
+                            
+                        </ul>
+                    </nav>
                     
-
+                    
+            
                     
 
 

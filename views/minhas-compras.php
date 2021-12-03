@@ -3,22 +3,10 @@
     $User = new User();
     $User->verifyExistLoginUser();
     $Component = new Component();
-    echo $Component->getHeadHtmlPages();
+    echo $Component->getHeadHtmlReset();
     echo $Component->getMenuAndSideBarDashboard();  
 
 ?>
-
-
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página | Cursos</title>
-</head>
-<body>
-
     <div style="margin-left: 20px;">
         <h3>Olá, <?= $_SESSION['login']['user_name'] ?></h3>
         <span>Minhas compras</span>
