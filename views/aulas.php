@@ -40,115 +40,133 @@
                 <!-- Divider -->
                 <hr class="sidebar-divider my-0 ">
 
-                <!-- Nav Item - Pages Collapse Menu -->
-                <li class="nav-item">
-                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                        <span>Noções de Finanças</span>
-                    </a>
+
+                <?php 
+                    $Read = new Read();
+                    $Read->FullRead("SELECT * FROM modulos"); 
+                    if($Read->getResult()) {
+                    foreach($Read->getResult() as $Modulos) {
+                        ?>
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                            <span><?= $Modulos['modulo_titulo'] ?></span>
+                        </a>
                 
-                </li>
+                    </li>
 
-                <hr class="sidebar-divider my-0 ">
+                    <hr class="sidebar-divider my-0 ">
+                        
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#collapsePages1"
+                            aria-expanded="true" aria-controls="collapsePages">
+                            <i class="fas fa-fw fa-folder"></i>
+                            <span>Módulo 1 - Título do Primeiro módulo</span>
 
-                <!-- Nav Item - Pages Collapse Menu -->
+
+                            <!-- Titulo -->
+                        </a>
+
+                        <div id="collapsePages1" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                            <div class="bg-white py-2 collapse-inner rounded">
+                                <a class="collapse-item" href="<?= BASE ?>/">Aula 1</a>
+                                <a class="collapse-item" href="<?= BASE ?>/">Aula 2</a>
+                                <a class="collapse-item" href="<?= BASE ?>/">Aula 3</a>
+                                <a class="collapse-item" href="<?= BASE ?>/">Aula 4</a>
+                                <a class="collapse-item" href="<?= BASE ?>/">Aula 5</a>
+                            </div>
+                        </div>
+                    </li>
+
+                    <hr class="sidebar-divider my-0 ">
+
+                    <!-- Nav Item - Pages Collapse Menu -->
     
-                <li class="nav-item">
-                    <a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#collapsePages1"
-                        aria-expanded="true" aria-controls="collapsePages">
-                        <i class="fas fa-fw fa-folder"></i>
-                        <span>Módulo 1 - Título do primeiro módulo</span>
-                    </a>
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#collapsePages2"
+                            aria-expanded="true" aria-controls="collapsePages">
+                            <i class="fas fa-fw fa-folder"></i>
+                            <span>Módulo 2 - Título do Segundo módulo</span>
+                        </a>
 
-                    <div id="collapsePages1" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-                        <div class="bg-white py-2 collapse-inner rounded">
-                            <a class="collapse-item" href="<?= BASE ?>/">Aula 1</a>
-                            <a class="collapse-item" href="<?= BASE ?>/">Aula 2</a>
-                            <a class="collapse-item" href="<?= BASE ?>/">Aula 3</a>
-                            <a class="collapse-item" href="<?= BASE ?>/">Aula 4</a>
-                            <a class="collapse-item" href="<?= BASE ?>/">Aula 5</a>
+                        <div id="collapsePages2" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                            <div class="bg-white py-2 collapse-inner rounded">
+                                <a class="collapse-item" href="<?= BASE ?>/">Primeira aula</a>
+                                <a class="collapse-item" href="<?= BASE ?>/">Segunda aula</a>
+                                <a class="collapse-item" href="<?= BASE ?>/">Terceira aula</a>
+                                <a class="collapse-item" href="<?= BASE ?>/">Quarta aula</a>
+                                <a class="collapse-item" href="<?= BASE ?>/">Quinta aula</a>
+                            </div>
                         </div>
-                    </div>
-                </li>
+                    </li>
 
-                <hr class="sidebar-divider my-0 ">
 
-                <!-- Nav Item - Pages Collapse Menu -->
-    
-                <li class="nav-item">
-                    <a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#collapsePages2"
-                        aria-expanded="true" aria-controls="collapsePages">
-                        <i class="fas fa-fw fa-folder"></i>
-                        <span>Módulo 2 - Título do Segundo módulo</span>
-                    </a>
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#collapsePages3"
+                            aria-expanded="true" aria-controls="collapsePages">
+                            <i class="fas fa-fw fa-folder"></i>
+                            <span>Módulo 3 - Título do Terceiro módulo</span>
+                        </a>
 
-                    <div id="collapsePages2" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-                        <div class="bg-white py-2 collapse-inner rounded">
-                            <a class="collapse-item" href="<?= BASE ?>/">Primeira aula</a>
-                            <a class="collapse-item" href="<?= BASE ?>/">Segunda aula</a>
-                            <a class="collapse-item" href="<?= BASE ?>/">Terceira aula</a>
-                            <a class="collapse-item" href="<?= BASE ?>/">Quarta aula</a>
-                            <a class="collapse-item" href="<?= BASE ?>/">Quinta aula</a>
+                        <div id="collapsePages3" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                            <div class="bg-white py-2 collapse-inner rounded">
+                                <a class="collapse-item" href="<?= BASE ?>/">Primeira aula</a>
+                                <a class="collapse-item" href="<?= BASE ?>/">Segunda aula</a>
+                                <a class="collapse-item" href="<?= BASE ?>/">Terceira aula</a>
+                                <a class="collapse-item" href="<?= BASE ?>/">Quarta aula</a>
+                                <a class="collapse-item" href="<?= BASE ?>/">Quinta aula</a>
+                            </div>
                         </div>
-                    </div>
-                </li>
+                    </li>
 
 
-                <li class="nav-item">
-                    <a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#collapsePages3"
-                        aria-expanded="true" aria-controls="collapsePages">
-                        <i class="fas fa-fw fa-folder"></i>
-                        <span>Módulo 3 - Título do Terceiro módulo</span>
-                    </a>
 
-                    <div id="collapsePages3" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-                        <div class="bg-white py-2 collapse-inner rounded">
-                            <a class="collapse-item" href="<?= BASE ?>/">Primeira aula</a>
-                            <a class="collapse-item" href="<?= BASE ?>/">Segunda aula</a>
-                            <a class="collapse-item" href="<?= BASE ?>/">Terceira aula</a>
-                            <a class="collapse-item" href="<?= BASE ?>/">Quarta aula</a>
-                            <a class="collapse-item" href="<?= BASE ?>/">Quinta aula</a>
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#collapsePages4"
+                            aria-expanded="true" aria-controls="collapsePages">
+                            <i class="fas fa-fw fa-folder"></i>
+                            <span>Módulo 4 - Título do Quarto módulo</span>
+                        </a>
+
+                        <div id="collapsePages4" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                            <div class="bg-white py-2 collapse-inner rounded">
+                                <a class="collapse-item" href="<?= BASE ?>/">Primeira aula</a>
+                                <a class="collapse-item" href="<?= BASE ?>/">Segunda aula</a>
+                                <a class="collapse-item" href="<?= BASE ?>/">Terceira aula</a>
+                                <a class="collapse-item" href="<?= BASE ?>/">Quarta aula</a>
+                                <a class="collapse-item" href="<?= BASE ?>/">Quinta aula</a>
+                            </div>
                         </div>
-                    </div>
-                </li>
+                    </li>
 
 
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#collapsePages5"
+                            aria-expanded="true" aria-controls="collapsePages">
+                            <i class="fas fa-fw fa-folder"></i>
+                            <span>Módulo 5 - Título do Quinto módulo</span>
+                        </a>
 
-                <li class="nav-item">
-                    <a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#collapsePages4"
-                        aria-expanded="true" aria-controls="collapsePages">
-                        <i class="fas fa-fw fa-folder"></i>
-                        <span>Módulo 4 - Título do Quarto módulo</span>
-                    </a>
-
-                    <div id="collapsePages4" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-                        <div class="bg-white py-2 collapse-inner rounded">
-                            <a class="collapse-item" href="<?= BASE ?>/">Primeira aula</a>
-                            <a class="collapse-item" href="<?= BASE ?>/">Segunda aula</a>
-                            <a class="collapse-item" href="<?= BASE ?>/">Terceira aula</a>
-                            <a class="collapse-item" href="<?= BASE ?>/">Quarta aula</a>
-                            <a class="collapse-item" href="<?= BASE ?>/">Quinta aula</a>
+                        <div id="collapsePages5" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                            <div class="bg-white py-2 collapse-inner rounded">
+                                <a class="collapse-item" href="<?= BASE ?>/">Primeira aula</a>
+                                <a class="collapse-item" href="<?= BASE ?>/">Segunda aula</a>
+                                <a class="collapse-item" href="<?= BASE ?>/">Terceira aula</a>
+                                <a class="collapse-item" href="<?= BASE ?>/">Quarta aula</a>
+                                <a class="collapse-item" href="<?= BASE ?>/">Quinta aula</a>
+                            </div>
                         </div>
-                    </div>
-                </li>
+                    </li>
 
 
-                <li class="nav-item">
-                    <a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#collapsePages5"
-                        aria-expanded="true" aria-controls="collapsePages">
-                        <i class="fas fa-fw fa-folder"></i>
-                        <span>Módulo 5 - Título do Quinto módulo</span>
-                    </a>
+                        <?php
+                    }
+                } else {
+                    Error("Ainda não existem cursos nesta plataforma!");
+                }   
+                ?>
 
-                    <div id="collapsePages5" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-                        <div class="bg-white py-2 collapse-inner rounded">
-                            <a class="collapse-item" href="<?= BASE ?>/">Primeira aula</a>
-                            <a class="collapse-item" href="<?= BASE ?>/">Segunda aula</a>
-                            <a class="collapse-item" href="<?= BASE ?>/">Terceira aula</a>
-                            <a class="collapse-item" href="<?= BASE ?>/">Quarta aula</a>
-                            <a class="collapse-item" href="<?= BASE ?>/">Quinta aula</a>
-                        </div>
-                    </div>
-                </li>
+
+                
             </ul>
           
             
