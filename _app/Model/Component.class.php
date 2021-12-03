@@ -514,6 +514,14 @@ class Component {
 
     public function getFooterDashboard() {
         return '
+                </div>
+                <!-- End of Main Content -->
+
+            </div>
+            <!-- End of Content Wrapper -->
+
+        </div>
+        <!-- End of Page Wrapper -->
 
         <!-- Scroll to Top Button-->
         <!-- <a class="scroll-to-top rounded" href="#page-top">
@@ -557,7 +565,7 @@ class Component {
         <!-- Custom scripts for all pages-->
         <script src="'. BASE .'/res/site/js/sb-admin-2.min.js"></script> 
     </body>
-</html> 
+ 
         ';
     }
     

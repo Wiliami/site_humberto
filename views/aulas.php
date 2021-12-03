@@ -363,28 +363,17 @@
                             </li>
                         </ul>     
                     </header>
+                  
 
 
                     <div class="embed-responsive embed-responsive-16by9">
                         <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/137857207" allowfullscreen></iframe>
                     </div>
 
-
-                    
-                    </div>
-                <!-- End of Main Content -->
-
-            
-
-            </div>
-            <!-- End of Content Wrapper -->
-
-        </div>
-        <!-- End of Page Wrapper -->
-
-        <?php 
+                    <?php 
         
-            $Component = new Component();
-            echo $Component->getFooterDashboard();
+                        $Component = new Component();
+                        echo $Component->getFooterDashboard();
 
-        ?>
+                    ?>
+        </html>
