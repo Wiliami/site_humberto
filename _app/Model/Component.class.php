@@ -890,6 +890,8 @@ class Component {
                     </title>
             
                     <link id="pagestyle" href="'. BASE .'/src/css/material-kit.css?v=3.0.0" rel="stylesheet" />
+
+                    <!-- Estiliza todos os ícons de deshboard -->
                     <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
                 </head>
             

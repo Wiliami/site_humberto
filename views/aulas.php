@@ -338,17 +338,15 @@
                             </li>
                         </ul>
                     </nav>
-
-
-
-
-
+                    
 
                     <!-- Barra de opções de aula (Avançar e Anterior) -->
-                    <div class="navbar navbar-expand navbar-light bg-dark topbar mb-4 static-top shadow d-flex align-items-center justify-content-center justify-content-md-between">
-                        <ul>
+                    <header class="navbar navbar-expand navbar-light bg-dark topbar static-top shadow d-flex align-items-center justify-content-center justify-content-md-between">
+                        <ul style="list-style: none;">
                             <li>
-                                <a href="#" class="small text-gray-500"> < Anterior 
+                                <a href="#" class="small text-gray-500">
+                                    <i class="fas fa-angle-double-left fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Anterior 
                                     <span>Título da aula anterior</span>
                                 </a>
                             </li>
@@ -357,19 +355,20 @@
 
                         <div class="topbar-divider d-none d-sm-block"></div>
 
-                        <ul>  
+                        <ul style="list-style: none;">  
                             <li>  
                                 <a href="#" class="small text-gray-500">Próximo 
-                                    <span>Título da próxima aula ></span>
+                                    <span>Título da próxima aula</span>
+                                    <i class="fas fa-angle-double-right fa-sm fa-fw mr-2 text-gray-400"></i>
                                 </a>
                             </li>
-                        </ul>                           
-                        
+                        </ul>     
+                    </header>
+
+
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/137857207" allowfullscreen></iframe>
                     </div>
-                    
-                    
-            
-                    
 
 
 
