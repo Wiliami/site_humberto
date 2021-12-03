@@ -3,9 +3,7 @@
     $User = new User();
     $User->verifyExistLoginUser();
     $Component = new Component();
-
-    echo $Component->getHeadHtmlPages();
-    
+    echo $Component->getHeadHtmlReset();
     echo $Component->getBarraMenuOptions();  
    
 ?>

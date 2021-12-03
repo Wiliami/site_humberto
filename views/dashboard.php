@@ -1,3 +1,11 @@
+<?php
+
+    $Component = new Component();
+    echo $Component->getHeadHtmlReset();
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -14,6 +22,7 @@
         <link href="<?= BASE ?>/res/site/css/all.min.css" rel="stylesheet" type="text/css">
         <link href="<?= BASE ?>/res/site/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
         <!-- Custom styles for this template -->
         <link href="<?= BASE ?>/res/site/css/sb-admin-2.min.css" rel="stylesheet">
         
@@ -30,7 +39,7 @@
                 <!-- Sidebar - Brand -->
                 <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?= BASE ?>/dashboard">
                     <div class="sidebar-brand-icon rotate-n-15">
-                        <i class="fas fa-laugh-wink"></i>
+
                     </div>
                     <div class="sidebar-brand-text mx-3">Logo</div>
                 </a>
@@ -290,14 +299,7 @@
         echo $Component->getFooterDashboard();
         ?>
 
-                    <div class="container-fluid">
-
-
-
-                    
-
-
-
+        <div class="container-fluid">
               
 
         <!-- Scroll to Top Button-->
