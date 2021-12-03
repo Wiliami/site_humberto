@@ -344,42 +344,28 @@
 
 
 
-
-                    <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-                    <ul class="navbar-nav ml-auto">
-
-                            <!-- Nav Item - Search Dropdown (Visible Only XS) -->
-                            <li class="nav-item dropdown no-arrow d-sm-none">
-                                <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <i class="fas fa-search fa-fw"></i>
+                    <!-- Barra de opções de aula (Avançar e Anterior) -->
+                    <div class="navbar navbar-expand navbar-light bg-dark topbar mb-4 static-top shadow d-flex align-items-center justify-content-center justify-content-md-between">
+                        <ul>
+                            <li>
+                                <a href="#" class="small text-gray-500"> < Anterior 
+                                    <span>Título da aula anterior</span>
                                 </a>
-                                <!-- Dropdown - Messages -->
-                                <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
-                                    aria-labelledby="searchDropdown">
-                                    <form class="form-inline mr-auto w-100 navbar-search">
-                                        <div class="input-group">
-                                            <input type="text" class="form-control bg-light border-0 small"
-                                                placeholder="Search for..." aria-label="Search"
-                                                aria-describedby="basic-addon2">
-                                            <div class="input-group-append">
-                                                <button class="btn btn-primary" type="button">
-                                                    <i class="fas fa-search fa-sm"></i>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
                             </li>
 
-                            
-                           
-
-                            <div class="topbar-divider d-none d-sm-block"></div>
-
-                            
                         </ul>
-                    </nav>
+
+                        <div class="topbar-divider d-none d-sm-block"></div>
+
+                        <ul>  
+                            <li>  
+                                <a href="#" class="small text-gray-500">Próximo >
+                                    <span>Título da próxima aula</span>
+                                </a>
+                            </li>
+                        </ul>                           
+                        
+                    </div>
                     
                     
             
