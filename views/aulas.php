@@ -359,8 +359,8 @@
 
                         <ul>  
                             <li>  
-                                <a href="#" class="small text-gray-500">Próximo >
-                                    <span>Título da próxima aula</span>
+                                <a href="#" class="small text-gray-500">Próximo 
+                                    <span>Título da próxima aula ></span>
                                 </a>
                             </li>
                         </ul>                           
