@@ -46,7 +46,7 @@
 
                 <?php 
                     $Read = new Read();
-                    $Read->FullRead("SELECT * FROM modulos"); 
+                    $Read->FullRead("SELECT * FROM modulos");
                     if($Read->getResult()) {
                     foreach($Read->getResult() as $Modulos) {
                         ?>
@@ -54,21 +54,33 @@
                     
                     <hr class="sidebar-divider my-0 ">
 
-                    <li class="nav-item">
-                        <a class="nav-link collapsed" href="#">
-                            <!-- $Modulos['modulo_titulo'] ?> -->
-                            <!-- <span class="fw-normal text-white-50 mb-1">5 de 20 aulas completas</span> -->
-                            <div class=" text-white">Título do curso</div>
-                            <span>5 de 20 aulas completas</span>
-                        </a>
-                
-                    </li>
+                    <?php
+                        $Read = new Read();
+                        $Read->FullRead("SELECT * FROM cursos");
+                        if($Read->getResult()) {
+                        foreach($Read->getResult() as $Cursos) {
+                            ?>
+
+                        <li class="nav-item">
+                            <a class="nav-link collapsed" href="#">
+                                <div class=" text-white"><?php $Cursos['curso_titulo'] ?></div>
+                                <span>5 de 20 aulas completas</span>
+                            </a>
+                        </li>
+
+                    <?php
+                            }
+                        } else {
+                            Error("Ainda não existem cursos!");
+                        }
+                    ?>
+                    
 
                     <hr class="sidebar-divider my-0 ">
 
                     <li class="nav-item">
                         <a class="nav-link collapsed" href="#">
-                            <i class="fas fa-fw fa-search">iiii</i>
+                            <i class="fas fa-fw fa-search"></i>
                             <span>Pesquise por uma aula ou tag</span>
                         </a>
                     </li>
@@ -82,7 +94,7 @@
                             <i class="fas fa-fw fa-folder"></i>
                             <div class="fw-normal text-white-50 mb-1">Módulo</div>
                             <!-- <p class="lead fw-normal ">Exemplo</p> -->
-                            <span>Título do Primeiro módulo</span>
+                            <span><?php $Modulos['modulo_titulo']?></span>
 
                         </a>
 
