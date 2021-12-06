@@ -66,10 +66,9 @@
                         <a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#collapsePages1"
                             aria-expanded="true" aria-controls="collapsePages">
                             <i class="fas fa-fw fa-folder"></i>
-                            <span>Módulo 1 - Título do Primeiro módulo</span>
+                            <h5>Módulo</h5>
+                            <span>Título do Primeiro módulo</span>
 
-
-                            <!-- Titulo -->
                         </a>
 
                         <div id="collapsePages1" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
