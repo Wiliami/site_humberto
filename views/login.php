@@ -2,44 +2,11 @@
 
     $User = new User();
     if($User->verifyLoginUserON()) {
-        header('Location: ' . BASE . '/dashboard');
+        header('Location: ' . BASE . '/painel/dashboard');
         die();
 };
 
 ?>
-
-<!-- <!DOCTYPE html>
-<html lang="pt-BR">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Página | Login</title> -->
-        
-        <!-- Google Fonts -->
-        <!-- <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,200,300,700,600' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=Raleway:400,100' rel='stylesheet' type='text/css'> -->
-        
-        <!-- Bootstrap -->  
-        <!-- <link rel="stylesheet" href="<?= BASE ?>/res/site/css/bootstrap.min.css"> -->
-        
-        <!-- Font Awesome -->   
-        <!-- <link rel="stylesheet" href="<?= BASE ?>/res/site/css/font-awesome.min.css"> -->
-        
-        <!-- Custom CSS -->
-        <!-- <link rel="stylesheet" href="<?= BASE ?>/res/site/css/owl.carousel.css"> -->
-        <!-- <link rel="stylesheet" href="<?= BASE ?>/res/site/css/style.css">
-        <link rel="stylesheet" href="<?= BASE ?>/res/site/css/responsive.css"> -->
-
-        <!-- <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
-        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
-
-
-
-        <link id="pagestyle" href="<?= BASE ?>/src/css/material-kit.css?v=3.0.0" rel="stylesheet" />
-        <link href="<?= BASE ?>/res/site/css/bootstrap.min.css" rel="stylesheet" />
-        <link href="<?= BASE ?>/res/site/css/paper-kit.css?v=2.2.0" rel="stylesheet" /> -->
 
 <!DOCTYPE html>
      <html lang="pt-BR">
@@ -82,7 +49,7 @@
                             $User->exeLogin($Post['email'], $Post['password']);
                             if($User->getResult()) {
                                 Error($User->getError());
-                                header('Location: ' . BASE . '/dashboard');
+                                header('Location: ' . BASE . '/painel/dashboard');
                                 die();
                             } else {
                                 Error($User->getError(), 'danger');

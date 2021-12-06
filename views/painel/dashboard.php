@@ -63,11 +63,11 @@
 
                                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                                     <div class="bg-white py-2 collapse-inner rounded">
-                                        <a class="collapse-item" href="<?= BASE ?>/list-user">Lista de usuários</a>
-                                        <a class="collapse-item" href="<?= BASE ?>/cursos-aprovacao">Cursos em análise</a>
-                                        <a class="collapse-item" href="<?= BASE ?>/historico-compras">Histórico de compras</a>
-                                        <a class="collapse-item" href="<?= BASE ?>/suporte">Suporte</a>
-                                        <a class="collapse-item" href="<?= BASE ?>/settings">Configurações</a>
+                                        <a class="collapse-item" href="<?= BASE ?>/painel/list-user">Lista de usuários</a>
+                                        <a class="collapse-item" href="<?= BASE ?>/painel/cursos-aprovacao">Cursos em análise</a>
+                                        <a class="collapse-item" href="<?= BASE ?>/painel/historico-compras">Histórico de compras</a>
+                                        <a class="collapse-item" href="<?= BASE ?>/painel/suporte">Suporte</a>
+                                        <a class="collapse-item" href="<?= BASE ?>/painel/settings">Configurações</a>
                                     </div>
                                 </div>
 
