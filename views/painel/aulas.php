@@ -51,9 +51,7 @@
                     <a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#collapse<?= $Modulos['modulo_id']?>"
                         aria-expanded="true" aria-controls="collapsePages">
                         <i class="fas fa-fw fa-folder"></i>
-
                         <span><?= $Modulos['modulo_titulo'] ?></span>
-
                     </a>
 
                     <div id="collapse<?= $Modulos['modulo_id']?>" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
@@ -62,8 +60,8 @@
                                $Read->FullRead("SELECT * FROM aulas WHERE modulo_id = :id", "id={$Modulos['modulo_id']}");
                                 if($Read->getResult()) {
                                     foreach($Read->getResult() as $Aula) {
-                                        ?>
-                                        <a class="collapse-item" href="<?= BASE ?>/"><?= $Aula['aula_name'] ?></a>
+                                            ?>
+                                            <a class="collapse-item" href="<?= BASE ?>/"><?= $Aula['aula_name'] ?></a>
                                         <?php
                                     } 
                                 }
@@ -73,11 +71,6 @@
                 </li>
 
                 <hr class="sidebar-divider my-0 ">
-
-                <!-- Nav Item - Pages Collapse Menu -->
-
-                
-
 
                     <?php
                 }
@@ -279,8 +272,8 @@
                     </nav>
                     
 
-                    <!-- Barra de opções de aula (Avançar e Anterior) -->
-                    <header class="navbar navbar-expand navbar-light bg-dark topbar static-top shadow d-flex align-items-center justify-content-center justify-content-md-between">
+                    <!-- Barra de opções de aula (Anterior e próxima aula) -->
+                    <header class="navbar navbar-expand bg-dark topbar static-top shadow d-flex align-items-center justify-content-center justify-content-md-between">
                         <ul class="header1" style="list-style: none;">
                             <li>
                                 <a href="#" class="small text-gray-200">
@@ -291,13 +284,13 @@
                             </li>
 
                         </ul>
-
+                        
                         <div class="topbar-divider d-none d-sm-block"></div>
 
                         <ul class="header2" style="list-style: none;">  
                             <li>  
                                 <a href="#" class="small text-gray-200">
-                                    <div class="fw-normal text-white-50 mb-1">Próximo</div>
+                                    <div class="fw-normal text-white-50 mb-1">Próxima</div>
                                     <span>Título da próxima aula</span>
                                     <i class="fas fa-arrow-circle-right mr-2 text-gray-200"></i>
                                 </a>
