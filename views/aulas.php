@@ -54,26 +54,13 @@
                     
                     <hr class="sidebar-divider my-0 ">
 
-                    <?php
-                        $Read = new Read();
-                        $Read->FullRead("SELECT * FROM cursos");
-                        if($Read->getResult()) {
-                        foreach($Read->getResult() as $Cursos) {
-                            ?>
 
-                        <li class="nav-item">
-                            <a class="nav-link collapsed" href="#">
-                                <div class=" text-white"><?php $Cursos['curso_titulo'] ?></div>
-                                <span>5 de 20 aulas completas</span>
-                            </a>
-                        </li>
-
-                    <?php
-                            }
-                        } else {
-                            Error("Ainda não existem cursos!");
-                        }
-                    ?>
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" href="#">
+                            <div class="text-white">Título do curso</div>
+                            <span>5 de 20 aulas completas</span>
+                        </a>
+                    </li>
                     
 
                     <hr class="sidebar-divider my-0 ">
@@ -93,8 +80,7 @@
                             aria-expanded="true" aria-controls="collapsePages">
                             <i class="fas fa-fw fa-folder"></i>
                             <div class="fw-normal text-white-50 mb-1">Módulo</div>
-                            <!-- <p class="lead fw-normal ">Exemplo</p> -->
-                            <span><?php $Modulos['modulo_titulo']?></span>
+                            <span>Título da Primeira aula</span>
 
                         </a>
 
@@ -398,8 +384,8 @@
                         <ul class="header1" style="list-style: none;">
                             <li>
                                 <a href="#" class="small text-gray-200">
+                                    <div class="fw-normal text-white-50 mb-1">Anterior</div>
                                     <i class="fas fa-arrow-circle-left mr-2 text-gray-200"></i>
-                                    Anterior 
                                     <span>Título da aula anterior</span>
                                 </a>
                             </li>
@@ -410,8 +396,9 @@
 
                         <ul class="header2" style="list-style: none;">  
                             <li>  
-                                <a href="#" class="small text-gray-200">Próximo 
-                                    <span>Título da próxima aula</span>
+                                <a href="#" class="small text-gray-200">
+                                    <div class="fw-normal text-white-50 mb-1">Próximo</div>
+                                    <span>Título da próxima aula</span> 
                                     <i class="fas fa-arrow-circle-right mr-2 text-gray-200"></i>
                                 </a>
                             </li>
