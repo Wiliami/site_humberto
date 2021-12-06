@@ -1,4 +1,4 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
      <html lang="pt-BR">
         <head>
             <meta charset="utf-8" />
@@ -45,7 +45,7 @@
                     $User->exeLogin($Post['email'], $Post['password']);
                     if($User->getResult()) {
                         Error($User->getError());
-                        header('Location: ' . BASE . '/dashboard');
+                        header('Location: ' . BASE . '/painel/dashboard');
                         die();
                     } else {
                         Error($User->getError(), 'danger');

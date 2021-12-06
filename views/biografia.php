@@ -147,7 +147,7 @@ echo $Component->getMenu();
         <?php
         
             $Component = new Component();
-            echo $Component->getFooterHomeTeste();
+            echo $Component->getFooterHome();
 
         ?>
     </body>
