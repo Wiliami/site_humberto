@@ -86,12 +86,12 @@
                     <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
                         data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
-                            <a class="collapse-item" href="<?= BASE ?>/meus-cursos">Meus cursos</a>
-                            <a class="collapse-item" href="<?= BASE ?>/historico-compras">Histórico de compras</a>
-                            <a class="collapse-item" href="<?= BASE ?>/cursos-finalizados">Cursos finalizados</a>
-                            <a class="collapse-item" href="<?= BASE ?>/cursos-pendentes">Cursos pendentes</a>
-                            <a class="collapse-item" href="<?= BASE ?>/help">Ajuda</a>
-                            <a class="collapse-item" href="<?= BASE ?>/suporte">Suporte</a>
+                            <a class="collapse-item" href="<?= BASE ?>/painel/meus-cursos">Meus cursos</a>
+                            <a class="collapse-item" href="<?= BASE ?>/painel/historico-compras">Histórico de compras</a>
+                            <a class="collapse-item" href="<?= BASE ?>/painel/cursos-finalizados">Cursos finalizados</a>
+                            <a class="collapse-item" href="<?= BASE ?>/painel/cursos-pendentes">Cursos pendentes</a>
+                            <a class="collapse-item" href="<?= BASE ?>/painel/help">Ajuda</a>
+                            <a class="collapse-item" href="<?= BASE ?>/painel/suporte">Suporte</a>
                         </div>
                     </div>
                 </li>
