@@ -37,8 +37,14 @@
                     <div class="sidebar-brand-text mx-3">Logo</div>
                 </a>
 
-                <!-- Divider -->
+
                 <hr class="sidebar-divider my-0 ">
+
+                <a href="/">Pesquisar aula</a>
+
+                <hr class="sidebar-divider my-0 ">
+
+
 
 
                 <?php 
