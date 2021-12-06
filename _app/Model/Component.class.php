@@ -187,7 +187,7 @@ class Component {
     
     public function getLogo() {
         return "
-            <a href=' " . BASE . "/' type=\"button\" class=\" nav btn btn-black mb-2 mb-md-0\" style='width: 250; height: 100;'>
+            <a href=' " . BASE . "/' type=\"button\" class=\" nav btn btn-black mb-2 mb-md-0 justify-content-center\" style='width: 250; height: 100;'>
                 <img src='" . BASE . "/src/images/icon_small.png' alt='Logo' style=' width: 50px; height: 50px;'>
             </a>             
         ";

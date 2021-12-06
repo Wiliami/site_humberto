@@ -31,20 +31,17 @@
             <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
                 <!-- Sidebar - Brand -->
-                <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?= BASE ?>/dashboard">
+                <!-- <div class="sidebar-brand d-flex align-items-center justify-content-center" href="<?= BASE ?>/dashboard">
                     <div class="sidebar-brand-icon rotate-n-15">
                     </div>
                     <div class="sidebar-brand-text mx-3">Logo</div>
-                </a>
+                </div> -->
 
-
-                <hr class="sidebar-divider my-0 ">
-
-                <a href="/">Pesquisar aula</a>
-
-                <hr class="sidebar-divider my-0 ">
-
-
+                <!--
+                
+                    // $Component = new Component();
+                    // echo $Component->getLogo();
+                ?> -->
 
 
                 <?php 
@@ -53,20 +50,38 @@
                     if($Read->getResult()) {
                     foreach($Read->getResult() as $Modulos) {
                         ?>
+
+                    
+                    <hr class="sidebar-divider my-0 ">
+
                     <li class="nav-item">
-                        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                            <span><?= $Modulos['modulo_titulo'] ?></span>
+                        <a class="nav-link collapsed" href="#">
+                            <!-- $Modulos['modulo_titulo'] ?> -->
+                            <!-- <span class="fw-normal text-white-50 mb-1">5 de 20 aulas completas</span> -->
+                            <div class=" text-white">Título do curso</div>
+                            <span>5 de 20 aulas completas</span>
                         </a>
                 
                     </li>
 
                     <hr class="sidebar-divider my-0 ">
-                        
+
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" href="#">
+                            <i class="fas fa-fw fa-search">iiii</i>
+                            <span>Pesquise por uma aula ou tag</span>
+                        </a>
+                    </li>
+
+
+                    <hr class="sidebar-divider my-0 ">
+
                     <li class="nav-item">
                         <a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#collapsePages1"
                             aria-expanded="true" aria-controls="collapsePages">
                             <i class="fas fa-fw fa-folder"></i>
-                            <h5>Módulo</h5>
+                            <div class="fw-normal text-white-50 mb-1">Módulo</div>
+                            <!-- <p class="lead fw-normal ">Exemplo</p> -->
                             <span>Título do Primeiro módulo</span>
 
                         </a>
@@ -90,7 +105,8 @@
                         <a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#collapsePages2"
                             aria-expanded="true" aria-controls="collapsePages">
                             <i class="fas fa-fw fa-folder"></i>
-                            <span>Módulo 2 - Título do Segundo módulo</span>
+                            <div class="fw-normal text-white-50 mb-1">Módulo</div>
+                            <span>Título do Segundo módulo</span>
                         </a>
 
                         <div id="collapsePages2" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
@@ -109,7 +125,8 @@
                         <a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#collapsePages3"
                             aria-expanded="true" aria-controls="collapsePages">
                             <i class="fas fa-fw fa-folder"></i>
-                            <span>Módulo 3 - Título do Terceiro módulo</span>
+                            <div class="fw-normal text-white-50 mb-1">Módulo</div>
+                            <span>Título do Terceiro módulo</span>
                         </a>
 
                         <div id="collapsePages3" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
@@ -129,7 +146,8 @@
                         <a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#collapsePages4"
                             aria-expanded="true" aria-controls="collapsePages">
                             <i class="fas fa-fw fa-folder"></i>
-                            <span>Módulo 4 - Título do Quarto módulo</span>
+                            <div class="fw-normal text-white-50 mb-1">Módulo</div>
+                            <span>Título do Quarto módulo</span>
                         </a>
 
                         <div id="collapsePages4" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
@@ -148,7 +166,8 @@
                         <a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#collapsePages5"
                             aria-expanded="true" aria-controls="collapsePages">
                             <i class="fas fa-fw fa-folder"></i>
-                            <span>Módulo 5 - Título do Quinto módulo</span>
+                            <div class="fw-normal text-white-50 mb-1">Módulo</div>
+                            <span>Título do Quinto módulo</span>
                         </a>
 
                         <div id="collapsePages5" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
