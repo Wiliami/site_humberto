@@ -273,7 +273,7 @@
                     
 
                     <!-- Barra de opções de aula (Anterior e próxima aula) -->
-                    <header class="navbar navbar-expand bg-dark topbar static-top shadow d-flex align-items-center justify-content-center justify-content-md-between">
+                    <header class="navbar navbar-expand bg-dark static-top shadow d-flex align-items-center justify-content-center justify-content-md-between">
                         <ul class="header1" style="list-style: none;">
                             <li>
                                 <a href="<?= BASE ?>/painel/aulas/nome-da-aula-anterior" class="small text-gray-200">
