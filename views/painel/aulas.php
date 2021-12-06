@@ -19,7 +19,6 @@
             <!-- Custom styles for this template-->
             <link href="<?= BASE ?>/res/site/css/sb-admin-2.min.css" rel="stylesheet">
             <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
-
         </head>
 
         <body id="page-top">
@@ -29,16 +28,17 @@
 
             <!-- Sidebar -->
             <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-
-
-            <hr class="sidebar-divider my-0 ">
-
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#">
-                    <i class="fas fa-fw fa-search"></i>
-                    <span>Pesquise por uma aula ou tag</span>
-                </a>
-            </li>
+            <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 mw-100 navbar-search">
+                <div class="input-group">
+                    <input type="text" class="form-control bg-light border-0 small" placeholder="Pesquisar aulas..."
+                        aria-label="Search" aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                        <button class="btn btn-dark" type="button">
+                            <i class="fas fa-search fa-sm"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
 
             <hr class="sidebar-divider my-0">
             <?php 

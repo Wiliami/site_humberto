@@ -38,7 +38,6 @@
             <!-- Sidebar -->
             <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
-                <!-- Sidebar - Brand -->
                 <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?= BASE ?>/dashboard">
                     <div class="sidebar-brand-icon rotate-n-15">
 
@@ -46,11 +45,9 @@
                     <div class="sidebar-brand-text mx-3">Logo</div>
                 </a>
 
-                <!-- Divider -->
                 <hr class="sidebar-divider my-0 ">
 
                 
-                <!-- Nav Item - Pages Collapse Menu -->
                 <?php 
                     if($_SESSION["login"]["user_level"] >= 6) {
                         ?>
@@ -72,11 +69,10 @@
                                 </div>
 
                             </li>
-                        
                 <?php
                 }?>
 
-                <!-- Nav Item - Utilities Collapse Menu -->
+                <!-- Usuário de nível 1 a 5 -->
                 <li class="nav-item">
                     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
                         aria-expanded="true" aria-controls="collapseUtilities">
@@ -86,12 +82,12 @@
                     <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
                         data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
-                            <a class="collapse-item" href="<?= BASE ?>/painel/meus-cursos">Meus cursos</a>
-                            <a class="collapse-item" href="<?= BASE ?>/painel/historico-compras">Histórico de compras</a>
-                            <a class="collapse-item" href="<?= BASE ?>/painel/cursos-finalizados">Cursos finalizados</a>
-                            <a class="collapse-item" href="<?= BASE ?>/painel/cursos-pendentes">Cursos pendentes</a>
-                            <a class="collapse-item" href="<?= BASE ?>/painel/help">Ajuda</a>
-                            <a class="collapse-item" href="<?= BASE ?>/painel/suporte">Suporte</a>
+                            <a class="collapse-item" href="<?= BASE ?>/painel/profile/meus-cursos">Meus cursos</a>
+                            <a class="collapse-item" href="<?= BASE ?>/painel/profile/historico-compras">Histórico de compras</a>
+                            <a class="collapse-item" href="<?= BASE ?>/painel/profile/cursos-finalizados">Cursos finalizados</a>
+                            <a class="collapse-item" href="<?= BASE ?>/painel/profile/cursos-pendentes">Cursos pendentes</a>
+                            <a class="collapse-item" href="<?= BASE ?>/painel/profile/help">Ajuda</a>
+                            <a class="collapse-item" href="<?= BASE ?>/painel/profile/suporte">Suporte</a>
                         </div>
                     </div>
                 </li>
