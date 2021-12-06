@@ -244,19 +244,19 @@
                                 <!-- Dropdown - User Information -->
                                 <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                     aria-labelledby="userDropdown">
-                                    <a class="dropdown-item" href="<?= BASE ?>/profile">
+                                    <a class="dropdown-item" href="<?= BASE ?>/painel/profile/profile">
                                         <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                         Meus dados
                                     </a>
-                                    <a class="dropdown-item" href="<?= BASE ?>/meus-cursos">
+                                    <a class="dropdown-item" href="<?= BASE ?>/painel/profile/meus-cursos">
                                         <i class="fas fa-book fa-sm fa-fw mr-2 text-gray-400"></i>
                                         Meus cursos
                                     </a>
-                                    <a class="dropdown-item" href="<?= BASE ?>/help">
+                                    <a class="dropdown-item" href="<?= BASE ?>/painel/profile/help">
                                         <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                                         Ajuda
                                     </a>
-                                    <a class="dropdown-item" href="<?= BASE ?>/suporte">
+                                    <a class="dropdown-item" href="<?= BASE ?>/painel/profile/suporte">
                                         <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                                         Suporte
                                     </a>
@@ -276,7 +276,7 @@
                     <header class="navbar navbar-expand bg-dark topbar static-top shadow d-flex align-items-center justify-content-center justify-content-md-between">
                         <ul class="header1" style="list-style: none;">
                             <li>
-                                <a href="#" class="small text-gray-200">
+                                <a href="<?= BASE ?>/painel/aulas/nome-da-aula-anterior" class="small text-gray-200">
                                     <div class="fw-normal text-white-50 mb-1">Anterior</div>
                                     <i class="fas fa-arrow-circle-left mr-2 text-gray-200"></i>
                                     <span>Título da aula anterior</span>
@@ -289,7 +289,7 @@
 
                         <ul class="header2" style="list-style: none;">  
                             <li>  
-                                <a href="#" class="small text-gray-200">
+                                <a href="<?= BASE ?>/painel/aulas/nome-da-proxima-aula" class="small text-gray-200">
                                     <div class="fw-normal text-white-50 mb-1">Próxima</div>
                                     <span>Título da próxima aula</span>
                                     <i class="fas fa-arrow-circle-right mr-2 text-gray-200"></i>
