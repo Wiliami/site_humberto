@@ -42,7 +42,7 @@ class User {
 			$dataUser['user_level'] = '1';
 			$Create = new Create();
 			$Create->ExeCreate("users", $dataUser); // cadastrando usuário no banco de dados
-			if($Create->getResult()) { // resutado
+			if($Create->getResult()) { // resultado
 				$this->Result = $Create->getResult();
 				$this->Error =  "Cadadastro realizado com sucesso!";
 			} else {
@@ -54,7 +54,7 @@ class User {
 
 	public function createCourse($dataCourse) {
 
-		if(empty($dataCourse["curso_title"])) {
+		if(empty($dataCourse["curso_titulo"])) {
 				$this->Error = "Preencha com um título!";
 				$this->Result = false;
 			} elseif (empty($dataCourse["curso_descricao"])) {
