@@ -74,7 +74,7 @@
                         </div>
                             <input type="email" class="form-control" name="email" value="<?= isset($Post['email'])?$Post['email']: '' ?>" placeholder="E-mail">
                         </div>
-
+            
                         <label>Senha</label>
                         <div class="input-group form-group-no-border">
                         <div class="input-group-prepend">
