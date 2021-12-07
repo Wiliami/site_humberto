@@ -6,7 +6,7 @@
 ?>
 
     <body>   
-        <section class="">
+        <section class="py-lg-5">
             <div class="col-lg-7">
                 <form class="p-3" id="contact-form" method="post">
                     <div class="card-header px-4 py-sm-5 py-3">

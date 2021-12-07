@@ -4,10 +4,8 @@
     $Component = new Component();
     echo $Component->getHeadHtmlReset();
 ?>
-
     <body> 
-    
-    <section class="">
+    <section class="py-lg-5">
         <div class="col-lg-7">
             <form class="p-3" id="contact-form" method="post">
             <div class="card-header px-4 py-sm-5 py-3">
@@ -38,12 +36,11 @@
                 </div>
                 <div class="row">
                 <div class="col-md-6 text-end ms-auto">
-                    <input type="submit" class="btn bg-gradient-info mb-0" name="register course" value="Cadastrar">
+                    <input type="submit" class="btn bg-gradient-success mb-0" name="register course" value="Cadastrar">
                 </div>
                 </div>
             </div>
             </form>
-
         </div>
         </div>
     </div>
