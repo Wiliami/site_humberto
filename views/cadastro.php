@@ -50,7 +50,6 @@
                     } else {
                         Error($User->getError(), 'danger');
                     }
-
                 } else {
                     Error($User->getError(), 'danger');
                 }

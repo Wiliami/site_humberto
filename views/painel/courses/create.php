@@ -26,7 +26,7 @@
                         if($User->getResult()) {
                             Error($User->getError());
                         } else {
-                            Error($User->getError(), 'danger');
+                            Error($User->getError(), 'warning');
                         }
                     }
                 ?>
@@ -42,13 +42,13 @@
                 <div class="col-md-12 pe-2 mb-3">
                     <div class="input-group input-group-static mb-4">
                     <label>Descrição do curso</label>
-                    <input type="text" class="form-control" name="description" placeholder="Informações sobre o curso" value="<?= isset($Post['description'])? $Post['description']: ''?>" >
+                    <input type="text" class="form-control" name="description" placeholder="Informações sobre o curso" value="<?= isset($Post['description'])? $Post['description']: '' ?>" >
                     </div>
                 </div>
                 <div class="col-md-12 pe-2 mb-3">
                     <div class="input-group input-group-static mb-4">
                     <label>Selecione uma categoria</label>
-                    <input type="text" class="form-control" name="category" placeholder="Categoria do curso, Ex: Categoria Finanças" value="<?= isset($Post['category'])? $Post['category']: ''?>" >
+                    <input type="text" class="form-control" name="category" placeholder="Categoria do curso, Ex: Categoria Finanças" value="<?= isset($Post['category'])? $Post['category']: '' ?>" >
                     </div>
                 </div>
                 </div>

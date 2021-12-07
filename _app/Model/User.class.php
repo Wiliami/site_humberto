@@ -61,7 +61,7 @@ class User {
 				$this->Error = "Preencha com uma descrição!";
 				$this->Result = false;
 			} elseif (empty($dataCourse["curso_categoria"])) {
-				$this->Error = "Selecione uma categoria para curso!";
+				$this->Error = "Selecione uma categoria para o curso!";
 				$this->Result = false;
 			}  else {
 				$dataCourse['curso_create_date'] = date('Y-m-d H:i:s'); // dia que o curso foi cadastrado
