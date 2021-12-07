@@ -4,6 +4,25 @@
     $Component = new Component();
     echo $Component->getHeadHtmlReset();
 ?>
+
+    <?php
+    $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+    if(!empty($Post['register course'])) {
+        $CreateCourse['curso_titulo'] = $Post['title'];
+        $CreateCourse['curso_descricao'] = $Post['description'];
+        $CreateCourse['curso_categoria'] = $Post['category'];
+
+        $User = new User();
+        $User->createCourse($CreateCourse);
+        if($User->getResult()) {
+            
+        }
+    }
+    
+    
+    ?>
+
+    
     <body> 
     <section class="py-lg-5">
         <div class="col-lg-7">
@@ -17,19 +36,19 @@
                 <div class="col-md-12 pe-2 mb-3">
                     <div class="input-group input-group-static mb-4">
                     <label>Título</label>
-                    <input type="text" class="form-control" placeholder="Titulo do curso">
+                    <input type="text" class="form-control" name="title" placeholder="Titulo do curso">
                     </div>
                 </div>
                 <div class="col-md-12 pe-2 mb-3">
                     <div class="input-group input-group-static mb-4">
                     <label>Descrição do curso</label>
-                    <input type="text" class="form-control" placeholder="Informações sobre o curso">
+                    <input type="text" class="form-control" name="description" placeholder="Informações sobre o curso">
                     </div>
                 </div>
                 <div class="col-md-12 pe-2 mb-3">
                     <div class="input-group input-group-static mb-4">
                     <label>Selecione uma categoria</label>
-                    <input type="text" class="form-control" placeholder="Categoria do curso, Ex: Categoria Finanças">
+                    <input type="text" class="form-control" name="category" placeholder="Categoria do curso, Ex: Categoria Finanças">
 
                     </div>
                 </div>

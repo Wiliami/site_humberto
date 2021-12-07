@@ -52,6 +52,37 @@ class User {
 		}	
 	}
 
+	public function createCourse($dataCourse) {
+
+		if(empty($dataCourse["curso_title"])) {
+				$this->Error = "Preencha com um título!";
+				$this->Result = false;
+			} elseif (empty($dataCourse["curso_descricao"])) {
+				$this->Error = "Preencha com uma descrição!";
+				$this->Result = false;
+			} elseif (empty($dataCourse["curso_categoria"])) {
+				$this->Error = "Selecione uma categoria para curso!";
+				$this->Result = false;
+			}  else {
+				$dataCourse['curso_create_date'] = date('Y-m-d H:i:s'); // dia que o curso foi cadastrado
+				// $dataCourse['user_level'] = '1';
+				$Create = new Create();
+				$Create->ExeCreate("cursos", $dataCourse); // cadastrando usuário no banco de dados
+				if($Create->getResult()) { // resutado
+					$this->Result = $Create->getResult();
+					$this->Error =  "O curso foi cadastrado com sucesso!";
+				} else {
+					$this->Result = false;
+					$this->Error = $Create->getError();
+				}
+			}	
+		}
+
+
+		// public function exeCreateCourse() {
+			
+		// }
+
 
 	public function getResult() {
 		return $this->Result;
