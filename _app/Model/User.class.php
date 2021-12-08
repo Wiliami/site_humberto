@@ -2,22 +2,20 @@
 
 class User {
 	//métodos da classe:
-	// - verifyLevelUserModerator -> verifica o nível de usuario moderador
+	// - verifyLevelUserModerator -> verifica se o nível de usuário é diferente do nível moderador
 	// - verifyDuplicateUserEmail -> verificar se o usuário digitou o email que já está em uso. 
 	// - resetUserPassword -> alterar a senha do usuário
-	// - getForgot -> envia o emial de recuperção de senha ao usuário
+	// - getForgot -> envia o email de recuperção de senha ao usuário
 	
 	private $Error;
 	private $Result;
 
 	// Método para verificar os nivéis dos usuários
 	public function verifyLevelUserModerator() {
-		if($_SESSION['login'] != 6) {
+		if($_SESSION['login']['user_level'] != 6) {
 			header('Location: ' . BASE . '/login');
-			die();
-		} else {
-			return false;
-		}
+			exit();
+		} 
 	}
 
 	public function createUser($dataUser) {

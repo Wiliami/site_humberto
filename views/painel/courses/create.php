@@ -5,6 +5,8 @@ $User->verifyLevelUserModerator();
 $Component = new Component();
 echo $Component->getHeadHtmlReset();
 ?>
+
+    
 <body> 
     <section class="py-lg-5">
         <div class="col-lg-7">
@@ -58,6 +60,7 @@ echo $Component->getHeadHtmlReset();
                 </div>
             </div>
             </form>
+
             </div>
             </div>
             </div>
@@ -69,3 +72,4 @@ echo $Component->getHeadHtmlReset();
     $Component = new Component();
     echo $Component->getFooterDashboard();
 ?>
+
