@@ -33,13 +33,23 @@ echo $Component->getHeadHtmlReset();
     <?php  
         } 
     } else {
-        Error("Ainda não existem cursos pra atualizar!");
+        Error("Ainda não existem cursos para atualizar!");
     }
     ?>
+            <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
+                <div class="d-flex align-items-end justify-content-between">
+                    <div class="d-flex align-items-center">
+                        <img class="rounded-circle me-3" src="https://dummyimage.com/40x40/ced4da/6c757d" alt="..." />
+                        <div class="small">
+                            <div class="fw-bold">unitbrasil</div>
+                            <div class="text-muted">March 12, 2021</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+    
     <?php
     $Component = new Component();
     echo $Component->getFooterDashboard();
