@@ -24,7 +24,7 @@
                                     <th><span>Título</span></th>
                                     <th><span>Criado</span></th>
                                     <th class="text-center"><span>Descrição</span></th>
-                                    <th><span>Opções</span></th>
+                                    <th><span>Excluir</span></th>
                                     <th>&nbsp;</th>
                                 </tr>
                             </thead>
@@ -47,19 +47,7 @@
                                     <td>
                                         <a href="/"><?= $Cursos['curso_descricao'] ?></a>
                                     </td>
-                                    <td style="width: 20%;">
-                                        <a href="/" class="table-link">
-                                            <span class="fa-stack">
-                                                <i class="fa fa-square fa-stack-2x"></i>
-                                                <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
-                                            </span>
-                                        </a>
-                                        <a href="/" class="table-link">
-                                            <span class="fa-stack">
-                                                <i class="fa fa-square fa-stack-2x"></i>
-                                                <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
-                                            </span>
-                                        </a>
+                                    <td>
                                         <a href="/" class="table-link danger">
                                             <span class="fa-stack">
                                                 <i class="fa fa-square fa-stack-2x"></i>

@@ -42,7 +42,7 @@ echo $Component->getBarraMenuOptions();
                                 <span class="label label-default">Situação</span>
                             </td>
                             <td>
-                                <a href="/"><?= $User['user_email'] ?></a>
+                                <a href="/"><?= $User['user_email']?></a>
                             </td>
                             <td style="width: 20%;">
                                 <a href="/" class="table-link">
