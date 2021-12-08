@@ -220,6 +220,11 @@ class User {
 
 	}
 
+	public function deleteCourse() {
+		$Delete = new Delete();
+		$Delete->getDelete();
+	}
+
 }
 
 ?>

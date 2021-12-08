@@ -1,7 +1,7 @@
 <?php
 $User = new User();
 $User->verifyExistLoginUser();
-$User->verifyLevelUserModerator();
+// $User->verifyLevelUserModerator();
 $Component = new Component();
 echo $Component->getHeadHtmlReset();
 ?>
