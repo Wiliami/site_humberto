@@ -1,6 +1,5 @@
 <?php 
 
-
 class User {
 	//métodos da classe:
 	// - verifyLevelUserModerator -> verifica o nível de usuario moderador
@@ -14,11 +13,10 @@ class User {
 	// Método para verificar os nivéis dos usuários
 	public function verifyLevelUserModerator() {
 		if($_SESSION['login'] >= 6) {
-			header('Location:' . BASE . '/painel/dashboard');
+			header('Location:' . BASE . '/login');
+			die();
 		}
 	}
-
-	
 
 	public function createUser($dataUser) {
 	if(empty($dataUser["user_name"])) {
@@ -74,12 +72,6 @@ class User {
 				}
 			}	
 		}
-
-
-		// public function exeCreateCourse() {
-			
-		// }
-
 
 	public function getResult() {
 		return $this->Result;
@@ -214,16 +206,13 @@ class User {
 
 	//Método para enviar email de recuperação de senha
 	private function getForgot($password) {
-
 		$Read = new Read();
-
 		$password = md5($password);
 		$Rear->FullRead('SELECT user_password FROM users WHERE user_password = :pw', "pw={$password}");
 		if($Read->getResult()) {
 			$this->Error = "Não possível alterar a senha de acesso!";
 			$this->Result = false;
-			// trecho de código de não é utilizado para nada neste momento
-
+			// trecho de código que ainda não é utilizado pra nada neste momento
 			return true;
 		} else {
 			return false;
