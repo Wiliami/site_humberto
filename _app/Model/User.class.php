@@ -14,8 +14,7 @@ class User {
 	// Método para verificar os nivéis dos usuários
 	public function verifyLevelUserModerator() {
 		if($_SESSION['login'] >= 6) {
-			header('Location:' . BASE . '/login');
-			$this->Error = "Você não tem permissão para acessar esta página!";
+			header('Location:' . BASE . '/painel/dashboard');
 		}
 	}
 
