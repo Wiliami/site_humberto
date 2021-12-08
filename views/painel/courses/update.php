@@ -1,25 +1,25 @@
 <?php
-    $User = new User();
-    $User->verifyExistLoginUser();
-    $Component = new Component();
-    echo $Component->getHeadHtmlReset();
+$User = new User();
+$User->verifyExistLoginUser();
+$Component = new Component();
+echo $Component->getHeadHtmlReset();
 ?>
-
     <?php if ($_SESSION['login']['user_level'] >= 6) {  
         ?>
     <body> 
+        
     <div style="margin-left: 20px;">
         <h3>Olá, <?= $_SESSION['login']['user_name'] ?></h3>
-        <span>Meus cursos</span>
+        <span>Cursos</span>
     </div>
 
     <?php
     $Read = new Read();
-    $Read->FullRead("SELECT * FROM cursos ");
+    $Read->FullRead("SELECT * FROM cursos");
     if($Read->getResult()) {
         foreach($Read->getResult() as $Updates) {
-        ?>
-
+    ?>
+    
     <div class="row gx-5 grid-container" style="margin-left: 8px; margin-top: 20px;">
         <div class="col-lg-4 mb-5">
             <div class="card h-100 shadow border-0">
@@ -29,22 +29,20 @@
                     <a class="text-decoration-none link-dark stretched-link" href="<?= BASE ?>/painel/aulas">
                         <h5 class="card-title mb-3"><?= $Updates['curso_titulo'] ?></h5>
                     </a>
-                    <p class="card-text mb-0"><?= $Updates['curso_decricao'] ?></p>
-                </div>
-            <div>
-        </div>
-    </div>
-
+                    <p class="card-text mb-0"><?= $Updates['curso_descricao'] ?></p>
     <?php  
         } 
     } else {
         Error("Ainda não existem cursos pra atualizar!");
     }
     ?>
-
+                </div>
+            </div>
+        </div>
+    </div>
     <?php
-        $Component = new Component();
-        echo $Component->getFooterDashboard();
+    $Component = new Component();
+    echo $Component->getFooterDashboard();
     ?>
     <?php
     }?>

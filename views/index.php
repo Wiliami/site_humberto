@@ -16,19 +16,12 @@
         <!-- Esse css estiliza os ícones de redes sociais do footer index -->
         <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
     </head>
-
     <body>
-
         <?php
-        
             $Component = new Component();                               
             echo $Component->getMenu();   
             echo $Component->getHeader();
-            
-            
         ?>
-
-
         <!-- conteúdo principal -->
         <main class="flex-shrink-0" id="content-overview">
 
@@ -56,9 +49,6 @@
                     </div>
                 </div>
             </section>
-
-
-
             <!-- Cursos box -->
             <section class="my-5 py-5">
                 <div class="container">
@@ -116,8 +106,6 @@
                     </div>
                 </div>
             </section>
-            
-        
             <section class="py-5 bg-white" id="page-course">
                 <div class="container px-5 my-5">
                     <div class="row gx-5 justify-content-center">
@@ -192,10 +180,6 @@
                                         <source type="video/mp4" />
                                     </video>
                                 </div>
-
-
-
-
                                 <div class="card-body p-4">
                                     <div class="badge bg-success bg-gradient rounded-pill mb-2 text-white">Curso</div>
                                     <a class="text-decoration-none link-dark stretched-link" href="/">
@@ -219,28 +203,19 @@
                                 </div>
                             </div>
                         </div>
-
-
                         <!-- Button -->
                         <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-center">
                             <a class="btn btn-outline-dark btn-lg px-4 me-sm-3" href="<?= BASE ?>/page-video">Veja todos os
                                 cursos
                             </a>
                         </div>
-
                     </div>
                 </div>
             </section>
-
         </main>
-
-
         <?php
-        
             $Component = new Component();
             echo $Component->getFooterHome();
-
         ?>
-
     </body>
 </html>
