@@ -12,9 +12,11 @@ class User {
 
 	// Método para verificar os nivéis dos usuários
 	public function verifyLevelUserModerator() {
-		if($_SESSION['login'] >= 6) {
-			header('Location:' . BASE . '/login');
+		if($_SESSION['login'] != 6) {
+			header('Location: ' . BASE . '/login');
 			die();
+		} else {
+			return false;
 		}
 	}
 
