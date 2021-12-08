@@ -4,8 +4,8 @@
 class User {
 	//métodos da classe:
 	// - verifyLevelUserModerator -> verifica o nível de usuario moderador
-	// - verifyDuplicateUserEmail(); -> verificar se o usuário digitou o email que já está em uso. 
-	// - resetUserPassword(); -> alterar a senha do usuário
+	// - verifyDuplicateUserEmail -> verificar se o usuário digitou o email que já está em uso. 
+	// - resetUserPassword -> alterar a senha do usuário
 	// - getForgot -> envia o emial de recuperção de senha ao usuário
 	
 	private $Error;
