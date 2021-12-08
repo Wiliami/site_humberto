@@ -1,9 +1,8 @@
-<?php 
+<?php
 
-echo "Ok!";
-if($_SESSION['login'] != 2) {
-    
-    // header('Location: ' . BASE . '/login');
+if($_SESSION["login"]["user_level"] >= 6) {
+    header('Location: ' . BASE . '/painel/dashboard');
+    die();
 }
 
 ?>

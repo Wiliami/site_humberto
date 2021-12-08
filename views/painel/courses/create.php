@@ -1,10 +1,11 @@
 <?php
-    $User = new User();
-    $User->verifyExistLoginUser();
-    $Component = new Component();
-    echo $Component->getHeadHtmlReset();
-?>
+$User = new User();
+$User->verifyExistLoginUser();
+$Component = new Component();
+echo $Component->getHeadHtmlReset();
+require_once 'verifica_tipo.php';
 
+?>
 <body> 
     <section class="py-lg-5">
         <div class="col-lg-7">
@@ -65,7 +66,6 @@
         </div>
         </div>
     </section>
-
 <?php
     $Component = new Component();
     echo $Component->getFooterDashboard();
