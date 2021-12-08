@@ -109,11 +109,11 @@
                         data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
                             <a class="collapse-item" href="<?= BASE ?>/painel/courses/create">Cadastro de cursos</a>
-                            <a class="collapse-item" href="<?= BASE ?>/painel/courses/read">Lista de cursos</a>
-                            <a class="collapse-item" href="<?= BASE ?>/painel/course/delete">Excluir cursos</a>
-                            <a class="collapse-item" href="<?= BASE ?>/painel/course/update">Atualizar cursos</a>
-                            <a class="collapse-item" href="<?= BASE ?>/painel/course/help">Ajuda</a>
-                            <a class="collapse-item" href="<?= BASE ?>/painel/course/suporte">Suporte</a>
+                            <a class="collapse-item" href="<?= BASE ?>/painel/courses/list">Lista de cursos</a>
+                            <a class="collapse-item" href="<?= BASE ?>/painel/courses/delete">Excluir cursos</a>
+                            <a class="collapse-item" href="<?= BASE ?>/painel/courses/update">Atualizar cursos</a>
+                            <a class="collapse-item" href="<?= BASE ?>/painel/courses/help">Ajuda</a>
+                            <a class="collapse-item" href="<?= BASE ?>/painel/courses/suporte">Suporte</a>
                         </div>
                     </div>
                 </li>

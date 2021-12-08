@@ -8,48 +8,82 @@
     <body> 
         <section class="py-lg-5">
             <div class="col-lg-7">
-                <form class="p-3" id="contact-form" method="post">
                 <div class="card-header px-4 py-sm-5 py-3">
                     <h2>Excluir cursos</h2>
                     <p class="lead">Excluir cursos</p>
                 </div>
-                <div class="card-body pt-1">
-                    <div class="row">
-                    <div class="col-md-12 pe-2 mb-3">
-                        <div class="input-group input-group-static mb-4">
-                        <label>Título</label>
-                        <input type="text" class="form-control" placeholder="Titulo do curso">
-                        </div>
-                    </div>
-                    <div class="col-md-12 pe-2 mb-3">
-                        <div class="input-group input-group-static mb-4">
-                        <label>Descrição do curso</label>
-                        <input type="text"   class="form-control" placeholder="Informações sobre o curso">
-                        </div>
-                    </div>
-                    <div class="col-md-12 pe-2 mb-3">
-                        <div class="input-group input-group-static mb-4">
-                        <label>Selecione uma categoria</label>
-                        <input type="text" class="form-control" placeholder="Categoria do curso, Ex: Categoria Finanças">
-
-                        </div>
-                    </div>
-                    </div>
-                    <div class="row">
-                    <div class="col-md-6 text-end ms-auto">
-                        <input type="submit" class="btn bg-gradient-success mb-0" name="register course" value="Cadastrar">
-                    </div>
-                    </div>
-                </div>
-                </form>
                 
-            </div>
-            </div>
-        </div>
-        </div>
-    </div>
-    </div>
-    </section>
+        <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                    <div class="main-box clearfix">
+                        <div class="table-responsive">
+                            <table class="table user-list">
+                                <thead>
+                                    <tr>
+                                        <th><span>Título do curso</span></th>
+                                        <th><span>Criado</span></th>
+                                        <th class="text-center"><span>Descrição</span></th>
+                                        <th><span>E-mail</span></th>
+                                        <th>&nbsp;</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                    $Read = new Read();
+                                    $Read->FullRead("SELECT * FROM users");
+                                    if($Read->getResult()) {
+                                        foreach($Read->getResult() as $User) {
+                                            ?>
+                                            <tr>
+                                        <td>
+                                            <a href="/" class="user-link"><?= $User['user_name'] ?></a>
+                                            <span class="user-subhead"><?= $User['user_id'] ?></span>
+                                        </td>
+                                        <td>
+                                            <?= $User['user_create_date'] ?>  
+                                        </td>
+                                        <td class="text-center">
+                                            <span class="label label-default">Situação</span>
+                                        </td>
+                                        <td>
+                                            <a href="/"><?= $User['user_email'] ?></a>
+                                        </td>
+                                        <td style="width: 20%;">
+                                            <a href="/" class="table-link">
+                                                <span class="fa-stack">
+                                                    <i class="fa fa-square fa-stack-2x"></i>
+                                                    <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
+                                                </span>
+                                            </a>
+                                            <a href="/" class="table-link">
+                                                <span class="fa-stack">
+                                                    <i class="fa fa-square fa-stack-2x"></i>
+                                                    <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
+                                                </span>
+                                            </a>
+                                            <a href="/" class="table-link danger">
+                                                <span class="fa-stack">
+                                                    <i class="fa fa-square fa-stack-2x"></i>
+                                                    <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
+                                                </span>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <?php
+                                        }
+                                    } else {
+                                        Error("Ainda não existem usuários!");
+                                    }   
+                                    ?>
+                                </tbody>
+                            </table>
+                                </div>                
+                            </div>
+                            </div>
+                        </div>  
+                    </div>
+                </section>
 
 <?php
     $Component = new Component();
