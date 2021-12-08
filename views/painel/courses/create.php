@@ -3,9 +3,11 @@ $User = new User();
 $User->verifyExistLoginUser();
 $Component = new Component();
 echo $Component->getHeadHtmlReset();
-require_once 'verifica_tipo.php';
-
+// require_once 'verifica_tipo.php';
 ?>
+
+<?php if($_SESSION['login']['user_level'] >= 6) {
+    ?>
 <body> 
     <section class="py-lg-5">
         <div class="col-lg-7">
@@ -23,6 +25,7 @@ require_once 'verifica_tipo.php';
                         $User = new User();
                         $User->createCourse($CreateCourse);
                         if($User->getResult()) {
+                            header('Location: ' . BASE . '/painel/courses/update');
                             Error($User->getError());
                         } else {
                             Error($User->getError(), 'warning');
@@ -70,3 +73,6 @@ require_once 'verifica_tipo.php';
     $Component = new Component();
     echo $Component->getFooterDashboard();
 ?>
+
+<?php
+}?>

@@ -4,52 +4,47 @@
     $Component = new Component();
     echo $Component->getHeadHtmlReset();
 ?>
+
+    <?php if ($_SESSION['login']['user_level'] >= 6) {  
+        ?>
     <body> 
-    <section class="py-lg-5">
-        <div class="col-lg-7">
-            <form class="p-3" id="contact-form" method="post">
-            <div class="card-header px-4 py-sm-5 py-3">
-                <h2>Cadastro de curso</h2>
-                <p class="lead">Preencha os campos e cadastre os cursos</p>
-            </div>
-            <div class="card-body pt-1">
-                <div class="row">
-                <div class="col-md-12 pe-2 mb-3">
-                    <div class="input-group input-group-static mb-4">
-                    <label>Título</label>
-                    <input type="text" class="form-control" placeholder="Titulo do curso">
-                    </div>
-                </div>
-                <div class="col-md-12 pe-2 mb-3">
-                    <div class="input-group input-group-static mb-4">
-                    <label>Descrição do curso</label>
-                    <input type="text" class="form-control" placeholder="Informações sobre o curso">
-                    </div>
-                </div>
-                <div class="col-md-12 pe-2 mb-3">
-                    <div class="input-group input-group-static mb-4">
-                    <label>Selecione uma categoria</label>
-                    <input type="text" class="form-control" placeholder="Categoria do curso, Ex: Categoria Finanças">
+    <div style="margin-left: 20px;">
+        <h3>Olá, <?= $_SESSION['login']['user_name'] ?></h3>
+        <span>Meus cursos</span>
+    </div>
 
-                    </div>
+    <?php
+    $Read = new Read();
+    $Read->FullRead("SELECT * FROM cursos ");
+    if($Read->getResult()) {
+        foreach($Read->getResult() as $Updates) {
+        ?>
+
+    <div class="row gx-5 grid-container" style="margin-left: 8px; margin-top: 20px;">
+        <div class="col-lg-4 mb-5">
+            <div class="card h-100 shadow border-0">
+                <img src="<?= BASE ?>/src/images/page-sobre.jpg" alt="imagem de fundo"/>
+                <div class="card-body p-4">
+                    <div class="badge bg-success bg-gradient rounded-pill mb-2 text-white"><?= $Updates['curso_categoria'] ?></div>
+                    <a class="text-decoration-none link-dark stretched-link" href="<?= BASE ?>/painel/aulas">
+                        <h5 class="card-title mb-3"><?= $Updates['curso_titulo'] ?></h5>
+                    </a>
+                    <p class="card-text mb-0"><?= $Updates['curso_decricao'] ?></p>
                 </div>
-                </div>
-                <div class="row">
-                <div class="col-md-6 text-end ms-auto">
-                    <input type="submit" class="btn bg-gradient-success mb-0" name="register course" value="Cadastrar">
-                </div>
-                </div>
-            </div>
-            </form>
-        </div>
+            <div>
         </div>
     </div>
-    </div>
-</div>
-</div>
-</section>
 
-<?php
-    $Component = new Component();
-    echo $Component->getFooterDashboard();
-?>
+    <?php  
+        } 
+    } else {
+        Error("Ainda não existem cursos pra atualizar!");
+    }
+    ?>
+
+    <?php
+        $Component = new Component();
+        echo $Component->getFooterDashboard();
+    ?>
+    <?php
+    }?>
