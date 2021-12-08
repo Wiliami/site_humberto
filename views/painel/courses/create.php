@@ -1,12 +1,11 @@
 <?php
 $User = new User();
 $User->verifyExistLoginUser();
+$User->verifyLevelUserModerator();
 $Component = new Component();
 echo $Component->getHeadHtmlReset();
 ?>
 
-<?php if($_SESSION['login']['user_level'] >= 6) {
-    ?>
 <body> 
     <section class="py-lg-5">
         <div class="col-lg-7">
@@ -72,6 +71,3 @@ echo $Component->getHeadHtmlReset();
     $Component = new Component();
     echo $Component->getFooterDashboard();
 ?>
-
-<?php
-}?>

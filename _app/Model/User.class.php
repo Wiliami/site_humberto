@@ -10,11 +10,9 @@ class User {
 	private $Error;
 	private $Result;
 
-	// Método para verificar os nivéis dos usuários
+	// Método para verificar os nivéis de usuário
 	public function verifyLevelUserModerator() {
-		if($_SESSION['login']['user_level'] != 6) {
-			$this->Error = "Você não tem permissão para acessar esta página";
-			$this->Result = false;
+		if($_SESSION['login']['user_level'] <= 6) {
 			header('Location: ' . BASE . '/login');
 			exit();
 		}

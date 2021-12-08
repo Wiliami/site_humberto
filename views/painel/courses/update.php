@@ -1,13 +1,12 @@
 <?php
 $User = new User();
 $User->verifyExistLoginUser();
+$User->verifyLevelUserModerator();
 $Component = new Component();
 echo $Component->getHeadHtmlReset();
 ?>
-    <?php if ($_SESSION['login']['user_level'] >= 6) {  
-        ?>
-    <body> 
-        
+    
+    <body>     
     <div style="margin-left: 20px;">
         <h3>Olá, <?= $_SESSION['login']['user_name'] ?></h3>
         <span>Cursos</span>
@@ -53,5 +52,3 @@ echo $Component->getHeadHtmlReset();
     $Component = new Component();
     echo $Component->getFooterDashboard();
     ?>
-    <?php
-    }?>
