@@ -108,10 +108,10 @@
                     <div id="collapseRegister" class="collapse" aria-labelledby="headingUtilities"
                         data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
-                            <a class="collapse-item" href="<?= BASE ?>/painel/courses/create">Cadastrar cursos</a>
-                            <a class="collapse-item" href="<?= BASE ?>/painel/courses/read">Listar curso</a>
-                            <a class="collapse-item" href="<?= BASE ?>/painel/course/delete">Deletar curso</a>
-                            <a class="collapse-item" href="<?= BASE ?>/painel/course/update">Alterar curso</a>
+                            <a class="collapse-item" href="<?= BASE ?>/painel/courses/create">Cadastro de cursos</a>
+                            <a class="collapse-item" href="<?= BASE ?>/painel/courses/read">Lista de cursos</a>
+                            <a class="collapse-item" href="<?= BASE ?>/painel/course/delete">Excluir cursos</a>
+                            <a class="collapse-item" href="<?= BASE ?>/painel/course/update">Atualizar cursos</a>
                             <a class="collapse-item" href="<?= BASE ?>/painel/course/help">Ajuda</a>
                             <a class="collapse-item" href="<?= BASE ?>/painel/course/suporte">Suporte</a>
                         </div>

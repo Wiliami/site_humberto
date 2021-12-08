@@ -2,22 +2,20 @@
 
 
 class User {
-
 	//métodos da classe:
-	// - verifyLevelUser -> verifica o nível de usuario
+	// - verifyLevelUserModerator -> verifica o nível de usuario moderador
 	// - verifyDuplicateUserEmail(); -> verificar se o usuário digitou o email que já está em uso. 
 	// - resetUserPassword(); -> alterar a senha do usuário
 	// - getForgot -> envia o emial de recuperção de senha ao usuário
-
 	
 	private $Error;
 	private $Result;
 
 	// Método para verificar os nivéis dos usuários
-	private function verifyLevelUser() {
-		if($_SESSION['login'] != 9) {
-
+	public function verifyLevelUserModerator() {
+		if($_SESSION['login'] >= 6) {
 			header('Location:' . BASE . '/login');
+			$this->Error = "Você não tem permissão para acessar esta página!";
 		}
 	}
 
