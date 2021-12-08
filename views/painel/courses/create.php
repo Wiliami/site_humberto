@@ -5,9 +5,7 @@
     echo $Component->getHeadHtmlReset();
 ?>
 
-   
-
-    <body> 
+<body> 
     <section class="py-lg-5">
         <div class="col-lg-7">
             <form class="p-3" id="contact-form" method="post">
@@ -59,13 +57,14 @@
                 </div>
             </div>
             </form>
+            
+            </div>
+            </div>
+            </div>
+            </div>
         </div>
         </div>
-    </div>
-    </div>
-</div>
-</div>
-</section>
+    </section>
 
 <?php
     $Component = new Component();
