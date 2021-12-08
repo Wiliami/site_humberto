@@ -76,7 +76,8 @@
                 <li class="nav-item">
                     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
                         aria-expanded="true" aria-controls="collapseUtilities">
-                        <i class="fas fa-fw fa-wrench"></i>
+                        <!-- <i class="fas fa-fw fa-wrench"></i> -->
+                        <i class="fas fa-plus"></i>
                         <span>Cursos</span>
                     </a>
                     <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
@@ -91,6 +92,35 @@
                         </div>
                     </div>
                 </li>
+
+
+                <!-- Cadastrar curso -->
+                <?php
+                if($_SESSION["login"]["user_level"] >= 6) {
+                    ?>
+
+                <li class="nav-item">
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseRegister"
+                        aria-expanded="true" aria-controls="collapseRegister">
+                        <i class="fas fa-pager"></i>
+                        <span>Páginas</span>
+                    </a>
+                    <div id="collapseRegister" class="collapse" aria-labelledby="headingUtilities"
+                        data-parent="#accordionSidebar">
+                        <div class="bg-white py-2 collapse-inner rounded">
+                            <a class="collapse-item" href="<?= BASE ?>/painel/courses/create">Cadastrar cursos</a>
+                            <a class="collapse-item" href="<?= BASE ?>/painel/courses/read">Listar curso</a>
+                            <a class="collapse-item" href="<?= BASE ?>/painel/course/delete">Deletar curso</a>
+                            <a class="collapse-item" href="<?= BASE ?>/painel/course/update">Alterar curso</a>
+                            <a class="collapse-item" href="<?= BASE ?>/painel/course/help">Ajuda</a>
+                            <a class="collapse-item" href="<?= BASE ?>/painel/course/suporte">Suporte</a>
+                        </div>
+                    </div>
+                </li>
+
+                <?php
+                }?>
+                
 
             </ul>
             <!-- End of Sidebar -->

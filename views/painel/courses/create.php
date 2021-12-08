@@ -1,6 +1,7 @@
 <?php
     $User = new User();
     $User->verifyExistLoginUser();
+    
     $Component = new Component();
     echo $Component->getHeadHtmlReset();
 ?>
@@ -57,7 +58,7 @@
                 </div>
             </div>
             </form>
-            
+
             </div>
             </div>
             </div>
