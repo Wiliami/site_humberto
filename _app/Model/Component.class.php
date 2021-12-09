@@ -230,7 +230,6 @@ class Component {
 
     public function getMenuAndSideBarDashboard() {
         return '
-
         <!-- Page Wrapper -->
         <div id="wrapper">
 
@@ -257,20 +256,18 @@ class Component {
                     </a>
                     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
-                            
                             <a class="collapse-item" href="'. BASE .'/painel/profile/meus-cursos">Meus cursos</a>
                             <a class="collapse-item" href="'. BASE .'/painel/profile/minhas-compras">Minhas compras</a>
                             <a class="collapse-item" href="'. BASE .'/painel/profile/cursos-finalizados">Cursos finalizados</a>
                             <a class="collapse-item" href="'. BASE .'/painel/profile/cursos-pendentes">Cursos pendentes</a>
-
                         </div>
                     </div>
                 </li>
 
                 <!-- Nav Item - Pages Collapse Menu -->
-                <?php 
-                    if( ' . $_SESSION["login"]["user_level"] >= 1 . ') {
-                        ?>
+                <?php
+                    if(' . $_SESSION["login"]["user_level"] >= 1 . ') {
+                        ?> 
                             <li class="nav-item">
                                 <a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#collapsePages"
                                     aria-expanded="true" aria-controls="collapsePages">
@@ -526,7 +523,6 @@ class Component {
 
                     <!-- Custom fonts for this template-->
                     <link href="' . BASE . '/res/site/css/all.min.css" rel="stylesheet" type="text/css">
-                    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
                     <!-- Custom styles for this template-->
                     <link href="' . BASE . '/res/site/css/sb-admin-2.min.css" rel="stylesheet">

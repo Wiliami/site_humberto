@@ -13,7 +13,6 @@ echo $Component->getMenuAndSideBarDashboard2();
                     <p class="lead">Cursos</p>
                 </div>
             </div>
-            
             <div class="row">
                 <div class="col-lg-12">
                 <div class="main-box clearfix">
