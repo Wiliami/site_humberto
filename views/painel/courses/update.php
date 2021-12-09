@@ -6,13 +6,15 @@ $Component = new Component();
 echo $Component->getMenuAndSideBarDashboard2();
 ?>
 <div class="container">
+   
+
     <div class="col-lg-7">
         <div class="card-header py-sm-5 py-3">
             <h2>Atualizar cursos</h2>
             <p class="lead">Alterar Cursos</p>
         </div>
     </div>
-    
+     
     <div class="row">
         <div class="col-lg-12">
         <div class="main-box clearfix">
