@@ -4,9 +4,10 @@ $User->verifyExistLoginUser();
 // $User->verifyLevelUserModerator();
 $Component = new Component();
 echo $Component->getHeadHtmlReset();
+echo $Component->getMenuAndSideBarDashboard2();
+
 ?>
 
-<body> 
     <section class="py-lg-5">
         <div class="col-lg-7">
             <form class="p-3" id="contact-form" method="post">
