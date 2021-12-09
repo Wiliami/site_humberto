@@ -1,11 +1,12 @@
 <?php
-
+    session_start();
     $User = new User();
     if($User->verifyLoginUserON()) {
         header('Location: ' . BASE . '/painel/dashboard');
         die();
-    $Time = new Time();
+    $Time = new Timer();
     $Time->getTimeSession();
+    // Check::var_dump_json($ $Time->getTimeSession());
 };
 
 ?>
