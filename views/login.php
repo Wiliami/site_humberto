@@ -4,6 +4,8 @@
     if($User->verifyLoginUserON()) {
         header('Location: ' . BASE . '/painel/dashboard');
         die();
+    $Time = new Time();
+    $Time->getTimeSession();
 };
 
 ?>

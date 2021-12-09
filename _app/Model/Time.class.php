@@ -7,7 +7,7 @@ class Session {
 	private $Result;
 
 
-    public function timeSession() {
+    public function getTimeSession() {
         if (!isset($_SESSION['login'])) {
             $_SESSION['login'] = time();
         } else if (time() - $_SESSION['login'] > 1800) { // sessão iniciada há mais de 30 minutos
