@@ -3,7 +3,7 @@ $User = new User();
 $User->verifyExistLoginUser();
 // $User->verifyLevelUserModerator();
 $Component = new Component();
-echo $Component->getHeadHtmlReset();
+echo $Component->getMenuAndSideBarDashboard2();
 ?>
     
     <body> 
