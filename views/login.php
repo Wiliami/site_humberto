@@ -1,5 +1,4 @@
 <?php
-    session_start();
     $User = new User();
     if($User->verifyLoginUserON()) {
         header('Location: ' . BASE . '/painel/dashboard');

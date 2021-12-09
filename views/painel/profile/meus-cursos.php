@@ -3,6 +3,7 @@ $User = new User();
 $User->verifyExistLoginUser();
 $Component = new Component();
 echo $Component->getHeadHtmlPages();
+echo $Component->getMenuAndSideBarDashboard2();
 ?>
 
     <div style="margin-left: 20px;">
