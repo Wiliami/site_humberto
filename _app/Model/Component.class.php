@@ -519,7 +519,6 @@ class Component {
 
                     <!-- Custom fonts for this template-->
                     <link href="' . BASE . '/res/site/css/all.min.css" rel="stylesheet" type="text/css">
-                    <link id="pagestyle" href="'. BASE .'/src/css/material-kit.css?v=3.0.0" rel="stylesheet" />
 
                     <!-- Custom styles for this template-->
                     <link href="' . BASE . '/res/site/css/sb-admin-2.min.css" rel="stylesheet">
@@ -544,9 +543,7 @@ class Component {
                         <!-- Divider -->
                         <hr class="sidebar-divider">
             
-                        <?php
-                         if( ' . $_SESSION["login"]["user_id"] >= 6 . ') {
-                            ?>
+        
                                 <!-- Nav Item - Pages Collapse Menu -->
                                 <li class="nav-item">
                                     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
@@ -564,8 +561,7 @@ class Component {
                                         </div>
                                     </div>
                                 </li>
-                        <?php 
-                        }?>
+                    
             
                         <!-- Nav Item - Utilities Collapse Menu -->
                         <li class="nav-item">
