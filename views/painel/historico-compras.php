@@ -1,11 +1,8 @@
 <?php
-
-    $User = new User();
-    $User->verifyExistLoginUser();
-    $Component = new Component();
-    echo $Component->getHeadHtmlReset();
-    echo $Component->getBarraMenuOptions();  
-   
+$User = new User();
+$User->verifyExistLoginUser();
+$Component = new Component();
+echo $Component->getMenuAndSideBarDashboard2();  
 ?>
 
 <div class="container">

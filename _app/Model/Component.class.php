@@ -519,7 +519,7 @@ class Component {
                     <meta name="description" content="">
                     <meta name="author" content="">
 
-                    <title>Página - Title</title>
+                    <title>Página Views</title>
 
                     <!-- Custom fonts for this template-->
                     <link href="' . BASE . '/res/site/css/all.min.css" rel="stylesheet" type="text/css">
@@ -545,18 +545,7 @@ class Component {
                         </a>
             
                         <!-- Divider -->
-                        <hr class="sidebar-divider my-0">
-            
-                        <!-- Nav Item - Dashboard -->
-                        <li class="nav-item active">
-                            <a class="nav-link" href="index.html">
-                                <span>Painel</span></a>
-                        </li>
-            
-                        <!-- Divider -->
                         <hr class="sidebar-divider">
-            
-                        
             
                         <!-- Nav Item - Pages Collapse Menu -->
                         <li class="nav-item">
