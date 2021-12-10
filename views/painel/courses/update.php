@@ -65,7 +65,7 @@ $User->verifyExistLoginUser();
                                     <a class="collapse-item" href="<?= BASE ?>/painel/list-user">Lista de usuários</a>
                                     <a class="collapse-item" href="<?= BASE ?>/painel/cursos-aprovacao">Cursos em análise</a>
                                     <a class="collapse-item" href="<?= BASE ?>/painel/historico-compras">Histórico de compras</a>
-                                    <a class="collapse-item" href="<?= BASE ?>/painel/suporte">Suporte</a>
+                                    <a class="collapse-item" href="<?= BASE ?>/painel/profile/suporte">Suporte</a>
                                     <a class="collapse-item" href="<?= BASE ?>/painel/settings">Configurações</a>
                                 </div>
                             </div>
@@ -105,7 +105,7 @@ $User->verifyExistLoginUser();
                                     <a class="collapse-item" href="<?= BASE ?>/painel/courses/delete">Excluir cursos</a>
                                     <a class="collapse-item" href="<?= BASE ?>/painel/courses/update">Atualizar cursos</a>
                                     <a class="collapse-item" href="<?= BASE ?>/painel/profile/help">Ajuda</a>
-                                    <a class="collapse-item" href="<?= BASE ?>/painel/courses/suporte">Suporte</a>
+                                    <a class="collapse-item" href="<?= BASE ?>/painel/profile/suporte">Suporte</a>
                                 </div>
                             </div>
                         </li>    
