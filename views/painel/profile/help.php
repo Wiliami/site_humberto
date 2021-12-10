@@ -1,8 +1,6 @@
 <?php
 
 $Component = new Component();
-echo $Component->getHeadHtmlPages();
-echo $Component->getMenuAndSideBarDashboard();
+echo $Component->getMenuAndSideBarDashboard2();
 
-echo "Página de suporte";
 ?>

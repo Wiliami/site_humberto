@@ -8,7 +8,7 @@ echo $Component->getMenuAndSideBarDashboard2();
 <body>  
     <div class="container">
             <div class="col-lg-7">
-                <div class="card-header py-sm-5 py-3">
+                <div class="card-header">
                     <h2>Lista de cursos</h2>
                     <p class="lead">Cursos</p>
                 </div>
@@ -85,6 +85,6 @@ echo $Component->getMenuAndSideBarDashboard2();
     </div>
 
 <?php
-    // $Component = new Component();
-    // echo $Component->getFooterDashboard();
+    $Component = new Component();
+    echo $Component->getFooterDashboard();
 ?>
