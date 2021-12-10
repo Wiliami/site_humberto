@@ -2,7 +2,7 @@
 $User = new User();
 $User->verifyExistLoginUser();
 $Component = new Component();
-echo $Component->getMenuAndSideBarDashboard2();
+echo $Component->getHeadHtmlReset();
 ?>
 <div class="container">
     <div class="row">

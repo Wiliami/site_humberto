@@ -519,6 +519,7 @@ class Component {
 
                     <!-- Custom fonts for this template-->
                     <link href="' . BASE . '/res/site/css/all.min.css" rel="stylesheet" type="text/css">
+                    <link id="pagestyle" href="'. BASE .'/src/css/material-kit.css?v=3.0.0" rel="stylesheet" />
 
                     <!-- Custom styles for this template-->
                     <link href="' . BASE . '/res/site/css/sb-admin-2.min.css" rel="stylesheet">
@@ -542,25 +543,29 @@ class Component {
             
                         <!-- Divider -->
                         <hr class="sidebar-divider">
-        
-                        
-                        <!-- Nav Item - Pages Collapse Menu -->
-                        <li class="nav-item">
-                            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                                aria-expanded="true" aria-controls="collapseTwo">
-                                <i class="fas fa-fw fa-folder"></i>
-                                <span>Administrativo</span>
-                            </a>
-                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                                <div class="bg-white py-2 collapse-inner rounded">
-                                    <a class="collapse-item" href=" '. BASE .'/painel/list-user">Lista de usuários</a>
-                                    <a class="collapse-item" href=" '. BASE .'/painel/cursos-aprovacao">Cursos em análise</a>
-                                    <a class="collapse-item" href=" '. BASE .'/painel/historico-compras">Histórico de compras</a>
-                                    <a class="collapse-item" href=" '. BASE .'/painel/profile/suporte">Suporte</a>
-                                    <a class="collapse-item" href=" '. BASE .'/painel/settings">Configurações</a>
-                                </div>
-                            </div>
-                        </li>
+            
+                        <?php
+                         if( ' . $_SESSION["login"]["user_id"] >= 6 . ') {
+                            ?>
+                                <!-- Nav Item - Pages Collapse Menu -->
+                                <li class="nav-item">
+                                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                                        aria-expanded="true" aria-controls="collapseTwo">
+                                        <i class="fas fa-fw fa-folder"></i>
+                                        <span>Administrativo</span>
+                                    </a>
+                                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                                        <div class="bg-white py-2 collapse-inner rounded">
+                                            <a class="collapse-item" href=" '. BASE .'/painel/list-user">Lista de usuários</a>
+                                            <a class="collapse-item" href=" '. BASE .'/painel/cursos-aprovacao">Cursos em análise</a>
+                                            <a class="collapse-item" href=" '. BASE .'/painel/historico-compras">Histórico de compras</a>
+                                            <a class="collapse-item" href=" '. BASE .'/painel/profile/suporte">Suporte</a>
+                                            <a class="collapse-item" href=" '. BASE .'/painel/settings">Configurações</a>
+                                        </div>
+                                    </div>
+                                </li>
+                        <?php 
+                        }?>
             
                         <!-- Nav Item - Utilities Collapse Menu -->
                         <li class="nav-item">
