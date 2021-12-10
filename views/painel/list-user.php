@@ -2,7 +2,7 @@
 $User = new User();
 $User->verifyExistLoginUser();
 $Component = new Component();
-echo $Component->getHeadHtmlReset();
+echo $Component->getMenuAndSideBarDashboard2();
 ?>
 <div class="container">
     <div class="row">
@@ -31,7 +31,7 @@ echo $Component->getHeadHtmlReset();
                             <td>
                                 <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="avatar" style="width: 50px; height: 50px">
                                 <a href="/" class="user-link"><?= $User['user_name'] ?></a>
-                                <span class="user-subhead"><?= $User['user_id'] ?></span>
+                                <span class="user-subhead"><?= $User['user_level'] ?></span>
                             </td>
                             <td>
                                 <?= $User['user_create_date'] ?>  

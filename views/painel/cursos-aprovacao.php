@@ -4,7 +4,6 @@ $User->verifyExistLoginUser();
 $Component = new Component();
 echo $Component->getMenuAndSideBarDashboard2();  
 ?>
-
 <div class="container">
     <div class="row">
         <div class="col-lg-12">

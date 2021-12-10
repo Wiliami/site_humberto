@@ -4,7 +4,6 @@ $User->verifyExistLoginUser();
 $Component = new Component();
 echo $Component->getMenuAndSideBarDashboard2();
 ?>
-
 <div class="container">
     <div class="row">
         <div class="col-lg-12">
@@ -32,8 +31,8 @@ echo $Component->getMenuAndSideBarDashboard2();
                             </td>
                             
                             <!-- Nível de usuário -->
-                            <td>
-                                <?= $User['levels_users']['levels'] ?>  
+                            <td>    
+                                <?= $User['user_level'] ?>  
                             </td>
 
                             <td style="width: 20%;">

@@ -63,7 +63,6 @@ class User {
 				$Create = new Create();
 				$Create->ExeCreate("cursos", $dataCourse); // cadastrando usuário no banco de dados
 				if($Create->getResult()) { // resutado
-					
 					$this->Result = $Create->getResult();
 					$this->Error =  "O curso foi cadastrado com sucesso!";
 				} else {

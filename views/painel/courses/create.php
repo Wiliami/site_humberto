@@ -4,7 +4,6 @@ $User->verifyExistLoginUser();
 // $User->verifyLevelUserModerator();
 $Component = new Component();
 echo $Component->getMenuAndSideBarDashboard2();
-
 ?>
 <section class="py-lg-5">
     <div class="col-lg-7">
@@ -23,8 +22,10 @@ echo $Component->getMenuAndSideBarDashboard2();
                     if($User->getResult()) {
                         header('Location: ' . BASE . '/painel/courses/update');
                         Error($User->getError());
+                        // cadastro realizado com sucesso
                     } else {
                         Error($User->getError(), 'warning');
+                        //falta os campos serem preenchidos no inputs ou o input recebru informação errada
                     }   
                 }
             ?>
@@ -57,7 +58,6 @@ echo $Component->getMenuAndSideBarDashboard2();
             </div>
         </div>
         </form>
-
         </div>
         </div>
         </div>
