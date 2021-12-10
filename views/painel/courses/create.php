@@ -25,7 +25,7 @@ echo $Component->getMenuAndSideBarDashboard2();
                         Error($User->getError());
                     } else {
                         Error($User->getError(), 'warning');
-                    }
+                    }   
                 }
             ?>
         </div>
