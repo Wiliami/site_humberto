@@ -53,7 +53,7 @@ class User {
 				$this->Result = false;
 			} elseif (empty($dataCourse["curso_descricao"])) {
 				$this->Error = "Preencha com uma descrição!";
-				$this->Result = false;
+				$this->Result = false;	
 			} elseif (empty($dataCourse["curso_categoria"])) {
 				$this->Error = "Selecione uma categoria para o curso!";
 				$this->Result = false;

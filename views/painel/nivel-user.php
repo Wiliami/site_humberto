@@ -10,7 +10,7 @@ echo $Component->getMenuAndSideBarDashboard2();
         <div class="main-box clearfix">
             <div class="table-responsive">
                 <table class="table user-list">
-                <h2>Lista de usuários</h2>
+                <h2>Nível de usuários</h2>
                     <thead>
                         <tr>
                             <th><span>Usuário</span></th>
@@ -32,7 +32,7 @@ echo $Component->getMenuAndSideBarDashboard2();
                             
                             <!-- Nível de usuário -->
                             <td>    
-                                <?= $User['user_level'] ?>  
+                                <?= $User['user_level'] ?>
                             </td>
 
                             <td style="width: 20%;">
