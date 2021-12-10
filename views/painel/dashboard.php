@@ -1,8 +1,6 @@
 <?php
-
-    $Component = new Component();
-    // echo $Component->getHeadHtmlReset();
-
+$User = new User();
+$User->verifyExistLoginUser();
 ?>
 
 
@@ -20,7 +18,7 @@
 
         <!-- Custom fonts for this template-->
         <link href="<?= BASE ?>/res/site/css/all.min.css" rel="stylesheet" type="text/css">
-        <link href="<?= BASE ?>/res/site/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <!-- <link href="<?= BASE ?>/res/site/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
 
         <!-- Custom styles for this template -->
         <link href="<?= BASE ?>/res/site/css/sb-admin-2.min.css" rel="stylesheet">
@@ -112,6 +110,7 @@
                             <a class="collapse-item" href="<?= BASE ?>/painel/courses/list">Lista de cursos</a>
                             <a class="collapse-item" href="<?= BASE ?>/painel/courses/delete">Excluir cursos</a>
                             <a class="collapse-item" href="<?= BASE ?>/painel/courses/update">Atualizar cursos</a>
+                            <a class="collapse-item" href="<?= BASE ?>/painel/nivel-user">Níves de usuários</a>
                             <a class="collapse-item" href="<?= BASE ?>/painel/courses/help">Ajuda</a>
                             <a class="collapse-item" href="<?= BASE ?>/painel/courses/suporte">Suporte</a>
                         </div>
@@ -301,12 +300,11 @@
                                     <a class="dropdown-item" href="<?= BASE ?>/profile/profile-user">
                                         <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                         Minha conta
-                                        </a>
+                                    </a>
                                     <a class="dropdown-item" href="<?= BASE ?>/reset-password">
                                         <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                                         Mudar senha
                                     </a>
-        
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="" data-toggle="modal" data-target="#logoutModal">
                                         <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>

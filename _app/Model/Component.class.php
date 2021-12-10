@@ -266,7 +266,7 @@ class Component {
 
                 <!-- Nav Item - Pages Collapse Menu -->
                 <?php
-                    if(' . $_SESSION["login"]["user_level"] >= 1 . ') {
+                    if(' . $_SESSION["login"]["user_level"] >= 6 . ') {
                         ?> 
                             <li class="nav-item">
                                 <a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#collapsePages"
@@ -284,17 +284,13 @@ class Component {
                                         <a class="collapse-item" href="'.  BASE .'/painel/settings">Configurações</a>
                                     </div>
                                 </div>
-
                             </li>
-                        
                 <?php
                 }?>
 
 
                 <!-- Divider -->
                 <hr class="sidebar-divider d-none d-md-block">
-
-              
 
             </ul>
             <!-- End of Sidebar -->
@@ -857,6 +853,7 @@ class Component {
         <!-- Custom scripts for all pages-->
         <script src="'. BASE .'/res/site/js/sb-admin-2.min.js"></script> 
     </body>
+    </html>
  
         ';
     }
