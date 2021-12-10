@@ -13,7 +13,7 @@ $User->verifyExistLoginUser();
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="">
         <meta name="author" content="">
-
+        
         <title>Página | Dashboard</title>
 
         <!-- Custom fonts for this template-->
@@ -45,7 +45,6 @@ $User->verifyExistLoginUser();
 
                 <hr class="sidebar-divider my-0 ">
 
-                
                 <?php 
                     if($_SESSION["login"]["user_level"] >= 6) {
                         ?>
@@ -62,7 +61,7 @@ $User->verifyExistLoginUser();
                                         <a class="collapse-item" href="<?= BASE ?>/painel/cursos-aprovacao">Cursos em análise</a>
                                         <a class="collapse-item" href="<?= BASE ?>/painel/historico-compras">Histórico de compras</a>
                                         <a class="collapse-item" href="<?= BASE ?>/painel/nivel-user">Níves de usuários</a>
-                                        <a class="collapse-item" href="<?= BASE ?>/painel/suporte">Suporte</a>
+                                        <a class="collapse-item" href="<?= BASE ?>/painel/profile/suporte">Suporte</a>
                                         <a class="collapse-item" href="<?= BASE ?>/painel/settings">Configurações</a>   
                                     </div>
                                 </div>
