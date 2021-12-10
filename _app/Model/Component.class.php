@@ -587,7 +587,7 @@ class Component {
                                 data-parent="#accordionSidebar">
                                 <div class="bg-white py-2 collapse-inner rounded">
                                     <a class="collapse-item" href="'. BASE .'/painel/profile/meus-cursos">Meus cursos</a>
-                                    <!-- <a class="collapse-item" href="'. BASE .'/painel/profile/historico-compras">Histórico de compras</a> -->
+                                    <a class="collapse-item" href="'. BASE .'/painel/profile/minhas-compras">Minhas compras</a>
                                     <a class="collapse-item" href="'. BASE .'/painel/profile/cursos-finalizados">Cursos finalizados</a>
                                     <a class="collapse-item" href="'. BASE .'/painel/profile/cursos-pendentes">Cursos pendentes</a>
                                     <a class="collapse-item" href="'. BASE .'/painel/profile/help">Ajuda</a>
@@ -609,7 +609,7 @@ class Component {
                                     <a class="collapse-item" href="'. BASE .'/painel/courses/list">Lista de cursos</a>
                                     <a class="collapse-item" href="'. BASE .'/painel/courses/delete">Excluir cursos</a>
                                     <a class="collapse-item" href="'. BASE .'/painel/courses/update">Atualizar cursos</a>
-                                    <a class="collapse-item" href="'. BASE .'/painel/courses/help">Ajuda</a>
+                                    <a class="collapse-item" href="'. BASE .'/painel/profile/help">Ajuda</a>
                                     <a class="collapse-item" href="'. BASE .'/painel/courses/suporte">Suporte</a>
                                 </div>
                             </div>

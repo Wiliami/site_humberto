@@ -2,8 +2,7 @@
 $User = new User();
 $User->verifyExistLoginUser();
 // $User->verifyLevelUserModerator();
-$Component = new Component();
-// echo $Component->getMenuAndSideBarDashboard2();
+
 ?>
 
 <!DOCTYPE html>
@@ -83,7 +82,7 @@ $Component = new Component();
                                 data-parent="#accordionSidebar">
                                 <div class="bg-white py-2 collapse-inner rounded">
                                     <a class="collapse-item" href="<?= BASE ?>/painel/profile/meus-cursos">Meus cursos</a>
-                                    <a class="collapse-item" href="<?= BASE ?>/painel/profile/historico-compras">Histórico de compras</a>
+                                    <a class="collapse-item" href="<?= BASE ?>/painel/profile/minhas-compras">Histórico de compras</a>
                                     <a class="collapse-item" href="<?= BASE ?>/painel/profile/cursos-finalizados">Cursos finalizados</a>
                                     <a class="collapse-item" href="<?= BASE ?>/painel/profile/cursos-pendentes">Cursos pendentes</a>
                                     <a class="collapse-item" href="<?= BASE ?>/painel/profile/help">Ajuda</a>
@@ -105,7 +104,7 @@ $Component = new Component();
                                     <a class="collapse-item" href="<?= BASE ?>/painel/courses/list">Lista de cursos</a>
                                     <a class="collapse-item" href="<?= BASE ?>/painel/courses/delete">Excluir cursos</a>
                                     <a class="collapse-item" href="<?= BASE ?>/painel/courses/update">Atualizar cursos</a>
-                                    <a class="collapse-item" href="<?= BASE ?>/painel/courses/help">Ajuda</a>
+                                    <a class="collapse-item" href="<?= BASE ?>/painel/profile/help">Ajuda</a>
                                     <a class="collapse-item" href="<?= BASE ?>/painel/courses/suporte">Suporte</a>
                                 </div>
                             </div>
@@ -126,19 +125,6 @@ $Component = new Component();
                                 <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                                     <i class="fa fa-bars"></i>
                                 </button>
-            
-                                <!-- Topbar Search -->
-                                <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
-                                            aria-label="Search" aria-describedby="basic-addon2">
-                                        <div class="input-group-append">
-                                            <button class="btn btn-primary" type="button">
-                                                <i class="fas fa-search fa-sm"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </form>
             
                                 <!-- Topbar Navbar -->
                                 <ul class="navbar-nav ml-auto">

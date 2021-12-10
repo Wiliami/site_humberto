@@ -1,11 +1,11 @@
 <?php
 $User = new User();
 $User->verifyExistLoginUser();
-$Component = new Component();
+$Component = new Component(); 
 echo $Component->getMenuAndSideBarDashboard2();
 ?>
 
-<body>   
+<body>  
     <div class="container">
             <div class="col-lg-7">
                 <div class="card-header py-sm-5 py-3">
