@@ -47,7 +47,7 @@ echo $Component->getMenuAndSideBarDashboard2();
                                         <a href="/"><?= $Cursos['curso_descricao'] ?></a>
                                     </td>
                                     <td>
-                                        <a href="/" class="table-link" text="Ola">
+                                        <a href="<?= BASE ?>/" class="table-link" text="Ola">
                                             <span class="fa-stack">
                                             <i class="fa fa-square fa-stack-2x"></i>
                                             <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
@@ -62,7 +62,7 @@ echo $Component->getMenuAndSideBarDashboard2();
                                         <a href="<?= BASE ?>/painel/courses/delete" class="table-link danger" text="ola">
                                             <span class="fa-stack">
                                                 <i class="fa fa-square fa-stack-2x"></i>
-                                                <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
+                                                <i class="fa fa-trash-o fa-stack-1x fa-inverse" text="ola"></i>
                                             </span>
                                         </a>
                                     </td>
