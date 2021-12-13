@@ -214,8 +214,8 @@
             </section>
         </main>
         <?php
-            $Component = new Component();
-            echo $Component->getFooterHome();
+        $Component = new Component();
+        echo $Component->getFooterHome();
         ?>
     </body>
 </html>
