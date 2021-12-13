@@ -5,22 +5,18 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Plataforma | Pr. Humberto Oliveira</title>
-
         <!-- Estiliza o background do Header -->
         <link rel="stylesheet" href="<?= BASE ?>/src/css/index.css" type="text/css">
-
-
         <!-- Template oficial do projeto -->
         <link id="pagestyle" href="<?= BASE ?>/src/css/material-kit.css?v=3.0.0" rel="stylesheet" />
-
         <!-- Esse css estiliza os ícones de redes sociais do footer index -->
         <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
     </head>
     <body>
         <?php
-            $Component = new Component();                               
-            echo $Component->getMenu();   
-            echo $Component->getHeader();
+        $Component = new Component();                      
+        echo $Component->getMenu();   
+        echo $Component->getHeader();
         ?>
         <!-- conteúdo principal -->
         <main class="flex-shrink-0" id="content-overview">
@@ -41,7 +37,7 @@
                         </div>
 
                         <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center">
-                            <img class="img-fluid rounded-3 my-5 bg-warning rounded-circle w-290 h-290" src="<?= BASE ?>/src/images/humberto.png" alt="image de Humberto Oliveira" />
+                            <img class="img-fluid rounded-3 my-5" src="<?= BASE ?>/src/images/humberto.png" alt="image de Humberto Oliveira" />
                         </div>
 
 
@@ -221,8 +217,8 @@
                 <div class="container">
                     <div class="row">
                     <div class="col-md-8 text-start mb-5 mt-5">
-                        <h3 class="text-white z-index-1 position-relative">The Executive Team</h3>
-                        <p class="text-white opacity-8 mb-0">There’s nothing I really wanted to do in life that I wasn’t able to get good at. That’s my skill.</p>
+                        <h3 class="text-white z-index-1 position-relative">Comentários</h3>
+                        <p class="text-white opacity-8 mb-0">Veja comentários de nossos amigos e colaboradores</p>
                     </div>
                     </div>
                     <div class="row">
