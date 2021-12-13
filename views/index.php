@@ -36,9 +36,9 @@
                             </div>
                         </div>
 
-                        <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center">
+                        <!-- <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center">
                             <img class="img-fluid rounded-3 my-5" src="<?= BASE ?>/src/images/humberto.png" alt="image de Humberto Oliveira" />
-                        </div>
+                        </div> -->
 
 
                     </div>
