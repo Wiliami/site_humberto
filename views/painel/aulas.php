@@ -19,6 +19,7 @@ $User->verifyExistLoginUser();
         </head>
 
         <body id="page-top">
+        <!-- A verifcação de usabilidade -->
 
          <!-- Page Wrapper -->
         <div id="wrapper">
