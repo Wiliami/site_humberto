@@ -1,7 +1,7 @@
 <?php
 
 
-// top
+// top-master
 // - getMenuAndSideBarDashboard2 - exemplo de menu
 
 class Component {
@@ -13,17 +13,20 @@ class Component {
                     <a href=' " . BASE . "/' type=\"button\" class=\" nav btn btn-black mb-2 mb-md-0\">
                         <img src='" . BASE . "/src/images/icon_small.png' alt='Logo' style=' width: 50px; height: 50px;'>
                     </a>
-                            <ul class=\"nav col-12 col-md-auto mb-2 justify-content-center mb-md-0\">
+                            <ul class=\"nav col-12 col-md-auto mb-2 justify-content-center mb-md-0 text-center\">
                                 <li><a href=' " . BASE . "/' class=\"nav-link px-2 link-secondary\">Home</a></li>
                                 <li><a href=' " . BASE . "/sobre' class=\"nav-link px-2 link-secondary\">Sobre</a></li>
                                 <li><a href=' " . BASE . "/conteudo' class=\"nav-link px-2 link-secondary\">Conteúdo</a></li>
                                 <li><a href='"  . BASE . "/unitbrasil' class=\"nav-link px-2 link-secondary\">A Unitbrasil</a></li>
+
                             </ul>
 
                             <div class=\"col-md-auto text-end\">
-                                <a href=' " . BASE . "/cadastro' type=\"button\" class=\"btn me-1 mb-0\">Cadastrar</a>
-                                <a href=' " . BASE . "/login' type=\"button\" class=\"btn btn-warning w-auto me-1 mb-0\">Login</a>
-                            </div>
+                            <!-- <a href=' " . BASE . "/cadastro' type=\"button\" class=\"btn me-1 mb-0\">Cadastrar</a>
+                                <a href=' " . BASE . "/login' type=\"button\" class=\"btn btn-warning w-auto me-1 mb-0\">Login</a> --> 
+                                <li href='"  . BASE . "/' class=\"nav-link px-2 link-secondary\">...</li>
+
+                            </div>   
                 </nav>
             </div>
         ";
@@ -52,8 +55,8 @@ class Component {
                         <p class="lead fw-normal text-white-50 mb-4">Comece um tour pelo site<br /> e saiba como funciona o <br> evangelismo web.</p>
 
                         <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
-                            <a class="btn btn-warning btn-lg px-4 me-sm-3" href=" ' . BASE . '/cadastro">Começar</a>
-                            <a class="btn btn-outline-light btn-lg px-4" href="#content-overview">Saiba mais</a>
+                            <!-- <a class="btn btn-warning btn-lg px-4 me-sm-3" href=" ' . BASE . '/cadastro">Começar</a> -->
+                            <a class="btn btn-warning btn-lg px-4" href="#content-overview">Saiba mais</a>
 
                             <!-- <div class="justify-content-sm-center justify-content-xl-end">
                                 <a class="btn btn-success text-black btn-lg px-4" href="/">Suporte</a>

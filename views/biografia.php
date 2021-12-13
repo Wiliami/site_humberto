@@ -1,14 +1,11 @@
 <?php
-
 $Component = new Component();
 echo $Component->getHeadHtmlReset();
 echo $Component->getMenu();
-
 ?>
-    
     <body class="blog-author bg-gray-200">
         <header>
-            <div class="page-header min-height-400" style="background-image: url('<?= BASE ?>/src/images/humberto-background-bio.jpeg')" loading="lazy">
+            <div class="page-header min-height-400" style="background-image: url('<?= BASE ?>/src/images/humberto-background.jpeg')" loading="lazy">
                 <span class="mask bg-gradient-secondary opacity-4"></span>
             </div>
         </header>

@@ -13,11 +13,11 @@
         <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
     </head>
     <body>
-        <?php
-        $Component = new Component();                      
-        echo $Component->getMenu();   
-        echo $Component->getHeader();
-        ?>
+    <?php
+    $Component = new Component();                      
+    echo $Component->getMenu();   
+    echo $Component->getHeader();
+    ?>
         <!-- conteúdo principal -->
         <main class="flex-shrink-0" id="content-overview">
             <section class="py-5">
@@ -26,21 +26,21 @@
                         <div class="col-lg-8 col-xl-7 col-xxl-6">
                             <div class="my-5 text-center text-xl-start">
                                 <h1 class="display-5 fw-bolder text-black mb-2">Pr. Humberto Oliveira</h1>
-                                <p class="lead fw-normal text-black-50 mb-4">Além de ser Empresário e Professor, Pr.
-                                    Humberto Oliveira dedica também parte do seu tempo para o evangelismo e ministério
-                                    pastoral.</p>
+                                <p class="lead fw-normal text-black-50 mb-4">
+                                Além de ser Empresário e Professor, Pr.
+                                Humberto Oliveira dedica também parte do seu tempo para o evangelismo e ministério
+                                pastoral.
+                                </p>
                                 <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
-                                    <a class="btn btn-outline-dark btn-lg px-4" href="<?= BASE ?>/biografia">Leia a minha
-                                        história</a>
+                                    <a class="btn btn-outline-dark btn-lg px-4" href="<?= BASE ?>/biografia">
+                                        Leia a minha história
+                                    </a>
                                 </div>
                             </div>
                         </div>
-
-                        <!-- <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center">
+                        <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center">
                             <img class="img-fluid rounded-3 my-5" src="<?= BASE ?>/src/images/humberto.png" alt="image de Humberto Oliveira" />
-                        </div> -->
-
-
+                        </div>
                     </div>
                 </div>
             </section>
