@@ -20,7 +20,7 @@
     ?>
         <!-- conteúdo principal -->
         <main class="flex-shrink-0" id="content-overview">
-            <section class="py-5">
+            <section class="py-5">  
                 <div class="container px-5">
                     <div class="row gx-5 align-items-center justify-content-center">
                         <div class="col-lg-8 col-xl-7 col-xxl-6">
@@ -32,7 +32,7 @@
                                 pastoral.
                                 </p>
                                 <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
-                                    <a class="btn btn-outline-dark btn-lg px-4" href="<?= BASE ?>/biografia">
+                                    <a class="btn btn-dark btn-lg px-4" href="<?= BASE ?>/biografia">
                                         Leia a minha história
                                     </a>
                                 </div>
@@ -61,7 +61,7 @@
                             <div class="card-body pt-7 text-center">
                                 <h3 class="text-white">Mais detalhes</h3>
                                 <p class="text-white opacity-8">Esta é uma plataforma vérsatil para cursos completos para quem deseja trabalhar com o público e com a igreja. Conhecimento para conquistar seus objetivos.</p>
-                                <a href="#page-course" target="" class="btn btn-white btn-sm w-50 mx-auto mt-3">Saiba mais!</a>
+                                <a href="#area-comentários" target="" class="btn btn-white btn-sm w-50 mx-auto mt-3">Saiba mais!</a>
                             </div>
                             </div>
                         </div>
@@ -71,12 +71,14 @@
                         <div class="row justify-content-start">
                         <div class="col-md-6">
                             <div class="info">
+                                <i class="fas fa-school"></i>
                             <h5 class="font-weight-bolder mt-3">Religião</h5>
                             <p class="pe-5">Trabalhamos para constituir uma trajetória sólida com base em valores éticos e morais, com a finalidade de formar cidadãos como você. </p>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="info">
+                            <i class="fas fa-home"></i>
                             <h5 class="font-weight-bolder mt-3">Família</h5>
                             <p class="pe-3">Este curso aborda a importância da família na educação de crianças e jovens além de mostrar o papel decisivo desta influência ao longo de toda vida escolar para o crescimento dos filhos.</p>
                             </div>
@@ -84,11 +86,13 @@
                         </div>
                         <div class="row justify-content-start mt-5">
                         <div class="col-md-6 mt-3">
+                            <i class="fas fa-comments-dollar"></i>
                             <h5 class="font-weight-bolder mt-3">Vida financeira</h5>
                             <p class="pe-5">Estude o curso de Planejamento Financeiro Familiar Grátis com certificado válido em todo Brasil. Curso grátis online de Planejamento Financeiro Familiar.</p>
                         </div>
                         <div class="col-md-6 mt-3">
                             <div class="info">
+                                <i class="fas fa-heart"></i>
                             <h5 class="font-weight-bolder mt-3">Vida conjugal</h5>
                             <p class="pe-3">Neste curso você conhecerá as bases do casamento segunda a Bíblia. Serão ministradas assuntos como:
                                 <li>A aliança do casamento;</li>
@@ -213,7 +217,7 @@
 
 
             <!-- Comentários -->
-            <section class="pb-5 position-relative bg-gradient-dark mx-n3">
+            <section class="pb-5 position-relative bg-gradient-dark mx-n3" id="area-comentários">
                 <div class="container">
                     <div class="row">
                     <div class="col-md-8 text-start mb-5 mt-5">
@@ -234,9 +238,9 @@
                             </div>
                             <div class="col-lg-8 col-md-6 col-12 my-auto">
                             <div class="card-body ps-lg-0">
-                                <h5 class="mb-0">Emma Roberts</h5>
-                                <h6 class="text-info">UI Designer</h6>
-                                <p class="mb-0">Artist is a term applied to a person who engages in an activity deemed to be an art.</p>
+                                <h5 class="mb-0">Carla Francisca</h5>
+                                <h6 class="text-info">Uunitbrasil</h6>
+                                <p class="mb-0">Melhor plataforma de cursos.</p>
                             </div>
                             </div>
                         </div>
@@ -254,9 +258,9 @@
                             </div>
                             <div class="col-lg-8 col-md-6 col-12 my-auto">
                             <div class="card-body ps-lg-0">
-                                <h5 class="mb-0">William Pearce</h5>
-                                <h6 class="text-info">Boss</h6>
-                                <p class="mb-0">Artist is a term applied to a person who engages in an activity deemed to be an art.</p>
+                                <h5 class="mb-0">Odelfrance Oliveira</h5>
+                                <h6 class="text-info">Unitbrasil</h6>
+                                <p class="mb-0">Melhor platforma de cursos online.</p>
                             </div>
                             </div>
                         </div>
@@ -276,13 +280,13 @@
                             </div>
                             <div class="col-lg-8 col-md-6 col-12 my-auto">
                             <div class="card-body ps-lg-0">
-                                <h5 class="mb-0">Ivana Flow</h5>
-                                <h6 class="text-info">Athlete</h6>
+                                <h5 class="mb-0">Amanda Suarez</h5>
+                                <h6 class="text-info">Unitbrasil</h6>
                                 <p class="mb-0">Artist is a term applied to a person who engages in an activity deemed to be an art.</p>
                             </div>
                             </div>
                         </div>
-                        </div>
+                        </div>  
                     </div>
                     <div class="col-lg-6 col-12">
                         <div class="card card-profile mt-lg-4 mt-5 z-index-2">

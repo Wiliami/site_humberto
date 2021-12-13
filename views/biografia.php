@@ -5,7 +5,7 @@ echo $Component->getMenu();
 ?>
     <body class="blog-author bg-gray-200">
         <header>
-            <div class="page-header min-height-400" style="background-image: url('<?= BASE ?>/src/images/humberto-background.jpeg')" loading="lazy">
+            <div class="page-header min-height-400" style="background-image: url('<?= BASE ?>/')" loading="lazy">
                 <span class="mask bg-gradient-secondary opacity-4"></span>
             </div>
         </header>
@@ -46,8 +46,7 @@ echo $Component->getMenu();
                         paulista, realizou a cerimônia de ordenação ao Ministério Pastoral dos pastores Thiago da
                         Silva Monteiro e Joel Gomes de Sousa. O evento aconteceu na Igreja Central de Sorocaba e 
                         contou com a presença de líderes paulista da Igreja Adventista, parentes, amigos, pastores e
-                        membros de outros distritos.. <br><a href="javascript:;" class="text-info icon-move-right">Mais sobre mim
-                            <i class="fas fa-arrow-right text-sm ms-1"></i>
+                        membros de outros distritos...
                         </a>
                         </p>
                     </div>
