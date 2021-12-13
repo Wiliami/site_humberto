@@ -5,12 +5,10 @@ $Component = new Component();
 echo $Component->getHeadHtmlReset();
 echo $Component->getMenuAndSideBarDashboard2();
 ?>
-
     <div style="margin-left: 20px;">
         <h3>Olá, <?= $_SESSION['login']['user_name'] ?></h3>
         <span>Meus cursos</span>
     </div>
-
     <div class="row gx-5 grid-container" style="margin-left: 8px; margin-top: 20px;">
         <div class="col-lg-4 mb-5">
             <div class="card h-100 shadow border-0">
@@ -38,8 +36,6 @@ echo $Component->getMenuAndSideBarDashboard2();
                 </div>
             </div>
         </div>
-
-
         <div class="col-lg-4 mb-5">
             <div class="card h-100 shadow border-0">
             <img src="<?= BASE ?>/src/images/speech-post.jpg" alt="imagem de fundo"/>
@@ -64,11 +60,9 @@ echo $Component->getMenuAndSideBarDashboard2();
                 </div>
             </div>
         </div>
-
         <div class="col-lg-4 mb-5">
             <div class="card h-100 shadow border-0">
             <img src="<?= BASE ?>/src/images/page-youtube.jpg" alt="imagem de fundo"/>
-
                 <div class="card-body p-4">
                     <div class="badge bg-success bg-gradient rounded-pill mb-2 text-white">Curso</div>
                     <a class="text-decoration-none link-dark stretched-link" href="<?= BASE ?>/painel/aulas">
@@ -90,12 +84,7 @@ echo $Component->getMenuAndSideBarDashboard2();
                 </div>
             </div>
         </div>
-
-        
     </div> 
-
 <?php
-
-    echo $Component->getFooterDashboard();
-
+echo $Component->getFooterDashboard();
 ?>

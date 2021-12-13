@@ -4,7 +4,7 @@ echo $Component->getHeadHtmlReset();
 echo $Component->getMenu();   
 ?>
 <!-- Area cursos -->    
-<section class="py-5 bg-white grid">
+<section class="py-5 bg-white">
     <div class="container px-5 my-5">
         <div class="row gx-5 justify-content-start">
             <div class="col-lg-8 col-xl-6">
