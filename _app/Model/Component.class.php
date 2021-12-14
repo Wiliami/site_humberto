@@ -13,21 +13,18 @@ class Component {
                     <a href=' " . BASE . "/' type=\"button\" class=\" nav btn btn-black mb-2 mb-md-0\">
                         <img src='" . BASE . "/src/images/icon_small.png' alt='Logo' style=' width: 50px; height: 50px;'>
                     </a>
-                            <ul class=\"nav col-12 col-md-auto mb-2 justify-content-center mb-md-0 text-center\">
-                                <li><a href=' " . BASE . "/' class=\"nav-link px-2 link-secondary\">Home</a></li>
-                                <li><a href=' " . BASE . "/sobre' class=\"nav-link px-2 link-secondary\">Sobre</a></li>
-                                <li><a href=' " . BASE . "/conteudo' class=\"nav-link px-2 link-secondary\">Conteúdo</a></li>
-                                <li><a href='"  . BASE . "/unitbrasil' class=\"nav-link px-2 link-secondary\">A Unitbrasil</a></li>
-
-                            </ul>
-
-                            <div class=\"col-md-auto text-end\">
-                            <!-- <a href=' " . BASE . "/cadastro' type=\"button\" class=\"btn me-1 mb-0\">Cadastrar</a>
-                                <a href=' " . BASE . "/login' type=\"button\" class=\"btn btn-warning w-auto me-1 mb-0\">Login</a>
-                            --> 
-                                <li href='"  . BASE . "/' class=\"nav-link px-2 link-secondary\">...</li>
-
-                            </div>   
+                        <ul class=\"nav col-12 col-md-auto mb-2 justify-content-center mb-md-0 text-center\">
+                            <li><a href=' " . BASE . "/' class=\"nav-link px-2 link-secondary\">Home</a></li>
+                            <li><a href=' " . BASE . "/sobre' class=\"nav-link px-2 link-secondary\">Sobre</a></li>
+                            <li><a href=' " . BASE . "/conteudo' class=\"nav-link px-2 link-secondary\">Conteúdo</a></li>
+                            <li><a href='"  . BASE . "/unitbrasil' class=\"nav-link px-2 link-secondary\">A Unitbrasil</a></li>
+                        </ul>
+                        <div class=\"col-md-auto text-end\">
+                        <!-- <a href=' " . BASE . "/cadastro' type=\"button\" class=\"btn me-1 mb-0\">Cadastrar</a>
+                            <a href=' " . BASE . "/login' type=\"button\" class=\"btn btn-warning w-auto me-1 mb-0\">Login</a>
+                        --> 
+                            <li href='"  . BASE . "/' class=\"nav-link px-2 link-secondary\">...</li>
+                        </div>   
                 </nav>
             </div>
         ";
@@ -1053,7 +1050,7 @@ class Component {
               </div>
             </div>
       
-            <div class="col-md-2 col-sm-6 col-6 mb-4">
+            <!-- <div class="col-md-2 col-sm-6 col-6 mb-4">
               <div>
                 <h6 class="text-sm">Recursos</h6>
                 <ul class="flex-column ms-n3 nav">
@@ -1076,36 +1073,17 @@ class Component {
                   </li>
                 </ul>
               </div>
-            </div>
+            </div> -->
       
             <div class="col-md-2 col-sm-6 col-6 mb-4">
               <div>
                 <h6 class="text-sm">Ajuda & Suporte</h6>
                 <ul class="flex-column ms-n3 nav">
                   <li class="nav-item">
-                    <a class="nav-link" href="https://www.creative-tim.com/contact-us" target="_blank">
+                    <a class="nav-link" href="' . BASE . '/contato" target="_blank">
                       Entre em contato
                     </a>
-                  </li>
-      
-                  <li class="nav-item">
-                    <a class="nav-link" href="https://www.creative-tim.com/knowledge-center" target="_blank">
-                      Center
-                    </a>
-                  </li>
-      
-                  <li class="nav-item">
-                    <a class="nav-link" href="https://services.creative-tim.com/?ref=ct-mk2-footer" target="_blank">
-                      Desenvolvimento
-                    </a>
-                  </li>
-      
-                  <li class="nav-item">
-                    <a class="nav-link" href="https://www.creative-tim.com/sponsorships" target="_blank">
-                      Projetos
-                    </a>
-                  </li>
-      
+                  </li> 
                 </ul>
               </div>
             </div>
@@ -1115,13 +1093,13 @@ class Component {
                 <h6 class="text-sm">Legal</h6>
                 <ul class="flex-column ms-n3 nav">
                   <li class="nav-item">
-                    <a class="nav-link" href="https://www.creative-tim.com/knowledge-center/terms-of-service" target="_blank">
+                    <a class="nav-link" href="#" target="_blank">
                       Termos & Condições
                     </a>
                   </li>
       
                   <li class="nav-item">
-                    <a class="nav-link" href="https://www.creative-tim.com/knowledge-center/privacy-policy" target="_blank">
+                    <a class="nav-link" href="#" target="_blank">
                       Política de privacidade
                     </a>
                   </li>
@@ -1132,7 +1110,7 @@ class Component {
             <div class="col-12">
               <div class="text-center">
                 <p class="text-dark my-4 text-sm font-weight-normal">
-                  Todos os direitos reservados. Copyright © Feito by <a href="https://www.unitplus.com.br/" target="_blank">Unitplus</a>.
+                  Todos os direitos reservados. Copyright © Desenvolvido por <a href="https://www.unitplus.com.br/" target="_blank">Unitplus</a>.
                 </p>
               </div>
             </div>

@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Plataforma | Pr. Humberto Oliveira</title>
+        <title>Pr. Humberto Oliveira | Home</title>
         <!-- Estiliza o background do Header -->
         <link rel="stylesheet" href="<?= BASE ?>/src/css/index.css" type="text/css">
         <!-- Template oficial do projeto -->
@@ -50,10 +50,10 @@
                     <div class="row align-items-center">
                     <div class="col-lg-4 ms-auto me-auto p-lg-4 mt-lg-0 mt-4">
                         <div class="rotating-card-container">
-                        <div class="card card-rotate card-background card-background-mask-primary shadow-primary mt-md-0 mt-5">
+                        <div class="card card-rotate card-background card-background-mask-primary shadow-primary mt-md-0 mt-5"> 
                             <div class="front front-background" style="background-image: url(https://images.unsplash.com/photo-1569683795645-b62e50fbf103?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80); background-size: cover;">
                             <div class="card-body py-7 text-center">
-                                <h3 class="text-white">Cursos em <br /> diversas àreas.</h3>
+                                <h3 class="text-white">Plataforma online</h3>
                                 <p class="text-white opacity-8">Esta é uma plataforma vérsatil para cursos completos para quem deseja trabalhar com o público e com a igreja. Conhecimento para conquistar seus objetivos.</p>
                             </div>
                             </div>
@@ -72,7 +72,7 @@
                         <div class="col-md-6">
                             <div class="info">
                                 <i class="fas fa-school"></i>
-                            <h5 class="font-weight-bolder mt-3">Religião</h5>
+                            <h5 class="font-weight-bolder mt-3">Deus</h5>
                             <p class="pe-5">Trabalhamos para constituir uma trajetória sólida com base em valores éticos e morais, com a finalidade de formar cidadãos como você. </p>
                             </div>
                         </div>
@@ -95,8 +95,7 @@
                                 <i class="fas fa-heart"></i>
                             <h5 class="font-weight-bolder mt-3">Vida conjugal</h5>
                             <p class="pe-3">Neste curso você conhecerá as bases do casamento segunda a Bíblia. Serão ministradas assuntos como:
-                                <li>A aliança do casamento;</li>
-                                <li>O propósito de Deus para o casamento.</li>
+                
                             </p>
                             </div>
                         </div>
@@ -238,7 +237,7 @@
                             </div>
                             <div class="col-lg-8 col-md-6 col-12 my-auto">
                             <div class="card-body ps-lg-0">
-                                <h5 class="mb-0">Carla Francisca</h5>
+                                <h5 class="mb-0">Rodrigo Oliveira</h5>
                                 <h6 class="text-info">Unitbrasil</h6>
                                 <p class="mb-0">Melhor plataforma de cursos.</p>
                             </div>
@@ -252,7 +251,7 @@
                             <div class="col-lg-4 col-md-6 col-12 mt-n5">
                             <a href="javascript:;">
                                 <div class="p-3 pe-md-0">
-                                <img class="w-100 border-radius-md shadow-lg" src="<?= BASE ?>/src/images/team-4.jpg" alt="image">
+                                <img class="w-100 border-radius-md shadow-lg" src="<?= BASE ?>/src/images/odelfrance-oliveira.jpg" alt="image">
                                 </div>
                             </a>
                             </div>
@@ -280,7 +279,7 @@
                             </div>
                             <div class="col-lg-8 col-md-6 col-12 my-auto">
                             <div class="card-body ps-lg-0">
-                                <h5 class="mb-0">Amanda Suarez</h5>
+                                <h5 class="mb-0">Joseias Santos</h5>
                                 <h6 class="text-info">Unitbrasil</h6>
                                 <p class="mb-0">Melhor plataforma de cursos.</p>
                             </div>
@@ -294,15 +293,15 @@
                             <div class="col-lg-4 col-md-6 col-12 mt-n5">
                             <a href="javascript:;">
                                 <div class="p-3 pe-md-0">
-                                <img class="w-100 border-radius-md shadow-lg" src="<?= BASE ?>/src/images/team-2.jpg" alt="image">
+                                <img class="w-100 border-radius-md shadow-lg" src="<?= BASE ?>/src/images/josenias-santos.png" alt="image">
                                 </div>
                             </a>
                             </div>
                             <div class="col-lg-8 col-md-6 col-12 my-auto">
                             <div class="card-body ps-lg-0">
-                                <h5 class="mb-0">Marquez Garcia</h5>
+                                <h5 class="mb-0">Josenias Santos</h5>
                                 <h6 class="text-info">Unitbrasil</h6>
-                                <p class="mb-0">Melhor plataforma de cursos.</p>
+                                <p class="mb-0">Melhor plataforma de cursos online.</p>
                             </div>
                             </div>
                         </div>
