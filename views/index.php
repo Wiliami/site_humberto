@@ -39,11 +39,12 @@
                             </div>
                         </div>
                         <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center">
-                            <img class="img-fluid rounded-3 my-5" src="<?= BASE ?>/src/images/humberto.png" alt="image de Humberto Oliveira" />
+                            <img class="img-fluid rounded-3 my-5" src="<?= BASE ?>/src/images/perfil.jpg" alt="image de Humberto Oliveira" />
                         </div>
                     </div>
                 </div>
             </section>
+
             <!-- Cursos box -->
             <section class="my-5 py-5">
                 <div class="container">
@@ -221,7 +222,7 @@
                     <div class="row">
                     <div class="col-md-8 text-start mb-5 mt-5">
                         <h3 class="text-white z-index-1 position-relative">Comentários</h3>
-                        <p class="text-white opacity-8 mb-0">Veja comentários de nossos amigos e colaboradores</p>
+                        <!-- <p class="text-white opacity-8 mb-0">O que estão falando desta plataforma.</p> -->
                     </div>
                     </div>
                     <div class="row">
@@ -231,7 +232,7 @@
                             <div class="col-lg-4 col-md-6 col-12 mt-n5">
                             <a href="javascript:;">
                                 <div class="p-3 pe-md-0">
-                                <img class="w-100 border-radius-md shadow-lg" src="<?= BASE ?>/src/images/team-5.jpg" alt="image">
+                                <img class="w-100 border-radius-md shadow-lg" src="<?= BASE ?>/src/images/rodrigo-oliveira.jpeg" alt="imagem">
                                 </div>
                             </a>
                             </div>
@@ -251,7 +252,7 @@
                             <div class="col-lg-4 col-md-6 col-12 mt-n5">
                             <a href="javascript:;">
                                 <div class="p-3 pe-md-0">
-                                <img class="w-100 border-radius-md shadow-lg" src="<?= BASE ?>/src/images/odelfrance-oliveira.jpg" alt="image">
+                                <img class="w-100 border-radius-md shadow-lg" src="<?= BASE ?>/src/images/odelfrance-oliveira.jpg" alt="imagem">
                                 </div>
                             </a>
                             </div>
@@ -273,7 +274,7 @@
                             <div class="col-lg-4 col-md-6 col-12 mt-n5">
                             <a href="javascript:;">
                                 <div class="p-3 pe-md-0">
-                                <img class="w-100 border-radius-md shadow-lg" src="<?= BASE ?>/src/images/team-3.jpg" alt="image">
+                                <img class="w-100 border-radius-md shadow-lg" src="<?= BASE ?>/src/images/team-3.jpg" alt="imagem">
                                 </div>
                             </a>
                             </div>
@@ -293,7 +294,7 @@
                             <div class="col-lg-4 col-md-6 col-12 mt-n5">
                             <a href="javascript:;">
                                 <div class="p-3 pe-md-0">
-                                <img class="w-100 border-radius-md shadow-lg" src="<?= BASE ?>/src/images/josenias-santos.png" alt="image">
+                                <img class="w-100 border-radius-md shadow-lg" src="<?= BASE ?>/src/images/josenias-santos.png" alt="imagem">
                                 </div>
                             </a>
                             </div>

@@ -32,7 +32,7 @@ echo $Component->getMenu();
                     <h3 class="mb-0">Conteúdo através da mídia</h3>
                     </div>
                     <p class="text-lg mb-0">
-                        Acreditamos que as mídias sociais têm o poder de implusionar conteúdos relevantes para pessoas. Então, usamos este canal de divulgação de conteúdos, o youtube, para anunciar o evangelho e preparar pessoas para reino celeste.  
+                        Acreditamos que as mídias sociais têm o poder de implusionar conteúdos relevantes para pessoas. Então, usamos este canal de divulgação de conteúdos, o youtube, para anunciar o evangelho e preparar pessoas para o reino celeste.  
                     </a>
                     </p>
                 </div>
