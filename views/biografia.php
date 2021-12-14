@@ -55,7 +55,6 @@ echo $Component->getMenu();
             </div>
         </div>
         </section>
-    
     </div>
     <section class="py-lg-5">
         <div class="container">

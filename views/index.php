@@ -279,7 +279,7 @@
                             </div>
                             <div class="col-lg-8 col-md-6 col-12 my-auto">
                             <div class="card-body ps-lg-0">
-                                <h5 class="mb-0">Joseias Santos</h5>
+                                <h5 class="mb-0">...</h5>
                                 <h6 class="text-info">Unitbrasil</h6>
                                 <p class="mb-0">Melhor plataforma de cursos.</p>
                             </div>

@@ -24,13 +24,12 @@ echo $Component->getMenu();
             <div class="row">
             <div class="col-12 mx-auto">
                 <div class="mt-n8 mt-md-n9 text-center">
-                <img class="avatar avatar-xxl shadow-xl position-relative z-index-2" src="<?= BASE ?>/src/images/youtube-white.png" alt="logo youtube" loading="lazy">
+                    Produção de conteúdos para o Youtube
                 </div>
                 <div class="row py-5">
-                <div class="col-lg-7 col-md-7 z-index-2 position-relative px-md-2 px-sm-5 mx-auto">
+                <div class="col-lg-7 col-md-7 z-index-2 position-relative px-md-2 px-sm-5 mx-auto" style="margin-top: 20px;">
                     <div class="d-flex justify-content-between align-items-center mb-2">
                     <h3 class="mb-0">Conteúdo através da mídia</h3>
-                    
                     </div>
                     <p class="text-lg mb-0">
                         Acreditamos que as mídias sociais têm o poder de implusionar conteúdos relevantes para pessoas. Então, usamos este canal de divulgação de conteúdos, o youtube, para anunciar o evangelho e preparar pessoas para reino celeste.  
