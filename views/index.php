@@ -9,6 +9,8 @@
         <link rel="stylesheet" href="<?= BASE ?>/src/css/index.css" type="text/css">
         <!-- Template oficial do projeto -->
         <link id="pagestyle" href="<?= BASE ?>/src/css/material-kit.css?v=3.0.0" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+
         <!-- Esse css estiliza os ícones de redes sociais do footer index -->
         <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
     </head>
@@ -39,11 +41,13 @@
                             </div>
                         </div>
                         <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center">
-                            <img class="img-fluid rounded-3 my-5" src="<?= BASE ?>/src/images/perfil.jpg" alt="image de Humberto Oliveira" />
+                            <img class="img-fluid rounded-3 shadow-lg my-5" src="<?= BASE ?>/src/images/perfil.jpg" alt="image de Humberto Oliveira" />
                         </div>
                     </div>
                 </div>
             </section>
+
+
 
             <!-- Cursos box -->
             <section class="my-5 py-5">

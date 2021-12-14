@@ -40,7 +40,7 @@ echo $Component->getMenu();
             </div>
             </div>
         </div>
-        </section>
+</section>
 <?php
 $Component = new Component();
 echo $Component->getFooterHome();

@@ -35,7 +35,7 @@
                     </div>
                     <p class="text-lg mb-0">
                         <h5>Institucional</h5>
-                        A UNIT Brasil tem a missão de proporcionar aos seus alunos a oportunidade de desenvolver ao máximo o seu potencial, criando oportunidades para o mercado e formando pessoas capazes de liderarem e fazerem o diferencial na sociedade contemporânea. Com uma base muito sólida de docentes, a UNIT Brasil deve permitir que seus alunos desenvolvam suas habilidades transformando-os em profissionais competentes de sucesso; Comprometendo-se com a cidadania, ética e o conhecimento para atender as necessidades globais através do ensino eficaz e estrututra educacional diferenciada.
+                        A UNIT Brasil tem a missão de proporcionar aos seus alunos a oportunidade de desenvolver ao máximo o seu potencial, criando oportunidades para o mercado e formando pessoas capazes de liderarem e fazerem o diferencial na sociedade contemporânea. Com uma base muito sólida de docentes, a UNIT Brasil deve permitir que seus alunos desenvolvam suas habilidades transformando-os em profissionais competentes de sucesso; Comprometendo-se com a cidadania, ética e o conhecimento para atender as necessidades globais através do ensino eficaz e estrututra educacional diferenciada.<br>
                     </p>
 
                 </div>
