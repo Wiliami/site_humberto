@@ -1,13 +1,13 @@
 <?php
 
 
-// top-master
-// - getMenuAndSideBarDashboard2 - exemplo de menu
+// topo
+// - getMenuAndSideBarDashboard2 - exemplo de menu;
+// - 
 
 class Component {
     public function getMenu ($MenuActive = 'index') {
         return "
-
             <div class=\"container\">
                 <nav class=\"d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3\">
                     <a href=' " . BASE . "/' type=\"button\" class=\" nav btn btn-black mb-2 mb-md-0\">
@@ -23,7 +23,8 @@ class Component {
 
                             <div class=\"col-md-auto text-end\">
                             <!-- <a href=' " . BASE . "/cadastro' type=\"button\" class=\"btn me-1 mb-0\">Cadastrar</a>
-                                <a href=' " . BASE . "/login' type=\"button\" class=\"btn btn-warning w-auto me-1 mb-0\">Login</a> --> 
+                                <a href=' " . BASE . "/login' type=\"button\" class=\"btn btn-warning w-auto me-1 mb-0\">Login</a>
+                            --> 
                                 <li href='"  . BASE . "/' class=\"nav-link px-2 link-secondary\">...</li>
 
                             </div>   

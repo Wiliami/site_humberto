@@ -239,7 +239,7 @@
                             <div class="col-lg-8 col-md-6 col-12 my-auto">
                             <div class="card-body ps-lg-0">
                                 <h5 class="mb-0">Carla Francisca</h5>
-                                <h6 class="text-info">Uunitbrasil</h6>
+                                <h6 class="text-info">Unitbrasil</h6>
                                 <p class="mb-0">Melhor plataforma de cursos.</p>
                             </div>
                             </div>
@@ -282,7 +282,7 @@
                             <div class="card-body ps-lg-0">
                                 <h5 class="mb-0">Amanda Suarez</h5>
                                 <h6 class="text-info">Unitbrasil</h6>
-                                <p class="mb-0">Artist is a term applied to a person who engages in an activity deemed to be an art.</p>
+                                <p class="mb-0">Melhor plataforma de cursos.</p>
                             </div>
                             </div>
                         </div>
@@ -301,8 +301,8 @@
                             <div class="col-lg-8 col-md-6 col-12 my-auto">
                             <div class="card-body ps-lg-0">
                                 <h5 class="mb-0">Marquez Garcia</h5>
-                                <h6 class="text-info">JS Developer</h6>
-                                <p class="mb-0">Artist is a term applied to a person who engages in an activity deemed to be an art.</p>
+                                <h6 class="text-info">Unitbrasil</h6>
+                                <p class="mb-0">Melhor plataforma de cursos.</p>
                             </div>
                             </div>
                         </div>
