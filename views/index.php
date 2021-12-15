@@ -28,8 +28,7 @@
                             <h1 class="display-5 fw-bolder text-black mb-2">Pr. Humberto Oliveira</h1>
                             <p class="lead fw-normal text-black-50 mb-4">
                             Além de ser Empresário e Professor,
-                            Humberto Oliveira dedica também parte do seu tempo para o ministério
-                            pastoral.
+                            Humberto Oliveira dedica também parte do seu tempo para o ministério pastoral.
                             </p>
                             <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
                                 <a class="btn btn-dark btn-lg px-4" href="<?= BASE ?>/biografia">

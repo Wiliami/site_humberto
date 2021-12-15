@@ -9,8 +9,8 @@ echo $Component->getMenu();
         <div class="container">
             <div class="row">
                 <div class="my-5 text-center text-xl-start">
-                    <h1 class="display-5 fw-bolder text-white mb-2">Plataforma de <br />evangelismo <br /> online.</h1>
-                    <p class="lead text-white mt-3">Já conhece o evangelismo web?<br />Se cadastre e saiba como<br> funciona o evangelismo web!</p>
+                    <h1 class="display-5 fw-bolder text-white mb-2">Plataforma de <br />cursos <br /> online.</h1>
+                    <p class="lead text-white mt-3">Já conhece os nossos cursos?<br />Em breve estaremos<br> disponibilizando os cursos nessa plataforma!</p>
                 </div>
                 <div class="d-grid gap-3 d--flsmex justify-content-sm-center justify-content-xl-start">
                     <!-- <a class="btn btn-info btn-lg px-4 me-sm-3" href="<?= BASE ?>/cadastro">Começar</a> -->
@@ -32,7 +32,7 @@ echo $Component->getMenu();
                 </div>
                 <p class="text-lg mb-0">
                     O objetivo desta plataforma é criar conteúdos 
-                    exclusivos e cursos que em breve iremos estaremos disponibilizando aqui 
+                    exclusivos e cursos que em breve estaremos disponibilizando aqui 
                     no site.
                 </a>
                 </p>

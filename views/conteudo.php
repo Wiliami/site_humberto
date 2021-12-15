@@ -10,7 +10,7 @@ echo $Component->getMenu();
             <div class="row">
                 <div class="my-5 text-center text-xl-start">
                     <h1 class="display-5 fw-bolder text-white mb-2">Junte se a nós!</h1>
-                    <p class="lead text-white mt-3">Se inscreva em nosso canal <br> de youtube para acompanhar <br> novos conteúdos!</p>
+                    <p class="lead text-white mt-3">Se inscreva em nosso canal <br> do youtube para acompanhar <br> novos conteúdos!</p>
                 </div>
                 <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
                     <a class="btn btn-primary btn-lg px-4 me-sm-3" href="https://www.youtube.com/channel/UClFMwemd5j7EsXlV-gTw5Xg">INSCREVA-SE</a>
@@ -20,7 +20,7 @@ echo $Component->getMenu();
     </div>
 </header>   
 <section class="py-sm-7 py-5 position-relative">
-    <div class="container mt-5">
+    <div class="container">
         <div class="row">
         <div class="col-12 mx-auto">
             <div class="mt-n8 mt-md-n9 text-center">
