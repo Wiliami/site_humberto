@@ -20,7 +20,7 @@ echo $Component->getMenu();
     </div>
 </header>
 <section class="py-sm-7 py-5 position-relative">
-    <div class="container">
+    <div class="container mt-5">
         <div class="row">
         <div class="col-12 mx-auto">
             <div class="mt-n8 mt-md-n9 text-center">
@@ -31,7 +31,9 @@ echo $Component->getMenu();
                 <h3 class="mb-0">Conteúdo através da mídia</h3>
                 </div>
                 <p class="text-lg mb-0">
-                    Uma plataforma de cursos e conteúdos.
+                    O objetivo desta plataforma é criar conteúdos 
+                    exclusivos e cursos que em breve iremos estaremos disponibilizando aqui 
+                    no site.
                 </a>
                 </p>
             </div>

@@ -18,28 +18,28 @@ echo $Component->getMenu();
             </div>
         </div>
     </div>
-</header>
+</header>   
 <section class="py-sm-7 py-5 position-relative">
-        <div class="container">
-            <div class="row">
-            <div class="col-12 mx-auto">
-                <div class="mt-n8 mt-md-n9 text-center">
-                    Produção de conteúdos para o Youtube
+    <div class="container mt-5">
+        <div class="row">
+        <div class="col-12 mx-auto">
+            <div class="mt-n8 mt-md-n9 text-center">
+                Produção de conteúdos para o Youtube
+            </div>
+            <div class="row py-5">
+            <div class="col-lg-7 col-md-7 z-index-2 position-relative px-md-2 px-sm-5 mx-auto" style="margin-top: 20px;">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                <h3 class="mb-0">Conteúdo através da mídia</h3>
                 </div>
-                <div class="row py-5">
-                <div class="col-lg-7 col-md-7 z-index-2 position-relative px-md-2 px-sm-5 mx-auto" style="margin-top: 20px;">
-                    <div class="d-flex justify-content-between align-items-center mb-2">
-                    <h3 class="mb-0">Conteúdo através da mídia</h3>
-                    </div>
-                    <p class="text-lg mb-0">
-                        Acreditamos que as mídias sociais têm o poder de implusionar conteúdos relevantes para pessoas. Então, usamos este canal de divulgação de conteúdos, o youtube, para anunciar o evangelho e preparar pessoas para o reino celeste.  
-                    </a>
-                    </p>
-                </div>
-                </div>
+                <p class="text-lg mb-0">
+                    Acreditamos que as mídias sociais têm o poder de implusionar conteúdos relevantes para pessoas. Então, usamos este canal de divulgação de conteúdos, o youtube, para anunciar o evangelho e preparar pessoas para o reino celeste.  
+                </a>
+                </p>
             </div>
             </div>
         </div>
+        </div>
+    </div>
 </section>
 <?php
 $Component = new Component();

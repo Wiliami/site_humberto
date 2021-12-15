@@ -40,7 +40,7 @@ echo $Component->getMenu();
                     </div>
                     </div>
                     <p class="text-lg mb-0">
-                    Em breve aqui será a hitória do Humberto
+                    Em breve aqui será a biografia do Humberto
                     </a>
                     </p>
                 </div>

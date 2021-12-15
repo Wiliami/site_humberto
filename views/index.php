@@ -19,8 +19,7 @@
     echo $Component->getMenu();   
     echo $Component->getHeader();
     ?>
-    <!-- conteúdo principal -->
-    <main class="flex-shrink-0" id="content-overview">
+    <main class="flex-shrink-0" id="content-overview" style="margin-top: 50px;">
         <section class="py-5">  
             <div class="container px-5">
                 <div class="row gx-5 align-items-center justify-content-center">
@@ -28,8 +27,8 @@
                         <div class="my-5 text-center text-xl-start">
                             <h1 class="display-5 fw-bolder text-black mb-2">Pr. Humberto Oliveira</h1>
                             <p class="lead fw-normal text-black-50 mb-4">
-                            Além de ser Empresário e Professor, Pr.
-                            Humberto Oliveira dedica também parte do seu tempo para o evangelismo e ministério
+                            Além de ser Empresário e Professor,
+                            Humberto Oliveira dedica também parte do seu tempo para o ministério
                             pastoral.
                             </p>
                             <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
@@ -45,6 +44,29 @@
                 </div>
             </div>
         </section>
+
+
+        <!-- <section class="py-5">  
+            <div class="container px-5">
+                <div class="row">
+                    <div class="col-12 mx-auto">
+                        <div class="mt-n8 mt-md-n9 text-center">
+                            <img class="avatar avatar-xxl shadow-xl position-relative z-index-2" src="<?= BASE ?>/src/images/humberto-oliveira.jpg" alt="humberto" loading="lazy">
+                        </div>
+                        <div class="row py-5">
+                        <div class="col-lg-7 col-md-7 z-index-2 position-relative px-md-2 px-sm-5 mx-auto">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h3 class="mb-0">Humberto Oliveira</h3>
+                        </div>
+                            <p class="text-lg mb-0">
+                            Em breve aqui será a biografia do Humberto
+                            </p>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> -->
 
 
 
@@ -243,7 +265,7 @@
                         <div class="card-body ps-lg-0">
                             <h5 class="mb-0">Rodrigo Oliveira</h5>
                             <h6 class="text-info">Unitbrasil</h6>
-                            <p class="mb-0">Melhor plataforma de cursos.</p>
+                            <p class="mb-0">A Melhor plataforma de cursos exclusivos.</p>
                         </div>
                         </div>
                     </div>
@@ -263,7 +285,7 @@
                         <div class="card-body ps-lg-0">
                             <h5 class="mb-0">Odelfrance Oliveira</h5>
                             <h6 class="text-info">Unitbrasil</h6>
-                            <p class="mb-0">Melhor platforma de cursos online.</p>
+                            <p class="mb-0">Os cursos serão de alto nível.</p>
                         </div>
                         </div>
                     </div>
@@ -305,7 +327,7 @@
                         <div class="card-body ps-lg-0">
                             <h5 class="mb-0">Josenias Santos</h5>
                             <h6 class="text-info">Unitbrasil</h6>
-                            <p class="mb-0">Melhor plataforma de cursos online.</p>
+                            <p class="mb-0">Os conteúdos serão realmente incríveis.</p>
                         </div>
                         </div>
                     </div>
