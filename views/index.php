@@ -27,12 +27,13 @@
                         <div class="my-5 text-center text-xl-start">
                             <h1 class="display-5 fw-bolder text-black mb-2">Pr. Humberto Oliveira</h1>
                             <p class="lead fw-normal text-black-50 mb-4">
-                            Além de ser Empresário e Professor,
-                            Humberto Oliveira dedica também parte do seu tempo para o ministério pastoral.
+                            Humberto Oliveira é Empresário e Professor e dedica parte de seu tempo
+                            para o ministério pastoral.
                             </p>
                             <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
-                                <a class="btn btn-dark btn-lg px-4" href="<?= BASE ?>/biografia">
-                                    Leia a minha história
+                                <a class="btn btn-dark btn-lg px-4" href="https://www.facebook.com/educacaoetreinamentos/">
+                                    Facebook
+                                    <!-- Leia a minha história -->
                                 </a>
                             </div>
                         </div>
@@ -97,8 +98,8 @@
                     <div class="col-md-6">
                         <div class="info">
                             <i class="fas fa-school"></i>
-                        <h5 class="font-weight-bolder mt-3">Deus</h5>
-                        <p class="pe-5">Trabalhamos para constituir uma trajetória sólida com base em valores éticos e morais, com a finalidade de formar cidadãos como você. </p>
+                            <h5 class="font-weight-bolder mt-3">Deus</h5>
+                            <p class="pe-5">Trabalhamos para constituir uma trajetória sólida com base em valores éticos e morais, com a finalidade de formar cidadãos como você. </p>
                         </div>
                     </div>
                     <div class="col-md-6">

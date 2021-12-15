@@ -1076,12 +1076,12 @@ class Component {
                 <h6 class="text-sm">Legal</h6>
                 <ul class="flex-column ms-n3 nav">
                   <li class="nav-item">
-                    <a class="nav-link" href="#" target="_blank">
+                    <a class="nav-link" href="' . BASE . '/termos-de-uso">
                       Termos & Condições
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#" target="_blank">
+                    <a class="nav-link" href="' . BASE . '/politica-privacidade">
                       Política de privacidade
                     </a>
                   </li>
