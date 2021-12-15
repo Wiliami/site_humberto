@@ -38,7 +38,7 @@
                         </div>
                     </div>
                     <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center">
-                        <img class="img-fluid rounded-3 shadow-lg my-5" src="<?= BASE ?>/src/images/perfil.jpg" alt="image de Humberto Oliveira" />
+                        <img class="img-fluid rounded-3 shadow-lg my-5" src="<?= BASE ?>/src/images/humberto-oliveira.jpg" alt="image de Humberto Oliveira" />
                     </div>
                 </div>
             </div>
@@ -241,7 +241,7 @@
 
 
         <!-- Comentários -->
-        <section class="pb-5 position-relative bg-gradient-dark mx-n3" id="area-comentários">
+        <section class="pb-5 position-relative bg-dark mx-n3" id="area-comentários">
             <div class="container">
                 <div class="row">
                 <div class="col-md-8 text-start mb-5 mt-5">

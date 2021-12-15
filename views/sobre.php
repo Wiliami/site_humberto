@@ -9,7 +9,7 @@ echo $Component->getMenu();
         <div class="container">
             <div class="row">
                 <div class="my-5 text-center text-xl-start">
-                    <h1 class="display-5 fw-bolder text-white mb-2">Plataforma de <br />cursos <br /> online.</h1>
+                    <h1 class="display-5 fw-bolder text-white mb-2">Plataforma de <br />cursos online.</h1>
                     <p class="lead text-white mt-3">Já conhece os nossos cursos?<br />Em breve estaremos<br> disponibilizando os cursos nessa plataforma!</p>
                 </div>
                 <div class="d-grid gap-3 d--flsmex justify-content-sm-center justify-content-xl-start">
