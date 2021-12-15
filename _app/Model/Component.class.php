@@ -6,7 +6,7 @@
 // - 
 
 class Component {
-    public function getMenu ($MenuActive = 'index') {
+    public function getMenu ($MenuActive = 'btn') {
         return "
             <div class=\"container\">
                 <nav class=\"d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3\">
