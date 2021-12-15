@@ -265,7 +265,7 @@
                         <div class="card-body ps-lg-0">
                             <h5 class="mb-0">Rodrigo Oliveira</h5>
                             <h6 class="text-info">Unitbrasil</h6>
-                            <p class="mb-0">A Melhor plataforma de cursos exclusivos.</p>
+                            <p class="mb-0">A Melhor plataforma de cursos.</p>
                         </div>
                         </div>
                     </div>

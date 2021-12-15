@@ -14,52 +14,38 @@ class Component {
                         <img src='" . BASE . "/src/images/icon_small.png' alt='Logo' style=' width: 50px; height: 50px;'>
                     </a>
                         <ul class=\"nav col-12 col-md-auto mb-2 justify-content-center mb-md-0 text-center\">
-                            <li><a href=' " . BASE . "/' class=\"nav-link px-2 link-secondary\">Home</a></li>
+                            <li><a href=' " . BASE . "/' class=\"nav-link active px-2 link-secondary\">Home</a></li>
                             <li><a href=' " . BASE . "/sobre' class=\"nav-link px-2 link-secondary\">Sobre</a></li>
                             <li><a href=' " . BASE . "/conteudo' class=\"nav-link px-2 link-secondary\">Conteúdo</a></li>
                             <li><a href='"  . BASE . "/unitbrasil' class=\"nav-link px-2 link-secondary\">A Unitbrasil</a></li>
                         </ul>
                         <div class=\"col-md-auto text-end\">
                         <!-- <a href=' " . BASE . "/cadastro' type=\"button\" class=\"btn me-1 mb-0\">Cadastrar</a>
-                            <a href=' " . BASE . "/login' type=\"button\" class=\"btn btn-warning w-auto me-1 mb-0\">Login</a>
-                        --> 
+                            <a href=' " . BASE . "/login' type=\"button\" class=\"btn btn-warning w-auto me-1 mb-0\">Login</a>--> 
                             <li href='"  . BASE . "/' class=\"nav-link px-2 link-secondary\">...</li>
                         </div>   
                 </nav>
             </div>
         ";
     }
-    
-
     public function getHeader() {
         return '
-
-        <header class="bg-white py-5 style="height: 698px;">
-       
-            <!-- This div is intentionally blank. It creates the transparent black overlay over the video which you can modify in the CSS -->
-            
+        <header class="bg-white py-5 style="height: 698px;">            
             <div class="overlay"></div>
-
-            <!-- The HTML5 video element that will create the background video on the header -->
             <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
                 <source src="https://storage.googleapis.com/coverr-main/mp4/Mt_Baker.mp4" type="video/mp4">
             </video>
-
-        
             <div class="container h-100">
                  <div class="d-flex h-100 text-center align-items-center">
                     <div class="my-5 text-center text-xl-start">
                         <h1 class="display-5 fw-bolder text-white mb-2">Plataforma de <br /> evangelismo online <br />e desenvolvimento <br>pesssoal.</h1>
                         <p class="lead fw-normal text-white-50 mb-4">Comece um tour pelo site<br /> e saiba como funciona o <br> evangelismo web.</p>
-
                         <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
                             <!-- <a class="btn btn-warning btn-lg px-4 me-sm-3" href=" ' . BASE . '/cadastro">Começar</a> -->
                             <a class="btn btn-warning btn-lg px-4" href="#content-overview">Saiba mais</a>
-
                             <!-- <div class="justify-content-sm-center justify-content-xl-end">
                                 <a class="btn btn-success text-black btn-lg px-4" href="/">Suporte</a>
                             </div> -->
-
                         </div>  
                     </div>
                 </div>
@@ -67,28 +53,14 @@ class Component {
         </header>
         ';
     }
-
-
     public function getFooter() {
         return '
-
-                <!-- Footer -->
                 <div class="header-2">
                     <footer class="bg-dark text-center text-lg-start text-white">
-
                         <div class="container p-4 w-100">
-
                             <div class="row my-4">
-
                                 <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-
-                                        <!-- <div class="rounded-circle bg-white shadow-1-strong d-flex align-items-center justify-content-center mb-4 mx-auto" style={{ width: 150, height: 150}}>
-                                            <img height="70" alt="" loading="lazy" /> 
-                                        </div> -->
-
-
                                     <p class="text-center">Pr. Humberto Oliveira</p>
-
                                     <ul class="list-unstyled d-flex flex-row justify-content-center">
                                         <li>
                                             <a class="text-white px-2" href="/">
@@ -106,12 +78,9 @@ class Component {
                                             </a>
                                         </li>
                                     </ul>
-
                                 </div>
-
                                 <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
                                     <h5 class="text-uppercase mb-4">Parcerias</h5>
-
                                     <ul class="list-unstyled">
                                         <li class="mb-2">
                                             <a href="/" class="text-white"><i class="fas fa-paw pe-3"></i>unitplus</a>
@@ -122,15 +91,10 @@ class Component {
                                         <li class="mb-2">
                                             <a href="/" class="text-white"><i class="fas fa-paw pe-3"></i>unitbrasil</a>
                                         </li>
-                                       
-
                                     </ul>
                                 </div>
-
-
                                 <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
                                     <h5 class="text-uppercase mb-4">Sobre</h5>
-
                                     <ul class="list-unstyled">
                                         <li class="mb-2">
                                             <a href="/" class="text-white"><i class="fas fa-paw pe-3"></i>Ministério Pastoral</a>
@@ -147,14 +111,10 @@ class Component {
                                         <li class="mb-2">
                                             <a href="/" class="text-white"><i class="fas fa-paw pe-3"></i>Curiosidades</a>
                                         </li>
-
                                     </ul>
                                 </div>
-
-
                                 <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
                                     <h5 class="text-uppercase mb-4">Contato</h5>
-
                                     <ul class="list-unstyled">
                                         <li>
                                             <p><i class="fas fa-map-marker-alt pe-2"></i>Amazonas, Av. Timbiras, 0000, Manaus </p>
@@ -169,24 +129,17 @@ class Component {
                                 </div>
 
                             </div>
-
                         </div>
-
-
-
                         <div class="text-center p-3 btn-primary">
                             © 2021 Copyright:
                             <a class="text-white" href="/">unitbrasil.com</a>
                         </div>
-
                     </footer>
-
                     </div>
                 </body>
             </html>
         ';
     }
-    
     public function getLogo() {
         return "
             <a href=' " . BASE . "/' type=\"button\" class=\" nav btn btn-black mb-2 mb-md-0 justify-content-center\" style='width: 250; height: 100;'>
@@ -194,8 +147,6 @@ class Component {
             </a>             
         ";
     }
-
-
     public function getHeadHtml() {
         return '
         <!DOCTYPE html>
@@ -212,31 +163,23 @@ class Component {
                 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
                 <link rel="stylesheet" href="' . BASE . '/src/css/index.css" type="text/css">
                 <link rel="stylesheet" href="' . BASE . '/src/css/footer.css" type="text/css">
-        
                 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
                 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
-
                 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
                 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
-
                 <!-- CSS do Footer da Home -->
                 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
                 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
                 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
             </head>
             <body?>
-        
         ';
     }
-
     public function getMenuAndSideBarDashboard() {
         return '
-        <!-- Page Wrapper -->
         <div id="wrapper">
-
             <!-- Sidebar -->
             <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-
                 <!-- Sidebar - Brand -->
                 <a class="sidebar-brand d-flex align-items-center justify-content-center" href=" ' . BASE . '/painel/dashboard">
                     <div class="sidebar-brand-icon rotate-n-15">
@@ -275,7 +218,6 @@ class Component {
                                     <i class="fas fa-fw fa-folder"></i>
                                     <span>Administrativo</span>
                                 </a>
-
                                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                                     <div class="bg-white py-2 collapse-inner rounded">
                                         <a class="collapse-item" href="'.  BASE .'/painel/list-user">Lista de usuários</a>
@@ -515,21 +457,16 @@ class Component {
                     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
                     <meta name="description" content="">
                     <meta name="author" content="">
-
                     <title>Página Views</title>
-
                     <!-- Custom fonts for this template-->
                     <link href="' . BASE . '/res/site/css/all.min.css" rel="stylesheet" type="text/css">
-
                     <!-- Custom styles for this template-->
                     <link href="' . BASE . '/res/site/css/sb-admin-2.min.css" rel="stylesheet">
                     <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
                 </head>
-
                 <body id="page-top">
                 <!-- Page Wrapper -->
                 <div id="wrapper">
-            
                     <!-- Sidebar -->
                     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
             
@@ -802,8 +739,6 @@ class Component {
                             </nav>
         ';
     }
-
-
     public function getFooterDashboard() {
         return '
                 </div>
@@ -861,11 +796,8 @@ class Component {
  
         ';
     }
-    
-
     public function getHeadHtmlDashboard() {
         return '
-
         <!DOCTYPE html>
         <html lang="pt-BR"
             <head>
@@ -874,32 +806,22 @@ class Component {
                 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
                 <meta name="description" content="">
                 <meta name="author" content="">
-        
                 <title>Dashboard</title>
-        
                 <!-- Custom fonts for this template-->
                 <link href="'. BASE .'/res/site/css/all.min.css" rel="stylesheet" type="text/css">
                 <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
                 <!-- Custom styles for this template-->
                 <link href="'. BASE .'/res/site/css/sb-admin-2.min.css" rel="stylesheet">
-        
             </head>
-        
             <body id="page-top">
-        
-        
         ';
     }
-
     public function getBarraMenuOptions() {
         return '
-
         <!-- Begin Page Content -->
         <div class="container-fluid">
-
             <!-- Content Row -->
             <div class="row">
-
                 <!-- Earnings (Monthly) Card Example -->
                 <div class="col-xl-3 col-md-6 mb-4">
                     <div class="card border-left-primary shadow h-100 py-2">
@@ -917,7 +839,6 @@ class Component {
                         </div>
                     </div>
                 </div>
-
                 <!-- Earnings (Monthly) Card Example -->
                 <div class="col-xl-3 col-md-6 mb-4">
                     <div class="card border-left-success shadow h-100 py-2">
