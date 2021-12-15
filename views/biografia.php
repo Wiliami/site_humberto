@@ -9,9 +9,7 @@ echo $Component->getMenu();
             <span class="mask bg-gradient-secondary opacity-4"></span>
         </div>
     </header>
-    <!-- -------- END HEADER 4 w/ search book a ticket form ------- -->
     <div class="card card-body blur shadow-blur mx-3 mx-md-4 mt-n6 mb-4">
-        <!-- START Testimonials w/ user image & text & info -->
         <section class="py-sm-7 py-5 position-relative">
         <div class="container">
             <div class="row">
@@ -42,11 +40,7 @@ echo $Component->getMenu();
                     </div>
                     </div>
                     <p class="text-lg mb-0">
-                    No último sábado, 30 de outubro, a liderança da Igreja Adventista da região sudoeste 
-                    paulista, realizou a cerimônia de ordenação ao Ministério Pastoral dos pastores Thiago da
-                    Silva Monteiro e Joel Gomes de Sousa. O evento aconteceu na Igreja Central de Sorocaba e 
-                    contou com a presença de líderes paulista da Igreja Adventista, parentes, amigos, pastores e
-                    membros de outros distritos...
+                    Em breve aqui será a hitória do Humberto
                     </a>
                     </p>
                 </div>
@@ -64,10 +58,10 @@ echo $Component->getMenu();
                 <div class="row">
                 <div class="col-lg-5 position-relative bg-cover px-0" style="background-image: url('../assets/img/examples/blog2.jpg')" loading="lazy">
                     <div class="z-index-2 text-center d-flex h-100 w-100 d-flex m-auto justify-content-center">
-                    <div class="mask bg-gradient-dark opacity-8"></div>
+                    <div class="mask bg-gradient-danger opacity-8"></div>
                     <div class="p-5 ps-sm-8 position-relative text-start my-auto z-index-2">
                         <h3 class="text-white">Informação de contato</h3>
-                        <p class="text-white opacity-8 mb-4">Preencha o formulário e nossa equipe irá entrar em contato com você em atualizações em até 24h.</p>
+                        <!-- <p class="text-white opacity-8 mb-4">Preencha o formulário e nossa equipe irá entrar em contato com você em atualizações em até 24h.</p> -->
                         <div class="d-flex p-2 text-white">
                         <div>
                             <i class="fas fa-phone text-sm"></i>
@@ -96,7 +90,7 @@ echo $Component->getMenu();
                     </div>
                     </div>
                 </div>
-                <div class="col-lg-7">
+                <!-- <div class="col-lg-7">
                     <form class="p-3" id="contact-form" method="post">
                     <div class="card-header px-4 py-sm-5 py-3">
                         <h2>Diga olá!</h2>
@@ -135,7 +129,7 @@ echo $Component->getMenu();
             </div>
             </div>
         </div>
-        </div>
+        </div> -->
     </section>
 <?php
 $Component = new Component();
