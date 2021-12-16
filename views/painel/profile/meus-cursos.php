@@ -2,7 +2,6 @@
 $User = new User();
 $User->verifyExistLoginUser();
 $Component = new Component();
-echo $Component->getHeadHtmlReset();
 echo $Component->getMenuAndSideBarDashboard2();
 ?>
     <div style="margin-left: 20px;">
