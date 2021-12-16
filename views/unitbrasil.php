@@ -19,7 +19,6 @@
             </div>
         </div>
     </header>
-
     <section class="py-sm-7 py-5 position-relative">
         <div class="container">
             <div class="row">
@@ -30,14 +29,12 @@
                 <div class="row py-5">
                 <div class="col-lg-7 col-md-7 z-index-2 position-relative px-md-2 px-sm-5 mx-auto">
                     <div class="d-flex justify-content-between align-items-center mb-2">
-                    <h3 class="mb-0">A Unitbrasil</h3>
-                   
+                        <h3 class="mb-0">A Unitbrasil</h3>
                     </div>
                     <p class="text-lg mb-0">
                         <h5>Sobre a Unitbrasil</h5>
                         A UNIT Brasil tem a missão de proporcionar aos seus alunos a oportunidade de desenvolver ao máximo o seu potencial, criando oportunidades para o mercado e formando pessoas capazes de liderarem e fazerem o diferencial na sociedade contemporânea. Com uma base muito sólida de docentes, a UNIT Brasil deve permitir que seus alunos desenvolvam suas habilidades transformando-os em profissionais competentes de sucesso; Comprometendo-se com a cidadania, ética e o conhecimento para atender as necessidades globais através do ensino eficaz e estrututra educacional diferenciada.<br>
                     </p>
-
                 </div>
                 </div>
             </div>
