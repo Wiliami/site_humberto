@@ -47,7 +47,6 @@ class User {
 	}
 
 	public function createCourse($dataCourse) {
-
 		if(empty($dataCourse["curso_titulo"])) {
 				$this->Error = "Preencha com um título!";
 				$this->Result = false;
@@ -166,39 +165,36 @@ class User {
 	}
 
 	//classe de alteração de senha do usuário
-	public function resetUserPassword($current_pass, $new_pass) {
+	public function resetUserPassword($current_pass, $new_pass, $confirm_new_pass) {
 		$this->verifyExistLoginUser();
 		if(empty($current_pass)) {
 			$this->Error = 'Digite a senha atual!';
 			$this->Result = false;
-
 		} elseif (empty($new_pass)) {
 			$this->Error = "Digite a nova senha!";
 			$this->Result = false;
-		} elseif(empty($new_pass)) {
+		} elseif(empty($confirm_new_pass)) {
 			$this->Error = "Confirme a nova senha!";
-			$this->Result = false;	
-			
+			$this->Result = false;
 		} elseif($this->verifyExistUserPassword()) {
 			$this->Result = false;
 		}
-
-		if($current_pass === $new_pass ) {
+		if($current_pass === $new_pass) {
 			$this->Error = "Sua senha deve ser diferente!";
 			$this->Result = false;
-
+		} else {
+			$this->Result = false;
+			$this->Error = $Create->getError();
 		}
 	}
 
 	private function verifyExistUserPassword($pass) {
 		$Read = new Read();
-
 		$pass = md5($pass);
 		$Read->FullRead('SELECT user_password FROM users WHERE user_password = :pss', "pss={$pass}");
 		if($Read->getResult()) {
 			$this->Error = "A senha está inválida!";
 			$this->Result = false;
-			
 		}
 	}
 

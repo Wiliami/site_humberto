@@ -469,19 +469,14 @@ class Component {
                 <div id="wrapper">
                     <!-- Sidebar -->
                     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-            
                         <!-- Sidebar - Brand -->
                         <a class="sidebar-brand d-flex align-items-center justify-content-center" href="' . BASE .'/painel/dashboard">
                             <div class="sidebar-brand-icon rotate-n-15">
-                                
                             </div>
                             <div class="sidebar-brand-text mx-3">Logo</div>
                         </a>
-            
                         <!-- Divider -->
                         <hr class="sidebar-divider">
-            
-        
                                 <!-- Nav Item - Pages Collapse Menu -->
                                 <li class="nav-item">
                                     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
@@ -500,8 +495,6 @@ class Component {
                                         </div>
                                     </div>
                                 </li>
-                    
-            
                         <!-- Nav Item - Utilities Collapse Menu -->
                         <li class="nav-item">
                             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
@@ -521,7 +514,6 @@ class Component {
                                 </div>
                             </div>
                         </li>
-            
                         <!-- Nav Item - Pages Collapse Menu -->
                         <li class="nav-item">
                             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
@@ -542,26 +534,18 @@ class Component {
                         </li>    
                     </ul>
                     <!-- End of Sidebar -->
-            
                     <!-- Content Wrapper -->
                     <div id="content-wrapper" class="d-flex flex-column">
-            
                         <!-- Main Content -->
                         <div id="content">
-            
                             <!-- Topbar -->
                             <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-            
                                 <!-- Sidebar Toggle (Topbar) -->
                                 <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                                     <i class="fa fa-bars"></i>
                                 </button>
-            
-                             
-            
                                 <!-- Topbar Navbar -->
                                 <ul class="navbar-nav ml-auto">
-            
                                     <!-- Nav Item - Search Dropdown (Visible Only XS) -->
                                     <li class="nav-item dropdown no-arrow d-sm-none">
                                         <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
@@ -585,7 +569,6 @@ class Component {
                                             </form>
                                         </div>
                                     </li>
-            
                                     <!-- Nav Item - Alerts -->
                                     <li class="nav-item dropdown no-arrow mx-1">
                                         <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
@@ -636,7 +619,6 @@ class Component {
                                             <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
                                         </div>
                                     </li>
-            
                                     <!-- Nav Item - Messages -->
                                     <li class="nav-item dropdown no-arrow mx-1">
                                         <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button"
@@ -702,9 +684,7 @@ class Component {
                                             <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
                                         </div>
                                     </li>
-            
                                     <div class="topbar-divider d-none d-sm-block"></div>
-            
                                     <!-- Nav Item - User Information | Minha conta-->
                                     <li class="nav-item dropdown no-arrow">
                                         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
@@ -720,7 +700,7 @@ class Component {
                                                 <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                                 Minha conta
                                             </a>
-                                            <a class="dropdown-item" href="' . BASE . '/reset-password">
+                                            <a class="dropdown-item" href="' . BASE . '/painel/reset-password">
                                                 <i class="fas fa-unlock-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                                 Mudar senha
 
@@ -733,9 +713,7 @@ class Component {
                                             </a>
                                         </div>
                                     </li>
-            
                                 </ul>
-            
                             </nav>
         ';
     }

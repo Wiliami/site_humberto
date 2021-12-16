@@ -8,8 +8,6 @@ echo $Component->getMenuAndSideBarDashboard2();
         <h3>Olá, <?= $_SESSION['login']['user_name'] ?></h3>
         <span>Minhas compras</span>
     </div>
-
-
     <div class="row gx-5" style="margin-left: 8px; margin-top: 20px;">
         <div class="col-lg-4 mb-5">
             <div class="card h-100 shadow border-0">
@@ -39,13 +37,6 @@ echo $Component->getMenuAndSideBarDashboard2();
             </div>
         </div>
     </div> 
-
-    
-
-
-
 <?php
-
-    echo $Component->getFooterDashboard();
-
+echo $Component->getFooterDashboard();
 ?>
