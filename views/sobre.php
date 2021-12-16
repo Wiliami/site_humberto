@@ -26,7 +26,7 @@ echo $Component->getMenu();
             <div class="mt-n8 mt-md-n9 text-center">
             </div>
             <div class="row py-5">
-            <div class="col-lg-7 col-md-7 z-index-2 position-relative px-md-2 px-sm-5 mx-auto" style="margin-top: 20px;">
+            <div class="col-lg-7 col-md-7 z-index-2 position-relative px-md-2 px-sm-5 mx-auto">
                 <div class="d-flex justify-content-between align-items-center mb-2">
                 <h3 class="mb-0">Conteúdo através da mídia</h3>
                 </div>

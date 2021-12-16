@@ -1,7 +1,3 @@
-<?php
-Error('olá');
-?>
-
 <!DOCTYPE html>
 <html lang="pt-BR">
     <head>
@@ -23,7 +19,7 @@ Error('olá');
     echo $Component->getMenu();   
     echo $Component->getHeader();
     ?>
-    <main class="flex-shrink-0" id="content-overview" style="margin-top: 50px;">
+    <main class="flex-shrink-0" id="content-overview">
         <section class="py-5">  
             <div class="container px-5">
                 <div class="row gx-5 align-items-center justify-content-center">
@@ -303,15 +299,15 @@ Error('olá');
                         <div class="col-lg-4 col-md-6 col-12 mt-n5">
                         <a href="javascript:;">
                             <div class="p-3 pe-md-0">
-                            <img class="w-100 border-radius-md shadow-lg" src="<?= BASE ?>/src/images/team-3.jpg" alt="imagem">
+                            <img class="w-100 border-radius-md shadow-lg" src="<?= BASE ?>/src/images/lana-araujo.JPG" alt="imagem">
                             </div>
                         </a>
                         </div>
                         <div class="col-lg-8 col-md-6 col-12 my-auto">
                         <div class="card-body ps-lg-0">
-                            <h5 class="mb-0">Lana</h5>
+                            <h5 class="mb-0">Lana Araújo</h5>
                             <h6 class="text-info">Unitbrasil</h6>
-                            <p class="mb-0">Melhor plataforma de cursos.</p>
+                            <p class="mb-0">A experiência será incrível!</p>
                         </div>
                         </div>
                     </div>
@@ -323,7 +319,7 @@ Error('olá');
                         <div class="col-lg-4 col-md-6 col-12 mt-n5">
                         <a href="javascript:;">
                             <div class="p-3 pe-md-0">
-                            <img class="w-100 border-radius-md shadow-lg" src="<?= BASE ?>/src/images/josenias.png" alt="imagem">
+                            <img class="w-100 border-radius-md shadow-lg" src="<?= BASE ?>/src/images/josenias-santos1.png" alt="imagem">
                             </div>
                         </a>
                         </div>
