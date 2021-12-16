@@ -1,5 +1,5 @@
 <?php
-// require_once 'ENV.php';
+require_once 'ENV.php';
 
 function MyAutoLoad($Class) {
     $cDir = ['Conn', 'Helpers', 'Model'];
