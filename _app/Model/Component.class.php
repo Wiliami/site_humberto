@@ -528,7 +528,7 @@ class Component {
                                     <a class="collapse-item" href="'. BASE .'/painel/courses/delete">Excluir cursos</a>
                                     <a class="collapse-item" href="'. BASE .'/painel/courses/update">Atualizar cursos</a>
                                     <a class="collapse-item" href="'. BASE .'/painel/profile/help">Ajuda</a>
-                                    <a class="collapse-item" href="'. BASE .'/painel/courses/suporte">Suporte</a>
+                                    <a class="collapse-item" href="'. BASE .'/painel/profile/suporte">Suporte</a>
                                 </div>
                             </div>
                         </li>    

@@ -11,11 +11,9 @@ $User->verifyExistLoginUser();
         <meta name="description" content="">
         <meta name="author" content="">
         <title>Página | Dashboard</title>
-
         <!-- Custom fonts for this template-->
         <link href="<?= BASE ?>/res/site/css/all.min.css" rel="stylesheet" type="text/css">
         <!-- <link href="<?= BASE ?>/res/site/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
-
         <!-- Custom styles for this template -->
         <link href="<?= BASE ?>/res/site/css/sb-admin-2.min.css" rel="stylesheet">
         <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
@@ -102,8 +100,8 @@ $User->verifyExistLoginUser();
                             <a class="collapse-item" href="<?= BASE ?>/painel/courses/list">Lista de cursos</a>
                             <a class="collapse-item" href="<?= BASE ?>/painel/courses/delete">Excluir cursos</a>
                             <a class="collapse-item" href="<?= BASE ?>/painel/courses/update">Atualizar cursos</a>
-                            <a class="collapse-item" href="<?= BASE ?>/painel/courses/help">Ajuda</a>
-                            <a class="collapse-item" href="<?= BASE ?>/painel/courses/suporte">Suporte</a>
+                            <a class="collapse-item" href="<?= BASE ?>/painel/profile/help">Ajuda</a>
+                            <a class="collapse-item" href="<?= BASE ?>/painel/profile/suporte">Suporte</a>
                         </div>
                     </div>
                 </li>
@@ -274,9 +272,7 @@ $User->verifyExistLoginUser();
                                     <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
                                 </div>
                             </li>
-
                             <div class="topbar-divider d-none d-sm-block"></div>
-
                             <!-- Nav Item - User Information -->
                             <li class="nav-item dropdown no-arrow">
                                 <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
@@ -303,9 +299,7 @@ $User->verifyExistLoginUser();
                                     </a>   
                                 </div>
                             </li>
-
                         </ul>
-
                     </nav>
 
                     Dashboard

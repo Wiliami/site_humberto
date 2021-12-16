@@ -20,12 +20,11 @@ echo $Component->getMenu();
     </div>
 </header>   
 
-
 <section class="py-sm-7 py-5 position-relative">
     <div class="container">
         <div class="row">
         <div class="col-12 mx-auto">
-            <div class="mt-n8 mt-md-n9">
+            <div class="mt-n8 mt-md-n9 text-start">
                 Produção de conteúdos para o Youtube
             </div>
             <div class="row py-5">
@@ -34,7 +33,7 @@ echo $Component->getMenu();
                         <!-- Title -->
                         <h3 class="mb-0">Conteúdo através da mídia</h3>
                         </div>
-                        <p class="text-lg mb-0 text-start">
+                        <p class="text-lg mb-0">
                             Acreditamos que as mídias sociais têm o poder de implusionar conteúdos relevantes para pessoas. Então, usamos este canal de divulgação de conteúdos, o youtube, para anunciar o evangelho e preparar pessoas para o reino celeste.  
                         </a>
                         </p>
