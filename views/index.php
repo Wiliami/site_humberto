@@ -39,7 +39,7 @@
                         </div>
                     </div>
                     <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center">
-                        <img class="img-fluid rounded-3 shadow-lg my-5" src="<?= BASE ?>/src/images/humberto-oliveira.jpg" alt="image de Humberto Oliveira" />
+                        <img class="img-fluid rounded-circle btn-primary my-5" src="<?= BASE ?>/src/images/perfil.jpg" alt="image de Humberto Oliveira" />
                     </div>
                 </div>
             </div>
@@ -319,7 +319,7 @@
                         <div class="col-lg-4 col-md-6 col-12 mt-n5">
                         <a href="javascript:;">
                             <div class="p-3 pe-md-0">
-                            <img class="w-100 border-radius-md shadow-lg" src="<?= BASE ?>/src/images/josenias-santos1.png" alt="imagem">
+                            <img class="w-100 border-radius-md shadow-lg" src="<?= BASE ?>/src/images/josenias.png" alt="imagem">
                             </div>
                         </a>
                         </div>
