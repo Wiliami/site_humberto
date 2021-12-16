@@ -1,7 +1,6 @@
 <?php
 $User = new User();
 $User->verifyExistLoginUser();
-$User->verifyLevelUserModerator();
 $Component = new Component();
 echo $Component->getMenuAndSideBarDashboard2();
 ?>

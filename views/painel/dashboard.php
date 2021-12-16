@@ -86,24 +86,24 @@ $User->verifyExistLoginUser();
                 <?php
                 if($_SESSION["login"]["user_level"] >= 6) {
                     ?>
-                <li class="nav-item">
-                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseRegister"
-                        aria-expanded="true" aria-controls="collapseRegister">
-                        <i class="fas fa-pager"></i>
-                        <span>Páginas</span>
-                    </a>
-                    <div id="collapseRegister" class="collapse" aria-labelledby="headingUtilities"
-                        data-parent="#accordionSidebar">
-                        <div class="bg-white py-2 collapse-inner rounded">
-                            <a class="collapse-item" href="<?= BASE ?>/painel/courses/create">Cadastro de cursos</a>
-                            <a class="collapse-item" href="<?= BASE ?>/painel/courses/list">Lista de cursos</a>
-                            <a class="collapse-item" href="<?= BASE ?>/painel/courses/delete">Excluir cursos</a>
-                            <a class="collapse-item" href="<?= BASE ?>/painel/courses/update">Atualizar cursos</a>
-                            <a class="collapse-item" href="<?= BASE ?>/painel/profile/help">Ajuda</a>
-                            <a class="collapse-item" href="<?= BASE ?>/painel/profile/suporte">Suporte</a>
-                        </div>
-                    </div>
-                </li>
+                        <li class="nav-item">
+                            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseRegister"
+                                aria-expanded="true" aria-controls="collapseRegister">
+                                <i class="fas fa-pager"></i>
+                                <span>Páginas</span>
+                            </a>
+                            <div id="collapseRegister" class="collapse" aria-labelledby="headingUtilities"
+                                data-parent="#accordionSidebar">
+                                <div class="bg-white py-2 collapse-inner rounded">
+                                    <a class="collapse-item" href="<?= BASE ?>/painel/courses/create">Cadastro de cursos</a>
+                                    <a class="collapse-item" href="<?= BASE ?>/painel/courses/list">Lista de cursos</a>
+                                    <a class="collapse-item" href="<?= BASE ?>/painel/courses/delete">Excluir cursos</a>
+                                    <a class="collapse-item" href="<?= BASE ?>/painel/courses/update">Atualizar cursos</a>
+                                    <a class="collapse-item" href="<?= BASE ?>/painel/profile/help">Ajuda</a>
+                                    <a class="collapse-item" href="<?= BASE ?>/painel/profile/suporte">Suporte</a>
+                                </div>
+                            </div>
+                        </li>
                 <?php
                 }?>
             </ul>
