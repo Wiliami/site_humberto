@@ -13,10 +13,7 @@ echo $Component->getMenuAndSideBarDashboard2();
         $Reset['user_password'] = $Post['confirm-new-pass'];
         $User = new User(); 
         $User->resetUserPassword($Reset);
-        Check::var_dump_json($User->resetUserPassword($Reset));
         if($User->getResult()) {
-            Check::var_dump_json($User->getResult());
-            // Error("A senha foi alterada!");
             header('Location: ' . BASE . '/painel/profile/reset-password-success');
             exit();
         } else {

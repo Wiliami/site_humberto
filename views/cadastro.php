@@ -38,7 +38,6 @@
                 $DataCreate['user_name'] = $Post['name'];
                 $DataCreate['user_email'] = $Post['email'];
                 $DataCreate['user_password'] = $Post['password'];
-
                 $User = new User();
                 $User->createUser($DataCreate);
                 if($User->getResult()) {
