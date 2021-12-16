@@ -1,5 +1,4 @@
 <?php 
-
 class User {
 	//métodos da classe:
 	// - verifyLevelUserModerator -> verifica se o nível de usuário é diferente do nível moderador
@@ -42,7 +41,6 @@ class User {
 			}
 		}	
 	}
-
 	public function createCourse($dataCourse) {
 		if(empty($dataCourse["curso_titulo"])) {
 				$this->Error = "Preencha com um título!";
@@ -67,15 +65,12 @@ class User {
 				}
 			}	
 		}
-
 	public function getResult() {
 		return $this->Result;
 	}
-
 	public function getError() {
 		return $this->Error;
 	}
-
 
 	private function verifyDuplicateUserEmail($email ) {
 		$Read = new Read();
@@ -89,8 +84,6 @@ class User {
 			return false;
 		}
 	}
-
-
 	public function verifyLogon() { 
 
         if(isset($_SESSION['usuario']) || isset($_SESSION['senha'])) {
@@ -98,9 +91,7 @@ class User {
         header("Location: " . BASE . "/login");
         exit();
         }
-
     }
-
 	public function exeLogin($email, $password) {
 		if(empty($email)) {
 			$this->Error = "O e-mail é obrigatório!";
@@ -120,10 +111,8 @@ class User {
 			} else {
 				$this->Error = "Usuário inexistente ou senha inválida!";
 				$this->Result = false;
-			}
-			
+			}	
 		} 
-
 	}
 	public function verifyExistLoginUser() {
 		if($this->verifyLoginUserON()) {
@@ -133,7 +122,6 @@ class User {
 			header("Location: " . BASE . "/login");
 			return false;
 		}
-
 	}
 	public function verifyLoginUserON () {
 		$Read = new Read();
@@ -177,7 +165,6 @@ class User {
 			$this->Error = $Create->getError();
 		}
 	}
-
 	private function verifyExistUserPassword($pass) {
 		$Read = new Read();
 		$pass = md5($pass);
@@ -187,8 +174,6 @@ class User {
 			$this->Result = false;
 		}
 	}
-
-
 	//Método para enviar email de recuperação de senha
 	private function getForgot($password) {
 		$Read = new Read();
@@ -202,14 +187,10 @@ class User {
 		} else {
 			return false;
 		}
-
 	}
-
 	public function deleteCourse() {
 		$Delete = new Delete();
 		$Delete->getDelete();
 	}
-
 }
-
 ?>
