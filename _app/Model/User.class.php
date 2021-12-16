@@ -9,7 +9,7 @@ class User {
 	private $Result;
 	// Método para verificar os nivéis de usuário
 	public function verifyLevelUserModerator() {
-		if($_SESSION['login']['user_level'] >= 6) { 
+		if($_SESSION['login']['user_level'] <= 6) { 
 			header('Location: ' . BASE . '/login');
 			exit();
 		} 

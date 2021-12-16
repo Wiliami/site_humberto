@@ -31,7 +31,6 @@ echo $Component->getMenuAndSideBarDashboard2();
                                 <td>
                                     <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="avatar" style="width: 50px; height: 50px">
                                     <a href="/" class="user-link"><?= $User['user_name'] ?></a>
-                                    
                                     <span class="user-subhead"><?= $User['user_id'] ?></span>
                                 </td>
                                 <td>
@@ -64,14 +63,12 @@ echo $Component->getMenuAndSideBarDashboard2();
                                     </a>
                                 </td>
                             </tr>
-
-                                    <?php
+                            <?php
                                 }
                             } else {
                                 Error("Ainda não existem usuários!");
                             }   
                             ?>
-            
                         </tbody>
                     </table>
                 </div>                
@@ -79,12 +76,7 @@ echo $Component->getMenuAndSideBarDashboard2();
             </div>
         </div>  
     </div>
-
-
-
 <?php
-
 echo $Component->getFooterDashboard();
-
 ?>
 

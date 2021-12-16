@@ -3,14 +3,11 @@ $User = new User();
 $User->verifyExistLoginUser();
 $Component = new Component();
 echo $Component->getMenuAndSideBarDashboard2();
-
 ?>
-
 <!-- Begin Page Content -->
 <div class="container-fluid">
 <!-- Content Row -->
 <div class="row">
-
     <!-- Earnings (Monthly) Card Example -->
     <a href="<?= BASE ?>/painel/nivel-user" class="col-xl-3 col-md-6 mb-4">
         <div class="card border-left-primary shadow h-100 py-2">
@@ -28,7 +25,6 @@ echo $Component->getMenuAndSideBarDashboard2();
             </div>
         </div>
     </a>
-
     <!-- Earnings (Monthly) Card Example -->
     <a href="#" class="col-xl-3 col-md-6 mb-4">
         <div class="card border-left-success shadow h-100 py-2">
@@ -46,7 +42,6 @@ echo $Component->getMenuAndSideBarDashboard2();
             </div>
         </div>
     </a>
-
     <!-- Earnings (Monthly) Card Example -->
     <a href="#" class="col-xl-3 col-md-6 mb-4">
         <div class="card border-left-info shadow h-100 py-2">
@@ -75,7 +70,6 @@ echo $Component->getMenuAndSideBarDashboard2();
             </div>
         </div>
     </a>
-
     <!-- Pending Requests Card Example -->
     <a href="#" class="col-xl-3 col-md-6 mb-4">
         <div class="card border-left-warning shadow h-100 py-2">
@@ -167,9 +161,9 @@ echo $Component->getMenuAndSideBarDashboard2();
         </div>
     </div>  
 </div>
-    <?php 
-        $Component = new Component();
-        echo $Component->getFooterDashboard();
-    ?>
+<?php 
+$Component = new Component();
+echo $Component->getFooterDashboard();
+?>
     </body>
 </html>

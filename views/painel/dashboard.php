@@ -36,7 +36,7 @@ $User->verifyExistLoginUser();
                 <hr class="sidebar-divider my-0 ">
 
                 <?php 
-                    if($_SESSION["login"]["user_level"] >= 6) {
+                    if($_SESSION["login"]["user_level"] >= 6 ) {
                         ?>
                             <li class="nav-item">
                                 <a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#collapsePages"
@@ -86,7 +86,6 @@ $User->verifyExistLoginUser();
                 <?php
                 if($_SESSION["login"]["user_level"] >= 6) {
                     ?>
-
                 <li class="nav-item">
                     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseRegister"
                         aria-expanded="true" aria-controls="collapseRegister">
@@ -105,11 +104,8 @@ $User->verifyExistLoginUser();
                         </div>
                     </div>
                 </li>
-
                 <?php
                 }?>
-                
-
             </ul>
             <!-- End of Sidebar -->
 

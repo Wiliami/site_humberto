@@ -1,6 +1,7 @@
 <?php
 $User = new User();
 $User->verifyExistLoginUser();
+$User->verifyLevelUserModerator();
 $Component = new Component();
 echo $Component->getMenuAndSideBarDashboard2();
 ?>
@@ -21,7 +22,6 @@ echo $Component->getMenuAndSideBarDashboard2();
                         de se expressar para as pessoas.
                     </p>
                 </div>
-                
                 <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
                     <div class="d-flex align-items-end justify-content-between">
                         <div class="d-flex align-items-center">
