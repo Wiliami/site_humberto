@@ -947,7 +947,7 @@ class Component {
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="https://www.adventistas.org/pt/" target="_blank">
-                      Igreja Aventista
+                      Igreja Adventista
                     </a>
                   </li>
                   <li class="nav-item">
