@@ -700,13 +700,11 @@ class Component {
                                                 <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                                 Minha conta
                                             </a>
-                                            <a class="dropdown-item" href="' . BASE . '/painel/reset-password">
+                                            <a class="dropdown-item" href="' . BASE . '/painel/profile/reset-password">
                                                 <i class="fas fa-unlock-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                                 Mudar senha
-
                                             </a>
-                                        
-                                            <div class="dropdown-divider"></div>
+                                            <div class="dropdown-divider">LLL</div>
                                             <a class="dropdown-item" href="' . BASE . '/logout" data-toggle="modal" data-target="#logoutModal">
                                                 <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                                 Logout
