@@ -20,7 +20,7 @@ echo $Component->getMenu();
                                     <i class="fas fa-phone text-sm"></i>
                                 </div>
                                 <div class="ps-3">
-                                    <span class="text-sm opacity-8">(92) 98499-9999</span>
+                                    <span class="text-sm opacity-8">(92) 99999-9999</span>
                                 </div>
                                 </div>
                                 <div class="d-flex p-2 text-white">
@@ -36,7 +36,7 @@ echo $Component->getMenu();
                                     <i class="fas fa-map-marker-alt text-sm"></i>
                                 </div>
                                 <div class="ps-3">
-                                    <span class="text-sm opacity-8">Manaus, AM 00000-000</span>
+                                    <span class="text-sm opacity-8">Manaus, AM 69058-090</span>
                                 </div>
                                 </div>
                             </div>
