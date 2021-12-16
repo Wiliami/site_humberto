@@ -142,22 +142,23 @@ class User {
 		header('Location: ' . BASE . '/login');
 		die();
 	}
+
 	//classe de alteração de senha do usuário
-	public function resetUserPassword($current_pass, $new_pass, $confirm_new_pass) {
+	public function resetUserPassword($resetPassword) {
 		$this->verifyExistLoginUser();
-		if(empty($current_pass)) {
+		if(empty($resetPassword)) {
 			$this->Error = 'Digite a senha atual!';
 			$this->Result = false;
-		} elseif (empty($new_pass)) {
+		} elseif (empty($resetPassword)) {
 			$this->Error = "Digite a nova senha!";
 			$this->Result = false;
-		} elseif(empty($confirm_new_pass)) {
+		} elseif(empty($resetPassword)) {
 			$this->Error = "Confirme a nova senha!";
 			$this->Result = false;
 		} elseif($this->verifyExistUserPassword()) {
 			$this->Result = false;
 		}
-		if($current_pass === $new_pass) {
+		if($current_pass === $resetPassword) {
 			$this->Error = "Sua senha deve ser diferente!";
 			$this->Result = false;
 		} else {
@@ -165,6 +166,7 @@ class User {
 			$this->Error = $Create->getError();
 		}
 	}
+
 	private function verifyExistUserPassword($pass) {
 		$Read = new Read();
 		$pass = md5($pass);
