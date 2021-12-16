@@ -342,9 +342,7 @@ $User->verifyExistLoginUser();
         <!-- Bootstrap core JavaScript-->
         <script src="<?= BASE ?>/res/site/js/jquery.min.js"></script>
         <script src="<?= BASE ?>/res/site/js/bootstrap.bundle.min.js"></script>
-
         <!-- Core plugin JavaScript-->
         <script src="<?= BASE ?>/res/site/js/jquery.easing.min.js"></script>
-
         <!-- Custom scripts for all pages-->
         <script src="<?= BASE ?>/res/site/js/sb-admin-2.min.js"></script> 
