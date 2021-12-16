@@ -6,10 +6,8 @@ class User {
 	// - verifyDuplicateUserEmail -> verificar se o usuário digitou o email que já está em uso. 
 	// - resetUserPassword -> alterar a senha do usuário
 	// - getForgot -> envia o email de recuperção de senha ao usuário
-	
 	private $Error;
 	private $Result;
-
 	// Método para verificar os nivéis de usuário
 	public function verifyLevelUserModerator() {
 		if($_SESSION['login']['user_level'] >= 6) { 
@@ -17,7 +15,6 @@ class User {
 			exit();
 		} 
 	}
-
 	public function createUser($dataUser) {
 	if(empty($dataUser["user_name"])) {
 			$this->Error = "Preencha no campo um nome!";
@@ -128,8 +125,6 @@ class User {
 		} 
 
 	}
-
-
 	public function verifyExistLoginUser() {
 		if($this->verifyLoginUserON()) {
 			return true;
@@ -140,7 +135,6 @@ class User {
 		}
 
 	}
-
 	public function verifyLoginUserON () {
 		$Read = new Read();
 		if(!empty($_SESSION['login'])) {
@@ -154,16 +148,12 @@ class User {
 			return false;
 		};
 	}
-
-
 	public function logout() {
 		session_start();
 		session_destroy();
-
 		header('Location: ' . BASE . '/login');
 		die();
 	}
-
 	//classe de alteração de senha do usuário
 	public function resetUserPassword($current_pass, $new_pass, $confirm_new_pass) {
 		$this->verifyExistLoginUser();
