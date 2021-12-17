@@ -399,7 +399,7 @@ class Component {
                                         <!-- Dropdown - User Information -->
                                         <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                             aria-labelledby="userDropdown">
-                                            <a class="dropdown-item" href="' . BASE . '/profile/profile-user">
+                                            <a class="dropdown-item" href="' . BASE . '/painel/profile/profile-user">
                                                 <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                                 Minha conta
                                             </a>
@@ -407,7 +407,7 @@ class Component {
                                                 <i class="fas fa-unlock-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                                 Mudar senha
                                             </a>
-                                            <div class="dropdown-divider">LLL</div>
+                                            <div class="dropdown-divider"></div>
                                             <a class="dropdown-item" href="' . BASE . '/logout" data-toggle="modal" data-target="#logoutModal">
                                                 <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                                 Logout

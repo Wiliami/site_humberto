@@ -28,34 +28,34 @@ $User->verifyExistLoginUser();
                     </div>
                 </div>
             </form> 
-        <hr class="sidebar-divider my-0">
+        <!--divisor-->
+        <hr class="sidebar-divider my-0"> 
         <?php 
         $Read = new Read();
         $Read->FullRead("SELECT * FROM modulos");
         if($Read->getResult()) {
         foreach($Read->getResult() as $Modulos) {
             ?>  
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#collapse<?= $Modulos['modulo_id']?>"
-                    aria-expanded="true" aria-controls="collapsePages">
-                    <i class="fas fa-fw fa-folder"></i>
-                    <span><?= $Modulos['modulo_descricao'] ?></span>
-                </a>
-                <div id="collapse<?= $Modulos['modulo_id']?>" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#collapse<?= $Modulos['modulo_id']?>" aria-expanded="true" aria-controls="collapsePages">
+                <i class="fas fa-fw fa-folder"></i>
+                <span><?= $Modulos['modulo_id']?></span>
+            </a>
+            <div id="collapse<?= $Modulos['modulo_id']?>" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <?php
+                    $Read->FullRead("SELECT * FROM aulas WHERE modulo_id = :id", "id={$Modulos['modulo_id']}");
+                    if($Read->getResult()) {
+                    foreach($Read->getResult() as $Aula) {
+                            ?>
+                        <a class="collapse-item" href="<?= BASE ?>/"><?= $Aula['aula_name'] ?></a>
                         <?php
-                            $Read->FullRead("SELECT * FROM aulas WHERE modulo_id = :id", "id={$Modulos['modulo_id']}");
-                            if($Read->getResult()) {
-                                foreach($Read->getResult() as $Aula) {
-                                        ?>
-                                        <a class="collapse-item" href="<?= BASE ?>/"><?= $Aula['aula_name'] ?></a>
-                                    <?php
-                                } 
-                            }
-                        ?>
-                    </div>
+                        } 
+                    }
+                    ?>
                 </div>
-            </li>
+            </div>
+        </li>
             <hr class="sidebar-divider my-0 ">
                 <?php
             }
