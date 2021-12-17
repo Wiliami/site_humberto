@@ -5,3 +5,4 @@ $Component = new Component();
 echo $Component->getMenuAndSideBarDashboard2();
 echo $Component->getFooterDashboard();
 ?>
+
