@@ -1,6 +1,5 @@
 <?php
 require_once 'ENV.php';
-//mudanças no core
 
 function MyAutoLoad($Class) {
     $cDir = ['Conn', 'Helpers', 'Model'];

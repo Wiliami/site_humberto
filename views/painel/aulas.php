@@ -11,16 +11,11 @@ $User->verifyExistLoginUser();
             <meta name="description" content="">
             <meta name="author" content="">
             <title>Página | Aulas</title>
-            <!-- Custom styles for this template-->
             <link href="<?= BASE ?>/res/site/css/sb-admin-2.min.css" rel="stylesheet">
             <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
         </head>
         <body id="page-top">
-
-         <!-- Page Wrapper -->
         <div id="wrapper">
-
-            <!-- Sidebar -->
             <ul class="nav-list navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
                 <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 mw-100 navbar-search">
                     <div class="input-group">
@@ -33,7 +28,6 @@ $User->verifyExistLoginUser();
                         </div>
                     </div>
                 </form> 
-
             <hr class="sidebar-divider my-0">
             <?php 
             $Read = new Read();
@@ -47,7 +41,6 @@ $User->verifyExistLoginUser();
                         <i class="fas fa-fw fa-folder"></i>
                         <span><?= $Modulos['modulo_titulo'] ?></span>
                     </a>
-
                     <div id="collapse<?= $Modulos['modulo_id']?>" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
                             <?php
@@ -55,7 +48,7 @@ $User->verifyExistLoginUser();
                                 if($Read->getResult()) {
                                     foreach($Read->getResult() as $Aula) {
                                             ?>
-                                            <a class="collapse-item" href="<?= BASE ?>/"><?= $Aula['aula_name'] ?></a>
+                                            <a class="collapse-item" href="<?= BASE ?>/">Nome da aula</a>
                                         <?php
                                     } 
                                 }
@@ -63,9 +56,7 @@ $User->verifyExistLoginUser();
                         </div>
                     </div>
                 </li>
-
                 <hr class="sidebar-divider my-0 ">
-
                     <?php
                 }
             } else {
@@ -73,25 +64,15 @@ $User->verifyExistLoginUser();
             }   
             ?>
             </ul>  
-            <!-- End of Sidebar -->
-
-            <!-- Content Wrapper -->
             <div id="content-wrapper" class="d-flex flex-column">
-
-                <!-- Main Content -->
                 <div id="content">
-
-                    <!-- Topbar -->
                     <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
                         <ul class="navbar-nav ml-auto">
-
-                            <!-- Nav Item - Search Dropdown (Visible Only XS) -->
                             <li class="nav-item dropdown no-arrow d-sm-none">
                                 <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <i class="fas fa-search fa-fw"></i>
                                 </a>
-                                <!-- Dropdown - Messages -->
                                 <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
                                     aria-labelledby="searchDropdown">
                                     <form class="form-inline mr-auto w-100 navbar-search">
@@ -108,16 +89,12 @@ $User->verifyExistLoginUser();
                                     </form>
                                 </div>
                             </li>
-
-                            <!-- Nav Item - Alerts -->
                             <li class="nav-item dropdown no-arrow mx-1">
                                 <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <i class="fas fa-bell fa-fw"></i>
-                                    <!-- Counter - Alerts -->
                                     <span class="badge badge-danger badge-counter">3+</span>
                                 </a>
-                                <!-- Dropdown - Alerts -->
                                 <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                     aria-labelledby="alertsDropdown">
                                     <h6 class="dropdown-header">
@@ -159,16 +136,12 @@ $User->verifyExistLoginUser();
                                     <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
                                 </div>
                             </li>
-
-                            <!-- Nav Item - Messages -->
                             <li class="nav-item dropdown no-arrow mx-1">
                                 <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <i class="fas fa-envelope fa-fw"></i>
-                                    <!-- Counter - Messages -->
                                     <span class="badge badge-danger badge-counter">7</span>
                                 </a>
-                                <!-- Dropdown - Messages -->
                                 <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                     aria-labelledby="messagesDropdown">
                                     <h6 class="dropdown-header">
@@ -222,18 +195,13 @@ $User->verifyExistLoginUser();
                                     <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
                                 </div>
                             </li>
-
                             <div class="topbar-divider d-none d-sm-block"></div>
-
-                            <!-- Nav Item - User Information -->
                             <li class="nav-item dropdown no-arrow">
                                 <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <span class="mr-2 d-none d-lg-inline text-gray-600 small">Seja bem-vindo(a),  <?= $_SESSION['login']['user_name'] ?></span>
-                                
                                     <img class="img-profile rounded-circle" src="<?= BASE ?>/src/images/undraw_profile.svg">
                                 </a>
-                                <!-- Dropdown - User Information -->
                                 <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                     aria-labelledby="userDropdown">
                                     <a class="dropdown-item" href="<?= BASE ?>/painel/profile/profile-user">
@@ -262,7 +230,6 @@ $User->verifyExistLoginUser();
                             </li>
                         </ul>
                     </nav>
-                    <!-- Barra de opções de aula (Anterior e próxima aula) -->
                     <header class="navbar navbar-expand bg-dark static-top shadow d-flex align-items-center justify-content-center justify-content-md-between">
                         <ul class="header1" style="list-style: none;">
                             <li>
