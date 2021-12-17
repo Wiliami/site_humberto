@@ -1,7 +1,7 @@
 <?php
 // require_once 'ENV.php';
 
-CONST BASE = 'http://localhost/phphumberto';
+const BASE = 'http://localhost/phphumberto';
 
 function MyAutoLoad($Class) {
     $cDir = ['Conn', 'Helpers', 'Model'];
