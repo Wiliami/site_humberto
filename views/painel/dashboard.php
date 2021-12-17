@@ -11,52 +11,39 @@ $User->verifyExistLoginUser();
         <meta name="description" content="">
         <meta name="author" content="">
         <title>Página | Dashboard</title>
-        <!-- Custom fonts for this template-->
         <link href="<?= BASE ?>/res/site/css/all.min.css" rel="stylesheet" type="text/css">
-        <!-- <link href="<?= BASE ?>/res/site/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
-        <!-- Custom styles for this template -->
         <link href="<?= BASE ?>/res/site/css/sb-admin-2.min.css" rel="stylesheet">
         <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
     </head>
     <body id="page-top">
-
-        <!-- Page Wrapper -->
         <div id="wrapper">
-
-            <!-- Sidebar -->
             <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-
                 <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?= BASE ?>/painel/dashboard">
                     <div class="sidebar-brand-icon rotate-n-15">
-
                     </div>
                     <div class="sidebar-brand-text mx-3">Logo</div>
                 </a>
-
                 <hr class="sidebar-divider my-0 ">
-
                 <?php 
-                    if($_SESSION["login"]["user_level"] >= 6 ) {
-                        ?>
-                            <li class="nav-item">
-                                <a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#collapsePages"
-                                    aria-expanded="true" aria-controls="collapsePages">
-                                    <i class="fas fa-fw fa-folder"></i>
-                                    <span>Administrativo</span>
-                                </a>
-
-                                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-                                    <div class="bg-white py-2 collapse-inner rounded">
-                                        <a class="collapse-item" href="<?= BASE ?>/painel/list-user">Lista de usuários</a>
-                                        <a class="collapse-item" href="<?= BASE ?>/painel/cursos-aprovacao">Cursos em análise</a>
-                                        <a class="collapse-item" href="<?= BASE ?>/painel/historico-compras">Histórico de compras</a>
-                                        <a class="collapse-item" href="<?= BASE ?>/painel/nivel-user">Níves de usuários</a>
-                                        <a class="collapse-item" href="<?= BASE ?>/painel/profile/suporte">Suporte</a>
-                                        <a class="collapse-item" href="<?= BASE ?>/painel/settings">Configurações</a>   
-                                    </div>
-                                </div>
-
-                            </li>
+                if($_SESSION["login"]["user_level"] >= 6 ) {
+                    ?>
+                <li class="nav-item">
+                    <a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#collapsePages"
+                        aria-expanded="true" aria-controls="collapsePages">
+                        <i class="fas fa-fw fa-folder"></i>
+                        <span>Administrativo</span>
+                    </a>
+                    <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                        <div class="bg-white py-2 collapse-inner rounded">
+                            <a class="collapse-item" href="<?= BASE ?>/painel/list-user">Lista de usuários</a>
+                            <a class="collapse-item" href="<?= BASE ?>/painel/cursos-aprovacao">Cursos em análise</a>
+                            <a class="collapse-item" href="<?= BASE ?>/painel/historico-compras">Histórico de compras</a>
+                            <a class="collapse-item" href="<?= BASE ?>/painel/nivel-user">Níves de usuários</a>
+                            <a class="collapse-item" href="<?= BASE ?>/painel/profile/suporte">Suporte</a>
+                            <a class="collapse-item" href="<?= BASE ?>/painel/settings">Configurações</a>   
+                        </div>
+                    </div>
+                </li>
                 <?php
                 }?>
 
@@ -107,34 +94,18 @@ $User->verifyExistLoginUser();
                 <?php
                 }?>
             </ul>
-            <!-- End of Sidebar -->
-
-            <!-- Content Wrapper -->
             <div id="content-wrapper" class="d-flex flex-column">
-
-                <!-- Main Content -->
                 <div id="content">
-
-                    <!-- Topbar -->
                     <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-
-                        <!-- Sidebar Toggle (Topbar) -->
                         <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                             <i class="fa fa-bars"></i>
                         </button>
-
-                       
-
-                       
                         <ul class="navbar-nav ml-auto">
-
-                            <!-- Nav Item - Search Dropdown (Visible Only XS) -->
                             <li class="nav-item dropdown no-arrow d-sm-none">
                                 <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <i class="fas fa-search fa-fw"></i>
                                 </a>
-                                <!-- Dropdown - Messages -->
                                 <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
                                     aria-labelledby="searchDropdown">
                                     <form class="form-inline mr-auto w-100 navbar-search">
@@ -151,16 +122,12 @@ $User->verifyExistLoginUser();
                                     </form>
                                 </div>
                             </li>
-
-                            <!-- Nav Item - Alerts -->
                             <li class="nav-item dropdown no-arrow mx-1">
                                 <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <i class="fas fa-bell fa-fw"></i>
-                                    <!-- Counter - Alerts -->
                                     <span class="badge badge-danger badge-counter">3+</span>
                                 </a>
-                                <!-- Dropdown - Alerts -->
                                 <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                     aria-labelledby="alertsDropdown">
                                     <h6 class="dropdown-header">
@@ -297,25 +264,15 @@ $User->verifyExistLoginUser();
                             </li>
                         </ul>
                     </nav>
-
                     Dashboard
-                 
-
         <?php
         $Component = new Component();
         echo $Component->getFooterDashboard();
         ?>
-
         <div class="container-fluid">
-              
-
-        <!-- Scroll to Top Button-->
         <a class="scroll-to-top rounded" href="#page-top">
             <i class="fas fa-angle-up"></i>
         </a>
-
-            
-        <!-- Logout Modal-->
         <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
             aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -334,11 +291,7 @@ $User->verifyExistLoginUser();
                 </div>
             </div>
         </div>
-
-        <!-- Bootstrap core JavaScript-->
         <script src="<?= BASE ?>/res/site/js/jquery.min.js"></script>
         <script src="<?= BASE ?>/res/site/js/bootstrap.bundle.min.js"></script>
-        <!-- Core plugin JavaScript-->
         <script src="<?= BASE ?>/res/site/js/jquery.easing.min.js"></script>
-        <!-- Custom scripts for all pages-->
         <script src="<?= BASE ?>/res/site/js/sb-admin-2.min.js"></script> 
