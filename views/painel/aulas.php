@@ -37,9 +37,9 @@ $User->verifyExistLoginUser();
         foreach($Read->getResult() as $Modulos) {
             ?>  
         <li class="nav-item">
-            <a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#collapse<?= $Modulos['modulo_id']?>" aria-expanded="true" aria-controls="collapsePages">
+            <a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#collapse<?= $Modulos['modulo_id'] ?>" aria-expanded="true" aria-controls="collapsePages">
                 <i class="fas fa-fw fa-folder"></i>
-                <span><?= $Modulos['modulo_id']?></span>
+                <span><?= $Modulos['modulo_id'] ?></span>
             </a>
             <div id="collapse<?= $Modulos['modulo_id']?>" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
