@@ -4,18 +4,16 @@ $User->verifyExistLoginUser();
 $Component = new Component();
 echo $Component->getMenuAndSideBarDashboard2();
 ?>
-<!-- Begin Page Content -->
 <div class="container-fluid">
-<!-- Content Row -->
 <div class="row">
-    <!-- Earnings (Monthly) Card Example -->
     <a href="<?= BASE ?>/painel/nivel-user" class="col-xl-3 col-md-6 mb-4">
         <div class="card border-left-primary shadow h-100 py-2">
             <div class="card-body">
                 <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                         <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                            Níveis de usuários</div>
+                            Níveis de usuários
+                        </div>
                         <div class="h5 mb-0 font-weight-bold text-gray-800"></div>
                     </div>
                     <div class="col-auto">
@@ -25,7 +23,6 @@ echo $Component->getMenuAndSideBarDashboard2();
             </div>
         </div>
     </a>
-    <!-- Earnings (Monthly) Card Example -->
     <a href="#" class="col-xl-3 col-md-6 mb-4">
         <div class="card border-left-success shadow h-100 py-2">
             <div class="card-body">
@@ -42,7 +39,6 @@ echo $Component->getMenuAndSideBarDashboard2();
             </div>
         </div>
     </a>
-    <!-- Earnings (Monthly) Card Example -->
     <a href="#" class="col-xl-3 col-md-6 mb-4">
         <div class="card border-left-info shadow h-100 py-2">
             <div class="card-body">
@@ -70,7 +66,6 @@ echo $Component->getMenuAndSideBarDashboard2();
             </div>
         </div>
     </a>
-    <!-- Pending Requests Card Example -->
     <a href="#" class="col-xl-3 col-md-6 mb-4">
         <div class="card border-left-warning shadow h-100 py-2">
             <div class="card-body">
@@ -116,7 +111,21 @@ echo $Component->getMenuAndSideBarDashboard2();
                             <td>
                                 <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="avatar" style="width: 50px; height: 50px">
                                 <a href="/" class="user-link"><?= $User['user_name'] ?></a>
-                                <span class="user-subhead"><?= $User['user_level'] ?></span>
+
+
+                                <!-- Nível de usuário -->
+                                <?php
+                                $Read->FullRead('SELECT * FROM level_users_id WHERE id_user = :iu', "iu={$User['id_user']}");
+                                if($Read->getResult()) {
+                                    foreach($Read->getResult() as $User) {
+                                        ?>
+                                    <span class="user-subhead"><?= $User['id_user'] ?></span>                                   
+                                <?php
+                                    }
+                                }
+                                ?>
+
+                                
                             </td>
                             <td>
                                 <?= $User['user_create_date'] ?>  
@@ -162,7 +171,6 @@ echo $Component->getMenuAndSideBarDashboard2();
     </div>  
 </div>
 <?php 
-$Component = new Component();
 echo $Component->getFooterDashboard();
 ?>
     </body>

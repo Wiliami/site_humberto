@@ -56,6 +56,7 @@ $User->verifyExistLoginUser();
                 </div>
             </div>
         </li>
+        
             <hr class="sidebar-divider my-0 ">
                 <?php
             }

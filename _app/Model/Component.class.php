@@ -179,7 +179,11 @@ class Component {
                         <!-- Divider -->
                         <hr class="sidebar-divider">
             
+
                         <!-- Nav Item - Pages Collapse Menu -->
+                        <?php
+                        if( ' .$_SESSION["login"]["user_level"] >= 6 . ') {
+                            ?>
                         <li class="nav-item">
                             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                                 aria-expanded="true" aria-controls="collapseTwo">
@@ -198,7 +202,14 @@ class Component {
                             </div>
                         </li>
 
+                        <?php
+                        }
+                        ?>
+
                         <!-- Nav Item - Utilities Collapse Menu -->
+                        <?php
+                        <!--  if(  . $_SESSION[login][user_level] >= 6 . ) -->
+                            ?>
                         <li class="nav-item">
                             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
                                 aria-expanded="true" aria-controls="collapseUtilities">
@@ -217,6 +228,10 @@ class Component {
                                 </div>
                             </div>
                         </li>
+                        <?php 
+                        }
+                        ?>
+
                         <!-- Nav Item - Pages Collapse Menu -->
                         <li class="nav-item">
                             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
