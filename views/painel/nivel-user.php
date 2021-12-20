@@ -2,7 +2,6 @@
 $User = new User();
 $User->verifyExistLoginUser();
 $Component = new Component();
-echo $Component->getBarraMenuOptions();
 echo $Component->getMenuAndSideBarDashboard2();
 ?>
 <!DOCTYPE html>
@@ -35,24 +34,23 @@ echo $Component->getMenuAndSideBarDashboard2();
                             <tbody>
                                 <?php
                                 $Read = new Read();
-                                $Read->FullRead("SELECT * FROM users");
+                                $Read->FullRead("SELECT * FROM users_levels");
                                 if($Read->getResult()) {
-                                    foreach($Read->getResult() as $User) {
+                                    foreach($Read->getResult() as $Level) {
                                         ?>
                                         <tr>
                                     <td>
                                         <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="avatar" style="width: 50px; height: 50px">
-                                        <a href="/" class="user-link"><?= $User['user_name'] ?></a>
+                                        <a href="/" class="user-link"></a>
                                     </td>
-                                    <!-- Nível de usuário -->
-                                    <td>    
-                                        <?= $User['user_level'] ?>
+                                    <!-- Nível de usuário -->   
+                                    <td>
+                                        <?= $Level['level_desc'] ?>
                                     </td>
                                     <td style="width: 20%;">
-                                        <a href="/" class="table-link">
+                                        <a href="/" class="table-link" text="Mostrar usuários desse nível">
                                             <span class="fa-stack">
-                                                <i class="fa fa-square fa-stack-2x"></i>
-                                                <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
+                                                <i class="fas fa-search"></i>
                                             </span>
                                         </a>
                                     </td>
