@@ -182,22 +182,21 @@ class Component {
 
                         <!-- Nav Item - Pages Collapse Menu -->
                         <?php
-                        if( ' .$_SESSION["login"]["user_level"] >= 6 . ') {
+                        if( ' . $_SESSION["login"]["user_level"] >= 6 . ') {
                             ?>
                         <li class="nav-item">
-                            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                                aria-expanded="true" aria-controls="collapseTwo">
+                            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
                                 <i class="fas fa-fw fa-folder"></i>
                                 <span>Administrativo</span>
                             </a>
                             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                                 <div class="bg-white py-2 collapse-inner rounded">
-                                    <a class="collapse-item" href=" '. BASE .'/painel/list-user">Lista de usuários</a>
-                                    <a class="collapse-item" href=" '. BASE .'/painel/cursos-aprovacao">Cursos em análise</a>
-                                    <a class="collapse-item" href=" '. BASE .'/painel/profile/historico-compras">Histórico de compras</a>
-                                    <a class="collapse-item" href=" '. BASE .'/painel/nivel-user">Níveis de Usuários</a>
-                                    <a class="collapse-item" href=" '. BASE .'/painel/profile/suporte">Suporte</a>
-                                    <a class="collapse-item" href=" '. BASE .'/painel/settings">Configurações</a>
+                                    <a class="collapse-item" href=" ' . BASE . '/painel/list-user">Lista de usuários</a>
+                                    <a class="collapse-item" href=" ' . BASE . '/painel/cursos-aprovacao">Cursos em análise</a>
+                                    <a class="collapse-item" href=" ' . BASE . '/painel/profile/historico-compras">Histórico de compras</a>
+                                    <a class="collapse-item" href=" ' . BASE . '/painel/nivel-user">Níveis de Usuários</a>
+                                    <a class="collapse-item" href=" ' . BASE . '/painel/profile/suporte">Suporte</a>
+                                    <a class="collapse-item" href=" ' . BASE . '/painel/settings">Configurações</a>
                                 </div>
                             </div>
                         </li>
@@ -211,20 +210,19 @@ class Component {
                         if( $_SESSION["login"]"user_level"] >= 6 )
                             ?>
                         <li class="nav-item">
-                            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-                                aria-expanded="true" aria-controls="collapseUtilities">
+                            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
                                 <i class="fas fa-book"></i>
                                 <span>Cursos</span>
                             </a>
                             <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
                                 data-parent="#accordionSidebar">
                                 <div class="bg-white py-2 collapse-inner rounded">
-                                    <a class="collapse-item" href="'. BASE .'/painel/profile/meus-cursos">Meus cursos</a>
-                                    <a class="collapse-item" href="'. BASE .'/painel/profile/minhas-compras">Minhas compras</a>
-                                    <a class="collapse-item" href="'. BASE .'/painel/profile/cursos-finalizados">Cursos finalizados</a>
-                                    <a class="collapse-item" href="'. BASE .'/painel/profile/cursos-pendentes">Cursos pendentes</a>
-                                    <a class="collapse-item" href="'. BASE .'/painel/profile/help">Ajuda</a>
-                                    <a class="collapse-item" href="'. BASE .'/painel/profile/suporte">Suporte</a>
+                                    <a class="collapse-item" href="' . BASE . '/painel/profile/meus-cursos">Meus cursos</a>
+                                    <a class="collapse-item" href="' . BASE . '/painel/profile/minhas-compras">Minhas compras</a>
+                                    <a class="collapse-item" href="' . BASE . '/painel/profile/cursos-finalizados">Cursos finalizados</a>
+                                    <a class="collapse-item" href="' . BASE . '/painel/profile/cursos-pendentes">Cursos pendentes</a>
+                                    <a class="collapse-item" href="' . BASE . '/painel/profile/help">Ajuda</a>
+                                    <a class="collapse-item" href="' . BASE . '/painel/profile/suporte">Suporte</a>
                                 </div>
                             </div>
                         </li>
@@ -718,24 +716,23 @@ class Component {
 
     public function getHeadHtmlPages($title = 'Dashboard') {
         return '
-        <!DOCTYPE html>
-        <html lang="pt-BR">
-            <head>
-                <meta charset="utf-8">
-                <meta http-equiv="X-UA-Compatible" content="IE=edge">
-                <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-                <meta name="description" content="">
-                <meta name="author" content="">
-                <title>' . $title . '</title>
-                <!-- Custom fonts for this template-->
-                <link href="' . BASE .'/res/site/css/all.min.css" rel="stylesheet" type="text/css">
-                <link href="' . BASE .'/res/site/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-                <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-                <!-- Custom styles for this template-->
-                <link href="' .  BASE . '/res/site/css/sb-admin-2.min.css" rel="stylesheet">
-            </head>
-        
-            <body id="page-top">
+            <!DOCTYPE html>
+            <html lang="pt-BR">
+                <head>
+                    <meta charset="utf-8">
+                    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+                    <meta name="description" content="">
+                    <meta name="author" content="">
+                    <title>' . $title . '</title>
+                    <!-- Custom fonts for this template -->
+                    <link href="' . BASE . '/res/site/css/all.min.css" rel="stylesheet" type="text/css">
+                    <link href="' . BASE . '/res/site/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+                    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+                    <!-- Custom styles for this template -->
+                    <link href="' .  BASE . '/res/site/css/sb-admin-2.min.css" rel="stylesheet">
+                </head>
+                <body id="page-top">
             ';
     }
 

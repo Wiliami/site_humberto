@@ -59,7 +59,7 @@ echo $Component->getMenuAndSideBarDashboard2();
         </div>
         </form>
         </div>
-        </div>
+        </section>
         </div>
         </div>
     </div>
