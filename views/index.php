@@ -120,9 +120,7 @@
                         <div class="info">
                             <i class="fas fa-heart"></i>
                         <h5 class="font-weight-bolder mt-3">Vida conjugal</h5>
-                        <p class="pe-3">Neste curso você conhecerá as bases do casamento segunda a Bíblia. Serão ministradas assuntos como:
-            
-                        </p>
+                        <p class="pe-3">Neste curso você conhecerá as bases do casamento segunda a Bíblia. Serão ministradas assuntos como:</p>
                         </div>
                     </div>
                     </div>
@@ -338,8 +336,7 @@
         </section>
     </main>
 <?php
-$Component = new Component();
 echo $Component->getFooterHome();
 ?>
     </body>
-</html>
+</html> 

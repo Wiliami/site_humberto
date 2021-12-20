@@ -1,6 +1,4 @@
 <?php
-
-
 session_start();
 require_once '_app/Config.inc.php';
 
@@ -17,7 +15,6 @@ if(file_exists($Location) && !is_dir($Location)) {
 } else {
     require_once('./views/404.php');
 }
-
 ?>
 
 
