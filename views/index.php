@@ -15,7 +15,7 @@
     </head>
     <body>
     <?php
-    $Component = new Component();                      
+    $Component = new Component();                     
     echo $Component->getMenu();   
     echo $Component->getHeader();
     ?>
