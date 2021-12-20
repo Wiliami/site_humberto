@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 $User = new User();
 $User->verifyExistLoginUser();
 ?>
@@ -27,7 +27,7 @@ $User->verifyExistLoginUser();
                     </div>
                 </div>
             </form> 
-        <!--divisor-->
+        divisor
         <hr class="sidebar-divider my-0"> 
         <?php 
         $Read = new Read();
@@ -253,7 +253,7 @@ $User->verifyExistLoginUser();
                     <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/137857207" allowfullscreen></iframe>
                 </div>
                 <?php 
-                $Component = new Component();
-                echo $Component->getFooterDashboard();
+                // $Component = new Component();
+                // echo $Component->getFooterDashboard();
                 ?>
 </html>

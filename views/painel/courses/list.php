@@ -4,7 +4,6 @@ $User->verifyExistLoginUser();
 $Component = new Component(); 
 echo $Component->getMenuAndSideBarDashboard2();
 ?>
-
 <body>  
     <div class="container">
             <div class="col-lg-7">
@@ -80,11 +79,8 @@ echo $Component->getMenuAndSideBarDashboard2();
             </div>
         </div>  
     </div>
-
     <!-- Fim da div container -->
     </div>
-
 <?php
-    $Component = new Component();
-    echo $Component->getFooterDashboard();
+echo $Component->getFooterDashboard();
 ?>

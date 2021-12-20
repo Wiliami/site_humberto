@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 $User = new User();
 $User->verifyExistLoginUser();
 ?>
@@ -321,6 +321,6 @@ $User->verifyExistLoginUser();
 <!-- Fim da div container -->
 </div>
 <?php
-$Component = new Component();
-echo $Component->getFooterDashboard();
+// $Component = new Component();
+// echo $Component->getFooterDashboard();
 ?>
