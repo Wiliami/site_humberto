@@ -66,6 +66,5 @@ echo $Component->getMenuAndSideBarDashboard2();
     </div>
 </section>
 <?php
-    $Component = new Component();
-    echo $Component->getFooterDashboard();
+echo $Component->getFooterDashboard();
 ?>
