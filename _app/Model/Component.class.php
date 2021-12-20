@@ -159,9 +159,7 @@ class Component {
                     <meta name="description" content="">
                     <meta name="author" content="">
                     <title>Página Views</title>
-                    <!-- Custom fonts for this template-->
                     <link href="' . BASE . '/res/site/css/all.min.css" rel="stylesheet" type="text/css">
-                    <!-- Custom styles for this template-->
                     <link href="' . BASE . '/res/site/css/sb-admin-2.min.css" rel="stylesheet">
                     <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
                 </head>

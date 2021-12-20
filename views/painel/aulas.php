@@ -212,7 +212,7 @@ $User->verifyExistLoginUser();
                                         Meus cursos
                                     </a>
                                     <a class="dropdown-item" href="<?= BASE ?>/painel/profile/help">
-                                        <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                                        <i class="fas fa-question fa-sm fa-fw mr-2 text-gray-400"></i>
                                         Ajuda
                                     </a>
                                     <a class="dropdown-item" href="<?= BASE ?>/painel/profile/suporte">
