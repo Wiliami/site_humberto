@@ -3,6 +3,10 @@ $User = new User();
 $User->verifyExistLoginUser();
 $Component = new Component();
 echo $Component->getMenuAndSideBarDashboard();
+
+$NivelId = $_GET['nivel'];
+
+echo $NivelId;
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -12,7 +16,7 @@ echo $Component->getMenuAndSideBarDashboard();
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="">
         <meta name="author" content="">
-        <title>Painel | Nível Visitantes</title>
+        <title>Painel | Nível de Usuários</title>
         <link href="<?= BASE ?>/res/site/css/all.min.css" rel="stylesheet" type="text/css">
         <link href="<?= BASE ?>/res/site/css/sb-admin-2.min.css" rel="stylesheet">
         <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
@@ -24,7 +28,7 @@ echo $Component->getMenuAndSideBarDashboard();
                     <div class="main-box clearfix">
                         <div class="table-responsive">
                             <table class="table user-list">
-                                <h2>Usuários - Visitantes</h2>
+                                <h2>Lista de usuários</h2>
                                 <thead>
                                     <tr>
                                         <th><span>Usuário</span></th>
@@ -45,7 +49,7 @@ echo $Component->getMenuAndSideBarDashboard();
                                         </td>
 
                                         <td>
-                                            
+                                            <?= $Level['level_id']?>
                                         </td>
                                     </tr>
                                     <?php
