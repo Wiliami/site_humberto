@@ -2,7 +2,9 @@
 $User = new User();
 $User->verifyExistLoginUser();
 $Component = new Component();
+echo $Component->getHeadHtmlPages();
 echo $Component->getMenuAndSideBarDashboard2();
+echo $Component->getBarraMenuOptions();
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -48,7 +50,7 @@ echo $Component->getMenuAndSideBarDashboard2();
                                         <?= $Level['level_desc'] ?>
                                     </td>
                                     <td style="width: 20%;">
-                                        <a href="/" class="table-link" text="Mostrar usuários desse nível">
+                                        <a href="/" class="table-link" title="Pesquisar usuários desse nível">
                                             <span class="fa-stack">
                                                 <i class="fas fa-search"></i>
                                             </span>
