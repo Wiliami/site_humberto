@@ -45,12 +45,7 @@ echo $Component->getMenuAndSideBarDashboard();
                                         </td>
 
                                         <td>
-                                            <?php
-                                            if($Level['user_level'] == '1') {
-                                                
-                                            }
-                                            
-                                            ?>
+                                           Administrador
                                         </td>
                                     </tr>
                                     <?php
