@@ -148,25 +148,23 @@ class Component {
         ";
     }
     
-    public function getMenuAndSideBarDashboard2() {
+    public function getMenuAndSideBarDashboard() {
         return '
         <!DOCTYPE html>
-            <html lang="pt-BR">
-                <head>
-                    <meta charset="utf-8">
-                    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-                    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-                    <meta name="description" content="">
-                    <meta name="author" content="">
-                    <title>Página Views</title>
-                    <link href="' . BASE . '/res/site/css/all.min.css" rel="stylesheet" type="text/css">
-                    <link href="' . BASE . '/res/site/css/sb-admin-2.min.css" rel="stylesheet">
-                    <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
-                </head>
-                <body id="page-top">
-                <!-- Page Wrapper -->
+        <html lang="pt-BR">
+            <head>
+                <meta charset="utf-8">
+                <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+                <meta name="description" content="">
+                <meta name="author" content="">
+                <title>Página Views</title>
+                <link href="' . BASE . '/res/site/css/all.min.css" rel="stylesheet" type="text/css">
+                <link href="' . BASE . '/res/site/css/sb-admin-2.min.css" rel="stylesheet">
+                <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+            </head>
+            <body id="page-top">
                 <div id="wrapper">
-                    <!-- Sidebar -->
                     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
                         <!-- Sidebar - Brand -->
                         <a class="sidebar-brand d-flex align-items-center justify-content-center" href="' . BASE .'/painel/dashboard">
@@ -174,10 +172,7 @@ class Component {
                             </div>
                             <div class="sidebar-brand-text mx-3">Logo</div>
                         </a>
-                        <!-- Divider -->
                         <hr class="sidebar-divider">
-            
-
                         <!-- Nav Item - Pages Collapse Menu -->
                         <?php
                         if( ' . $_SESSION["login"]["user_level"] >= 6 . ') {

@@ -56,7 +56,7 @@ $User->verifyExistLoginUser();
                 </div>
             </li>
                 <hr class="sidebar-divider my-0">
-                    <?php
+            <?php
                 }
             } else {
                 Error("Ainda não existem cursos nesta plataforma!");
