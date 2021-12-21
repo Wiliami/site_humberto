@@ -43,19 +43,15 @@ echo $Component->getMenuAndSideBarDashboard();
                                         <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="avatar" style="width: 50px; height: 50px">
                                         <a href="/" class="user-link"></a>
                                     </td>
-                                    <!-- Nível de usuário -->   
                                     <td>
-                                        <?php 
-                                        // if( $Level['level_desc'] == $id_atual ) {}
-                 
-                                        ?>
+                                       
 
                                         <a href="<?= BASE ?>/painel/" class="user-link"></a>
                                         <?= $Level['level_desc'] ?>
                                         
                                     </td>
                                     <td>
-                                        <a href="<?= BASE ?>/painel/level-user/nivel-ajudante" class="table-link" title="Pesquisar usuários desse nível">
+                                        <a href="<?= BASE ?>/painel/level-user/nivel-details&nivel=1" class="table-link" title="Pesquisar usuários desse nível">
                                             <span class="fa-stack">
                                                 <i class="fas fa-search"></i>
                                             </span>

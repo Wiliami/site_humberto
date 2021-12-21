@@ -45,7 +45,7 @@ echo $Component->getMenuAndSideBarDashboard();
                                         </td>
 
                                         <td>
-                                           Administrador
+                                            
                                         </td>
                                     </tr>
                                     <?php
