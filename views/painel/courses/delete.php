@@ -2,22 +2,9 @@
 $User = new User();
 $User->verifyExistLoginUser();
 $Component = new Component();
+echo $Component->getHeadHtmlDashboardExample();
 echo $Component->getMenuAndSideBarDashboard();
 ?>  
-<!DOCTYPE html>
-<html lang="pt-BR">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="description" content="">
-        <meta name="author" content="">
-        <title>Página - Title</title>
-        <link href="<?= BASE ?>/res/site/css/all.min.css" rel="stylesheet" type="text/css">
-        <link href="<?= BASE ?>/res/site/css/sb-admin-2.min.css" rel="stylesheet">
-        <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
-    </head>
-    <body id="page-top">
         <div class="container">
             <div class="col-lg-7">
                 <div class="card-header py-sm-5 py-3">

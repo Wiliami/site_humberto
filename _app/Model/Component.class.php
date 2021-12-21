@@ -147,8 +147,8 @@ class Component {
             </a>             
         ";
     }
-    
-    public function getMenuAndSideBarDashboard() {
+
+    public function getHeadHtmlDashboardExample() {
         return '
         <!DOCTYPE html>
         <html lang="pt-BR">
@@ -164,6 +164,10 @@ class Component {
                 <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
             </head>
             <body id="page-top">
+        ';
+    }
+    public function getMenuAndSideBarDashboard() {
+        return '
                 <div id="wrapper">
                     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
                         <!-- Sidebar - Brand -->
