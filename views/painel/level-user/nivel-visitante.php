@@ -34,20 +34,21 @@ echo $Component->getMenuAndSideBarDashboard();
                                 <tbody>
                                     <?php
                                     $Read = new Read();
-                                    $Read->FullRead("SELECT * FROM users_levels");
+                                    $Read->FullRead("SELECT * FROM users");
                                     if($Read->getResult()) {
                                         foreach($Read->getResult() as $Level) {
-                                            ?>
+                                    ?>
                                     <tr>
                                         <td>
                                             <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="avatar" style="width: 50px; height: 50px">
                                             <a href="/" class="user-link"></a>
                                         </td>
                                         <td>
-                                            <?php 
-                                                if($Level['level_desc'] == '1') {
+                                            <?php
+                                            if($Level['user_level'] == '1') {
+                                                
+                                            }
 
-                                                }
                                             ?>
                                         </td>
                                     </tr>
