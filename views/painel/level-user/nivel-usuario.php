@@ -28,9 +28,16 @@ $NivelId = $_GET['nivel'];
                                 <?php
                                 $Read = new Read();
                                 $Read->FullRead("SELECT * FROM users_levels WHERE level_desc = :ld", "ld={$NivelId}");
-
+                                if($Read->getResult()) {
+                                    foreach($Read->getResult() as $ListUser) {
                                 ?>
-                                <h2>Lista de usuários de nível: <?= $NivelId ?></h2>
+                                <h2>Lista de usuários de nível: <?= $ListUser['level_desc'] ?></h2>
+                                <?php
+                                    }
+                                } else {
+                                    Error("Ainda não existe essa lista de usuários!");
+                                }   
+                                ?>
                                 <thead>
                                     <tr>
                                         <th><span>Usuário</span></th>

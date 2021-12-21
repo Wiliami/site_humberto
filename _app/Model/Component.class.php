@@ -20,9 +20,9 @@ class Component {
                             <li><a href='"  . BASE . "/unitbrasil' class=\"nav-link px-2 link-secondary\">A Unitbrasil</a></li>
                         </ul>
                         <div class=\"col-md-auto text-end\">
-                        <!-- <a href=' " . BASE . "/cadastro' type=\"button\" class=\"btn me-1 mb-0\">Cadastrar</a>
-                            <a href=' " . BASE . "/login' type=\"button\" class=\"btn btn-warning w-auto me-1 mb-0\">Login</a>--> 
-                            <li href='"  . BASE . "/' class=\"nav-link px-2 link-secondary\">...</li>
+                            <!-- <a href=' " . BASE . "/cadastro' type=\"button\" class=\"btn me-1 mb-0\">Cadastro</a> -->
+                            <a href=' " . BASE . "/login' type=\"button\" class=\"btn btn-warning w-auto me-1 mb-0\">Área de membros</a>
+                            <!-- <li href='"  . BASE . "/' class=\"nav-link px-2 link-secondary\">...</li> -->
                         </div>   
                 </nav>
             </div>

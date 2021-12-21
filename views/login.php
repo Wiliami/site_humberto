@@ -47,7 +47,8 @@
                         }
                     } 
                     ?>
-                    <h3 class="title mx-auto">Seja bem-vindo(a)</h3>
+                    <h3 class="title mx-auto">Já é um membro?</h3>
+                    <h5 class="title mx-auto text-">Então entre com seus dados com login e senha.</h5>
                     <form class="" method="post">
                         <label>Email</label>
                         <div class="input-group form-group-no-border">
