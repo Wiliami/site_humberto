@@ -3,7 +3,7 @@ $User = new User();
 $User->verifyExistLoginUser();
 // $User->verifyLevelUserModerator();
 $Component = new Component();
-echo $Component->getMenuAndSideBarDashboard2();
+echo $Component->getMenuAndSideBarDashboard();
 ?>
 <section class="py-lg-5">
     <div class="col-lg-7">

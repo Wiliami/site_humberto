@@ -2,7 +2,7 @@
 $User = new User();
 $User->verifyExistLoginUser();
 $Component = new Component();
-echo $Component->getMenuAndSideBarDashboard2();
+echo $Component->getMenuAndSideBarDashboard();
 ?>
 <form>
     <h1 style="margin-left: 30px;">Meus dados</h1>

@@ -41,13 +41,15 @@ echo $Component->getMenuAndSideBarDashboard();
                                     <tr>
                                         <td>
                                             <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="avatar" style="width: 50px; height: 50px">
-                                            <a href="/" class="user-link"></a>
+                                            <a href="<?= BASE ?>/link-maroto" class="user-link"></a>
                                         </td>
+
                                         <td>
                                             <?php
                                             if($Level['user_level'] == '1') {
                                                 
                                             }
+                                            
                                             ?>
                                         </td>
                                     </tr>

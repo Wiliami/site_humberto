@@ -1,6 +1,6 @@
 <?php
 $Component = new Component();
-echo $Component->getMenuAndSideBarDashboard2();
+echo $Component->getMenuAndSideBarDashboard();
 echo $Component->getBarraMenuOptions();
 ?>
 <!-- lógica de envio do email de recuperação de senha -->

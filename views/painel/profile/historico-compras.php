@@ -2,7 +2,7 @@
 $User = new User();
 $User->verifyExistLoginUser();
 $Component = new Component();
-echo $Component->getMenuAndSideBarDashboard2();  
+echo $Component->getMenuAndSideBarDashboard();  
 ?>
 <div class="container">
     <h3 style="margin-left: 30px;">Histórico de compras</h3>

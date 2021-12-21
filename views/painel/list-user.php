@@ -2,7 +2,7 @@
 $User = new User();
 $User->verifyExistLoginUser();
 $Component = new Component();
-echo $Component->getMenuAndSideBarDashboard2();
+echo $Component->getMenuAndSideBarDashboard();
 ?>
 <div class="container-fluid">
 <div class="row">
@@ -123,9 +123,7 @@ echo $Component->getMenuAndSideBarDashboard2();
                                 <?php
                                     }
                                 }
-                                ?>
-
-                                
+                                ?>                                
                             </td>
                             <td>
                                 <?= $User['user_create_date'] ?>  
