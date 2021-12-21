@@ -8,10 +8,10 @@ echo $Component->getMenuAndSideBarDashboard();
 <div class="container">
     <div class="row">
         <div class="col-lg-12">
-        <div class="main-box clearfix">
-            <div class="table-responsive">
-                <table class="table user-list">
-                <h2>Usuários - Administradores</h2>
+            <div class="main-box clearfix">
+                <div class="table-responsive">
+                    <table class="table user-list">
+                    <h2>Usuários - Administradores</h2>
                     <thead>
                         <tr>
                             <th><span>Usuário</span></th>
@@ -32,7 +32,7 @@ echo $Component->getMenuAndSideBarDashboard();
                             </td>
                             <!-- Nível de usuário -->   
                             <td>
-                                <?= $Level['level_desc'] ?>
+                                <?= 'Administrador' ?>
                             </td>
                             <td>
                                 <a href="/" class="table-link" title="Pesquisar usuários desse nível">
@@ -49,9 +49,9 @@ echo $Component->getMenuAndSideBarDashboard();
                         }   
                         ?>
                     </tbody>
-                </table>
-            </div>                
-        </div>
+                    </table>
+                </div>                
+            </div>
         </div>
     </div>  
 </div>
