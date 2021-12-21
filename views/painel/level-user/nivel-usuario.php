@@ -3,10 +3,7 @@ $User = new User();
 $User->verifyExistLoginUser();
 $Component = new Component();
 echo $Component->getMenuAndSideBarDashboard();
-
 $NivelId = $_GET['nivel'];
-
-echo $NivelId;
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -28,7 +25,12 @@ echo $NivelId;
                     <div class="main-box clearfix">
                         <div class="table-responsive">
                             <table class="table user-list">
-                                <h2>Lista de usuários</h2>
+                                <?php
+                                $Read = new Read();
+                                $Read->FullRead("SELECT * FROM users_levels WHERE level_desc = :ld", "ld={$NivelId}");
+
+                                ?>
+                                <h2>Lista de usuários de nível: <?= $NivelId ?></h2>
                                 <thead>
                                     <tr>
                                         <th><span>Usuário</span></th>
@@ -37,10 +39,9 @@ echo $NivelId;
                                 </thead>
                                 <tbody>
                                     <?php
-                                    $Read = new Read();
-                                    $Read->FullRead("SELECT * FROM users");
+                                    $Read->FullRead("SELECT * FROM users WHERE user_level = :ul", "ul={$NivelId}");
                                     if($Read->getResult()) {
-                                        foreach($Read->getResult() as $Level) {
+                                        foreach($Read->getResult() as $Users) {
                                     ?>
                                     <tr>
                                         <td>
@@ -49,13 +50,13 @@ echo $NivelId;
                                         </td>
 
                                         <td>
-                                            <?= $Level['level_id']?>
+                                            <?= $Users['user_name'] ?>
                                         </td>
                                     </tr>
                                     <?php
                                         }
                                     } else {
-                                        Error("Ainda não existem usuários!");
+                                        Error("Ainda não existem usuários para esse nível!");
                                     }   
                                     ?>
                                 </tbody>
