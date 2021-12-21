@@ -50,12 +50,12 @@ echo $Component->getMenuAndSideBarDashboard2();
                  
                                         ?>
 
-                                        <a href="<?= BASE ?>/painel/list-nivel" class="user-link"></a>
+                                        <a href="<?= BASE ?>/painel/" class="user-link"></a>
                                         <?= $Level['level_desc'] ?>
                                         
                                     </td>
                                     <td>
-                                        <a href="<?= BASE ?>/painel/nivel-visitante" class="table-link" title="Pesquisar usuários desse nível">
+                                        <a href="<?= BASE ?>/painel/level-user/nivel-ajudante" class="table-link" title="Pesquisar usuários desse nível">
                                             <span class="fa-stack">
                                                 <i class="fas fa-search"></i>
                                             </span>
