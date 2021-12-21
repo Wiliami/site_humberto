@@ -753,7 +753,7 @@ class Component {
 
     public function getSearchDashboard() {
         return '
-
+            <h1>Área de pesquisa de itens</h1>
         ';
     }
 

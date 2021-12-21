@@ -29,7 +29,6 @@ $User->verifyExistLoginUser();
                 </form> 
             <!-- divisor -->
             <hr class="sidebar-divider my-0"> 
-            
             <?php 
             $Read = new Read();
             $Read->FullRead("SELECT * FROM modulos");

@@ -2,9 +2,7 @@
 $User = new User();
 $User->verifyExistLoginUser();
 $Component = new Component();
-echo $Component->getHeadHtmlPages();
 echo $Component->getMenuAndSideBarDashboard2();
-echo $Component->getBarraMenuOptions();
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -40,16 +38,24 @@ echo $Component->getBarraMenuOptions();
                                 if($Read->getResult()) {
                                     foreach($Read->getResult() as $Level) {
                                         ?>
-                                        <tr>
+                                <tr>
                                     <td>
                                         <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="avatar" style="width: 50px; height: 50px">
                                         <a href="/" class="user-link"></a>
                                     </td>
                                     <!-- Nível de usuário -->   
                                     <td>
+                                        <?php 
+                                        if($Level['level_desc'] == 1) {
+                                            
+                                        }
+                                        // 
+                                        ?>
+
                                         <?= $Level['level_desc'] ?>
+                                        
                                     </td>
-                                    <td style="width: 20%;">
+                                    <td>
                                         <a href="/" class="table-link" title="Pesquisar usuários desse nível">
                                             <span class="fa-stack">
                                                 <i class="fas fa-search"></i>
