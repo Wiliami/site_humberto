@@ -48,7 +48,6 @@ echo $Component->getMenuAndSideBarDashboard();
                                             if($Level['user_level'] == '1') {
                                                 
                                             }
-
                                             ?>
                                         </td>
                                     </tr>
