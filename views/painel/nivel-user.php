@@ -46,10 +46,8 @@ echo $Component->getMenuAndSideBarDashboard2();
                                     <!-- Nível de usuário -->   
                                     <td>
                                         <?php 
-                                        if( $Level['level_desc'] == $id_atual ) {
-                                            
-                                        }
-                                        // 
+                                        // if( $Level['level_desc'] == $id_atual ) {}
+                 
                                         ?>
 
                                         <a href="<?= BASE ?>/painel/list-nivel" class="user-link"></a>
@@ -57,7 +55,7 @@ echo $Component->getMenuAndSideBarDashboard2();
                                         
                                     </td>
                                     <td>
-                                        <a href="/" class="table-link" title="Pesquisar usuários desse nível">
+                                        <a href="<?= BASE ?>/painel/nivel-visitante" class="table-link" title="Pesquisar usuários desse nível">
                                             <span class="fa-stack">
                                                 <i class="fas fa-search"></i>
                                             </span>
