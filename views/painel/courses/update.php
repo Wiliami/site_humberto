@@ -10,7 +10,7 @@ $User->verifyExistLoginUser();
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="">
         <meta name="author" content="">
-        <title>Página - Title</title>
+        <title>Página - Atualizar</title>
         <link href="<?= BASE ?>/res/site/css/all.min.css" rel="stylesheet" type="text/css">
         <link href="<?= BASE ?>/res/site/css/sb-admin-2.min.css" rel="stylesheet">
         <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
@@ -244,80 +244,80 @@ $User->verifyExistLoginUser();
                         </ul>
                     </nav>
 <div class="container">
-<div class="col-lg-7">
-<div class="card-header py-sm-5 py-3">
-    <h2>Atualizar cursos</h2>
-    <p class="lead">Alterar Cursos</p>
-</div>
+    <div class="col-lg-7">
+        <div class="card-header py-sm-5 py-3">
+            <h2>Atualizar cursos</h2>
+            <p class="lead">Alterar Cursos</p>
+        </div>
 </div>
 
 <div class="row">
-<div class="col-lg-12">
-<div class="main-box clearfix">
-    <div class="table-responsive">
-        <table class="table user-list">
-            <thead>
-                <tr>
-                    <th><span>Título</span></th>
-                    <th><span>Criado</span></th>
-                    <th class="text-center"><span>Descrição</span></th>
-                    <th><span>Opções</span></th>
-                    <th>&nbsp;</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php
-                $Read = new Read();
-                $Read->FullRead("SELECT * FROM cursos");
-                if($Read->getResult()) {
-                    foreach($Read->getResult() as $Cursos) {
-                        ?>
+    <div class="col-lg-12">
+        <div class="main-box clearfix">
+            <div class="table-responsive">
+                <table class="table user-list">
+                    <thead>
                         <tr>
-                    <td>
-                        <a href="/" class="user-link"><?= $Cursos['curso_titulo'] ?></a>
-                        <span class="user-subhead"></span>
-                    </td>
-                    <td>
-                        <?= $Cursos['curso_create_date'] ?>  
-                    </td>
-                    
-                    <td>
-                        <a href="/"><?= $Cursos['curso_descricao'] ?></a>
-                    </td>
-                    <td>
-                        <a href="/" class="table-link">
-                            <span class="fa-stack">
-                            <i class="fa fa-square fa-stack-2x"></i>
-                            <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                        <a href="<?= BASE ?>/painel/courses/update" class="table-link">
-                            <span class="fa-stack">
-                                <i class="fa fa-square fa-stack-2x"></i>
-                                <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                        <a href="<?= BASE ?>/painel/courses/delete" class="table-link danger">
-                            <span class="fa-stack">
-                                <i class="fa fa-square fa-stack-2x"></i>
-                                <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </td>
-                </tr>
-                <?php
-                    }
-                } else {
-                    Error("Ainda não existem usuários!");
-                }   
-                ?>
-            </tbody>
-        </table>
-    </div>                
-</div>
-</div>
-</div>  
-</div>
+                            <th><span>Título</span></th>
+                            <th><span>Criado</span></th>
+                            <th class="text-center"><span>Descrição</span></th>
+                            <th><span>Opções</span></th>
+                            <th>&nbsp;</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        $Read = new Read();
+                        $Read->FullRead("SELECT * FROM cursos");
+                        if($Read->getResult()) {
+                            foreach($Read->getResult() as $Cursos) {
+                                ?>
+                                <tr>
+                            <td>
+                                <a href="/" class="user-link"><?= $Cursos['curso_titulo'] ?></a>
+                                <span class="user-subhead"></span>
+                            </td>
+                            <td>
+                                <?= $Cursos['curso_create_date'] ?>  
+                            </td>
+                            
+                            <td>
+                                <a href="/"><?= $Cursos['curso_descricao'] ?></a>
+                            </td>
+                            <td>
+                                <a href="/" class="table-link">
+                                    <span class="fa-stack">
+                                    <i class="fa fa-square fa-stack-2x"></i>
+                                    <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                                <a href="<?= BASE ?>/painel/courses/update" class="table-link">
+                                    <span class="fa-stack">
+                                        <i class="fa fa-square fa-stack-2x"></i>
+                                        <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                                <a href="<?= BASE ?>/painel/courses/delete" class="table-link danger">
+                                    <span class="fa-stack">
+                                        <i class="fa fa-square fa-stack-2x"></i>
+                                        <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </td>
+                        </tr>
+                        <?php
+                            }
+                        } else {
+                            Error("Ainda não existem usuários!");
+                        }   
+                        ?>
+                    </tbody>
+                </table>
+                    </div>                
+                </div>
+            </div>
+        </div>  
+    </div>
 <!-- Fim da div container -->
 </div>
 <?php
