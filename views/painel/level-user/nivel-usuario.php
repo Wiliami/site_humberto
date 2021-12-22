@@ -19,7 +19,6 @@ $NivelId = $_GET['nivel'];
                             foreach($Read->getResult() as $LevelUser) {
                         ?>
                         <h1 class="h3 mb-0 text-gray-800">Lista de usuários nível: <?= $LevelUser['level_desc'] ?></h1>
-                        
                         <?php
                             }
                         } else {

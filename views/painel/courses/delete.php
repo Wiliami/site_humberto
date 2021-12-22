@@ -2,8 +2,8 @@
 $User = new User();
 $User->verifyExistLoginUser();
 $Component = new Component();
-echo $Component->getHeadHtmlDashboardExample();
-echo $Component->getMenuAndSideBarDashboard();
+echo $Component->getHeadHtmlDashboard();
+echo $Component->getMenuSideBarDashboard();
 ?>  
         <div class="container">
             <div class="col-lg-7">

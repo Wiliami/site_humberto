@@ -2,6 +2,7 @@
 $User = new User();
 $User->verifyExistLoginUser();
 $Component = new Component();
-echo $Component->getMenuAndSideBarDashboard();
+echo $Component->getHeadHtmlDashboard();
+echo $Component->getMenuSideBarDashboard();
 echo $Component->getFooterDashboard();
 ?>

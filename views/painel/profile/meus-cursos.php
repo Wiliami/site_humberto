@@ -2,7 +2,8 @@
 $User = new User();
 $User->verifyExistLoginUser();
 $Component = new Component();
-echo $Component->getMenuAndSideBarDashboard();
+echo $Component->getHeadHtmlDashboard();
+echo $Component->getMenuSideBarDashboard();
 ?>
     <div style="margin-left: 20px;">
         <h3>Olá, <?= $_SESSION['login']['user_name'] ?></h3>

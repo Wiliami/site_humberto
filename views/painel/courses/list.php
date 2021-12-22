@@ -2,9 +2,10 @@
 $User = new User();
 $User->verifyExistLoginUser();
 $Component = new Component(); 
-echo $Component->getMenuAndSideBarDashboard();
+echo $Component->getHeadHtmlDashboard();
+echo $Component->getMenuSideBarDashboard();
 ?>
-<body>  
+  
     <div class="container">
             <div class="col-lg-7">
                 <div class="card-header">

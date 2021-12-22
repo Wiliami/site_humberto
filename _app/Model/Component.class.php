@@ -139,6 +139,120 @@ class Component {
     </html>
         ';
     }
+
+    public function getFooterHome() {
+        return '
+        <footer class="footer pt-5 mt-5">
+        <div class="container">
+          <div class=" row">
+            <div class="col-md-3 mb-4 ms-auto">
+              <div>
+                <!-- <a href=" ' . BASE . '/" type=\"button\" class=\" nav btn btn-black mb-2 mb-md-0\" style="width: 250; height: 100;">
+                    <img src="' . BASE . '/src/images/icon_small.png" alt="Logo" style=" width: 50px; height: 50px;">
+                </a> -->
+                <h6 class="font-weight-bolder mb-4">Humberto Oliveira</h6>
+              </div>
+              <div>
+                <ul class="d-flex flex-row ms-n3 nav">
+                  <li class="nav-item">
+                    <a class="nav-link pe-1" href="https://www.facebook.com/educacaoetreinamentos/" target="_blank">
+                      <i class="fab fa-facebook text-lg opacity-8"></i>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link pe-1" href="https://www.youtube.com/channel/UClFMwemd5j7EsXlV-gTw5Xg" target="_blank">
+                        <i class="fab fa-youtube text-lg opacity-8"></i>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-2 col-sm-6 col-6 mb-4">
+              <div>
+                <h6 class="text-sm">Parcerias</h6>
+                <ul class="flex-column ms-n3 nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="https://www.unitbrasil.com/" target="_blank">
+                      UNITBRASIL
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="https://www.adventistas.org/pt/" target="_blank">
+                      Igreja Adventista
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="https://www.unitplus.com.br/" target="_blank">
+                      Unitplus
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- <div class="col-md-2 col-sm-6 col-6 mb-4">
+              <div>
+                <h6 class="text-sm">Recursos</h6>
+                <ul class="flex-column ms-n3 nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="https://iradesign.io/" target="_blank">
+                      Fotos
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="https://www.creative-tim.com/bits" target="_blank">
+                      Eventos
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="https://www.creative-tim.com/affiliates/new" target="_blank">
+                      Patron me
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div> -->
+            <div class="col-md-2 col-sm-6 col-6 mb-4">
+              <div>
+                <h6 class="text-sm">Ajuda & Suporte</h6>
+                <ul class="flex-column ms-n3 nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="' . BASE . '/contato" target="_blank">
+                      Entre em contato
+                    </a>
+                  </li> 
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-2 col-sm-6 col-6 mb-4 me-auto">
+              <div>
+                <h6 class="text-sm">Legal</h6>
+                <ul class="flex-column ms-n3 nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="' . BASE . '/termos-de-uso">
+                      Termos & Condições
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="' . BASE . '/politica-privacidade">
+                      Política de privacidade
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="text-center">
+                <p class="text-dark my-4 text-sm font-weight-normal">
+                  Desenvolvido por Unitplus | Copyright 2021 © <a href="https://www.unitplus.com.br/" target="_blank">Unitplus</a>.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+        ';
+    }
+    
     public function getLogo() {
         return "
         <a href=' " . BASE . "/' type=\"button\" class=\" nav btn btn-black mb-2 mb-md-0 justify-content-center\" style='width: 250; height: 100;'>
@@ -577,26 +691,7 @@ class Component {
         
         ';
     }
-    public function getHeadHtmlDashboardExample() {
-        return '
-        <!DOCTYPE html>
-        <html lang="pt-BR"
-            <head>
-                <meta charset="utf-8">
-                <meta http-equiv="X-UA-Compatible" content="IE=edge">
-                <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-                <meta name="description" content="">
-                <meta name="author" content="">
-                <title>Dashboard</title>
-                <!-- Custom fonts for this template-->
-                <link href="'. BASE .'/res/site/css/all.min.css" rel="stylesheet" type="text/css">
-                <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-                <!-- Custom styles for this template-->
-                <link href="'. BASE .'/res/site/css/sb-admin-2.min.css" rel="stylesheet">
-            </head>
-            <body id="page-top">
-        ';
-    }
+   
     public function getBarraMenuOptions() {
         return '
         <!-- Begin Page Content -->
@@ -690,118 +785,7 @@ class Component {
         ';
     }
 
-    public function getFooterHome() {
-        return '
-        <footer class="footer pt-5 mt-5">
-        <div class="container">
-          <div class=" row">
-            <div class="col-md-3 mb-4 ms-auto">
-              <div>
-                <!-- <a href=" ' . BASE . '/" type=\"button\" class=\" nav btn btn-black mb-2 mb-md-0\" style="width: 250; height: 100;">
-                    <img src="' . BASE . '/src/images/icon_small.png" alt="Logo" style=" width: 50px; height: 50px;">
-                </a> -->
-                <h6 class="font-weight-bolder mb-4">Humberto Oliveira</h6>
-              </div>
-              <div>
-                <ul class="d-flex flex-row ms-n3 nav">
-                  <li class="nav-item">
-                    <a class="nav-link pe-1" href="https://www.facebook.com/educacaoetreinamentos/" target="_blank">
-                      <i class="fab fa-facebook text-lg opacity-8"></i>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link pe-1" href="https://www.youtube.com/channel/UClFMwemd5j7EsXlV-gTw5Xg" target="_blank">
-                        <i class="fab fa-youtube text-lg opacity-8"></i>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-md-2 col-sm-6 col-6 mb-4">
-              <div>
-                <h6 class="text-sm">Parcerias</h6>
-                <ul class="flex-column ms-n3 nav">
-                  <li class="nav-item">
-                    <a class="nav-link" href="https://www.unitbrasil.com/" target="_blank">
-                      UNITBRASIL
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="https://www.adventistas.org/pt/" target="_blank">
-                      Igreja Adventista
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="https://www.unitplus.com.br/" target="_blank">
-                      Unitplus
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <!-- <div class="col-md-2 col-sm-6 col-6 mb-4">
-              <div>
-                <h6 class="text-sm">Recursos</h6>
-                <ul class="flex-column ms-n3 nav">
-                  <li class="nav-item">
-                    <a class="nav-link" href="https://iradesign.io/" target="_blank">
-                      Fotos
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="https://www.creative-tim.com/bits" target="_blank">
-                      Eventos
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="https://www.creative-tim.com/affiliates/new" target="_blank">
-                      Patron me
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div> -->
-            <div class="col-md-2 col-sm-6 col-6 mb-4">
-              <div>
-                <h6 class="text-sm">Ajuda & Suporte</h6>
-                <ul class="flex-column ms-n3 nav">
-                  <li class="nav-item">
-                    <a class="nav-link" href="' . BASE . '/contato" target="_blank">
-                      Entre em contato
-                    </a>
-                  </li> 
-                </ul>
-              </div>
-            </div>
-            <div class="col-md-2 col-sm-6 col-6 mb-4 me-auto">
-              <div>
-                <h6 class="text-sm">Legal</h6>
-                <ul class="flex-column ms-n3 nav">
-                  <li class="nav-item">
-                    <a class="nav-link" href="' . BASE . '/termos-de-uso">
-                      Termos & Condições
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="' . BASE . '/politica-privacidade">
-                      Política de privacidade
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-12">
-              <div class="text-center">
-                <p class="text-dark my-4 text-sm font-weight-normal">
-                  Desenvolvido por Unitplus | Copyright 2021 © <a href="https://www.unitplus.com.br/" target="_blank">Unitplus</a>.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </footer>
-        ';
-    }
+    
 
     public function getHeadHtmlPages($title = 'Dashboard') {
         return '

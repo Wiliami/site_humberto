@@ -4,6 +4,7 @@ $User->verifyExistLoginUser();
 $Component = new Component();
 echo $Component->getHeadHtmlDashboard();
 echo $Component->getMenuSideBarDashboard();
+echo $Component->getBarraMenuOptions();
 ?>
 <!-- Conteúdo que vai ser exibido na dashboard -->
 <!-- ***Begin Page Content*** -->
