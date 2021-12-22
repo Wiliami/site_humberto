@@ -27,11 +27,11 @@ $NivelId = $_GET['nivel'];
                             <table class="table user-list">
                                 <?php
                                 $Read = new Read();
-                                $Read->FullRead("SELECT * FROM users_levels WHERE level_desc = :ld", "ld={$NivelId}");
+                                $Read->FullRead("SELECT level_desc FROM users_levels");
                                 if($Read->getResult()) {
-                                    foreach($Read->getResult() as $ListUser) {
+                                    foreach($Read->getResult() as $LevelUser) {
                                 ?>
-                                <h2>Lista de usuários de nível: <?= $ListUser['level_desc'] ?></h2>
+                                <h2>Lista de usuários de nível: <?= $LevelUser['level_desc'] ?></h2>
                                 <?php
                                     }
                                 } else {

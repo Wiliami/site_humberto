@@ -47,8 +47,8 @@ $User->verifyExistLoginUser();
                         if($Read->getResult()) {
                         foreach($Read->getResult() as $Aula) {
                                 ?>
-                            <a class="collapse-item" href="<?= BASE ?>/"><?= $Aula['aula_name'] ?></a>
-                            <?php
+                            <a class="collapse-item" href="<?= BASE ?>/"> <?= $Aula['aula_name'] ?> </a>
+                        <?php
                             } 
                         }
                         ?>
