@@ -2,10 +2,11 @@
 $User = new User();
 $User->verifyExistLoginUser();
 $Component = new Component();
-echo $Component->getMenuAndSideBarDashboard();  
+echo $Component->getHeadHtmlDashboard();
+echo $Component->getMenuSideBarDashboard();  
 ?>
-<div class="container">
-    <h3 style="margin-left: 30px;">Histórico de compras</h3>
+<div class="container-fluid">
+    <h1 class="h3 mb-0 text-gray-800">Histórico de Compras</h1>
         <div class="row">
             <div class="col-lg-12">
             <div class="main-box clearfix">

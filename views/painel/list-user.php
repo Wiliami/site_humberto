@@ -2,7 +2,8 @@
 $User = new User();
 $User->verifyExistLoginUser();
 $Component = new Component();
-echo $Component->getMenuAndSideBarDashboard();
+echo $Component->getHeadHtmlDashboard();
+echo $Component->getMenuSideBarDashboard();
 ?>
 <div class="container-fluid">
 <div class="row">
@@ -171,5 +172,3 @@ echo $Component->getMenuAndSideBarDashboard();
 <?php 
 echo $Component->getFooterDashboard();
 ?>
-    </body>
-</html>

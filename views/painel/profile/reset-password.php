@@ -2,7 +2,8 @@
 $User = new User();
 $User->verifyExistLoginUser();
 $Component = new Component();
-echo $Component->getMenuAndSideBarDashboard();
+echo $Component->getHeadHtmlDashboard();
+echo $Component->getMenuSideBarDashboard();
 ?>
     <form action="" method="post">
     <?php 
@@ -22,7 +23,7 @@ echo $Component->getMenuAndSideBarDashboard();
     }  
     ?>
 
-    <h2 style="margin-left: 30px; margin-top: 30px;">Alterar senha</h2>
+    <h1 class="h3 mb-0 text-gray-800">Alterar senha</h1>
     <div class="form-group row" style="margin-left: 20px;">
         <label for="inputPassword" class="col-sm-2 col-form-label">Senha antiga</label>
         <div class="col-sm-10">
@@ -43,6 +44,7 @@ echo $Component->getMenuAndSideBarDashboard();
     </div>
     <input type="submit" class="btn btn-primary mb-2" name="reset-password" value="Redefinir" style="margin-left: 20px;">
     </form>
-    <?php
-    echo $Component->getFooterDashboard();
-    ?>
+    
+<?php
+echo $Component->getFooterDashboard();
+?>

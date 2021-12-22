@@ -2,9 +2,12 @@
 $User = new User();
 $User->verifyExistLoginUser();
 $Component = new Component();
-echo $Component->getMenuAndSideBarDashboard();  
+echo $Component->getHeadHtmlDashboard();
+echo $Component->getMenuSideBarDashboard();
 ?>
-<div class="con tainer">
+
+
+<div class="container-fluid">
     <div class="row">
         <div class="col-lg-12">
         <div class="main-box clearfix">
@@ -118,17 +121,10 @@ echo $Component->getMenuAndSideBarDashboard();
         </div>
     </div>  
 </div>
-
-
 <?php 
-
-    $Component = new Component();
-    echo $Component->getFooterDashboard();
-
+echo $Component->getFooterDashboard();
 ?>
 
-</body>
-</html>
 
 
             

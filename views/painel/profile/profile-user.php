@@ -2,7 +2,8 @@
 $User = new User();
 $User->verifyExistLoginUser();
 $Component = new Component();
-echo $Component->getMenuAndSideBarDashboard();
+echo $Component->getHeadHtmlDashboard();
+echo $Component->getMenuSideBarDashboard();
 ?>
 <form>
     <h1 style="margin-left: 30px;">Meus dados</h1>
@@ -26,8 +27,8 @@ echo $Component->getMenuAndSideBarDashboard();
     </div>
     <input type="submit" class="btn btn-primary mb-2" value="Continuar" style="margin: 30px;">
 </form>
+
 <?php
-$Component = new Component();
 echo $Component->getFooterDashboard();
 ?>
 
