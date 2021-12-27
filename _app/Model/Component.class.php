@@ -732,7 +732,7 @@ class Component {
             <div class="d-sm-flex align-items-end justify-content-end mb-4" style="position: relative;">
                 <a href="' . BASE . '/suporte" class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm">
                     <i class="far fa-question-circle text-white-50"></i>
-                    Suporte
+                    Ajuda
                 </a>
             </div>
         </div>   
