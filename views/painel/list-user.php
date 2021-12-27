@@ -32,16 +32,12 @@ echo $Component->getMenuOptionsDashboard();
                                     <tr>
                                 <td>
                                     <img src="https://bootdey.com/img/Content/avatar/avatar1.png"alt="avatar" style="width: 50px; height: 50px">
-                                    <a href="<?= BASE ?>/painel/list-user" class="d-block user-link"><?= $User['user_name'] ?></a>
+                                    <a href="<?= BASE ?>/painel/list-user" class="d-block user-link"><?= $User['user_name']?></a>
 
-                            <!-- Nível de usuário -->
-                            <?php
-                            // $Read->FullRead('SELECT * FROM users_levels WHERE level_id = :li', "li={$User['level_id']}");
-                            // if($Read->getResult()) {
-                            //     foreach($Read->getResult() as $User) {
-                                    ?>
-                                <span class="user-subhead d-block"><?= $User['nada_nada'] ?></span>                                   
-                           
+                            
+                                <!-- Nível de usuário -->
+                                <span class="user-subhead d-block">Administrador</span>
+                                
                                 </td>
                                 <td>
                                     <?= $User['user_create_date'] ?>  
