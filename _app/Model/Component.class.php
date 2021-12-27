@@ -316,8 +316,9 @@ class Component {
 
             <!-- Nav Item - Pages Collapse Menu -->
             <?php
-                if( $_SESSION["login"]["user_level"] >= 6 ) {
+                <!-- if($_SESSION["login"]["user_level"] >= 6) {
                     ?>
+                    -->
                 <li class="nav-item">
                     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
                         <i class="fas fa-fw fa-folder"></i>
@@ -335,14 +336,14 @@ class Component {
                         </div>
                     </div>
                 </li>
-            <?php
+                <?php 
             }
             ?>
 
            <!-- Nav Item - Utilities Collapse Menu -->
-           <?php
-                if($_SESSION["login"]["user_level"] >= 6) {
-                ?>
+           <!-- <?php
+                if( $_SESSION["login"]["user_level"] >= 6) {
+                ?> -->
                 <li class="nav-item">
                     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
                         <i class="fas fa-book"></i>
@@ -722,6 +723,19 @@ class Component {
                 </a>
             </div>
         </div> 
+        ';
+    }
+
+    public function getSuporteDashboard() {
+        return '
+        <div class="container-fluid">
+            <div class="d-sm-flex align-items-end justify-content-end mb-4" style="position: relative;">
+                <a href="' . BASE . '/suporte" class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm">
+                    <i class="far fa-question-circle text-white-50"></i>
+                    Suporte
+                </a>
+            </div>
+        </div>   
         ';
     }
    
