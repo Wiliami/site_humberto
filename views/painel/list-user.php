@@ -25,28 +25,28 @@ echo $Component->getMenuOptionsDashboard();
                         <tbody>
                             <?php
                             $Read = new Read();
-                            $Read->FullRead("SELECT * FROM users");
+                            $Read->FullRead("SELECT * FROM users WHERE user_level = :ul", "ul={user_level}");
                             if($Read->getResult()) {
-                                foreach($Read->getResult() as $User) {
-                                    ?>
-                                    <tr>
+                                foreach($Read->getResult() as $User) {                    
+                            ?>
+                                <tr>
                                 <td>
                                     <img src="https://bootdey.com/img/Content/avatar/avatar1.png"alt="avatar" style="width: 50px; height: 50px">
-                                    <a href="<?= BASE ?>/painel/list-user" class="d-block user-link"><?= $User['user_name']?></a>
+                                    <a href="<?= BASE ?>/painel/list-user" class="d-block user-link"><?= $User['user_name'] ?></a>
 
-                            
-                                <!-- Nível de usuário -->
-                                <span class="user-subhead d-block">Administrador</span>
-                                
+                            <!-- Nível de usuário -->
+                                <span class="user-subhead d-block"><?= $User['user_level'] ?></span>
+    
+                           
                                 </td>
                                 <td>
-                                    <?= $User['user_create_date'] ?>  
+                                    <?= $User['user_create_date'] ?>
                                 </td>
                                 <td class="text-center">
                                     <span class="label label-default">Situação</span>
                                 </td>
                                 <td>
-                                    <a href="<?= BASE ?>/"><?= $User['user_email']?></a>
+                                    <a href="<?= BASE ?>/"><?= $User['user_email'] ?></a>
                                 </td>
                                 <td>
                                     <a href="<?= BASE ?>/" class="table-link">
