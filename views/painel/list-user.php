@@ -17,8 +17,8 @@ echo $Component->getMenuOptionsDashboard();
                             <tr>
                                 <th><span>#</span></th>
                                 <th><span>Usuário</span></th>
-                                <th><span>Criado</span></th>
                                 <th><span>Nível</span></th>
+                                <th><span>Criado</span></th>
                                 <th class="text-center"><span>Status</span></th>
                                 <th><span>E-mail</span></th>
                                 <th>&nbsp;</th>
@@ -38,10 +38,11 @@ echo $Component->getMenuOptionsDashboard();
                                             <img src="https://bootdey.com/img/Content/avatar/avatar1.png"alt="avatar" style="width: 50px; height: 50px">
                                         </td>
                                         <td><a href="<?= BASE ?>/painel/list-user" class="d-block user-link"><?= $User['user_name'] ?></a></td>
+                                        <td><?= $User['level_desc'] ?></td>
                                         <td>
                                             <?= date('d/m/Y', strtotime($User['user_create_date'])) ?>
                                         </td>
-                                        <td><?= $User['level_desc'] ?></td>
+                                        
                                         <td class="text-center">
                                             <span class="label label-default">Situação</span>
                                         </td>
