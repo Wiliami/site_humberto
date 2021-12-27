@@ -111,16 +111,20 @@ echo $Component->getMenuSideBarDashboard();
                                 <tr>
                             <td>
                                 <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="avatar" style="width: 50px; height: 50px">
-                                <a href="/" class="user-link"><?= $User['user_name'] ?></a>
+                                <a href="<?= BASE ?>/painel/list-user" class="user-link"><?= $User['user_name'] ?></a>
 
-
+                        <?php }
+                            } else {
+                                Error("Ainda não existe usuários!");
+                            }
+                        ?>
                                 <!-- Nível de usuário -->
                                 <?php
-                                $Read->FullRead('SELECT * FROM level_users_id WHERE id_user = :iu', "iu={$User['id_user']}");
+                                $Read->FullRead('SELECT * FROM users_levels WHERE level_id = :li', "li={$User['level_id']}");
                                 if($Read->getResult()) {
                                     foreach($Read->getResult() as $User) {
                                         ?>
-                                    <span class="user-subhead"><?= $User['id_user'] ?></span>                                   
+                                    <span class="user-subhead"><?= $User['level_desc'] ?></span>                                   
                                 <?php
                                     }
                                 }
@@ -133,22 +137,22 @@ echo $Component->getMenuSideBarDashboard();
                                 <span class="label label-default">Situação</span>
                             </td>
                             <td>
-                                <a href="/"><?= $User['user_email']?></a>
+                                <a href="<?= BASE ?>/"><?= $User['user_email']?></a>
                             </td>
                             <td style="width: 20%;">
-                                <a href="/" class="table-link">
+                                <a href="<?= BASE ?>/" class="table-link">
                                     <span class="fa-stack">
                                         <i class="fa fa-square fa-stack-2x"></i>
                                         <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
                                     </span>
                                 </a>
-                                <a href="/" class="table-link">
+                                <a href="<?= BASE ?>/" class="table-link">
                                     <span class="fa-stack">
                                         <i class="fa fa-square fa-stack-2x"></i>
                                         <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
                                     </span>
                                 </a>
-                                <a href="/" class="table-link danger">
+                                <a href="<?= BASE ?>/" class="table-link danger">
                                     <span class="fa-stack">
                                         <i class="fa fa-square fa-stack-2x"></i>
                                         <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
@@ -156,8 +160,7 @@ echo $Component->getMenuSideBarDashboard();
                                 </a>
                             </td>
                         </tr>
-                        <?php
-                            }
+                        <?php }
                         } else {
                             Error("Ainda não existem usuários!");
                         }   
