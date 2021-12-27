@@ -201,8 +201,7 @@ $User->verifyExistLoginUser();
                                     <span class="mr-2 d-none d-lg-inline text-gray-600 small">Seja bem-vindo(a),  <?= $_SESSION['login']['user_name'] ?></span>
                                     <img class="img-profile rounded-circle" src="<?= BASE ?>/src/images/undraw_profile.svg">
                                 </a>
-                                <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                    aria-labelledby="userDropdown">
+                                <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                                     <a class="dropdown-item" href="<?= BASE ?>/painel/profile/profile-user">
                                         <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                         Meus dados
@@ -220,7 +219,7 @@ $User->verifyExistLoginUser();
                                         Suporte
                                     </a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="" data-toggle="modal" data-target="#logoutModal">
+                                    <a class="dropdown-item" href="<?= BASE ?>/logout" data-toggle="modal" data-target="#logoutModal">
                                         <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                         Sair
                                     </a>   

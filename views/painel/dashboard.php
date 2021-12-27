@@ -13,73 +13,10 @@ echo $Component->getBarraMenuOptions();
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
     </div>
-    <p>Conteúdo da dashboard</p>
-    <p>Conteúdo da dashboard</p>
-    <p>Conteúdo da dashboard</p>
-    <p>Conteúdo da dashboard</p>
-    <p>Conteúdo da dashboard</p>
-    <p>Conteúdo da dashboard</p>
-    <p>Conteúdo da dashboard</p>
-    <p>Conteúdo da dashboard</p>
-    <p>Conteúdo da dashboard</p>
-    <p>Conteúdo da dashboard</p>
-    <p>Conteúdo da dashboard</p>
-    <p>Conteúdo da dashboard</p>
-    <p>Conteúdo da dashboard</p>
-    <p>Conteúdo da dashboard</p>
-    <p>Conteúdo da dashboard</p>
-    <p>Conteúdo da dashboard</p>
-    <p>Conteúdo da dashboard</p>
-    <p>Conteúdo da dashboard</p>
-    <p>Conteúdo da dashboard</p>
-    <p>Conteúdo da dashboard</p>
-    <p>Conteúdo da dashboard</p>
-    <p>Conteúdo da dashboard</p>
-    <p>Conteúdo da dashboard</p>
-    <p>Conteúdo da dashboard</p>
-    <p>Conteúdo da dashboard</p>
-    <p>Conteúdo da dashboard</p>
-    <p>Conteúdo da dashboard</p>
-    <p>Conteúdo da dashboard</p>
-    <p>Conteúdo da dashboard</p>
-    <p>Conteúdo da dashboard</p>
-    <p>Conteúdo da dashboard</p>
-    <p>Conteúdo da dashboard</p>
-    <p>Conteúdo da dashboard</p>
-    <p>Conteúdo da dashboard</p>
-    <p>Conteúdo da dashboard</p>
-    <p>Conteúdo da dashboard</p>
-    <p>Conteúdo da dashboard</p>
-    <p>Conteúdo da dashboard</p>
-    <p>Conteúdo da dashboard</p>
-    <p>Conteúdo da dashboard</p>
-    <p>Conteúdo da dashboard</p>
-    <p>Conteúdo da dashboard</p>
-    <p>Conteúdo da dashboard</p>
-    <p>Conteúdo da dashboard</p>
-    <p>Conteúdo da dashboard</p>
-    <p>Conteúdo da dashboard</p>
-    <p>Conteúdo da dashboard</p>
-    <p>Conteúdo da dashboard</p>
-    <p>Conteúdo da dashboard</p>
-    <p>Conteúdo da dashboard</p>
-    <p>Conteúdo da dashboard</p>
-    <p>Conteúdo da dashboard</p>
-    <p>Conteúdo da dashboard</p>
-    <p>Conteúdo da dashboard</p>
-    <p>Conteúdo da dashboard</p>
-    <p>Conteúdo da dashboard</p>
-    <p>Conteúdo da dashboard</p>
-    <p>Conteúdo da dashboard</p>
-    <p>Conteúdo da dashboard</p>
-
+        <p>Conteúdo da dashboard</p>
 </div>
-
 <!-- /.container-fluid -->
-
-
 <?php
-echo $Component->getSuporteDashboard();
 echo $Component->getFooterDashboard();
 ?>
            

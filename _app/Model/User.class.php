@@ -136,6 +136,7 @@ class User {
 			return false;
 		};
 	}
+	
 	public function logout() {
 		session_start();
 		session_destroy();

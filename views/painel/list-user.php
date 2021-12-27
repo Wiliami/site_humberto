@@ -40,7 +40,7 @@ echo $Component->getMenuOptionsDashboard();
                             // if($Read->getResult()) {
                             //     foreach($Read->getResult() as $User) {
                                     ?>
-                                <span class="user-subhead d-block">Administrador</span>                                   
+                                <span class="user-subhead d-block"><?= $User['nada_nada'] ?></span>                                   
                            
                                 </td>
                                 <td>
