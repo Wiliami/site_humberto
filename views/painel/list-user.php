@@ -113,22 +113,19 @@ echo $Component->getMenuSideBarDashboard();
                                 <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="avatar" style="width: 50px; height: 50px">
                                 <a href="<?= BASE ?>/painel/list-user" class="user-link"><?= $User['user_name'] ?></a>
 
-                        <?php }
-                            } else {
-                                Error("Ainda não existe usuários!");
+                    
+                        <!-- Nível de usuário -->
+                        <?php
+                        $Read->FullRead('SELECT * FROM users_levels WHERE level_id = :li', "li={$User['level_id']}");
+                        if($Read->getResult()) {
+                            foreach($Read->getResult() as $User) {
+                                ?>
+                            <span class="user-subhead"><?= $User['level_desc'] ?></span>                                   
+                        <?php
                             }
-                        ?>
-                                <!-- Nível de usuário -->
-                                <?php
-                                $Read->FullRead('SELECT * FROM users_levels WHERE level_id = :li', "li={$User['level_id']}");
-                                if($Read->getResult()) {
-                                    foreach($Read->getResult() as $User) {
-                                        ?>
-                                    <span class="user-subhead"><?= $User['level_desc'] ?></span>                                   
-                                <?php
-                                    }
-                                }
-                                ?>                                
+                        }
+                        ?> 
+
                             </td>
                             <td>
                                 <?= $User['user_create_date'] ?>  
@@ -139,7 +136,7 @@ echo $Component->getMenuSideBarDashboard();
                             <td>
                                 <a href="<?= BASE ?>/"><?= $User['user_email']?></a>
                             </td>
-                            <td style="width: 20%;">
+                            <td>
                                 <a href="<?= BASE ?>/" class="table-link">
                                     <span class="fa-stack">
                                         <i class="fa fa-square fa-stack-2x"></i>
