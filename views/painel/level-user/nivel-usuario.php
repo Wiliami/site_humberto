@@ -19,8 +19,7 @@ $NivelId = $_GET['nivel'];
                             foreach($Read->getResult() as $LevelUser) {
                         ?>
                         <h1 class="h3 mb-0 text-gray-800">Lista de usuários nível: <?= $LevelUser['level_desc'] ?></h1>
-                        <?php
-                            }
+                        <?php }
                         } else {
                             Error("Ainda não existe essa lista de usuários!");
                         }   
@@ -33,7 +32,10 @@ $NivelId = $_GET['nivel'];
                         </thead>
                         <tbody>
                             <?php
-                            $Read->FullRead("SELECT * FROM users WHERE user_level = :ul", "ul={$NivelId}");
+                            $Read->FullRead("SELECT u.*, ul.level_desc
+                                        FROM users u 
+                                        LEFT JOIN users_levels ul ON ul.level_id = u.user_level
+                                        WHERE u.user_level = :ul", "ul={$NivelId}");
                             if($Read->getResult()) {
                                 foreach($Read->getResult() as $Users) {
                             ?>
