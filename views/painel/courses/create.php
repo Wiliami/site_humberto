@@ -11,7 +11,7 @@ echo $Component->getMenuSideBarDashboard();
         <div class="card-header px-4 py-sm-5 py-3">
             <h2>Cadastro de curso!</h2>
             <p class="lead">Preencha os campos e cadastre os cursos</p>
-                <?php
+            <?php
                 $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
                 if(!empty($Post['register_course'])) {
                     $CreateCourse['curso_titulo'] = $Post['title'];
@@ -28,7 +28,7 @@ echo $Component->getMenuSideBarDashboard();
                         //falta os campos serem preenchidos no inputs ou o input recebru informação errada
                     }   
                 }
-                ?>
+                ?>  
         </div>
         <div class="card-body pt-1">
             <div class="row">
@@ -59,7 +59,6 @@ echo $Component->getMenuSideBarDashboard();
                 </div>
             </form>
         </div>
-</div>
 <?php
-// echo $Component->getFooterDashboard();
+echo $Component->getFooterDashboard();
 ?>

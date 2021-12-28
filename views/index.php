@@ -336,7 +336,7 @@
         </section>
     </main>
 <?php
-echo $Component->getSuporteDashboard();
+// echo $Component->getSuporteDashboard();
 echo $Component->getFooterHome();
 ?>
     </body>
