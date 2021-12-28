@@ -29,7 +29,7 @@ echo $Component->getMenuSideBarDashboard();
                     }   
                 }
                 ?>
-    </div>
+        </div>
         <div class="card-body pt-1">
             <div class="row">
                 <div class="col-md-12 pe-2 mb-3">
@@ -59,7 +59,7 @@ echo $Component->getMenuSideBarDashboard();
                 </div>
             </form>
         </div>
-    </div>
+</div>
 <?php
-echo $Component->getFooterDashboard();
+// echo $Component->getFooterDashboard();
 ?>
