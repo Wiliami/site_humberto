@@ -6,13 +6,17 @@ echo $Component->getHeadHtmlDashboard();
 echo $Component->getMenuSideBarDashboard();
 echo $Component->getMenuOptionsDashboard();
 ?>
+<div class="container-fluid">
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Lista de usuários</h1>
+    </div>
+</div>
 <div class="container">
     <div class="row">
         <div class="col-lg-12">
             <div class="main-box clearfix">
                 <div class="table-responsive">
                     <table class="table user-list">
-                    <h2>Lista de usuários</h2>
                         <thead>
                             <tr>
                                 <th><span>#</span></th>

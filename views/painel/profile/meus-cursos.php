@@ -5,23 +5,26 @@ $Component = new Component();
 echo $Component->getHeadHtmlDashboard();
 echo $Component->getMenuSideBarDashboard();
 ?>
-<div style="margin-left: 20px;">
-    <h3>Olá, <?= $_SESSION['login']['user_name'] ?></h3>
-    <span>Meus cursos</span>
+<div class="container-fluid">
+    <!-- ***Page Heading*** -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Olá, <?= $_SESSION['login']['user_name'] ?></h1>
+    </div>
+    <p>Meus cursos</p>
 </div>
 <div class="row gx-5 grid-container" style="margin-left: 8px; margin-top: 20px;">
     <div class="col-lg-4 mb-5">
         <div class="card h-100 shadow border-0">
             <img src="<?= BASE ?>/src/images/page-sobre.jpg" alt="imagem de fundo"/>
-            <div class="card-body p-4">
-                <div class="badge bg-success bg-gradient rounded-pill mb-2 text-white">Curso</div>
-                <a class="text-decoration-none link-dark stretched-link" href="<?= BASE ?>/painel/aulas">
-                    <h5 class="card-title mb-3">Técnicas e Perfomance</h5>
-                </a>
-                <p class="card-text mb-0">Saiba como falar em público e como dominar a timidez na hora
-                    de se expressar para as pessoas.
-                </p>
-            </div>
+                <div class="card-body p-4">
+                    <div class="badge bg-success bg-gradient rounded-pill mb-2 text-white">Curso</div>
+                    <a class="text-decoration-none link-dark stretched-link" href="<?= BASE ?>/painel/aulas">
+                        <h5 class="card-title mb-3">Técnicas e Perfomance</h5>
+                    </a>
+                    <p class="card-text mb-0">Saiba como falar em público e como dominar a timidez na hora
+                        de se expressar para as pessoas.
+                    </p>
+                </div>
             <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
                 <div class="d-flex align-items-end justify-content-between">
                     <div class="d-flex align-items-center">
@@ -37,15 +40,15 @@ echo $Component->getMenuSideBarDashboard();
     </div>
     <div class="col-lg-4 mb-5">
         <div class="card h-100 shadow border-0">
-        <img src="<?= BASE ?>/src/images/speech-post.jpg" alt="imagem de fundo"/>
-            <div class="card-body p-4">
-                <div class="badge bg-success bg-gradient rounded-pill mb-2 text-white">Curso</div>
-                <a class="text-decoration-none link-dark stretched-link" href="<?= BASE ?>/painel/aulas">
-                    <h5 class="card-title mb-3">A Crença e o Mito.</h5>
-                </a>
-                <p class="card-text mb-0">Saiba como falar em público e como dominar a timidez na hora
-                    de se expressar para as pessoas.</p>
-            </div>
+            <img src="<?= BASE ?>/src/images/speech-post.jpg" alt="imagem de fundo"/>
+                <div class="card-body p-4">
+                    <div class="badge bg-success bg-gradient rounded-pill mb-2 text-white">Curso</div>
+                    <a class="text-decoration-none link-dark stretched-link" href="<?= BASE ?>/painel/aulas">
+                        <h5 class="card-title mb-3">A Crença e o Mito.</h5>
+                    </a>
+                    <p class="card-text mb-0">Saiba como falar em público e como dominar a timidez na hora
+                        de se expressar para as pessoas.</p>
+                </div>
             <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
                 <div class="d-flex align-items-end justify-content-between">
                     <div class="d-flex align-items-center">
