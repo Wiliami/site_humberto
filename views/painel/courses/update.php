@@ -76,10 +76,10 @@ echo $Component->getMenuSideBarDashboard();
                         ?>
                     </tbody>
                 </table>
-                </div>                
-            </div>
+            </div>                
         </div>
     </div>
+</div>
 <?php
 echo $Component->getFooterDashboard();
 ?>
