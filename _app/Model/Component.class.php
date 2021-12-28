@@ -300,16 +300,14 @@ class Component {
 
                 <!-- Nav Item - Dashboard -->
                 <!-- <li class="nav-item active">
-                <a class="nav-link" href="' . BASE .'/painel/dashboard">
+                <a class="nav-link" href="' . BASE . '/painel/dashboard">
                         <i class="fas fa-fw fa-tachometer-alt"></i>
                         <span>Painel</span></a> -->
 
                         <!-- Sidebar Toggler (Sidebar) 
                     
                 </li>-->
-                <div class="text-center d-none d-md-inline">
-                    <button class="rounded-circle border-0" id="sidebarToggle"></button>
-                </div>
+                
 
                 <!-- Divider -->
                 <hr class="sidebar-divider">
@@ -379,6 +377,10 @@ class Component {
                     </li>
                 <!-- Divider -->
                 <hr class="sidebar-divider d-none d-md-block">
+                
+                <div class="text-center d-none d-md-inline">
+                    <button class="rounded-circle border-0" id="sidebarToggle"></button>
+                </div>
 
             </ul>
             <!-- End of Sidebar -->

@@ -1,20 +1,11 @@
 <?php
 $User = new User();
 $User->verifyExistLoginUser();
+$Component = new Component();
+echo $Component->getHeadHtmlDashboard();
+echo $Component->getMenuSideBarDashboard();
 ?>
-<!DOCTYPE html>
-<html lang="pt-BR">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="description" content="">
-        <meta name="author" content="">
-        <title>Painel | Aulas</title>
-        <link href="<?= BASE ?>/res/site/css/sb-admin-2.min.css" rel="stylesheet">
-        <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
-    </head>
-    <body id="page-top">
+
         <div id="wrapper">
             <ul class="nav-list navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
                 <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 mw-100 navbar-search">
@@ -251,8 +242,21 @@ $User->verifyExistLoginUser();
                     <div class="embed-responsive embed-responsive-16by9">
                         <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/137857207" allowfullscreen></iframe>
                     </div>
-                <?php 
-                $Component = new Component();
-                echo $Component->getFooterDashboard();
-                ?>
-</html>
+
+
+                    <!-- Conteúdo ou informações referente a aula -->
+                    <div class="container-fluid">
+                        <!-- ***Page Heading*** -->
+                        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                            <h1 class="h3 mb-0 text-gray-800">Material de apoio</h1>
+                        </div>
+                            <p class="h3 mb-0 text-gray-800">Como descrever uma metodologia de um curso?</p>
+                            <p>
+                            Metodologia significa “caminho ou via para a realização de algo”. Ou seja, é o processo utilizado para chegar a algum conhecimento. Metodologia é também o estudo das melhores formas de pesquisa para cada área do conhecimento.</p>
+
+                            <p>
+                            Metodologia significa “caminho ou via para a realização de algo”. Ou seja, é o processo utilizado para chegar a algum conhecimento. Metodologia é também o estudo das melhores formas de pesquisa para cada área do conhecimento.</p>
+                    </div>
+<?php 
+echo $Component->getFooterDashboard();
+?>
