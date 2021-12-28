@@ -11,8 +11,8 @@ echo $Component->getMenuSideBarDashboard();
     </div>
     <p>Meus cursos</p>
 </div>
-<div class="container" style="margin-left: 8px; margin-top: 20px;">
-    <div class="row">
+<div class="row gx-5 grid-container" style="margin-left: 8px; margin-top: 20px;">
+    <div class="col-lg-4 mb-5">
         <div class="card h-100 shadow border-0">
             <img src="<?= BASE ?>/src/images/page-sobre.jpg" alt="imagem de fundo"/>
                 <div class="card-body p-4">
