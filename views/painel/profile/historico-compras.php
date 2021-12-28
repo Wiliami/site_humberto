@@ -6,8 +6,11 @@ echo $Component->getHeadHtmlDashboard();
 echo $Component->getMenuSideBarDashboard();  
 ?>
 <div class="container-fluid">
-    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Histórico de compras</h1>
+        <span> 
+            <i class="fas fa-shopping-cart"></i>
+        </span>
+    <div class="d-sm-flex align-items-center justify-content-start mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Histórico | Compras de cursos</h1>
     </div>
 </div>
 <div class="container">
@@ -18,10 +21,11 @@ echo $Component->getMenuSideBarDashboard();
                     <table class="table user-list">
                         <thead>
                             <tr>
-                                <th><span>Curso</span></th>
-                                <th><span>Data</span></th>
-                                <th class="text-center"><span>Valor Pago</span></th>
-                                <th><span>Usuário</span></th>
+                                <th><span>Nome do curso</span></th>
+                                <th><span>Data da compra</span></th>
+                                <th class="text-center"><span>Valor do curso</span></th>
+                                <th><span>Email</span></th>
+                                <th><span>Opções</span></th>
                                 <th>&nbsp;</th>
                             </tr>
                         </thead>
@@ -42,7 +46,7 @@ echo $Component->getMenuSideBarDashboard();
                                     <?= $User['user_create_date'] ?>  
                                 </td>
                                 <td class="text-center">
-                                    <span class="label label-default">Inativo</span>
+                                    50,00 Reais
                                 </td>
                                 <td>
                                     <a href="/"><?= $User['user_email']?></a>
