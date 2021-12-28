@@ -5,13 +5,17 @@ $Component = new Component();
 echo $Component->getHeadHtmlDashboard();
 echo $Component->getMenuSideBarDashboard();
 ?>
+<div class="container-fluid">
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Nível de usuários</h1>
+    </div>
+</div>
 <div class="container">
     <div class="row">
         <div class="col-lg-12">
             <div class="main-box clearfix">
                 <div class="table-responsive">
                     <table class="table user-list">
-                        <h2>Nível de usuários</h2>
                         <thead>
                             <tr>
                                 <th><span>Usuário</span></th>
@@ -34,7 +38,7 @@ echo $Component->getMenuSideBarDashboard();
                                     <?= $Level['level_desc'] ?>
                                 </td>
                                 <td>
-                                    <a href="<?= BASE ?>/painel/level-user/nivel-usuario&nivel=<?= $Level['level_id']?>" class="table-link" title="Pesquisar usuários desse nível">
+                                    <a href="<?= BASE ?>/painel/level-user/nivel-usuario&nivel=<?= $Level['level_id']?>" class="table-link" title="Pesquisar usuários do nível <?= $Level['level_desc'] ?>">
                                         <span class="fa-stack">
                                             <i class="fas fa-search"></i>
                                         </span>

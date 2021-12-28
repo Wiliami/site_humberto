@@ -7,10 +7,12 @@ echo $Component->getMenuSideBarDashboard();
 ?>
 <div class="container-fluid">
     <!-- ***Page Heading*** -->
+    <span> 
+        <i class="fas fa-address-book"></i>
+    </span>
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Aprovação de cursos</h1>
+        <h1 class="h3 mb-0 text-gray-800">Cursos | Aprovação de cursos</h1>
     </div>
-        <p>Cursos para serem aprovados</p>
 </div>
 <div class="container-fluid">
     <div class="row">
@@ -20,30 +22,26 @@ echo $Component->getMenuSideBarDashboard();
                     <table class="table user-list">
                         <thead>
                             <tr>
-                                <th><span>*</span></th>
                                 <th><span>Nome do curso</span></th>
                                 <th><span>Data da compra</span></th>
-                                <th class="text-center"><span>Status</span></th>
+                                <th class="text-center"><span>Status da compra</span></th>
                                 <th><span>Usuário</span></th>
+                                <th><span>Opções</span></th>
                                 <th>&nbsp;</th>
                             </tr>
                         </thead>
                         <tbody>
                         <?php
                         $Read = new Read();
-                        $Read->FullRead("SELECT * FROM users");
+                        $Read->FullRead("SELECT c.*, u.user_name FROM cursos c LEFT JOIN users u ON u.user_id");
                         if($Read->getResult()) {
                             foreach($Read->getResult() as $User) {
                                 ?> 
                         <tr>
-                            <td>
-                                <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="avatar" style="width: 50px; height: 50px">                        
-                            </td>
-
-                            <td><a href="/" class="user-link">Nome do curso</a></td>
+                            <td><a href="/" class="user-link"><?= $User['curso_titulo'] ?></a></td>
 
                             <td>
-                                <?= $User['user_create_date'] ?>  
+                                <?= $User['curso_create_date'] ?>  
                             </td>
                             <td class="text-center">
                                 <span class="label label-default">Aguardando aprovação</span>
@@ -73,7 +71,7 @@ echo $Component->getMenuSideBarDashboard();
                             </td>
                         </tr>
 
-                                <?php
+                        <?php
                             }
                         } else {
                             Error("Ainda não existem usuários!");

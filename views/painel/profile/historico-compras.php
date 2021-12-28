@@ -32,7 +32,7 @@ echo $Component->getMenuSideBarDashboard();
                         <tbody>
                             <?php
                             $Read = new Read();
-                            $Read->FullRead("SELECT c.*, u.user_name FROM cursos c LEFT JOIN users u ON u.user_id = u.user_name");
+                            $Read->FullRead("SELECT c.*, u.user_name FROM cursos c LEFT JOIN users u ON u.user_id");
                             if($Read->getResult()) {
                                 foreach($Read->getResult() as $Cursos) {
                                     ?>
