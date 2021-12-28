@@ -6,29 +6,18 @@ $Component = new Component();
 echo $Component->getHeadHtmlDashboard();
 echo $Component->getMenuSideBarDashboard();
 ?>
+<!-- <div class="container-fluid">
+
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Create | Cadastrar cursos</h1>
+    </div>
+        <p>Página de cadastro de cursos</p>
+</div>
+
 <div class="col-lg-7">
-    <form class="p-3" id="contact-form" method="post">
+    <form>
         <div class="card-header px-4 py-sm-5 py-3">
-            <h2>Cadastro de curso!</h2>
-            <p class="lead">Preencha os campos e cadastre os cursos</p>
-            <?php
-                $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
-                if(!empty($Post['register_course'])) {
-                    $CreateCourse['curso_titulo'] = $Post['title'];
-                    $CreateCourse['curso_descricao'] = $Post['description'];
-                    $CreateCourse['curso_categoria'] = $Post['category'];
-                    $User = new User();
-                    $User->createCourse($CreateCourse);
-                    if($User->getResult()) {
-                        header('Location: ' . BASE . '/painel/courses/update');
-                        Error($User->getError());
-                        // cadastro realizado com sucesso
-                    } else {
-                        Error($User->getError(), 'warning');
-                        //falta os campos serem preenchidos no inputs ou o input recebru informação errada
-                    }   
-                }
-                ?>  
+            
         </div>
         <div class="card-body pt-1">
             <div class="row">
@@ -53,12 +42,67 @@ echo $Component->getMenuSideBarDashboard();
                     </div>
                     <div class="row">
                         <div class="col-md-6 text-end ms-auto">
-                            <input type="submit" class="btn bg-gradient-success mb-0" name="register_course" value="Cadastrar">
+                            <input type="submit" class="btn btn-primary mb-2" name="register_course" value="Cadastrar">
                         </div>
                     </div>
                 </div>
             </form>
+        </div> -->
+
+
+        
+
+
+
+        <div class="container-fluid">
+            <!-- ***Page Heading*** -->
+            <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                <h1 class="h3 mb-0 text-gray-800">Create | Cadastrar cursos</h1>
+            </div>
+                <p>Página de cadastro de cursos</p>
         </div>
+
+        <form method="post">
+            <div class="card-header px-4 py-sm-5 py-3">
+                <?php
+                $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+                if(!empty($Post['register_course'])) {
+                    $CreateCourse['curso_titulo'] = $Post['title'];
+                    $CreateCourse['curso_descricao'] = $Post['description'];
+                    $CreateCourse['curso_categoria'] = $Post['category'];
+                    $User = new User();
+                    $User->createCourse($CreateCourse);
+                    if($User->getResult()) {
+                        header('Location: ' . BASE . '/painel/courses/update');
+                        Error($User->getError());
+                        // cadastro realizado com sucesso
+                    } else {
+                        Error($User->getError(), 'warning');
+                        //falta os campos serem preenchidos no inputs ou o input recebru informação errada
+                    }   
+                }
+                ?>
+            </div>
+            <div class="form-group row" style="margin-left: 20px;">
+                <label for="inputPassword" class="col-sm-2 col-form-label">Título</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" placeholder="Título do curso" name="title" id="inputPassword" value="<?= isset($Post['title'])? $Post['title']: '' ?>">
+                </div>
+            </div>
+            <div class="form-group row" style="margin-left: 20px;">
+                <label for="inputPassword" class="col-sm-2 col-form-label">Descriçao</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" placeholder="Descrição do curso" name="description" id="inputPassword" value="<?= isset($Post['description'])? $Post['description']: '' ?>">     
+                </div>
+            </div>
+            <div class="form-group row" style="margin-left: 20px;">
+                <label for="inputPassword" class="col-sm-2 col-form-label">Categoria</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputPassword" placeholder="Selecione uma categoria" name="category" value="<?= isset($Post['category'])? $Post['category']: '' ?>">
+                </div>
+            </div>
+            <input type="submit" class="btn btn-primary mb-2" name="register_course" value="Cadastrar" style="margin: 30px;">
+        </form>
 <?php
 echo $Component->getFooterDashboard();
 ?>

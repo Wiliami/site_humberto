@@ -7,7 +7,6 @@ echo $Component->getMenuSideBarDashboard();
 echo $Component->getBarraMenuOptions();
 ?>
 <!-- Conteúdo que vai ser exibido na dashboard -->
-<!-- ***Begin Page Content*** -->
 <div class="container-fluid">
     <!-- ***Page Heading*** -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
@@ -15,7 +14,7 @@ echo $Component->getBarraMenuOptions();
     </div>
         <p>Conteúdo da dashboard</p>
 </div>
-<!-- /.container-fluid -->
+
 <?php
 echo $Component->getFooterDashboard();
 ?>
