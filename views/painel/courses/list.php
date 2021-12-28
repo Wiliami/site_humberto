@@ -6,12 +6,21 @@ echo $Component->getHeadHtmlDashboard();
 echo $Component->getMenuSideBarDashboard();
 ?>
 <div class="container">
-    <div class="col-lg-7">
+    <!-- <div class="col-lg-7">
         <div class="card-header">
             <h2>Lista de cursos</h2>
             <p class="lead">Cursos</p>
         </div>
+    </div> -->
+
+    <div class="container-fluid">
+        <!-- ***Page Heading*** -->
+        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800">Lista de cursos</h1>
+        </div>
+            <p>Cursos</p>
     </div>
+
     <div class="row">
         <div class="col-lg-12">
             <div class="main-box clearfix">
@@ -19,8 +28,8 @@ echo $Component->getMenuSideBarDashboard();
                     <table class="table user-list">
                         <thead>
                             <tr>
-                                <th><span>Título</span></th>
-                                <th><span>Criado</span></th>
+                                <th><span>Nome do curso</span></th>
+                                <th><span>Data de cadastro</span></th>
                                 <th class="text-center"><span>Descrição</span></th>
                                 <th><span>Opções</span></th>
                                 <th>&nbsp;</th>
@@ -46,19 +55,19 @@ echo $Component->getMenuSideBarDashboard();
                                     <a href="/"><?= $Cursos['curso_descricao'] ?></a>
                                 </td>
                                 <td>
-                                    <a href="<?= BASE ?>/" class="table-link" title="Pesquisar usuários">
+                                    <!-- <a href="<?= BASE ?>/" class="table-link" title="Pesquisar usuários">
                                         <span class="fa-stack">
                                             <i class="fa fa-square fa-stack-2x"></i>
                                             <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
                                         </span>
-                                    </a>
-                                    <a href="<?= BASE ?>/painel/courses/update" class="table-link" title="Atualizar informações de curso">
+                                    </a> -->
+                                    <a href="<?= BASE ?>/painel/courses/update" class="table-link" title="Atualizar curso">
                                         <span class="fa-stack">
                                             <i class="fa fa-square fa-stack-2x"></i>
                                             <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
                                         </span>
                                     </a>
-                                    <a href="<?= BASE ?>/painel/courses/delete" class="table-link danger" title="Excluir esse curso">
+                                    <a href="<?= BASE ?>/painel/courses/delete" class="table-link danger" title="Excluir curso">
                                         <span class="fa-stack">
                                             <i class="fa fa-square fa-stack-2x"></i>
                                             <i class="fa fa-trash-o fa-stack-1x fa-inverse" text="ola"></i>

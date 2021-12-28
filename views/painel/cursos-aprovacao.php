@@ -5,39 +5,43 @@ $Component = new Component();
 echo $Component->getHeadHtmlDashboard();
 echo $Component->getMenuSideBarDashboard();
 ?>
-
-
+<div class="container-fluid">
+    <!-- ***Page Heading*** -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Aprovação de cursos</h1>
+    </div>
+        <p>Cursos para serem aprovados</p>
+</div>
 <div class="container-fluid">
     <div class="row">
         <div class="col-lg-12">
-        <div class="main-box clearfix">
-            <div class="table-responsive">
-                <h3>Aprovação de cursos</h3>
-                <table class="table user-list">
-                    <thead>
-                        <tr>
-                            <th><span>Curso</span></th>
-                            <th><span>Data da compra</span></th>
-                            <th class="text-center"><span>Status</span></th>
-                            <th><span>Usuário</span></th>
-                            <th>&nbsp;</th>
-                        </tr>
-                    </thead>
-                    <tbody>
+            <div class="main-box clearfix">
+                <div class="table-responsive">
+                    <table class="table user-list">
+                        <thead>
+                            <tr>
+                                <th><span>*</span></th>
+                                <th><span>Nome do curso</span></th>
+                                <th><span>Data da compra</span></th>
+                                <th class="text-center"><span>Status</span></th>
+                                <th><span>Usuário</span></th>
+                                <th>&nbsp;</th>
+                            </tr>
+                        </thead>
+                        <tbody>
                         <?php
                         $Read = new Read();
                         $Read->FullRead("SELECT * FROM users");
                         if($Read->getResult()) {
                             foreach($Read->getResult() as $User) {
                                 ?> 
-                        
-                                <tr>
+                        <tr>
                             <td>
-                                <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="avatar" style="width: 50px; height: 50px">
-                                <a href="/" class="user-link">Nome do curso</a>
-                                
-                                <span class="user-subhead"></span>
+                                <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="avatar" style="width: 50px; height: 50px">                        
                             </td>
+
+                            <td><a href="/" class="user-link">Nome do curso</a></td>
+
                             <td>
                                 <?= $User['user_create_date'] ?>  
                             </td>
@@ -114,10 +118,10 @@ echo $Component->getMenuSideBarDashboard();
                             </td>
                         </tr> -->
                         
-                    </tbody>
-                </table>
-            </div>                
-        </div>
+                        </tbody>
+                    </table>
+                </div>                
+            </div>
         </div>
     </div>  
 </div>
