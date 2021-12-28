@@ -7,10 +7,10 @@ echo $Component->getMenuSideBarDashboard();
 ?>
 <div class="container-fluid">
     <!-- ***Page Heading*** -->
-    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <div class="d-sm-flex align-items-center justify-content-start mb-4">
         <h1 class="h3 mb-0 text-gray-800">Olá, <?= $_SESSION['login']['user_name'] ?></h1>
+        <p>Meus cursos</p>
     </div>
-    <p>Meus cursos</p>
 </div>
 <div class="row gx-5 grid-container" style="margin-left: 8px; margin-top: 20px;">
     <div class="col-lg-4 mb-5">

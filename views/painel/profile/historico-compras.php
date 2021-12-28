@@ -6,9 +6,9 @@ echo $Component->getHeadHtmlDashboard();
 echo $Component->getMenuSideBarDashboard();  
 ?>
 <div class="container-fluid">
-        <span> 
-            <i class="fas fa-shopping-cart"></i>
-        </span>
+    <span> 
+        <i class="fas fa-shopping-cart"></i>
+    </span>
     <div class="d-sm-flex align-items-center justify-content-start mb-4">
         <h1 class="h3 mb-0 text-gray-800">Histórico | Compras de cursos</h1>
     </div>
@@ -24,7 +24,7 @@ echo $Component->getMenuSideBarDashboard();
                                 <th><span>Nome do curso</span></th>
                                 <th><span>Data da compra</span></th>
                                 <th class="text-center"><span>Valor do curso</span></th>
-                                <th><span>Email</span></th>
+                                <th><span>Usuário</span></th>
                                 <th><span>Opções</span></th>
                                 <th>&nbsp;</th>
                             </tr>
@@ -32,24 +32,22 @@ echo $Component->getMenuSideBarDashboard();
                         <tbody>
                             <?php
                             $Read = new Read();
-                            $Read->FullRead("SELECT * FROM users");
+                            $Read->FullRead("SELECT c.*, u.user_name FROM cursos c LEFT JOIN users u ON u.user_id = u.user_name");
                             if($Read->getResult()) {
-                                foreach($Read->getResult() as $User) {
+                                foreach($Read->getResult() as $Cursos) {
                                     ?>
                                     <tr>
                                 <td>
-                                    <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="avatar" style="width: 50px; height: 50px">
-                                    <a href="/" class="user-link"><?= $User['user_name'] ?></a>
-                                    <span class="user-subhead"><?= $User['user_id'] ?></span>
+                                    <span class="user-subhead"><?= $Cursos['curso_titulo'] ?></span>
                                 </td>
                                 <td>
-                                    <?= $User['user_create_date'] ?>  
+                                    <?= $Cursos['curso_create_date'] ?>  
                                 </td>
                                 <td class="text-center">
-                                    50,00 Reais
+                                    50,00 reais
                                 </td>
                                 <td>
-                                    <a href="/"><?= $User['user_email']?></a>
+                                    <a href="/"><?= $Cursos['user_name'] ?></a>
                                 </td>
                                 <td style="width: 20%;">
                                     <a href="/" class="table-link">

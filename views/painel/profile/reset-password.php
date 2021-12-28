@@ -5,7 +5,7 @@ $Component = new Component();
 echo $Component->getHeadHtmlDashboard();
 echo $Component->getMenuSideBarDashboard();
 ?>
-    <form action="" method="post">
+<form action="" method="post">
     <?php 
     $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
         if(!empty($Post['reset-password'])) {
@@ -22,15 +22,13 @@ echo $Component->getMenuSideBarDashboard();
         }   
     }  
     ?>
-
     <div class="container-fluid">
-        <!-- ***Page Heading*** -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Alterar senha</h1>
         </div>
     </div>
     <div class="form-group row" style="margin-left: 20px;">
-        <label for="inputPassword" class="col-sm-2 col-form-label">Senha antiga</label>
+        <label for="inputPassword" class="col-sm-2 col-form-label">Senha atual</label>
         <div class="col-sm-9">
             <input type="password" class="form-control" id="inputPassword1" name="current-pass" <?= isset($Post['current-passs']) ? $Post['current-pass']: ''?> > 
         </div>
@@ -48,8 +46,7 @@ echo $Component->getMenuSideBarDashboard();
         </div>
     </div>
     <input type="submit" class="btn btn-primary mb-2" name="reset-password" value="Alterar senha" style="margin-left: 20px;">
-    </form>
-    
+</form>
 <?php
 echo $Component->getFooterDashboard();
 ?>
