@@ -6,13 +6,12 @@ echo $Component->getHeadHtmlDashboard();
 echo $Component->getMenuSideBarDashboard();
 ?>
 <div class="container-fluid">
-    <i class="fas fa-book"></i>
-    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Lista de cursos</h1>
+    <div class="d-sm-flex align-items-center justify-content-start mb-4">
+        <i class="fas fa-book"></i>
+        <h1 class="h3 mb-0 text-gray-800 ml-2 ">Lista de cursos</h1>
     </div>
         <p>Cursos</p>
 </div>
-
 <div class="row">
     <div class="col-lg-12">
         <div class="main-box clearfix">

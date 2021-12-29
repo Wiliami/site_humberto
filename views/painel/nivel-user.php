@@ -6,9 +6,9 @@ echo $Component->getHeadHtmlDashboard();
 echo $Component->getMenuSideBarDashboard();
 ?>
 <div class="container-fluid">
-    <i class="fas fa-users"></i>
-    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Nível de usuários</h1>
+    <div class="d-sm-flex align-items-center justify-content-start mb-4">
+        <i class="fas fa-users"></i>
+        <h1 class="h3 mb-0 text-gray-800 ml-2">Nível de usuários</h1>
     </div>
 </div>
 <div class="container">

@@ -6,11 +6,9 @@ echo $Component->getHeadHtmlDashboard();
 echo $Component->getMenuSideBarDashboard();  
 ?>
 <div class="container-fluid">
-    <span> 
-        <i class="fas fa-shopping-cart"></i>
-    </span>
     <div class="d-sm-flex align-items-center justify-content-start mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Histórico | Compras de cursos</h1>
+        <i class="fas fa-shopping-cart"></i>
+        <h1 class="h3 mb-0 text-gray-800 ml-2">Histórico | Compras de cursos</h1>
     </div>
 </div>
 <div class="container">

@@ -23,7 +23,7 @@ echo $Component->getMenuSideBarDashboard();
                     $Read->FullRead("SELECT * FROM cursos");
                     if($Read->getResult()) {
                         foreach($Read->getResult() as $Cursos) {
-                    ?>
+                            ?>
                         <h5 class="card-title mb-3"><?= $Cursos['curso_titulo'] ?></h5>
                     </a>
                     <p class="card-text mb-0"><?= $Cursos['curso_descricao'] ?></p>
@@ -32,32 +32,22 @@ echo $Component->getMenuSideBarDashboard();
                     <div class="d-flex align-items-center">
                         <img class="rounded-circle me-3" src="https://dummyimage.com/40x40/ced4da/6c757d" alt="..." />
                         <div class="small">
-                            <div class="fw-bold">unitbrasil</div>
-                            <div class="text-muted">March 12, 2021</div>
+                            <div class="fw-bold"><?= $Cursos['curso_categoria'] ?></div>
+                            <div class="text-muted"><?= $Cursos['curso_create_date'] ?></div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div> 
+</div>
     <?php 
         }
     } else {
         Error("Ainda não existem cursos!");
     }
-    ?>
-</div>
-
-    
-
-
-
-   
-
-
-
-    
-</div> 
+    ?>   
 <?php
 echo $Component->getFooterDashboard();
 ?>

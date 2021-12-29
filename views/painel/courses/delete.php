@@ -6,10 +6,9 @@ echo $Component->getHeadHtmlDashboard();
 echo $Component->getMenuSideBarDashboard();
 ?>
 <div class="container-fluid">
-    <!-- ***Page Heading*** -->
-    <i class="fas fa-trash-alt"></i>
-    <div class="d-sm-flex align-items-center mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Excluir | Excluir cursos</h1>
+    <div class="d-sm-flex align-items-center justify-content-start mb-4">
+        <i class="fas fa-trash-alt"></i>
+        <h1 class="h3 mb-0 text-gray-800 ml-2">Excluir | Excluir cursos</h1>
     </div>
         <p>Excluir cursos</p>
 </div>
