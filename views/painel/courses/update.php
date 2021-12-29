@@ -7,9 +7,9 @@ echo $Component->getMenuSideBarDashboard();
 ?>
 <div class="container-fluid">
     <span>
-        <i class="fas fa-map-marker-edit"></i>
+        <i class="fas fa-pen-square"></i>
     </span>
-    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <div class="d-sm-flex align-items-center justify-content-between mb-2">
         <h1 class="h3 mb-0 text-gray-800">Cursos | Atualizar cursos</h1>
     </div>
 </div>
@@ -21,10 +21,10 @@ echo $Component->getMenuSideBarDashboard();
                 <table class="table user-list">
                     <thead>
                         <tr>
-                            <th><span>Nome do curso</span></th>
-                            <th><span>Criado</span></th>
-                            <th class="text-center"><span>Descrição do curso</span></th>
-                            <th><span>Opções</span></th>
+                            <th><span class="btn btn-warning mb-2">Nome do curso</span></th>
+                            <th><span class="btn btn-warning mb-2">Criado</span></th>
+                            <th class="text-center"><span class="btn btn-warning mb-2">Descrição do curso</span></th>
+                            <th><span class="btn btn-warning mb-2">Opções</span></th>
                             <th>&nbsp;</th>
                         </tr>
                     </thead>
@@ -35,17 +35,15 @@ echo $Component->getMenuSideBarDashboard();
                         if($Read->getResult()) {
                             foreach($Read->getResult() as $Cursos) {
                                 ?>
-                                <tr>
+                        <tr>
                             <td>
-                                <a href="/" class="user-link"><?= $Cursos['curso_titulo'] ?></a>
-                                <span class="user-subhead"></span>
+                                <span class="btn btn-light mb-2"><?= $Cursos['curso_titulo'] ?></span>
                             </td>
                             <td>
-                                <?= $Cursos['curso_create_date'] ?>  
+                                <span class="btn btn-light mb-2"><?= $Cursos['curso_create_date'] ?></span>
                             </td>
-                            
                             <td>
-                                <a href="/"><?= $Cursos['curso_descricao'] ?></a>
+                                <span class="btn btn-light mb-2"><?= $Cursos['curso_descricao'] ?></span>
                             </td>
                             <td>
                                 <a href="/" class="table-link">

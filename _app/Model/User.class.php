@@ -45,13 +45,13 @@ class User {
 	}
 	public function createCourse($dataCourse) {
 		if(empty($dataCourse["curso_titulo"])) {
-				$this->Error = "Preencha com um título!";
+				$this->Error = "O curso precisa de um nome!";
 				$this->Result = false;
 			} elseif (empty($dataCourse["curso_descricao"])) {
-				$this->Error = "Preencha com uma descrição!";
+				$this->Error = "O curso precisa de uma descrição!";
 				$this->Result = false;	
 			} elseif (empty($dataCourse["curso_categoria"])) {
-				$this->Error = "Selecione uma categoria para o curso!";
+				$this->Error = "Por favor, selecione uma categoria para o curso!";
 				$this->Result = false;
 			}  else {
 				$dataCourse['curso_create_date'] = date('Y-m-d H:i:s'); // dia que o curso foi cadastrado

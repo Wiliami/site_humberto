@@ -45,7 +45,7 @@ echo $Component->getMenuSideBarDashboard();
             <input typ  e="password" class="form-control" id="inputPassword3" name="confirm-new-pass"  <?= isset($Post['confirm-new-pass']) ? $Post['confirm-new-pass']: ''?>>
         </div>
     </div>
-    <input type="submit" class="btn btn-primary mb-2" name="reset-password" value="Alterar senha" style="margin-left: 20px;">
+    <input type="submit" class="btn btn-success mb-2" name="reset-password" value="Alterar senha" style="margin-left: 20px;">
 </form>
 <?php
 echo $Component->getFooterDashboard();

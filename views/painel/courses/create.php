@@ -78,30 +78,40 @@ echo $Component->getMenuSideBarDashboard();
                         // cadastro realizado com sucesso
                     } else {
                         Error($User->getError(), 'warning');
-                        //falta os campos serem preenchidos no inputs ou o input recebru informação errada
+                        //falta os campos serem preenchidos no inputs ou o input recebeu informação errada
                     }   
                 }
                 ?>
             </div>
-            <div class="form-group row" style="margin-left: 20px;">
-                <label for="inputPassword" class="col-sm-1 col-form-label btn btn-success mb-2">Título</label>
+            <div class="form-group row ml-4">
+                <label for="inputPassword" class="col-sm-1 col-form-label btn btn-warning mb-2">Nome</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" placeholder="Título do curso" name="title" id="inputPassword" value="<?= isset($Post['title'])? $Post['title']: '' ?>">
+                    <input type="text" class="form-control" placeholder="Nome do curso" name="title" id="inputPassword" value="<?= isset($Post['title'])? $Post['title']: '' ?>">
                 </div>
             </div>
-            <div class="form-group row" style="margin-left: 20px;">
-                <label for="inputPassword" class="col-sm-1 col-form-label btn btn-success mb-2">Descrição</label>
+            <div class="form-group row ml-4">
+                <label for="inputPassword" class="col-sm-1 col-form-label btn btn-warning mb-2">Descrição</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" placeholder="Descrição do curso" name="description" id="inputPassword" value="<?= isset($Post['description'])? $Post['description']: '' ?>">     
                 </div>
             </div>
-            <div class="form-group row" style="margin-left: 20px;">
-                <label for="inputPassword" class="col-sm-1 col-form-label btn btn-success mb-2">Categoria</label>
+            <div class="form-group row ml-4">
+                <label for="inputPassword" class="col-sm-1 col-form-label btn btn-warning mb-2">Categoria</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputPassword" placeholder="Selecione uma categoria" name="category" value="<?= isset($Post['category'])? $Post['category']: '' ?>">
+                    <!-- <input type="text" class="form-control exampleFormControlSelect1" id="exampleFormControlSelect1" placeholder="Selecione uma categoria" name="category" value="<?= isset($Post['category'])? $Post['category']: '' ?>"> -->
+                    <select class="form-control" id="exampleFormControlSelect1" name="category">
+                        <option>Educação</option>
+                        <option>Motivacional</option>
+                        <option>Coaching</option>
+                        <option>Economia</option>
+                        <option>Casamento</option>
+                        <option>Filmes e séries</option>
+                        <option>Cultura</option>
+
+                    </select>
                 </div>
             </div>
-            <input type="submit" class="btn btn-warning mb-2" name="register_course" value="Cadastrar curso" style="margin: 30px;">
+            <input type="submit" class="btn btn-success mb-2 ml-4" name="register_course" value="Cadastrar curso">
         </form> 
 <?php
 echo $Component->getFooterDashboard();

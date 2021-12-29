@@ -4,69 +4,68 @@ $User->verifyExistLoginUser();
 $Component = new Component();
 echo $Component->getHeadHtmlDashboard();
 echo $Component->getMenuSideBarDashboard();
-?>  
-<div class="container">
-    <div class="col-lg-7">
-        <div class="card-header py-sm-5 py-3">
-            <h2>Excluir cursos</h2>
-            <p class="lead">Excluir cursos</p>
+?>
+<div class="container-fluid">
+    <!-- ***Page Heading*** -->
+    <i class="fas fa-trash-alt"></i>
+    <div class="d-sm-flex align-items-center mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Excluir | Excluir cursos</h1>
+    </div>
+        <p>Excluir cursos</p>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="main-box clearfix">
+            <div class="table-responsive">
+                <table class="table user-list">
+                    <thead>
+                        <tr>
+                        <th><span class="btn btn-warning mb-2">Nome do curso</span></th>
+                        <th><span class="btn btn-warning mb-2">Data da criação</span></th>
+                        <th class="text-center"><span class="btn btn-warning mb-2">Descrição</span></th>
+                        <th><span class="btn btn-warning mb-2">Excluir</span></th>
+                        <th>&nbsp;</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <?php
+                    $Read = new Read();
+                    $Read->FullRead("SELECT * FROM cursos");
+                    if($Read->getResult()) {
+                        foreach($Read->getResult() as $Cursos) {
+                            ?>
+                            <tr>
+                        <td>
+                            <span class="btn btn-light mb-2"><?= $Cursos['curso_titulo'] ?></span>
+                        </td>
+                        <td>
+                            <span class="btn btn-light mb-2"><?= $Cursos['curso_create_date'] ?></span>
+                        </td>
+                        <td>
+                            <span class="btn btn-light mb-2"><?= $Cursos['curso_descricao'] ?></span>
+                        </td>
+                        <td>
+                            <a href="/" class="table-link danger">
+                                <span class="fa-stack">
+                                    <i class="fa fa-square fa-stack-2x"></i>
+                                    <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </td>
+                    </tr>
+                    <?php
+                        }
+                    } else {
+                        Error("Ainda não existem usuários!");
+                    }   
+                    ?>
+                    </tbody>
+                </table>
+            </div>                
         </div>
     </div>
-    <div class="row">
-        <div class="col-lg-12">
-            <div class="main-box clearfix">
-                <div class="table-responsive">
-                    <table class="table user-list">
-                        <thead>
-                            <tr>
-                            <th><span>Título</span></th>
-                            <th><span>Criado</span></th>
-                            <th class="text-center"><span>Descrição</span></th>
-                            <th><span>Excluir</span></th>
-                            <th>&nbsp;</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        <?php
-                        $Read = new Read();
-                        $Read->FullRead("SELECT * FROM cursos");
-                        if($Read->getResult()) {
-                            foreach($Read->getResult() as $Cursos) {
-                                ?>
-                                <tr>
-                            <td>
-                                <a href="/" class="user-link"><?= $Cursos['curso_titulo'] ?></a>
-                                <span class="user-subhead"></span>
-                            </td>
-                            <td>
-                                <?= $Cursos['curso_create_date'] ?>  
-                            </td>
-                            
-                            <td>
-                                <a href="/"><?= $Cursos['curso_descricao'] ?></a>
-                            </td>
-                            <td>
-                                <a href="/" class="table-link danger">
-                                    <span class="fa-stack">
-                                        <i class="fa fa-square fa-stack-2x"></i>
-                                        <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                            </td>
-                        </tr>
-                        <?php
-                            }
-                        } else {
-                            Error("Ainda não existem usuários!");
-                        }   
-                        ?>
-                        </tbody>
-                    </table>
-                </div>                
-            </div>
-        </div>
-    </div>  
-</div>
+</div>  
 <?php
 echo $Component->getFooterDashboard();
 ?>
