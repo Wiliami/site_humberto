@@ -7,7 +7,7 @@ echo $Component->getMenuSideBarDashboard();
 ?>
 <div class="container-fluid">
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="">Nível de usuários</h1>
+        <h1 class="h3 mb-0 text-gray-800">Nível de usuários</h1>
     </div>
 </div>
 <div class="container">
