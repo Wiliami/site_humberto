@@ -19,10 +19,10 @@ echo $Component->getMenuSideBarDashboard();
                     <table class="table user-list">
                         <thead>
                             <tr>
-                            <th><span>Nome do curso</span></th>
-                            <th><span>Data da compra</span></th>
-                            <th class="text-center"><span>Valor do curso</span></th>
-                            <th><span>Opções</span></th>
+                            <th><span class="btn btn-warning mb-2">Nome do curso</span></th>
+                            <th><span class="btn btn-warning mb-2">Data da compra</span></th>
+                            <th class="text-center"><span class="btn btn-warning mb-2">Valor do curso</span></th>
+                            <th><span class="btn btn-warning mb-2">Opções</span></th>
                             <th>&nbsp;</th>
                             </tr>
                         </thead>
@@ -35,13 +35,13 @@ echo $Component->getMenuSideBarDashboard();
                                 ?>
                                 <tr>
                             <td>
-                                <span class="user-subhead"><?= $Cursos['curso_titulo'] ?></span>
+                                <span class="user-subhead btn btn-light mb-2"><?= $Cursos['curso_titulo'] ?></span>
                             </td>
                             <td>
-                                <?= $Cursos['curso_create_date'] ?>  
+                                <span class="btn btn-light mb-2"><?= $Cursos['curso_create_date'] ?></span>
                             </td>
                             <td class="text-center">
-                                50,00 reais
+                                <span class="btn btn-light mb-2">50,00 reais</span>
                             </td>
                             <td style="width: 20%;">
                                 <a href="/" class="table-link">

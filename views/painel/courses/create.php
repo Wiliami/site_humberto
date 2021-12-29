@@ -63,7 +63,7 @@ echo $Component->getMenuSideBarDashboard();
         </div>
 
         <form method="post">
-            <div class="card-header px-4 py-sm-5 py-3">
+            <div class="px-4 py-sm-5 py-3">
                 <?php
                 $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
                 if(!empty($Post['register_course'])) {
@@ -84,25 +84,25 @@ echo $Component->getMenuSideBarDashboard();
                 ?>
             </div>
             <div class="form-group row" style="margin-left: 20px;">
-                <label for="inputPassword" class="col-sm-1 col-form-label">Título</label>
+                <label for="inputPassword" class="col-sm-1 col-form-label btn btn-success mb-2">Título</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" placeholder="Título do curso" name="title" id="inputPassword" value="<?= isset($Post['title'])? $Post['title']: '' ?>">
                 </div>
             </div>
             <div class="form-group row" style="margin-left: 20px;">
-                <label for="inputPassword" class="col-sm-1 col-form-label">Descriçao</label>
+                <label for="inputPassword" class="col-sm-1 col-form-label btn btn-success mb-2">Descrição</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" placeholder="Descrição do curso" name="description" id="inputPassword" value="<?= isset($Post['description'])? $Post['description']: '' ?>">     
                 </div>
             </div>
             <div class="form-group row" style="margin-left: 20px;">
-                <label for="inputPassword" class="col-sm-1 col-form-label">Categoria</label>
+                <label for="inputPassword" class="col-sm-1 col-form-label btn btn-success mb-2">Categoria</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" id="inputPassword" placeholder="Selecione uma categoria" name="category" value="<?= isset($Post['category'])? $Post['category']: '' ?>">
                 </div>
             </div>
-            <input type="submit" class="btn btn-primary mb-2" name="register_course" value="Cadastrar curso" style="margin: 30px;">
-        </form>
+            <input type="submit" class="btn btn-warning mb-2" name="register_course" value="Cadastrar curso" style="margin: 30px;">
+        </form> 
 <?php
 echo $Component->getFooterDashboard();
 ?>
