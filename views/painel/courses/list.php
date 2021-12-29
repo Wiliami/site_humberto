@@ -21,7 +21,7 @@ echo $Component->getMenuSideBarDashboard();
                         <tr>
                             <th><span class="btn btn-warning mb-2">Nome do curso</span></th>
                             <th><span class="btn btn-warning mb-2">Data de cadastro</span></th>
-                            <th class="text-center"><span class="btn btn-warning mb-2">Descrição</span></th>
+                            <th><span class="btn btn-warning mb-2">Descrição</span></th>
                             <th><span class="btn btn-warning mb-2">Opções</span></th>
                             <th>&nbsp;</th>
                         </tr>
@@ -41,7 +41,7 @@ echo $Component->getMenuSideBarDashboard();
                                 <span class="btn btn-light mb-2"><?= $Cursos['curso_create_date'] ?></span> 
                             </td>
                             <td>
-                                <span  class="btn btn-light mb-2"><?= $Cursos['curso_descricao'] ?></span>
+                                <span class="btn btn-light mb-2"><?= $Cursos['curso_descricao'] ?></span>
                             </td>
                             <td>
                                 <!-- <a href="<?= BASE ?>/" class="table-link" title="Pesquisar usuários">

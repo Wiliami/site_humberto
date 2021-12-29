@@ -20,7 +20,7 @@ $NivelId = $_GET['nivel'];
                         ?>
                         <div class="d-sm-flex align-items-center justify-content-between">
                             <h1 class="h3 mb-0 text-gray-800">Lista de usuários nível: <?= $LevelUser['level_desc'] ?></h1>
-                            <a href="<?= BASE ?>/painel/nivel-user" class="btn btn-success mb-2">Voltar</a>
+                            <a href="<?= BASE ?>/painel/nivel-user" class="btn btn-success mb-2" title="Voltar para lista de usuários">Voltar</a>
                         </div>
                         
                         <?php
@@ -72,7 +72,7 @@ $NivelId = $_GET['nivel'];
             </div>
         </div>
     </div>  
-    <a href="<?= BASE ?>/painel/nivel-user" class="d-sm-flex align-items-center justify-content-center btn btn-success mb-2">Carregar mais...</a>
+    <a href="<?= BASE ?>/painel/nivel-user" class="d-sm-flex align-items-center justify-content-center btn btn-success mb-2" title="Carregar mais usuários">Carregar mais...</a>
 </div>
 
 <?php
