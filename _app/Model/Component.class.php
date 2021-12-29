@@ -927,6 +927,12 @@ class Component {
         ';
     }
 
+    public function getButtonPage() {
+        return '
+        
+        ';
+    }
+
     
 }
 

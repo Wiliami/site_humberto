@@ -22,11 +22,11 @@ echo $Component->getMenuSideBarDashboard();
                     <table class="table user-list">
                         <thead>
                             <tr>
-                                <th><span>Nome do curso</span></th>
-                                <th><span>Data da compra</span></th>
-                                <th class="text-center"><span>Status da compra</span></th>
-                                <th><span>Usuário</span></th>
-                                <th><span>Opções</span></th>
+                                <th><span class="btn btn-warning mb-2">Nome do curso</span></th>
+                                <th><span class="btn btn-warning mb-2">Data da compra</span></th>
+                                <th class="text-center"><span class="btn btn-warning mb-2">Status da compra</span></th>
+                                <th><span class="btn btn-warning mb-2">Usuário</span></th>
+                                <th><span class="btn btn-warning mb-2">Opções</span></th>
                                 <th>&nbsp;</th>
                             </tr>
                         </thead>
@@ -38,16 +38,17 @@ echo $Component->getMenuSideBarDashboard();
                             foreach($Read->getResult() as $User) {
                                 ?> 
                         <tr>
-                            <td><a href="/" class="user-link"><?= $User['curso_titulo'] ?></a></td>
-
                             <td>
-                                <?= $User['curso_create_date'] ?>  
+                                <span class="user-link btn btn-light mb-2"><?= $User['curso_titulo'] ?></span>
+                            </td>
+                            <td>
+                                <span class="btn btn-light mb-2"><?= $User['curso_create_date'] ?></span> 
                             </td>
                             <td class="text-center">
-                                <span class="label label-default">Aguardando aprovação</span>
+                                <span class="label label-default btn btn-light mb-2">Aguardando aprovação</span>
                             </td>
                             <td>
-                                <a href="/"><?= $User['user_name']?></a>
+                                <span class="btn btn-light mb-2"><?= $User['user_name']?></span>
                             </td>
                             <td style="width: 20%;">
                                 <a href="/" class="table-link">

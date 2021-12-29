@@ -21,11 +21,11 @@ echo $Component->getMenuSideBarDashboard();
                     <table class="table user-list">
                         <thead>
                             <tr>
-                                <th><span>Nome do curso</span></th>
-                                <th><span>Data da compra</span></th>
-                                <th class="text-center"><span>Valor do curso</span></th>
-                                <th><span>Usuário</span></th>
-                                <th><span>Opções</span></th>
+                                <th><span class="btn btn-warning">Nome do curso</span></th>
+                                <th><span class="btn btn-warning">Data da compra</span></th>
+                                <th class="text-center"><span class="btn btn-warning">Valor do curso</span></th>
+                                <th><span class="btn btn-warning">Usuário</span></th>
+                                <th><span class="btn btn-warning">Opções</span></th>
                                 <th>&nbsp;</th>
                             </tr>
                         </thead>
@@ -38,16 +38,16 @@ echo $Component->getMenuSideBarDashboard();
                                     ?>
                                     <tr>
                                 <td>
-                                    <span class="user-subhead"><?= $Cursos['curso_titulo'] ?></span>
+                                    <span class="user-subhead btn btn-light"><?= $Cursos['curso_titulo'] ?></span>
                                 </td>
                                 <td>
-                                    <?= $Cursos['curso_create_date'] ?>  
+                                    <span class="btn btn-light"><?= $Cursos['curso_create_date'] ?></span>  
                                 </td>
                                 <td class="text-center">
-                                    50,00 reais
+                                    <span class="btn btn-light">50,00 reais</span>
                                 </td>
                                 <td>
-                                    <a href="/"><?= $Cursos['user_name'] ?></a>
+                                    <span class="btn btn-light"><?= $Cursos['user_name'] ?></span>
                                 </td>
                                 <td style="width: 20%;">
                                     <a href="/" class="table-link">

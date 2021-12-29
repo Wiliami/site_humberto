@@ -7,7 +7,7 @@ echo $Component->getMenuSideBarDashboard();
 ?>
 <div class="container-fluid">
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Nível de usuários</h1>
+        <h1 class="">Nível de usuários</h1>
     </div>
 </div>
 <div class="container">
@@ -18,8 +18,9 @@ echo $Component->getMenuSideBarDashboard();
                     <table class="table user-list">
                         <thead>
                             <tr>
-                                <th><span>Usuário</span></th>
-                                <th><span>Nível Usuário</span></th>
+                                <th><span class="btn btn-warning mb-2">Usuário</span></th>
+                                <th><span class="btn btn-warning mb-2">Nível Usuário</span></th>
+                                <th><span class="btn btn-warning mb-2">Opções</span></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -35,10 +36,10 @@ echo $Component->getMenuSideBarDashboard();
                                     <a href="/" class="user-link"></a>
                                 </td>
                                 <td>
-                                    <?= $Level['level_desc'] ?>
+                                    <span class="btn btn-light mb-2"><?= $Level['level_desc'] ?></span>
                                 </td>
                                 <td>
-                                    <a href="<?= BASE ?>/painel/level-user/nivel-usuario&nivel=<?= $Level['level_id']?>" class="table-link" title="Pesquisar usuários do nível <?= $Level['level_desc'] ?>">
+                                    <a href="<?= BASE ?>/painel/level-user/nivel-usuario&nivel=<?= $Level['level_id']?>" class="table-link btn btn-success mb-2" title="Pesquisar usuários do nível <?= $Level['level_desc'] ?>">
                                         <span class="fa-stack">
                                             <i class="fas fa-search"></i>
                                         </span>

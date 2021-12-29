@@ -18,7 +18,11 @@ $NivelId = $_GET['nivel'];
                         if($Read->getResult()) {
                             foreach($Read->getResult() as $LevelUser) {
                         ?>
-                        <h1 class="h3 mb-0 text-gray-800">Lista de usuários nível: <?= $LevelUser['level_desc'] ?></h1>
+                        <div class="d-sm-flex align-items-center justify-content-between">
+                            <h1 class="h3 mb-0 text-gray-800">Lista de usuários nível: <?= $LevelUser['level_desc'] ?></h1>
+                            <a href="<?= BASE ?>/painel/nivel-user" class="btn btn-success mb-2">Voltar</a>
+                        </div>
+                        
                         <?php
                             }
                         } else {
@@ -27,8 +31,9 @@ $NivelId = $_GET['nivel'];
                         ?>
                         <thead>
                             <tr>
-                                <th><span>Usuário</span></th>
-                                <th><span>Nível Usuário</span></th>
+                                <th><span >*</span></th>
+                                <th><span class="btn btn-primary mb-2">Usuário</span></th>
+                                <th><span class="btn btn-primary mb-2">Opções</span></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -46,6 +51,14 @@ $NivelId = $_GET['nivel'];
                                 <td>
                                     <?= $Users['user_name'] ?>
                                 </td>
+                                <td>
+                                    <a href="<?= BASE ?>/" class="table-link" title="Alterar o nível de <?= $Users['user_name'] ?>">
+                                        <span class="fa-stack">
+                                            <i class="fa fa-square fa-stack-2x"></i>
+                                            <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
+                                        </span>
+                                    </a>
+                                </td>
                             </tr>
                             <?php
                                 }
@@ -59,7 +72,9 @@ $NivelId = $_GET['nivel'];
             </div>
         </div>
     </div>  
+    <a href="<?= BASE ?>/painel/nivel-user" class="d-sm-flex align-items-center justify-content-center btn btn-success mb-2">Carregar mais...</a>
 </div>
+
 <?php
 echo $Component->getFooterDashboard();
 ?>
