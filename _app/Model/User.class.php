@@ -14,6 +14,7 @@ class User {
 			exit();
 		} 
 	}
+
 	public function createUser($dataUser) {
 	if(empty($dataUser["user_name"])) {
 			$this->Error = "Preencha no campo um nome!";
@@ -30,6 +31,7 @@ class User {
 			$dataUser['user_password'] = md5($dataUser['user_password']);
 			$dataUser['user_create_date'] = date('Y-m-d H:i:s');
 			$dataUser['user_level'] = '1';
+			$dataUser['user_inativo'] = '0';
 			$Create = new Create();
 			$Create->ExeCreate("users", $dataUser); // cadastrando usuário no banco de dados
 			if($Create->getResult()) { // resultado
@@ -195,5 +197,14 @@ class User {
 		$Delete = new Delete();
 		$Delete->getDelete();
 	}
+
+	public function getTimeSession() {
+        if (!isset($_SESSION['login'])) {
+            $_SESSION['login'] = time();
+        } elseif (time() - $_SESSION['login'] > 0.0167) { // sessão iniciada há mais de 30 minutos
+            session_regenerate_id(true); // muda o ID da sessão para o ID corrente e invalidar o ID antigo
+            $_SESSION['login'] = time();  // atualiza o tempo de criação da sessão
+        }
+    }
 }
 ?>
