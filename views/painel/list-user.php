@@ -4,7 +4,6 @@ $User->verifyExistLoginUser();
 $Component = new Component();
 echo $Component->getHeadHtmlDashboard();
 echo $Component->getMenuSideBarDashboard();
-echo $Component->getMenuOptionsDashboard();
 ?>
 <div class="container-fluid">
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
@@ -89,6 +88,9 @@ echo $Component->getMenuOptionsDashboard();
             </div>
         </div>
     </div>  
+    <?php
+    echo $Component->getButtonPage();
+    ?>
 </div>
 <?php 
 echo $Component->getFooterDashboard();

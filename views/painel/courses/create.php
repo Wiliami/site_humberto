@@ -55,7 +55,7 @@ echo $Component->getMenuSideBarDashboard();
 
 
         <div class="container-fluid">
-            <!-- ***Page Heading*** -->
+            <i class="fas fa-layer-plus"></i>
             <div class="d-sm-flex align-items-center justify-content-between mb-4">
                 <h1 class="h3 mb-0 text-gray-800">Create | Cadastrar cursos</h1>
             </div>

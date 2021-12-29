@@ -930,7 +930,7 @@ class Component {
 
     public function getButtonPage() {
         return '
-
+            <a href="'. BASE .'/painel/nivel-user" class="d-sm-flex align-items-center justify-content-center btn btn-success mb-2" title="Carregar mais usuários">Carregar mais...</a>
         ';
     }
 
