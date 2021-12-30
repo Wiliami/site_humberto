@@ -96,7 +96,6 @@ echo $Component->getMenuSideBarDashboard();
         foreach($Read->getResult() as $ListUser) {
             ?>
             <a href="<?= BASE ?>/painel/lista-usuario <?= $ListUser['level_id'] ?>" class="d-sm-flex align-items-center justify-content-center btn btn-success mb-2" title="Carregar mais usuários">Carregar mais...</a>
-
     <?php
     } 
 }
