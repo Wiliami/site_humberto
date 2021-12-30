@@ -31,7 +31,7 @@ echo $Component->getMenuSideBarDashboard();
                         <tbody>
                             <?php
                             $Read = new Read();
-                            $Read->FullRead("SELECT u.*, ul.level_desc 
+                            $Read->FullRead("SELECT u.*, ul.level_desc
                                     FROM users u 
                                     LEFT JOIN users_levels ul ON ul.level_id = u.user_level");
                             if($Read->getResult()) {
@@ -95,7 +95,8 @@ echo $Component->getMenuSideBarDashboard();
     if($Read->getResult()) {
         foreach($Read->getResult() as $ListUser) {
             ?>
-            <a href="<?= BASE ?>/painel/lista-usuario <?= $ListUser['name'] ?>" class="d-sm-flex align-items-center justify-content-center btn btn-success mb-2" title="Carregar mais usuários">Carregar mais...</a>
+            <a href="<?= BASE ?>/painel/lista-usuario <?= $ListUser['level_id'] ?>" class="d-sm-flex align-items-center justify-content-center btn btn-success mb-2" title="Carregar mais usuários">Carregar mais...</a>
+
     <?php
     } 
 }
