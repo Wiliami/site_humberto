@@ -33,7 +33,7 @@ echo $Component->getMenuSideBarDashboard();
                                     ?>
                             <tr>
                                 <td>
-                                    <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="avatar" style="width: 50px; height: 50px">
+                                    <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="rounded-circle" alt="avatar" style="width: 50px; height: 50px">
                                     <a href="/" class="user-link"></a>
                                 </td>
                                 <td>

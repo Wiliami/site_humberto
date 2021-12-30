@@ -1,15 +1,14 @@
 <?php
-$User = new User();
-$User->verifyExistLoginUser();
 $Component = new Component();
 echo $Component->getHeadHtmlDashboard();
 echo $Component->getMenuSideBarDashboard();
+$ListaUsuario = $_GET['page']; 
 ?>
 <div class="container-fluid">
-    <div class="d-sm-flex align-items-center justify-content-start mb-4">
-        <i class="fas fa-list"></i>
-        <h1 class="h3 mb-0 text-gray-800 ml-2">Lista de usuários</h1>
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-400">Lista de usuários</h1>
     </div>
+        <p>Lista</p>
 </div>
 <div class="container">
     <div class="row">
@@ -33,7 +32,7 @@ echo $Component->getMenuSideBarDashboard();
                             $Read = new Read();
                             $Read->FullRead("SELECT u.*, ul.level_desc 
                                     FROM users u 
-                                    LEFT JOIN users_levels ul ON ul.level_id = u.user_level");
+                                    LEFT JOIN users_levels ul ON ul.level_id = u.user_level={$ListaUsuario}");
                             if($Read->getResult()) {
                                 foreach($Read->getResult() as $User) {                    
                                     ?>
@@ -91,15 +90,14 @@ echo $Component->getMenuSideBarDashboard();
     <?php
     // Qual a tabela que eu quero ler
     // Tabela de usuários
-    $Read->FullRead("SELECT * FROM users WHERE LIMIT 10 OFFSET 11");
-    if($Read->getResult()) {
-        foreach($Read->getResult() as $ListUser) {
-            ?>
-            <a href="<?= BASE ?>/painel/lista-usuario <?= $ListUser['name'] ?>" class="d-sm-flex align-items-center justify-content-center btn btn-success mb-2" title="Carregar mais usuários">Carregar mais...</a>
-    <?php
-    } 
-}
+    // $Read->FullRead("SELECT * FROM users WHERE LIMIT 10 OFFSET 11");
+    // if($Read->getResult()) {
+    //     foreach($Read->getResult() as $ListUser) {
+    //         return 'ok';
+    //     }
+    // }    
     ?>
+    <a href="<?= BASE ?>/painel/lista-usuario" class="d-sm-flex align-items-center justify-content-center btn btn-success mb-2" title="Carregar mais usuários">Carregar mais...</a>
     <!-- &page=1 -->
 </div>
 <?php 

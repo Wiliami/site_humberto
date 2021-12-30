@@ -17,7 +17,7 @@ $NivelId = $_GET['nivel'];
                         $Read->FullRead("SELECT * FROM users_levels WHERE level_id = :ld", "ld={$NivelId}");
                         if($Read->getResult()) {
                             foreach($Read->getResult() as $LevelUser) {
-                        ?>
+                                ?>
                         <div class="d-sm-flex align-items-center justify-content-between">
                             <h1 class="h3 mb-0 text-gray-800">Lista de usuários nível: <?= $LevelUser['level_desc'] ?></h1>
                             <a href="<?= BASE ?>/painel/nivel-user" class="btn btn-success mb-2" title="Voltar para lista de usuários">Voltar</a>
@@ -31,9 +31,9 @@ $NivelId = $_GET['nivel'];
                         ?>
                         <thead>
                             <tr>
-                                <th><span >*</span></th>
-                                <th><span class="btn btn-primary mb-2">Usuário</span></th>
-                                <th><span class="btn btn-primary mb-2">Opções</span></th>
+                                <th><span class="btn btn-warning mb-2">Perfil</span></th>
+                                <th><span class="btn btn-warning mb-2">Usuário</span></th>
+                                <th><span class="btn btn-warning mb-2">Opções</span></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -44,12 +44,12 @@ $NivelId = $_GET['nivel'];
                             ?>
                             <tr>
                                 <td>
-                                    <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="avatar" style="width: 50px; height: 50px">
+                                    <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="rounded-circle" alt="avatar" style="width: 50px; height: 50px">
                                     <a href="<?= BASE ?>/link-maroto" class="user-link"></a>
                                 </td>
 
                                 <td>
-                                    <?= $Users['user_name'] ?>
+                                    <span class="btn btn-light mb-2"><?= $Users['user_name'] ?></span>
                                 </td>
                                 <td>
                                     <a href="<?= BASE ?>/" class="table-link" title="Alterar o nível de <?= $Users['user_name'] ?>">
