@@ -34,13 +34,13 @@ echo $Component->getMenuSideBarDashboard();
                         <div class="small">
                             <div class="fw-bold"><?= $Cursos['curso_categoria'] ?></div>
                             <div class="text-muted"><?= $Cursos['curso_create_date'] ?></div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</div> 
+    </div> 
 </div>
     <?php 
         }

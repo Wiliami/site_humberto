@@ -6,8 +6,9 @@ echo $Component->getHeadHtmlDashboard();
 echo $Component->getMenuSideBarDashboard();
 ?>
 <div class="container-fluid">
-    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Lista de usuários</h1>
+    <div class="d-sm-flex align-items-center justify-content-start mb-4">
+        <i class="fas fa-list"></i>
+        <h1 class="h3 mb-0 text-gray-800 ml-2">Lista de usuários</h1>
     </div>
 </div>
 <div class="container">
@@ -48,9 +49,8 @@ echo $Component->getMenuSideBarDashboard();
                                         <td>
                                             <span class="btn btn-light mb-2"><?= date('d/m/Y', strtotime($User['user_create_date'])) ?></span>
                                         </td>
-                                        
-                                        <td class="text-center">
-                                            <span class="label label-default btn btn-light mb-2">Situação</span>
+                                        <td>
+                                            <span class="btn btn-light mb-2">Situação</span>
                                         </td>
                                         <td>
                                             <span class="btn btn-light mb-2"><?= $User['user_email'] ?></span>
