@@ -45,7 +45,7 @@ echo $Component->getMenuSideBarDashboard();
                             <span class="btn btn-light mb-2"><?= $Cursos['curso_descricao'] ?></span>
                         </td>
                         <td>
-                            <a href="/" class="table-link danger">
+                            <a href="/" class="table-link danger" title="Excluir <?= $Cursos['curso_titulo'] ?>">
                                 <span class="fa-stack">
                                     <i class="fa fa-square fa-stack-2x"></i>
                                     <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>

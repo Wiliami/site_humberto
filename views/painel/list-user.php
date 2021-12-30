@@ -25,6 +25,7 @@ echo $Component->getMenuSideBarDashboard();
                                 <th><span class="btn btn-warning mb-2">Criado</span></th>
                                 <th class="text-center"><span class="btn btn-warning mb-2">Status</span></th>
                                 <th><span class="btn btn-warning mb-2">E-mail</span></th>
+                                <th><span class="btn btn-warning mb-2">Opções</span></th>
                                 <th>&nbsp;</th>
                             </tr>
                         </thead>
@@ -56,19 +57,19 @@ echo $Component->getMenuSideBarDashboard();
                                             <span class="btn btn-light mb-2"><?= $User['user_email'] ?></span>
                                         </td>
                                         <td>
-                                            <a href="<?= BASE ?>/" class="table-link">
+                                            <a href="<?= BASE ?>/" class="table-link" title="Pesquisar <?= $User['user_name'] ?>">
                                                 <span class="fa-stack">
                                                     <i class="fa fa-square fa-stack-2x"></i>
                                                     <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
                                                 </span>
                                             </a>
-                                            <a href="<?= BASE ?>/" class="table-link">
+                                            <a href="<?= BASE ?>/" class="table-link" title="Alterar o nível de <?= $User['user_name'] ?>">
                                                 <span class="fa-stack">
                                                     <i class="fa fa-square fa-stack-2x"></i>
                                                     <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
                                                 </span>
                                             </a>
-                                            <a href="<?= BASE ?>/" class="table-link danger">
+                                            <a href="#" class="table-link danger" title="Excluir <?= $User['user_name'] ?>">
                                                 <span class="fa-stack">
                                                     <i class="fa fa-square fa-stack-2x"></i>
                                                     <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
@@ -101,6 +102,4 @@ echo $Component->getMenuSideBarDashboard();
     }
     ?>
 </div>
-<?php 
-echo $Component->getFooterDashboard();
-?>
+<?= $Component->getFooterDashboard(); ?>
