@@ -934,6 +934,12 @@ class Component {
         ';
     }
 
+    public function getAvatarUser() {
+        return '
+        <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="rounded-circle" alt="avatar" style="width: 50px; height: 50px">
+        ';
+    }
+
     
 }
 

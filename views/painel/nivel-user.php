@@ -33,16 +33,16 @@ echo $Component->getMenuSideBarDashboard();
                                     ?>
                             <tr>
                                 <td>
-                                    <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="rounded-circle" alt="avatar" style="width: 50px; height: 50px">
-                                    <a href="/" class="user-link"></a>
+                                    <?= $Component->getAvatarUser(); ?>
                                 </td>
                                 <td>
                                     <span class="btn btn-light mb-2"><?= $Level['level_desc'] ?></span>
                                 </td>
                                 <td>
-                                    <a href="<?= BASE ?>/painel/level-user/nivel-usuario&nivel=<?= $Level['level_id']?>" class="table-link btn btn-success mb-2" title="Pesquisar usuários do nível <?= $Level['level_desc'] ?>">
-                                        <span class="fa-stack">
-                                            <i class="fas fa-search"></i>
+                                    <a href="<?= BASE ?>/painel/level-user/nivel-usuario&nivel=<?= $Level['level_id']?>" class="table-link btn btn-primary mb-2" title="Pesquisar usuários do nível <?= $Level['level_desc'] ?>">
+                                        <span class="">
+                                            <!-- <i class="fas fa-search"></i> -->
+                                            <i class="fas fa-search fa-sm"></i>
                                         </span>
                                     </a>
                                 </td>

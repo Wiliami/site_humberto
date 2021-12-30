@@ -39,7 +39,7 @@ echo $Component->getMenuSideBarDashboard();
                                     ?>
                                     <tr>
                                         <td>
-                                            <img src="https://bootdey.com/img/Content/avatar/avatar1.png"alt="avatar" style="width: 50px; height: 50px">
+                                            <?= $Component->getAvatarUser() ?>
                                         </td>
                                         <td>
                                             <span class="d-block user-link btn btn-light mb-2"><?= $User['user_name'] ?></span>
@@ -89,18 +89,17 @@ echo $Component->getMenuSideBarDashboard();
         </div>
     </div>  
     <?php
-    // Qual a tabela que eu quero ler
-    // Tabela de usuários
-    $Read->FullRead("SELECT * FROM users WHERE LIMIT 10 OFFSET 11");
-    if($Read->getResult()) {
-        foreach($Read->getResult() as $ListUser) {
-            ?>
-            <a href="<?= BASE ?>/painel/lista-usuario <?= $ListUser['level_id'] ?>" class="d-sm-flex align-items-center justify-content-center btn btn-success mb-2" title="Carregar mais usuários">Carregar mais...</a>
+        // Qual a tabela que eu quero ler
+        // Tabela de usuários (users)
+        $Read->FullRead("SELECT * FROM users WHERE LIMIT 1, 10");
+        if($Read->getResult()) {
+            foreach($Read->getResult() as $ListUser) {
+                ?>
+            <a href="<?= BASE ?>/painel/lista-usuario&page=<?= $ListUser['level_id'] ?>" class="d-sm-flex align-items-center justify-content-center btn btn-success mb-2" title="Carregar mais usuários">Carregar mais...</a>
     <?php
-    } 
-}
+        } 
+    }
     ?>
-    <!-- &page=1 -->
 </div>
 <?php 
 echo $Component->getFooterDashboard();

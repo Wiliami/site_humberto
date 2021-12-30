@@ -2,7 +2,7 @@
 $Component = new Component();
 echo $Component->getHeadHtmlDashboard();
 echo $Component->getMenuSideBarDashboard();
-$ListaUsuario = $_GET['page']; 
+$ListaUsuario = $_GET['page'];
 ?>
 <div class="container-fluid">
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
@@ -38,7 +38,7 @@ $ListaUsuario = $_GET['page'];
                                     ?>
                                     <tr>
                                         <td>
-                                            <img src="https://bootdey.com/img/Content/avatar/avatar1.png"alt="avatar" style="width: 50px; height: 50px">
+                                            <img src="https://bootdey.com/img/Content/avatar/avatar1.png circle-rounded"alt="avatar" style="width: 50px; height: 50px">
                                         </td>
                                         <td>
                                             <span class="d-block user-link btn btn-light mb-2"><?= $User['user_name'] ?></span>
@@ -55,19 +55,19 @@ $ListaUsuario = $_GET['page'];
                                             <span class="btn btn-light mb-2"><?= $User['user_email'] ?></span>
                                         </td>
                                         <td>
-                                            <a href="<?= BASE ?>/" class="table-link">
+                                            <a href="<?= BASE ?>/painel/courses/list" class="table-link" title="">
                                                 <span class="fa-stack">
                                                     <i class="fa fa-square fa-stack-2x"></i>
                                                     <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
                                                 </span>
                                             </a>
-                                            <a href="<?= BASE ?>/" class="table-link">
+                                            <a href="<?= BASE ?>/painel/courses/update" class="table-link">
                                                 <span class="fa-stack">
                                                     <i class="fa fa-square fa-stack-2x"></i>
                                                     <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
                                                 </span>
                                             </a>
-                                            <a href="<?= BASE ?>/" class="table-link danger">
+                                            <a href="<?= BASE ?>/painel/courses/delete" class="table-link danger">
                                                 <span class="fa-stack">
                                                     <i class="fa fa-square fa-stack-2x"></i>
                                                     <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
@@ -90,15 +90,15 @@ $ListaUsuario = $_GET['page'];
     <?php
     // Qual a tabela que eu quero ler
     // Tabela de usuários
-    // $Read->FullRead("SELECT * FROM users WHERE LIMIT 10 OFFSET 11");
-    // if($Read->getResult()) {
-    //     foreach($Read->getResult() as $ListUser) {
-    //         return 'ok';
-    //     }
-    // }    
+    $Read->FullRead("SELECT * FROM users WHERE LIMIT 1, 10");
+    if($Read->getResult()) {
+        foreach($Read->getResult() as $ListUser) {
+            ?>
+            <a href="<?= BASE ?>/painel/lista-usuario" class="d-sm-flex align-items-center justify-content-center btn btn-success mb-2" title="Carregar mais usuários">Carregar mais...</a>
+    <?php
+        }
+    }    
     ?>
-    <a href="<?= BASE ?>/painel/lista-usuario" class="d-sm-flex align-items-center justify-content-center btn btn-success mb-2" title="Carregar mais usuários">Carregar mais...</a>
-    <!-- &page=1 -->
 </div>
 <?php 
 echo $Component->getFooterDashboard();

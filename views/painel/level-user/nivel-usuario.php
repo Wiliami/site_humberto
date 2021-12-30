@@ -44,10 +44,8 @@ $NivelId = $_GET['nivel'];
                             ?>
                             <tr>
                                 <td>
-                                    <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="rounded-circle" alt="avatar" style="width: 50px; height: 50px">
-                                    <a href="<?= BASE ?>/link-maroto" class="user-link"></a>
+                                    <?= $Component->getAvatarUser(); ?>
                                 </td>
-
                                 <td>
                                     <span class="btn btn-light mb-2"><?= $Users['user_name'] ?></span>
                                 </td>
@@ -64,7 +62,7 @@ $NivelId = $_GET['nivel'];
                                 }
                             } else {
                                 Error("Ainda não existem usuários para esse nível!");
-                            }   
+                            }
                             ?>
                         </tbody>
                     </table>
@@ -74,7 +72,4 @@ $NivelId = $_GET['nivel'];
     </div>  
     <a href="<?= BASE ?>/painel/nivel-user" class="d-sm-flex align-items-center justify-content-center btn btn-success mb-2" title="Carregar mais usuários">Carregar mais...</a>
 </div>
-
-<?php
-echo $Component->getFooterDashboard();
-?>
+<?= $Component->getFooterDashboard(); ?>
