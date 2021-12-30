@@ -2,7 +2,7 @@
 $Component = new Component();
 echo $Component->getHeadHtmlDashboard();
 echo $Component->getMenuSideBarDashboard();
-$ListaUsuario = $_GET['page'];
+//$ListaUsuario = $_GET['page'];    
 ?>
 <div class="container-fluid">
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
@@ -97,9 +97,7 @@ $ListaUsuario = $_GET['page'];
             <a href="<?= BASE ?>/painel/lista-usuario" class="d-sm-flex align-items-center justify-content-center btn btn-success mb-2" title="Carregar mais usuários">Carregar mais...</a>
     <?php
         }
-    }    
+    }   
     ?>
 </div>
-<?php 
-echo $Component->getFooterDashboard();
-?>
+<?= $Component->getFooterDashboard(); ?>
