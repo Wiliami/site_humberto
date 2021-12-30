@@ -47,6 +47,4 @@ echo $Component->getMenuSideBarDashboard();
     </div>
     <input type="submit" class="btn btn-success mb-2" name="reset-password" value="Alterar senha" style="margin-left: 20px;">
 </form>
-<?php
-echo $Component->getFooterDashboard();
-?>
+<?= $Component->getFooterDashboard(); ?>

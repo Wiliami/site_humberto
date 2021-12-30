@@ -32,13 +32,13 @@ $ListaUsuario = $_GET['page'];
                             $Read = new Read();
                             $Read->FullRead("SELECT u.*, ul.level_desc 
                                     FROM users u 
-                                    LEFT JOIN users_levels ul ON ul.level_id = u.user_level={$ListaUsuario}");
+                                    LEFT JOIN users_levels ul ON ul.level_id = u.user_level");
                             if($Read->getResult()) {
                                 foreach($Read->getResult() as $User) {                    
                                     ?>
                                     <tr>
                                         <td>
-                                            <img src="https://bootdey.com/img/Content/avatar/avatar1.png circle-rounded"alt="avatar" style="width: 50px; height: 50px">
+                                            <span><?= $Component->getAvatarUser(); ?></span>
                                         </td>
                                         <td>
                                             <span class="d-block user-link btn btn-light mb-2"><?= $User['user_name'] ?></span>
@@ -55,19 +55,19 @@ $ListaUsuario = $_GET['page'];
                                             <span class="btn btn-light mb-2"><?= $User['user_email'] ?></span>
                                         </td>
                                         <td>
-                                            <a href="<?= BASE ?>/painel/courses/list" class="table-link" title="">
+                                            <a href="<?= BASE ?>/painel/courses/list" class="table-link" title="Pesquisar <?= $User['user_name'] ?>">
                                                 <span class="fa-stack">
                                                     <i class="fa fa-square fa-stack-2x"></i>
                                                     <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
                                                 </span>
                                             </a>
-                                            <a href="<?= BASE ?>/painel/courses/update" class="table-link">
+                                            <a href="<?= BASE ?>/painel/courses/update" class="table-link" title="Alterar nível de <?= $User['user_name'] ?>">
                                                 <span class="fa-stack">
                                                     <i class="fa fa-square fa-stack-2x"></i>
                                                     <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
                                                 </span>
                                             </a>
-                                            <a href="<?= BASE ?>/painel/courses/delete" class="table-link danger">
+                                            <a href="<?= BASE ?>/painel/courses/delete" class="table-link danger" title="Excluir <?= $User['user_name'] ?>">
                                                 <span class="fa-stack">
                                                     <i class="fa fa-square fa-stack-2x"></i>
                                                     <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>

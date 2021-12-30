@@ -276,7 +276,8 @@ class Component {
                 <link href="' . BASE . '/res/site/css/all.min.css" rel="stylesheet" type="text/css">
                 <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
                 <link href="' . BASE . '/res/site/css/sb-admin-2.min.css" rel="stylesheet">
-
+                <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.11.3/datatables.min.css"/>
+                <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.11.3/datatables.min.js"></script>
                 <!-- Estiliza os icones da dashboard -->
                 <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
             </head>
@@ -304,7 +305,6 @@ class Component {
                 <a class="nav-link" href="' . BASE . '/painel/dashboard">
                         <i class="fas fa-fw fa-tachometer-alt"></i>
                         <span>Painel</span></a> -->
-
                         <!-- Sidebar Toggler (Sidebar) 
                     
                 </li>-->
@@ -357,7 +357,7 @@ class Component {
                         </div>
                     </li>
                     <?php 
-                    }
+                        }
                     ?>
 
                     <!-- Nav Item - Pages Collapse Menu -->
@@ -430,7 +430,7 @@ class Component {
                                     <form class="form-inline mr-auto w-100 navbar-search">
                                         <div class="input-group">
                                             <input type="text" class="form-control bg-light border-0 small"
-                                                placeholder="Search for..." aria-label="Search"
+                                                placeholder="Pesquisar por..." aria-label="Search"
                                                 aria-describedby="basic-addon2">
                                             <div class="input-group-append">
                                                 <button class="btn btn-primary" type="button">
@@ -603,20 +603,17 @@ class Component {
 
 
                     <!-- Conteúdo que vai ser exibido na dashboard
-                    ***Begin Page Content***
                     <div class="container-fluid">
-                        ***Page Heading***
                         <div class="d-sm-flex align-items-center justify-content-between mb-4">
                             <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
                                 <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
                                     <i class="fas fa-download fa-sm text-white-50"></i>
                                     Generate Report
                                 </a> 
-                            
                         </div>
                         <p>Qualquer conteúdo aqui</p>
-                    </div>
-                    -->
+                    </div> -->
+            
 
                     <!-- /.container-fluid -->
 
@@ -940,7 +937,28 @@ class Component {
         ';
     }
 
-    
+    public function getOpcoes() {
+        return '
+        <a href="'. BASE .'/painel/courses/list" class="table-link" title="Pesquisar '. $Users['user_name'] .'">
+            <span class="fa-stack">
+                <i class="fa fa-square fa-stack-2x"></i>
+                <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
+            </span>
+        </a>
+        <a href="'. BASE .'/painel/courses/update" class="table-link" title="Alterar nível de ' . $Users['user_name'] .'">
+            <span class="fa-stack">
+                <i class="fa fa-square fa-stack-2x"></i>
+                <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
+            </span>
+        </a>
+        <a href="'. BASE .'/painel/courses/delete" class="table-link danger" title="Excluir ' . $Users['user_name'] .'">
+            <span class="fa-stack">
+                <i class="fa fa-square fa-stack-2x"></i>
+                <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
+            </span>
+        </a>
+        ';
+    }
 }
 
 
