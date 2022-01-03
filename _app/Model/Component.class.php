@@ -9,22 +9,22 @@ class Component {
 
     public function getMenu ($MenuActive = 'btn') {
         return "
-        <div class=\"container\">
+        <div class=\"container vw-100\">
             <nav class=\"d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3\">
                 <a href=' " . BASE . "/' type=\"button\" class=\" nav btn btn-black mb-2 mb-md-0\">
-                    <img src='" . BASE . "/src/images/icon_small.png' alt='Logo' style=' width: 50px; height: 50px;'>
+                    <img src='" . BASE . "/src/images/icon_small.png' alt='Logo' style='width: 50px; height: 50px;'>
                 </a>
-                    <ul class=\"nav col-12 col-md-auto mb-2 justify-content-center mb-md-0 text-center\">
-                        <li><a href=' " . BASE . "/' class=\"nav-link active px-2 link-secondary\">Home</a></li>
-                        <li><a href=' " . BASE . "/sobre' class=\"nav-link px-2 link-secondary\">Sobre</a></li>
-                        <li><a href=' " . BASE . "/conteudo' class=\"nav-link px-2 link-secondary\">Conteúdo</a></li>
-                        <li><a href='"  . BASE . "/unitbrasil' class=\"nav-link px-2 link-secondary\">A Unitbrasil</a></li>
-                    </ul>
-                    <div class=\"col-md-auto text-end\">
-                        <!-- <a href=' " . BASE . "/cadastro' type=\"button\" class=\"btn me-1 mb-0\">Cadastro</a> -->
-                        <!-- <a href=' " . BASE . "/login' type=\"button\" class=\"btn btn-warning w-auto me-1 mb-0\">Área de membros</a> -->
-                        <li href='"  . BASE . "/' class=\"nav-link px-2 link-secondary\">...</li>
-                    </div>   
+                <ul class=\"nav col-12 col-md-auto mb-2 justify-content-center mb-md-0 text-center\">
+                    <li><a href=' " . BASE . "/' class=\"nav-link active px-2 link-secondary\">Home</a></li>
+                    <li><a href=' " . BASE . "/sobre' class=\"nav-link px-2 link-secondary\">Sobre</a></li>
+                    <li><a href=' " . BASE . "/conteudo' class=\"nav-link px-2 link-secondary\">Conteúdo</a></li>
+                    <li><a href='"  . BASE . "/unitbrasil' class=\"nav-link px-2 link-secondary\">A Unitbrasil</a></li>
+                </ul>
+                <div class=\"col-md-auto text-end\">
+                    <!-- <a href=' " . BASE . "/cadastro' type=\"button\" class=\"btn me-1 mb-0\">Cadastro</a> -->
+                    <!-- <a href=' " . BASE . "/login' type=\"button\" class=\"btn btn-warning w-auto me-1 mb-0\">Área de membros</a> -->
+                    <li href='"  . BASE . "/' class=\"nav-link px-2 link-secondary\">...</li>
+                </div>   
             </nav>
         </div>
         ";
@@ -278,12 +278,7 @@ class Component {
                 <link href="' . BASE . '/res/site/css/sb-admin-2.min.css" rel="stylesheet">
                 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.11.3/datatables.min.css"/>
                 <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.11.3/datatables.min.js"></script>
-
-                <!-- DataTables -->
-                <link href="cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css" rel="stylesheet">
-                <script src="cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js" rel="stylesheet">
-                <script src="' . BASE . '/res/site/js/dataTables.js" rel="stylesheet">
-
+                
                 <!-- Estiliza os icones da dashboard -->
                 <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
             </head>

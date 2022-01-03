@@ -23,7 +23,7 @@ echo $Component->getMenuSideBarDashboard();
                                 <th><span class="btn btn-warning mb-2">Usuário</span></th>
                                 <th><span class="btn btn-warning mb-2">Nível</span></th>
                                 <th><span class="btn btn-warning mb-2">Criado</span></th>
-                                <th class="text-center"><span class="btn btn-warning mb-2">Status</span></th>
+                                <th><span class="btn btn-warning mb-2">Status</span></th>
                                 <th><span class="btn btn-warning mb-2">E-mail</span></th>
                                 <th><span class="btn btn-warning mb-2">Opções</span></th>
                                 <th>&nbsp;</th>
