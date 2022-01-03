@@ -41,8 +41,8 @@ echo $Component->getMenuSideBarDashboard();
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-success">Enviar</button>
+                <input type="button" class="btn btn-success mb-2" data-dismiss="modal" value="Cancelar">
+                <input type="button" class="btn btn-success mb-2" value="Enviar">
             </div>
             </div>
         </div>

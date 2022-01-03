@@ -69,7 +69,7 @@ echo $Component->getMenuSideBarDashboard();
                                                     <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
                                                 </span>
                                             </a>
-                                            <a href="#" class="table-link danger" title="Excluir <?= $User['user_name'] ?>">
+                                            <a href="<?= BASE ?>/" class="table-link danger" title="Excluir <?= $User['user_name'] ?>">
                                                 <span class="fa-stack">
                                                     <i class="fa fa-square fa-stack-2x"></i>
                                                     <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
@@ -96,7 +96,7 @@ echo $Component->getMenuSideBarDashboard();
         // if($Read->getResult()) {
         //     foreach($Read->getResult() as $ListUser) {
         //         ?>
-            <a href="<?= BASE ?>/painel/lista-usuario&page= <?= $ListUser['level_id'] ?>" class="d-sm-flex align-items-center justify-content-center btn btn-success mb-2" title="Carregar mais usuários">Carregar mais...</a>
+    <a href="<?= BASE ?>/painel/lista-usuario&page= <?= $ListUser['level_id'] ?>" class="d-sm-flex align-items-center justify-content-center btn btn-success mb-2" title="Carregar mais usuários">Carregar mais...</a>
     <!-- 
         } 
     }
@@ -583,4 +583,7 @@ echo $Component->getMenuSideBarDashboard();
             </tr>
         </tfoot>
     </table>
-<?= $Component->getFooterDashboard(); ?>
+    
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.11.3/datatables.min.js"></script>
+    <script type="text/javascript" src="<?= BASE ?>/src/site/js/dataTables.js"></script>
+    <?= $Component->getFooterDashboard(); ?>
