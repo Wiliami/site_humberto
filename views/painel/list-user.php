@@ -4,13 +4,13 @@ $User->verifyExistLoginUser();
 $Component = new Component();
 echo $Component->getHeadHtmlDashboard();
 echo $Component->getMenuSideBarDashboard();
-$columns = array(
-    array( '0' => 'user_name' ),
-    array( '1' => 'level_desc' ),
-    array( '2' => 'user_create_date' ),
-    array( '3' => 'user_status' ),
-    array( '4' => 'user_email' ),
-);
+// $columns = array(
+//     array( '0' => 'user_name' ),
+//     array( '1' => 'level_desc' ),
+//     array( '2' => 'user_create_date' ),
+//     array( '3' => 'user_status' ),
+//     array( '4' => 'user_email' ),
+// );
 ?>
 <div class="container-fluid">
     <div class="d-sm-flex align-items-center justify-content-start mb-4">
@@ -43,11 +43,10 @@ $columns = array(
                                 LEFT JOIN users_levels ul ON ul.level_id = u.user_level");
                             if($Read->getResult()) {
                                 foreach($Read->getResult() as $User) { 
-                                    //Check::var_dump_json($User);
                                     ?>  
                             <tr>
                                 <td>
-                                    <!-- <span><?= $Component->getAvatarUser(); ?></span> -->   
+                                    <span><?= $Component->getAvatarUser(); ?></span>  
                                 </td>
                                 <td>
                                     <span><?= $User['user_name'] ?></span>
@@ -64,7 +63,7 @@ $columns = array(
                                 <td>
                                     <span><?= $User['user_email'] ?></span>
                                 </td>
-                                <!-- <td>
+                                <td>
                                     <a href="<?= BASE ?>/" class="table-link" title="Pesquisar <?= $User['user_name'] ?>">
                                         <span class="fa-stack">
                                             <i class="fa fa-square fa-stack-2x"></i>
@@ -83,7 +82,7 @@ $columns = array(
                                             <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
                                         </span>
                                     </a>
-                                </td> -->
+                                </td> 
                             </tr>
 
                             <?php
@@ -111,18 +110,19 @@ $columns = array(
     </div>
 </div>  
 <!-- <a href="<?= BASE ?>/painel/lista-usuario&page= <?= $ListUser['level_id'] ?>" class="d-sm-flex align-items-center justify-content-center btn btn-success mb-2" title="Carregar mais usuários">Carregar mais...</a> -->
+
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
 <script>
     $(document).ready(function() {
-    $('#listar-usuario').DataTable( {
-        "processing": true,
-        "serverSide": true,
-        "ajax": {
-            "url": "list-user.php",
-            "type": "POST"
-        }          
-    } );
-} );
+    $('#listar-usuario').DataTable({
+            "language": {
+                "lengthMenu": "Display _MENU_ records per page",
+                "zeroRecords": "Nothing found - sorry",
+                "info": "Showing page _PAGE_ of _PAGES_",
+                "infoEmpty": "No records available",
+                "infoFiltered": "(filtered from _MAX_ total records)"
+            }      
+        });
+    });
 </script>
-<?= $Component->getFooterDashboard(); ?>

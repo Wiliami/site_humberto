@@ -5,8 +5,8 @@ include ('_app/Config.inc.php');
 //BANCO DE DADOS
 
 //CADASTRAR
-$DataCreate['user_name' ] = 'carlos';
-$DataCreate['user_email'] = 'carlosdavi@gmail.com';
+$DataCreate['user_name' ] = 'Carla';
+$DataCreate['user_email'] = 'carla@gmail.com';
 $DataCreate['user_password'] = date('Y-m-d H:i:s');
 $DataCreate['user_create_date'] = date('Y-m-d H:i:s');
 $DataCreate['user_level'] = '1';
