@@ -60,6 +60,4 @@ echo $Component->getMenuSideBarDashboard();
         </div>
     </div>  
 </div>
-<?php
-echo $Component->getFooterDashboard();
-?>
+<?= $Component->getFooterDashboard(); ?>
