@@ -113,4 +113,16 @@ $columns = array(
 <!-- <a href="<?= BASE ?>/painel/lista-usuario&page= <?= $ListUser['level_id'] ?>" class="d-sm-flex align-items-center justify-content-center btn btn-success mb-2" title="Carregar mais usuários">Carregar mais...</a> -->
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+<script>
+    $(document).ready(function() {
+    $('#listar-usuario').DataTable( {
+        "processing": true,
+        "serverSide": true,
+        "ajax": {
+            "url": "list-user.php",
+            "type": "POST"
+        }          
+    } );
+} );
+</script>
 <?= $Component->getFooterDashboard(); ?>
