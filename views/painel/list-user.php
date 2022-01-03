@@ -4,6 +4,13 @@ $User->verifyExistLoginUser();
 $Component = new Component();
 echo $Component->getHeadHtmlDashboard();
 echo $Component->getMenuSideBarDashboard();
+$columns = array(
+    array( '0' => 'user_name' ),
+    array( '1' => 'level_desc' ),
+    array( '2' => 'user_create_date' ),
+    array( '3' => 'user_status' ),
+    array( '4' => 'user_email' ),
+);
 ?>
 <div class="container-fluid">
     <div class="d-sm-flex align-items-center justify-content-start mb-4">
@@ -32,7 +39,7 @@ echo $Component->getMenuSideBarDashboard();
                             <?php
                             $Read = new Read();
                             $Read->FullRead("SELECT u.*, ul.level_desc
-                                FROM users u 
+                                FROM users u
                                 LEFT JOIN users_levels ul ON ul.level_id = u.user_level");
                             if($Read->getResult()) {
                                 foreach($Read->getResult() as $User) { 
