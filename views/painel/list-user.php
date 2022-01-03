@@ -96,7 +96,7 @@ echo $Component->getMenuSideBarDashboard();
         // if($Read->getResult()) {
         //     foreach($Read->getResult() as $ListUser) {
         //         ?>
-    <a href="<?= BASE ?>/painel/lista-usuario&page= <?= $ListUser['level_id'] ?>" class="d-sm-flex align-items-center justify-content-center btn btn-success mb-2" title="Carregar mais usuários">Carregar mais...</a>
+        <a href="<?= BASE ?>/painel/lista-usuario&page= <?= $ListUser['level_id'] ?>" class="d-sm-flex align-items-center justify-content-center btn btn-success mb-2" title="Carregar mais usuários">Carregar mais...</a>
 
         } 
     }
@@ -107,9 +107,20 @@ echo $Component->getMenuSideBarDashboard();
             $('#example').DataTable( {
                 "processing": true,
                 "serverSide": true,
-                "ajax": "../server_side/scripts/server_processing.php"
+                "ajax": "../server_side/scripts/server_processing.php"            
             } );
         } );
+
+
+        $columns = array(
+            array( '0' => 'user_name' ),
+            array( '0' => 'level_desc' ),
+            array( '1' => 'user_create_date' ),
+            array( '2' => 'user_status' ),
+            array( '3' => 'user_email' ),
+        );
+
+
     </script>
 
     <table id="listar-usuario" class="display" style="width:100%">
