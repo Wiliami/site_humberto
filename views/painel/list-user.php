@@ -17,7 +17,7 @@ echo $Component->getMenuSideBarDashboard();
         <div class="col-lg-12">
             <div class="main-box clearfix">
                 <div class="table-responsive">
-                    <table id="listar-usuario" class="table table-striped" style="width:100%">
+                    <table id="listar-usuario" class="display table table-bordered" style="width:100%">
                         <thead>
                             <tr>
                                 <th>*</th>

@@ -7,17 +7,15 @@ echo $Component->getHeadHtmlDashboard();
 echo $Component->getMenuSideBarDashboard();
 ?>
 <!-- <div class="container-fluid">
-
-    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Create | Cadastrar cursos</h1>
+        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800">Create | Cadastrar cursos</h1>
+        </div>
+            <p>Página de cadastro de cursos</p>
     </div>
-        <p>Página de cadastro de cursos</p>
-</div>
 
 <div class="col-lg-7">
     <form>
         <div class="card-header px-4 py-sm-5 py-3">
-            
         </div>
         <div class="card-body pt-1">
             <div class="row">
@@ -53,13 +51,12 @@ echo $Component->getMenuSideBarDashboard();
         
 
 
-
         <div class="container-fluid">
             <div class="d-sm-flex align-items-center justify-content-start mb-4">
                 <i class="fas fa-layer-plus"></i>
                 <h1 class="h3 mb-0 text-gray-800 ml-2">Create | Cadastrar cursos</h1>
             </div>
-                <p>Página de cadastro de cursos</p>
+                <p class="ml-2">Página de cadastro de cursos</p>
         </div>
 
         <form method="post">
@@ -113,6 +110,4 @@ echo $Component->getMenuSideBarDashboard();
             </div>
             <input type="submit" class="btn btn-success mb-2 ml-4" name="register_course" value="Cadastrar curso">
         </form> 
-<?php
-echo $Component->getFooterDashboard();
-?>
+<?= $Component->getFooterDashboard(); ?>
