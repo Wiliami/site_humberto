@@ -919,6 +919,25 @@ class Component {
         </a>
         ';
     }
+    public function getConfigDataTables() {
+        return '
+        <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+        <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+        <script>
+        $(document).ready(function() {
+        $("#listar-usuario").DataTable({
+                "language": {
+                    "lengthMenu": "Display _MENU_ records per page",
+                    "zeroRecords": "Nothing found - sorry",
+                    "info": "Showing page _PAGE_ of _PAGES_",
+                    "infoEmpty": "No records available",
+                    "infoFiltered": "(filtered from _MAX_ total records)"
+                }      
+            });
+        });
+        </script>
+        ';
+    }
 }
 
 
