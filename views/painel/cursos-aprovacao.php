@@ -34,19 +34,19 @@ echo $Component->getMenuSideBarDashboard();
                         $Read->FullRead("SELECT c.*, u.user_name FROM cursos c LEFT JOIN users u ON u.user_id");
                         if($Read->getResult()) {
                             foreach($Read->getResult() as $User) {
-                                ?> 
+                                    ?> 
                             <tr>
                                 <td>
-                                    <?= $User['curso_titulo'] ?>
+                                    <span><?= $User['curso_titulo'] ?></span>
                                 </td>
                                 <td>
-                                    <?= $User['curso_create_date'] ?>
+                                    <span><?= $User['curso_create_date'] ?></span>
                                 </td>
-                                <td class="text-center">
+                                <td>
                                     Aguardando aprovação
                                 </td>
                                 <td>
-                                    <?= $User['user_name']?></span>
+                                    <span><?= $User['user_name']?></span>
                                 </td>
                                 <td style="width: 20%;">
                                     <a href="/" class="table-link">
@@ -68,49 +68,12 @@ echo $Component->getMenuSideBarDashboard();
                                         </span>
                                     </a>
                                 </td>
-                            </tr>
                             <?php
                                 }
                             } else {
                                 Error("Ainda não existem usuários!");
                             }   
                             ?>
-                            <tr>
-                                <td>
-                                    <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="avatar" style="width: 50px; height: 50px">
-                                    <a href="#" class="user-link">Carlos</a>
-                                        
-                                    <span class="user-subhead">Membro</span>
-                                </td>
-                                <td>
-                                    2021/12/12
-                                </td>
-                                <td class="text-center">
-                                    <span class="label label-default">Inativo</span>
-                                </td>
-                                <td>
-                                    <a href="/">carlos@gmail.com</a>
-                                </td>
-                                <td style="width: 20%;">
-                                    <a href="/" class="table-link">
-                                        <span class="fa-stack">
-                                            <i class="fa fa-square fa-stack-2x"></i>
-                                            <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
-                                        </span>
-                                    </a>
-                                    <a href="#" class="table-link">
-                                        <span class="fa-stack">
-                                            <i class="fa fa-square fa-stack-2x"></i>
-                                            <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
-                                        </span>
-                                    </a>
-                                    <a href="<?= BASE ?>/" class="table-link danger" data-toggle="modal" data-target="#deleteModal">
-                                        <span class="fa-stack">
-                                            <i class="fa fa-square fa-stack-2x"></i>
-                                            <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
-                                        </span>
-                                    </a>
-                                </td>
                             </tr>
                         </tbody>
                         <tfoot>
