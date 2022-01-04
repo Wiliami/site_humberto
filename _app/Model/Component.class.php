@@ -1,6 +1,5 @@
 <?php
 
-
 // topo
 // - getMenuAndSideBarDashboard - exemplo de menu;
 // - 
@@ -276,14 +275,19 @@ class Component {
                 <link href="' . BASE . '/res/site/css/all.min.css" rel="stylesheet" type="text/css">
                 <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
                 <link href="' . BASE . '/res/site/css/sb-admin-2.min.css" rel="stylesheet">
-
-                <!-- Estiliza o dataTables -->
-                <link rel="stylesheet" href="//cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
-
                 <!-- Estiliza os ícones da dashboard -->
                 <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
             </head> 
             <body id="page-top">
+        ';
+    }
+
+    public function getHeadHtmlDataTable() {
+        return '
+        <!-- Estiliza o dataTables -->
+        <link rel="stylesheet" href="//cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap5.min.css">
         ';
     }
 
@@ -768,7 +772,7 @@ class Component {
                     <div class="modal-body">Selecione "Sair" para encerrar a sua sessão.</div>
                     <div class="modal-footer">
                         <button class="btn btn-success" type="button" data-dismiss="modal">Cancelar</button>
-                        <a class="btn btn-success" href="' . BASE . '/logout">Sair</a>
+                        <a class="btn btn-danger" href="' . BASE . '/logout">Sair</a>
                     </div>
                 </div>
             </div>
@@ -928,10 +932,10 @@ class Component {
         $("#listar-usuario").DataTable({
                 "language": {
                     "lengthMenu": "Mostrando _MENU_ registros por página",
-                    "zeroRecords": "Nothing found - sorry",
+                    "zeroRecords": "Nada encontrado",
                     "info": "Mostrando página _PAGE_ de _PAGES_",
-                    "infoEmpty": "No records available",
-                    "infoFiltered": "(filtered from _MAX_ total records)"
+                    "infoEmpty": "Nenhum registro diponível",
+                    "infoFiltered": "(filtrado de _MAX_ registros no total)"
                 }      
             });
         });

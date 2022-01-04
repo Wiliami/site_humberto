@@ -3,14 +3,8 @@ $User = new User();
 $User->verifyExistLoginUser();
 $Component = new Component();
 echo $Component->getHeadHtmlDashboard();
+echo $Component->getHeadHtmlDataTable();
 echo $Component->getMenuSideBarDashboard();
-// $columns = array(
-//     array( '0' => 'user_name' ),
-//     array( '1' => 'level_desc' ),
-//     array( '2' => 'user_create_date' ),
-//     array( '3' => 'user_status' ),
-//     array( '4' => 'user_email' ),
-// );
 ?>
 <div class="container-fluid">
     <div class="d-sm-flex align-items-center justify-content-start mb-4">
@@ -76,7 +70,7 @@ echo $Component->getMenuSideBarDashboard();
                                             <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
                                         </span>
                                     </a>
-                                    <a href="<?= BASE ?>/" class="table-link danger" title="Excluir <?= $User['user_name'] ?>">
+                                    <a href="<?= BASE ?>/" class="table-link danger" title="Excluir <?= $User['user_name'] ?>" data-toggle="modal" data-target="#deleteModal">
                                         <span class="fa-stack">
                                             <i class="fa fa-square fa-stack-2x"></i>
                                             <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
@@ -84,7 +78,6 @@ echo $Component->getMenuSideBarDashboard();
                                     </a>
                                 </td> 
                             </tr>
-
                             <?php
                                 }
                             } else{
@@ -108,21 +101,31 @@ echo $Component->getMenuSideBarDashboard();
             </div>
         </div>
     </div>
-</div>  
+</div>
 
-<!-- <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-<script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
-<script>
-    $(document).ready(function() {
-    $('#listar-usuario').DataTable({
-            "language": {
-                "lengthMenu": "Display _MENU_ records per page",
-                "zeroRecords": "Nothing found - sorry",
-                "info": "Showing page _PAGE_ of _PAGES_",
-                "infoEmpty": "No records available",
-                "infoFiltered": "(filtered from _MAX_ total records)"
-            }      
-        });
-    });
-</script> -->
+<!-- Logout Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title btn btn-success mb-2 vw-100" id="exampleModalLabel">Excluir usuário</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">Tem certeza que deseja excluir usuário?</div>
+            <div class="modal-footer">
+                <button class="btn btn-success mb-2" type="button" data-dismiss="modal">Cancelar</button>
+                <a class="btn btn-danger mb-2" href="<?= BASE ?>/">Excluir</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="<?= BASE ?>/res/site/js/jquery.min.js"></script>
+<script src="<?= BASE ?>/res/site/js/bootstrap.bundle.min.js"></script>
+<script src="<?= BASE ?>/res/site/js/jquery.easing.min.js"></script>
+<script src="<?= BASE ?>/res/site/js/sb-admin-2.min.js"></script> 
+
+
 <?= $Component->getConfigDataTables(); ?>
