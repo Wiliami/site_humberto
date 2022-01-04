@@ -923,7 +923,7 @@ class Component {
         </a>
         ';
     }
-    public function getConfigDataTables() {
+    public function getConfigDataTable() {
         return '
         <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
         <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
@@ -934,7 +934,7 @@ class Component {
                     "lengthMenu": "Mostrando _MENU_ registros por página",
                     "zeroRecords": "Nada encontrado",
                     "info": "Mostrando página _PAGE_ de _PAGES_",
-                    "infoEmpty": "Nenhum registro diponível",
+                    "infoEmpty": "Nenhum registro disponível",
                     "infoFiltered": "(filtrado de _MAX_ registros no total)"
                 }      
             });

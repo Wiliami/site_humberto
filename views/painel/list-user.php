@@ -121,4 +121,4 @@ echo $Component->getMenuSideBarDashboard();
         </div>
     </div>
 </div>
-<?= $Component->getConfigDataTables(); ?>
+<?= $Component->getConfigDataTable(); ?>
