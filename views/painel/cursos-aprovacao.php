@@ -12,7 +12,7 @@ echo $Component->getMenuSideBarDashboard();
         <h1 class="h3 mb-0 text-gray-800 ml-2">Cursos | Aprovação de cursos</h1>
     </div>
 </div>
-<div class="container-fluid">
+<div class="container">
     <div class="row">
         <div class="col-lg-12">
             <div class="main-box clearfix">
@@ -104,7 +104,7 @@ echo $Component->getMenuSideBarDashboard();
                                             <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
                                         </span>
                                     </a>
-                                    <a href="#" class="table-link danger" data-toggle="modal" data-target="#deleteModal">
+                                    <a href="<?= BASE ?>/" class="table-link danger" data-toggle="modal" data-target="#deleteModal">
                                         <span class="fa-stack">
                                             <i class="fa fa-square fa-stack-2x"></i>
                                             <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>

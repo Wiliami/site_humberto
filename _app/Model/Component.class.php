@@ -885,7 +885,7 @@ class Component {
 
     public function getSearchDashboard() {
         return '
-            <h1>Área de pesquisa de itens</h1>
+        <h1>Área de pesquisa de itens</h1>
         ';
     }
 
@@ -903,19 +903,19 @@ class Component {
 
     public function getOpcoes() {
         return '
-        <a href="'. BASE .'/painel/courses/list" class="table-link" title="Pesquisar '. $Users['user_name'] .'">
+        <a href="' . BASE . '/painel/courses/list" class="table-link" title="Pesquisar '. $Users['user_name'] .'">
             <span class="fa-stack">
                 <i class="fa fa-square fa-stack-2x"></i>
                 <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
             </span>
         </a>
-        <a href="'. BASE .'/painel/courses/update" class="table-link" title="Alterar nível de ' . $Users['user_name'] .'">
+        <a href="' . BASE . '/painel/courses/update" class="table-link" title="Alterar nível de ' . $Users['user_name'] .'">
             <span class="fa-stack">
                 <i class="fa fa-square fa-stack-2x"></i>
                 <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
             </span>
         </a>
-        <a href="'. BASE .'/painel/courses/delete" class="table-link danger" title="Excluir ' . $Users['user_name'] .'">
+        <a href="' . BASE . '/painel/courses/delete" class="table-link danger" title="Excluir ' . $Users['user_name'] .'">
             <span class="fa-stack">
                 <i class="fa fa-square fa-stack-2x"></i>
                 <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
