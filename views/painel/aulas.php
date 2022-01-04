@@ -5,7 +5,7 @@ $Component = new Component();
 echo $Component->getHeadHtmlDashboard();
 ?>
 <div id="wrapper">
-    <ul class="nav-list navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+    <ul class="nav-list navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar mt-6">
         <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 mw-100 navbar-search">
             <div class="input-group">
                 <input type="text" class="form-control bg-light border-0 small" placeholder="Pesquisar aulas..." aria-label="Search" aria-describedby="basic-addon2">
@@ -20,41 +20,33 @@ echo $Component->getHeadHtmlDashboard();
     <hr class="sidebar-divider my-0"> 
     <?php 
     $Read = new Read();
-    $Read->FullRead("SELECT * FROM modulos");
+    $Read->FullRead("SELECT m.*, c.curso_descricao 
+            FROM modulos m 
+            LEFT JOIN cursos c ON c.curso_id = c.curso_titulo");
     if($Read->getResult()) {
     foreach($Read->getResult() as $Modulos) {
-        ?>  
+        ?>
     <li class="nav-item">
-        <a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#collapse<?= $Modulos['modulo_id'] ?>" aria-expanded="true" aria-controls="collapsePages">
+        <a class="nav-link collapsed" href="<?= BASE ?>#" data-toggle="collapse" data-target="#collapse<?= $Modulos['modulo_id'] ?>" aria-expanded="true" aria-controls="collapsePages">
             <i class="fas fa-fw fa-folder"></i>
-            <span><?= $Modulos['modulo_id'] ?></span>
+            <span>Nome seção</span>
         </a>
-        <div id="collapse<?= $Modulos['modulo_id']?>" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+        <div id="collapse<?= $Modulos['modulo_id'] ?>" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <?php
-                $Read->FullRead("SELECT * FROM aulas WHERE modulo_id = :id", "id={$Modulos['modulo_id']}");
-                if($Read->getResult()) {
-                foreach($Read->getResult() as $Aula) {
-                        ?>
-                    <a class="collapse-item" href="<?= BASE ?>/"> <?= $Aula['aula_name'] ?> </a>
-                <?php
-                    } 
-                }
-                ?>
+                <a class="collapse-item" href="<?= BASE ?>/">Aula nome</a>
             </div>
         </div>
     </li>
-        <hr class="sidebar-divider my-0">
+    <hr class="sidebar-divider my-0">
     <?php
         }
     } else {
         Error("Ainda não existem cursos nesta plataforma!");
     }   
-    ?>
+        ?>
     <div class="text-center d-none d-md-inline">
         <button class="rounded-circle border-0" id="sidebarToggle"></button>
     </div>
-
     </ul>  
     <div id="content-wrapper" class="d-flex flex-column">
         <div id="content">
@@ -256,6 +248,4 @@ echo $Component->getHeadHtmlDashboard();
                     <p>Metodologia significa “caminho ou via para a realização de algo”. Ou seja, é o processo utilizado para chegar a algum conhecimento. Metodologia é também o estudo das melhores formas de pesquisa para cada área do conhecimento.</p>
                     <p>Metodologia significa “caminho ou via para a realização de algo”. Ou seja, é o processo utilizado para chegar a algum conhecimento. Metodologia é também o estudo das melhores formas de pesquisa para cada área do conhecimento.</p>
             </div> 
-<?php 
-echo $Component->getFooterDashboard();
-?>
+<?= $Component->getFooterDashboard(); ?>

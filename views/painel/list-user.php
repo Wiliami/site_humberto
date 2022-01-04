@@ -37,7 +37,7 @@ echo $Component->getMenuSideBarDashboard();
                                 LEFT JOIN users_levels ul ON ul.level_id = u.user_level");
                             if($Read->getResult()) {
                                 foreach($Read->getResult() as $User) { 
-                                    ?>  
+                                    ?> 
                             <tr>
                                 <td>
                                     <?= $Component->getAvatarUser(); ?>
