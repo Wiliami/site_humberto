@@ -58,13 +58,13 @@ echo $Component->getMenuSideBarDashboard();
                                     <span><?= $User['user_email'] ?></span>
                                 </td>
                                 <td>
-                                    <a href="<?= BASE ?>/" class="table-link" title="Pesquisar <?= $User['user_name'] ?>">
+                                    <a href="<?= BASE ?>/" class="table-link" title="Pesquisar <?= $User['user_name'] ?> ">
                                         <span class="fa-stack">
                                             <i class="fa fa-square fa-stack-2x"></i>
                                             <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
                                         </span>
                                     </a>
-                                    <a href="<?= BASE ?>/" class="table-link" title="Alterar o nível de <?= $User['user_name'] ?>">
+                                    <a href="<?= BASE ?>/" class="table-link" title="Alterar o nível de <?= $User['user_name'] ?> ">
                                         <span class="fa-stack">
                                             <i class="fa fa-square fa-stack-2x"></i>
                                             <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
@@ -103,7 +103,7 @@ echo $Component->getMenuSideBarDashboard();
     </div>
 </div>
 
-<!-- Logout Modal -->
+<!-- Delete Modal -->
 <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -113,7 +113,7 @@ echo $Component->getMenuSideBarDashboard();
                     <span aria-hidden="true">×</span>
                 </button>
             </div>
-            <div class="modal-body">Tem certeza que deseja excluir usuário?</div>
+            <div class="modal-body">Tem certeza que deseja excluir usuário <?= $User['user_name']?> ?</div>
             <div class="modal-footer">
                 <button class="btn btn-success mb-2" type="button" data-dismiss="modal">Cancelar</button>
                 <a class="btn btn-danger mb-2" href="<?= BASE ?>/">Excluir</a>
@@ -121,11 +121,4 @@ echo $Component->getMenuSideBarDashboard();
         </div>
     </div>
 </div>
-
-<script src="<?= BASE ?>/res/site/js/jquery.min.js"></script>
-<script src="<?= BASE ?>/res/site/js/bootstrap.bundle.min.js"></script>
-<script src="<?= BASE ?>/res/site/js/jquery.easing.min.js"></script>
-<script src="<?= BASE ?>/res/site/js/sb-admin-2.min.js"></script> 
-
-
 <?= $Component->getConfigDataTables(); ?>
