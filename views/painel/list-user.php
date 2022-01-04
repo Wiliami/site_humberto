@@ -17,16 +17,16 @@ echo $Component->getMenuSideBarDashboard();
         <div class="col-lg-12">
             <div class="main-box clearfix">
                 <div class="table-responsive">
-                    <table id="listar-usuario" class="display" style="width:100%">
+                    <table id="listar-usuario" class="table table-striped" style="width:100%">
                         <thead>
                             <tr>
-                                <th><span class="">*</span></th>
-                                <th><span class="">Usuário</span></th>
-                                <th><span class="">Nível</span></th>
-                                <th><span class="">Criado</span></th>
-                                <th><span class="">Status</span></th>
-                                <th><span class="">E-mail</span></th>
-                                <th><span class="">Opções</span></th>
+                                <th>*</th>
+                                <th>Usuário</th>
+                                <th>Nível</th>
+                                <th>Criado</th>
+                                <th>Status</th>
+                                <th>E-mail</th>
+                                <th>Opções</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -40,22 +40,22 @@ echo $Component->getMenuSideBarDashboard();
                                     ?>  
                             <tr>
                                 <td>
-                                    <span><?= $Component->getAvatarUser(); ?></span>  
+                                    <?= $Component->getAvatarUser(); ?>
+                                </td>
+                                <td>    
+                                    <?= $User['user_name'] ?>
                                 </td>
                                 <td>
-                                    <span><?= $User['user_name'] ?></span>
+                                    <?= $User['level_desc'] ?>
                                 </td>
                                 <td>
-                                    <span><?= $User['level_desc'] ?></span>
+                                    <?= date('d/m/Y', strtotime($User['user_create_date'])) ?>
                                 </td>
                                 <td>
-                                    <span><?= date('d/m/Y', strtotime($User['user_create_date'])) ?></span>
+                                    <?= $User['user_status'] ?>
                                 </td>
                                 <td>
-                                    <span><?= $User['user_status'] ?></span>
-                                </td>
-                                <td>
-                                    <span><?= $User['user_email'] ?></span>
+                                    <?= $User['user_email'] ?>
                                 </td>
                                 <td>
                                     <a href="<?= BASE ?>/" class="table-link" title="Pesquisar <?= $User['user_name'] ?> ">
