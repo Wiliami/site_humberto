@@ -19,8 +19,8 @@ echo $Component->getHeadHtmlDashboard();
                                 ?>
                             <span class="font-weight-bold text-white"><?= $Cursos['curso_titulo'] ?></span>
                             <div class="small text-gray-500">1 de 24 aulas completas</div>
+                        </div>
                     </div>
-                </div>
             <?php
                 }
             } else {
@@ -45,8 +45,10 @@ echo $Component->getHeadHtmlDashboard();
     if($Read->getResult()) {
     foreach($Read->getResult() as $Modulos) {
         ?>
+
+
     <li class="nav-item">
-        <a class="nav-link collapsed" href="<?= BASE ?>#" data-toggle="collapse" data-target="#collapse<?= $Modulos['modulo_id'] ?>" aria-expanded="true" aria-controls="collapsePages">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse<?= $Modulos['modulo_id'] ?>" aria-expanded="true" aria-controls="collapsePages">
             <i class="fas fa-fw fa-folder"></i>
             <span><?= $Modulos['modulo_id'] ?></span>
         </a>
@@ -57,7 +59,9 @@ echo $Component->getHeadHtmlDashboard();
             if($Read->getResult()) {
                 foreach($Read->getResult() as $Aula) {
                     ?>
-                <a class="collapse-item" href="<?= BASE ?>/"><? $Aula['aula_name'] ?></a>
+                <a class="collapse-item" href="#"><? $Aula['aula_name'] ?></a>
+
+                
             <?php
                 }
             } else {
