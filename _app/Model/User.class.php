@@ -1,15 +1,12 @@
 <?php 
-
 class User {
 	//métodos da classe:
 	// - verifyLevelUserModerator -> verifica se o nível de usuário é diferente do nível moderador
 	// - verifyDuplicateUserEmail -> verificar se o usuário digitou o email que já está em uso. 
 	// - resetUserPassword -> alterar a senha do usuário
 	// - getForgot -> envia o email de recuperção de senha ao usuário
-	
 	private $Error;
 	private $Result;
-
 	// Método para verificar os nivéis de usuário
 	public function verifyLevelUserModerator() {
 		if($_SESSION['login']['user_level'] >= 6) { 
@@ -17,7 +14,6 @@ class User {
 			exit();
 		} 
 	}
-
 	public function createUser($dataUser) {
 	if(empty($dataUser["user_name"])) {
 			$this->Error = "Preencha no campo um nome!";
@@ -47,7 +43,6 @@ class User {
 	}
 
 	public function createCourse($dataCourse) {
-
 		if(empty($dataCourse["curso_titulo"])) {
 				$this->Error = "Preencha com um título!";
 				$this->Result = false;
@@ -71,16 +66,12 @@ class User {
 				}
 			}	
 		}
-
 	public function getResult() {
 		return $this->Result;
 	}
-
 	public function getError() {
 		return $this->Error;
 	}
-
-
 	private function verifyDuplicateUserEmail($email ) {
 		$Read = new Read();
 		$Read->FullRead("SELECT user_name FROM users WHERE user_email = :em", "em={$email}");
