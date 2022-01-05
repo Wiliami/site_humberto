@@ -6,11 +6,12 @@ echo $Component->getHeadHtmlDashboard();
 echo $Component->getMenuSideBarDashboard();
 ?>
 <!-- Boas vindas ao usuário -->
-<!-- <div class="container-fluid">
+<div class="container-fluid">
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800">Seja bem-vindo(a), <?= $_SESSION['login']['user_name'] ?></h1>
     </div>
-</div> -->
+    <p>Conteúdo</p>
+</div>
 <!-- Conteúdo que vai ser exibido -->
 <!-- <div class="container-fluid">
     <div class="d-sm-flex align-items-center justify-content-between mb-4">

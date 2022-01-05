@@ -8,7 +8,29 @@ echo $Component->getHeadHtmlDashboard();
     <ul class="nav-list navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar mt-6">
         <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 mw-100 navbar-search">
             <div class="input-group">
-                <input type="text" class="form-control bg-light border-0 small" placeholder="Pesquisar aulas..." aria-label="Search" aria-describedby="basic-addon2">
+            <div class="container-fluid">
+            <?php 
+            $Read = new Read();
+            $Read->FullRead("SELECT * FROM cursos LIMIT 1");
+            if($Read->getResult()) {
+                foreach($Read->getResult() as $Cursos) {
+                    ?>
+                <div class="d-sm-flex align-items-center justify-content-between mb-4 d-block">
+                    <div class="container-fluid">
+                        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                            <h1 class="h3 mb-0 text-gray-800"><?= $Cursos['curso_titulo'] ?></h1>
+                        </div>
+                        <p>24 aulas</p>
+                    </div>
+            <?php
+                }
+            } else {
+                Error("Nenhum título de curso existe!");
+            }
+            ?>
+                </div>
+            </div>
+                <input type="text" class="form-control bg-light border-0 small" name="pesquisar" placeholder="Pesquisar aulas..." aria-label="Search" aria-describedby="basic-addon2">
                 <div class="input-group-append">
                     <button class="btn btn-dark" type="button">
                         <i class="fas fa-search fa-sm"></i>
@@ -19,7 +41,6 @@ echo $Component->getHeadHtmlDashboard();
     <!-- divisor -->
     <hr class="sidebar-divider my-0"> 
     <?php 
-    $Read = new Read();
     $Read->FullRead("SELECT m.*, c.curso_descricao 
             FROM modulos m 
             LEFT JOIN cursos c ON c.curso_id = c.curso_titulo");
@@ -82,7 +103,7 @@ echo $Component->getHeadHtmlDashboard();
                         <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
                             aria-labelledby="alertsDropdown">
                             <h6 class="dropdown-header">
-                                Alerts Center
+                                Alertas
                             </h6>
                             <a class="dropdown-item d-flex align-items-center" href="#">
                                 <div class="mr-3">
@@ -91,8 +112,8 @@ echo $Component->getHeadHtmlDashboard();
                                     </div>
                                 </div>
                                 <div>
-                                    <div class="small text-gray-500">December 12, 2019</div>
-                                    <span class="font-weight-bold">A new monthly report is ready to download!</span>
+                                    <div class="small text-gray-500">05 de Janeiro de 2022</div>
+                                    <span class="font-weight-bold">O curso sobre finanças acaba de ser lançado!</span>
                                 </div>
                             </a>
                             <a class="dropdown-item d-flex align-items-center" href="#">
@@ -102,8 +123,8 @@ echo $Component->getHeadHtmlDashboard();
                                     </div>
                                 </div>
                                 <div>
-                                    <div class="small text-gray-500">December 7, 2019</div>
-                                    $290.29 has been deposited into your account!
+                                    <div class="small text-gray-500">02 de Janeiro de 2022</div>
+                                    Novos cursos serão lançados a qualquer momento.
                                 </div>
                             </a>
                             <a class="dropdown-item d-flex align-items-center" href="#">
@@ -113,11 +134,11 @@ echo $Component->getHeadHtmlDashboard();
                                     </div>
                                 </div>
                                 <div>
-                                    <div class="small text-gray-500">December 2, 2019</div>
-                                    Spending Alert: Weve noticed unusually high spending for your account.
+                                    <div class="small text-gray-500">07 de Janeiro de 2022</div>
+                                    Curso sobre coaching será lançado em breve!!!
                                 </div>
                             </a>
-                            <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+                            <a class="dropdown-item text-center small text-gray-500" href="#">Mostrar todas as alertas</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown no-arrow mx-1">
@@ -129,7 +150,7 @@ echo $Component->getHeadHtmlDashboard();
                         <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
                             aria-labelledby="messagesDropdown">
                             <h6 class="dropdown-header">
-                                Message Center
+                                Mensagens
                             </h6>
                             <a class="dropdown-item d-flex align-items-center" href="#">
                                 <div class="dropdown-list-image mr-3">
@@ -137,9 +158,8 @@ echo $Component->getHeadHtmlDashboard();
                                     <div class="status-indicator bg-success"></div>
                                 </div>
                                 <div class="font-weight-bold">
-                                    <div class="text-truncate">Hi there! I am wondering if you can help me with a
-                                        problem Ive been having.</div>
-                                    <div class="small text-gray-500">Emily Fowler · 58m</div>
+                                    <div class="text-truncate">4 cursos estão sob análise.</div>
+                                    <div class="small text-gray-500">Emily Gonçalves · 58 minutos atrás</div>
                                 </div>
                             </a>
                             <a class="dropdown-item d-flex align-items-center" href="#">
@@ -148,9 +168,8 @@ echo $Component->getHeadHtmlDashboard();
                                     <div class="status-indicator"></div>
                                 </div>
                                 <div>
-                                    <div class="text-truncate">I have the photos that you ordered last month, how
-                                        would you like them sent to you?</div>
-                                    <div class="small text-gray-500">Jae Chun · 1d</div>
+                                    <div class="text-truncate">Curso sobre gestão financeiro já está disponível com mais de 12 módulos.</div>
+                                    <div class="small text-gray-500">Carlos André · Há um dia</div>
                                 </div>
                             </a>
                             <a class="dropdown-item d-flex align-items-center" href="#">
@@ -159,9 +178,8 @@ echo $Component->getHeadHtmlDashboard();
                                     <div class="status-indicator bg-warning"></div>
                                 </div>
                                 <div>
-                                    <div class="text-truncate">Last months report looks great, I am very happy with
-                                        the progress so far, keep up the good work!</div>
-                                    <div class="small text-gray-500">Morgan Alvarez · 2d</div>
+                                    <div class="text-truncate">Foram vendidos 2 cursos nesta semana</div>
+                                    <div class="small text-gray-500">Morgan Alvarez · 2 dias atrás</div>
                                 </div>
                             </a>
                             <a class="dropdown-item d-flex align-items-center" href="#">
@@ -171,12 +189,11 @@ echo $Component->getHeadHtmlDashboard();
                                     <div class="status-indicator bg-success"></div>
                                 </div>
                                 <div>
-                                    <div class="text-truncate">Am I a good boy? The reason I ask is because someone
-                                        told me that people say this to all dogs, even if they arent good...</div>
-                                    <div class="small text-gray-500">Chicken the Dog · 2w</div>
+                                    <div class="text-truncate">Cursos sobre finanças foram os que tiveram maior acesso pelo usuários nesta semana.</div>
+                                    <div class="small text-gray-500">Alerta do sistema · 2 minutos atrás</div>
                                 </div>
                             </a>
-                            <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
+                            <a class="dropdown-item text-center small text-gray-500" href="#">Leia mais mensagens</a>
                         </div>
                     </li>
                     <div class="topbar-divider d-none d-sm-block"></div>
@@ -215,7 +232,7 @@ echo $Component->getHeadHtmlDashboard();
             <header class="navbar bg-success shadow d-flex align-items-center justify-content-center justify-content-md-between topbar mb-0">
                 <ul class="header1" style="list-style: none;">
                     <li>
-                        <a href="<?= BASE ?>/painel/aulas/nome-da-aula-anterior" class="small text-gray-200">
+                        <a href="<?= BASE ?>/painel/aulas/nome-da-aula-anterior" class="small text-gray-200" title="Voltar a aula anterior">
                             <div class="fw-normal text-white-50 mb-1">Anterior</div>
                             <i class="fas fa-arrow-circle-left mr-2 text-gray-200"></i>
                             <span>Aula anterior</span>
@@ -225,7 +242,7 @@ echo $Component->getHeadHtmlDashboard();
                 <div class="topbar-divider d-none d-sm-block"></div>
                 <ul class="header2" style="list-style: none;">  
                     <li>  
-                        <a href="<?= BASE ?>/painel/aulas/nome-da-proxima-aula" class="small text-gray-200">
+                        <a href="<?= BASE ?>/painel/aulas/nome-da-proxima-aula" class="small text-gray-200" title="Ir para a próxima aula">
                             <div class="fw-normal text-white-50 mb-1">Próxima</div>
                             <i class="fas fa-arrow-circle-right mr-2 text-gray-200"></i>
                             <span>Próxima aula</span>
