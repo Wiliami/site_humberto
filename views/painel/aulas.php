@@ -24,11 +24,11 @@ echo $Component->getHeadHtmlDashboard();
             <?php
                 }
             } else {
-                Error("Nenhum título de curso existe!");
+                Error("Nenhum título de curso!");
             }
             ?>
             </div>
-                <input type="text" class="form-control bg-light border-0 small" name="pesquisar" placeholder="Pesquisar aulas..." aria-label="Search" aria-describedby="basic-addon2">
+                <input type="text" class="form-control bg-light border-0 small" name="pesquisar" placeholder="Buscar por aulas" aria-label="Search" aria-describedby="basic-addon2">
                 <div class="input-group-append">
                     <button class="btn btn-dark" type="button">
                         <i class="fas fa-search fa-sm"></i>
@@ -44,15 +44,13 @@ echo $Component->getHeadHtmlDashboard();
             LEFT JOIN cursos c ON c.curso_id = c.curso_titulo");
     if($Read->getResult()) {
     foreach($Read->getResult() as $Modulos) {
-        ?>
-
-
+        ?>          
     <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse<?= $Modulos['modulo_id'] ?>" aria-expanded="true" aria-controls="collapsePages">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapsePages">
             <i class="fas fa-fw fa-folder"></i>
-            <span><?= $Modulos['modulo_id'] ?></span>
+            <span></span>
         </a>
-        <div id="collapse<?= $Modulos['modulo_id'] ?>" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
             <?php
             $Read->FullRead("SELECT * FROM aulas WHERE modulo_id = :id", "id={$Modulos['modulo_id']}");
@@ -60,8 +58,6 @@ echo $Component->getHeadHtmlDashboard();
                 foreach($Read->getResult() as $Aula) {
                     ?>
                 <a class="collapse-item" href="#"><? $Aula['aula_name'] ?></a>
-
-                
             <?php
                 }
             } else {
