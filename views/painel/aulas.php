@@ -15,7 +15,7 @@ echo $Component->getHeadHtmlDashboard();
             if($Read->getResult()) {
                 foreach($Read->getResult() as $Cursos) {
                     ?>
-                <div class="d-sm-flex align-items-center justify-content-between mb-4 d-block">
+                <div class="d-sm-flex align-items-center justify-content-between mb-4">
                     <span class="text-white"><?= $Cursos['curso_titulo'] ?></span>
             <?php
                 }
