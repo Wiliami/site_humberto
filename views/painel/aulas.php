@@ -8,22 +8,25 @@ echo $Component->getHeadHtmlDashboard();
     <ul class="nav-list navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar mt-6">
         <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 mw-100 navbar-search">
             <div class="input-group">
-            <div class="container-fluid">
-            <?php 
-            $Read = new Read();
-            $Read->FullRead("SELECT * FROM cursos LIMIT 1");
-            if($Read->getResult()) {
-                foreach($Read->getResult() as $Cursos) {
-                    ?>
-                <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                    <span class="text-white"><?= $Cursos['curso_titulo'] ?></span>
+                <div class="container-fluid">
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <div>
+                            <?php 
+                            $Read = new Read();
+                            $Read->FullRead("SELECT * FROM cursos LIMIT 1");
+                            if($Read->getResult()) {
+                                foreach($Read->getResult() as $Cursos) {
+                                ?>
+                            <span class="font-weight-bold text-white"><?= $Cursos['curso_titulo'] ?></span>
+                            <div class="small text-gray-500">1 de 24 aulas completas</div>
+                    </div>
+                </div>
             <?php
                 }
             } else {
                 Error("Nenhum título de curso existe!");
             }
             ?>
-                </div>
             </div>
                 <input type="text" class="form-control bg-light border-0 small" name="pesquisar" placeholder="Pesquisar aulas..." aria-label="Search" aria-describedby="basic-addon2">
                 <div class="input-group-append">
