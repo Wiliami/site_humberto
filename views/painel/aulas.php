@@ -38,42 +38,40 @@ echo $Component->getHeadHtmlDashboard();
         </form> 
     <!-- divisor -->
     <hr class="sidebar-divider my-0"> 
-    <?php 
-    $Read->FullRead("SELECT m.*, c.curso_descricao 
-            FROM modulos m 
-            LEFT JOIN cursos c ON c.curso_id = c.curso_titulo");
-    if($Read->getResult()) {
-    foreach($Read->getResult() as $Modulos) {
-        ?>          
+
     <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapsePages">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
             <i class="fas fa-fw fa-folder"></i>
-            <span></span>
+            <span>Módulos</span>
         </a>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-            <?php
-            $Read->FullRead("SELECT * FROM aulas WHERE modulo_id = :id", "id={$Modulos['modulo_id']}");
-            if($Read->getResult()) {
-                foreach($Read->getResult() as $Aula) {
-                    ?>
-                <a class="collapse-item" href="#"><? $Aula['aula_name'] ?></a>
-            <?php
-                }
-            } else {
-                Error("Ainda não existem aulas");
-            }
-            ?>
+                <a class="collapse-item" href="<?= BASE ?>'/painel/list-user">Aula name</a>
             </div>
         </div>
     </li>
+
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+            <i class="fas fa-book"></i>
+            <span>Cursos</span>
+        </a>
+        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
+            data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="<?= BASE ?>'/painel/profile/meus-cursos">Meus cursos</a>
+                <a class="collapse-item" href="<?= BASE ?>'/painel/profile/minhas-compras">Minhas compras</a>
+                <a class="collapse-item" href="<?= BASE ?>'/painel/profile/cursos-finalizados">Cursos finalizados</a>
+                <a class="collapse-item" href="<?= BASE ?>'/painel/profile/cursos-pendentes">Cursos pendentes</a>
+                <a class="collapse-item" href="<?= BASE ?>'/painel/profile/help">Ajuda</a>
+                <a class="collapse-item" href="<?= BASE ?>'/painel/profile/suporte">Suporte</a>
+                <a class="collapse-item" href="<?= BASE ?>'/painel/dashboard">Dashboard</a>
+            </div>
+        </div>
+    </li>
+
     <hr class="sidebar-divider my-0">
-    <?php
-        }
-    } else {
-        Error("Ainda não existem cursos nesta plataforma!");
-    }   
-        ?>
+
     <div class="text-center d-none d-md-inline">
         <button class="rounded-circle border-0" id="sidebarToggle"></button>
     </div>
