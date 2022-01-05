@@ -16,12 +16,7 @@ echo $Component->getHeadHtmlDashboard();
                 foreach($Read->getResult() as $Cursos) {
                     ?>
                 <div class="d-sm-flex align-items-center justify-content-between mb-4 d-block">
-                    <div class="container-fluid">
-                        <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                            <h1 class="h3 mb-0 text-gray-800"><?= $Cursos['curso_titulo'] ?></h1>
-                        </div>
-                        <p>24 aulas</p>
-                    </div>
+                    <span class="text-white"><?= $Cursos['curso_titulo'] ?></span>
             <?php
                 }
             } else {
@@ -50,11 +45,22 @@ echo $Component->getHeadHtmlDashboard();
     <li class="nav-item">
         <a class="nav-link collapsed" href="<?= BASE ?>#" data-toggle="collapse" data-target="#collapse<?= $Modulos['modulo_id'] ?>" aria-expanded="true" aria-controls="collapsePages">
             <i class="fas fa-fw fa-folder"></i>
-            <span>Nome seção</span>
+            <span><?= $Modulos['modulo_id'] ?></span>
         </a>
         <div id="collapse<?= $Modulos['modulo_id'] ?>" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="<?= BASE ?>/">Aula nome</a>
+            <?php
+            $Read->FullRead("SELECT * FROM aulas WHERE modulo_id = :id", "id={$Modulos['modulo_id']}");
+            if($Read->getResult()) {
+                foreach($Read->getResult() as $Aula) {
+                    ?>
+                <a class="collapse-item" href="<?= BASE ?>/"><? $Aula['aula_name'] ?></a>
+            <?php
+                }
+            } else {
+                Error("Ainda não existem aulas");
+            }
+            ?>
             </div>
         </div>
     </li>
