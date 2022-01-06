@@ -1,6 +1,6 @@
 <?php
 $Component = new Component();
-echo $Component->getHeadHtmlReset();
+echo $Component->getHeadHtmlHome();
 echo $Component->getMenu();
 ?>
 <body class="blog-author bg-gray-200">

@@ -1,6 +1,6 @@
 <?php 
 $Component = new Component();
-echo $Component->getHeadHtmlReset();
+echo $Component->getHeadHtmlHome();
 echo $Component->getMenu();   
 ?>
 <!-- Area cursos -->    
@@ -100,7 +100,6 @@ echo $Component->getMenu();
                     </div>
                 </div>
             </div>
-            <div class="row gx-5">
             <div class="col-lg-4 mb-5">
                 <div class="card h-100 shadow border-0">
                     <video class="card-img-top" muted>
@@ -187,7 +186,6 @@ echo $Component->getMenu();
                     </div>
                 </div>
             </div>
-            <div class="row gx-5">
             <div class="col-lg-4 mb-5">
                 <div class="card h-100 shadow border-0">
                     <video class="card-img-top" muted>
@@ -277,8 +275,4 @@ echo $Component->getMenu();
         </div>
     </div>
 </section>
-<?php 
-echo $Component->getFooterHome();
-?>
-</body>
-</html>
+<?= $Component->getFooterHome(); ?>

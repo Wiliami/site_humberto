@@ -103,9 +103,9 @@
                             <a href="#area-comentários" target="" class="btn btn-white btn-sm w-50 mx-auto mt-3">Saiba mais!</a>
                         </div>
                         </div>
+                            </div>
+                        </div>
                     </div>
-                    </div>
-                </div>
                 <div class="col-lg-6 ms-auto">
                     <div class="row justify-content-start">
                     <div class="col-md-6">
@@ -117,27 +117,28 @@
                     </div>
                     <div class="col-md-6">
                         <div class="info">
-                        <i class="fas fa-home"></i>
-                        <h5 class="font-weight-bolder mt-3">Família</h5>
-                        <p class="pe-3">Este curso aborda a importância da família na educação de crianças e jovens além de mostrar o papel decisivo desta influência ao longo de toda vida escolar para o crescimento dos filhos.</p>
+                                <i class="fas fa-home"></i>
+                                <h5 class="font-weight-bolder mt-3">Família</h5>
+                                <p class="pe-3">Este curso aborda a importância da família na educação de crianças e jovens além de mostrar o papel decisivo desta influência ao longo de toda vida escolar para o crescimento dos filhos.</p>
+                            </div>
                         </div>
                     </div>
-                    </div>
+
                     <div class="row justify-content-start mt-5">
-                    <div class="col-md-6 mt-3">
-                        <i class="fas fa-comments-dollar"></i>
-                        <h5 class="font-weight-bolder mt-3">Vida financeira</h5>
-                        <p class="pe-5">Estude o curso de Planejamento Financeiro Familiar Grátis com certificado válido em todo Brasil. Curso grátis online de Planejamento Financeiro Familiar.</p>
-                    </div>
-                    <div class="col-md-6 mt-3">
-                        <div class="info">
-                            <i class="fas fa-heart"></i>
-                        <h5 class="font-weight-bolder mt-3">Vida conjugal</h5>
-                        <p class="pe-3">Neste curso você conhecerá as bases do casamento segunda a Bíblia. Serão ministradas assuntos como:</p>
+                        <div class="col-md-6 mt-3">
+                            <i class="fas fa-comments-dollar"></i>
+                            <h5 class="font-weight-bolder mt-3">Vida financeira</h5>
+                            <p class="pe-5">Estude o curso de Planejamento Financeiro Familiar Grátis com certificado válido em todo Brasil. Curso grátis online de Planejamento Financeiro Familiar.</p>
+                        </div>
+                            <div class="col-md-6 mt-3">
+                                <div class="info">
+                                    <i class="fas fa-heart"></i>
+                                    <h5 class="font-weight-bolder mt-3">Vida conjugal</h5>
+                                    <p class="pe-3">Neste curso você conhecerá as bases do casamento segunda a Bíblia. Serão ministradas assuntos como:</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    </div>
-                </div>
                 </div>
             </div>
         </section>
