@@ -32,8 +32,8 @@ class Component {
                     <li><a href='"  . BASE . "/home/unitbrasil' class=\"nav-link px-2 link-secondary btn\">A Unitbrasil</a></li>
                 </ul>
                 <div class=\"col-md-auto text-end\">
-                    <!-- <a href=' " . BASE . "/cadastro' type=\"button\" class=\"btn me-1 mb-0\">Cadastro</a> -->
-                    <!-- <a href=' " . BASE . "/login' type=\"button\" class=\"btn btn-warning w-auto me-1 mb-0\">Área de membros</a> -->
+                    <!-- <a href=' " . BASE . "/pages/cadastro' type=\"button\" class=\"btn me-1 mb-0\">Cadastro</a> -->
+                    <!-- <a href=' " . BASE . "/pages/login' type=\"button\" class=\"btn btn-warning w-auto me-1 mb-0\">Área de membros</a> -->
                     <li href='"  . BASE . "/' class=\"nav-link px-2 link-secondary\">...</li>
                 </div>   
             </nav>
@@ -247,7 +247,7 @@ class Component {
                     <h6 class="text-sm">Ajuda & Suporte</h6>
                     <ul class="flex-column ms-n3 nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="' . BASE . '/contato" target="_blank">
+                        <a class="nav-link" href="' . BASE . '/home/contato">
                         Entre em contato
                         </a>
                     </li> 
@@ -259,12 +259,12 @@ class Component {
                     <h6 class="text-sm">Legal</h6>
                     <ul class="flex-column ms-n3 nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="' . BASE . '/termos-de-uso">
+                        <a class="nav-link" href="' . BASE . '/pages/termos-de-uso">
                         Termos & Condições
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="' . BASE . '/politica-privacidade">
+                        <a class="nav-link" href="' . BASE . '/pages/politica-privacidade">
                         Política de privacidade
                         </a>
                     </li>
@@ -620,7 +620,7 @@ class Component {
                                         Mudar senha
                                     </a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="' . BASE . '/logout" data-toggle="modal" data-target="#logoutModal">
+                                    <a class="dropdown-item" href="' . BASE . '/pages/logout" data-toggle="modal" data-target="#logoutModal">
                                         <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                         Logout
                                     </a>

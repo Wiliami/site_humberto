@@ -131,11 +131,6 @@ echo $Component->getMenu();
         </div>
         </div> -->
     </section>
-<?php
-$Component = new Component();
-echo $Component->getFooterHome();
-?>
-    </body>
-</html>
+<?= $Component->getFooterHome(); ?>
 
 
