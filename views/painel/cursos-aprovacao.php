@@ -11,7 +11,7 @@ echo $Component->getMenuSideBarDashboard();
         <div class="col-lg-12">
             <div class="main-box clearfix">
                 <div class="table-responsive">
-                    <table id="listar-curso" class="table table-striped" style="width:100%">
+                    <table id="listar-tabela" class="table table-striped" style="width:100%">
                     <div class="container-fluid">
                         <div class="d-sm-flex align-items-center justify-content-start mb-4">
                             <i class="fas fa-address-book"></i>
@@ -109,20 +109,4 @@ echo $Component->getMenuSideBarDashboard();
             </div>
         </div>
     </div>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
-    <script>
-    $(document).ready(function() {
-    $("#listar-curso").DataTable({
-            "language": {
-                "lengthMenu": "Mostrando _MENU_ registros por página",
-                "zeroRecords": "Nada encontrado",
-                "info": "Mostrando página _PAGE_ de _PAGES_",
-                "infoEmpty": "Nenhum registro disponível",
-                "infoFiltered": "(filtrado de _MAX_ registros no total)"
-            }      
-        });
-    });
-    </script>
 <?= $Component->getFooterDashboard(); ?>
