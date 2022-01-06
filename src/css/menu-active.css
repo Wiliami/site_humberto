@@ -6,6 +6,6 @@
     font-size: 18px;
   }
   .active, .btn:hover {
-    background-color: #666;
-    color: white;
+    background-color: #2EC4B6;
+    color: red;
   }

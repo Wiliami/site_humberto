@@ -1,10 +1,13 @@
+<?php 
+$Component = new Component();                     
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Pr. Humberto Oliveira | Home</title>
+        <title>Humberto Oliveira | Home</title>
         <!-- Estiliza o background do Header -->
         <link rel="stylesheet" href="<?= BASE ?>/src/css/index.css" type="text/css">
         <!-- Template oficial do projeto -->
@@ -14,11 +17,28 @@
         <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
     </head>
     <body>
-    <?php
-    $Component = new Component();                     
-    echo $Component->getMenu();   
-    echo $Component->getHeader();
-    ?>
+    <?= $Component->getMenu(); ?>
+    <header class="bg-white py-5" style="height: 698px;">            
+        <div class="overlay"></div>
+            <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+                <source src="https://storage.googleapis.com/coverr-main/mp4/Mt_Baker.mp4" type="video/mp4">
+            </video>
+            <div class="container h-100">
+                <div class="d-flex h-100 text-center align-items-center">
+                    <div class="my-5 text-center text-xl-start">
+                        <h1 class="display-5 fw-bolder text-white mb-2">Plataforma de <br /> evangelismo online <br />e desenvolvimento <br>pesssoal.</h1>
+                        <p class="lead fw-normal text-white-50 mb-4">Comece um tour pelo site<br /> e saiba como funciona o <br> evangelismo web.</p>
+                        <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
+                            <!-- <a class="btn btn-warning btn-lg px-4 me-sm-3" href=" ' . BASE . '/cadastro">Começar</a> -->
+                            <a class="btn btn-warning btn-lg px-4" href="#content-overview">Saiba mais</a>
+                            <!-- <div class="justify-content-sm-center justify-content-xl-end">
+                                <a class="btn btn-success text-black btn-lg px-4" href="/">Suporte</a>
+                            </div> -->
+                        </div>  
+                    </div>
+                </div>
+        </div>
+    </header>
     <main class="flex-shrink-0" id="content-overview">
         <section class="py-5">  
             <div class="container px-5">
@@ -44,8 +64,6 @@
                 </div>
             </div>
         </section>
-
-
         <!-- <section class="py-5">  
             <div class="container px-5">
                 <div class="row">
@@ -67,9 +85,6 @@
                 </div>
             </div>
         </section> -->
-
-
-
         <!-- Cursos box -->
         <section class="my-5 py-5">
             <div class="container">
@@ -128,7 +143,6 @@
                 </div>
             </div>
         </section>
-
         <!-- Àrea de cursos -->
         <!-- <section class="py-5 bg-white" id="page-course">
             <div class="container px-5 my-5">
@@ -236,9 +250,6 @@
                 </div>
             </div>
         </section> -->
-
-
-
         <!-- Comentários -->
         <section class="pb-5 position-relative bg-dark mx-n3" id="area-comentários">
             <div class="container">
@@ -335,4 +346,5 @@
             </div>
         </section>
     </main>
+<?= $Component->getMenuActiveConfig(); ?>
 <?= $Component->getFooterHome(); ?>

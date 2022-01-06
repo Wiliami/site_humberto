@@ -3,7 +3,7 @@
 // - getMenuAndSideBarDashboard - exemplo de menu;
 // - 
 class Component {
-    public function getHeadHtmlHome($title = "Página") {
+    public function getHeadHtmlHome($title = "Humberto Oliveira") {
         return '
         <!DOCTYPE html>
         <html lang="pt-BR">
@@ -11,24 +11,23 @@ class Component {
                 <meta charset="utf-8" />
                 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
                 <title>' . $title . '</title>
-                <link id="pagestyle" href="'. BASE .'/src/css/material-kit.css?v=3.0.0" rel="stylesheet" />
-                <link rel="stylesheet" href="' . BASE . '/src/css/menu-active.css" type="text/css">
+                <link id="pagestyle" href="' . BASE . '/src/css/material-kit.css?v=3.0.0" rel="stylesheet" />
+                <!-- <link rel="stylesheet" href="' . BASE . '/src/css/menu-active.css" type="text/css"> -->
                 <!-- Estiliza todos os ícons de deshboard -->
                 <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
             </head>
     ';
     }
-
-    public function getMenu () {
+    public function getMenu ($Active = 'btn') {
         return "
         <div class=\"container vw-100\">
             <nav class=\"d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3\">
                 <a href=' " . BASE . "/' type=\"button\" class=\" nav btn btn-black mb-2 mb-md-0\">
                     <img src='" . BASE . "/src/images/icon_small.png' alt='Logo' style='width: 50px; height: 50px;'>
                 </a>
-                <ul class=\"nav col-12 col-md-auto mb-2 justify-content-center mb-md-0 text-center\">
+                <ul id=\"myDIV\" class=\"nav col-12 col-md-auto mb-2 justify-content-center mb-md-0 text-center\">
                     <li><a href=' " . BASE . "/' class=\"nav-link px-2 link-secondary btn\">Home</a></li>
-                    <li><a href=' " . BASE . "/sobre' class=\"nav-link active px-2 link-secondary btn\">Sobre</a></li>
+                    <li><a href=' " . BASE . "/sobre' class=\"nav-link x-2 link-secondary btn active\">Sobre</a></li>
                     <li><a href=' " . BASE . "/conteudo' class=\"nav-link px-2 link-secondary btn\">Conteúdo</a></li>
                     <li><a href='"  . BASE . "/unitbrasil' class=\"nav-link px-2 link-secondary btn\">A Unitbrasil</a></li>
                 </ul>
@@ -40,6 +39,25 @@ class Component {
             </nav>
         </div>
         ";
+    }
+
+    function getMenuActiveConfig() {
+    return '
+    <script>
+        // Add active class to the current button (highlight it)
+        var header = document.getElementById("myDIV");
+        var btns = header.getElementsByClassName("btn");
+        for (var i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", function() {
+        var current = document.getElementsByClassName("active");
+        if (current.length > 0) { 
+            current[0].className = current[0].className.replace(" active", "");
+        }
+        this.className += " active";
+        });
+        }
+    </script>
+    ';
     }
     public function getHeader() {
         return '

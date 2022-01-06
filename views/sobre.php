@@ -42,4 +42,5 @@ echo $Component->getMenu();
         </div>
     </div>
 </section>
+<?= $Component->getMenuActiveConfig(); ?>
 <?= $Component->getFooterHome(); ?>
