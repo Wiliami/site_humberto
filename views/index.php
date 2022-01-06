@@ -335,9 +335,4 @@
             </div>
         </section>
     </main>
-<?php
-// echo $Component->getSuporteDashboard();
-echo $Component->getFooterHome();
-?>
-    </body>
-</html> 
+<?= $Component->getFooterHome(); ?>

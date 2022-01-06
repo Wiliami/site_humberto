@@ -1,6 +1,6 @@
 <?php
 $Component = new Component();
-echo $Component->getHeadHtmlReset();
+echo $Component->getHeadHtmlHome();
 echo $Component->getMenu();
 ?>
 <header class="header-2">
@@ -19,7 +19,6 @@ echo $Component->getMenu();
         </div>
     </div>
 </header>   
-
 <section class="py-sm-7 py-5 position-relative">
     <div class="container">
         <div class="row">
@@ -43,7 +42,6 @@ echo $Component->getMenu();
         </div>
     </div>
 </section>
-
 <section class="container">
 <!-- 21:9 aspect ratio -->
 <!-- Grid row -->
@@ -51,27 +49,20 @@ echo $Component->getMenu();
     <h3 class="mb-1">Últimos vídeos lançados!</h3>
 </div>
 <div class="row">
-
   <!-- Grid column -->
   <div class="col-lg-4 col-md-12 mb-4">
-
     <!--Modal: Name-->
     <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-lg" role="document">
-
         <!--Content-->
         <div class="modal-content">
-
           <!--Body-->
           <div class="modal-body mb-0 p-0">
-
             <div class="embed-responsive embed-responsive-16by9 z-depth-1-half">
               <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/A3PDXmYoF5U"
                 allowfullscreen></iframe>
             </div>
-
           </div>
-
           <!--Footer-->
           <div class="modal-footer justify-content-center">
             <span class="mr-4">Spread the word!</span>
@@ -82,43 +73,30 @@ echo $Component->getMenu();
             <a type="button" class="btn-floating btn-sm btn-gplus"><i class="fab fa-google-plus-g"></i></a>
             <!--Linkedin-->
             <a type="button" class="btn-floating btn-sm btn-ins"><i class="fab fa-linkedin-in"></i></a>
-
             <button type="button" class="btn btn-outline-primary btn-rounded btn-md ml-4" data-dismiss="modal">Close</button>
-
           </div>
-
         </div>
         <!--/.Content-->
-
       </div>
     </div>
     <!--Modal: Name-->
-
     <a><img class="img-fluid z-depth-1" src="https://mdbootstrap.com/img/screens/yt/screen-video-1.jpg" alt="video"
         data-toggle="modal" data-target="#modal1"></a>
   </div>
   <!-- Grid column -->
-
-  <!-- Grid column -->
   <div class="col-lg-4 col-md-6 mb-4">
-
     <!--Modal: Name-->
     <div class="modal fade" id="modal6" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-lg" role="document">
-
         <!--Content-->
         <div class="modal-content">
-
           <!--Body-->
           <div class="modal-body mb-0 p-0">
-
             <div class="embed-responsive embed-responsive-16by9 z-depth-1-half">
               <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/wTcNtgA6gHs"
                 allowfullscreen></iframe>
             </div>
-
           </div>
-
           <!--Footer-->
           <div class="modal-footer justify-content-center">
             <span class="mr-4">Spread the word!</span>
@@ -129,43 +107,31 @@ echo $Component->getMenu();
             <a type="button" class="btn-floating btn-sm btn-gplus"><i class="fab fa-google-plus-g"></i></a>
             <!--Linkedin-->
             <a type="button" class="btn-floating btn-sm btn-ins"><i class="fab fa-linkedin-in"></i></a>
-
             <button type="button" class="btn btn-outline-primary btn-rounded btn-md ml-4" data-dismiss="modal">Close</button>
-
           </div>
-
         </div>
         <!--/.Content-->
-
       </div>
     </div>
     <!--Modal: Name-->
-
     <a><img class="img-fluid z-depth-1" src="https://mdbootstrap.com/img/screens/yt/screen-video-2.jpg" alt="video"
         data-toggle="modal" data-target="#modal6"></a>
   </div>
   <!-- Grid column -->
-
   <!-- Grid column -->
   <div class="col-lg-4 col-md-6 mb-4">
-
     <!--Modal: Name-->
     <div class="modal fade" id="modal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-lg" role="document">
-
         <!--Content-->
         <div class="modal-content">
-
           <!--Body-->
           <div class="modal-body mb-0 p-0">
-
             <div class="embed-responsive embed-responsive-16by9 z-depth-1-half">
               <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/vlDzYIIOYmM"
                 allowfullscreen></iframe>
             </div>
-
           </div>
-
           <!--Footer-->
           <div class="modal-footer justify-content-center">
             <span class="mr-4">Spread the word!</span>
@@ -176,34 +142,23 @@ echo $Component->getMenu();
             <a type="button" class="btn-floating btn-sm btn-gplus"><i class="fab fa-google-plus-g"></i></a>
             <!--Linkedin-->
             <a type="button" class="btn-floating btn-sm btn-ins"><i class="fab fa-linkedin-in"></i></a>
-
             <button type="button" class="btn btn-outline-primary btn-rounded btn-md ml-4" data-dismiss="modal">Close</button>
-
           </div>
-
         </div>
         <!--/.Content-->
-
       </div>
     </div>
     <!--Modal: Name-->
-
     <a><img class="img-fluid z-depth-1" src="https://mdbootstrap.com/img/screens/yt/screen-video-3.jpg" alt="video"
         data-toggle="modal" data-target="#modal4"></a>
-
   </div>
   <!-- Grid column -->
-
-
   <div class="col-lg-4 col-md-6 mb-4">
-
     <!--Modal: Name-->
     <div class="modal fade" id="modal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-lg" role="document">
-
         <!--Content-->
         <div class="modal-content">
-
           <!--Body-->
           <div class="modal-body mb-0 p-0">
 
@@ -211,9 +166,7 @@ echo $Component->getMenu();
               <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/vlDzYIIOYmM"
                 allowfullscreen></iframe>
             </div>
-
           </div>
-
           <!--Footer-->
           <div class="modal-footer justify-content-center">
             <span class="mr-4">Spread the word!</span>
@@ -224,42 +177,29 @@ echo $Component->getMenu();
             <a type="button" class="btn-floating btn-sm btn-gplus"><i class="fab fa-google-plus-g"></i></a>
             <!--Linkedin-->
             <a type="button" class="btn-floating btn-sm btn-ins"><i class="fab fa-linkedin-in"></i></a>
-
             <button type="button" class="btn btn-outline-primary btn-rounded btn-md ml-4" data-dismiss="modal">Close</button>
-
           </div>
-
         </div>
         <!--/.Content-->
-
       </div>
     </div>
     <!--Modal: Name-->
-
     <a><img class="img-fluid z-depth-1" src="https://mdbootstrap.com/img/screens/yt/screen-video-3.jpg" alt="video"
         data-toggle="modal" data-target="#modal4"></a>
-
   </div>
-
   <div class="col-lg-4 col-md-6 mb-4">
-
     <!--Modal: Name-->
     <div class="modal fade" id="modal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-lg" role="document">
-
         <!--Content-->
         <div class="modal-content">
-
           <!--Body-->
           <div class="modal-body mb-0 p-0">
-
             <div class="embed-responsive embed-responsive-16by9 z-depth-1-half">
               <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/vlDzYIIOYmM"
                 allowfullscreen></iframe>
             </div>
-
           </div>
-
           <!--Footer-->
           <div class="modal-footer justify-content-center">
             <span class="mr-4">Spread the word!</span>
@@ -270,42 +210,28 @@ echo $Component->getMenu();
             <a type="button" class="btn-floating btn-sm btn-gplus"><i class="fab fa-google-plus-g"></i></a>
             <!--Linkedin-->
             <a type="button" class="btn-floating btn-sm btn-ins"><i class="fab fa-linkedin-in"></i></a>
-
             <button type="button" class="btn btn-outline-primary btn-rounded btn-md ml-4" data-dismiss="modal">Close</button>
-
           </div>
-
         </div>
         <!--/.Content-->
-
       </div>
     </div>
     <!--Modal: Name-->
-
     <a><img class="img-fluid z-depth-1" src="https://mdbootstrap.com/img/screens/yt/screen-video-3.jpg" alt="video"
         data-toggle="modal" data-target="#modal4"></a>
-
   </div>
-
   <div class="col-lg-4 col-md-6 mb-4">
-
     <!--Modal: Name-->
     <div class="modal fade" id="modal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-lg" role="document">
-
         <!--Content-->
         <div class="modal-content">
-
           <!--Body-->
           <div class="modal-body mb-0 p-0">
-
             <div class="embed-responsive embed-responsive-16by9 z-depth-1-half">
-              <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/vlDzYIIOYmM"
-                allowfullscreen></iframe>
+              <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/vlDzYIIOYmM" allowfullscreen></iframe>
             </div>
-
           </div>
-
           <!--Footer-->
           <div class="modal-footer justify-content-center">
             <span class="mr-4">Spread the word!</span>
@@ -316,33 +242,20 @@ echo $Component->getMenu();
             <a type="button" class="btn-floating btn-sm btn-gplus"><i class="fab fa-google-plus-g"></i></a>
             <!--Linkedin-->
             <a type="button" class="btn-floating btn-sm btn-ins"><i class="fab fa-linkedin-in"></i></a>
-
             <button type="button" class="btn btn-outline-primary btn-rounded btn-md ml-4" data-dismiss="modal">Close</button>
-
           </div>
-
         </div>
         <!--/.Content-->
-
       </div>
     </div>
     <!--Modal: Name-->
-
     <a><img class="img-fluid z-depth-1" src="https://mdbootstrap.com/img/screens/yt/screen-video-3.jpg" alt="video"
         data-toggle="modal" data-target="#modal4"></a>
-
   </div>
-
 </div>
 <!-- Grid row -->
 </section>
-<?php
-$Component = new Component();
-echo $Component->getFooterHome();
-?>
-    </body>
-</html>
-
+<?= $Component->getFooterHome(); ?>
 
 
 

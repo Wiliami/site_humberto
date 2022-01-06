@@ -5,18 +5,16 @@ $Component = new Component();
 echo $Component->getHeadHtmlDashboard();
 echo $Component->getMenuSideBarDashboard();
 ?>
-<div class="container-fluid">
-    <div class="d-sm-flex align-items-center justify-content-start mb-4">
-        <i class="fas fa-users"></i>
-        <h1 class="h3 mb-0 text-gray-800 ml-2">Nível de usuários</h1>
-    </div>
-</div>
 <div class="container">
     <div class="row">
         <div class="col-lg-12">
             <div class="main-box clearfix">
                 <div class="table-responsive">
                     <table class="table user-list">
+                        <div class="d-sm-flex align-items-center justify-content-start mb-4">
+                            <i class="fas fa-users"></i> 
+                            <h1 class="h3 mb-0 text-gray-800">Nível de usuários</h1>
+                        </div>
                         <thead>
                             <tr>
                                 <th><span class="btn btn-warning mb-2">Usuário</span></th>
