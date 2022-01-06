@@ -1,6 +1,4 @@
-<?php 
-$Component = new Component();                     
-?>
+<?php $Component = new Component(); ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
     <head>
@@ -57,8 +55,8 @@ $Component = new Component();
                             </div>
                         </div>
                     </div>
+                    <!-- <img class="img-fluid rounded-3 my-5 bg-light rounded-circle" style="width: 295px; height: 270px;" src="<?= BASE ?>/src/images/perfil.png" alt="image de Humberto Oliveira" /> -->
                     <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center">
-                        <!-- <img class="img-fluid rounded-3 my-5 bg-light rounded-circle" style="width: 295px; height: 270px;" src="<?= BASE ?>/src/images/perfil.png" alt="image de Humberto Oliveira" /> -->
                         <img src="<?= BASE ?>/src/images/perfil.png" class="img-fluid" alt="Responsive image">
                     </div> 
                 </div>
