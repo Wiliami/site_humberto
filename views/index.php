@@ -28,8 +28,7 @@
                             <h1 class="display-5 fw-bolder text-black mb-2">Pr. Humberto Oliveira</h1>
                             <p class="lead fw-normal text-black-50 mb-4">
                             Humberto Oliveira é Empresário e Professor e dedica parte de seu tempo
-                            para o ministério pastoral.
-                            </p>
+                            para o ministério pastoral.</p>
                             <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
                                 <a class="btn btn-dark btn-lg px-4" href="https://www.facebook.com/educacaoetreinamentos/">
                                     Facebook
@@ -39,8 +38,9 @@
                         </div>
                     </div>
                     <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center">
-                        <img class="img-fluid rounded-3 my-5 bg-light rounded-circle" style="width: 295px; height: 270px;" src="<?= BASE ?>/src/images/perfil.png" alt="image de Humberto Oliveira" />
-                    </div>
+                        <!-- <img class="img-fluid rounded-3 my-5 bg-light rounded-circle" style="width: 295px; height: 270px;" src="<?= BASE ?>/src/images/perfil.png" alt="image de Humberto Oliveira" /> -->
+                        <img src="<?= BASE ?>/src/images/perfil.png" class="img-fluid" alt="Responsive image">
+                    </div> 
                 </div>
             </div>
         </section>

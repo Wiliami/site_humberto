@@ -1,9 +1,7 @@
 <?php
-
 // topo
 // - getMenuAndSideBarDashboard - exemplo de menu;
 // - 
-
 class Component {
     public function getHeadHtmlHome($title = "Página") {
         return '
@@ -14,13 +12,14 @@ class Component {
                 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
                 <title>' . $title . '</title>
                 <link id="pagestyle" href="'. BASE .'/src/css/material-kit.css?v=3.0.0" rel="stylesheet" />
+                <link rel="stylesheet" href="' . BASE . '/src/css/menu-active.css" type="text/css">
                 <!-- Estiliza todos os ícons de deshboard -->
                 <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
             </head>
     ';
     }
 
-    public function getMenu ($MenuActive = 'btn') {
+    public function getMenu () {
         return "
         <div class=\"container vw-100\">
             <nav class=\"d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3\">
@@ -28,10 +27,10 @@ class Component {
                     <img src='" . BASE . "/src/images/icon_small.png' alt='Logo' style='width: 50px; height: 50px;'>
                 </a>
                 <ul class=\"nav col-12 col-md-auto mb-2 justify-content-center mb-md-0 text-center\">
-                    <li><a href=' " . BASE . "/' class=\"nav-link active px-2 link-secondary\">Home</a></li>
-                    <li><a href=' " . BASE . "/sobre' class=\"nav-link px-2 link-secondary\">Sobre</a></li>
-                    <li><a href=' " . BASE . "/conteudo' class=\"nav-link px-2 link-secondary\">Conteúdo</a></li>
-                    <li><a href='"  . BASE . "/unitbrasil' class=\"nav-link px-2 link-secondary\">A Unitbrasil</a></li>
+                    <li><a href=' " . BASE . "/' class=\"nav-link px-2 link-secondary btn\">Home</a></li>
+                    <li><a href=' " . BASE . "/sobre' class=\"nav-link active px-2 link-secondary btn\">Sobre</a></li>
+                    <li><a href=' " . BASE . "/conteudo' class=\"nav-link px-2 link-secondary btn\">Conteúdo</a></li>
+                    <li><a href='"  . BASE . "/unitbrasil' class=\"nav-link px-2 link-secondary btn\">A Unitbrasil</a></li>
                 </ul>
                 <div class=\"col-md-auto text-end\">
                     <!-- <a href=' " . BASE . "/cadastro' type=\"button\" class=\"btn me-1 mb-0\">Cadastro</a> -->
