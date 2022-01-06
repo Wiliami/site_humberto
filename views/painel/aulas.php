@@ -16,7 +16,7 @@ echo $Component->getHeadHtmlDashboard();
                             $Read->FullRead("SELECT * FROM cursos LIMIT 1");
                             if($Read->getResult()) {
                                 foreach($Read->getResult() as $Cursos) {
-                                ?>
+                                ?>  
                             <span class="font-weight-bold text-white"><?= $Cursos['curso_titulo'] ?></span>
                             <div class="small text-gray-500">1 de 24 aulas completas</div>
                         </div>

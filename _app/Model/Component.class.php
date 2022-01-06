@@ -772,7 +772,7 @@ class Component {
                     <div class="modal-body">Selecione "Sair" para encerrar a sua sessão.</div>
                     <div class="modal-footer">
                         <button class="btn btn-success" type="button" data-dismiss="modal">Cancelar</button>
-                        <a class="btn btn-danger" href="' . BASE . '/logout">Sair</a>
+                        <a class="btn btn-success" href="' . BASE . '/logout">Sair</a>
                     </div>
                 </div>
             </div>
