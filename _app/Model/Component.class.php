@@ -294,7 +294,7 @@ class Component {
         ";
     }
 
-    public function getHeadHtmlDashboard($title = 'Painel | Pr. Humberto Oliveira') {
+    public function getHeadHtmlDashboard($title = 'Plataforma cursos| Dashboard') {
         return '
         <!DOCTYPE html>
         <html lang="pt-BR">

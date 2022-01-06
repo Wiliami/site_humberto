@@ -11,13 +11,11 @@ echo $Component->getMenuSideBarDashboard();
         <div class="col-lg-12">
             <div class="main-box clearfix">
                 <div class="table-responsive">
-                    <table id="listar-usuario" class="display table table-bordered" style="width:100%">
-                    <div class="container-fluid">
+                    <table id="listar-usuario" class="table table-striped" style="width:100%">
                         <div class="d-sm-flex align-items-center justify-content-start mb-4">
                             <i class="fas fa-list"></i>
                             <h1 class="h3 mb-0 text-gray-800">Lista de usuários</h1>
                         </div>
-                    </div>
                         <thead>
                             <tr>
                                 <th>*</th>
@@ -121,3 +119,4 @@ echo $Component->getMenuSideBarDashboard();
     </div>
 </div>
 <?= $Component->getConfigDataTable(); ?>
+<?= $Component->getFooterDashboard(); ?>

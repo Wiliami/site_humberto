@@ -11,7 +11,7 @@ echo $Component->getMenuSideBarDashboard();
         <div class="col-lg-12">
             <div class="main-box clearfix">
                 <div class="table-responsive">
-                    <table id="listar-curso" class="display" style="width:100%">
+                    <table id="listar-curso" class="table table-striped" style="width:100%">
                     <div class="container-fluid">
                         <div class="d-sm-flex align-items-center justify-content-start mb-4">
                             <i class="fas fa-address-book"></i>
@@ -125,4 +125,4 @@ echo $Component->getMenuSideBarDashboard();
         });
     });
     </script>
-     
+<?= $Component->getFooterDashboard(); ?>
