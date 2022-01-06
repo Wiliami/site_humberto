@@ -815,21 +815,6 @@ class Component {
         <script src="'. BASE .'/res/site/js/bootstrap.bundle.min.js"></script>
         <script src="'. BASE .'/res/site/js/jquery.easing.min.js"></script>
         <script src="'. BASE .'/res/site/js/sb-admin-2.min.js"></script>
-        <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-        <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
-        <script>
-        $(document).ready(function() {
-        $("#listar-tabela").DataTable({
-                "language": {
-                    "lengthMenu": "Mostrando _MENU_ registros por página",
-                    "zeroRecords": "Nenhum registro foi encontrado",
-                    "info": "Mostrando página _PAGE_ de _PAGES_",
-                    "infoEmpty": "Nenhum registro foi encontrado",
-                    "infoFiltered": "(filtrado de _MAX_ registros no total)"
-                }      
-            });
-        });
-        </script>
     </body>
 </html>        
         ';
