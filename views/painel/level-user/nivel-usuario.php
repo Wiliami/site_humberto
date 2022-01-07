@@ -3,6 +3,7 @@ $User = new User();
 $User->verifyExistLoginUser();
 $Component = new Component();
 echo $Component->getHeadHtmlDashboard();
+echo $Component->getHeadHtmlDataTable();
 echo $Component->getMenuSideBarDashboard();
 $NivelId = $_GET['nivel'];
 ?>
@@ -11,7 +12,7 @@ $NivelId = $_GET['nivel'];
         <div class="col-lg-12">
             <div class="main-box clearfix">
                 <div class="table-responsive">
-                    <table class="table user-list">
+                    <table id="listar-usuarios" class="table table-striped" style="width: 100%;">
                         <?php
                         $Read = new Read();
                         $Read->FullRead("SELECT * FROM users_levels WHERE level_id = :ld", "ld={$NivelId}");
@@ -31,9 +32,10 @@ $NivelId = $_GET['nivel'];
                         ?>
                         <thead>
                             <tr>
-                                <th><span class="btn btn-warning mb-2">Perfil</span></th>
-                                <th><span class="btn btn-warning mb-2">Usuário</span></th>
-                                <th><span class="btn btn-warning mb-2">Opções</span></th>
+                                <th><span>Perfil</span></th>
+                                <th><span>Usuário</span></th>
+                                <th><span>E-mail</span></th>
+                                <th><span>Opções</span></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -47,7 +49,10 @@ $NivelId = $_GET['nivel'];
                                     <?= $Component->getAvatarUser(); ?>
                                 </td>
                                 <td>
-                                    <span class="btn btn-light mb-2"><?= $Users['user_name'] ?></span>
+                                    <span><?= $Users['user_name'] ?></span>
+                                </td>
+                                <td>
+                                    <span><?= $Users['user_email'] ?></span>
                                 </td>
                                 <td>
                                     <a href="<?= BASE ?>/" class="table-link" title="Alterar o nível de <?= $Users['user_name'] ?>">
@@ -70,6 +75,5 @@ $NivelId = $_GET['nivel'];
             </div>
         </div>
     </div>  
-    <a href="<?= BASE ?>/painel/nivel-user" class="d-sm-flex align-items-center justify-content-center btn btn-success mb-2" title="Carregar mais usuários">Carregar mais...</a>
 </div>
 <?= $Component->getFooterDashboard(); ?>

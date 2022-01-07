@@ -3,6 +3,7 @@ $User = new User();
 $User->verifyExistLoginUser();
 $Component = new Component();
 echo $Component->getHeadHtmlDashboard();
+echo $Component->getHeadHtmlDataTable();
 echo $Component->getMenuSideBarDashboard();
 ?>
 <div class="container">
@@ -10,16 +11,15 @@ echo $Component->getMenuSideBarDashboard();
         <div class="col-lg-12">
             <div class="main-box clearfix">
                 <div class="table-responsive">
-                    <table class="table user-list">
+                    <table id="listar-usuarios" class="table table-striped" style="width: 100%;">
                         <div class="d-sm-flex align-items-center justify-content-start mb-4">
                             <i class="fas fa-users"></i> 
                             <h1 class="h3 mb-0 text-gray-800">Nível de usuários</h1>
                         </div>
                         <thead>
                             <tr>
-                                <th><span class="btn btn-warning mb-2">Usuário</span></th>
-                                <th><span class="btn btn-warning mb-2">Nível Usuário</span></th>
-                                <th><span class="btn btn-warning mb-2">Opções</span></th>
+                                <th>Nível Usuário</th>
+                                <th>Opções</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -31,10 +31,7 @@ echo $Component->getMenuSideBarDashboard();
                                     ?>
                             <tr>
                                 <td>
-                                    <?= $Component->getAvatarUser(); ?>
-                                </td>
-                                <td>
-                                    <span class="btn btn-light mb-2"><?= $Level['level_desc'] ?></span>
+                                    <span><?= $Level['level_desc'] ?></span>
                                 </td>
                                 <td>
                                     <a href="<?= BASE ?>/painel/level-user/nivel-usuario&nivel=<?= $Level['level_id']?>" class="table-link btn btn-primary mb-2" title="Pesquisar usuários do nível <?= $Level['level_desc'] ?>">
