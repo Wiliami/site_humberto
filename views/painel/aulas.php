@@ -4,23 +4,6 @@ $User->verifyExistLoginUser();
 $Component = new Component();
 echo $Component->getHeadHtmlDashboard();
 ?>
- <!DOCTYPE html>
-<html lang="pt-BR">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="description" content="">
-        <meta name="author" content="">
-        <title>Texto</title>
-        <link href="<? BASE ?>/res/site/css/all.min.css" rel="stylesheet" type="text/css">
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-        <link href="<? BASE ?>/res/site/css/sb-admin-2.min.css" rel="stylesheet">
-        <!-- Estiliza os ícones da dashboard -->
-        <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
-    </head> 
-    <body id="page-top">
-
 <div id="wrapper">
     <ul class="nav-list navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar mt-6">
         <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 mw-100 navbar-search">
@@ -33,64 +16,70 @@ echo $Component->getHeadHtmlDashboard();
                             $Read->FullRead("SELECT * FROM cursos LIMIT 1");
                             if($Read->getResult()) {
                                 foreach($Read->getResult() as $Cursos) {
-                                ?>  
+                                ?>
                             <span class="font-weight-bold text-white"><?= $Cursos['curso_titulo'] ?></span>
                             <div class="small text-gray-500">1 de 24 aulas completas</div>
                         </div>
                     </div>
-                            <?php
+                    <?php
                                 }
                             } else {
                                 Error("Nenhum título de curso!");
                             }
                             ?>
                 </div>
-                <input type="text" class="form-control bg-light border-0 small" name="pesquisar" placeholder="Buscar por aulas" aria-label="Search" aria-describedby="basic-addon2">
+                <?php
+                $Read->FullRead("SELECT * FROM aulas WHERE aula_name LIKE '%pesquisar%' LIMIT 5");
+                if($Read->getResult()) {
+                    foreach($Read->getResult as $pesquisar) {
+                        ?>
+                <input type="submit" class="form-control bg-light border-0 small rounded-left " name="pesquisar"
+                    aria-label="Search" aria-describedby="basic-addon2" value="<?= $Pesquisar ?>">
                 <div class="input-group-append">
                     <button class="btn btn-dark" type="button">
                         <i class="fas fa-search fa-sm"></i>
                     </button>
                 </div>
+                <?php
+                    }
+                } else {
+                    Error("Ainda não existem aulas!");
+                }
+                ?>
             </div>
-        </form> 
-    <!-- divisor -->
-    <hr class="sidebar-divider my-0"> 
-
-    <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-            <i class="fas fa-fw fa-folder"></i>
-            <span>Módulos</span>
-        </a>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="<?= BASE ?>/painel/list-user">Aula name</a>
+        </form>
+        <!-- divisor -->
+        <hr class="sidebar-divider my-0">
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                aria-expanded="true" aria-controls="collapseTwo">
+                <i class="fas fa-fw fa-folder"></i>
+                <span>Módulos</span>
+            </a>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <a class="collapse-item" href="<?= BASE ?>/painel/list-user">Aula name</a>
+                </div>
             </div>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+                aria-expanded="true" aria-controls="collapseUtilities">
+                <i class="fas fa-book"></i>
+                <span>Cursos</span>
+            </a>
+            <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
+                data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <a class="collapse-item" href="<?= BASE ?>/painel/profile/meus-cursos">Meus cursos</a>
+                </div>
+            </div>
+        </li>
+        <hr class="sidebar-divider my-0">
+        <div class="text-center d-none d-md-inline">
+            <button class="rounded-circle border-0" id="sidebarToggle"></button>
         </div>
-    </li>
-
-    <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
-            <i class="fas fa-book"></i>
-            <span>Cursos</span>
-        </a>
-        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-            data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="<?= BASE ?>/painel/profile/meus-cursos">Meus cursos</a>
-                <a class="collapse-item" href="<?= BASE ?>/painel/profile/minhas-compras">Minhas compras</a>
-                <a class="collapse-item" href="<?= BASE ?>/painel/profile/cursos-finalizados">Cursos finalizados</a>
-                <a class="collapse-item" href="<?= BASE ?>/painel/profile/cursos-pendentes">Cursos pendentes</a>
-                <a class="collapse-item" href="<?= BASE ?>/painel/profile/help">Ajuda</a>
-                <a class="collapse-item" href="<?= BASE ?>/painel/profile/suporte">Suporte</a>
-                <a class="collapse-item" href="<?= BASE ?>/painel/dashboard">Dashboard</a>
-            </div>
-        </div>
-    </li>
-    <hr class="sidebar-divider my-0">
-    <div class="text-center d-none d-md-inline">
-        <button class="rounded-circle border-0" id="sidebarToggle"></button>
-    </div>
-    </ul>  
+    </ul>
     <div id="content-wrapper" class="d-flex flex-column">
         <div id="content">
             <nav class="navbar navbar-expand navbar-light bg-white topbar mb-0 static-top shadow">
@@ -160,7 +149,8 @@ echo $Component->getHeadHtmlDashboard();
                                     Curso sobre coaching será lançado em breve!!!
                                 </div>
                             </a>
-                            <a class="dropdown-item text-center small text-gray-500" href="#">Mostrar todas as alertas</a>
+                            <a class="dropdown-item text-center small text-gray-500" href="#">Mostrar todas as
+                                alertas</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown no-arrow mx-1">
@@ -190,7 +180,8 @@ echo $Component->getHeadHtmlDashboard();
                                     <div class="status-indicator"></div>
                                 </div>
                                 <div>
-                                    <div class="text-truncate">Curso sobre gestão financeiro já está disponível com mais de 12 módulos.</div>
+                                    <div class="text-truncate">Curso sobre gestão financeiro já está disponível com mais
+                                        de 12 módulos.</div>
                                     <div class="small text-gray-500">Carlos André · Há um dia</div>
                                 </div>
                             </a>
@@ -211,7 +202,8 @@ echo $Component->getHeadHtmlDashboard();
                                     <div class="status-indicator bg-success"></div>
                                 </div>
                                 <div>
-                                    <div class="text-truncate">Cursos sobre finanças foram os que tiveram maior acesso pelo usuários nesta semana.</div>
+                                    <div class="text-truncate">Cursos sobre finanças foram os que tiveram maior acesso
+                                        pelo usuários nesta semana.</div>
                                     <div class="small text-gray-500">Alerta do sistema · 2 minutos atrás</div>
                                 </div>
                             </a>
@@ -222,10 +214,12 @@ echo $Component->getHeadHtmlDashboard();
                     <li class="nav-item dropdown no-arrow">
                         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="mr-2 d-none d-lg-inline text-gray-600 small">Seja bem-vindo(a),  <?= $_SESSION['login']['user_name'] ?></span>
+                            <span class="mr-2 d-none d-lg-inline text-gray-600 small">Seja bem-vindo(a),
+                                <?= $_SESSION['login']['user_name'] ?></span>
                             <img class="img-profile rounded-circle" src="<?= BASE ?>/src/images/undraw_profile.svg">
                         </a>
-                        <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                        <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                            aria-labelledby="userDropdown">
                             <a class="dropdown-item" href="<?= BASE ?>/painel/profile/profile-user">
                                 <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                 Meus dados
@@ -243,18 +237,21 @@ echo $Component->getHeadHtmlDashboard();
                                 Suporte
                             </a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="<?= BASE ?>/logout" data-toggle="modal" data-target="#logoutModal">
+                            <a class="dropdown-item" href="<?= BASE ?>/logout" data-toggle="modal"
+                                data-target="#logoutModal">
                                 <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                 Sair
-                            </a>   
+                            </a>
                         </div>
                     </li>
                 </ul>
             </nav>
-            <header class="navbar bg-success shadow d-flex align-items-center justify-content-center justify-content-md-between topbar mb-0">
+            <header
+                class="navbar bg-success shadow d-flex align-items-center justify-content-center justify-content-md-between topbar mb-0">
                 <ul class="header1" style="list-style: none;">
                     <li>
-                        <a href="<?= BASE ?>/painel/aulas/nome-da-aula-anterior" class="small text-gray-200" title="Voltar a aula anterior">
+                        <a href="<?= BASE ?>/painel/aulas/nome-da-aula-anterior" class="small text-gray-200"
+                            title="Voltar a aula anterior">
                             <div class="fw-normal text-white-50 mb-1">Anterior</div>
                             <i class="fas fa-arrow-circle-left mr-2 text-gray-200"></i>
                             <span>Aula anterior</span>
@@ -262,27 +259,33 @@ echo $Component->getHeadHtmlDashboard();
                     </li>
                 </ul>
                 <div class="topbar-divider d-none d-sm-block"></div>
-                <ul class="header2" style="list-style: none;">  
-                    <li>  
-                        <a href="<?= BASE ?>/painel/aulas/nome-da-proxima-aula" class="small text-gray-200" title="Ir para a próxima aula">
+                <ul class="header2" style="list-style: none;">
+                    <li>
+                        <a href="<?= BASE ?>/painel/aulas/nome-da-proxima-aula" class="small text-gray-200"
+                            title="Ir para a próxima aula">
                             <div class="fw-normal text-white-50 mb-1">Próxima</div>
                             <i class="fas fa-arrow-circle-right mr-2 text-gray-200"></i>
                             <span>Próxima aula</span>
                         </a>
                     </li>
-                </ul>     
+                </ul>
             </header>
             <div class="embed-responsive embed-responsive-16by9">
-                <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/137857207" allowfullscreen></iframe>
+                <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/137857207"
+                    allowfullscreen></iframe>
             </div>
             <!-- Conteúdo ou informações referente a aula -->
-            <div class="containxer-fluid">
+            <div class="container-fluid">
                 <!-- ***Page Heading*** -->
                 <div class="d-sm-flex align-items-center justify-content-between mb-4">
                     <h1 class="h3 mb-0 text-gray-600">Material de apoio</h1>
                 </div>
-                    <p class="h3 mb-0 text-gray-400">Como descrever uma metodologia de um curso?</p>
-                    <p>Metodologia significa “caminho ou via para a realização de algo”. Ou seja, é o processo utilizado para chegar a algum conhecimento. Metodologia é também o estudo das melhores formas de pesquisa para cada área do conhecimento.</p>
-                    <p>Metodologia significa “caminho ou via para a realização de algo”. Ou seja, é o processo utilizado para chegar a algum conhecimento. Metodologia é também o estudo das melhores formas de pesquisa para cada área do conhecimento.</p>
+                <p class="h3 mb-0 text-gray-400">Como descrever uma metodologia de um curso?</p>
+                <p>Metodologia significa “caminho ou via para a realização de algo”. Ou seja, é o processo utilizado
+                    para chegar a algum conhecimento. Metodologia é também o estudo das melhores formas de pesquisa para
+                    cada área do conhecimento.</p>
+                <p>Metodologia significa “caminho ou via para a realização de algo”. Ou seja, é o processo utilizado
+                    para chegar a algum conhecimento. Metodologia é também o estudo das melhores formas de pesquisa para
+                    cada área do conhecimento.</p>
             </div>
-<?php echo $Component->getFooterDashboard(); ?>
+            <?= $Component->getFooterDashboard(); ?>
