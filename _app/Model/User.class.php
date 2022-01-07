@@ -14,6 +14,12 @@ class User {
 			exit();
 		} 
 	}
+	public function searchCourse() {
+		if(empty($course['aula_name'])) {
+			$this->Error = "Pesquisa alguma coisa!";
+			$this->Result = false;
+		}
+	}
 
 	public function createUser($dataUser) {
 	if(empty($dataUser["user_name"])) {

@@ -11,41 +11,30 @@ echo $Component->getHeadHtmlDashboard();
                 <div class="container-fluid">
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <div>
-                            <?php 
-                            $Read = new Read();
-                            $Read->FullRead("SELECT * FROM cursos LIMIT 1");
-                            if($Read->getResult()) {
-                                foreach($Read->getResult() as $Cursos) {
+                        <?php 
+                        $Read = new Read();
+                        $Read->FullRead("SELECT * FROM cursos LIMIT 1");
+                        if($Read->getResult()) {
+                            foreach($Read->getResult() as $Cursos) {
                                 ?>
                             <span class="font-weight-bold text-white"><?= $Cursos['curso_titulo'] ?></span>
                             <div class="small text-gray-500">1 de 24 aulas completas</div>
                         </div>
                     </div>
-                    <?php
-                                }
-                            } else {
-                                Error("Nenhum título de curso!");
+                        <?php
                             }
-                            ?>
-                </div>
-                <?php
-                $Read->FullRead("SELECT * FROM aulas WHERE aula_name LIKE '%$pesquisar%' LIMIT 5");
-                if($Read->getResult()) {
-                    foreach($Read->getResult() as $pesquisar) {
+                        } else {
+                            Error("Nenhum título de curso!");
+                        }
                         ?>
-                    <input type="submit" class="form-control bg-light border-0 small rounded-left " name="pesquisar"
-                        aria-label="Search" aria-describedby="basic-addon2" value="<?= $pesquisar['aula_name'] ?>">
+                </div>
+                    <input type="text" class="form-control bg-light border-0 small rounded-left " name="pesquisar"
+                        placeholder="Pesquisar por aulas"aria-label="Search" aria-describedby="basic-addon2">
                     <div class="input-group-append">
-                        <button class="btn btn-dark" type="button">
+                        <button class="btn btn-dark" type="submit">
                             <i class="fas fa-search fa-sm"></i>
                         </button>
                     </div>
-                <?php
-                    }
-                } else {
-                    Error("Ainda não existem aulas!");
-                }
-                ?>
             </div>
         </form>
         <!-- divisor -->
