@@ -338,20 +338,15 @@ class Component {
                     <!-- <div class="sidebar-brand-text mx-3">Logo</div> -->
                 </a>
                 <!-- Divider -->
-
                 <!-- Nav Item - Dashboard -->
                 <!-- <li class="nav-item active">
                 <a class="nav-link" href="' . BASE . '/painel/dashboard">
                         <i class="fas fa-fw fa-tachometer-alt"></i>
                         <span>Painel</span></a> -->
                         <!-- Sidebar Toggler (Sidebar) 
-                    
                 </li>-->
-                
-
                 <!-- Divider -->
                 <hr class="sidebar-divider">
-
                 <!-- Nav Item - Pages Collapse Menu -->
                 <?php 
                         ?>
@@ -375,7 +370,6 @@ class Component {
                     <?php 
                     }
                 ?>
-
             <!-- Nav Item - Utilities Collapse Menu -->
                     <li class="nav-item">
                         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
@@ -398,7 +392,6 @@ class Component {
                     <?php 
                         }
                     ?>
-
                     <!-- Nav Item - Pages Collapse Menu -->
                     <li class="nav-item">
                         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
@@ -419,28 +412,21 @@ class Component {
                     </li>
                 <!-- Divider -->
                 <hr class="sidebar-divider d-none d-md-block">
-                
                 <div class="text-center d-none d-md-inline">
                     <button class="rounded-circle border-0" id="sidebarToggle"></button>
                 </div>
-
             </ul>
             <!-- End of Sidebar -->
-
             <!-- Content Wrapper -->
             <div id="content-wrapper" class="d-flex flex-column">
-                
                 <!-- Main Content -->
                 <div id="content">
-
                     <!-- Topbar -->
                     <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-
                         <!-- Sidebar Toggle (Topbar) -->
                         <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                             <i class="fa fa-bars"></i>
                         </button>
-
                         <!-- Topbar Search -->
                         <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                             <div class="input-group">
@@ -453,10 +439,8 @@ class Component {
                                 </div>
                             </div>
                         </form>
-
                         <!-- Topbar Navbar -->
                         <ul class="navbar-nav ml-auto">
-
                             <!-- Nav Item - Search Dropdown (Visible Only XS) -->
                             <li class="nav-item dropdown no-arrow d-sm-none">
                                 <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
@@ -480,7 +464,6 @@ class Component {
                                     </form>
                                 </div>
                             </li>
-
                             <!-- Nav Item - Alerts -->
                             <li class="nav-item dropdown no-arrow mx-1">
                                 <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
@@ -531,7 +514,6 @@ class Component {
                                     <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
                                 </div>
                             </li>
-
                             <!-- Nav Item - Messages -->
                             <li class="nav-item dropdown no-arrow mx-1">
                                 <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button"
@@ -597,9 +579,7 @@ class Component {
                                     <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
                                 </div>
                             </li>
-
                             <div class="topbar-divider d-none d-sm-block"></div>
-
                             <!-- Nav Item - User Information -->
                             <li class="nav-item dropdown no-arrow">
                                 <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
@@ -629,18 +609,6 @@ class Component {
                         </ul>
                     </nav>
                     <!-- End of Topbar -->
-
-
-
-
-
-
-
-
-
-
-
-
                     <!-- Conteúdo que vai ser exibido na dashboard
                     <div class="container-fluid">
                         <div class="d-sm-flex align-items-center justify-content-between mb-4">
@@ -652,25 +620,8 @@ class Component {
                         </div>
                         <p>Qualquer conteúdo aqui</p>
                     </div> -->
-            
-
                     <!-- /.container-fluid -->
-
-
-
-
-
-                    
                     <!-- End of Main Content -->
-
-                    <!-- Footer --> 
-                    <!-- <footer class="sticky-footer bg-white">
-                        <div class="container my-auto">
-                            <div class="copyright text-center my-auto">
-                                <span>Copyright &copy; Unitplus 2021</span>
-                            </div>
-                        </div>
-                    </footer>  -->
         ';
     }
 
@@ -773,50 +724,46 @@ class Component {
     }
     public function getFooterDashboard() {
         return '
-            </div>
-            <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Unitplus 2021</span>
+                    </div>
+                    <footer class="sticky-footer bg-white">
+                        <div class="container my-auto">
+                            <div class="copyright text-center my-auto">
+                                <span>Copyright &copy; Unitplus 2021</span>
+                            </div>
+                        </div>
+                    </footer>
+                    </div>
+                    <!-- End of Content Wrapper -->
+                </div>
+                <!-- End of Page Wrapper -->
+                <!-- Scroll to Top Button -->
+                <a class="scroll-to-top rounded" href="#page-top">
+                    <i class="fas fa-angle-up"></i>
+                </a>
+                <!-- Logout Modal -->
+                <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title btn btn-success mb-2 vw-100" id="exampleModalLabel">Pronto para sair?</h5>
+                                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">×</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">Selecione "Sair" para encerrar a sua sessão.</div>
+                            <div class="modal-footer">
+                                <button class="btn btn-success" type="button" data-dismiss="modal">Cancelar</button>
+                                <a class="btn btn-success" href="' . BASE . '/pages/logout">Sair</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </footer>
-
-            </div>
-            <!-- End of Content Wrapper -->
-        </div>
-        <!-- End of Page Wrapper -->
-
-        <!-- Scroll to Top Button -->
-        <a class="scroll-to-top rounded" href="#page-top">
-            <i class="fas fa-angle-up"></i>
-        </a>
-
-        <!-- Logout Modal -->
-        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title btn btn-success mb-2 vw-100" id="exampleModalLabel">Pronto para sair?</h5>
-                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">×</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">Selecione "Sair" para encerrar a sua sessão.</div>
-                    <div class="modal-footer">
-                        <button class="btn btn-success" type="button" data-dismiss="modal">Cancelar</button>
-                        <a class="btn btn-success" href="' . BASE . '/logout">Sair</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <script src="'. BASE .'/res/site/js/jquery.min.js"></script>
-        <script src="'. BASE .'/res/site/js/bootstrap.bundle.min.js"></script>
-        <script src="'. BASE .'/res/site/js/jquery.easing.min.js"></script>
-        <script src="'. BASE .'/res/site/js/sb-admin-2.min.js"></script>
-    </body>
-</html>        
+                <script src="'. BASE .'/res/site/js/jquery.min.js"></script>
+                <script src="'. BASE .'/res/site/js/bootstrap.bundle.min.js"></script>
+                <script src="'. BASE .'/res/site/js/jquery.easing.min.js"></script>
+                <script src="'. BASE .'/res/site/js/sb-admin-2.min.js"></script>
+            </body>
+        </html>        
         ';
     }
    

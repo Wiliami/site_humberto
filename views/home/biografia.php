@@ -132,5 +132,3 @@ echo $Component->getMenu();
         </div> -->
     </section>
 <?= $Component->getFooterHome(); ?>
-
-

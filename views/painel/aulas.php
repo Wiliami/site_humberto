@@ -4,6 +4,23 @@ $User->verifyExistLoginUser();
 $Component = new Component();
 echo $Component->getHeadHtmlDashboard();
 ?>
+ <!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>Texto</title>
+        <link href="<? BASE ?>/res/site/css/all.min.css" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+        <link href="<? BASE ?>/res/site/css/sb-admin-2.min.css" rel="stylesheet">
+        <!-- Estiliza os ícones da dashboard -->
+        <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+    </head> 
+    <body id="page-top">
+
 <div id="wrapper">
     <ul class="nav-list navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar mt-6">
         <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 mw-100 navbar-search">
@@ -21,13 +38,13 @@ echo $Component->getHeadHtmlDashboard();
                             <div class="small text-gray-500">1 de 24 aulas completas</div>
                         </div>
                     </div>
-            <?php
-                }
-            } else {
-                Error("Nenhum título de curso!");
-            }
-            ?>
-            </div>
+                            <?php
+                                }
+                            } else {
+                                Error("Nenhum título de curso!");
+                            }
+                            ?>
+                </div>
                 <input type="text" class="form-control bg-light border-0 small" name="pesquisar" placeholder="Buscar por aulas" aria-label="Search" aria-describedby="basic-addon2">
                 <div class="input-group-append">
                     <button class="btn btn-dark" type="button">
@@ -46,7 +63,7 @@ echo $Component->getHeadHtmlDashboard();
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="<?= BASE ?>'/painel/list-user">Aula name</a>
+                <a class="collapse-item" href="<?= BASE ?>/painel/list-user">Aula name</a>
             </div>
         </div>
     </li>
@@ -59,19 +76,17 @@ echo $Component->getHeadHtmlDashboard();
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
             data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="<?= BASE ?>'/painel/profile/meus-cursos">Meus cursos</a>
-                <a class="collapse-item" href="<?= BASE ?>'/painel/profile/minhas-compras">Minhas compras</a>
-                <a class="collapse-item" href="<?= BASE ?>'/painel/profile/cursos-finalizados">Cursos finalizados</a>
-                <a class="collapse-item" href="<?= BASE ?>'/painel/profile/cursos-pendentes">Cursos pendentes</a>
-                <a class="collapse-item" href="<?= BASE ?>'/painel/profile/help">Ajuda</a>
-                <a class="collapse-item" href="<?= BASE ?>'/painel/profile/suporte">Suporte</a>
-                <a class="collapse-item" href="<?= BASE ?>'/painel/dashboard">Dashboard</a>
+                <a class="collapse-item" href="<?= BASE ?>/painel/profile/meus-cursos">Meus cursos</a>
+                <a class="collapse-item" href="<?= BASE ?>/painel/profile/minhas-compras">Minhas compras</a>
+                <a class="collapse-item" href="<?= BASE ?>/painel/profile/cursos-finalizados">Cursos finalizados</a>
+                <a class="collapse-item" href="<?= BASE ?>/painel/profile/cursos-pendentes">Cursos pendentes</a>
+                <a class="collapse-item" href="<?= BASE ?>/painel/profile/help">Ajuda</a>
+                <a class="collapse-item" href="<?= BASE ?>/painel/profile/suporte">Suporte</a>
+                <a class="collapse-item" href="<?= BASE ?>/painel/dashboard">Dashboard</a>
             </div>
         </div>
     </li>
-
     <hr class="sidebar-divider my-0">
-
     <div class="text-center d-none d-md-inline">
         <button class="rounded-circle border-0" id="sidebarToggle"></button>
     </div>
@@ -260,8 +275,6 @@ echo $Component->getHeadHtmlDashboard();
             <div class="embed-responsive embed-responsive-16by9">
                 <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/137857207" allowfullscreen></iframe>
             </div>
-
-
             <!-- Conteúdo ou informações referente a aula -->
             <div class="containxer-fluid">
                 <!-- ***Page Heading*** -->
@@ -271,5 +284,5 @@ echo $Component->getHeadHtmlDashboard();
                     <p class="h3 mb-0 text-gray-400">Como descrever uma metodologia de um curso?</p>
                     <p>Metodologia significa “caminho ou via para a realização de algo”. Ou seja, é o processo utilizado para chegar a algum conhecimento. Metodologia é também o estudo das melhores formas de pesquisa para cada área do conhecimento.</p>
                     <p>Metodologia significa “caminho ou via para a realização de algo”. Ou seja, é o processo utilizado para chegar a algum conhecimento. Metodologia é também o estudo das melhores formas de pesquisa para cada área do conhecimento.</p>
-            </div> 
-<?= $Component->getFooterDashboard(); ?>
+            </div>
+<?php echo $Component->getFooterDashboard(); ?>

@@ -9,7 +9,6 @@ echo $Component->getMenuSideBarDashboard();
     <div class="d-sm-flex align-items-center justify-content-start mb-4">
         <h1 class="h3 mb-0 text-gray-800">Olá, <?= $_SESSION['login']['user_name'] ?></h1>
     </div>
-    <p>Meus cursos</p>
 </div>
 <div class="row gx-5 grid-container ml-2">
     <div class="col-lg-4 mb-5">
