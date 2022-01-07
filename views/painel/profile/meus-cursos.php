@@ -11,7 +11,7 @@ echo $Component->getMenuSideBarDashboard();
     </div>
     <p>Meus cursos</p>
 </div>
-<div class="row gx-5 grid-container" style="margin: 10px;">
+<div class="row gx-5 grid-container ml-2">
     <div class="col-lg-4 mb-5">
         <div class="card h-100 shadow border-0">
             <img src="<?= BASE ?>/src/images/page-sobre.jpg" alt="imagem de fundo"/>
@@ -38,16 +38,14 @@ echo $Component->getMenuSideBarDashboard();
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>  
         </div>
     </div> 
 </div>
-    <?php 
-        }
-    } else {
-        Error("Ainda não existem cursos!");
+<?php 
     }
-    ?>   
-<?php
-echo $Component->getFooterDashboard();
+} else {
+    Error("Ainda não existem cursos!");
+}
 ?>
+<?= $Component->getFooterDashboard(); ?>

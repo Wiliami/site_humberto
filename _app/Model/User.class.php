@@ -142,7 +142,7 @@ class User {
 	public function logout() {
 		session_start();
 		session_destroy();
-		header('Location: ' . BASE . '/login');
+		header('Location: ' . BASE . '/pages/login');
 		die();
 	}
 
