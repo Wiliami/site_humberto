@@ -5,18 +5,18 @@ $Component = new Component();
 echo $Component->getHeadHtmlDashboard();  
 echo $Component->getMenuSideBarDashboard();  
 ?>
-<div class="container-fluid">
-    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Olá, <?= $_SESSION['login']['user_name'] ?></h1>
-    </div>
-    <p>Minhas compras</p>
-</div>
 <div class="container">
     <div class="row">
         <div class="col-lg-12">
             <div class="main-box clearfix">
                 <div class="table-responsive">
                     <table class="table user-list">
+                    <div class="container-fluid">
+                        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                            <h1 class="h3 mb-0 text-gray-800">Olá, <?= $_SESSION['login']['user_name'] ?></h1>
+                        </div>
+                        <p>Minhas compras</p>
+                    </div>
                         <thead>
                             <tr>
                             <th><span class="btn btn-warning mb-2">Nome do curso</span></th>

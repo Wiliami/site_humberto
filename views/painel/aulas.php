@@ -29,17 +29,17 @@ echo $Component->getHeadHtmlDashboard();
                             ?>
                 </div>
                 <?php
-                $Read->FullRead("SELECT * FROM aulas WHERE aula_name LIKE '%pesquisar%' LIMIT 5");
+                $Read->FullRead("SELECT * FROM aulas WHERE aula_name LIKE '%$pesquisar%' LIMIT 5");
                 if($Read->getResult()) {
-                    foreach($Read->getResult as $pesquisar) {
+                    foreach($Read->getResult() as $pesquisar) {
                         ?>
-                <input type="submit" class="form-control bg-light border-0 small rounded-left " name="pesquisar"
-                    aria-label="Search" aria-describedby="basic-addon2" value="<?= $Pesquisar ?>">
-                <div class="input-group-append">
-                    <button class="btn btn-dark" type="button">
-                        <i class="fas fa-search fa-sm"></i>
-                    </button>
-                </div>
+                    <input type="submit" class="form-control bg-light border-0 small rounded-left " name="pesquisar"
+                        aria-label="Search" aria-describedby="basic-addon2" value="<?= $pesquisar['aula_name'] ?>">
+                    <div class="input-group-append">
+                        <button class="btn btn-dark" type="button">
+                            <i class="fas fa-search fa-sm"></i>
+                        </button>
+                    </div>
                 <?php
                     }
                 } else {
