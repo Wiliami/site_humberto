@@ -3,6 +3,7 @@ $User = new User();
 $User->verifyExistLoginUser();
 $Component = new Component();
 echo $Component->getHeadHtmlDashboard();  
+echo $Component->getHeadHtmlDataTable();
 echo $Component->getMenuSideBarDashboard();  
 ?>
 <div class="container">
@@ -10,19 +11,17 @@ echo $Component->getMenuSideBarDashboard();
         <div class="col-lg-12">
             <div class="main-box clearfix">
                 <div class="table-responsive">
-                    <table class="table user-list">
-                    <div class="container-fluid">
-                        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                    <table id="listar-usuarios" class="table table-striped" style="width: 100%;">
+                        <div class="d-sm-flex align-items-center justify-content-start mb-4">
                             <h1 class="h3 mb-0 text-gray-800">Olá, <?= $_SESSION['login']['user_name'] ?></h1>
                         </div>
                         <p>Minhas compras</p>
-                    </div>
                         <thead>
                             <tr>
-                            <th><span class="btn btn-warning mb-2">Nome do curso</span></th>
-                            <th><span class="btn btn-warning mb-2">Data da compra</span></th>
-                            <th class="text-center"><span class="btn btn-warning mb-2">Valor do curso</span></th>
-                            <th><span class="btn btn-warning mb-2">Opções</span></th>
+                            <th>Nome do curso</span></th>
+                            <th>Data da compra</span></th>
+                            <th>Valor do curso</></th>
+                            <th><span>Opções</span></th>
                             <th>&nbsp;</th>
                             </tr>
                         </thead>
@@ -35,13 +34,13 @@ echo $Component->getMenuSideBarDashboard();
                                 ?>
                                 <tr>
                             <td>
-                                <span class="user-subhead btn btn-light mb-2"><?= $Cursos['curso_titulo'] ?></span>
+                                <span><?= $Cursos['curso_titulo'] ?></span>
                             </td>
                             <td>
-                                <span class="btn btn-light mb-2"><?= $Cursos['curso_create_date'] ?></span>
+                                <span><?= $Cursos['curso_create_date'] ?></span>
                             </td>
-                            <td class="text-center">
-                                <span class="btn btn-light mb-2">50,00 reais</span>
+                            <td>
+                                <span>50,00 reais</span>
                             </td>
                             <td style="width: 20%;">
                                 <a href="/" class="table-link">
@@ -76,6 +75,4 @@ echo $Component->getMenuSideBarDashboard();
         </div>
     </div>
 </div
-<?php
-echo $Component->getFooterDashboard();
-?>
+<?= $Component->getFooterDashboard(); ?>
