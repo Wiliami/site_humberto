@@ -32,6 +32,6 @@ $Create->ExeCreate('users', $DataCreate);
 
 
 //DELETE
-$Id = 2;
+$Id = 19;
 $Delete = new Delete();
 $Delete->ExeDelete("users", "WHERE user_id = :id", "id={$Id}");

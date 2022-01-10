@@ -74,19 +74,6 @@ class User {
 			}	
 		}
 
-
-	public function deleteCourse($deleteUser) {
-		$Delete = new Delete();
-		$Delete->exeDelete("cursos", $deleteUser);
-		if($Read->getResult()) {
-			$this->Result = $Delete->getResult();
-			$this->Error = "Usuário excluído com sucesso!";
-		} else {
-			$this->Result = false;
-			$this->Error= $Delete->getError();
-		}
-	}
-
 	public function getResult() {
 		return $this->Result;
 	}

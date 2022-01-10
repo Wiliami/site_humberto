@@ -36,12 +36,12 @@ echo $Component->getMenuSideBarDashboard();
                                 // Primeiro eu tenho o id e o campo da tabela que eu quero 
                             if($Read->getResult()) {
                                 foreach($Read->getResult() as $User) { 
-                                    ?> 
+                                    ?>
                             <tr>
                                 <td>
                                     <?= $Component->getAvatarUser(); ?>
                                 </td>
-                                <td>    
+                                <td>
                                     <?= $User['user_name'] ?>
                                 </td>
                                 <td>
@@ -57,25 +57,28 @@ echo $Component->getMenuSideBarDashboard();
                                     <?= $User['user_email'] ?>
                                 </td>
                                 <td>
-                                    <a href="<?= BASE ?>/" class="table-link" title="Pesquisar <?= $User['user_name'] ?> ">
+                                    <a href="<?= BASE ?>/" class="table-link"
+                                        title="Pesquisar <?= $User['user_name'] ?> ">
                                         <span class="fa-stack">
                                             <i class="fa fa-square fa-stack-2x"></i>
                                             <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
                                         </span>
                                     </a>
-                                    <a href="<?= BASE ?>/" class="table-link" title="Alterar o nível de <?= $User['user_name'] ?> ">
+                                    <a href="<?= BASE ?>/" class="table-link"
+                                        title="Alterar o nível de <?= $User['user_name'] ?> ">
                                         <span class="fa-stack">
                                             <i class="fa fa-square fa-stack-2x"></i>
                                             <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
                                         </span>
                                     </a>
-                                    <a href="<?= BASE ?>/" class="table-link" title="Excluir <?= $User['user_name'] ?>" data-toggle="modal" data-target="#deleteModal">
+                                    <a href="<?= BASE ?>/" class="table-link" title="Excluir <?= $User['user_name'] ?>"
+                                        data-toggle="modal" data-target="#deleteModal">
                                         <span class="fa-stack">
                                             <i class="fa fa-square fa-stack-2x"></i>
                                             <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
                                         </span>
                                     </a>
-                                </td> 
+                                </td>
                             </tr>
                             <?php
                                 }
@@ -96,13 +99,14 @@ echo $Component->getMenuSideBarDashboard();
                             </tr>
                         </tfoot>
                     </table>
-                </div>                
+                </div>
             </div>
         </div>
     </div>
 </div>
 <!-- Delete Modal -->
-<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -112,12 +116,18 @@ echo $Component->getMenuSideBarDashboard();
                 </button>
             </div>
             <?php
-            $Read = new Read();
-            $Read->FullRead("SELECT * FROM users");
-            if($Read->getResult()) {
+            $Delete = new Delete();
+            $Delete->ExeDelete("users", "WHERE user_id = :id", "id={user_id}");
+            if($Delete->getResult()) {
+                foreach($Delete->getResult() as $Id) {
+                 ?>
+            <div class="modal-body">Tem certeza que deseja excluir usuário <?= $Id['user_name']?> ?</div>
+            <?php
+                }
+            } else {
+                Error("Não foi possível deletar o usuário!");
             }
             ?>
-            <div class="modal-body">Tem certeza que deseja excluir usuário <?= $User['user_id']?> ?</div>
             <div class="modal-footer">
                 <button class="btn btn-success mb-2" type="button" data-dismiss="modal">Cancelar</button>
                 <a class="btn btn-danger mb-2" href="<?= BASE ?>/">Excluir</a>
