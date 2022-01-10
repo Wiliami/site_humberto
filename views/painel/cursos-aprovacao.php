@@ -11,7 +11,7 @@ echo $Component->getMenuSideBarDashboard();
         <div class="col-lg-12">
             <div class="main-box clearfix">
                 <div class="table-responsive">
-                    <table id="listar-cursos" class="table table-striped table-bordered" style="width:100%">
+                    <table id="consertacao" class="table table-striped table-bordered" style="width:100%">
                         <div class="d-sm-flex align-items-center justify-content-start mb-4">
                             <i class="fas fa-address-book"></i>
                             <h1 class="h3 mb-0 text-gray-800 ml-2">Cursos | Aprovação de cursos</h1>
