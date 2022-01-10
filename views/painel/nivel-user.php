@@ -14,7 +14,7 @@ echo $Component->getMenuSideBarDashboard();
                     <table id="table-niveis" class="table table-striped table-bordered" style="width: 100%;">
                         <div class="d-sm-flex align-items-center justify-content-start mb-4">
                             <i class="fas fa-users"></i> 
-                            <h1 class="h3 mb-0 text-gray-800">Nível de usuários</h1>
+                            <h1 class="h3 ml-2 mb-0 text-gray-800">Nível de usuários</h1>
                         </div>
                         <thead>
                             <tr>
