@@ -3,9 +3,6 @@ $User = new User();
 if($User->verifyLoginUserON()) {
     header('Location: ' . BASE . '/painel/dashboard');
     die();
-$Time = new Timer();
-$Time->getTimeSession();
-// Check::var_dump_json($ $Time->getTimeSession());
 };
 ?>
 <!DOCTYPE html>
@@ -75,6 +72,3 @@ $Time->getTimeSession();
         </div>
     </body>
 </html>
-
-
-

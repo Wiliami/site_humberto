@@ -111,7 +111,11 @@ echo $Component->getMenuSideBarDashboard();
                     <span aria-hidden="true">×</span>
                 </button>
             </div>
-            <div class="modal-body">Tem certeza que deseja excluir usuário <?= $User['user_name'] = ['user_id']?> ?</div>
+            <?php
+            $Read = new Read();
+            $Read->FullRead("SELECT * users DELETE FROM user_name = un WHERE ");
+            ?>
+            <div class="modal-body">Tem certeza que deseja excluir usuário <?= $User['user_id']?> ?</div>
             <div class="modal-footer">
                 <button class="btn btn-success mb-2" type="button" data-dismiss="modal">Cancelar</button>
                 <a class="btn btn-danger mb-2" href="<?= BASE ?>/">Excluir</a>

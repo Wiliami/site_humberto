@@ -5,4 +5,4 @@ if($Read->getResult()) {
     }
 }
 ?>
-    <!-- código de busca de módulos e cursos do banco de dados -->
+<!-- código de busca de módulos e cursos do banco de dados este código é para a página de aulas -->
