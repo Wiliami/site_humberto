@@ -18,7 +18,7 @@
                 <div div class="error mx-auto" data-text="404">404</div>
                     <p class="lead text-gray-800 mb-5">Página não existe!</p>
                     <p class="lead text-gray-800 mb-5">Desculpe, esta página não existe!</p>
-                    <a class="btn btn-warning btn-lg px-4 me-sm-3" href="<?= BASE ?>/painel/dashboard">Voltar</a>  
+                    <a class="btn btn-warning btn-lg px-4 me-sm-3" href="<?= BASE ?>/pages/login">Voltar</a>  
                     <a class="btn btn-success btn-lg px-4 me-sm-3" href="<?= BASE ?>/painel/dashboard">Home</a>
             </div>            
         </div>

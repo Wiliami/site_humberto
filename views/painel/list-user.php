@@ -33,6 +33,7 @@ echo $Component->getMenuSideBarDashboard();
                             $Read->FullRead("SELECT u.*, ul.level_desc
                                 FROM users u
                                 LEFT JOIN users_levels ul ON ul.level_id = u.user_level");
+                                // Primeiro eu tenho o id e o campo da tabela que eu quero 
                             if($Read->getResult()) {
                                 foreach($Read->getResult() as $User) { 
                                     ?> 
@@ -110,7 +111,7 @@ echo $Component->getMenuSideBarDashboard();
                     <span aria-hidden="true">×</span>
                 </button>
             </div>
-            <div class="modal-body">Tem certeza que deseja excluir usuário <?= $User['user_name']?> ?</div>
+            <div class="modal-body">Tem certeza que deseja excluir usuário <?= $User['user_name'] = ['user_id']?> ?</div>
             <div class="modal-footer">
                 <button class="btn btn-success mb-2" type="button" data-dismiss="modal">Cancelar</button>
                 <a class="btn btn-danger mb-2" href="<?= BASE ?>/">Excluir</a>
