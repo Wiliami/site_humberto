@@ -11,86 +11,89 @@ echo $Component->getMenu();
     </header>
     <div class="card card-body blur shadow-blur mx-3 mx-md-4 mt-n6 mb-4">
         <section class="py-sm-7 py-5 position-relative">
-        <div class="container">
-            <div class="row">
-            <div class="col-12 mx-auto">
-                <div class="mt-n8 mt-md-n9 text-center">
-                <img class="avatar avatar-xxl shadow-xl position-relative z-index-2" src="<?= BASE ?>/src/images/humberto.png" alt="humberto" loading="lazy">
-                </div>
-                <div class="row py-5">
-                <div class="col-lg-7 col-md-7 z-index-2 position-relative px-md-2 px-sm-5 mx-auto">
-                    <div class="d-flex justify-content-between align-items-center mb-2">
-                    <h3 class="mb-0">Humberto Oliveira</h3>
-                    <div class="d-block">
-                        <a href="https://www.facebook.com/educacaoetreinamentos/" type="button" class="btn btn-sm btn-outline-info text-nowrap mb-0">Siga-me</a>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 mx-auto">
+                        <div class="mt-n8 mt-md-n9 text-center">
+                            <img class="avatar avatar-xxl shadow-xl position-relative z-index-2"
+                                src="<?= BASE ?>/src/images/humberto.png" alt="humberto" loading="lazy">
+                        </div>
+                        <div class="row py-5">
+                            <div class="col-lg-7 col-md-7 z-index-2 position-relative px-md-2 px-sm-5 mx-auto">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <h3 class="mb-0">Humberto Oliveira</h3>
+                                    <div class="d-block">
+                                        <a href="https://www.facebook.com/educacaoetreinamentos/" type="button"
+                                            class="btn btn-sm btn-outline-info text-nowrap mb-0">Siga-me</a>
+                                    </div>
+                                </div>
+                                <div class="row mb-4">
+                                    <div class="col-auto">
+                                        <span class="h6">323</span>
+                                        <span>Postagens</span>
+                                    </div>
+                                    <div class="col-auto">
+                                        <span class="h6">3.5k</span>
+                                        <span>Seguidores</span>
+                                    </div>
+                                    <div class="col-auto">
+                                        <span class="h6">260</span>
+                                        <span>Seguindo</span>
+                                    </div>
+                                </div>
+                                <p class="text-lg mb-0">
+                                    Em breve aqui será a biografia do Humberto
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
                     </div>
-                    </div>
-                    <div class="row mb-4">
-                    <div class="col-auto">
-                        <span class="h6">323</span>
-                        <span>Postagens</span>
-                    </div>
-                    <div class="col-auto">
-                        <span class="h6">3.5k</span>
-                        <span>Seguidores</span>
-                    </div>
-                    <div class="col-auto">
-                        <span class="h6">260</span>
-                        <span>Seguindo</span>
-                    </div>
-                    </div>
-                    <p class="text-lg mb-0">
-                    Em breve aqui será a biografia do Humberto
-                    </a>
-                    </p>
-                </div>
                 </div>
             </div>
-            </div>
-        </div>
         </section>
     </div>
     <section class="py-lg-5">
         <div class="container">
-        <div class="row">
-            <div class="col">
-            <div class="card box-shadow-xl overflow-hidden mb-5">
-                <div class="row">
-                <div class="col-lg-5 position-relative bg-cover px-0" style="background-image: url('../assets/img/examples/blog2.jpg')" loading="lazy">
-                    <div class="z-index-2 text-center d-flex h-100 w-100 d-flex m-auto justify-content-center">
-                    <div class="mask bg-gradient-danger opacity-8"></div>
-                    <div class="p-5 ps-sm-8 position-relative text-start my-auto z-index-2">
-                        <h3 class="text-white">Informação de contato</h3>
-                        <!-- <p class="text-white opacity-8 mb-4">Preencha o formulário e nossa equipe irá entrar em contato com você em atualizações em até 24h.</p> -->
-                        <div class="d-flex p-2 text-white">
-                        <div>
-                            <i class="fas fa-phone text-sm"></i>
-                        </div>
-                        <div class="ps-3">
-                            <span class="text-sm opacity-8">(92) 99999-9999</span>
-                        </div>
-                        </div>
-                        <div class="d-flex p-2 text-white">
-                        <div>
-                            <i class="fas fa-envelope text-sm"></i>
-                        </div>
-                        <div class="ps-3">
-                            <span class="text-sm opacity-8">humberto@contato.com</span>
-                        </div>
-                        </div>
-                        <div class="d-flex p-2 text-white">
-                        <div>
-                            <i class="fas fa-map-marker-alt text-sm"></i>
-                        </div>
-                        <div class="ps-3">
-                            <span class="text-sm opacity-8">Manaus, AM 00000-000</span>
-                        </div>
-                        </div>
-                        
-                    </div>
-                    </div>
-                </div>
-                <!-- <div class="col-lg-7">
+            <div class="row">
+                <div class="col">
+                    <div class="card box-shadow-xl overflow-hidden mb-5">
+                        <div class="row">
+                            <div class="col-lg-5 position-relative bg-cover px-0"
+                                style="background-image: url('../assets/img/examples/blog2.jpg')" loading="lazy">
+                                <div
+                                    class="z-index-2 text-center d-flex h-100 w-100 d-flex m-auto justify-content-center">
+                                    <div class="mask bg-gradient-danger opacity-8"></div>
+                                    <div class="p-5 ps-sm-8 position-relative text-start my-auto z-index-2">
+                                        <h3 class="text-white">Informação de contato</h3>
+                                        <!-- <p class="text-white opacity-8 mb-4">Preencha o formulário e nossa equipe irá entrar em contato com você em atualizações em até 24h.</p> -->
+                                        <div class="d-flex p-2 text-white">
+                                            <div>
+                                                <i class="fas fa-phone text-sm"></i>
+                                            </div>
+                                            <div class="ps-3">
+                                                <span class="text-sm opacity-8">(92) 99999-9999</span>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex p-2 text-white">
+                                            <div>
+                                                <i class="fas fa-envelope text-sm"></i>
+                                            </div>
+                                            <div class="ps-3">
+                                                <span class="text-sm opacity-8">humberto@contato.com</span>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex p-2 text-white">
+                                            <div>
+                                                <i class="fas fa-map-marker-alt text-sm"></i>
+                                            </div>
+                                            <div class="ps-3">
+                                                <span class="text-sm opacity-8">Manaus, AM 00000-000</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <div class="col-lg-7">
                     <form class="p-3" id="contact-form" method="post">
                     <div class="card-header px-4 py-sm-5 py-3">
                         <h2>Diga olá!</h2>
@@ -131,4 +134,4 @@ echo $Component->getMenu();
         </div>
         </div> -->
     </section>
-<?= $Component->getFooterHome(); ?>
+    <?= $Component->getFooterHome(); ?>

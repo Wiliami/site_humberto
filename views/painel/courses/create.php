@@ -29,7 +29,7 @@ echo $Component->getMenuSideBarDashboard();
                 // cadastro realizado com sucesso
             } else {
                 Error($User->getError(), 'warning');
-                //falta os campos serem preenchidos no inputs ou o input recebeu informação errada
+                //falta os campos serem preenchidos nos inputs ou o input recebeu alguma informação errada
             }   
         }
         ?>
@@ -58,7 +58,6 @@ echo $Component->getMenuSideBarDashboard();
                 <option>Casamento</option>
                 <option>Filmes e séries</option>
                 <option>Cultura</option>
-
             </select>
         </div>
     </div>

@@ -113,7 +113,9 @@ echo $Component->getMenuSideBarDashboard();
             </div>
             <?php
             $Read = new Read();
-            $Read->FullRead("SELECT * users DELETE FROM user_name = un WHERE ");
+            $Read->FullRead("SELECT * FROM users");
+            if($Read->getResult()) {
+            }
             ?>
             <div class="modal-body">Tem certeza que deseja excluir usuário <?= $User['user_id']?> ?</div>
             <div class="modal-footer">
