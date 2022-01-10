@@ -21,24 +21,25 @@ echo $Component->getHeadHtmlDashboard();
                             <div class="small text-gray-500">1 de 24 aulas completas</div>
                         </div>
                     </div>
-                        <?php
-                            }
-                        } else {
-                            Error("Nenhum título de curso!");
+                    <?php
                         }
-                        ?>
+                    } else {
+                        Error("Nenhum título de curso!");
+                    }
+                    ?>
                 </div>
-                    <input type="text" class="form-control bg-light border-0 small rounded-left " name="pesquisar"
-                        placeholder="Pesquisar por aulas"aria-label="Search" aria-describedby="basic-addon2">
-                    <div class="input-group-append">
-                        <button class="btn btn-dark" type="submit">
-                            <i class="fas fa-search fa-sm"></i>
-                        </button>
-                    </div>
+                <input type="text" class="form-control bg-light border-0 small rounded-left " name="pesquisar"
+                    placeholder="Pesquisar por aulas" aria-label="Search" aria-describedby="basic-addon2">
+                <div class="input-group-append">
+                    <button class="btn btn-dark" type="submit">
+                        <i class="fas fa-search fa-sm"></i>
+                    </button>
+                </div>
             </div>
         </form>
         <!-- divisor -->
         <hr class="sidebar-divider my-0">
+        <!-- Consulta no banco de dados -->
         <li class="nav-item">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                 aria-expanded="true" aria-controls="collapseTwo">
