@@ -11,7 +11,7 @@ echo $Component->getMenuSideBarDashboard();
         <div class="col-lg-12">
             <div class="main-box clearfix">
                 <div class="table-responsive">
-                    <table id="listar-usuarios" class="table table-striped" style="width: 100%;">
+                    <table id="listar-usuarios" class="table table-striped table-bordered" style="width: 100%;">
                         <div class="d-sm-flex align-items-center justify-content-start mb-4">
                             <h1 class="h3 mb-0 text-gray-800">Olá, <?= $_SESSION['login']['user_name'] ?></h1>
                         </div>
@@ -22,7 +22,6 @@ echo $Component->getMenuSideBarDashboard();
                             <th>Data da compra</span></th>
                             <th>Valor do curso</></th>
                             <th><span>Opções</span></th>
-                            <th>&nbsp;</th>
                             </tr>
                         </thead>
                         <tbody>

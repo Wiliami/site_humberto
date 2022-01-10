@@ -12,7 +12,7 @@ $NivelId = $_GET['nivel'];
         <div class="col-lg-12">
             <div class="main-box clearfix">
                 <div class="table-responsive">
-                    <table id="listar-usuarios" class="table table-striped" style="width: 100%;">
+                    <table id="listar-usuarios" class="table table-striped table-bordered" style="width: 100%;">
                         <?php
                         $Read = new Read();
                         $Read->FullRead("SELECT * FROM users_levels WHERE level_id = :ld", "ld={$NivelId}");

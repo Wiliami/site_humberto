@@ -321,6 +321,8 @@ class Component {
         <link rel="stylesheet" href="//cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap5.min.css">
+
+        
         ';
     }
 
@@ -427,18 +429,7 @@ class Component {
                         <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                             <i class="fa fa-bars"></i>
                         </button>
-                        <!-- Topbar Search -->
-                        <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                            <div class="input-group">
-                                <input type="text" class="form-control bg-light border-0 small" placeholder="Pesquisar por..."
-                                    aria-label="Search" aria-describedby="basic-addon2">
-                                <div class="input-group-append">
-                                    <button class="btn btn-primary" type="button">
-                                        <i class="fas fa-search fa-sm"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
+                        
                         <!-- Topbar Navbar -->
                         <ul class="navbar-nav ml-auto">
                             <!-- Nav Item - Search Dropdown (Visible Only XS) -->
@@ -762,22 +753,6 @@ class Component {
                 <script src="'. BASE .'/res/site/js/bootstrap.bundle.min.js"></script>
                 <script src="'. BASE .'/res/site/js/jquery.easing.min.js"></script>
                 <script src="'. BASE .'/res/site/js/sb-admin-2.min.js"></script>
-
-                <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-                <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
-                <script>
-                $(document).ready(function() {
-                $("#listar-usuarios").DataTable({
-                        "language": {
-                            "lengthMenu": "Mostrando _MENU_ registros por página",
-                            "zeroRecords": "Nenhum registro foi encontrado",
-                            "info": "Mostrando página _PAGE_ de _PAGES_",
-                            "infoEmpty": "Nenhum registro foi encontrado",
-                            "infoFiltered": "(filtrado de _MAX_ registros no total)"
-                        }      
-                    });
-                });
-                </script>
             </body>
         </html>        
         ';

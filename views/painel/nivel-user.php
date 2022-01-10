@@ -11,7 +11,7 @@ echo $Component->getMenuSideBarDashboard();
         <div class="col-lg-12">
             <div class="main-box clearfix">
                 <div class="table-responsive">
-                    <table id="listar-usuarios" class="table table-striped" style="width: 100%;">
+                    <table id="table-niveis" class="table table-striped table-bordered" style="width: 100%;">
                         <div class="d-sm-flex align-items-center justify-content-start mb-4">
                             <i class="fas fa-users"></i> 
                             <h1 class="h3 mb-0 text-gray-800">Nível de usuários</h1>
@@ -34,7 +34,7 @@ echo $Component->getMenuSideBarDashboard();
                                     <span><?= $Level['level_desc'] ?></span>
                                 </td>
                                 <td>
-                                    <a href="<?= BASE ?>/painel/level-user/nivel-usuario&nivel=<?= $Level['level_id']?>" class="table-link btn btn-primary mb-2" title="Pesquisar usuários do nível <?= $Level['level_desc'] ?>">
+                                    <a href="<?= BASE ?>/painel/level-user/nivel-usuario&nivel=<?= $Level['level_id']?>" class="table-link btn btn-primary mb-2" title="Pesquisar usuários de nível <?= $Level['level_desc'] ?>">
                                         <span class="">
                                             <!-- <i class="fas fa-search"></i> -->
                                             <i class="fas fa-search fa-sm"></i>
@@ -56,3 +56,18 @@ echo $Component->getMenuSideBarDashboard();
     </div>  
 </div>
 <?= $Component->getFooterDashboard(); ?>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" language="javascript">
+$(document).ready(function() {
+$("#table-niveis").DataTable({
+        "language": {
+            "lengthMenu": "Mostrando _MENU_ registros por página",
+            "zeroRecords": "Nenhum registro foi encontrado",
+            "info": "Mostrando página _PAGE_ de _PAGES_",
+            "infoEmpty": "Nenhum registro foi encontrado",
+            "infoFiltered": "(filtrado de _MAX_ registros no total)"
+        }      
+    });
+});
+</script>

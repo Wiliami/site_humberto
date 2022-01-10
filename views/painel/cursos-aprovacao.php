@@ -11,7 +11,7 @@ echo $Component->getMenuSideBarDashboard();
         <div class="col-lg-12">
             <div class="main-box clearfix">
                 <div class="table-responsive">
-                    <table id="listar-usuarios" class="table table-striped" style="width:100%">
+                    <table id="listar-cursos" class="table table-striped table-bordered" style="width:100%">
                         <div class="d-sm-flex align-items-center justify-content-start mb-4">
                             <i class="fas fa-address-book"></i>
                             <h1 class="h3 mb-0 text-gray-800 ml-2">Cursos | Aprovação de cursos</h1>
@@ -23,7 +23,6 @@ echo $Component->getMenuSideBarDashboard();
                                 <th>Status da compra</th>
                                 <th>Usuário</th>
                                 <th>Opções</th>
-                                <th>&nbsp;</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -108,3 +107,16 @@ echo $Component->getMenuSideBarDashboard();
     </div>
 </div>
 <?= $Component->getFooterDashboard(); ?>
+<script>
+$(document).ready(function() {
+$("#listar-usuarios").DataTable({
+        "language": {
+            "lengthMenu": "Mostrando _MENU_ registros por página",
+            "zeroRecords": "Nenhum registro foi encontrado",
+            "info": "Mostrando página _PAGE_ de _PAGES_",
+            "infoEmpty": "Nenhum registro foi encontrado",
+            "infoFiltered": "(filtrado de _MAX_ registros no total)"
+        }      
+    });
+});
+</script>
