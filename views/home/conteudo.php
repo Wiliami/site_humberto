@@ -22,7 +22,7 @@ echo $Component->getMenu();
 <section class="py-sm-7 py-5 position-relative">
     <div class="container">
         <div class="row">
-        <div class="col-12 mx-auto">
+        <div class="col-12 mx-auto text-center text-xl-start">
             <div class="mt-n8 mt-md-n9 text-start">
                 Produção de conteúdos para o Youtube
             </div>
@@ -33,7 +33,7 @@ echo $Component->getMenu();
                         <h3 class="mb-0">Conteúdo através da mídia</h3>
                         </div>
                         <p class="text-lg mb-0 text-start">
-                            Acreditamos que as mídias sociais têm o poder de implusionar conteúdos relevantes para as pessoas. Então, usamos este canal de divulgação de conteúdos, o youtube, para anunciar o evangelho e preparar pessoas para o reino celeste.  
+                            Acreditamos que as mídias sociais têm o poder de impulsionar conteúdos relevantes para as pessoas. Então, usamos este canal de divulgação de conteúdos, o youtube, para anunciar o evangelho e preparar pessoas para o reino celeste.  
                         </a>
                         </p>
                 </div>
@@ -80,7 +80,8 @@ echo $Component->getMenu();
       </div>
     </div>
     <!--Modal: Name-->
-    <a><img class="img-fluid z-depth-1" src="https://mdbootstrap.com/img/screens/yt/screen-video-1.jpg" alt="video"
+    <a>
+      <img class="img-fluid z-depth-1" src="https://mdbootstrap.com/img/screens/yt/screen-video-1.jpg" alt="video"
         data-toggle="modal" data-target="#modal1"></a>
   </div>
   <!-- Grid column -->
