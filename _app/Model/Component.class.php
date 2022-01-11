@@ -701,18 +701,19 @@ class Component {
     public function getSuporteDashboard() {
         return '
         <div class="container-fluid">
-            <div class="d-sm-flex align-items-end justify-content-end mb-4" style="position: relative;">
+            <div class="d-sm-flex align-items-end justify-content-end mb-4">
                 <a href="' . BASE . '/profile/suporte" class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm">
                     <i class="far fa-question-circle text-white-50"></i>
                     Ajuda
                 </a>
             </div>
-        </div>   
+        </div>  
         ';
     }
+
     public function getFooterDashboard() {
         return '
-                </div>
+            </div>
                     <footer class="sticky-footer bg-white">
                         <div class="container my-auto">
                             <div class="copyright text-center my-auto">
@@ -746,7 +747,6 @@ class Component {
                         </div>
                     </div>
                 </div>
-                
                 <script src="'. BASE .'/res/site/js/jquery.min.js"></script>
                 <script src="'. BASE .'/res/site/js/bootstrap.bundle.min.js"></script>
                 <script src="'. BASE .'/res/site/js/jquery.easing.min.js"></script>
