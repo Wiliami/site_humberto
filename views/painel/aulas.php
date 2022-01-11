@@ -225,8 +225,7 @@ echo $Component->getHeadHtmlDashboard();
                     </li>
                 </ul>
             </nav>
-            <header
-                class="navbar bg-success shadow d-flex align-items-center justify-content-center justify-content-md-between topbar mb-0">
+            <header class="navbar bg-success shadow d-flex align-items-center justify-content-center justify-content-md-between topbar mb-0">
                 <ul class="header1" style="list-style: none;">
                     <li>
                         <a href="<?= BASE ?>/painel/aulas/nome-da-aula-anterior" class="small text-gray-200"
@@ -262,11 +261,9 @@ echo $Component->getHeadHtmlDashboard();
                 <p class="h3 mb-0 text-gray-400">Como descrever uma metodologia de um curso?</p>
                 <p>Metodologia significa “caminho ou via para a realização de algo”. Ou seja, é o processo utilizado
                     para chegar a algum conhecimento. Metodologia é também o estudo das melhores formas de pesquisa para
-                    cada área do conhecimento.
-                </p>
+                    cada área do conhecimento.</p>
                 <p>Metodologia significa “caminho ou via para a realização de algo”. Ou seja, é o processo utilizado
                     para chegar a algum conhecimento. Metodologia é também o estudo das melhores formas de pesquisa para
-                    cada área do conhecimento.
-                </p>
+                    cada área do conhecimento.</p>
             </div>
             <?= $Component->getFooterDashboard(); ?>

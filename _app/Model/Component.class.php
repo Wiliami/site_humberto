@@ -294,7 +294,7 @@ class Component {
         ";
     }
 
-    public function getHeadHtmlDashboard($title = 'PLATAFORMA CURSOS | Painel') {
+    public function getHeadHtmlDashboard($title = 'Plataforma Cursos | Painel') {
         return '
         <!DOCTYPE html>
         <html lang="pt-BR">
