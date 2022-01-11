@@ -12,5 +12,3 @@ echo $Component->getMenuSideBarDashboard();
     <p>Conteúdo</p>
 </div>
 <?= $Component->getFooterDashboard(); ?>
-
-           

@@ -18,59 +18,61 @@ echo $Component->getMenuSideBarDashboard();
                         <p>Minhas compras</p>
                         <thead>
                             <tr>
-                            <th>Nome do curso</span></th>
-                            <th>Data da compra</span></th>
-                            <th>Valor do curso</></th>
-                            <th><span>Opções</span></th>
+                                <th>Nome do curso</span></th>
+                                <th>Data da compra</span></th>
+                                <th>Valor do curso</>
+                                </th>
+                                <th><span>Opções</span></th>
                             </tr>
                         </thead>
                         <tbody>
-                        <?php
+                            <?php
                         $Read = new Read();
                         $Read->FullRead("SELECT c.*, u.user_name FROM cursos c LEFT JOIN users u ON u.user_id");
                         if($Read->getResult()) {
                             foreach($Read->getResult() as $Cursos) {
                                 ?>
-                                <tr>
-                            <td>
-                                <span><?= $Cursos['curso_titulo'] ?></span>
-                            </td>
-                            <td>
-                                <span><?= $Cursos['curso_create_date'] ?></span>
-                            </td>
-                            <td>
-                                <span><?= $Cursos['curso_valor'] ?></span>
-                            </td>
-                            <td style="width: 20%;">
-                                <a href="/" class="table-link">
-                                    <span class="fa-stack">
-                                        <i class="fa fa-square fa-stack-2x"></i>
-                                        <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                                <a href="/" class="table-link">
-                                    <span class="fa-stack">
-                                        <i class="fa fa-square fa-stack-2x"></i>
-                                        <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                                <a href="/" class="table-link danger">
-                                    <span class="fa-stack">
-                                        <i class="fa fa-square fa-stack-2x"></i>
-                                        <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                            </td>
-                        </tr>
-                        <?php
+                            <tr>
+                                <td>
+                                    <span><?= $Cursos['curso_titulo'] ?></span>
+                                </td>
+                                <td>
+                                    <span><?= $Cursos['curso_create_date'] ?></span>
+                                </td>
+                                <td>
+                                    <span><?= $Cursos['curso_valor'] ?></span>
+                                </td>
+                                <td style="width: 20%;">
+                                    <a href="/" class="table-link">
+                                        <span class="fa-stack">
+                                            <i class="fa fa-square fa-stack-2x"></i>
+                                            <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
+                                        </span>
+                                    </a>
+                                    <a href="/" class="table-link">
+                                        <span class="fa-stack">
+                                            <i class="fa fa-square fa-stack-2x"></i>
+                                            <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
+                                        </span>
+                                    </a>
+                                    <a href="/" class="table-link danger">
+                                        <span class="fa-stack">
+                                            <i class="fa fa-square fa-stack-2x"></i>
+                                            <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
+                                        </span>
+                                    </a>
+                                </td>
+                            </tr>
+                            <?php
                             }
                         } else {
                             Error("Ainda não existem usuários!");
                         }   
                         ?>
-                    </tbody>
-                </table>
-            </div>                
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -79,15 +81,14 @@ echo $Component->getMenuSideBarDashboard();
 <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
 <script type="text/javascript" language="javascript">
 $(document).ready(function() {
-$("#table-compras-usuario").DataTable({
+    $("#table-compras-usuario").DataTable({
         "language": {
             "lengthMenu": "Mostrando _MENU_ registros por página",
             "zeroRecords": "Nenhum registro foi encontrado",
             "info": "Mostrando página _PAGE_ de _PAGES_ registros",
             "infoEmpty": "Nenhum registro foi encontrado",
             "infoFiltered": "(filtrado de _MAX_ registros no total)"
-        }      
+        }
     });
 });
 </script>
-
