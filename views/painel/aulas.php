@@ -3,6 +3,7 @@ $User = new User();
 $User->verifyExistLoginUser();
 $Component = new Component();
 echo $Component->getHeadHtmlDashboard();
+echo $Component->getMenuSideBarDashboard();
 ?>
 <div id="wrapper">
     <ul class="nav-list navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar mt-6">
@@ -11,11 +12,22 @@ echo $Component->getHeadHtmlDashboard();
                 <div class="container-fluid">
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <div>
-                       
+                        <?php 
+                        $Read = new Read();
+                        $Read->FullRead("SELECT * FROM cursos LIMIT 1");
+                        if($Read->getResult()) {
+                            foreach($Read->getResult() as $Cursos) {
+                                ?>
                             <span class="font-weight-bold text-white"><?= $Cursos['curso_titulo'] ?></span>
                             <div class="small text-gray-500">1 de 24 aulas completas</div>
                         </div>
                     </div>
+                    <?php
+                        }
+                    } else {
+                        Error("Nenhum título de curso!");
+                    }
+                    ?>
                 </div>
                 <input type="text" class="form-control bg-light border-0 small rounded-left " name="pesquisar"
                     placeholder="Pesquisar por aulas" aria-label="Search" aria-describedby="basic-addon2">
@@ -41,6 +53,7 @@ echo $Component->getHeadHtmlDashboard();
                 </div>
             </div>
         </li>
+        
         <hr class="sidebar-divider my-0">
         <div class="text-center d-none d-md-inline">
             <button class="rounded-circle border-0" id="sidebarToggle"></button>

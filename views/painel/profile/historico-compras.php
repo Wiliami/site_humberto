@@ -37,10 +37,12 @@ echo $Component->getMenuSideBarDashboard();
                                     <span><?= $Cursos['curso_titulo'] ?></span>
                                 </td>
                                 <td>
-                                    <span><?= $Cursos['curso_create_date'] ?></span>  
+                                    <span><?= $Cursos['curso_create_date'] ?></span>
+                                    <?= date()?>
+                                  
                                 </td>
-                                <td class="text-center">
-                                    <span>50,00 reais</span>
+                                <td>
+                                    <span><?= $Cursos['curso_valor'] ?></span>
                                 </td>
                                 <td>
                                     <span><?= $Cursos['user_name'] ?></span>

@@ -31,7 +31,5 @@ echo $Component->getMenuSideBarDashboard();
     </div>
     <input type="submit" class="btn btn-success mb-2" value="Continuar" style="margin: 30px;">
 </form>
-<?php
-echo $Component->getFooterDashboard();
-?>
+<?= $Component->getFooterDashboard(); ?>
 

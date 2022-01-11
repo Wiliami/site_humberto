@@ -39,7 +39,7 @@ echo $Component->getMenuSideBarDashboard();
                                 <span><?= $Cursos['curso_create_date'] ?></span>
                             </td>
                             <td>
-                                <span>50,00 reais</span>
+                                <span><?= $Cursos['curso_valor'] ?></span>
                             </td>
                             <td style="width: 20%;">
                                 <a href="/" class="table-link">
