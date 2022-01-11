@@ -25,11 +25,11 @@ class Component {
                 <a href=' " . BASE . "/' type=\"button\" class=\" nav btn btn-black mb-2 mb-md-0\">
                     <img src='" . BASE . "/src/images/icon_small.png' alt='Logo' style='width: 50px; height: 50px;'>
                 </a>
-                <ul id=\"myDIV\" class=\"nav col-12 col-md-auto mb-2 justify-content-center mb-md-0 text-center\">
-                    <li><a href=' " . BASE . "/' class=\"nav-link px-2 link-secondary btn\">Home</a></li>
-                    <li><a href=' " . BASE . "/home/sobre' class=\"nav-link x-2 link-secondary btn active\">Sobre</a></li>
-                    <li><a href=' " . BASE . "/home/conteudo' class=\"nav-link px-2 link-secondary btn\">Conteúdo</a></li>
-                    <li><a href='"  . BASE . "/home/unitbrasil' class=\"nav-link px-2 link-secondary btn\">A Unitbrasil</a></li>
+                <ul class=\"nav col-12 col-md-auto mb-2 justify-content-center mb-md-0 text-center\">
+                    <li><a href=' " . BASE . "/' class=\"nav-link px-2 link-secondary\">Home</a></li>
+                    <li><a href=' " . BASE . "/home/sobre' class=\"nav-link x-2 link-secondary\">Sobre</a></li>
+                    <li><a href=' " . BASE . "/home/conteudo' class=\"nav-link px-2 link-secondary\">Conteúdo</a></li>
+                    <li><a href='"  . BASE . "/home/unitbrasil' class=\"nav-link px-2 link-secondary\">A Unitbrasil</a></li>
                 </ul>
                 <div class=\"col-md-auto text-end\">
                     <!-- <a href=' " . BASE . "/pages/cadastro' type=\"button\" class=\"btn me-1 mb-0\">Cadastro</a> -->
