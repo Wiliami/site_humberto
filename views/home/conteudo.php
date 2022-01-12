@@ -22,6 +22,7 @@ echo $Component->getMenu();
         </div>
     </div>
 </header>
+
 <section class="py-sm-7 py-5 position-relative">
     <div class="container">
         <div class="row">
@@ -36,11 +37,8 @@ echo $Component->getMenu();
                             <h3 class="mb-0">Conteúdo através da mídia</h3>
                         </div>
                         <p class="text-lg mb-0 text-start">
-                            Acreditamos que as mídias sociais têm o poder de impulsionar conteúdos relevantes para as
-                            pessoas. Então, usamos este canal de divulgação de conteúdos, o youtube, para anunciar o
-                            evangelho e preparar pessoas para o reino celeste.
-                            </a>
-                        </p>
+                        Acreditamos que as mídias sociais têm o poder de impulsionar conteúdos relevantes para as
+                        pessoas. Então, usamos esta ferramenta de divulgação de conteúdos, o youtube, para criar e postar conteúdos de qualidade.</p>
                     </div>
                 </div>
             </div>
@@ -48,73 +46,48 @@ echo $Component->getMenu();
     </div>
 </section>
 
+<!-- Vídeos background -->
 <section class="py-5 bg-white">
     <div class="container px-5 my-5">
+        <div class="d-flex justify-content-between align-items-center mb-2">
+            <h3 class="mb-0">Últimos vídeos lançados</h3>
+        </div>
         <div class="row gx-5">
             <div class="col-lg-4 mb-5">
+                <div class="d-flex align-items-center">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/NqS42PgzG00" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="col-lg-4 mb-5">
                 <div class="card h-100 shadow border-0">
-                    <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
-                        <div class="d-flex align-items-end justify-content-between">
-                            <div class="d-flex align-items-center">
-                                <iframe width="560" height="315" src="https://www.youtube.com/embed/NqS42PgzG00" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            </div>
-                        </div>
+                    <div class="d-flex align-items-center">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/RIDwf9LZP0M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4 mb-5">
                 <div class="card h-100 shadow border-0">
-                    <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
-                        <div class="d-flex align-items-end justify-content-between">
-                            <div class="d-flex align-items-center">
-                                <iframe width="560" height="315" src="https://www.youtube.com/embed/RIDwf9LZP0M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            </div>
-                        </div>
-                    </div>
+                    <div class="d-flex align-items-center">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/YJswtuiYLNc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div> 
                 </div>
             </div>
             <div class="col-lg-4 mb-5">
                 <div class="card h-100 shadow border-0">
-                    <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
-                        <div class="d-flex align-items-end justify-content-between">
-                            <div class="d-flex align-items-center">
-                                <iframe width="560" height="315" src="https://www.youtube.com/embed/NqS42PgzG00" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            </div>
-                        </div>
-                    </div>
+                    <div class="d-flex align-items-center">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/x15_wgECOSg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>                    </div>
                 </div>
             </div>
             <div class="col-lg-4 mb-5">
                 <div class="card h-100 shadow border-0">
-                    <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
-                        <div class="d-flex align-items-end justify-content-between">
-                            <div class="d-flex align-items-center">
-                            <iframe width="560" height="315" src="https://www.youtube.com/embed/NqS42PgzG00" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            </div>
-                        </div>
-                    </div>
+                    <div class="d-flex align-items-center">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/uhuDxPtoYyo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>                    </div>
                 </div>
             </div>
             <div class="col-lg-4 mb-5">
                 <div class="card h-100 shadow border-0">
-                    <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
-                        <div class="d-flex align-items-end justify-content-between">
-                            <div class="d-flex align-items-center">
-                            <iframe width="560" height="315" src="https://www.youtube.com/embed/NqS42PgzG00" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 mb-5">
-                <div class="card h-100 shadow border-0">
-                    <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
-                        <div class="d-flex align-items-end justify-content-between">
-                            <div class="d-flex align-items-center">
-                            <iframe width="560" height="315" src="https://www.youtube.com/embed/NqS42PgzG00" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            </div>
-                        </div>
-                    </div>
+                    <div class="d-flex align-items-center">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/6n58QTH3xLc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>                    </div>
                 </div>
             </div>
         </div>
