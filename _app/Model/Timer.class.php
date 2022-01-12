@@ -1,8 +1,5 @@
 <?php 
-
-
 class Timer {
-    
     public function getTimeSession() {
         if (!isset($_SESSION['login'])) {
             $_SESSION['login'] = time();
@@ -11,12 +8,5 @@ class Timer {
             $_SESSION['login'] = time();  // atualiza o tempo de criação da sessão
         }
     }
-
-
-
 }
-
-    
-
-
 ?>

@@ -179,10 +179,9 @@ class User {
 
 		}
 	}
-
+	
 	private function verifyExistUserPassword($pass) {
 		$Read = new Read();
-
 		$pass = md5($pass);
 		$Read->FullRead('SELECT user_password FROM users WHERE user_password = :pss', "pss={$pass}");
 		if($Read->getResult()) {

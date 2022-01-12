@@ -1,5 +1,5 @@
 <?php
-const HOST = '';
+const HOST = '127.0.0.1';
 const USER = '';
 const PASS = '';
 const DBSA = '';
@@ -12,4 +12,4 @@ const EMAIL_USER = '';
 const EMAIL_PASS = '';
 const EMAIL_PORT = '';
 
-const BASE = '';
+const BASE = 'http://localhost/phphumberto';
