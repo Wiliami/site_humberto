@@ -747,6 +747,14 @@ class Component {
                 <script src="'. BASE .'/res/site/js/bootstrap.bundle.min.js"></script>
                 <script src="'. BASE .'/res/site/js/jquery.easing.min.js"></script>
                 <script src="'. BASE .'/res/site/js/sb-admin-2.min.js"></script>
+
+                <!-- Configurações JS da datatables -->
+                <script src="'. BASE .'/res/site/datatables/"></script>
+                <script src="'. BASE .'/res/site/datatables/"></script>
+                <script src="'. BASE .'/res/site/datatables/"></script>
+                <script src="'. BASE .'/res/site/datatables/"></script>
+                <script src="'. BASE .'/res/site/datatables/"></script>
+
             </body>
         </html>        
         ';
