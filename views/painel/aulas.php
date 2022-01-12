@@ -2,7 +2,6 @@
 $User = new User();
 $User->verifyExistLoginUser();
 ?>
-
 <!DOCTYPE html>
     <html lang="pt-BR">
         <head>
@@ -12,17 +11,12 @@ $User->verifyExistLoginUser();
             <meta name="description" content="">
             <meta name="author" content="">
             <title>Página | Aulas</title>
-
-            <!-- Custom styles for this template-->
             <link href="<?= BASE ?>/res/site/css/sb-admin-2.min.css" rel="stylesheet">
             <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
         </head>
-
         <body id="page-top">
-
          <!-- Page Wrapper -->
         <div id="wrapper">
-
             <!-- Sidebar -->
             <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
             <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 mw-100 navbar-search">
@@ -36,7 +30,6 @@ $User->verifyExistLoginUser();
                     </div>
                 </div>
             </form>
-
             <hr class="sidebar-divider my-0">
             <?php 
             $Read = new Read();
