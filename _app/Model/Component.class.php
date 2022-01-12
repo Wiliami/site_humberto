@@ -304,6 +304,7 @@ class Component {
 
 
                 <link href="'. BASE .'/res/site/css/sb-admin-2.min.css" rel="stylesheet">
+                <link href="'. BASE .'/res/site/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
                 <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
             </head> 
             <body id="page-top">
