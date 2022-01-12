@@ -1,18 +1,15 @@
 <?php 
 
 class EmailSendForgotPassword {
-
     private $Result;
     private $Error;
 
     function getResult() {
         return $this->Result;
     }
-
     function getError() {
         return $this->Error;
     }
-
     function sendEmail(array $dataEmail) {
         /**
          * $dataEmail['userEmail'] = null;
@@ -21,7 +18,6 @@ class EmailSendForgotPassword {
          * $dataEmail['body'] = null;
          */
         try {
-
             //Server settings
             $mail->SMTPDebug = SMTP::DEBUG_SERVER;
             $mail->isSMTP();
@@ -52,9 +48,6 @@ class EmailSendForgotPassword {
             $this->Error = "E-mail NÃO enviado: {$mail->ErrorInfo}";
             $this->Result = false;
         }
-        
     }
 }
-
-
 ?>
