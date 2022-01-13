@@ -32,17 +32,17 @@ echo $Component->getMenuSideBarDashboard();
                             <!-- <img class="rounded-circle me-3" src="https://dummyimage.com/40x40/ced4da/6c757d" alt="..." /> -->
                             <div class="small">
                                 <div class="fw-bold"><?= $Cursos['curso_categoria'] ?></div>
-                                <div class="text-muted"><?= $Cursos['curso_create_date'] ?></div>
+                                <div class="text-muted"><?= date('d/m/Y', strtotime($Cursos['curso_create_date'])) ?></div>
                             </div>
-                            <?php
-                                }
-                            } else {
-                                Error("Ainda não exite cursos cadastrados!");
-                            }
-                            ?>
                         </div>
                     </div>
                 </div>
+                <?php
+                    }
+                } else {
+                    Error("Ainda não exite cursos cadastrados!");
+                }
+                ?>
             </div>
         </div>
     </div>
