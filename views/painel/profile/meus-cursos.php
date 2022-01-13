@@ -13,7 +13,7 @@ echo $Component->getMenuSideBarDashboard();
 <div class="row gx-5 grid-container ml-2">
     <div class="col-lg-4 mb-5">
         <div class="card h-100 shadow border-0">
-            <img src="<?= BASE ?>/src/images/page-sobre.jpg" alt="imagem de fundo"/>
+            <!-- <img src="<?= BASE ?>/src/images/page-sobre.jpg" alt="imagem de fundo"/> -->
                 <div class="card-body p-4">
                     <div class="badge bg-success bg-gradient rounded-pill mb-2 text-white">Curso</div>
                     <a class="text-decoration-none link-dark stretched-link" href="<?= BASE ?>/painel/aulas">
@@ -29,7 +29,7 @@ echo $Component->getMenuSideBarDashboard();
             <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
                 <div class="d-flex align-items-end justify-content-between">
                     <div class="d-flex align-items-center">
-                        <img class="rounded-circle me-3" src="https://dummyimage.com/40x40/ced4da/6c757d" alt="..." />
+                        <!-- <img class="rounded-circle me-3" src="https://dummyimage.com/40x40/ced4da/6c757d" alt="..." /> -->
                         <div class="small">
                             <div class="fw-bold"><?= $Cursos['curso_categoria'] ?></div>
                             <div class="text-muted"><?= $Cursos['curso_create_date'] ?></div>
