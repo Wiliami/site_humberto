@@ -53,8 +53,9 @@ echo $Component->getMenu();
 <!-- Vídeos background -->
 <section class="py-5 bg-white">
     <div class="container px-5 my-5">
-        <div class="d-flex justify-content-between align-items-center mb-2">
-            <h3 class="mb-0">Lançamentos | Confira os vídeos mais recentes do canal</h3>
+        <div class="d-flex justify-content-start align-items-center mb-2">
+            <h3 class="">Lançamentos |</h3>
+            <span class="fw-bolder text-dark"> Confira os vídeos mais recentes do canal</span>
         </div>
         <div class="row gx-5">
             <div class="col-lg-4 mb-5">
@@ -102,7 +103,7 @@ echo $Component->getMenu();
                                     <div
                                         class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
                                         <!-- <a class="btn btn-warning btn-lg px-4 me-sm-3" href=" ' . BASE . '/cadastro">Começar</a> -->
-                                        <a class="btn btn-primary btn-lg px-4"
+                                        <a class="btn btn-danger btn-lg px-4"
                                             href="https://www.youtube.com/channel/UClFMwemd5j7EsXlV-gTw5Xg/videos">Acesse
                                             a playlist</a>
                                         <!-- <div class="justify-content-sm-center justify-content-xl-end">
