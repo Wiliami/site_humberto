@@ -9,7 +9,7 @@ echo $Component->getMenu();
         <div class="container">
             <div class="row">
                 <div class="my-5 text-center text-xl-start">
-                    <div class="display-5 mb-2">
+                    <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
                         <img src="<?= BASE ?>/src/images/youtube-white.png" alt="youtube logo" style="height: 200px; width: 350px;">
                     </div>
                     <h1 class="display-5 fw-bolder text-white mb-2">Junte-se a nós!</h1>
@@ -22,7 +22,6 @@ echo $Component->getMenu();
         </div>
     </div>
 </header>
-
 <section class="py-sm-7 py-5 position-relative">
     <div class="container">
         <div class="row">
