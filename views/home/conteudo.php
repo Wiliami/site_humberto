@@ -9,6 +9,9 @@ echo $Component->getMenu();
         <div class="container">
             <div class="row">
                 <div class="my-5 text-center text-xl-start">
+                    <div class="display-5 mb-2">
+                        <img src="<?= BASE ?>/src/images/youtube-white.png" alt="youtube logo" style="height: 200px; width: 350px;">
+                    </div>
                     <h1 class="display-5 fw-bolder text-white mb-2">Junte-se a nós!</h1>
                     <p class="lead text-white mt-3">Se inscreva em nosso canal <br> do youtube para acompanhar <br> novos conteúdos!</p>
                 </div>
