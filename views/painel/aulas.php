@@ -35,8 +35,8 @@ $User->verifyExistLoginUser();
             $Read = new Read();
             $Read->FullRead("SELECT * FROM modulos");
             if($Read->getResult()) {
-            foreach($Read->getResult() as $Modulos) {
-                ?>
+                foreach($Read->getResult() as $Modulos) {
+                    ?>
             <li class="nav-item">
                 <a class="nav-link collapsed" href="" data-toggle="collapse"
                     data-target="#collapse<?= $Modulos['modulo_id']?>" aria-expanded="true"
