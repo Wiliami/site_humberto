@@ -12,21 +12,21 @@ echo $Component->getHeadHtmlDashboard();
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <div>
                             <?php 
-                        $Read = new Read();
-                        $Read->FullRead("SELECT * FROM cursos LIMIT 1");
-                        if($Read->getResult()) {
-                            foreach($Read->getResult() as $Cursos) {
-                                ?>
+                            $Read = new Read();
+                            $Read->FullRead("SELECT * FROM cursos LIMIT 1");
+                            if($Read->getResult()) {
+                                foreach($Read->getResult() as $Cursos) {
+                                    ?>
                             <span class="font-weight-bold text-white"><?= $Cursos['curso_titulo'] ?></span>
                             <div class="small text-gray-500">1 de 24 aulas completas</div>
                         </div>
                     </div>
-                    <?php
+                            <?php
+                                }
+                            } else {
+                                Error("Nenhum título de curso!");
                             }
-                        } else {
-                            Error("Nenhum título de curso!");
-                        }
-                        ?>
+                            ?>
                 </div>
                 <input type="text" class="form-control bg-light border-0 small rounded-left " name="pesquisar"
                     placeholder="Pesquisar por aulas" aria-label="Search" aria-describedby="basic-addon2">
@@ -269,17 +269,14 @@ echo $Component->getHeadHtmlDashboard();
                     allowfullscreen></iframe>
             </div>
             <!-- Conteúdo ou informações referente a aula -->
-            <div class="container-fluid">
-                <!-- ***Page Heading*** -->
-                <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <div class="container">
+                <div class="d-sm-flex align-items-center justify-content-between mb-4 mt-4">
                     <h1 class="h3 mb-0 text-gray-600">Material de apoio</h1>
                 </div>
                 <p class="h3 mb-0 text-gray-400">Como descrever uma metodologia de um curso?</p>
                 <p>Metodologia significa “caminho ou via para a realização de algo”. Ou seja, é o processo utilizado
                     para chegar a algum conhecimento. Metodologia é também o estudo das melhores formas de pesquisa para
-                    cada área do conhecimento.</p>
-                <p>Metodologia significa “caminho ou via para a realização de algo”. Ou seja, é o processo utilizado
-                    para chegar a algum conhecimento. Metodologia é também o estudo das melhores formas de pesquisa para
-                    cada área do conhecimento.</p>
+                    cada área do conhecimento.
+                </p>
             </div>
             <?= $Component->getFooterDashboard(); ?>
