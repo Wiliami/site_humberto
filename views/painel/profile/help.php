@@ -11,6 +11,4 @@ echo $Component->getMenuSideBarDashboard();
     </div>
         <p>Em que podemos te ajudar?!</p>
 </div>
-<?php
-echo $Component->getFooterDashboard();
-?>
+<?= $Component->getFooterDashboard(); ?>
