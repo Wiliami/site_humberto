@@ -2,7 +2,7 @@
 $User = new User();
 $User->verifyExistLoginUser();
 $Component = new Component();
-echo $Component->getMenuSideBarDashboard();
+// echo $Component->getMenuSideBarDashboard();
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -60,13 +60,13 @@ echo $Component->getMenuSideBarDashboard();
                 if($Read->getResult()) {
                     foreach($Read->getResult() as $Aulas) {
                         ?>
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse<? $Aulas['aula_id'] ?>"
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse<?= $Aulas['aula_id'] ?>"
                     aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-folder"></i>
                     <!-- Nome do módulo -->
-                    <span><? $Aulas['modulo_id'] ?></span>
+                    <span><?= $Aulas['modulo_id'] ?></span>
                 </a>
-                <div id="collapse<? $Aulas['aula_id'] ?>" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                <div id="collapse<?= $Aulas['aula_id'] ?>" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <!-- Nome da aula -->
                         <a class="collapse-item" href="<?= BASE ?>/painel/list-user"><?= $Aulas['aula_name']?></a>
