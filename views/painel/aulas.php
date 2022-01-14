@@ -2,7 +2,7 @@
 $User = new User();
 $User->verifyExistLoginUser();
 $Component = new Component();
-// echo $Component->getMenuSideBarDashboard();
+echo $Component->getMenuSideBarDashboard();
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -64,7 +64,7 @@ $Component = new Component();
                     aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-folder"></i>
                     <!-- Nome do módulo -->
-                    <span><?= $Aulas['modulo_id'] ?></span>
+                    <span><?= $Aulas['aula_name'] ?></span>
                 </a>
                 <div id="collapse<?= $Aulas['aula_id'] ?>" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
