@@ -43,7 +43,6 @@ $User->verifyExistLoginUser();
                         <i class="fas fa-fw fa-folder"></i>
                         <span><?= $Modulos['modulo_titulo'] ?></span>
                     </a>
-
                     <div id="collapse<?= $Modulos['modulo_id']?>" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
                             <?php
@@ -59,9 +58,7 @@ $User->verifyExistLoginUser();
                         </div>
                     </div>
                 </li>
-
                 <hr class="sidebar-divider my-0 ">
-
                     <?php
                 }
             } else {
@@ -69,20 +66,14 @@ $User->verifyExistLoginUser();
             }   
             ?>
             </ul>
-          
-            
             <!-- End of Sidebar -->
-
             <!-- Content Wrapper -->
             <div id="content-wrapper" class="d-flex flex-column">
-
                 <!-- Main Content -->
                 <div id="content">
-
                     <!-- Topbar -->
                     <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
                         <ul class="navbar-nav ml-auto">
-
                             <!-- Nav Item - Search Dropdown (Visible Only XS) -->
                             <li class="nav-item dropdown no-arrow d-sm-none">
                                 <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
@@ -106,7 +97,6 @@ $User->verifyExistLoginUser();
                                     </form>
                                 </div>
                             </li>
-
                             <!-- Nav Item - Alerts -->
                             <li class="nav-item dropdown no-arrow mx-1">
                                 <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
@@ -157,7 +147,6 @@ $User->verifyExistLoginUser();
                                     <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
                                 </div>
                             </li>
-
                             <!-- Nav Item - Messages -->
                             <li class="nav-item dropdown no-arrow mx-1">
                                 <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button"
@@ -220,15 +209,12 @@ $User->verifyExistLoginUser();
                                     <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
                                 </div>
                             </li>
-
                             <div class="topbar-divider d-none d-sm-block"></div>
-
                             <!-- Nav Item - User Information -->
                             <li class="nav-item dropdown no-arrow">
                                 <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <span class="mr-2 d-none d-lg-inline text-gray-600 small">Seja bem-vindo(a),  <?= $_SESSION['login']['user_name'] ?></span>
-                                
                                     <img class="img-profile rounded-circle" src="<?= BASE ?>/src/images/undraw_profile.svg">
                                 </a>
                                 <!-- Dropdown - User Information -->
@@ -250,7 +236,6 @@ $User->verifyExistLoginUser();
                                         <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                                         Suporte
                                     </a>
-
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="" data-toggle="modal" data-target="#logoutModal">
                                         <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
@@ -260,8 +245,6 @@ $User->verifyExistLoginUser();
                             </li>
                         </ul>
                     </nav>
-                    
-
                     <!-- Barra de opções de aula (Anterior e próxima aula) -->
                     <header class="navbar navbar-expand bg-dark static-top shadow d-flex align-items-center justify-content-center justify-content-md-between">
                         <ul class="header1" style="list-style: none;">
@@ -272,11 +255,8 @@ $User->verifyExistLoginUser();
                                     <span>Título da aula anterior</span>
                                 </a>
                             </li>
-
                         </ul>
-                        
                         <div class="topbar-divider d-none d-sm-block"></div>
-
                         <ul class="header2" style="list-style: none;">  
                             <li>  
                                 <a href="<?= BASE ?>/painel/aulas/nome-da-proxima-aula" class="small text-gray-200">
@@ -287,17 +267,7 @@ $User->verifyExistLoginUser();
                             </li>
                         </ul>     
                     </header>
-                  
-
-
                     <div class="embed-responsive embed-responsive-16by9">
                         <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/137857207" allowfullscreen></iframe>
                     </div>
-
-                    <?php 
-        
-                        $Component = new Component();
-                        echo $Component->getFooterDashboard();
-
-                    ?>
-        </html>
+                    <?= $Component->getFooterDashboard(); ?>
