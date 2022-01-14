@@ -48,15 +48,15 @@ $User->verifyExistLoginUser();
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <?php
-                               $Read->FullRead("SELECT * FROM aulas WHERE modulo_id = :id", "id={$Modulos['modulo_id']}");
-                                if($Read->getResult()) {
-                                    foreach($Read->getResult() as $Aula) {
-                                            ?>
+                        $Read->FullRead("SELECT * FROM aulas WHERE modulo_id = :id", "id={$Modulos['modulo_id']}");
+                        if($Read->getResult()) {
+                            foreach($Read->getResult() as $Aula) {
+                                    ?>
                         <a class="collapse-item" href="<?= BASE ?>/"><?= $Aula['aula_name'] ?></a>
                         <?php
-                                    } 
-                                }
-                            ?>
+                            } 
+                        }
+                        ?>
                     </div>
                 </div>
             </li>
