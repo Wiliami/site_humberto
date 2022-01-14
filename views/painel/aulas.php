@@ -2,6 +2,7 @@
 $User = new User();
 $User->verifyExistLoginUser();
 $Component = new Component();
+echo $Component->getMenuSideBarDashboard();
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -53,16 +54,30 @@ $Component = new Component();
             <hr class="sidebar-divider my-0">
             <!-- Consulta no banco de dados -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                <?php
+                $Read = new Read();
+                $Read->FullRead("SELECT * FROM aulas");
+                if($Read->getResult()) {
+                    foreach($Read->getResult() as $Aulas) {
+                        ?>
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse<? $Aulas['aula_id'] ?>"
                     aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-folder"></i>
-                    <span>Módulos</span>
+                    <!-- Nome do módulo -->
+                    <span><? $Aulas['modulo_id'] ?></span>
                 </a>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                <div id="collapse<? $Aulas['aula_id'] ?>" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="<?= BASE ?>/painel/list-user">Aula name</a>
+                        <!-- Nome da aula -->
+                        <a class="collapse-item" href="<?= BASE ?>/painel/list-user"><?= $Aulas['aula_name']?></a>
                     </div>
                 </div>
+                <?php 
+                    }
+                } else {
+                    Error("Ainda não existe nenhum módulo cadastrado!");
+                }
+                ?>
             </li>
             
             <hr class="sidebar-divider my-0">
