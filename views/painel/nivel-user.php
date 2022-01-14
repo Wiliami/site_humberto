@@ -8,8 +8,9 @@ echo $Component->getMenuSideBarDashboard();
 ?>
 <div class="container">
     <div class="card shadow mb-4">
-        <div class="card-header py-3">
+        <div class="card-header py-3 d-sm-flex align-items-center justify-content-between">
             <h6 class="m-0 font-weight-bold text-dark">Nível de usuários</h6>
+            <button type="button" class="btn btn-success mb-2" title="Adicionar um nível de usuário">Adicionar nível</button>
         </div>
         <div class="card-body">
             <div class="table-responsive">
