@@ -9,7 +9,7 @@ echo $Component->getMenuSideBarDashboard();
 <div class="container">
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-dark">Olá, <?= $_SESSION['login']['user_name'] ?> </h6>
+            <h5 class="m-0 font-weight-bold text-dark">Olá, <?= $_SESSION['login']['user_name'] ?></h5>
             <span class="m-0 text-dark">Cursos finalizados</span>
         </div>
         <div class="card-body">
@@ -18,9 +18,7 @@ echo $Component->getMenuSideBarDashboard();
                     <thead>
                         <tr>
                             <th>Nome do curso</th>
-                            <th>Data da compra</th>
-                            <th>Valor do curso</th>
-                            <th>Usuário</th>
+                            <th>Tempo</th>
                             <th>Opções</th>
                         </tr>
                     </thead>
@@ -37,12 +35,6 @@ echo $Component->getMenuSideBarDashboard();
                             </td>
                             <td>
                                 <span><?= $Cursos['curso_create_date'] ?></span>
-                            </td>
-                            <td>
-                                <span><?= $Cursos['curso_valor'] ?></span>
-                            </td>
-                            <td>
-                                <span><?= $Cursos['user_name'] ?></span>
                             </td>
                             <td style="width: 20%;">
                                 <a href="/" class="table-link">
