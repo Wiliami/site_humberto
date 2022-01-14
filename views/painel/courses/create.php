@@ -12,9 +12,9 @@ echo $Component->getMenuSideBarDashboard();
         <h1 class="h3 mb-0 text-gray-800 ml-2">Create | Cadastrar cursos</h1>
     </div>
     <p class="ml-2">Página de cadastro de cursos</p>
+    <input type="submit" class="btn btn-success mb-2 ml-4" name="register_category" value="Cadastrar categoria">
 
     <form method="post">
-        <input type="submit" class="btn btn-success mb-2 ml-4" name="register_category" value="Cadastrar categoria">
         <div class="px-4 py-sm-5 py-3">
         <?php
         $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
@@ -67,5 +67,4 @@ echo $Component->getMenuSideBarDashboard();
         <input type="submit" class="btn btn-success mb-2 ml-4" name="register_course" value="Cadastrar curso">
     </form>
 </div>
-
 <?= $Component->getFooterDashboard(); ?>
