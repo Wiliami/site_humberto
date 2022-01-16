@@ -5,57 +5,59 @@ $Component = new Component();
 echo $Component->getHeadHtmlDashboard();
 echo $Component->getHeadHtmlDataTable();
 echo $Component->getMenuSideBarDashboard();
+$NivelId = $_GET['nivel'];
 ?>
 <div class="container">
     <div class="card shadow mb-4">
-        <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-dark">Cursos | Atualizar cursos</h6>
+        <div class="card-header py-3 d-sm-flex align-items-center justify-content-between">
+            <?php
+            $Read = new Read();
+            $Read->FullRead("SELECT * FROM users_levels WHERE level_id = :ld", "ld={$NivelId}");
+            if($Read->getResult()) {
+                foreach($Read->getResult() as $LevelUser) {
+                    ?>
+            <h6 class="m-0 font-weight-bold text-dark">Usuários nível: <?= $LevelUser['level_desc'] ?></h6>
+            <a href="<?= BASE ?>/painel/nivel-user" class="btn btn-success mb-2" title="Voltar para lista de usuários">Voltar</a>
+            <?php
+                }
+            } else {
+                Error("Ainda não existe essa lista de usuários!");
+            }   
+            ?>
         </div>
         <div class="card-body">
             <div class="table-responsive">
-                <table id="table-cursos-update" class="table table-striped table-bordered" style="width: 100%">
+                <table id="tabela-niveis" class="table table-striped table-bordered" style="width: 100%;">
                     <thead>
                         <tr>
-                            <th><span>Nome do curso</span></th>
-                            <th><span>Criado</span></th>
-                            <th class="text-center"><span>Descrição do curso</span></th>
+                            <th><span>Perfil</span></th>
+                            <th><span>Usuário</span></th>
+                            <th><span>E-mail</span></th>
                             <th><span>Opções</span></th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php
-                            $Read = new Read();
-                            $Read->FullRead("SELECT * FROM cursos");
+                            $Read->FullRead("SELECT * FROM users WHERE user_level = :ul", "ul={$NivelId}");
                             if($Read->getResult()) {
-                                foreach($Read->getResult() as $Cursos) {
-                                    ?>
+                                foreach($Read->getResult() as $Users) {
+                            ?>
                         <tr>
                             <td>
-                                <span><?= $Cursos['curso_titulo'] ?></span>
+                                <?= $Component->getAvatarUser(); ?>
                             </td>
                             <td>
-                                <span><?= $Cursos['curso_create_date'] ?></span>
+                                <span><?= $Users['user_name'] ?></span>
                             </td>
                             <td>
-                                <span><?= $Cursos['curso_descricao'] ?></span>
+                                <span><?= $Users['user_email'] ?></span>
                             </td>
                             <td>
-                                <a href="/" class="table-link">
-                                    <span class="fa-stack">
-                                        <i class="fa fa-square fa-stack-2x"></i>
-                                        <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                                <a href="<?= BASE ?>/painel/courses/update" class="table-link">
+                                <a href="<?= BASE ?>/" class="table-link"
+                                    title="Alterar o nível de <?= $Users['user_name'] ?>">
                                     <span class="fa-stack">
                                         <i class="fa fa-square fa-stack-2x"></i>
                                         <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                                <a href="<?= BASE ?>/painel/courses/delete" class="table-link danger">
-                                    <span class="fa-stack">
-                                        <i class="fa fa-square fa-stack-2x"></i>
-                                        <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
                                     </span>
                                 </a>
                             </td>
@@ -63,8 +65,8 @@ echo $Component->getMenuSideBarDashboard();
                         <?php
                                 }
                             } else {
-                                Error("Ainda não existem usuários!");
-                            }   
+                                Error("Ainda não existem usuários para esse nível!");
+                            }
                             ?>
                     </tbody>
                 </table>
@@ -75,9 +77,9 @@ echo $Component->getMenuSideBarDashboard();
 <?= $Component->getFooterDashboard(); ?>
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
-<script>
+<script type="text/javascript" language="javascript">
 $(document).ready(function() {
-    $("#table-cursos-update").DataTable({
+    $("#tabela-niveis").DataTable({
         "language": {
             "lengthMenu": "Mostrando _MENU_ registros por página",
             "zeroRecords": "Nenhum registro foi encontrado",

@@ -1,6 +1,6 @@
 <?php
 $Component = new Component();
-echo $Component->getHeadHtmlReset();
+echo $Component->getHeadHtmlHome();
 echo $Component->getMenu();
 ?>
 <section class="py-sm-7 py-5 position-relative">

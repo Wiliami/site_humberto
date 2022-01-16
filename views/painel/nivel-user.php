@@ -2,63 +2,73 @@
 $User = new User();
 $User->verifyExistLoginUser();
 $Component = new Component();
-echo $Component->getMenuAndSideBarDashboard2();
+echo $Component->getHeadHtmlDashboard();
+echo $Component->getHeadHtmlDataTable();
+echo $Component->getMenuSideBarDashboard();
 ?>
 <div class="container">
-    <div class="row">
-        <div class="col-lg-12">
-        <div class="main-box clearfix">
+    <div class="card shadow mb-4">
+        <div class="card-header py-3 d-sm-flex align-items-center justify-content-between">
+            <h6 class="m-0 font-weight-bold text-dark">Nível de usuários</h6>
+            <button type="button" class="btn btn-success mb-2" title="Adicionar um nível de usuário">Adicionar nível</button>
+        </div>
+        <div class="card-body">
             <div class="table-responsive">
-                <table class="table user-list">
-                <h2>Nível de usuários</h2>
+                <table id="table-niveis" class="table table-striped table-bordered" style="width: 100%;">
+                    </div>
                     <thead>
                         <tr>
-                            <th><span>Usuário</span></th>
-                            <th><span>Nível Usuário</span></th>
+                            <th>Nível Usuário</th>
+                            <th>Opções</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php
-                        $Read = new Read();
-                        $Read->FullRead("SELECT * FROM users");
-                        if($Read->getResult()) {
-                            foreach($Read->getResult() as $User) {
-                                ?>
-                                <tr>
+                            $Read = new Read();
+                            $Read->FullRead("SELECT * FROM users_levels");
+                            if($Read->getResult()) {
+                                foreach($Read->getResult() as $Level) {
+                                    ?>
+                        <tr>
                             <td>
-                                <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="avatar" style="width: 50px; height: 50px">
-                                <a href="/" class="user-link"><?= $User['user_name'] ?></a>
+                                <span><?= $Level['level_desc'] ?></span>
                             </td>
-                            
-                            <!-- Nível de usuário -->
-                            <td>    
-                                <?= $User['user_level'] ?>
-                            </td>
-
-                            <td style="width: 20%;">
-                                <a href="/" class="table-link">
-                                    <span class="fa-stack">
-                                        <i class="fa fa-square fa-stack-2x"></i>
-                                        <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
+                            <td>
+                                <a href="<?= BASE ?>/painel/level-user/nivel-usuario&nivel=<?= $Level['level_id']?>"
+                                    class="table-link btn btn-primary mb-2"
+                                    title="Pesquisar usuários de nível <?= $Level['level_desc'] ?>">
+                                    <span class="">
+                                        <!-- <i class="fas fa-search"></i> -->
+                                        <i class="fas fa-search fa-sm"></i>
                                     </span>
                                 </a>
                             </td>
                         </tr>
                         <?php
-                            }
-                        } else {
-                            Error("Ainda não existem usuários!");
-                        }   
-                        ?>
+                                }
+                            } else {
+                                Error("Ainda não existem usuários!");
+                            }   
+                            ?>
                     </tbody>
                 </table>
-            </div>                
+            </div>
         </div>
-        </div>
-    </div>  
+    </div>
 </div>
-
-
-<?php
-echo $Component->getFooterDashboard();
-?>
+<?= $Component->getFooterDashboard(); ?>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" language="javascript">
+$(document).ready(function() {
+    $("#table-niveis").DataTable({
+        "language": {
+            "lengthMenu": "Mostrando _MENU_ registros por página",
+            "zeroRecords": "Nenhum registro foi encontrado",
+            "info": "Mostrando página _PAGE_ de _PAGES_ registros",
+            "infoEmpty": "Nenhum registro foi encontrado",
+            "infoFiltered": "(filtrado de _MAX_ registros no total)"
+        }
+    });
+});
+</script>

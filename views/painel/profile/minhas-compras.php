@@ -2,41 +2,91 @@
 $User = new User();
 $User->verifyExistLoginUser();
 $Component = new Component();
-echo $Component->getMenuAndSideBarDashboard2();  
+echo $Component->getHeadHtmlDashboard();  
+echo $Component->getHeadHtmlDataTable();
+echo $Component->getMenuSideBarDashboard();  
 ?>
-    <div style="margin-left: 20px;">
-        <h3>Olá, <?= $_SESSION['login']['user_name'] ?></h3>
-        <span>Minhas compras</span>
-    </div>
-    <div class="row gx-5" style="margin-left: 8px; margin-top: 20px;">
-        <div class="col-lg-4 mb-5">
-            <div class="card h-100 shadow border-0">
-                <video class="card-img-top" muted>
-                    <source src="" type="video/mp4" />
-                </video>
-                <div class="card-body p-4">
-                    <div class="badge bg-success bg-gradient rounded-pill mb-2 text-white">Curso</div>
-                    <a class="text-decoration-none link-dark stretched-link" href="#">
-                        <h5 class="card-title mb-3">Técnicas e perfomance.</h5>
-                    </a>
-                    <p class="card-text mb-0">Saiba como falar em público e como dominar a timidez na hora
-                        de se expressar para as pessoas.</p>
-                </div>
-                <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
-                    <div class="d-flex align-items-end justify-content-between">
-                        <div class="d-flex align-items-center">
-                            <img class="rounded-circle me-3"
-                                src="https://dummyimage.com/40x40/ced4da/6c757d" alt="..." />
-                            <div class="small">
-                                <div class="fw-bold">unitbrasil</div>
-                                <div class="text-muted">March 12, 2021</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+<div class="container">
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-dark">Olá, <?= $_SESSION['login']['user_name'] ?></h6>
+            <p>Minhas compras</p>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table id="table-compras-usuario" class="table table-striped table-bordered" style="width: 100%;">
+                    <thead>
+                        <tr>
+                            <th>Nome do curso</span></th>
+                            <th>Data da compra</span></th>
+                            <th>Valor do curso</>
+                            </th>
+                            <th><span>Opções</span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        $Read = new Read();
+                        $Read->FullRead("SELECT c.*, u.user_name FROM cursos c LEFT JOIN users u ON u.user_id");
+                        if($Read->getResult()) {
+                            foreach($Read->getResult() as $Cursos) {
+                                ?>
+                        <tr>
+                            <td>
+                                <span><?= $Cursos['curso_titulo'] ?></span>
+                            </td>
+                            <td>
+                                <span><?= $Cursos['curso_create_date'] ?></span>
+                            </td>
+                            <td>
+                                <span><?= $Cursos['curso_valor'] ?></span>
+                            </td>
+                            <td style="width: 20%;">
+                                <a href="/" class="table-link">
+                                    <span class="fa-stack">
+                                        <i class="fa fa-square fa-stack-2x"></i>
+                                        <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                                <a href="/" class="table-link">
+                                    <span class="fa-stack">
+                                        <i class="fa fa-square fa-stack-2x"></i>
+                                        <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                                <a href="/" class="table-link danger">
+                                    <span class="fa-stack">
+                                        <i class="fa fa-square fa-stack-2x"></i>
+                                        <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </td>
+                        </tr>
+                        <?php
+                            }
+                        } else {
+                            Error("Ainda não existem usuários!");
+                        }   
+                        ?>
+                    </tbody>
+                </table>
             </div>
         </div>
-    </div> 
-<?php
-echo $Component->getFooterDashboard();
-?>
+    </div>
+</div>
+<?= $Component->getFooterDashboard(); ?>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" language="javascript">
+$(document).ready(function() {
+    $("#table-compras-usuario").DataTable({
+        "language": {
+            "lengthMenu": "Mostrando _MENU_ registros por página",
+            "zeroRecords": "Nenhum registro foi encontrado",
+            "info": "Mostrando página _PAGE_ de _PAGES_ registros",
+            "infoEmpty": "Nenhum registro foi encontrado",
+            "infoFiltered": "(filtrado de _MAX_ registros no total)"
+        }
+    });
+});
+</script>

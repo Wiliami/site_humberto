@@ -14,6 +14,13 @@ class User {
 			exit();
 		} 
 	}
+	public function searchCourse() {
+		if(empty($course['aula_name'])) {
+			$this->Error = "Pesquisa alguma coisa!";
+			$this->Result = false;
+		}
+	}
+
 	public function createUser($dataUser) {
 	if(empty($dataUser["user_name"])) {
 			$this->Error = "Preencha no campo um nome!";
@@ -30,6 +37,7 @@ class User {
 			$dataUser['user_password'] = md5($dataUser['user_password']);
 			$dataUser['user_create_date'] = date('Y-m-d H:i:s');
 			$dataUser['user_level'] = '1';
+			$dataUser['user_inativo'] = '0';
 			$Create = new Create();
 			$Create->ExeCreate("users", $dataUser); // cadastrando usuário no banco de dados
 			if($Create->getResult()) { // resultado
@@ -43,13 +51,13 @@ class User {
 	}
 	public function createCourse($dataCourse) {
 		if(empty($dataCourse["curso_titulo"])) {
-				$this->Error = "Preencha com um título!";
+				$this->Error = "O curso precisa de um nome!";
 				$this->Result = false;
 			} elseif (empty($dataCourse["curso_descricao"])) {
-				$this->Error = "Preencha com uma descrição!";
+				$this->Error = "O curso precisa de uma descrição!";
 				$this->Result = false;	
 			} elseif (empty($dataCourse["curso_categoria"])) {
-				$this->Error = "Selecione uma categoria para o curso!";
+				$this->Error = "Por favor, selecione uma categoria para o curso!";
 				$this->Result = false;
 			}  else {
 				$dataCourse['curso_create_date'] = date('Y-m-d H:i:s'); // dia que o curso foi cadastrado
@@ -65,6 +73,7 @@ class User {
 				}
 			}	
 		}
+
 	public function getResult() {
 		return $this->Result;
 	}
@@ -136,10 +145,11 @@ class User {
 			return false;
 		};
 	}
+	
 	public function logout() {
 		session_start();
 		session_destroy();
-		header('Location: ' . BASE . '/login');
+		header('Location: ' . BASE . '/pages/login');
 		die();
 	}
 

@@ -1,6 +1,6 @@
 <?php 
 $Component = new Component();
-echo $Component->getHeadHtmlReset();
+echo $Component->getHeadHtmlHome();
 echo $Component->getMenu();
 ?>
 <header class="header-2">
@@ -42,9 +42,5 @@ echo $Component->getMenu();
         </div>
     </div>
 </section>
-<?php
-$Component = new Component();
-echo $Component->getFooterHome();
-?>
-    </body>
-</html>
+<?= $Component->getMenuActiveConfig(); ?>
+<?= $Component->getFooterHome(); ?>

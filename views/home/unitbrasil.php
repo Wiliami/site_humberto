@@ -1,6 +1,6 @@
     <?php 
     $Component = new Component();
-    echo $Component->getHeadHtmlReset();
+    echo $Component->getHeadHtmlHome();
     echo $Component->getMenu();
     ?>
     <header>
@@ -12,7 +12,7 @@
                     <h1 class="display-5 fw-bolder text-white mb-2">Educação Institucional</h1>
                     <p class="lead text-white mt-3">Descubra um mundo de facilidades ao <br/>estudar no exterior.</p>
                 <div class="buttons">
-                    <a class="btn btn-info btn-lg px-4 me-sm-3" href="https://www.unitbrasil.com/">visitar Unitbrasil</a>
+                    <a class="btn btn-info btn-lg px-4 me-sm-3" href="https://www.youtube.com/watch?v=NgO_nA1mlvU">visitar Unitbrasil</a>
                 </div>
                 </div>
             </div>
@@ -35,16 +35,13 @@
                         <h5>Sobre a Unitbrasil</h5>
                         A UNIT Brasil tem a missão de proporcionar aos seus alunos a oportunidade de desenvolver ao máximo o seu potencial, criando oportunidades para o mercado e formando pessoas capazes de liderarem e fazerem o diferencial na sociedade contemporânea. Com uma base muito sólida de docentes, a UNIT Brasil deve permitir que seus alunos desenvolvam suas habilidades transformando-os em profissionais competentes de sucesso; Comprometendo-se com a cidadania, ética e o conhecimento para atender as necessidades globais através do ensino eficaz e estrututra educacional diferenciada.<br>
                     </p>
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/NqS42PgzG00" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
                 </div>
                 </div>
             </div>
             </div>
         </div>
-        </section>
-    <?php
-    $Component = new Component();
-    echo $Component->getFooterHome();
-    ?>
-    </body>
-</html>
-
+    </section>
+<?= $Component->getFooterHome(); ?>

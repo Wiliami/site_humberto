@@ -2,9 +2,10 @@
 $User = new User();
 $User->verifyExistLoginUser();
 $Component = new Component();
-echo $Component->getMenuAndSideBarDashboard2();
+echo $Component->getHeadHtmlDashboard();
+echo $Component->getMenuSideBarDashboard();
 ?>
-    <form action="" method="post">
+<form action="" method="post">
     <?php 
     $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
         if(!empty($Post['reset-password'])) {
@@ -21,28 +22,33 @@ echo $Component->getMenuAndSideBarDashboard2();
         }   
     }  
     ?>
+    <div class="container">
+        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800">Alterar senha</h1>
+        </div>
+        <div class="form-group row">
+            <label for="inputPassword" class="col-sm-2 col-form-label">Senha atual</label>
+            <div class="col-sm-9">
+                <input type="password" class="form-control" id="inputPassword1" name="current-pass"
+                    <?= isset($Post['current-passs']) ? $Post['current-pass']: ''?>>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="inputPassword" class="col-sm-2 col-form-label">Nova senha</label>
+            <div class="col-sm-9">
+                <input type="password" class="form-control" id="inputPassword2" name="new-pass"
+                    <?= isset($Post['new-pass']) ? $Post['new-pass']: ''?>>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="inputPassword" class="col-sm-2 col-form-label">Confirme a nova senha</label>
+            <div class="col-sm-9">
+                <input typ e="password" class="form-control" id="inputPassword3" name="confirm-new-pass"
+                    <?= isset($Post['confirm-new-pass']) ? $Post['confirm-new-pass']: ''?>>
+            </div>
+        </div>
+        <input type="submit" class="btn btn-success mb-2" name="reset-password" value="Alterar senha">
+</form>
+</div>
 
-    <h2 style="margin-left: 30px; margin-top: 30px;">Alterar senha</h2>
-    <div class="form-group row" style="margin-left: 20px;">
-        <label for="inputPassword" class="col-sm-2 col-form-label">Senha antiga</label>
-        <div class="col-sm-10">
-            <input type="password" class="form-control" id="inputPassword1" name="current-pass" <?= isset($Post['current-passs']) ? $Post['current-pass']: ''?> > 
-        </div>
-    </div>
-    <div class="form-group row" style="margin-left: 20px;">
-        <label for="inputPassword" class="col-sm-2 col-form-label">Nova senha</label>
-        <div class="col-sm-10">
-            <input type="password" class="form-control" id="inputPassword2" name="new-pass" <?= isset($Post['new-pass']) ? $Post['new-pass']: ''?>>
-        </div>
-    </div>
-    <div class="form-group row" style="margin-left: 20px;">
-        <label for="inputPassword" class="col-sm-2 col-form-label">Confirme a nova senha</label>
-        <div class="col-sm-10">
-            <input typ  e="password" class="form-control" id="inputPassword3" name="confirm-new-pass"  <?= isset($Post['confirm-new-pass']) ? $Post['confirm-new-pass']: ''?>>
-        </div>
-    </div>
-    <input type="submit" class="btn btn-primary mb-2" name="reset-password" value="Redefinir" style="margin-left: 20px;">
-    </form>
-    <?php
-    echo $Component->getFooterDashboard();
-    ?>
+<?= $Component->getFooterDashboard(); ?>

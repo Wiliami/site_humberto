@@ -1,11 +1,8 @@
 <?php
-    $User = new User();
-    if($User->verifyLoginUserON()) {
-        header('Location: ' . BASE . '/painel/dashboard');
-        die();
-    $Time = new Timer();
-    $Time->getTimeSession();
-    // Check::var_dump_json($ $Time->getTimeSession());
+$User = new User();
+if($User->verifyLoginUserON()) {
+    header('Location: ' . BASE . '/painel/dashboard');
+    die();
 };
 ?>
 <!DOCTYPE html>
@@ -15,9 +12,7 @@
             <link rel="apple-touch-icon" sizes="76x76" href="./assets/img//apple-icon.png">
             <link rel="icon" type="image/png" href="./assets/img//favicon.png">
             <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-            <title>
-                Page | Login
-            </title>
+            <title>Humberto Oliveira| Home</title>
             <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
             <!-- Fonts and icons -->
             <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
@@ -47,7 +42,8 @@
                         }
                     } 
                     ?>
-                    <h3 class="title mx-auto">Seja bem-vindo(a)</h3>
+                    <h3 class="title mx-auto">Já é um membro?</h3>
+                    <h5 class="title mx-auto text-">Então entre com seus dados com login e senha.</h5>
                     <form class="" method="post">
                         <label>Email</label>
                         <div class="input-group form-group-no-border">
@@ -76,6 +72,3 @@
         </div>
     </body>
 </html>
-
-
-

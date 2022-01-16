@@ -1,79 +1,78 @@
 <?php
-    $User = new User();
-    $User->verifyExistLoginUser();
-    $Component = new Component();
-    echo $Component->getMenuAndSideBarDashboard2()
+$User = new User();
+$User->verifyExistLoginUser();
+$Component = new Component();
+echo $Component->getHeadHtmlDashboard();
+echo $Component->getHeadHtmlDataTable();
+echo $Component->getMenuSideBarDashboard();
 ?>
-
-    <body> 
-        <div class="container">
-            <div class="col-lg-7">
-                <div class="card-header py-sm-5 py-3">
-                    <h2>Excluir cursos</h2>
-                    <p class="lead">Excluir cursos</p>
-                </div>
-            </div>
-            
-            <div class="row">
-                <div class="col-lg-12">
-                <div class="main-box clearfix">
-                    <div class="table-responsive">
-                        <table class="table user-list">
-                            <thead>
-                                <tr>
-                                    <th><span>Título</span></th>
-                                    <th><span>Criado</span></th>
-                                    <th class="text-center"><span>Descrição</span></th>
-                                    <th><span>Excluir</span></th>
-                                    <th>&nbsp;</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php
-                                $Read = new Read();
-                                $Read->FullRead("SELECT * FROM cursos");
-                                if($Read->getResult()) {
-                                    foreach($Read->getResult() as $Cursos) {
-                                        ?>
-                                        <tr>
-                                    <td>
-                                        <a href="/" class="user-link"><?= $Cursos['curso_titulo'] ?></a>
-                                        <span class="user-subhead"></span>
-                                    </td>
-                                    <td>
-                                        <?= $Cursos['curso_create_date'] ?>  
-                                    </td>
-                                    
-                                    <td>
-                                        <a href="/"><?= $Cursos['curso_descricao'] ?></a>
-                                    </td>
-                                    <td>
-                                        <a href="/" class="table-link danger">
-                                            <span class="fa-stack">
-                                                <i class="fa fa-square fa-stack-2x"></i>
-                                                <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
-                                            </span>
-                                        </a>
-                                    </td>
-                                </tr>
-                                <?php
-                                    }
-                                } else {
-                                    Error("Ainda não existem usuários!");
-                                }   
-                                ?>
-                            </tbody>
-                        </table>
-                    </div>                
-                </div>
-            </div>
-        </div>  
-    </div>
-
-        <!-- Fim da div container -->
+<div class="container">
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-dark">Excluir | Excluir cursos</h6>
         </div>
-
-<?php
-    $Component = new Component();
-    echo $Component->getFooterDashboard();
-?>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table id="table-delete-cursos" class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th><span>Nome do curso</span></th>
+                            <th><span>Data da criação</span></th>
+                            <th class="text-center"><span>Descrição</span></th>
+                            <th><span>Excluir</span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        $Read = new Read();
+                        $Read->FullRead("SELECT * FROM cursos");
+                        if($Read->getResult()) {
+                            foreach($Read->getResult() as $Cursos) {
+                                ?>
+                        <tr>
+                            <td>
+                                <span><?= $Cursos['curso_titulo'] ?></span>
+                            </td>
+                            <td>
+                                <span><?= $Cursos['curso_create_date'] ?></span>
+                            </td>
+                            <td>
+                                <span><?= $Cursos['curso_descricao'] ?></span>
+                            </td>
+                            <td>
+                                <a href="/" class="table-link danger" title="Excluir <?= $Cursos['curso_titulo'] ?>">
+                                    <span class="fa-stack">
+                                        <i class="fa fa-square fa-stack-2x"></i>
+                                        <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </td>
+                        </tr>
+                        <?php
+                            }
+                        } else {
+                            Error("Ainda não existem usuários!");
+                        }   
+                        ?>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<?= $Component->getFooterDashboard(); ?>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+<script>
+$(document).ready(function() {
+    $("#table-delete-cursos").DataTable({
+        "language": {
+            "lengthMenu": "Mostrando _MENU_ registros por página",
+            "zeroRecords": "Nenhum registro foi encontrado",
+            "info": "Mostrando página _PAGE_ de _PAGES_ registros",
+            "infoEmpty": "Nenhum registro foi encontrado",
+            "infoFiltered": "(filtrado de _MAX_ registros no total)"
+        }
+    });
+});
+</script>
