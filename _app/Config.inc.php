@@ -1,5 +1,5 @@
 <?php
-
+const BASE = 'http://localhost/PHP_Humberto/';
 function MyAutoLoad($Class) {
     $cDir = ['Conn', 'Helpers', 'Model'];
     $iDir = null;
