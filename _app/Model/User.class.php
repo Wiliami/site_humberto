@@ -155,15 +155,15 @@ class User {
 		} elseif(empty($resetPassword)) {
 			$this->Error = "Confirme a nova senha!";
 			$this->Result = false;
-		} elseif($this->verifyExistUserPassword()) {
+		} elseif($this->verifyExistUserPassword($resetPassword)) {
 			$this->Result = false;
 		}
-		if($current_pass === $resetPassword) {
+		if($resetPassword  === $resetPassword) {
 			$this->Error = "Sua senha deve ser diferente!";
 			$this->Result = false;
 		} else {
 			$this->Result = false;
-			$this->Error = $Create->getError();
+			$this->Error = $resetPassword->getError();
 		}
 	}
 
@@ -177,10 +177,10 @@ class User {
 		}
 	}
 	//Método para enviar email de recuperação de senha
-	private function getForgot($password) {
+	public function getForgot($password) {
 		$Read = new Read();
 		$password = md5($password);
-		$Rear->FullRead('SELECT user_password FROM users WHERE user_password = :pw', "pw={$password}");
+		$Read->FullRead('SELECT user_password FROM users WHERE user_password = :pw', "pw={$password}");
 		if($Read->getResult()) {
 			$this->Error = "Não possível alterar a senha de acesso!";
 			$this->Result = false;
@@ -192,7 +192,7 @@ class User {
 	}
 	public function deleteCourse() {
 		$Delete = new Delete();
-		$Delete->getDelete();
+	
 	}
 }
 ?>
