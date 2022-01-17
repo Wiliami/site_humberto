@@ -3,6 +3,7 @@ $User = new User();
 $User->verifyExistLoginUser();
 $Component = new Component();
 echo $Component->getHeadHtmlDashboard();
+echo $Component->getMenuSideBarDashboard();
 ?>
 <div id="wrapper">
     <ul class="nav-list navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar mt-6">
@@ -43,21 +44,21 @@ echo $Component->getHeadHtmlDashboard();
         <li class="nav-item">
             <?php
             $Read = new Read();
-            $Read->FullRead("SELECT m.* FROM modulos m LEFT JOIN aulas a ON a.aula_id");
+            $Read->FullRead("SELECT m.*, a.aula_name FROM modulos m LEFT JOIN aulas a ON a.aula_id");
             if($Read->getResult()) {
                 foreach($Read->getResult() as $Modulos) {
                     ?>
             <a class="nav-link collapsed" href="#" data-toggle="collapse"
-                data-target="#collapse<?= $Modulos['modulo_id'] ?>" aria-expanded="true" aria-controls="collapseTwo">
+                data-target="#collapse<?= $Modulos['aula_id'] ?>" aria-expanded="true" aria-controls="collapseTwo">
                 <i class="fas fa-fw fa-folder"></i>
                 <!-- Nome do módulo -->
                 <span><?= $Modulos['modulo_name'] ?></span>
             </a>
-            <div id="collapse<?= $Aulas['aula_id'] ?>" class="collapse" aria-labelledby="headingTwo"
+            <div id="collapse<?= $Modulos['aula_id'] ?>" class="collapse" aria-labelledby="headingTwo"
                 data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <!-- Nome da aula -->
-                    <a class="collapse-item" href="<?= BASE ?>/"><?= $Modulos['aula_name']?></a>
+                    <a class="collapse-item" href="<?= BASE ?>/"><?= $Modulos['aula_name'] ?></a>
                 </div>
             </div>
             <?php 

@@ -38,7 +38,7 @@ echo $Component->getMenuSideBarDashboard();
                                 <span><?= $User['curso_create_date'] ?></span>
                             </td>
                             <td>
-                                Aguardando aprovação
+                                <span><? $User['user_status'] ?></span>
                             </td>
                             <td>
                                 <span><?= $User['user_name']?></span>
