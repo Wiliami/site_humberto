@@ -26,19 +26,19 @@ echo $Component->getMenuSideBarDashboard();
                     <tbody>
                         <?php
                         $Read = new Read();
-                        $Read->FullRead("SELECT c.*, u.user_name FROM cursos c LEFT JOIN users u ON u.user_id");
+                        $Read->FullRead("SELECT c.*, u.user_name FROM compras c LEFT JOIN users u ON u.user_id");
                         if($Read->getResult()) {
                             foreach($Read->getResult() as $User) {
                                     ?>
                         <tr>
                             <td>
-                                <span><?= $User['curso_titulo'] ?></span>
+                                <span><?= $User['compra_curso'] ?></span>
                             </td>
                             <td>
-                                <span><?= $User['curso_create_date'] ?></span>
+                                <span><?= $User['compra_date'] ?></span>
                             </td>
                             <td>
-                                <span><? $User['user_status'] ?></span>
+                                <span><?= $User['compra_status'] ?></span>
                             </td>
                             <td>
                                 <span><?= $User['user_name']?></span>
