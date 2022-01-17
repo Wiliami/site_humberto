@@ -1,5 +1,6 @@
 <?php
-const BASE = 'http://localhost/PHP_Humberto/';
+require_once '_app/ENV.php';
+
 function MyAutoLoad($Class) {
     $cDir = ['Conn', 'Helpers', 'Model'];
     $iDir = null;
