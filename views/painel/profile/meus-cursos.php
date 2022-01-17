@@ -15,7 +15,7 @@ echo $Component->getMenuSideBarDashboard();
         <div class="card h-100 shadow border-0">
             <!-- <img src="<?= BASE ?>/src/images/page-sobre.jpg" alt="imagem de fundo"/> -->
             <div class="card-body p-4">
-            <?php
+                <?php
                 $Read = new Read();
                 $Read->FullRead("SELECT * FROM cursos");
                 if($Read->getResult()) {
@@ -46,16 +46,7 @@ echo $Component->getMenuSideBarDashboard();
             </div>
         </div>
     </div>
-
-   
-
-
-
-
-   
-
-
-   
+    
     <!-- <div class="col-lg-4 mb-5">
         <div class="card h-100 shadow border-0">
             <img src="<?= BASE ?>/src/images/page-sobre.jpg" alt="imagem de fundo"/>
@@ -79,7 +70,5 @@ echo $Component->getMenuSideBarDashboard();
             </div>
         </div>
     </div> -->
-
-    
 </div>
 <?= $Component->getFooterDashboard(); ?>

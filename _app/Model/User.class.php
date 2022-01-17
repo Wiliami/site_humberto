@@ -74,6 +74,28 @@ class User {
 			}	
 		}
 
+		public function createModule($dataModule) {
+			if(empty($dataModule["modulo_name"])) {
+					$this->Error = "O módulo precisa de um nome!";
+					$this->Result = false;
+				} elseif (empty($dataModule["modulo_descricao"])) {
+					$this->Error = "O módulo precisa de uma descrição!";
+					$this->Result = false;	
+				}  else {
+					$dataModule['modulo_create_date'] = date('Y-m-d H:i:s'); // dia que o módulo foi criado
+					// $dataCourse['user_level'] = '1';
+					$Create = new Create();
+					$Create->ExeCreate("modulos", $dataModule); // cadastrando módulo no banco de dados
+					if($Create->getResult()) { // resutado
+						$this->Result = $Create->getResult();
+						$this->Error =  "O módulo foi cadastrado com sucesso!";
+					} else {
+						$this->Result = false;
+						$this->Error = $Create->getError();
+					}
+				}	
+			}
+
 	public function getResult() {
 		return $this->Result;
 	}
