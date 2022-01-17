@@ -366,4 +366,4 @@
             </div>
         </section>
     </main>
-    <?= $Component->getFooterHome(); ?>
+<?= $Component->getFooterHome(); ?>

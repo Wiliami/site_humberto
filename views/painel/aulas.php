@@ -57,7 +57,7 @@ echo $Component->getHeadHtmlDashboard();
                 data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <!-- Nome da aula -->
-                    <a class="collapse-item" href="<?= BASE ?>/painel/list-user"><?= $Aulas['aula_name']?></a>
+                    <a class="collapse-item" href="<?= BASE ?>/"><?= $Aulas['aula_name']?></a>
                 </div>
             </div>
             <?php 
