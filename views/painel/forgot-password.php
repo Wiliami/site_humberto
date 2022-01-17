@@ -1,3 +1,8 @@
+<?php
+$User = new User();
+$User->verifyExistLoginUser();
+$Component = new Component();
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
     <head>
@@ -44,5 +49,4 @@
                 </div>
             </div>
         </div>
-    </body>
-</html>
+        <?= $Component->getFooterDashboard(); ?>

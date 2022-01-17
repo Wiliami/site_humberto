@@ -8,10 +8,10 @@ echo $Component->getHeadHtmlDashboard();
     <ul class="nav-list navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar mt-6">
         <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 mw-100 navbar-search">
             <div class="input-group">
-                <div class="container-fluid">
+                <div class="container">
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <div>
-                            <?php 
+                            <?php
                             $Read = new Read();
                             $Read->FullRead("SELECT * FROM cursos LIMIT 1");
                             if($Read->getResult()) {
@@ -43,7 +43,7 @@ echo $Component->getHeadHtmlDashboard();
         <li class="nav-item">
             <?php
             $Read = new Read();
-            $Read->FullRead("SELECT * FROM aulas");
+            $Read->FullRead("SELECT * FROM aulas WHERE aula_id = :ai", "ai=aula_id");
             if($Read->getResult()) {
                 foreach($Read->getResult() as $Aulas) {
                     ?>

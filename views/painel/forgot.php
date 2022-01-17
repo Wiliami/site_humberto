@@ -1,6 +1,9 @@
 <?php
 $User = new User();
 $User->verifyExistLoginUser();
+$Component = new Component();
+echo $Component->getHeadHtmlDashboard();
+echo $Component->getMenuSideBarDashboard();
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -16,9 +19,5 @@ $User->verifyExistLoginUser();
         <link href="<?= BASE ?>/res/site/css/sb-admin-2.min.css" rel="stylesheet">
     </head>
     <body>
-    <?php
-    $Component = new Component();
-    echo $Component->getMenuAndSideBarDashboard2();
-    ?>
-    </body>
-</html>
+    <?= $Component->getFooterDashboard(); ?>
+   
