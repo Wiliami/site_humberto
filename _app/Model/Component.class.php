@@ -391,6 +391,7 @@ class Component {
         <div class="bg-white py-2 collapse-inner rounded">
             <a class="collapse-item" href="' . BASE . '/painel/courses/create">Cadastro de cursos</a>
             <a class="collapse-item" href="' . BASE . '/painel/modules/create">Cadastro de módulos</a>
+            <a class="collapse-item" href="' . BASE . '/painel/aulas/create">Cadastro de aulas</a>
             <a class="collapse-item" href="' . BASE . '/painel/courses/list">Lista de cursos</a>
             <a class="collapse-item" href="' . BASE . '/painel/courses/delete">Excluir cursos</a>
             <a class="collapse-item" href="' . BASE . '/painel/courses/update">Atualizar cursos</a>
