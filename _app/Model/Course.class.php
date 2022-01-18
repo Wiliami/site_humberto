@@ -61,5 +61,25 @@ class Course {
             return $this->Error;
         }
 
+		public function createLesson($dataLesson) {
+			if(empty($dataLesson['aula_name'])) {
+				$this->Error = "A aula precisa de uma nome!";
+				$this->Result = false;
+			} else {
+				$dataLesson['aula_create_date'] = date('Y-m-d H:i:s');
+				$Create = new Create();
+				$Create->exeCreate("aulas", $dataLesson);
+				if($Create->getResult()) {
+					$this->Result = $Create->getResult();
+					$this->Error = "A Aula foi cadastrada com sucesso!";
+				} else {
+					$this->Result = false;
+					$this->Error = $Create->getError();
+				}
+
+			}
+		}
+
+
 }
 ?>
