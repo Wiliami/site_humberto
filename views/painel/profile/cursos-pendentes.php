@@ -14,7 +14,7 @@ echo $Component->getMenuSideBarDashboard();
         </div>
         <div class="card-body">
             <div class="table-responsive">
-                <table id="tabela-cursos-finalizados" class="table table-striped table-bordered" style="width: 100%;">
+                <table id="tabela-cursos-pendentes" class="table table-striped table-bordered" style="width: 100%;">
                     <thead>
                         <tr>
                             <th>Nome do curso</th>
