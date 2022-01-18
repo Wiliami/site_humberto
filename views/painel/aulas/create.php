@@ -13,22 +13,20 @@ echo $Component->getMenuSideBarDashboard();
     <p class="ml-4">Cadastrar aulas em um curso</p>
     <form method="post">
         <div class="px-4 py-sm-5 py-3">
-        <?php
-        $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
-        if(!empty($Post['register_lesson'])) {
-            $CreateLesson['aula_name'] = $Post['aula'];
-            $Course = new Course();
-            $Course->createLesson($CreateLesson);
-            if($Course->getResult()) {
-                header('Location: ' . BASE . '/painel/aulas');
-                Error($Course->getError());
-                // cadastro realizado com sucesso
-            } else {
-                Error($Course->getError(), 'warning');
-                //falta os campos serem preenchidos nos inputs ou o input recebeu alguma informação errada
-            }   
-        }
-        ?>
+            <?php
+            $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+            if(!empty($Post['register_lesson'])) {
+                $CreateLesson['aula_name'] = $Post['aula'];
+                $Course = new Course();
+                $Course->createLesson($CreateLesson);
+                if($Course->getResult()) {
+                    header('Location:'. BASE .'/painel/aulas');
+                    Error($Course->getError());
+                } else {
+                    Error($Course->getError(), 'warning');
+                }   
+            }
+            ?>
         </div>
         <div class="form-group row ml-4">
             <label for="inputPassword" class="col-sm-1 col-form-label btn btn-warning mb-2">Nome</label>
@@ -37,7 +35,7 @@ echo $Component->getMenuSideBarDashboard();
                     value="<?= isset($Post['aula'])? $Post['aula']: '' ?>">
             </div>
         </div>
-        <input type="submit" class="btn btn-success mb-2 ml-4" name="register_lesson" value="Cadastrar aulas">
+        <input type="submit" class="btn btn-success mb-2 ml-4" name="register_lesson" value="Cadastrar aula">
     </form>
 </div>
 <?= $Component->getFooterDashboard(); ?>

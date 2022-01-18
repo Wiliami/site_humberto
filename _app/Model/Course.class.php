@@ -15,11 +15,10 @@ class Course {
 				$this->Error = "Por favor, selecione uma categoria para o curso!";
 				$this->Result = false;
 			}  else {
-				$dataCourse['curso_create_date'] = date('Y-m-d H:i:s'); // dia que o curso foi cadastrado
-				// $dataCourse['user_level'] = '1';
+				$dataCourse['curso_create_date'] = date('Y-m-d H:i:s');
 				$Create = new Create();
-				$Create->ExeCreate("cursos", $dataCourse); // cadastrando usuário no banco de dados
-				if($Create->getResult()) { // resutado
+				$Create->ExeCreate("cursos", $dataCourse); 
+				if($Create->getResult()) {
 					$this->Result = $Create->getResult();
 					$this->Error =  "O curso foi cadastrado com sucesso!";
 				} else {
@@ -38,11 +37,10 @@ class Course {
 					$this->Error = "O módulo precisa de uma descrição!";
 					$this->Result = false;	
 				}  else {
-					$dataModule['modulo_create_date'] = date('Y-m-d H:i:s'); // dia que o módulo foi criado
-					// $dataCourse['user_level'] = '1';
+					$dataModule['modulo_create_date'] = date('Y-m-d H:i:s');
 					$Create = new Create();
-					$Create->ExeCreate("modulos", $dataModule); // cadastrando módulo no banco de dados
-					if($Create->getResult()) { // resutado
+					$Create->ExeCreate("modulos", $dataModule);
+					if($Create->getResult()) {
 						$this->Result = $Create->getResult();
 						$this->Error =  "O módulo foi cadastrado com sucesso!";
 					} else {
@@ -52,14 +50,6 @@ class Course {
 			}	
 		}
 
-
-        public function getResult() {
-            return $this->Result;
-        }
-
-        public function getError() {
-            return $this->Error;
-        }
 
 		public function createLesson($dataLesson) {
 			if(empty($dataLesson['aula_name'])) {
@@ -71,7 +61,7 @@ class Course {
 				$Create->exeCreate("aulas", $dataLesson);
 				if($Create->getResult()) {
 					$this->Result = $Create->getResult();
-					$this->Error = "A Aula foi cadastrada com sucesso!";
+					$this->Error = "A aula foi cadastrada com sucesso!";
 				} else {
 					$this->Result = false;
 					$this->Error = $Create->getError();
@@ -80,6 +70,16 @@ class Course {
 			}
 		}
 
+		public function getResult() {
+            return $this->Result;
+        }
 
+        public function getError() {
+            return $this->Error;
+        }
+
+		public function deleteCourse() {
+			$Delete = new Delete();
+		}
 }
 ?>
