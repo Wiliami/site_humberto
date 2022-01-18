@@ -18,14 +18,14 @@ echo $Component->getMenuSideBarDashboard();
         if(!empty($Post['register_module'])) {
             $CreateModule['modulo_name'] = $Post['name'];
             $CreateModule['modulo_descricao'] = $Post['description'];
-            $User = new User();
-            $User->createModule($CreateModule);
-            if($User->getResult()) {
+            $Course = new Course();
+            $Course->createModule($CreateModule);
+            if($Course->getResult()) {
                 header('Location: ' . BASE . '/painel/aulas');
-                Error($User->getError());
+                Error($Course->getError());
                 // cadastro realizado com sucesso
             } else {
-                Error($User->getError(), 'warning');
+                Error($Course->getError(), 'warning');
                 //falta os campos serem preenchidos nos inputs ou o input recebeu alguma informação errada
             }   
         }

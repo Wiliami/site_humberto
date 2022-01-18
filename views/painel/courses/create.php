@@ -12,7 +12,6 @@ echo $Component->getMenuSideBarDashboard();
     </div>
     <p class="ml-4">Página de cadastro de cursos</p>
     <input type="submit" class="btn btn-success mb-2 ml-4" name="register_category" value="Cadastrar categoria">
-
     <form method="post">
         <div class="px-4 py-sm-5 py-3">
         <?php
@@ -21,14 +20,14 @@ echo $Component->getMenuSideBarDashboard();
             $CreateCourse['curso_titulo'] = $Post['title'];
             $CreateCourse['curso_descricao'] = $Post['description'];
             $CreateCourse['curso_categoria'] = $Post['category'];
-            $User = new User();
-            $User->createCourse($CreateCourse);
-            if($User->getResult()) {
+            $Course = new Course();
+            $Course->createCourse($CreateCourse);
+            if($Course->getResult()) {
                 header('Location: ' . BASE . '/painel/courses/update');
-                Error($User->getError());
+                Error($Course->getError());
                 // cadastro realizado com sucesso
             } else {
-                Error($User->getError(), 'warning');
+                Error($Course->getError(), 'warning');
                 //falta os campos serem preenchidos nos inputs ou o input recebeu alguma informação errada
             }   
         }
