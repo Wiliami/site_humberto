@@ -389,12 +389,25 @@ class Component {
     </a>
     <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="' . BASE . '/painel/courses/create">Cadastro de cursos</a>
-            <a class="collapse-item" href="' . BASE . '/painel/modules/create">Cadastro de módulos</a>
-            <a class="collapse-item" href="' . BASE . '/painel/aulas/create">Cadastro de aulas</a>
+            <h6 class="collapse-header">Cursos:</h6>
+            <a class="collapse-item" href="' . BASE . '/painel/courses/create">Cadastrar cursos</a>
             <a class="collapse-item" href="' . BASE . '/painel/courses/list">Lista de cursos</a>
-            <a class="collapse-item" href="' . BASE . '/painel/courses/delete">Excluir cursos</a>
             <a class="collapse-item" href="' . BASE . '/painel/courses/update">Atualizar cursos</a>
+            <a class="collapse-item" href="' . BASE . '/painel/courses/delete">Excluir cursos</a>
+
+            <h6 class="collapse-header">Módulos:</h6>
+            <a class="collapse-item" href="' . BASE . '/painel/modules/create">Cadastrar módulos</a>
+            <a class="collapse-item" href="' . BASE . '/painel/modules/list">Lista de módulos</a>
+            <a class="collapse-item" href="' . BASE . '/painel/modules/update">Atualizar módulos</a>
+            <a class="collapse-item" href="' . BASE . '/painel/modules/delete">Deletar módulos</a>
+
+            <h6 class="collapse-header">Aulas:</h6>
+            <a class="collapse-item" href="' . BASE . '/painel/aulas/create">Cadastrar aulas</a>
+            <a class="collapse-item" href="' . BASE . '/painel/aulas/list">Lista de aulas</a>
+            <a class="collapse-item" href="' . BASE . '/painel/aulas/update">Atualizar aulas</a>
+            <a class="collapse-item" href="' . BASE . '/painel/aulas/delete">Deletar aulas</a>
+
+            <h6 class="collapse-header">Outras páginas:</h6>
             <a class="collapse-item" href="' . BASE . '/painel/profile/help">Ajuda</a>
             <a class="collapse-item" href="' . BASE . '/painel/profile/suporte">Suporte</a>
             <a class="collapse-item" href="' . BASE . '/painel/dashboard">Dashboard</a>
