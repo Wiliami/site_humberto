@@ -8,7 +8,7 @@ echo $Component->getMenuSideBarDashboard();
 <div class="container">
     <div class="d-sm-flex align-items-center justify-content-start mb-4">
         <i class="fas fa-layer-plus"></i>
-        <h1 class="h3 mb-0 text-gray-800 ml-4">Create | Cadastrar cursos</h1>
+        <h1 class="h3 mb-0 text-gray-800 ml-4">Cadastro de cursos</h1>
     </div>
     <p class="ml-4">Página de cadastro de cursos</p>
     <input type="submit" class="btn btn-success mb-2 ml-4" name="register_category" value="Cadastrar categoria">
