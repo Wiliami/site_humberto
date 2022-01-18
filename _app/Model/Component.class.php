@@ -402,10 +402,10 @@ class Component {
             <a class="collapse-item" href="' . BASE . '/painel/modules/delete">Deletar módulos</a>
 
             <h6 class="collapse-header">Aulas:</h6>
-            <a class="collapse-item" href="' . BASE . '/painel/aulas/create">Cadastrar aulas</a>
-            <a class="collapse-item" href="' . BASE . '/painel/aulas/list">Lista de aulas</a>
-            <a class="collapse-item" href="' . BASE . '/painel/aulas/update">Atualizar aulas</a>
-            <a class="collapse-item" href="' . BASE . '/painel/aulas/delete">Deletar aulas</a>
+            <a class="collapse-item" href="' . BASE . '/painel/lesson/create">Cadastrar aulas</a>
+            <a class="collapse-item" href="' . BASE . '/painel/lesson/list">Lista de aulas</a>
+            <a class="collapse-item" href="' . BASE . '/painel/lesson/update">Atualizar aulas</a>
+            <a class="collapse-item" href="' . BASE . '/painel/lesson/delete">Deletar aulas</a>
 
             <h6 class="collapse-header">Outras páginas:</h6>
             <a class="collapse-item" href="' . BASE . '/painel/profile/help">Ajuda</a>

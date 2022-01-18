@@ -20,11 +20,11 @@ echo $Component->getMenuSideBarDashboard();
                 $Course = new Course();
                 $Course->createLesson($CreateLesson);
                 if($Course->getResult()) {
-                    header('Location:'. BASE .'/painel/aulas');
                     Error($Course->getError());
+                    header('Location: ' . BASE . '/painel/aulas');
                 } else {
                     Error($Course->getError(), 'warning');
-                }   
+                } 
             }
             ?>
         </div>
