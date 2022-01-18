@@ -94,7 +94,7 @@ class User {
 						$this->Error = $Create->getError();
 					}
 				}	
-			}
+		}
 
 	public function getResult() {
 		return $this->Result;
