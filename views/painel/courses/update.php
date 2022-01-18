@@ -24,11 +24,11 @@ echo $Component->getMenuSideBarDashboard();
                     </thead>
                     <tbody>
                         <?php
-                            $Read = new Read();
-                            $Read->FullRead("SELECT * FROM cursos");
-                            if($Read->getResult()) {
-                                foreach($Read->getResult() as $Cursos) {
-                                    ?>
+                        $Read = new Read();
+                        $Read->FullRead("SELECT * FROM cursos");
+                        if($Read->getResult()) {
+                            foreach($Read->getResult() as $Cursos) {
+                                ?>
                         <tr>
                             <td>
                                 <span><?= $Cursos['curso_titulo'] ?></span>
@@ -40,19 +40,19 @@ echo $Component->getMenuSideBarDashboard();
                                 <span><?= $Cursos['curso_descricao'] ?></span>
                             </td>
                             <td>
-                                <a href="/" class="table-link">
+                                <a href="<?= BASE ?>/" class="table-link">
                                     <span class="fa-stack">
                                         <i class="fa fa-square fa-stack-2x"></i>
-                                        <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
+                                        <i class="fa fa-search-plus fa-stack-1x fa-inverse" title="pesquisar <?= $Cursos['curso_titulo'] ?>"></i>
                                     </span>
                                 </a>
-                                <a href="<?= BASE ?>/painel/courses/update" class="table-link">
+                                <a href="<?= BASE ?>/painel/courses/update" class="table-link" title="Atualizar curso <?= $Cursos['curso_titulo'] ?>">
                                     <span class="fa-stack">
                                         <i class="fa fa-square fa-stack-2x"></i>
                                         <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
                                     </span>
                                 </a>
-                                <a href="<?= BASE ?>/painel/courses/delete" class="table-link danger">
+                                <a href="<?= BASE ?>/painel/courses/delete" class="table-link danger" title="<?= $Cursos['curso_titulo'] ?>">
                                     <span class="fa-stack">
                                         <i class="fa fa-square fa-stack-2x"></i>
                                         <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
@@ -61,11 +61,11 @@ echo $Component->getMenuSideBarDashboard();
                             </td>
                         </tr>
                         <?php
-                                }
-                            } else {
-                                Error("Ainda não existem usuários!");
-                            }   
-                            ?>
+                            }
+                        } else {
+                            Error("Ainda não existem usuários!");
+                        }   
+                        ?>
                     </tbody>
                 </table>
             </div>
