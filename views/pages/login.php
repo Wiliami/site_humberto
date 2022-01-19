@@ -25,7 +25,7 @@ if($User->verifyLoginUserON()) {
     </head>
     <body class="index-page sidebar-collapse">
         <div class="section section-image section-login"
-            style="background-image: url('<?= BASE ?>/src/images/login-image.jpg')">
+            style="background-color: #403233;">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-4 col-md-6 mx-auto">
@@ -46,7 +46,7 @@ if($User->verifyLoginUserON()) {
                         ?>
                             <h3 class="title mx-auto text-bolder">Já é um membro?</h3>
                             <h5 class="title mx-auto text-bolder">Então entre com seus dados com login e senha.</h5>
-                            <form class="" method="post">
+                            <form method="post">
                                 <label class="text-white text-bolder">E-mail</label>
                                 <div class="input-group form-group-no-border">
                                     <div class="input-group-prepend">

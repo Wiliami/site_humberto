@@ -16,7 +16,7 @@
         <link href="<?= BASE ?>/res/site/css/paper-kit.css?v=2.2.0" rel="stylesheet" />
     </head>
     <body class="index-page sidebar-collapse">
-        <div class="section section-image section-login" style="background-image: url('<?= BASE ?>/src/images/login-image.jpg')">
+        <div class="section section-image section-login" style="background-color: #403233;">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-4 col-md-6 mx-auto">
@@ -43,21 +43,21 @@
                                 }
                             }
                             ?>
-                            <h3 class="title mx-auto">Faça o seu cadastro</h3>
+                            <h3 class="title mx-auto text-bolder">Faça o seu cadastro</h3>
                             <form class="" method="post">
-                                <label>Nome</label>
+                                <label class="text-white">Nome</label>
                                     <div class="input-group form-group-no-border">
                                         <div class="input-group-prepend">
                                             </div>
                                                 <input type="" class="form-control" name="name" value="<?= isset($Post['name'])?$Post['name']: '' ?>" placeholder="Name">
                                             </div>
-                                <label>Email</label>
+                                <label class="text-white">Email</label>
                                 <div class="input-group form-group-no-border">
                                     <div class="input-group-prepend">
                                         </div>
                                             <input type="email" class="form-control" name="email" value="<?= isset($Post['email'])?$Post['email']: '' ?>" placeholder="E-mail">
                                         </div>
-                                <label>Senha</label>
+                                <label class="text-white">Senha</label>
                                 <div class="input-group form-group-no-border">
                                     <div class="input-group-prepend">
                                         </div>
@@ -72,4 +72,3 @@
         </div>
     </body>
 </html>
-

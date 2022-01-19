@@ -164,10 +164,10 @@ class User {
 		}
 	}
 	//Método para enviar email de recuperação de senha
-	public function getForgot($password) {
+	public function getForgotPasswordUser($password) {
 		$Read = new Read();
-		$password = md5($password);
 		$Read->FullRead('SELECT user_password FROM users WHERE user_password = :pw', "pw={$password}");
+		$password = md5($password);
 		if($Read->getResult()) {
 			$this->Error = "Não possível alterar a senha de acesso!";
 			$this->Result = false;
