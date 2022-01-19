@@ -22,7 +22,7 @@ echo $Component->getMenuSideBarDashboard();
                     foreach($Read->getResult() as $Cursos) {
                         ?>
                 <div class="badge bg-success bg-gradient rounded-pill mb-2 text-white">Curso</div>
-                <a class="text-decoration-none link-dark stretched-link" href="<?= BASE ?>/painel/aulas">
+                <a class="text-decoration-none link-dark stretched-link" href="<?= BASE ?>/painel/profile/aulas">
                     <h5 class="card-title mb-3"><?= $Cursos['curso_titulo'] ?></h5>
                 </a>
                 <p class="card-text mb-0"><?= $Cursos['curso_descricao'] ?></p>

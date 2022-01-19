@@ -351,12 +351,11 @@ class Component {
     </a>
     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="' . BASE . '/painel/list-user">Lista de usuários</a>
-            <a class="collapse-item" href="' . BASE . '/painel/cursos-aprovacao">Cursos em análise</a>
-            <a class="collapse-item" href="' . BASE . '/painel/profile/historico-compras">Histórico de compras</a>
-            <a class="collapse-item" href="' . BASE . '/painel/nivel-user">Níveis de Usuários</a>
-            <a class="collapse-item" href="' . BASE . '/painel/profile/suporte">Suporte</a>
-            <a class="collapse-item" href="' . BASE . '/painel/settings">Configurações</a>
+            <a class="collapse-item" href="' . BASE . '/painel/admin/list-user">Lista de usuários</a>
+            <a class="collapse-item" href="' . BASE . '/painel/admin/cursos-aprovacao">Cursos em análise</a>
+            <a class="collapse-item" href="' . BASE . '/painel/admin/historico-compras">Histórico de compras</a>
+            <a class="collapse-item" href="' . BASE . '/painel/admin/nivel-user">Níveis de Usuários</a>
+            <a class="collapse-item" href="' . BASE . '/painel/admin/settings">Configurações</a>
             <a class="collapse-item" href="' . BASE . '/painel/dashboard">Dashboard</a>
         </div>
     </div>
@@ -376,6 +375,7 @@ class Component {
             <a class="collapse-item" href="' . BASE . '/painel/profile/cursos-pendentes">Cursos pendentes</a>
             <a class="collapse-item" href="' . BASE . '/painel/profile/help">Ajuda</a>
             <a class="collapse-item" href="' . BASE . '/painel/profile/suporte">Suporte</a>
+            <a class="collapse-item" href="' . BASE . '/painel/profile/settings">Configurações</a>
             <a class="collapse-item" href="' . BASE . '/painel/dashboard">Dashboard</a>
         </div>
     </div>
