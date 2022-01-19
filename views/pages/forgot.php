@@ -20,4 +20,3 @@ echo $Component->getMenuSideBarDashboard();
     </head>
     <body>
     <?= $Component->getFooterDashboard(); ?>
-   
