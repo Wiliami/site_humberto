@@ -29,7 +29,7 @@ echo $Component->getMenuSideBarDashboard();
                             }
                             ?>
                 </div>
-                <input type="text" class="form-control bg-light border-0 small rounded-left " name="pesquisar"
+                <input type="text" class="form-control bg-light border-0 small rounded-left" name="pesquisar"
                     placeholder="Pesquisar por aulas" aria-label="Search" aria-describedby="basic-addon2">
                 <div class="input-group-append">
                     <button class="btn btn-dark" type="submit">
