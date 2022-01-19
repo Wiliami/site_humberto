@@ -64,10 +64,10 @@ if($User->verifyLoginUserON()) {
                                 <input class="btn btn-danger btn-block btn-round" type="submit" value="Entrar" name="login">
                             </form>
                             <div class="forgot">
-                                <a href="<?= BASE ?>/forgot-password" class="btn btn-link btn-danger">Esqueci a senha</a>
+                                <a href="<?= BASE ?>/pages/forgot-password" class="btn btn-link btn-danger">Esqueci a senha</a>
                             </div>
                             <div class="forgot">
-                                <a href="<?= BASE ?>/cadastro" class="btn btn-link btn-danger">Criar conta</a>
+                                <a href="<?= BASE ?>/pages/cadastro" class="btn btn-link btn-danger">Criar conta</a>
                             </div>
                         </div>
                     </div>
