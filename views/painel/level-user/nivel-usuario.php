@@ -17,7 +17,7 @@ $NivelId = $_GET['nivel'];
                 foreach($Read->getResult() as $LevelUser) {
                     ?>
             <h6 class="m-0 font-weight-bold text-dark">Usuários nível: <?= $LevelUser['level_desc'] ?></h6>
-            <a href="<?= BASE ?>/painel/nivel-user" class="btn btn-success mb-2" title="Voltar para lista de usuários">Voltar</a>
+            <a href="<?= BASE ?>/painel/admin/nivel-user" class="btn btn-success mb-2" title="Voltar para lista de usuários">Voltar</a>
             <?php
                 }
             } else {
@@ -32,6 +32,7 @@ $NivelId = $_GET['nivel'];
                         <tr>
                             <th><span>Perfil</span></th>
                             <th><span>Usuário</span></th>
+                            <th><span>Status</span></th>
                             <th><span>E-mail</span></th>
                             <th><span>Opções</span></th>
                         </tr>
@@ -48,6 +49,9 @@ $NivelId = $_GET['nivel'];
                             </td>
                             <td>
                                 <span><?= $Users['user_name'] ?></span>
+                            </td>
+                            <td>
+                                <span><?= $Users['user_status'] ?></span>
                             </td>
                             <td>
                                 <span><?= $Users['user_email'] ?></span>
