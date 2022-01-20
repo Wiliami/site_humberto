@@ -105,7 +105,7 @@ class User {
 			return true;
 		} else {
 			unset($_SESSION['login']);
-			header("Location: " . BASE . "/login");
+			header("Location: " . BASE . "/pages/login");
 			return false;
 		}
 	}
