@@ -3,7 +3,6 @@ $User = new User();
 $User->verifyExistLoginUser();
 $Component = new Component();
 echo $Component->getHeadHtmlDashboard();
-echo $Component->getMenuSideBarDashboard();
 ?>
 <div id="wrapper">
     <ul class="nav-list navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar mt-6">
@@ -44,7 +43,7 @@ echo $Component->getMenuSideBarDashboard();
         <li class="nav-item">
             <?php
             $Read = new Read();
-            $Read->FullRead("SELECT m.*, a.aula_name FROM modulos m LEFT JOIN aulas a ON a.aula_id");
+            $Read->FullRead("SELECT m.*, a.aula_name FROM modulos m LEFT JOIN aulas a ON a.aula_id LIMIT 3");
             if($Read->getResult()) {
                 foreach($Read->getResult() as $Modulos) {
                     ?>

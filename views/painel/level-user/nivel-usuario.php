@@ -67,11 +67,11 @@ $NivelId = $_GET['nivel'];
                             </td>
                         </tr>
                         <?php
-                                }
-                            } else {
-                                Error("Ainda não existem usuários para esse nível!");
                             }
-                            ?>
+                        } else {
+                            Error("Ainda não existem usuários para esse nível!");
+                        }
+                        ?>
                     </tbody>
                 </table>
             </div>
