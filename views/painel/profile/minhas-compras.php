@@ -4,7 +4,11 @@ $User->verifyExistLoginUser();
 $Component = new Component();
 echo $Component->getHeadHtmlDashboard();  
 echo $Component->getHeadHtmlDataTable();
-echo $Component->getMenuSideBarDashboard();  
+echo $Component->getSideBarDashboard();
+echo $Component->getLiAdministrativoDashboard();
+echo $Component->getLiCoursesDashboard();
+echo $Component->getLiPagesDashboard();
+echo $Component->getMenuDashboard();
 ?>
 <div class="container">
     <div class="card shadow mb-4">

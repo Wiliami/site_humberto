@@ -3,7 +3,11 @@ $User = new User();
 $User->verifyExistLoginUser();
 $Component = new Component();
 echo $Component->getHeadHtmlDashboard();
-echo $Component->getMenuSideBarDashboard();
+echo $Component->getSideBarDashboard();
+echo $Component->getLiAdministrativoDashboard();
+echo $Component->getLiCoursesDashboard();
+echo $Component->getLiPagesDashboard();
+echo $Component->getMenuDashboard();
 ?>
 <form action="" method="post">
     <?php 

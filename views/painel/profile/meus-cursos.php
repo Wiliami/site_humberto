@@ -3,7 +3,11 @@ $User = new User();
 $User->verifyExistLoginUser();
 $Component = new Component();
 echo $Component->getHeadHtmlDashboard();
-echo $Component->getMenuSideBarDashboard();
+echo $Component->getSideBarDashboard();
+echo $Component->getLiAdministrativoDashboard();
+echo $Component->getLiCoursesDashboard();
+echo $Component->getLiPagesDashboard();
+echo $Component->getMenuDashboard();
 ?>
 <div class="container-fluid">
     <div class="d-sm-flex align-items-center justify-content-start mb-4 d-block">
