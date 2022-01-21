@@ -365,6 +365,8 @@ class Component {
                             <a class="collapse-item" href="' . BASE . '/painel/admin/historico-compras">Histórico de compras</a>
                             <a class="collapse-item" href="' . BASE . '/painel/admin/nivel-user">Níveis de Usuários</a>
                             <a class="collapse-item" href="' . BASE . '/painel/admin/settings">Configurações</a>
+                            <a class="collapse-item" href="' . BASE . '/painel/admin/help">Ajuda</a>
+                            <a class="collapse-item" href="' . BASE . '/painel/admin/suporte">Suporte</a>
                             <a class="collapse-item" href="' . BASE . '/painel/dashboard">Dashboard</a>
                         </div>
                     </div>
@@ -374,29 +376,30 @@ class Component {
         }
 
         public function getLiCoursesDashboard() {
-            return '
-            <!-- Nav Item - Utilities Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true"
-                    aria-controls="collapseUtilities">
-                    <i class="fas fa-book"></i>
-                    <span>Cursos</span>
-                </a>
-                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="' . BASE . '/painel/profile/meus-cursos">Meus cursos</a>
-                        <a class="collapse-item" href="' . BASE . '/painel/profile/minhas-compras">Minhas compras</a>
-                        <a class="collapse-item" href="' . BASE . '/painel/profile/cursos-finalizados">Cursos finalizados</a>
-                        <a class="collapse-item" href="' . BASE . '/painel/profile/cursos-pendentes">Cursos pendentes</a>
-                        <a class="collapse-item" href="' . BASE . '/painel/profile/help">Ajuda</a>
-                        <a class="collapse-item" href="' . BASE . '/painel/profile/suporte">Suporte</a>
-                        <a class="collapse-item" href="' . BASE . '/painel/profile/settings">Configurações</a>
-                        <a class="collapse-item" href="' . BASE . '/painel/dashboard">Dashboard</a>
+            if($_SESSION['login']['user_level'] <= 2) {
+                return '
+                <!-- Nav Item - Utilities Collapse Menu -->
+                <li class="nav-item">
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true"
+                        aria-controls="collapseUtilities">
+                        <i class="fas fa-book"></i>
+                        <span>Cursos</span>
+                    </a>
+                    <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+                        <div class="bg-white py-2 collapse-inner rounded">
+                            <a class="collapse-item" href="' . BASE . '/painel/profile/meus-cursos">Meus cursos</a>
+                            <a class="collapse-item" href="' . BASE . '/painel/profile/minhas-compras">Minhas compras</a>
+                            <a class="collapse-item" href="' . BASE . '/painel/profile/cursos-finalizados">Cursos finalizados</a>
+                            <a class="collapse-item" href="' . BASE . '/painel/profile/cursos-pendentes">Cursos pendentes</a>
+                            <a class="collapse-item" href="' . BASE . '/painel/profile/help">Ajuda</a>
+                            <a class="collapse-item" href="' . BASE . '/painel/profile/suporte">Suporte</a>
+                            <a class="collapse-item" href="' . BASE . '/painel/profile/settings">Configurações</a>
+                            <a class="collapse-item" href="' . BASE . '/painel/dashboard">Dashboard</a>
+                        </div>
                     </div>
-                </div>
-            </li>
-            
-            ';
+                </li>
+                ';
+            }
         }
         // Somente administradores podem ver
         public function getLiPagesDashboard() {
