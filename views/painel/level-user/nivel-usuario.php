@@ -4,7 +4,11 @@ $User->verifyExistLoginUser();
 $Component = new Component();
 echo $Component->getHeadHtmlDashboard();
 echo $Component->getHeadHtmlDataTable();
-echo $Component->getMenuSideBarDashboard();
+echo $Component->getSideBarDashboard();
+echo $Component->getLiAdministrativoDashboard();
+echo $Component->getLiCoursesDashboard();
+echo $Component->getLiPagesDashboard();
+echo $Component->getMenuDashboard();
 $NivelId = $_GET['nivel'];
 ?>
 <div class="container">

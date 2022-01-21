@@ -13,16 +13,16 @@ echo $Component->getMenuSideBarDashboard();
 <div class="row gx-5 container">
     <div class="col-lg-4 mb-5">
         <div class="card h-100 shadow border-0">
-            <!-- <img src="<?= BASE ?>/src/images/page-sobre.jpg" alt="imagem de fundo"/> -->
+            <img src="<?= BASE ?>/src/images/page-sobre.jpg" alt="imagem de fundo"/>
             <div class="card-body p-4">
+                <div class="badge bg-success bg-gradient rounded-pill mb-2 text-white">Curso</div>
+                <a class="text-decoration-none link-dark stretched-link" href="<?= BASE ?>/painel/profile/aulas">
                 <?php
                 $Read = new Read();
                 $Read->FullRead("SELECT * FROM cursos");
                 if($Read->getResult()) {
                     foreach($Read->getResult() as $Cursos) {
                         ?>
-                <div class="badge bg-success bg-gradient rounded-pill mb-2 text-white">Curso</div>
-                <a class="text-decoration-none link-dark stretched-link" href="<?= BASE ?>/painel/profile/aulas">
                     <h5 class="card-title mb-3"><?= $Cursos['curso_titulo'] ?></h5>
                 </a>
                 <p class="card-text mb-0"><?= $Cursos['curso_descricao'] ?></p>
@@ -46,30 +46,5 @@ echo $Component->getMenuSideBarDashboard();
             </div>
         </div>
     </div>
-    
-    <!-- <div class="col-lg-4 mb-5">
-        <div class="card h-100 shadow border-0">
-            <img src="<?= BASE ?>/src/images/page-sobre.jpg" alt="imagem de fundo"/>
-            <div class="card-body p-4">
-                <div class="badge bg-success bg-gradient rounded-pill mb-2 text-white">Curso</div>
-                <a class="text-decoration-none link-dark stretched-link" href="<?= BASE ?>/painel/aulas">
-                    <h5 class="card-title mb-3"><?= $Cursos['curso_titulo'] ?></h5>
-                </a>
-                <p class="card-text mb-0"><?= $Cursos['curso_descricao'] ?></p>
-                <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
-                    <div class="d-flex align-items-end justify-content-between">
-                        <div class="d-flex align-items-center">
-                            <img class="rounded-circle me-3" src="https://dummyimage.com/40x40/ced4da/6c757d" alt="..." />
-                            <div class="small">
-                                <div class="fw-bold"><?= $Cursos['curso_categoria'] ?></div>
-                                <div class="text-muted"><?= $Cursos['curso_create_date'] ?></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-
 </div>
 <?= $Component->getFooterDashboard(); ?>
