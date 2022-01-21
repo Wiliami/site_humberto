@@ -20,7 +20,10 @@ echo $Component->getMenuDashboard();
             <?php
             $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
             if(!empty($Post['register_lesson'])) {
-                $CreateLesson['aula_name'] = $Post['aula'];
+                $CreateLesson['curso_name'] = $Post['curso-title'];
+                $CreateLesson['modulo_name'] = $Post['module'];
+                $CreateLesson['aula_name'] = $Post['lesson'];
+                $CreateLesson['duracao_name'] = $Post['time'];
                 $Course = new Course();
                 $Course->createLesson($CreateLesson);
                 if($Course->getResult()) {
@@ -33,12 +36,34 @@ echo $Component->getMenuDashboard();
             ?>
         </div>
         <div class="form-group row ml-4">
-            <label for="inputPassword" class="col-sm-1 col-form-label btn btn-warning mb-2">Nome</label>
+            <label for="inputPassword" class="col-sm-2 col-form-label btn btn-warning mb-2">Nome do curso</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" placeholder="Nome da aula" name="aula" id="inputPassword"
-                    value="<?= isset($Post['aula'])? $Post['aula']: '' ?>">
+                <input type="text" class="form-control" placeholder="Nome do curso" name="curso-title" id="inputPassword"
+                    value="<?= isset($Post['curso-title'])? $Post['curso_title']: '' ?>">
             </div>
         </div>
+
+        <div class="form-group row ml-4">
+            <label for="inputPassword" class="col-sm-2 col-form-label btn btn-warning mb-2">Nome do módulo</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" placeholder="Nome do módulo" name="module" id="inputPassword"
+                    value="<?= isset($Post['module'])? $Post['module']: '' ?>">
+            </div>
+        </div>
+        <div class="form-group row ml-4">
+            <label for="inputPassword" class="col-sm-2 col-form-label btn btn-warning mb-2">Nome da aula</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" placeholder="Nome da aula" name="lesson" id="inputPassword"
+                        value="<?= isset($Post['lesson'])? $Post['lesson']: '' ?>">
+                </div>
+        </div>
+        <div class="form-group row ml-4">
+            <label for="inputPassword" class="col-sm-2 col-form-label btn btn-warning mb-2">Duração da aula</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" placeholder="Duração da aula" name="time" id="inputPassword"
+                    value="<?= isset($Post['time'])? $Post['time']: '' ?>">
+            </div>
+        </div> 
         <input type="submit" class="btn btn-success mb-2 ml-4" name="register_lesson" value="Cadastrar aula">
     </form>
 </div>

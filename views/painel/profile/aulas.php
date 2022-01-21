@@ -47,8 +47,7 @@ echo $Component->getHeadHtmlDashboard();
             if($Read->getResult()) {
                 foreach($Read->getResult() as $Modulos) {
                     ?>
-            <a class="nav-link collapsed" href="#" data-toggle="collapse"
-                data-target="#collapse<?= $Modulos['aula_id'] ?>" aria-expanded="true" aria-controls="collapseTwo">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse<?= $Modulos['aula_id'] ?>" aria-expanded="true" aria-controls="collapseTwo">
                 <i class="fas fa-fw fa-folder"></i>
                 <!-- Nome do módulo -->
                 <span><?= $Modulos['modulo_name'] ?></span>
