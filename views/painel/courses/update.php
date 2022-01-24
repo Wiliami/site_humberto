@@ -1,4 +1,4 @@
-<?php
+<?php 
 $User = new User();
 $User->verifyExistLoginUser();
 $Component = new Component();
@@ -9,89 +9,124 @@ echo $Component->getLiAdministrativoDashboard();
 echo $Component->getLiCoursesDashboard();
 echo $Component->getLiPagesDashboard();
 echo $Component->getMenuDashboard();
+$CourseId = $_GET['cursos'];
+//Check::var_dump_json($CourseId);
 ?>
 <div class="container">
-    <div class="card shadow mb-4">
-        <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-dark">Cursos | Atualizar cursos</h6>
+    <div class="d-sm-flex align-items-center justify-content-start mb-4">
+        <i class="fas fa-layer-plus"></i>
+        <h1 class="h3 mb-0 text-gray-800 ml-4">Atualizar cursos</h1>
+    </div>
+    <p class="ml-4">Atualização de cursos</p>
+    <form method="post">
+        <div class="px-4 py-sm-5 py-3">
+        <?php
+        $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+        if(!empty($Post['update_course'])) {
+            $CreateCourse['curso_titulo'] = $Post['course'];
+            $CreateCourse['curso_descricao'] = $Post['description'];
+            $CreateCourse['modulo_categoria'] = $Post['category'];
+            $Course = new Course();
+            $Course->createCourse($CreateCourse);
+            if($Course->getResult()) {
+                header('Location: ' . BASE . '/painel/courses/update');
+                Error($Course->getError());
+                // cadastro realizado com sucesso
+            } else {
+                Error($Course->getError(), 'warning');
+                //falta os campos serem preenchidos nos inputs ou o input recebeu alguma informação errada
+            }   
+        }
+        ?>
         </div>
-        <div class="card-body">
-            <div class="table-responsive">
-                <table id="table-cursos-update" class="table table-striped table-bordered" style="width: 100%">
-                    <thead>
-                        <tr>
-                            <th><span>Nome do curso</span></th>
-                            <th><span>Criado</span></th>
-                            <th class="text-center"><span>Descrição do curso</span></th>
-                            <th><span>Opções</span></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php
-                        $Read = new Read();
-                        $Read->FullRead("SELECT * FROM cursos");
-                        if($Read->getResult()) {
-                            foreach($Read->getResult() as $Cursos) {
-                                ?>
-                        <tr>
-                            <td>
-                                <span><?= $Cursos['curso_titulo'] ?></span>
-                            </td>
-                            <td>
-                                <span><?= $Cursos['curso_create_date'] ?></span>
-                            </td>
-                            <td>
-                                <span><?= $Cursos['curso_descricao'] ?></span>
-                            </td>
-                            <td>
-                                <a href="<?= BASE ?>/" class="table-link">
-                                    <span class="fa-stack">
-                                        <i class="fa fa-square fa-stack-2x"></i>
-                                        <i class="fa fa-search-plus fa-stack-1x fa-inverse" title="pesquisar <?= $Cursos['curso_titulo'] ?>"></i>
-                                    </span>
-                                </a>
-                                <a href="<?= BASE ?>/painel/courses/update-course&cursos=<?= $Cursos['curso_id'] ?>" class="table-link" title="Editar curso <?= $Cursos['curso_titulo'] ?>">
-                                    <span class="fa-stack">
-                                        <i class="fa fa-square fa-stack-2x"></i>
-                                        <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                                <a href="<?= BASE ?>/painel/courses/delete" class="table-link" title="<?= $Cursos['curso_titulo'] ?>">
-                                    <span class="fa-stack">
-                                        <i class="fa fa-square fa-stack-2x"></i>
-                                        <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                            </td>
-                        </tr>
-                        <?php
-                            }
-                        } else {
-                            Error("Ainda não existem usuários!");
-                        }   
-                        ?>
-                    </tbody>
-                </table>
+        <?php 
+        $Read = new Read();
+        $Read->FullRead("SELECT * FROM cursos WHERE curso_id = :ci", "ci={$CourseId}");
+        if($Read->getResult()) {
+            foreach($Read->getResult() as $Cursos); {
+                ?>
+        <div class="h5 mb-0 text-gray-800 ml-4 mb-2">Atualizar curso <?= $Cursos['curso_titulo'] ?></div>
+        <?php
+            }
+        }
+        ?>
+        <div class="form-group row ml-4">
+            <label for="inputPassword" class="col-sm-1 col-form-label btn btn-warning mb-2">Nome</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" placeholder="Nome do curso" name="course" id="inputPassword"
+                    value="<?= isset($Post['course'])? $Post['course']: '' ?>">
             </div>
         </div>
-    </div>
+        <div class="form-group row ml-4">
+            <label for="inputPassword" class="col-sm-1 col-form-label btn btn-warning mb-2">Descrição</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" placeholder="Descrição do curso" name="description"
+                    id="inputPassword" value="<?= isset($Post['description'])? $Post['description']: '' ?>">
+            </div>
+        </div>
+        <div class="form-group row ml-4">
+            <label for="inputPassword" class="col-sm-1 col-form-label btn btn-warning mb-2">Categoria</label>
+            <div class="col-sm-10">
+                <select class="form-control" id="exampleFormControlSelect1" name="category">
+                    <option>Educação</option>
+                    <option>Motivacional</option>
+                    <option>Coaching</option>
+                    <option>Economia</option>
+                    <option>Casamento</option>
+                    <option>Filmes e séries</option>
+                    <option>Cultura</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group row ml-4">
+            <label for="inputPassword" class="col-sm-1 col-form-label btn btn-warning mb-2">Módulo</label>
+            <div class="col-sm-10">
+                <select class="form-control" id="exampleFormControlSelect1" name="module">
+                    <option>Educação</option>
+                    <option>Motivacional</option>
+                    <option>Coaching</option>
+                    <option>Economia</option>
+                    <option>Casamento</option>
+                    <option>Filmes e séries</option>
+                    <option>Cultura</option>
+                </select>
+            </div>
+        </div>
+   
+        <div class="px-4 py-sm-5 py-3">
+        <?php
+        $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+            $CreateLesson['aula_name'] = $Post['lesson'];
+            $CreateLesson['aula_duracao'] = $Post['time'];
+            $Course = new Course();
+            $Course->createLesson($CreateLesson);
+            if($Course->getResult()) {
+                //header('Location: ' . BASE . '/painel/courses/update');
+                Error($Course->getError());
+                // cadastro realizado com sucesso
+            } else {
+                Error($Course->getError(), 'warning');
+                //falta os campos serem preenchidos nos inputs ou o input recebeu alguma informação errada
+            }
+        ?>
+        </div>
+        <div class="h5 mb-0 text-gray-800 ml-4 mb-2">Cadastrar aulas</div>
+        <div class="form-group row ml-4">
+            <label for="inputPassword" class="col-sm-1 col-form-label btn btn-warning mb-2">Nome</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" placeholder="Nome da aula" name="lesson" id="inputPassword"
+                    value="<?= isset($Post['lesson'])? $Post['lesson']: '' ?>">
+            </div>
+        </div>
+        <div class="form-group row ml-4">
+            <label for="inputPassword" class="col-sm-1 col-form-label btn btn-warning mb-2">Duração</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" placeholder="Duração da aula" name="time"
+                    id="inputPassword" value="<?= isset($Post['time'])? $Post['time']: '' ?>">
+            </div>
+        </div>
+        <input type="submit" class="btn btn-success mb-2 ml-4" name="update_course" value="Atualizar curso">
+    </form>
 </div>
-
-
-
 <?= $Component->getFooterDashboard(); ?>
-<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-<script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
-<script>
-$(document).ready(function() {
-    $("#table-cursos-update").DataTable({
-        "language": {
-            "lengthMenu": "Mostrando _MENU_ registros por página",
-            "zeroRecords": "Nenhum registro foi encontrado",
-            "info": "Mostrando página _PAGE_ de _PAGES_ registros",
-            "infoEmpty": "Nenhum registro foi encontrado",
-            "infoFiltered": "(filtrado de _MAX_ registros no total)"
-        }
-    });
-});
-</script>
