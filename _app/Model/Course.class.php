@@ -61,9 +61,9 @@ class Course {
 			// } elseif(empty($dataLesson['aula_name'])) {
 			// 	$this->Error = "A aula precisa de um nome!";
 			// 	$this->Result = false;
-			//} elseif(empty($dataLesson['aula_duracao'])) {
-				//$this->Error = "A aula precisa de um tempo de duração!";
-				//$this->Result = false;
+			} elseif(empty($dataLesson['aula_duracao'])) {
+				$this->Error = "A aula precisa de um tempo de duração!";
+				$this->Result = false;
 			} else {
 				$dataLesson['aula_create_date'] = date('Y-m-d H:i:s');
 				$Create = new Create();
