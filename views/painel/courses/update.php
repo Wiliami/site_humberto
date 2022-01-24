@@ -43,7 +43,7 @@ $CourseId = $_GET['curso'];
         $Read = new Read();
         $Read->FullRead("SELECT * FROM cursos WHERE curso_id = :ci", "ci={$CourseId}");
         if($Read->getResult()) {
-            foreach($Read->getResult() as $Cursos); {
+            foreach($Read->getResult() as $Cursos) {
                 //Check::var_dump_json($Cursos);
                 ?>
         <h1 class="h5 mb-0 text-gray-800 ml-4 mb-4">Atualizar <?= $Cursos['curso_titulo'] ?></h1>
@@ -65,9 +65,7 @@ $CourseId = $_GET['curso'];
             <label for="inputPassword" class="col-sm-1 col-form-label btn btn-warning mb-2">Categoria</label>
             <div class="col-sm-10">
                 <select class="form-control" id="" name="category">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
+                    <option><?= $Cursos['curso_categoria'] ?></option>
                 </select>
             </div>
         </div>
@@ -99,16 +97,16 @@ $CourseId = $_GET['curso'];
         </div>
         <div class="h5 mb-0 text-gray-800 ml-4 mb-2">Cadastrar aulas</div>
         <div class="form-group row ml-4">
-            <label for="inputPassword" class="col-sm-1 col-form-label btn btn-warning mb-2">Categoria</label>
+            <label for="inputPassword" class="col-sm-1 col-form-label btn btn-warning mb-2">Módulo</label>
             <div class="col-sm-10">
                 <?php
                 $Read = new Read();
-                $Read->FullRead("SELECT modulo_name FROM modulos");
+                $Read->FullRead("SELECT * FROM modulos");
                 if($Read->getResult()) {
-                    foreach($Read->getResult() as $Modulos) {
+                    foreach($Read->getResult() as $Level) {
                         ?>
                 <select class="form-control" id="" name="category">
-                    <option><?= $Modulos['modulo_name'] ?></option>
+                    <option><?= $Level['modulo_name'] ?></option>
                 </select>
                 <?php
                     }
