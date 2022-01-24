@@ -52,22 +52,22 @@ class Course {
 
 
 		public function createLesson($dataLesson) {
-			if(empty($dataLesson['curso_name'])) {
-				$this->Error = "O curso precisa de uma nome!";
-				$this->Result = false;
-			} elseif(empty($dataLesson['modulo_name'])) {
-				$this->Error = "O módulo precisa de um nome!";
-				$this->Result = false;
-			} elseif(empty($dataLesson['aula_name'])) {
+			if(empty($dataLesson['aula_name'])) {
 				$this->Error = "A aula precisa de um nome!";
 				$this->Result = false;
-			} elseif(empty($dataLesson['aula_duracao'])) {
-				$this->Error = "A aula precisa de um tempo de duração!";
-				$this->Result = false;
-			}else {
+			// } elseif(empty($dataLesson['modulo_name'])) {
+			// 	$this->Error = "O módulo precisa de um nome!";
+			// 	$this->Result = false; 
+			// } elseif(empty($dataLesson['aula_name'])) {
+			// 	$this->Error = "A aula precisa de um nome!";
+			// 	$this->Result = false;
+			//} elseif(empty($dataLesson['aula_duracao'])) {
+				//$this->Error = "A aula precisa de um tempo de duração!";
+				//$this->Result = false;
+			} else {
 				$dataLesson['aula_create_date'] = date('Y-m-d H:i:s');
 				$Create = new Create();
-				$Create->exeCreate("aulas", $dataLesson);
+				$Create->exeCreate("aulas", $dataLesson); // eu estou enviando a criação de aulas para a tabela de aulas.
 				if($Create->getResult()) {
 					$this->Result = $Create->getResult();
 					$this->Error = "A aula foi cadastrada com sucesso!";
