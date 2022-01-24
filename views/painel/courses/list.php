@@ -50,7 +50,7 @@ echo $Component->getMenuDashboard();
                                             <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
                                         </span>
                                     </a> -->
-                                <a href="<?= BASE ?>/painel/courses/update&cursos=<?= $Cursos['curso_titulo'] ?>" class="table-link" title="Editar <?= $Cursos['curso_titulo'] ?>">
+                                <a href="<?= BASE ?>/painel/courses/update&curso=<?= $Cursos['curso_id'] ?>" class="table-link" title="Editar <?= $Cursos['curso_titulo'] ?>">
                                     <span class="fa-stack">
                                         <i class="fa fa-square fa-stack-2x"></i>
                                         <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>

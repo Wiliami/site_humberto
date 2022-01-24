@@ -9,13 +9,14 @@ echo $Component->getLiAdministrativoDashboard();
 echo $Component->getLiCoursesDashboard();
 echo $Component->getLiPagesDashboard();
 echo $Component->getMenuDashboard();
-$CourseId = $_GET['cursos'];
+$CourseId = $_GET['curso'];
 //Check::var_dump_json($CourseId);
 ?>
 <div class="container">
-    <div class="d-sm-flex align-items-center justify-content-start mb-4">
+    <div class="py-3d-sm-flex align-items-center justify-content-between mb-2">
         <i class="fas fa-layer-plus"></i>
         <h1 class="h3 mb-0 text-gray-800 ml-4">Atualizar cursos</h1>
+        <a href="<?= BASE ?>/painel/courses/list" class="btn btn-success mb-2" title="Voltar para lista de cursos">Voltar</a>
     </div>
     <p class="ml-4">Atualização de cursos</p>
     <form method="post">
@@ -25,11 +26,10 @@ $CourseId = $_GET['cursos'];
         if(!empty($Post['update_course'])) {
             $CreateCourse['curso_titulo'] = $Post['course'];
             $CreateCourse['curso_descricao'] = $Post['description'];
-            $CreateCourse['modulo_categoria'] = $Post['category'];
             $Course = new Course();
             $Course->createCourse($CreateCourse);
             if($Course->getResult()) {
-                header('Location: ' . BASE . '/painel/courses/update');
+                //header('Location: ' . BASE . '/painel/courses/update');
                 Error($Course->getError());
                 // cadastro realizado com sucesso
             } else {
@@ -44,59 +44,44 @@ $CourseId = $_GET['cursos'];
         $Read->FullRead("SELECT * FROM cursos WHERE curso_id = :ci", "ci={$CourseId}");
         if($Read->getResult()) {
             foreach($Read->getResult() as $Cursos); {
+                //Check::var_dump_json($Cursos);
                 ?>
-        <div class="h5 mb-0 text-gray-800 ml-4 mb-2">Atualizar curso <?= $Cursos['curso_titulo'] ?></div>
-        <?php
-            }
-        }
-        ?>
+        <h1 class="h5 mb-0 text-gray-800 ml-4 mb-4">Atualizar <?= $Cursos['curso_titulo'] ?></h1>
         <div class="form-group row ml-4">
             <label for="inputPassword" class="col-sm-1 col-form-label btn btn-warning mb-2">Nome</label>
             <div class="col-sm-10">
                 <input type="text" class="form-control" placeholder="Nome do curso" name="course" id="inputPassword"
-                    value="<?= isset($Post['course'])? $Post['course']: '' ?>">
+                    value="<?= $Cursos['curso_titulo'] ?>">
             </div>
         </div>
         <div class="form-group row ml-4">
             <label for="inputPassword" class="col-sm-1 col-form-label btn btn-warning mb-2">Descrição</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" placeholder="Descrição do curso" name="description"
-                    id="inputPassword" value="<?= isset($Post['description'])? $Post['description']: '' ?>">
+                <input type="text" class="form-control" placeholder="Descrição do curso" name="description"id="inputPassword" 
+                    value="<?= $Cursos['curso_descricao'] ?>">
             </div>
         </div>
         <div class="form-group row ml-4">
             <label for="inputPassword" class="col-sm-1 col-form-label btn btn-warning mb-2">Categoria</label>
             <div class="col-sm-10">
-                <select class="form-control" id="exampleFormControlSelect1" name="category">
-                    <option>Educação</option>
-                    <option>Motivacional</option>
-                    <option>Coaching</option>
-                    <option>Economia</option>
-                    <option>Casamento</option>
-                    <option>Filmes e séries</option>
-                    <option>Cultura</option>
+                <select class="form-control" id="" name="category">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
                 </select>
             </div>
         </div>
-
-        <div class="form-group row ml-4">
-            <label for="inputPassword" class="col-sm-1 col-form-label btn btn-warning mb-2">Módulo</label>
-            <div class="col-sm-10">
-                <select class="form-control" id="exampleFormControlSelect1" name="module">
-                    <option>Educação</option>
-                    <option>Motivacional</option>
-                    <option>Coaching</option>
-                    <option>Economia</option>
-                    <option>Casamento</option>
-                    <option>Filmes e séries</option>
-                    <option>Cultura</option>
-                </select>
-            </div>
-        </div>
+        <?php
+            }
+        } else {
+            Error("Ainda não existe lista de cursos!");
+        }   
+        ?>
    
         <div class="px-4 py-sm-5 py-3">
         <?php
         $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+        if(!empty($Post['update_course'])) {
             $CreateLesson['aula_name'] = $Post['lesson'];
             $CreateLesson['aula_duracao'] = $Post['time'];
             $Course = new Course();
@@ -109,9 +94,30 @@ $CourseId = $_GET['cursos'];
                 Error($Course->getError(), 'warning');
                 //falta os campos serem preenchidos nos inputs ou o input recebeu alguma informação errada
             }
+        }
         ?>
         </div>
         <div class="h5 mb-0 text-gray-800 ml-4 mb-2">Cadastrar aulas</div>
+        <div class="form-group row ml-4">
+            <label for="inputPassword" class="col-sm-1 col-form-label btn btn-warning mb-2">Categoria</label>
+            <div class="col-sm-10">
+                <?php
+                $Read = new Read();
+                $Read->FullRead("SELECT modulo_name FROM modulos");
+                if($Read->getResult()) {
+                    foreach($Read->getResult() as $Modulos) {
+                        ?>
+                <select class="form-control" id="" name="category">
+                    <option><?= $Modulos['modulo_name'] ?></option>
+                </select>
+                <?php
+                    }
+                } else {
+                    Error("Ainda não existem módulos cadastrados!");
+                }
+                ?>
+            </div>
+        </div>
         <div class="form-group row ml-4">
             <label for="inputPassword" class="col-sm-1 col-form-label btn btn-warning mb-2">Nome</label>
             <div class="col-sm-10">
