@@ -1,5 +1,5 @@
 <?php
-//require_once '_app/ENV.php'; /// quando eu chegar na unit eu preciso
+//require_once '_app/ENV.php'; /// quando eu chegar na unit eu preciso tirar a linha de baixo e descomentar essa primeira
 require_once '_app/ENV.example.php';
 
 
