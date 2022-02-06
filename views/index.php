@@ -72,16 +72,31 @@
                     <div class="">
                         <div class="text-center"> <img src="<?= BASE ?>/src/images/humberto.png" alt="humberto" width="100" class="rounded-circle"> </div>
                         <div class="text-center mt-3"> <span class="bg-secondary p-1 px-4 rounded text-white">CEO</span>
-                            <h5 class="mt-2 mb-0">Humberto Oliveira</h5> <span>Empresário e Palestrante</span>
+                            <h5 class="mt-2 mb-0">Humberto Oliveira</h5> <span>Empresário • Palestrante • Educador • Coach • Administrador • Teólogo/Pr.</span>
                             <div class="px-4 mt-1">
-                                <p class="fonts">"Atraímos pessoas quando nos preparamos <br> para resolver os problemas delas!"</p>
+                                <p class="fonts">"Atraímos pessoas quando nos preparamos <br> para resolver os problemas delas!".</p>
                             </div>
-                            <ul class="social-list d-flex justify-content-center" style="list-style: none;">
-                                <li><i class="fa fa-facebook"></i></li>
-                                <li><i class="fa fa-instagram"></i></li>
-                                <li><i class="fa fa-youtube"></i></li>
+                            <ul class="d-flex flex-row ms-n3 justify-content-center" style="list-style: none;">
+                                <li class="nav-item">
+                                    <a class="nav-link pe-1" href="https://www.facebook.com/educacaoetreinamentos/" target="_blank">
+                                        <i class="fa fa-facebook"></i>
+                                    <a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link pe-1" href="https://www.instagram.com/humberto.olliveira/" target="_blank">
+                                        <i class="fa fa-instagram"></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link pe-1" href="https://www.youtube.com/channel/UClFMwemd5j7EsXlV-gTw5Xg/featured" target="_blank">
+                                        <i class="fa fa-youtube"></i>
+                                    </a>
+                                </li>
                             </ul>
-                            <div class="buttons"><button class="btn btn-outline-primary px-4">Leia mais</button> <button class="btn btn-primary px-4 ms-3">Contato</button> </div>
+                            <div class="buttons">
+                                <button class="btn btn-outline-primary px-4"><a href="<?= BASE ?>/home/page-profile" class="text-primary">Leia mais</a></button>
+                                <button class="btn btn-primary px-4 ms-3"><a href="<?= BASE ?>/home/contato" class="text-white">Contato</a></button> 
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -174,7 +189,8 @@
                                     <i class="fas fa-heart"></i>
                                     <h5 class="font-weight-bolder mt-3">Vida conjugal</h5>
                                     <p class="pe-3">Neste curso você conhecerá as bases do casamento segunda a Bíblia.
-                                        Serão ministradas assuntos como:</p>
+                                        Serão ministradas assuntos como:
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -371,7 +387,7 @@
                                     <a href="javascript:;">
                                         <div class="p-3 pe-md-0">
                                             <img class="w-100 border-radius-md shadow-lg"
-                                                src="<?= BASE ?>/src/images/josenias.JPG" alt="imagem">
+                                                src="<?= BASE ?>/src/images/josenias.JPG" style="width: 200px; height: 130px;" alt="imagem">
                                         </div>
                                     </a>
                                 </div>

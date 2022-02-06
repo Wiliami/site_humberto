@@ -185,16 +185,16 @@ class Component {
                 </div>
                 <div>
                     <ul class="d-flex flex-row ms-n3 nav">
-                    <li class="nav-item">
-                        <a class="nav-link pe-1" href="https://www.facebook.com/educacaoetreinamentos/" target="_blank">
-                        <i class="fab fa-facebook text-lg opacity-8"></i>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link pe-1" href="https://www.youtube.com/channel/UClFMwemd5j7EsXlV-gTw5Xg" target="_blank">
-                            <i class="fab fa-youtube text-lg opacity-8"></i>
-                        </a>
-                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link pe-1" href="https://www.facebook.com/educacaoetreinamentos/" target="_blank">
+                                <i class="fab fa-facebook text-lg opacity-8"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link pe-1" href="https://www.youtube.com/channel/UClFMwemd5j7EsXlV-gTw5Xg" target="_blank">
+                                <i class="fab fa-youtube text-lg opacity-8"></i>
+                            </a>
+                        </li>
                     </ul>
                 </div>
                 </div>
