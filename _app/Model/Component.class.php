@@ -902,7 +902,7 @@ return '
 ';
 }
 
-public function getOpcoes() {
+public function getOpcoes($Users) {
 return '
 <a href="' . BASE . '/painel/courses/list" class="table-link" title="Pesquisar '. $Users['user_name'] .'">
     <span class="fa-stack">

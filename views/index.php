@@ -1,20 +1,20 @@
 <?php $Component = new Component(); ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Humberto Oliveira | Home</title>
-    <!-- Estiliza o background do Header -->
-    <link rel="stylesheet" href="<?= BASE ?>/src/css/index.css" type="text/css">
-    <!-- Template oficial do projeto -->
-    <link id="pagestyle" href="<?= BASE ?>/src/css/material-kit.css?v=3.0.0" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
-    <!-- Esse css estiliza os ícones de redes sociais do footer index -->
-    <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Humberto Oliveira | Home</title>
+        <!-- Estiliza o background do Header -->
+        <link rel="stylesheet" href="<?= BASE ?>/src/css/index.css" type="text/css">
+        <!-- Template oficial do projeto -->
+        <link id="pagestyle" href="<?= BASE ?>/src/css/material-kit.css?v=3.0.0" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+        <!-- Esse css estiliza os ícones de redes sociais do footer index -->
+        <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
     <?= $Component->getMenu(); ?>
     <header class="bg-white py-5">
         <div class="overlay"></div>
@@ -29,8 +29,8 @@
                     <p class="lead fw-normal text-white-50 mb-4">Comece um tour pelo site<br /> e saiba como funciona o
                         <br> evangelismo web.</p>
                     <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
-                        <!-- <a class="btn btn-warning btn-lg px-4 me-sm-3" href=" ' . BASE . '/cadastro">Começar</a> -->
-                        <a class="btn btn-warning btn-lg px-4" href="#content-overview">Saiba mais</a>
+                        <a class="btn btn-warning btn-lg px-4 me-sm-3" href="<?= BASE ?>/pages/cadastro">Começar</a>
+                        <a class="btn btn-outline-warning px-4 me-sm-3" href="#content-overview">Saiba mais</a>
                         <!-- <div class="justify-content-sm-center justify-content-xl-end">
                                 <a class="btn btn-success text-black btn-lg px-4" href="/">Suporte</a>
                             </div> -->
@@ -40,7 +40,7 @@
         </div>
     </header>
     <main class="flex-shrink-0" id="content-overview">
-        <section class="py-5">
+        <!-- <section class="py-5">
             <div class="container px-5">
                 <div class="row gx-5 align-items-center justify-content-center">
                     <div class="col-lg-8 col-xl-7 col-xxl-6">
@@ -53,18 +53,41 @@
                                 <a class="btn btn-dark btn-lg px-4"
                                     href="https://www.facebook.com/educacaoetreinamentos/">
                                     Facebook
-                                    <!-- Leia a minha história -->
+                                    Leia a minha história
                                 </a>
                             </div>
                         </div>
                     </div>
-                    <!-- <img class="img-fluid rounded-3 my-5 bg-light rounded-circle" style="width: 295px; height: 270px;" src="<?= BASE ?>/src/images/perfil.png" alt="image de Humberto Oliveira" /> -->
+                    <img class="img-fluid rounded-3 my-5 bg-light rounded-circle" style="width: 295px; height: 270px;" src="<?= BASE ?>/src/images/perfil.png" alt="image de Humberto Oliveira" />
                     <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center">
                         <img src="<?= BASE ?>/src/images/perfil.png" class="img-fluid" alt="Responsive image">
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
+
+        <div class="container mt-5">
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-7">
+                    <div class="">
+                        <div class="text-center"> <img src="<?= BASE ?>/src/images/humberto.png" alt="humberto" width="100" class="rounded-circle"> </div>
+                        <div class="text-center mt-3"> <span class="bg-secondary p-1 px-4 rounded text-white">CEO</span>
+                            <h5 class="mt-2 mb-0">Humberto Oliveira</h5> <span>Empresário e Palestrante</span>
+                            <div class="px-4 mt-1">
+                                <p class="fonts">"Atraímos pessoas quando nos preparamos <br> para resolver os problemas delas!"</p>
+                            </div>
+                            <ul class="social-list d-flex justify-content-center" style="list-style: none;">
+                                <li><i class="fa fa-facebook"></i></li>
+                                <li><i class="fa fa-instagram"></i></li>
+                                <li><i class="fa fa-youtube"></i></li>
+                            </ul>
+                            <div class="buttons"><button class="btn btn-outline-primary px-4">Leia mais</button> <button class="btn btn-primary px-4 ms-3">Contato</button> </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
         <!-- <section class="py-5">  
             <div class="container px-5">
                 <div class="row">
@@ -84,7 +107,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> 
         </section> -->
         <!-- Cursos box -->
         <section class="my-5 py-5">

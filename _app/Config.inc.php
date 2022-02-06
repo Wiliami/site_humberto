@@ -1,5 +1,7 @@
 <?php
-require_once '_app/ENV.php';
+//require_once '_app/ENV.php'; /// quando eu chegar na unit eu preciso
+require_once '_app/ENV.example.php';
+
 
 function MyAutoLoad($Class) {
     $cDir = ['Conn', 'Helpers', 'Model'];
