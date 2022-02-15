@@ -1,5 +1,4 @@
 <?php
-
 class Course {
     private $Error;
 	private $Result;
@@ -27,6 +26,14 @@ class Course {
 				}
 			}	
 		}
+
+	public function updateCourse($updateCourse) {
+		return 'ok';
+	}
+
+	public function deleteCourse($deleteCourse) {
+		return 'ok';
+	}
 
 
         public function createModule($dataModule) {
@@ -86,9 +93,5 @@ class Course {
         public function getError() {
             return $this->Error;
         }
-
-		public function deleteCourse() {
-			$Delete = new Delete();
-		}
 }
 ?>
