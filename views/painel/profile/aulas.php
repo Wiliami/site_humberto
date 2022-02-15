@@ -3,6 +3,7 @@ $User = new User();
 $User->verifyExistLoginUser();
 $Component = new Component();
 echo $Component->getHeadHtmlDashboard();
+// esse não é a página principal
 ?>
 <div id="wrapper">
     <ul class="nav-list navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar mt-6">
