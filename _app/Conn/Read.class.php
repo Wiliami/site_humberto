@@ -20,6 +20,7 @@ class Read extends Conn {
     private $Conn;
 
     public function ExeRead($Tabela, $Termos = null, $ParseString = null) {
+        $this->Places = null;
         $this->Tabela = $Tabela;
         if (!empty($ParseString)):
             parse_str($ParseString, $this->Places);
@@ -66,6 +67,7 @@ class Read extends Conn {
      * @param string $ParseString - Os valores das condições
      */
     public function FullRead($Query, $ParseString = null) {
+        $this->Places = null;
         $this->Tabela = substr($Query, strpos($Query, "FROM") + 5);
         $this->Tabela = substr($this->Tabela, 0, strpos($this->Tabela, " "));
         $this->Select = (string) $Query;

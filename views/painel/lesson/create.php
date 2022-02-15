@@ -20,16 +20,16 @@ echo $Component->getMenuDashboard();
             <?php
             $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
             if(!empty($Post['register_lesson'])) {
-                $CreateLesson['curso_titulo'] = $Post['title']; 
-                $CreateLesson['modulo_name'] = $Post['module'];
+                $CreateLesson['modulo_id'] = $Post['module'];
                 $CreateLesson['aula_name'] = $Post['lesson'];
-                //$CreateLesson['aula_duracao'] = $Post['time'];
+                $CreateLesson['aula_duracao'] = $Post['time'];
+                $CreateLesson['aula_url'] = $Post['url'];
                 //Check::var_dump_json($CreateLesson);
                 $Course = new Course();
                 $Course->createLesson($CreateLesson);
                 if($Course->getResult()) {
                     Error($Course->getError());
-                    header('Location: ' . BASE . '/painel/profile/aulas');
+                    header('Location: ' . BASE . '/painel/module/create');
                 } else {
                     Error($Course->getError(), 'warning');
                 } 
@@ -37,18 +37,22 @@ echo $Component->getMenuDashboard();
             ?>
         </div>
         <div class="form-group row ml-4">
-            <label for="inputPassword" class="col-sm-2 col-form-label btn btn-warning mb-2">Nome do curso</label>
+            <label for="inputPassword" class="col-sm-2 col-form-label btn btn-warning mb-2">Módulos</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" placeholder="Nome do curso" name="title" id="inputPassword"
-                    value="<?= isset($Post['title'])? $Post['title']: '' ?>">
-            </div>
-        </div>
-
-        <div class="form-group row ml-4">
-            <label for="inputPassword" class="col-sm-2 col-form-label btn btn-warning mb-2">Nome do módulo</label>
-            <div class="col-sm-10">
-                <input type="text" class="form-control" placeholder="Nome do módulo" name="module" id="inputPassword"
-                    value="<?= isset($Post['module'])? $Post['module']: '' ?>">
+                <select class="form-control" id="" name="module">
+                    <?php
+                    $Read = new Read();
+                    $Read->FullRead('SELECT * FROM modulos');
+                    if($Read->getResult()) {
+                        echo "<option value=''>Selecione um módulo:</option>";
+                        foreach($Read->getResult() as $Modulos) {
+                            echo "<option value='{$Modulos['modulo_id']}'>{$Modulos['modulo_name']}</option>";
+                        }
+                    } else {
+                        echo "<option value=''>Ainda não existem módulos!</option>";
+                    }
+                    ?>
+                </select>
             </div> 
         </div>
         <div class="form-group row ml-4">
@@ -63,6 +67,13 @@ echo $Component->getMenuDashboard();
             <div class="col-sm-10">
                 <input type="text" class="form-control" placeholder="Duração da aula" name="time" id="inputPassword"
                     value="<?= isset($Post['time'])? $Post['time']: '' ?>">
+            </div>
+        </div>
+        <div class="form-group row ml-4">
+            <label for="inputPassword" class="col-sm-2 col-form-label btn btn-warning mb-2">URL da aula</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" placeholder="URL da aula" name="url" id="inputPassword"
+                    value="<?= isset($Post['url'])? $Post['url']: '' ?>">
             </div>
         </div> 
         <input type="submit" class="btn btn-success mb-2 ml-4" name="register_lesson" value="Cadastrar aula">
