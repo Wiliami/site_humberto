@@ -80,14 +80,15 @@ $CourseId = $_GET['curso'];
         }
         ?>
         <div class="px-4 py-sm-5 py-3">
-        
         <?php
         $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
         if(!empty($Post['update_course'])) {
-            $CreateLesson['aula_name'] = $Post['lesson'];
-            $CreateLesson['aula_duracao'] = $Post['time'];
+            $udpateCourse['aula_name'] = $Post['lesson'];
+            $udpateCourse['aula_url'] = $Post['url'];
+            $udpateCourse['aula_duracao'] = $Post['time'];
+
             $Course = new Course();
-            $Course->createLesson($CreateLesson);
+            $Course->updateCourse($udpateCourse);
             if($Course->getResult()) {
                 //header('Location: ' . BASE . '/painel/courses/update');
                 Error($Course->getError());
@@ -99,7 +100,7 @@ $CourseId = $_GET['curso'];
         }
         ?>
         </div>
-        <div class="h5 mb-0 text-gray-800 ml-4 mb-2">Cadastrar aulas</div>
+        <div class="h5 mb-0 text-gray-800 ml-4 mb-2">Atualizar módulos e aulas</div>
         <div class="form-group row ml-4">
             <label for="inputPassword" class="col-sm-1 col-form-label btn btn-warning mb-2">Módulo</label>
             <div class="col-sm-10">

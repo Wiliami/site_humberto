@@ -3,6 +3,24 @@ class Course {
     private $Error;
 	private $Result;
 
+
+	public function createCategoryCourse($category) {
+		if(empty($category['categoria_name'])) {
+			$this->Error = "Preencha esse campo, por favor!";
+			$this->Result = false;
+		} else {
+			$Create = new Create();
+			$Create->exeCreate('categoria_cursos', $category);
+				if($Create->getResult()) {
+					$this->Error = $Create->getResult();
+					$this->Result = 'A categoria foi cadastrada com sucesso!';
+				} else {
+					$this->Result = false;
+					$this->Error = $Create->getError(); 
+				}
+		}
+	}
+
     public function createCourse($dataCourse) {
 		if(empty($dataCourse["curso_titulo"])) {
 				$this->Error = "O curso precisa de um nome!";
@@ -28,12 +46,23 @@ class Course {
 		}
 
 	public function updateCourse($updateCourse) {
-		return 'ok';
-	}
+			$Update = new Update();
+			$Update->ExeUpdate('cursos', $updateCourse);
+			if ($Update->getResult()) {
+				$this->Result = $Update->getResult();
+				$this->Error = "O curso foi atualizado com sucesso!";
+			} else {
+				$this->Result = false;
+				$this->Error = $Update->getError();
+			}
+		}
+	
 
 	public function deleteCourse($deleteCourse) {
 		return 'ok';
 	}
+
+	
 
 
         public function createModule($dataModule) {

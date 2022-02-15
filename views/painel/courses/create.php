@@ -15,7 +15,6 @@ echo $Component->getMenuDashboard();
         <h1 class="h3 mb-0 text-gray-800 ml-4">Cadastro de cursos</h1>
     </div>
     <p class="ml-4">Página de cadastro de cursos</p>
-    <input type="submit" class="btn btn-success mb-2 ml-4" name="register_category" value="Cadastrar categoria">
     <form method="post">
         <div class="px-4 py-sm-5 py-3">
         <?php
@@ -54,16 +53,8 @@ echo $Component->getMenuDashboard();
         <div class="form-group row ml-4">
             <label for="inputPassword" class="col-sm-1 col-form-label btn btn-warning mb-2">Categoria</label>
             <div class="col-sm-10">
-                <!-- <input type="text" class="form-control exampleFormControlSelect1" id="exampleFormControlSelect1" placeholder="Selecione uma categoria" name="category" value="<?= isset($Post['category'])? $Post['category']: '' ?>"> -->
-                <select class="form-control" id="exampleFormControlSelect1" name="category">
-                    <option>Educação</option>
-                    <option>Motivacional</option>
-                    <option>Coaching</option>
-                    <option>Economia</option>
-                    <option>Casamento</option>
-                    <option>Filmes e séries</option>
-                    <option>Cultura</option>
-                </select>
+                <input type="text" class="form-control" placeholder="Adicione uma categoria ao curso" name="categoria"
+                    id="inputPassword" value="<?= isset($Post['categoria'])? $Post['categoria']: '' ?>">
             </div>
         </div>
         <input type="submit" class="btn btn-success mb-2 ml-4" name="register_course" value="Cadastrar curso">
