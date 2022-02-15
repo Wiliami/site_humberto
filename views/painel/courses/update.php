@@ -13,12 +13,11 @@ $CourseId = $_GET['curso'];
 //Check::var_dump_json($CourseId);
 ?>
 <div class="container">
-    <div class="py-3d-sm-flex align-items-center justify-content-between mb-2">
-        <i class="fas fa-layer-plus"></i>
+    <div class="py-3 d-sm-flex align-items-center justify-content-between mb-2">
         <h1 class="h3 mb-0 text-gray-800 ml-4">Atualizar cursos</h1>
         <a href="<?= BASE ?>/painel/courses/list" class="btn btn-success mb-2" title="Voltar para lista de cursos">Voltar</a>
     </div>
-    <p class="ml-4">Atualização de cursos</p>
+    <!-- <p class="ml-4">Atualização de cursos</p> -->
     <form method="post">
         <div class="px-4 py-sm-5 py-3">
         <?php
@@ -57,17 +56,29 @@ $CourseId = $_GET['curso'];
         <div class="form-group row ml-4">
             <label for="inputPassword" class="col-sm-1 col-form-label btn btn-warning mb-2">Descrição</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" placeholder="Descrição do curso" name="description"id="inputPassword" 
+                <input type="text" class="form-control" placeholder="Descrição do curso" name="description" id="inputPassword" 
                     value="<?= $Cursos['curso_descricao'] ?>">
             </div>
         </div>
         <div class="form-group row ml-4">
             <label for="inputPassword" class="col-sm-1 col-form-label btn btn-warning mb-2">Categoria</label>
             <div class="col-sm-10">
+            <?php 
+            $Read->FullRead("SELECT * FROM cursos WHERE curso_categoria = :cc", "cc={$CourseId}");
+            if($Read->getResult()) {
+                foreach($Read->getResult() as $Categoria) {
+            ?>
                 <select class="form-control" id="" name="category">
-                    <option><?= $Cursos['curso_categoria'] ?></option>
+                    <option><?= $Categoria['curso_categoria'] ?></option>
+                    <!-- <option>name</option> -->
                 </select>
             </div>
+            <?php
+                }
+            } else {
+                Error("Ainda não existe lista de categoria");
+            }   
+            ?>
         </div>
         <?php
             }

@@ -15,18 +15,18 @@ echo $Component->getMenuDashboard();
     </div>
 </div>
 <div class="row gx-5 container">
+<?php
+$Read = new Read();
+$Read->FullRead("SELECT * FROM cursos");
+if($Read->getResult()) {
+    foreach($Read->getResult() as $Cursos) {
+        ?>
     <div class="col-lg-4 mb-5">
         <div class="card h-100 shadow border-0">
             <img src="<?= BASE ?>/src/images/page-sobre.jpg" alt="imagem de fundo"/>
             <div class="card-body p-4">
                 <div class="badge bg-success bg-gradient rounded-pill mb-2 text-white">Curso</div>
                 <a class="text-decoration-none link-dark stretched-link" href="<?= BASE ?>/painel/profile/aulas">
-                <?php
-                $Read = new Read();
-                $Read->FullRead("SELECT * FROM cursos");
-                if($Read->getResult()) {
-                    foreach($Read->getResult() as $Cursos) {
-                        ?>
                     <h5 class="card-title mb-3"><?= $Cursos['curso_titulo'] ?></h5>
                 </a>
                 <p class="card-text mb-0"><?= $Cursos['curso_descricao'] ?></p>
@@ -41,14 +41,14 @@ echo $Component->getMenuDashboard();
                         </div>
                     </div>
                 </div>
-                <?php
-                    }
-                } else {
-                    Error("Ainda não exite cursos cadastrados!");
-                }   
-                ?>
             </div>
         </div>
     </div>
+    <?php
+        }
+    } else {
+        Error("Ainda não exite cursos cadastrados!");
+    }   
+    ?>
 </div>
 <?= $Component->getFooterDashboard(); ?>
