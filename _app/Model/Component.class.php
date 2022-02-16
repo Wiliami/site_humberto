@@ -434,8 +434,9 @@ class Component {
                             <a class="collapse-item" href="' . BASE . '/painel/lesson/delete">Deletar aulas</a>
 
                             <h6 class="collapse-header">Outras páginas:</h6>
-                            <a class="collapse-item" href="' . BASE . '/painel/profile/help">Ajuda</a>
-                            <a class="collapse-item" href="' . BASE . '/painel/profile/suporte">Suporte</a>
+                            <a class="collapse-item" href="' . BASE . '/painel/admin/help">Ajuda</a>
+                            <a class="collapse-item" href="' . BASE . '/painel/admin/suporte">Suporte</a>
+                            <a class="collapse-item" href="' . BASE . '/painel/admin/settings">Configurações</a>
                             <a class="collapse-item" href="' . BASE . '/painel/dashboard">Dashboard</a>
                         </div>
                     </div>
