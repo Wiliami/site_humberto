@@ -935,10 +935,19 @@ class Component {
             </script>
             ';
     }
+
     // bloquear páginas administrativas 
     public function getBlockPageAdmin() {
+        if($_SESSION['login']['user_level'] == 1) {
+            return header('Location:' . BASE . '/painel/dashboard');
+        }
+    }
+
+    // bloquear páginas de usuário
+    public function getBlockPageProfile() {
         if($_SESSION['login']['user_level'] >= 6) { 
             return header('Location:' . BASE . '/painel/dashboard');
         }
     }
+    
 }

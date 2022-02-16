@@ -1,7 +1,8 @@
 <?php
 $User = new User();
 $User->verifyExistLoginUser();
-$Component = new Component(); 
+$Component = new Component();
+echo $Component->getBlockPageAdmin();
 echo $Component->getHeadHtmlDashboard();
 echo $Component->getHeadHtmlDataTable();
 echo $Component->getSideBarDashboard();

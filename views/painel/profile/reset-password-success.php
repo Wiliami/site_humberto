@@ -2,6 +2,7 @@
 $User = new User();
 $User->verifyExistLoginUser();
 $Component = new Component();
+echo $Component->getBlockPageProfile();
 echo $Component->getHeadHtmlDashboard(); // Estrutura do Html
 echo $Component->getSideBarDashboard();
 echo $Component->getLiAdministrativoDashboard();
