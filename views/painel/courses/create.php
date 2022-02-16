@@ -37,7 +37,7 @@ echo $Component->getMenuDashboard();
         ?>
         </div>
         <div class="form-group row ml-4">
-            <label for="inputPassword" class="col-sm-1 col-form-label btn btn-warning mb-2">Nome</label>
+            <label for="inputPassword" class="col-sm-1 col-form-label btn btn-warning mb-2">Curso</label>
             <div class="col-sm-10">
                 <input type="text" class="form-control" placeholder="Nome do curso" name="title" id="inputPassword"
                     value="<?= isset($Post['title'])? $Post['title']: '' ?>">
@@ -52,10 +52,21 @@ echo $Component->getMenuDashboard();
         </div>
         <div class="form-group row ml-4">
             <label for="inputPassword" class="col-sm-1 col-form-label btn btn-warning mb-2">Categoria</label>
-            <div class="col-sm-10">
-                <input type="text" class="form-control" placeholder="Adicione uma categoria ao curso" name="categoria"
-                    id="inputPassword" value="<?= isset($Post['categoria'])? $Post['categoria']: '' ?>">
-            </div>
+                <div class="col-sm-10">
+                    <select name="form-control" id="inputPassword" name="category">
+                        <?php
+                        $Read = new Read();
+                        $Read->FullRead('SELECT * FROM categoria_cursos');
+                            if($Read->getResult()) {
+                                foreach($Read->getResult() as $category) {
+                                    echo "<option value='{$category['categoria_id']}'>{$category['categoria_name']}</option>";
+                                }
+                            } else {
+                                echo "<option value=''>Ainda não existem categorias!</option>"; 
+                            }
+                        ?>
+                    </select>
+                </div>
         </div>
         <input type="submit" class="btn btn-success mb-2 ml-4" name="register_course" value="Cadastrar curso">
     </form>

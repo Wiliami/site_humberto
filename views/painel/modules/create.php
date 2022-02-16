@@ -20,7 +20,7 @@ echo $Component->getMenuDashboard();
         <?php
         $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
         if(!empty($Post['register_module'])) {
-            $CreateModule['modulo_name'] = $Post['name'];
+            $CreateModule['modulo_name'] = $Post['module'];
             $CreateModule['modulo_descricao'] = $Post['description'];
             $Course = new Course();
             $Course->createModule($CreateModule);
@@ -54,10 +54,10 @@ echo $Component->getMenuDashboard();
             </div>
         </div>
         <div class="form-group row ml-4">
-            <label for="inputPassword" class="col-sm-1 col-form-label btn btn-warning mb-2">Nome</label>
+            <label for="inputPassword" class="col-sm-1 col-form-label btn btn-warning mb-2">Módulo</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" placeholder="Nome do módulo" name="name" id="inputPassword"
-                    value="<?= isset($Post['name'])? $Post['name']: '' ?>">
+                <input type="text" class="form-control" placeholder="Nome do módulo" name="module" id="inputPassword"
+                    value="<?= isset($Post['module'])? $Post['module']: '' ?>">
             </div>
         </div>
         <div class="form-group row ml-4">

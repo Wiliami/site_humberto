@@ -21,16 +21,14 @@ $CourseId = $_GET['curso'];
         <?php
         $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
         if(!empty($Post['update_course'])) {
-            $CreateCourse['curso_titulo'] = $Post['course'];
-            $CreateCourse['curso_descricao'] = $Post['description'];
+            $udpateCourse['curso_titulo'] = $Post['course'];
+            $udpateCourse['curso_descricao'] = $Post['description'];
             $Course = new Course();
-            $Course->createCourse($CreateCourse);
+            $Course->updateCourse($udpateCourse);
             if($Course->getResult()) {
-                //header('Location: ' . BASE . '/painel/courses/update');
                 Error($Course->getError());
             } else {
                 Error($Course->getError(), 'warning');
-                //falta os campos serem preenchidos nos inputs ou o input recebeu alguma informação errada
             }   
         }
         ?>
@@ -44,7 +42,7 @@ $CourseId = $_GET['curso'];
                 ?>
         <h1 class="h5 mb-0 text-gray-800 ml-4 mb-4">Atualizar <?= $Cursos['curso_titulo'] ?></h1>
         <div class="form-group row ml-4">
-            <label for="inputPassword" class="col-sm-1 col-form-label btn btn-warning mb-2">Nome</label>
+            <label for="inputPassword" class="col-sm-1 col-form-label btn btn-warning mb-2">Curso</label>
             <div class="col-sm-10">
                 <input type="text" class="form-control" placeholder="Nome do curso" name="course" id="inputPassword"
                     value="<?= $Cursos['curso_titulo'] ?>"> 
@@ -64,7 +62,7 @@ $CourseId = $_GET['curso'];
                     <?php
                     $Read->ExeRead("categoria_cursos");
                     if($Read->getResult()) {
-                        echo "<option value=''>Selecionar</option>";
+                        echo "<option value=''>Selecionar:</option>";
                         foreach($Read->getResult() as $Cat) {
                             echo "<option value='{$Cat['categoria_id']}'>{$Cat['categoria_name']}</option>";
                         }
@@ -86,7 +84,6 @@ $CourseId = $_GET['curso'];
             $udpateCourse['aula_name'] = $Post['lesson'];
             $udpateCourse['aula_url'] = $Post['url'];
             $udpateCourse['aula_duracao'] = $Post['time'];
-
             $Course = new Course();
             $Course->updateCourse($udpateCourse);
             if($Course->getResult()) {
@@ -119,7 +116,7 @@ $CourseId = $_GET['curso'];
             </div>
         </div>
         <div class="form-group row ml-4">
-            <label for="inputPassword" class="col-sm-1 col-form-label btn btn-warning mb-2">Nome</label>
+            <label for="inputPassword" class="col-sm-1 col-form-label btn btn-warning mb-2">Aula</label>
             <div class="col-sm-10">
                 <input type="text" class="form-control" placeholder="Nome da aula" name="lesson" id="inputPassword"
                     value="<?= isset($Post['lesson'])? $Post['lesson']: '' ?>">

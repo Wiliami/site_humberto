@@ -22,9 +22,9 @@ echo $Component->getMenuDashboard();
         if(!empty($Post['register_category'])) {
             $CreateCategoria['categoria_name'] = $Post['categoria'];
             $Course = new Course();
-            $Course->createCourse($CreateCourse);
+            $Course->createCategoryCourse($CreateCategoria);
             if($Course->getResult()) {
-                header('Location: ' . BASE . '/painel/courses/update');
+                //header('Location: ' . BASE . '/painel/courses/update');
                 Error($Course->getError());
                 // cadastro realizado com sucesso
             } else {
@@ -35,7 +35,7 @@ echo $Component->getMenuDashboard();
         ?>
         </div>
         <div class="form-group row ml-4">
-            <label for="inputPassword" class="col-sm-1 col-form-label btn btn-warning mb-2">Nome</label>
+            <label for="inputPassword" class="col-sm-1 col-form-label btn btn-warning mb-2">Categoria</label>
             <div class="col-sm-10">
                 <input type="text" class="form-control" placeholder="Nome da categoria" name="categoria" id="inputPassword"
                     value="<?= isset($Post['categoria'])? $Post['categoria']: '' ?>">
