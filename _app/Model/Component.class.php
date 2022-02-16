@@ -415,6 +415,7 @@ class Component {
                     <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
                             <h6 class="collapse-header">Cursos:</h6>
+                            <a class="collapse-item" href="' . BASE . '/painel/courses/create-category">Categoria de cursos</a>
                             <a class="collapse-item" href="' . BASE . '/painel/courses/create">Cadastrar cursos</a>
                             <a class="collapse-item" href="' . BASE . '/painel/courses/list">Lista de cursos</a>
                             <a class="collapse-item" href="' . BASE . '/painel/courses/update">Atualizar cursos</a>
@@ -425,7 +426,7 @@ class Component {
                             <a class="collapse-item" href="' . BASE . '/painel/modules/list">Lista de módulos</a>
                             <a class="collapse-item" href="' . BASE . '/painel/modules/update">Atualizar módulos</a>
                             <a class="collapse-item" href="' . BASE . '/painel/modules/delete">Deletar módulos</a>
-
+                
                             <h6 class="collapse-header">Aulas:</h6>
                             <a class="collapse-item" href="' . BASE . '/painel/lesson/create">Cadastrar aulas</a>
                             <a class="collapse-item" href="' . BASE . '/painel/lesson/list">Lista de aulas</a>
@@ -928,7 +929,7 @@ class Component {
                         "info": "Mostrando página _PAGE_ de _PAGES_",
                         "infoEmpty": "Nenhum registro disponível",
                         "infoFiltered": "(filtrado de _MAX_ registros no total)"
-                    }
+                    }   
                 });
             });
             </script>
@@ -937,7 +938,7 @@ class Component {
     // bloquear páginas administrativas 
     public function getBlockPageAdmin() {
         if($_SESSION['login']['user_level'] >= 6) { 
-            return header('Location:' . BASE . '/painel/profile/meus-cursos');
+            return header('Location:' . BASE . '/painel/dashboard');
         }
     }
 }

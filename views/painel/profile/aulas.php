@@ -2,8 +2,8 @@
 $User = new User();
 $User->verifyExistLoginUser();
 $Component = new Component();
-echo $Component->getHeadHtmlDashboard();
 echo $Component->getBlockPageAdmin();
+echo $Component->getHeadHtmlDashboard();
 ?>
  <!-- Page Wrapper -->
  <div id="wrapper">
