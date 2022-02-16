@@ -101,7 +101,7 @@ class Course {
 				$this->Error = "A aula precisa de um tempo de duração!";
 				$this->Result = false;
 			} else {
-				$dataLesson['aula_create_date'] = date('Y-m-d H:i:s');
+				$dataLesson['aula_create_date'] = date('d-m-Y H:i:s');
 				$Create = new Create();
 				$Create->exeCreate("aulas", $dataLesson); // eu estou enviando a criação de aulas para a tabela de aulas.
 				if($Create->getResult()) {

@@ -25,7 +25,7 @@ $CourseId = $_GET['curso'];
             $udpateCourse['curso_titulo'] = $Post['course'];
             $udpateCourse['curso_descricao'] = $Post['description'];
             $Course = new Course();
-            $Course->updateCourse($udpateCourse);
+            $Course->createCourse($udpateCourse);
             if($Course->getResult()) {
                 Error($Course->getError());
             } else {
@@ -86,7 +86,7 @@ $CourseId = $_GET['curso'];
             $udpateCourse['aula_url'] = $Post['url'];
             $udpateCourse['aula_duracao'] = $Post['time'];
             $Course = new Course();
-            $Course->updateCourse($udpateCourse);
+            $Course->createCourse($udpateCourse);
             if($Course->getResult()) {
                 //header('Location: ' . BASE . '/painel/courses/update');
                 Error($Course->getError());
@@ -104,7 +104,7 @@ $CourseId = $_GET['curso'];
             <div class="col-sm-10">
                 <select class="form-control" id="" name="module">
                 <?php
-                $Read->FullRead("SELECT * FROM modulos");
+                $Read->FullRead("SELECT * FROM modulos WHERE modulo_id = :mi", "$mi={CourseId}");
                 if($Read->getResult()) {
                     foreach($Read->getResult() as $Mod) {
                         echo "<option value='{$Mod['modulo_id']}'>{$Mod['modulo_name']}</value>";
