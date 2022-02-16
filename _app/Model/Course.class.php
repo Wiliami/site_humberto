@@ -12,8 +12,8 @@ class Course {
 			$Create = new Create();
 			$Create->exeCreate('categoria_cursos', $category);
 				if($Create->getResult()) {
-					$this->Error = $Create->getResult();
-					$this->Result = 'A categoria foi cadastrada com sucesso!';
+					$this->Result = $Create->getResult();
+					$this->Error = 'A categoria foi cadastrada com sucesso!';
 				} else {
 					$this->Result = false;
 					$this->Error = $Create->getError(); 

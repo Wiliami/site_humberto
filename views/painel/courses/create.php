@@ -54,7 +54,7 @@ echo $Component->getMenuDashboard();
         <div class="form-group row ml-4">
             <label for="inputPassword" class="col-sm-1 col-form-label btn btn-warning mb-2">Categoria</label>
                 <div class="col-sm-10">
-                    <select name="form-control" id="inputPassword" name="category">
+                    <select class="form-control" id="inputPassword" name="category">
                         <?php
                         $Read = new Read();
                         $Read->FullRead('SELECT * FROM categoria_cursos');
