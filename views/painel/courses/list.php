@@ -57,7 +57,7 @@ echo $Component->getMenuDashboard();
                                         <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
                                     </span>
                                 </a>
-                                <a href="<?= BASE ?>/painel/courses/delete" class="table-link danger" title="Excluir <?= $Cursos['curso_titulo'] ?>">
+                                <a href="<?= BASE ?>/painel/courses/delete&course_delete<?= $Cursos['curso_id'] ?>" class="table-link danger" title="Excluir <?= $Cursos['curso_titulo'] ?>">
                                     <span class="fa-stack">
                                         <i class="fa fa-square fa-stack-2x"></i>
                                         <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
@@ -78,8 +78,6 @@ echo $Component->getMenuDashboard();
     </div>
 </div>
 <?= $Component->getFooterDashboard(); ?>
-<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-<script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
 <script>
 $(document).ready(function() {
     $("#table-lista-cursos").DataTable({
@@ -93,3 +91,5 @@ $(document).ready(function() {
     });
 });
 </script>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>

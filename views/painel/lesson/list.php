@@ -39,7 +39,7 @@ echo $Component->getMenuDashboard();
                                 <span><?= $Aulas['aula_name'] ?></span>
                             </td>
                             <td>
-                                <span><?= $Aulas['aula_create_date'] ?></span>
+                                <span><?= date('d/m/Y', strtotime($Aulas['aula_create_date'])) ?></span>
                             </td>
                             <td>
                                 <span><?= $Aulas['aula_duracao'] ?></span>
@@ -57,7 +57,7 @@ echo $Component->getMenuDashboard();
                                         <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
                                     </span>
                                 </a>
-                                <a href="<?= BASE ?>/painel/lesson/delete" class="table-link danger" title="Excluir <?= $Aulas['aula_name'] ?>">
+                                <a href="<?= BASE ?>/painel/lesson/delete&delete_aula<?= $Aulas['aula_id'] ?>" class="table-link danger" title="Excluir <?= $Aulas['aula_name'] ?>">
                                     <span class="fa-stack">
                                         <i class="fa fa-square fa-stack-2x"></i>
                                         <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
@@ -82,7 +82,7 @@ echo $Component->getMenuDashboard();
 <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
 <script>
     $(document).ready(function() {
-        $("#lista-aulas").DataTable({
+        $("#table-lista-cursos").DataTable({
             "language": {
                 "lengthMenu": "Mostrando _MENU_ registros por página",
                 "zeroRecords": "Nenhum resultado foi encontrado",

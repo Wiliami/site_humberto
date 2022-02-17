@@ -4,7 +4,7 @@ class User {
 	// - verifyLevelUserModerator -> verifica se o nível de usuário é diferente do nível moderador
 	// - verifyDuplicateUserEmail -> verificar se o usuário digitou o email que já está em uso. 
 	// - resetUserPassword -> alterar a senha do usuário
-	// - getForgot -> envia o email de recuperção de senha ao usuário
+	// - getForgot -> envia o email de recuperação de senha ao usuário
 	private $Error;
 	private $Result;
 	// Método para verificar os nivéis de usuário
@@ -14,6 +14,7 @@ class User {
 			exit();
 		} 
 	}
+	
 	public function searchCourse() {
 		if(empty($course['aula_name'])) {
 			$this->Error = "Pesquisa alguma coisa!";

@@ -39,7 +39,7 @@ echo $Component->getMenuDashboard();
                                 <span><?= $Modulos['modulo_name'] ?></span>
                             </td>
                             <td>
-                                <span><?= $Modulos['modulo_create_date'] ?></span>
+                                <span><?= date('d/m/Y', strtotime($Modulos['modulo_create_date'])) ?></span>
                             </td>
                             <td>
                                 <span><?= $Modulos['modulo_descricao'] ?></span>

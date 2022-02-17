@@ -46,8 +46,12 @@ class Course {
 		}
 
 	public function updateCourse($updateCourse) {
+		if(empty($updateCourse['curso_titulo'])) {
+			$this->Error = 'Deseja atualizar o campo';
+			$this->Result = false;
+		} else {
 			$Update = new Update();
-			$Update->ExeUpdate('cursos', $updateCourse);
+			$Update->ExeUpdate('cursos', $updateCourse, "WHERE curso_id = :id", "id={$updateCourse}");
 			if ($Update->getResult()) {
 				$this->Result = $Update->getResult();
 				$this->Error = "O curso foi atualizado com sucesso!";
@@ -56,10 +60,24 @@ class Course {
 				$this->Error = $Update->getError();
 			}
 		}
+	}
 	
 
 	public function deleteCourse($deleteCourse) {
-		return 'ok';
+		if(empty(['curso_titulo'])) {
+			$this->Error = 'Selecione um curso para excluir';
+			$this->Result = false;
+		} else {
+			$Delete = new Delete();
+			$Delete->exeDelete('cursos');
+			if($Delete->getResult()) {
+				$this->Result = $Delete->getError();
+				$this->Error = "O curso foi deletado com sucesso!";
+			} else {
+				$this->Result= false;
+				$this->Error = $Delete->getError();
+			}
+		}
 	}
 
 	
@@ -112,6 +130,40 @@ class Course {
 					$this->Error = $Create->getError();
 				}
 
+			}
+		}
+
+		public function updateLesson($updateLesson) {
+			if(empty($updateLesson['aula_name'])) {
+				$this->Error = "É necesário atualizar ao menos um campo para concluir atualização da aula!";
+				$this->Result = false;
+			} else {
+				$Update = new Update();
+				$Update->ExeUpdate("aulas", $updateLesson, "WHERE aula_id = :ai", "ai={$updateLesson}");
+				if($Update->getResult()) {
+					$this->Result = $updateLesson->getResult(); 
+					$this->Error = "A aula foi atualizada com sucesso!";
+				} else {
+					$this->Result = false;
+					$this->Error = $updateLesson->getError();
+				}
+			}
+		}
+
+		public function deleteLesson() {
+			if(empty(['aula_id'])) {
+				$this->Error = 'Selecione uma aula para excluir!';
+				$this->Result = false;
+			} else {
+				$Delete = new Delete();
+				$Delete->exeDelete('aulas', "WHERE aula_id = :ai", "ai={aula_id}");
+				if($Delete->getResult()) {
+					$this->Result = $$Delete->getError();
+					$this->Error = 'A aula foi deletada com sucesso!';
+				} else {
+					$this->Result = false;
+					$this->Error->$Delete->getError();
+				}
 			}
 		}
 

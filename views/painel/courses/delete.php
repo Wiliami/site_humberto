@@ -10,74 +10,42 @@ echo $Component->getLiAdministrativoDashboard();
 echo $Component->getLiCoursesDashboard();
 echo $Component->getLiPagesDashboard();
 echo $Component->getMenuDashboard();
+$deleteCourse = $_GET['course_delete'];
 ?>
-<div class="container">
-    <div class="card shadow mb-4">
-        <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-dark">Excluir | Excluir cursos</h6>
-        </div>
-        <div class="card-body">
-            <div class="table-responsive">
-                <table id="table-delete-cursos" class="table table-striped table-bordered">
-                    <thead>
-                        <tr>
-                            <th><span>Nome do curso</span></th>
-                            <th><span>Data da criação</span></th>
-                            <th class="text-center"><span>Descrição</span></th>
-                            <th><span>Excluir</span></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php
-                        $Read = new Read();
-                        $Read->FullRead("SELECT * FROM cursos");
-                        if($Read->getResult()) {
-                            foreach($Read->getResult() as $Cursos) {
-                                ?>
-                        <tr>
-                            <td>
-                                <span><?= $Cursos['curso_titulo'] ?></span>
-                            </td>
-                            <td>
-                                <span><?= $Cursos['curso_create_date'] ?></span>
-                            </td>
-                            <td>
-                                <span><?= $Cursos['curso_descricao'] ?></span>
-                            </td>
-                            <td>
-                                <a href="/" class="table-link danger" title="Excluir <?= $Cursos['curso_titulo'] ?>">
-                                    <span class="fa-stack">
-                                        <i class="fa fa-square fa-stack-2x"></i>
-                                        <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                            </td>
-                        </tr>
-                        <?php
-                            }
-                        } else {
-                            Error("Ainda não existem usuários!");
-                        }   
-                        ?>
-                    </tbody>
-                </table>
-            </div>
-        </div>
+<div class="container card-header">
+    <div class="card-header py-3 d-sm-flex align-items-center justify-content-between mb-2">
+        <h5 class="h3 mb-0 text-gray-800 ml-2">Excluir | Excluir cursos</h5>
+        <a href="<?= BASE ?>/painel/courses/list" class="btn btn-success mb-2" title="Voltar para lista de cursos">Voltar</a>
     </div>
+    <form>
+        <div class="px-4 py-sm-5 py-3">
+            ...
+        </div>
+        <?php
+        $Read = new Read();
+        $Read->FullRead("SELECT * FROM cursos WHERE curso_id = :ci", "ci={$deleteCourse}");
+            if($Read->getResult()) {
+                foreach($Read->getResult() as $Cursos) {
+                    ?>
+        <h1 class="h5 mb-0 text-gray-800 ml-4 mb-4">Excluir <?= $Cursos['curso_titulo'] ?></h1>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Curso</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" name="course" placeholder="Nome do curso" name="course" value="<?= $Cursos['curso_titulo'] ?>">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Descrição</label>
+            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Descrição do curso" name="description" value="<?= $Cursos['curso_descricao'] ?>">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Categoria</label>
+            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Categoria do curso" name="categoria" value="<?= $Cursos['curso_categoria'] ?>">
+        </div>
+    </form>
+    <?php
+        }
+    } else {
+        Error("Nenhum curso foi selecionado para deletar!");
+    }
+    ?>
 </div>
 <?= $Component->getFooterDashboard(); ?>
-<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-<script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
-<script>
-$(document).ready(function() {
-    $("#table-delete-cursos").DataTable({
-        "language": {
-            "lengthMenu": "Mostrando _MENU_ registros por página",
-            "zeroRecords": "Nenhum registro foi encontrado",
-            "info": "Mostrando página _PAGE_ de _PAGES_ registros",
-            "infoEmpty": "Nenhum registro foi encontrado",
-            "infoFiltered": "(filtrado de _MAX_ registros no total)"
-        }
-    });
-});
-</script>

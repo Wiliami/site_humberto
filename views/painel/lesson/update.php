@@ -26,7 +26,7 @@ $AulaId = $_GET['aula'];
             $updateLesson['aula_duracao'] = $Post['time'];
             $updateLesson['aula_url'] = $Post['url'];
             $Course = new Course();
-            $Course->upadateLesson($updateLesson);
+            $Course->updateLesson($updateLesson);
             if($Course->getResult()) {
                 //header('Location: ' . BASE . '/painel/courses/update');
                 Error($Course->getError());
