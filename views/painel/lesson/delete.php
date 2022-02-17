@@ -12,6 +12,7 @@ echo $Component->getLiCoursesDashboard();
 echo $Component->getLiPagesDashboard();
 echo $Component->getMenuDashboard();
 $DeleteLesson = $_GET['delete_aula'];
+echo $DeleteLesson;
 ?>
 <div class="container card-header">
     <div class="card-header py-3 d-sm-flex align-items-center justify-content-between mb-2">
@@ -22,17 +23,16 @@ $DeleteLesson = $_GET['delete_aula'];
 
         <?php 
         $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
-            if(!empty(['lesson_delete'])) {
-                $updateLesson['aula_name'] = $Post['lesson'];
-                $updateLesson['aula_duracao'] = $Posr['time'];
-                $updateLesson[''] = $Post['url'];
-            } else {
+            if(!empty($Post['lesson_delete'])) {
+                $deleteLesson['aula_name'] = $Post['lesson'];
+                $deleteLesson['aula_duracao'] = $Post['time'];
+                $deleteLesson['aula_url'] = $Post['url'];
                 $Course = new Course();
-                $Course->deleteLesson($updateLesson);
-                if($Lesson->getResult()) {
-                    Error($Lesson->getError());
+                $Course->deleteLesson($deleteLesson);
+                if($Course->getResult()) {
+                    Error($Course->getError());
                 } else {
-                    Error($Lesson->getError(), 'warning');
+                    Error($Course->getError(), 'warning');
                 }
             }
         ?>
@@ -44,21 +44,22 @@ $DeleteLesson = $_GET['delete_aula'];
         $Read->FullRead("SELECT * FROM aulas WHERE aula_id = :ai", "ai={$DeleteLesson}");
             if($Read->getResult()) {
                 foreach($Read->getResult() as $Aulas) {
+                    Check::var_dump_json($Read->getResult())
                     ?>
-        <h1 class="h5 mb-0 text-gray-800 ml-4 mb-4">Excluir <?= $Aulas['curso_titulo'] ?></h1>
+        <h1 class="h5 mb-0 text-gray-800 ml-4 mb-4">Excluir <?= $Aulas['aula_name'] ?></h1>
         <div class="form-group">
-            <label for="exampleInputEmail1">Curso</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" name="course" placeholder="Nome da aula" name="lesson" value="<?= $Aulas['aula_name'] ?>">
+            <label for="exampleInputEmail1">Aula</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Nome da aula" name="lesson" value="<?= $Aulas['aula_name'] ?>">
         </div>
         <div class="form-group">
-            <label for="exampleInputPassword1">Descrição</label>
+            <label for="exampleInputPassword1">Duração da aula</label>
             <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Duração da aula" name="time" value="<?= $Aulas['aula_duracao'] ?>">
         </div>
         <div class="form-group">
-            <label for="exampleInputPassword1">Categoria</label>
-            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Categoria da aula" name="url" value="<?= $Aulas['aula_url'] ?>">
+            <label for="exampleInputPassword1">URL</label>
+            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="URL da aula" name="url" value="<?= $Aulas['aula_url'] ?>">
         </div>
-        <input type="text" name="lesson_delete" value="Excluir aula">
+        <input type="submit" class="btn btn-success mb-2 ml-4" name="lesson_delete" value="Excluir aula">
     </form>
     <?php
         }

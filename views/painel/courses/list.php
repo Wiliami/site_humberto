@@ -39,7 +39,7 @@ echo $Component->getMenuDashboard();
                                 <span><?= $Cursos['curso_titulo'] ?></span>
                             </td>
                             <td>
-                                <span><?= $Cursos['curso_create_date'] ?></span>
+                                <span><?= date('d/m/Y', strtotime($Cursos['curso_create_date'])) ?></span>
                             </td>
                             <td>
                                 <span><?= $Cursos['curso_descricao'] ?></span>

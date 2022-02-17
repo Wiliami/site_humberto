@@ -3,14 +3,13 @@ class Course {
     private $Error;
 	private $Result;
 
-
 	public function createCategoryCourse($category) {
 		if(empty($category['categoria_name'])) {
-			$this->Error = "Preencha esse campo, por favor!";
+			$this->Error = "Campo obrigatório!";
 			$this->Result = false;
 		} else {
 			$Create = new Create();
-			$Create->exeCreate('categoria_cursos', $category);
+			$Create->ExeCreate('categoria_cursos', $category);
 				if($Create->getResult()) {
 					$this->Result = $Create->getResult();
 					$this->Error = 'A categoria foi cadastrada com sucesso!';
@@ -47,11 +46,14 @@ class Course {
 
 	public function updateCourse($updateCourse) {
 		if(empty($updateCourse['curso_titulo'])) {
-			$this->Error = 'Deseja atualizar o campo';
+			$this->Error = 'É necessário atualizar ao menos um campo para finalizar atualização!';
+			$this->Result = false;
+		} elseif (empty($updateCourse['curso_descricao'])) {
+			$this->Error = 'É necessário atualizar ao menos um campo para finalizar atualização!';
 			$this->Result = false;
 		} else {
 			$Update = new Update();
-			$Update->ExeUpdate('cursos', $updateCourse, "WHERE curso_id = :id", "id={$updateCourse}");
+			$Update->ExeUpdate("cursos", $updateCourse, "WHERE curso_id = :id", "id={$updateCourse}");
 			if ($Update->getResult()) {
 				$this->Result = $Update->getResult();
 				$this->Error = "O curso foi atualizado com sucesso!";
@@ -64,15 +66,15 @@ class Course {
 	
 
 	public function deleteCourse($deleteCourse) {
-		if(empty(['curso_titulo'])) {
-			$this->Error = 'Selecione um curso para excluir';
+		if(empty($deleteCourse['curso_titulo'])) {
+			$this->Error = 'É necessário selecionar um curso para finalizar exclusão!';
 			$this->Result = false;
 		} else {
 			$Delete = new Delete();
-			$Delete->exeDelete('cursos');
+			$Delete->ExeDelete("cursos", "WHERE curso_id = :ci", "ci={$deleteCourse}");
 			if($Delete->getResult()) {
 				$this->Result = $Delete->getError();
-				$this->Error = "O curso foi deletado com sucesso!";
+				$this->Error = "O curso foi excluído com sucesso!";
 			} else {
 				$this->Result= false;
 				$this->Error = $Delete->getError();

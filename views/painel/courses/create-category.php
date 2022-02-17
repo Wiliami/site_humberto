@@ -18,7 +18,7 @@ echo $Component->getMenuDashboard();
     <?php
         $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
         if(!empty($Post['register_category'])) {
-            $CreateCategoria['categoria_name'] = $Post['categoria'];
+            $CreateCategoria['categoria_name'] = $Post['category'];
             $Course = new Course();
             $Course->createCategoryCourse($CreateCategoria);
             if($Course->getResult()) {

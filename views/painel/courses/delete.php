@@ -11,6 +11,7 @@ echo $Component->getLiCoursesDashboard();
 echo $Component->getLiPagesDashboard();
 echo $Component->getMenuDashboard();
 $deleteCourse = $_GET['course_delete'];
+echo $deleteCourse;
 ?>
 <div class="container card-header">
     <div class="card-header py-3 d-sm-flex align-items-center justify-content-between mb-2">
@@ -18,6 +19,21 @@ $deleteCourse = $_GET['course_delete'];
         <a href="<?= BASE ?>/painel/courses/list" class="btn btn-success mb-2" title="Voltar para lista de cursos">Voltar</a>
     </div>
     <form>
+        <?php
+        $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+            if(!empty($Post['delete_course'])) {
+                $deleteCourse['curso_titulo'] = $Post['course'];
+                $deleteCourse['curso_descricao'] = $Post['description'];
+                $deleteCourse['curso_categoria'] = $Post['categoria'];
+                $Course = new Course();
+                $Course->deleteCourse($deleteCourse);
+                if($Course->getResult()) {
+                    Error($Course->getError());
+                } else {
+                    Error($Course->getError(), 'warning');
+                }
+            } 
+        ?>
         <div class="px-4 py-sm-5 py-3">
             ...
         </div>
@@ -30,7 +46,7 @@ $deleteCourse = $_GET['course_delete'];
         <h1 class="h5 mb-0 text-gray-800 ml-4 mb-4">Excluir <?= $Cursos['curso_titulo'] ?></h1>
         <div class="form-group">
             <label for="exampleInputEmail1">Curso</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" name="course" placeholder="Nome do curso" name="course" value="<?= $Cursos['curso_titulo'] ?>">
+            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Nome do curso" name="course" value="<?= $Cursos['curso_titulo'] ?>">
         </div>
         <div class="form-group">
             <label for="exampleInputPassword1">Descrição</label>
@@ -40,6 +56,7 @@ $deleteCourse = $_GET['course_delete'];
             <label for="exampleInputPassword1">Categoria</label>
             <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Categoria do curso" name="categoria" value="<?= $Cursos['curso_categoria'] ?>">
         </div>
+        <input type="submit" class="btn btn-success mb-2 ml-4" name="delete_course" id="" value="Excluir curso">
     </form>
     <?php
         }
