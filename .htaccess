@@ -4,5 +4,9 @@
     RewriteCond %{SCRIPT_FILENAME} !-f
     RewriteCond %{SCRIPT_FILENAME} !-d
     RewriteRule ^(.*)$ index.php?url=$1
+
+    #Session timeout
+    php_value session.cookie_lifetime 1800
+    php_value session.gc_maxlifetime 1800
 </IfModule>
 
