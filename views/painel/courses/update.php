@@ -12,7 +12,7 @@ echo $Component->getLiPagesDashboard();
 echo $Component->getMenuDashboard();
 $CourseId = $_GET['curso'];
 ?>
-<div class="container card-header">
+<div class="container card-header"> 
     <div class="card-header py-3 d-sm-flex align-items-center justify-content-between mb-2">
         <h5 class="h3 mb-0 text-gray-800 ml-2">Atualizar cursos</h5>
         <a href="<?= BASE ?>/painel/courses/list" class="btn btn-success mb-2" title="Voltar para lista de cursos">Voltar</a>

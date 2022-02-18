@@ -10,8 +10,7 @@ echo $Component->getLiAdministrativoDashboard();
 echo $Component->getLiCoursesDashboard();
 echo $Component->getLiPagesDashboard();
 echo $Component->getMenuDashboard();
-$deleteCourse = $_GET['course_delete'];
-echo $deleteCourse;
+$deleteCourse = $_GET['delete'];
 ?>
 <div class="container card-header">
     <div class="card-header py-3 d-sm-flex align-items-center justify-content-between mb-2">
@@ -56,7 +55,7 @@ echo $deleteCourse;
             <label for="exampleInputPassword1">Categoria</label>
             <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Categoria do curso" name="categoria" value="<?= $Cursos['curso_categoria'] ?>">
         </div>
-        <input type="submit" class="btn btn-success mb-2 ml-4" name="delete_course" id="" value="Excluir curso">
+        <input type="submit" class="btn btn-success mb-2" name="delete_course" id="" value="Excluir curso">
     </form>
     <?php
         }

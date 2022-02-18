@@ -72,7 +72,7 @@ class Course {
 			$this->Result = false;
 		} else {
 			$Delete = new Delete();
-			$Delete->ExeDelete("cursos", "WHERE curso_id = :ci", "ci={$deleteCourse}");
+			$Delete->ExeDelete("DELETE cursos WHERE curso_id = :ci", "ci={$deleteCourse}");
 			if($Delete->getResult()) {
 				$this->Result = $Delete->getError();
 				$this->Error = "O curso foi excluído com sucesso!";

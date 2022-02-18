@@ -61,7 +61,7 @@ echo $Component->getMenuDashboard();
                                         <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
                                     </span>
                                 </a>
-                                <a href="<?= BASE ?>/painel/courses/delete&course_delete<?= $Cursos['curso_id'] ?>" class="table-link danger" title="Excluir <?= $Cursos['curso_titulo'] ?>">
+                                <a href="<?= BASE ?>/painel/courses/delete&delete=<?= $Cursos['curso_id'] ?>" class="table-link danger" title="Excluir <?= $Cursos['curso_titulo'] ?>">
                                     <span class="fa-stack">
                                         <i class="fa fa-square fa-stack-2x"></i>
                                         <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
