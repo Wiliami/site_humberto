@@ -11,6 +11,7 @@ echo $Component->getLiCoursesDashboard();
 echo $Component->getLiPagesDashboard();
 echo $Component->getMenuDashboard();
 $CourseId = $_GET['curso'];
+echo $CourseId
 //$ModuleId = 'Modulo';
 //$LessonId = 'Aula';
 ?>

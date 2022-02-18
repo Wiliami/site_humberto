@@ -792,6 +792,7 @@ class Component {
                         <div class="bg-white py-2 collapse-inner rounded">
                             <h6 class="collapse-header">Cursos:</h6>
                             <a class="collapse-item" href="' . BASE . '/painel/courses/create-category">Categoria de cursos</a>
+                            <a class="collapse-item" href="' . BASE . '/painel/courses/list-category">Lista de categoria</a>
                             <a class="collapse-item" href="' . BASE . '/painel/courses/create">Cadastrar cursos</a>
                             <a class="collapse-item" href="' . BASE . '/painel/courses/list">Lista de cursos</a>
                             <a class="collapse-item" href="' . BASE . '/painel/courses/update">Atualizar cursos</a>
