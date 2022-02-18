@@ -387,7 +387,7 @@
                                     <a href="javascript:;">
                                         <div class="p-3 pe-md-0">
                                             <img class="w-100 border-radius-md shadow-lg"
-                                                src="<?= BASE ?>/src/images/josenias.JPG" style="width: 200px; height: 130px;" alt="imagem">
+                                                src="<?= BASE ?>/src/images/josenias.JPG" alt="imagem">
                                         </div>
                                     </a>
                                 </div>

@@ -925,7 +925,7 @@ class Component {
                 <footer class="sticky-footer bg-white">
                     <div class="container my-auto">
                         <div class="copyright text-center my-auto">
-                            <span>Copyright &copy; Unitplus 2022</span>
+                            <span>Copyright &copy; Unitplus ' . date('Y') . '</span>
                         </div>
                     </div>
                 </footer>
@@ -1115,7 +1115,7 @@ class Component {
 
     // bloquear páginas administrativas 
     public function getBlockPageAdmin() {
-        if($_SESSION['login']['user_level'] == 1) {
+        if($_SESSION['login']['user_level'] <= 1) {
             return header('Location:' . BASE . '/painel/dashboard');
         }
     }

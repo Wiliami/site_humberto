@@ -10,7 +10,7 @@ echo $Component->getLiCoursesDashboard();
 echo $Component->getLiPagesDashboard();
 echo $Component->getMenuDashboard();
 ?>
-<div class="container card-header">
+<div class="container">
     <div class="d-sm-flex align-items-center justify-content-start mb-4">
         <i class="fas fa-layer-plus"></i>
         <h1 class="h3 mb-0 text-gray-800 ml-0">Cadastrar categoria</h1>
@@ -32,8 +32,6 @@ echo $Component->getMenuDashboard();
         }
         ?>
     <form method="post">
-        <div class="px-4 py-sm-5 py-3">
-        </div>
         <div class="form-group">
             <label for="example">Categoria</label>
             <input type="text" class="form-control" id="exampleInputEmail1" name="category" placeholder="Nome da categoria" 

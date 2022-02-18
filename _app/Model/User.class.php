@@ -10,7 +10,7 @@ class User {
 	// Método para verificar os nivéis de usuário
 	public function verifyLevelUserModerator() {
 		if($_SESSION['login']['user_level'] >= 6) { 
-			header('Location: ' . BASE . '/painel/dashboard');
+			return header('Location: ' . BASE . '/painel/dashboard');
 			exit();
 		} 
 	}

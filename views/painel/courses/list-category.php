@@ -1,7 +1,7 @@
 <?php
 $User = new User();
 $User->verifyExistLoginUser();
-$Component = new Component(); 
+$Component = new Component();
 echo $Component->getBlockPageAdmin();
 echo $Component->getHeadHtmlDashboard();
 echo $Component->getHeadHtmlDataTable();
@@ -14,50 +14,36 @@ echo $Component->getMenuDashboard();
 <div class="container">
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-dark">Lista de cursos</h6>
+            <h6 class="m-0 font-weight-bold text-dark">Lista de categorias</h6>
         </div>
         <div class="card-body">
             <div class="table-responsive">
-                <table id="table-lista-cursos" class="table table-striped table-bordered" style="width: 100%;">
+                <table id="table-lista-categoria" class="table table-striped table-bordered" style="width: 100%;">
                     <thead>
                         <tr>
-                            <th><span>Nome do curso</span></th>
-                            <th><span>Data de cadastro</span></th>
-                            <th><span>Descrição</span></th>
+                            <th><span>Categoria</span></th>
                             <th><span>Opções</span></th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php
                         $Read = new Read();
-                        $Read->FullRead("SELECT * FROM cursos");
+                        $Read->FullRead("SELECT * FROM categoria_cursos");
                         if($Read->getResult()) {
-                            foreach($Read->getResult() as $Cursos) {
+                            foreach($Read->getResult() as $Categoria) {
                                 ?>
                         <tr>
                             <td>
-                                <span><?= $Cursos['curso_titulo'] ?></span>
+                                <span><?= $Categoria['categoria_name']?></span>
                             </td>
                             <td>
-                                <span><?= date('d/m/Y', strtotime($Cursos['curso_create_date'])) ?></span>
-                            </td>
-                            <td>
-                                <span><?= $Cursos['curso_descricao'] ?></span>
-                            </td>
-                            <td>
-                                <!-- <a href="<?= BASE ?>/" class="table-link" title="Pesquisar usuários">
-                                        <span class="fa-stack">
-                                            <i class="fa fa-square fa-stack-2x"></i>
-                                            <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
-                                        </span>
-                                    </a> -->
-                                <a href="<?= BASE ?>/painel/courses/update&curso=<?= $Cursos['curso_id'] ?>" class="table-link" title="Editar <?= $Cursos['curso_titulo'] ?>">
+                                <a href="<?= BASE ?>/painel/courses/update&categoria=<?= $Categoria['categoria_id'] ?>" class="table-link" title="Editar <?= $Cursos['categoria_name'] ?>">
                                     <span class="fa-stack">
                                         <i class="fa fa-square fa-stack-2x"></i>
                                         <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
                                     </span>
                                 </a>
-                                <a href="<?= BASE ?>/painel/courses/delete&course_delete<?= $Cursos['curso_id'] ?>" class="table-link danger" title="Excluir <?= $Cursos['curso_titulo'] ?>">
+                                <a href="<?= BASE ?>/painel/courses/delete&categoria_delete<?= $Cursos['categoria_id'] ?>" class="table-link danger" title="Excluir <?= $Cursos['categoria_name'] ?>">
                                     <span class="fa-stack">
                                         <i class="fa fa-square fa-stack-2x"></i>
                                         <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
@@ -68,10 +54,14 @@ echo $Component->getMenuDashboard();
                         <?php
                             }
                         } else {
-                            Error("Ainda não existe lista dos cursos!");
+                            Error("Ainda não existe lista de categoria!");
                         }   
                         ?>
                     </tbody>
+                    <tfoot>
+                        <th><span>Categoria</span></th>
+                        <th><span>Opções</span></th>
+                    </tfoot>
                 </table>
             </div>
         </div>
@@ -82,7 +72,7 @@ echo $Component->getMenuDashboard();
 <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
 <script>
 $(document).ready(function() {
-    $("#table-lista-cursos").DataTable({
+    $("#table-lista-categoria").DataTable({
         "language": {
             "lengthMenu": "Mostrando _MENU_ registros por página",
             "zeroRecords": "Nenhum registro foi encontrado",

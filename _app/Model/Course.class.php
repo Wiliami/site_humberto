@@ -8,6 +8,7 @@ class Course {
 			$this->Error = "Campo obrigatório!";
 			$this->Result = false;
 		} else {
+			$category['categoria_create_date'] = date('d-m-Y H:i:s');
 			$Create = new Create();
 			$Create->ExeCreate('categoria_cursos', $category);
 				if($Create->getResult()) {
@@ -31,7 +32,7 @@ class Course {
 				$this->Error = "Por favor, selecione uma categoria para o curso!";
 				$this->Result = false;
 			}  else {
-				$dataCourse['curso_create_date'] = date('Y-m-d H:i:s');
+				$dataCourse['curso_create_date'] = date('d-m-Y H:i:s');
 				$Create = new Create();
 				$Create->ExeCreate("cursos", $dataCourse); 
 				if($Create->getResult()) {
