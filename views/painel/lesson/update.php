@@ -44,6 +44,26 @@ $AulaId = $_GET['aula'];
             foreach($Read->getResult() as $Aula) {
                 ?>
         <h1 class="h5 mb-0 text-gray-800 ml-4 mb-4">Atualizar <?= $Aula['aula_name'] ?></h1>
+        <form>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Aula</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nome da aula" value="<?= $Aula['aula_name'] ?>">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Duração</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Duração da aula">
+            </div>
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            </div>
+            <input type="submit" class="btn btn-primary" name="update_lesson" value="Atualizar aula">
+        </form>
+
+
+
+
+
         <div class="form-group row ml-4">
             <label for="inputPassword" class="col-sm-1 col-form-label btn btn-warning mb-2">Nome</label>
             <div class="col-sm-10">
