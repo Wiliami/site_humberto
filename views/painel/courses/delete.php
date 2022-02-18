@@ -61,7 +61,7 @@ echo $deleteCourse;
     <?php
         }
     } else {
-        Error("Nenhum curso foi selecionado para deletar!");
+        Error("Nenhum curso foi selecionado para excluir!");
     }
     ?>
 </div>

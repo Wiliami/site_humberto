@@ -24,6 +24,7 @@ echo $Component->getMenuDashboard();
                             <th><span>Nome do curso</span></th>
                             <th><span>Data de cadastro</span></th>
                             <th><span>Descrição</span></th>
+                            <th><span>Categoria</span></th>
                             <th><span>Opções</span></th>
                         </tr>
                     </thead>
@@ -43,6 +44,9 @@ echo $Component->getMenuDashboard();
                             </td>
                             <td>
                                 <span><?= $Cursos['curso_descricao'] ?></span>
+                            </td>
+                            <td>
+                                <span><?= $Cursos['curso_categoria'] ?></span>
                             </td>
                             <td>
                                 <!-- <a href="<?= BASE ?>/" class="table-link" title="Pesquisar usuários">
@@ -77,6 +81,18 @@ echo $Component->getMenuDashboard();
         </div>
     </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
 <?= $Component->getFooterDashboard(); ?>
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>

@@ -11,9 +11,6 @@ echo $Component->getLiCoursesDashboard();
 echo $Component->getLiPagesDashboard();
 echo $Component->getMenuDashboard();
 $CourseId = $_GET['curso'];
-echo $CourseId
-//$ModuleId = 'Modulo';
-//$LessonId = 'Aula';
 ?>
 <div class="container card-header">
     <div class="card-header py-3 d-sm-flex align-items-center justify-content-between mb-2">
@@ -40,6 +37,7 @@ echo $CourseId
         $Read->FullRead("SELECT * FROM cursos WHERE curso_id = :ci", "ci={$CourseId}");
         if($Read->getResult()) {
             foreach($Read->getResult() as $Cursos) {
+                Check::var_dump_json($Read->getResult())
                 ?>
         <h1 class="h5 mb-0 text-gray-800 ml-4 mb-4">Atualizar <?= $Cursos['curso_titulo'] ?></h1>
         <div class="form-group">
