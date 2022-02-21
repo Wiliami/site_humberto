@@ -37,24 +37,6 @@ echo $Component->getMenuDashboard();
         ?>
         </div>
         <div class="form-group row ml-4">
-            <label for="inputPassword" class="col-sm-1 col-form-label btn btn-warning mb-2">Curso</label>
-            <div class="col-sm-10">
-                <select class="form-control" id="" name="module">
-                    <?php 
-                    $Read = new Read();
-                    $Read->FullRead('SELECT * FROM cursos');
-                    if($Read->getResult()) {
-                        foreach($Read->getResult() as $Cursos) {
-                            echo "<option value='{$Cursos['curso_id']}'>{$Cursos['curso_titulo']}</option>";
-                        }
-                    } else {
-                        echo "<option value=''>Ainda não existem curso!</option>";
-                    }
-                    ?>
-                </select>
-            </div>
-        </div>
-        <div class="form-group row ml-4">
             <label for="inputPassword" class="col-sm-1 col-form-label btn btn-warning mb-2">Módulo</label>
             <div class="col-sm-10">
                 <input type="text" class="form-control" placeholder="Nome do módulo" name="module" id="inputPassword"
@@ -69,6 +51,48 @@ echo $Component->getMenuDashboard();
             </div>
         </div>
         <input type="submit" class="btn btn-success mb-2 ml-4" name="register_module" value="Cadastrar módulo">
+    </form>
+
+
+
+
+
+
+    <form>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Módulo</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <div class="col-sm-10">
+                <select class="form-control" id="" name="module">
+                <?php 
+                    $Read = new Read();
+                    $Read->FullRead('SELECT * FROM cursos');
+                    if($Read->getResult()) {
+                        foreach($Read->getResult() as $Cursos) {
+                            echo "<option value='{$Cursos['curso_id']}'>{$Cursos['curso_titulo']}</option>";
+                        }
+                    } else {
+                        echo "<option value=''>Ainda não existem curso!</option>";
+                    }
+                    ?>
+                </select>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Módulo</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" placeholder="Nome do módulo" name="module" id="inputPassword"
+                    value="<?= isset($Post['module'])? $Post['module']: '' ?>">
+            </div>
+        </div>
+        <div class="mb-3 form-check">
+        <label for="inputPassword" class="col-sm-1 col-form-label btn btn-warning mb-2">Descrição</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" placeholder="Descrição do módulo" name="description"
+                    id="inputPassword" value="<?= isset($Post['description'])? $Post['description']: '' ?>">
+            </div>
+        </div>
+        <input type="submit" class="btn btn-primary" value="Cadastrar módulo">
     </form>
 </div>
 <?= $Component->getFooterDashboard(); ?>
