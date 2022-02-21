@@ -49,12 +49,9 @@ class Course {
 		if(empty($updateCourse['curso_titulo'])) {
 			$this->Error = 'É necessário atualizar ao menos um campo para finalizar atualização!';
 			$this->Result = false;
-		} elseif (empty($updateCourse['curso_descricao'])) {
-			$this->Error = 'É necessário atualizar ao menos um campo para finalizar atualização!';
-			$this->Result = false;
 		} else {
 			$Update = new Update();
-			$Update->ExeUpdate("cursos", $updateCourse, "WHERE curso_id = :id", "id={$updateCourse}");
+			$Update->ExeUpdate("cursos", $updateCourse, "WHERE curso_id = :ci", "ci={$updateCourse}");
 			if ($Update->getResult()) {
 				$this->Result = $Update->getResult();
 				$this->Error = "O curso foi atualizado com sucesso!";
