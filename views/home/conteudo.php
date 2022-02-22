@@ -29,9 +29,6 @@ echo $Component->getMenu();
     <div class="container">
         <div class="row">
             <div class="col-12 mx-auto text-center text-xl-start">
-                <div class="mt-n8 mt-md-n9 text-start">
-                    Produção de conteúdos para o Youtube
-                </div>
                 <div class="row py-5">
                     <div class="col-lg-7 col-md-7 z-index-2 position-relative px-md-2 px-sm-5 mx-auto mt-4">
                         <div class="d-flex justify-content-between align-items-center mb-2">
@@ -42,11 +39,11 @@ echo $Component->getMenu();
                             Acreditamos que as mídias sociais têm o poder de impulsionar conteúdos relevantes para as
                             pessoas. Então, usamos esta ferramenta de divulgação de conteúdos, o youtube, para criar e
                             postar conteúdos de qualidade.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
     </div>
 </section>
 
