@@ -46,7 +46,6 @@ echo $Component->getMenu();
         </div>
     </div>
 </section>
-
 <!-- Vídeos background -->
 <section class="py-5 bg-white">
     <div class="container px-5 my-5">
@@ -82,8 +81,6 @@ echo $Component->getMenu();
         </div>
     </div>
 </section>
-
-
 <section class="my-5 py-5">
     <div class="container">
         <div class="row align-items-center">
