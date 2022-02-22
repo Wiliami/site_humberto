@@ -51,13 +51,13 @@ echo $Component->getMenuDashboard();
                                             <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
                                         </span>
                                     </a> -->
-                                <a href="<?= BASE ?>/painel/courses/update" class="table-link" title="Atualizar <?= $Modulos['modulo_name']?>">
+                                <a href="<?= BASE ?>/painel/modules/update&module=<?= $Modulos['modulo_id'] ?>" class="table-link" title="Atualizar <?= $Modulos['modulo_name']?>">
                                     <span class="fa-stack">
                                         <i class="fa fa-square fa-stack-2x"></i>
                                         <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
                                     </span>
                                 </a>
-                                <a href="<?= BASE ?>/painel/courses/delete" class="table-link danger" title="Excluir <?= $Modulos['modulo_name'] ?>"
+                                <a href="<?= BASE ?>/painel/modules/delete&delete_module=<?= $Modulos['modulo_id'] ?>" class="table-link danger" title="Excluir <?= $Modulos['modulo_name'] ?>"
                                     title="Excluir curso">
                                     <span class="fa-stack">
                                         <i class="fa fa-square fa-stack-2x"></i>
