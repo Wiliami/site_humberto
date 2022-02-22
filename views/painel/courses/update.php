@@ -14,7 +14,7 @@ $CourseId = $_GET['curso'];
 ?>
 <div class="container card-header"> 
     <div class="card-header py-3 d-sm-flex align-items-center justify-content-between mb-2">
-        <h5 class="h3 mb-0 text-gray-800 ml-2">Atualizar cursos</h5>
+        <h5 class="h3 mb-0 text-gray-800">Atualizar cursos</h5>
         <a href="<?= BASE ?>/painel/courses/list" class="btn btn-success mb-2" title="Voltar para lista de cursos">Voltar</a>
     </div>
     <form method="">
@@ -23,6 +23,8 @@ $CourseId = $_GET['curso'];
         if(!empty($Post['update_course'])) {
             $udpateCourse['curso_titulo'] = $Post['course'];
             $udpateCourse['curso_descricao'] = $Post['description'];
+            $udpateCourse['curso_categoria'] = $Post['category'];
+            $udpateCourse['curso_valor'] = $Post['value'];
             $Course = new Course();
             $Course->updateCourse($udpateCourse);
             if($Course->getResult()) {
@@ -38,7 +40,7 @@ $CourseId = $_GET['curso'];
         if($Read->getResult()) {
             foreach($Read->getResult() as $Cursos) {
                 ?>
-        <h1 class="h5 mb-0 text-gray-800 ml-4 mb-4">Atualizar <?= $Cursos['curso_titulo'] ?></h1>
+        <h1 class="h5 mb-0 text-gray-800 mb-4">Atualizar <?= $Cursos['curso_titulo'] ?></h1>
         <div class="form-group">
             <label for="exampleInputEmail1">Curso</label>
             <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Nome do curso"  name="course" value="<?= $Cursos['curso_titulo'] ?>">
@@ -46,6 +48,14 @@ $CourseId = $_GET['curso'];
         <div class="form-group">
             <label for="exampleInputPassword1">Descrição</label>
             <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Descrição do curso" name="description" value="<?= $Cursos['curso_descricao'] ?>">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Categoria</label>
+            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Categoria do curso" name="category" value="<?= $Cursos['curso_categoria'] ?>">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Valor</label>
+            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Valor do curso" name="value" value="<?= $Cursos['curso_valor'] ?>">
         </div>
         <input type="submit" class="btn btn-primary" name="update_course" value="Atualizar curso">
     </form>

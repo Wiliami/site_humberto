@@ -10,7 +10,7 @@ echo $Component->getLiCoursesDashboard();
 echo $Component->getLiPagesDashboard();
 echo $Component->getMenuDashboard();
 ?>
-<div class="container">
+<div class="container card-header">
     <div class="d-sm-flex align-items-center justify-content-start mb-3">
         <i class="fas fa-layer-plus"></i>
         <h1 class="h3 mb-0 text-gray-800">Cadastro de cursos</h1>
@@ -23,15 +23,14 @@ echo $Component->getMenuDashboard();
             $CreateCourse['curso_titulo'] = $Post['title'];
             $CreateCourse['curso_descricao'] = $Post['description'];
             $CreateCourse['curso_categoria'] = $Post['category'];
+            $CreateCourse['curso_valor'] = $Post['value'];
             $Course = new Course();
             $Course->createCourse($CreateCourse);
             if($Course->getResult()) {
-                //header('Location: ' . BASE . '/painel/courses/update');
                 Error($Course->getError());
-                // cadastro realizado com sucesso
+                header('Location: ' . BASE . '/painel/courses/list');
             } else {
                 Error($Course->getError(), 'warning');
-                //falta os campos serem preenchidos nos inputs ou o input recebeu alguma informação errada
             }   
         }
         ?>
@@ -46,18 +45,23 @@ echo $Component->getMenuDashboard();
             value="<?= isset($Post['description'])? $Post['description']: '' ?>">
         </div>
         <div class="form-group">
+            <label for="exampleInputPassword1">Valor</label>
+            <input type="text" class="form-control" id="exampleInputPassword1" name="value" placeholder="Valor do curso" 
+            value="<?= isset($Post['value'])? $Post['value']: '' ?>">
+        </div>
+        <div class="form-group">
             <label for="example">Categoria</label>
                 <select class="form-control" id="inputPassword" name="category">
                 <?php
                 $Read = new Read();
                 $Read->FullRead('SELECT * FROM categoria_cursos');
-                    if($Read->getResult()) {
-                        foreach($Read->getResult() as $category) {
-                            echo "<option value='{$category['categoria_id']}'>{$category['categoria_name']}</option>";
-                        }
-                    } else {
-                        echo "<option value=''>Ainda não existem categorias!</option>"; 
+                if($Read->getResult()) {
+                    foreach($Read->getResult() as $category) {
+                        echo "<option value='{$category['categoria_id']}'>{$category['categoria_name']}</option>";
                     }
+                } else {
+                    echo "<option value=''>Ainda não existem categorias!</option>"; 
+                }
                 ?>
                 </select>
         </div>
