@@ -33,9 +33,6 @@ $deleteCourse = $_GET['delete'];
                 }
             } 
         ?>
-        <div class="px-4 py-sm-5 py-3">
-            ...
-        </div>
         <?php
         $Read = new Read();
         $Read->FullRead("SELECT * FROM cursos WHERE curso_id = :ci", "ci={$deleteCourse}");
@@ -55,7 +52,8 @@ $deleteCourse = $_GET['delete'];
             <label for="exampleInputPassword1">Categoria</label>
             <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Categoria do curso" name="categoria" value="<?= $Cursos['curso_categoria'] ?>">
         </div>
-        <input type="submit" class="btn btn-success mb-2" name="delete_course" id="" value="Excluir curso">
+        <input type="submit" class="btn btn-success mb-2" data-toggle="modal" data-target="#modalMatricula" 
+        name="delete_course" id="" value="Excluir curso">
     </form>
     <?php
         }
