@@ -10,3 +10,7 @@ echo $Component->getLiCoursesDashboard();
 echo $Component->getLiPagesDashboard();
 echo $Component->getMenuDashboard();
 ?>
+<div class="container">
+    <h1>Matriculas de usuários nas aulas</h1>
+</div>
+<?= $Component->getFooterDashboard(); ?>

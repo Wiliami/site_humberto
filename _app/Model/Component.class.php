@@ -713,6 +713,12 @@ class Component {
                         <a class="collapse-item" href="' . BASE . '/painel/admin/help">Ajuda</a>
                         <a class="collapse-item" href="' . BASE . '/painel/admin/suporte">Suporte</a>
                         <a class="collapse-item" href="' . BASE . '/painel/dashboard">Dashboard</a>
+
+                        <h6 class="collapse-header">Matrícula aulas</h6>
+                        <a class="collapse-item" href="' . BASE . '/painel/matriculas/create">Cadastrar matrículas</a>
+                        <a class="collapse-item" href="' . BASE . '/painel/matriculas/list">Lista de matrículas</a>
+                        <a class="collapse-item" href="' . BASE . '/painel/matriculas/update">Atualizar matrículas</a>
+                        <a class="collapse-item" href="' . BASE . '/painel/matriculas/delete">Excluir matrículas</a>
                     </div>
                 </div>
             </li>
@@ -817,8 +823,7 @@ class Component {
                             <a class="collapse-item" href="' . BASE . '/painel/dashboard">Dashboard</a>
                         </div>
                     </div>
-                </li>
-                ';
+                </li>';
             }
         }        
 
