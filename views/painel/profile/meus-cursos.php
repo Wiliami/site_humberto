@@ -18,9 +18,9 @@ echo $Component->getMenuDashboard();
 <div class="row gx-5 container">
 <?php
 $Read = new Read();
-$Read->FullRead("SELECT * FROM cursos");
+$Read->FullRead("SELECT m.* FROM matriculas m LEFT JOIN cursos c ON c.curso_id = m.matricula_id");
 if($Read->getResult()) {
-    foreach($Read->getResult() as $Cursos) {
+    foreach($Read->getResult() as $Matricula) {
         ?>
     <div class="col-lg-4 mb-5">
         <div class="card h-100 shadow border-0">
@@ -28,16 +28,16 @@ if($Read->getResult()) {
             <div class="card-body p-4">
                 <div class="badge bg-success bg-gradient rounded-pill mb-2 text-white">Curso</div>
                 <a class="text-decoration-none link-dark stretched-link" href="<?= BASE ?>/painel/profile/aulas">
-                    <h5 class="card-title mb-3"><?= $Cursos['curso_titulo'] ?></h5>
+                    <h5 class="card-title mb-3"><?= $Matricula['user_'] ?></h5>
                 </a>
-                <p class="card-text mb-0"><?= $Cursos['curso_descricao'] ?></p>
+                <p class="card-text mb-0"><?= $Matricula['curso_descricao'] ?></p>
                 <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
                     <div class="d-flex align-items-end justify-content-between">
                         <div class="d-flex align-items-center">
                             <img class="rounded-circle me-3" src="https://dummyimage.com/40x40/ced4da/6c757d" alt="..." />
                             <div class="small">
-                                <div class="fw-bold"><?= $Cursos['curso_categoria'] ?></div>
-                                <div class="text-muted"><?= $Cursos['curso_create_date'] ?></div>
+                                <div class="fw-bold"><?= $Matricula['curso_categoria'] ?></div>
+                                <div class="text-muted"><?= $Matricula['matricula_valor_pago'] ?></div>
                             </div>
                         </div>
                     </div>
@@ -48,7 +48,7 @@ if($Read->getResult()) {
     <?php
         }
     } else {
-        Error("Ainda não exite cursos cadastrados!");
+        Error("Você não estar matriculado em nenhum curso!");
     }   
     ?>
 </div>
