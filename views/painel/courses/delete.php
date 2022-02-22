@@ -36,9 +36,9 @@ $deleteCourse = $_GET['delete'];
         <?php
         $Read = new Read();
         $Read->FullRead("SELECT * FROM cursos WHERE curso_id = :ci", "ci={$deleteCourse}");
-            if($Read->getResult()) {
-                foreach($Read->getResult() as $Cursos) {
-                    ?>
+        if($Read->getResult()) {
+            foreach($Read->getResult() as $Cursos) {
+                ?>
         <h1 class="h5 mb-0 text-gray-800 ml-4 mb-4">Excluir <?= $Cursos['curso_titulo'] ?></h1>
         <div class="form-group">
             <label for="exampleInputEmail1">Curso</label>
@@ -56,10 +56,10 @@ $deleteCourse = $_GET['delete'];
         name="delete_course" id="" value="Excluir curso">
     </form>
     <?php
-        }
-    } else {
-        Error("Nenhum curso foi selecionado para excluir!");
-    }
+        } 
+    } else { 
+        Error("Nenhum curso foi selecionado para excluir!"); 
+    } 
     ?>
 </div>
 <?= $Component->getFooterDashboard(); ?>
