@@ -90,9 +90,6 @@ class Course {
 				} elseif (empty($dataModule["modulo_descricao"])) {
 					$this->Error = "O módulo precisa de uma descrição!";
 					$this->Result = false;
-				} elseif(empty($dataModule["modulo_ordem"])) {
-					$this->Error = "O módulo precisa de uma ordem para ser cadastrado!";
-					$this->Result = false;
 				} else {
 					$dataModule['modulo_create_date'] = date('Y-m-d H:i:s');
 					$Create = new Create();

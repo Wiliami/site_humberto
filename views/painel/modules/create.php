@@ -22,7 +22,6 @@ echo $Component->getMenuDashboard();
         if(!empty($Post['register_module'])) {
             $CreateModule['modulo_name'] = $Post['module'];
             $CreateModule['modulo_descricao'] = $Post['description'];
-            $CreateModuel['modulo_ordem'] = $Post['order'];
             $Course = new Course();
             $Course->createModule($CreateModule);
             if($Course->getResult()) {
@@ -42,11 +41,6 @@ echo $Component->getMenuDashboard();
             <label for="exampleInputEmail1" class="form-label">Descrição</label>
             <input type="text" class="form-control" id="exampleInputEmail1" name="description" placeholder="Descrição do módulo"
             value="<?= isset($Post['description'])? $Post['description']: '' ?>">
-        </div>
-        <div class="mb-3">
-            <label for="inputPassword" class="form-label">Ordem</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" name="order" placeholder="Ordem do módulo"
-            value="<?= isset($Post['order'])? $Post['order']: '' ?>">
         </div>
         <input type="submit" class="btn btn-primary" name="register_module" value="Cadastrar módulo">
     </form>
