@@ -1133,6 +1133,10 @@ class Component {
         }
     }
 
+    public function getBlockPageAcessCourses() {
+        return header('Location:' . BASE . '/painel/dashboard');
+    }
+
 
 
     public function algumacoisa() {

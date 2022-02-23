@@ -28,7 +28,7 @@ echo $Component->getMenuDashboard();
             <div class="card-body">
                 <h5 class="card-title"><?= $Cursos['curso_titulo'] ?></h5>
                 <p class="card-text"><?= $Cursos['curso_descricao'] ?></p>
-                <a href="#" class="text-black">R$<?= number_format($Cursos['curso_valor'], 2, ',', '.') ?><a>
+                <a href="<?= BASE ?>/painel/profile/compra-curso" class="text-black">R$<?= number_format($Cursos['curso_valor'], 2, ',', '.') ?></a>
             </div>
         </div>
         <?php
@@ -37,6 +37,6 @@ echo $Component->getMenuDashboard();
             Error("Não exise cursos para exibir!");
         }
         ?>
-    </div>
+    </a>
 </div>
 <?= $Component->getFooterDashboard(); ?>
