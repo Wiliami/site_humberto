@@ -16,17 +16,17 @@ echo $Component->getMenuDashboard();
     </div>
 </div>
 <div class="row gx-5 container">
-<?php
-$Read = new Read();
-$Read->FullRead("SELECT m.*, c.curso_titulo, c.curso_descricao
+    <?php
+    $Read = new Read();
+    $Read->FullRead("SELECT m.*, c.curso_titulo, c.curso_descricao
             FROM matriculas m 
             LEFT JOIN users u ON u.user_id = m.user_id
             LEFT JOIN cursos c ON c.curso_id = m.curso_id 
             WHERE m.user_id = :id
-            ", "id={$_SESSION['login']['user_id']}"); // tabela matriculas
-if($Read->getResult()) {
-    foreach($Read->getResult() as $Matriculas) {
-        ?>
+            ", "id={$_SESSION['login']['user_id']}");
+    if($Read->getResult()) {
+        foreach($Read->getResult() as $Matriculas) {
+            ?>
     <div class="col-lg-4 mb-5">
         <div class="card h-100 shadow border-0">
             <img src="<?= BASE ?>/src/images/page-sobre.jpg" alt="imagem de fundo"/>

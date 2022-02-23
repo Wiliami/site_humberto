@@ -17,7 +17,7 @@ $CourseId = $_GET['curso'];
         <h5 class="h3 mb-0 text-gray-800">Atualizar cursos</h5>
         <a href="<?= BASE ?>/painel/courses/list" class="btn btn-success mb-2" title="Voltar para lista de cursos">Voltar</a>
     </div>
-    <form method="">
+    <form method="GET">
         <?php
         $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
         if(!empty($Post['update_course'])) {
@@ -34,13 +34,6 @@ $CourseId = $_GET['curso'];
             }   
         }
         ?>
-
-        <!--
-            $Read->FullRead("SELECT u.*, ul.level_desc 
-            FROM users u 
-            LEFT JOIN users_levels ul ON ul.level_id = u.user_level");
-        ?> -->
-
         <?php 
         $Read = new Read();
         $Read->FullRead("SELECT * FROM cursos WHERE curso_id = :ci", "ci={$CourseId}");
@@ -62,7 +55,7 @@ $CourseId = $_GET['curso'];
         </div>
         <div class="form-group">
             <label for="exampleInputPassword1">Valor</label>
-            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Valor do curso" name="value" value="<?= $Cursos['curso_valor'] ?>">
+            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Valor do curso" name="value" value="R$<?= number_format($Cursos['curso_valor'], 2, ',', '.') ?>">
         </div>
         <input type="submit" class="btn btn-primary" name="update_course" value="Atualizar curso">
     </form>
