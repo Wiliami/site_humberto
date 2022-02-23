@@ -3,6 +3,24 @@ class Course {
     private $Error;
 	private $Result;
 
+	public function matriculateCourse($matriculate) {
+		if(empty($matriculate['categoria_name'])) {
+			$this->Error = "Campo obrigatório!";
+			$this->Resutl = false;
+		} else {
+			$matriculate['matricula_create_date'] = date('Y-m,d H:i:s');
+			$Create = new Create();
+			$Create->ExeCreate('matriculas', $matriculate);
+			if($Read->getResult()) {
+				$this->Result = $Create->getResult();
+				$this->Error = "A matrícula foi feita com sucesso!";
+			} else {
+				$this->Result = false;
+				$this->Error = $Create->getError();
+			}
+		}
+	}
+	
 	public function createCategoryCourse($category) {
 		if(empty($category['categoria_name'])) {
 			$this->Error = "Campo obrigatório!";

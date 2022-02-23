@@ -13,30 +13,41 @@ echo $Component->getMenuDashboard();
 <div class="container">
     <div class="d-sm-flex align-items-center justify-content-start mb-4">
         <i class="fas fa-layer-plus"></i>
-        <h1 class="h3 mb-0 text-gray-800 ml-4">Matrículas</h1>
+        <h1 class="h3 mb-0 text-gray-800">Matrículas</h1>
     </div>
     <form method="post">
-        <div class="form-group row ml-4">         
-            <label for="exampleInputEmail1 btn btn-warning">Matrícula</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" name="" placeholder="Nome da aula" 
-            value="<?= isset($Post['matriculate'])? $Post['matriculate']: '' ?>">
+        <?php
+        $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+        if(!empty($Post['matriculate_course'])) {
+            $MatriculateCourse['matricula_id'] = $Post['matriculate_course'];
+            $Course = new Course();
+            $Course->matriculateCourse($MatriculateCourse);
+                if($Course->getResult()) {
+                    Error($Course->getResult());
+                } else {
+                    Error($Course->getError(), 'warning');
+                }
+        }
+        ?>
+        <div class="form-group">         
+            <label for="exampleInputEmail1">Matrícula</label>
+            <select class="form-control" id="" name="matriculate_course" value="<?= isset($Post['matriculate_course'])? $Post['matriculate_course']: '' ?>">
+                <?php
+                $Read = new Read();
+                $Read->FullRead("SELECT * FROM cursos");
+                if($Read->getResult()) {
+                        echo "<option value=''>Selecionar</option>";
+                    foreach($Read->getResult() as $Cursos) {
+                        echo "<option value='{$Cursos['curso_id']}'>{$Cursos['curso_titulo']}</option>";
+                    }
+                }
+                else {
+                    echo "<option value=''>Ainda não existem cursos disponíveis!</option>";
+                }
+                ?>
+            </select>
         </div>
-        <div class="form-group row ml-4">
-            <label for="exampleInputEmail1">URL</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" name="" placeholder="URL da aula" 
-            value="<?= isset($Post['url'])? $Post['url']: '' ?>">
-        </div>
-        <div class="form-group row ml-4">
-            <label for="exampleInputEmail1">Link</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" name="" placeholder="Link da aula" 
-            value="<?= isset($Post['link'])? $Post['link']: '' ?>">
-        </div>
-        <div class="form-group row ml-4">
-            <label for="exampleInputEmail1">Aulas</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" name="" placeholder="Nome das aulas" 
-            value="<?= isset($Post['lesson'])? $Post['lesson']: '' ?>">
-        </div> 
-        <input type="submit" class="btn btn-success mb-2 ml-4" name="register_matricula" value="Matricular">
+        <input type="submit" class="btn btn-success mb-2" name="register_matriculate" value="Matricular">
     </form>
 </div>
 <?= $Component->getFooterDashboard(); ?>
