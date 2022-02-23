@@ -124,20 +124,23 @@ class Course {
 
 
 		public function createLesson($dataLesson) {
-			if(empty($dataLesson['aula_name'])) {
+			if(empty($dataLesson['curso_titulo'])) {
+				$this->Error = "Selecione um curso para cadastrar a aula!";
+				$this->Result = false;
+			} elseif(empty($dataLesson['modulo_name'])) {
+				$this->Error = "Selecione um módulo para cadastrar a aula";
+				$this->Result = false;
+			} elseif(empty($dataLesson['aula_name'])) {
 				$this->Error = "A aula precisa de um nome!";
 				$this->Result = false;
-			// } elseif(empty($dataLesson['modulo_name'])) {
-			// 	$this->Error = "O módulo precisa de um nome!";
-			// 	$this->Result = false; 
-			// } elseif(empty($dataLesson['aula_name'])) {
-			// 	$this->Error = "A aula precisa de um nome!";
-			// 	$this->Result = false;
 			} elseif(empty($dataLesson['aula_duracao'])) {
-				$this->Error = "A aula precisa de um tempo de duração!";
+				$this->Error = "Ops! Qual é a duração da aula?";
+				$this->Result = false;
+			} elseif(empty($dataLesson['aula_url'])) {
+				$this->Error = "A aula precisa de uma url!";
 				$this->Result = false;
 			} else {
-				$dataLesson['aula_create_date'] = date('d-m-Y H:i:s');
+				$dataLesson['aula_create_date'] = date('Y-m-d H:i:s');
 				$Create = new Create();
 				$Create->exeCreate("aulas", $dataLesson); // eu estou enviando a criação de aulas para a tabela de aulas.
 				if($Create->getResult()) {
