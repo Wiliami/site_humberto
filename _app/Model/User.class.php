@@ -50,14 +50,6 @@ class User {
 			}
 		}	
 	}
-	
-
-	public function getResult() {
-		return $this->Result;
-	}
-	public function getError() {
-		return $this->Error;
-	}
 
 	private function verifyDuplicateUserEmail($email ) {
 		$Read = new Read();
@@ -177,6 +169,13 @@ class User {
 		} else {
 			return false;
 		}
+	}
+
+	public function getResult() {
+		return $this->Result;
+	}
+	public function getError() {
+		return $this->Error;
 	}
 }
 ?>

@@ -30,38 +30,43 @@ echo $Component->getMenuDashboard();
                     </thead>
                     <tbody>
                         <?php
-                            $Read = new Read();
-                            $Read->FullRead("SELECT c.*, u.user_name FROM cursos c LEFT JOIN users u ON u.user_id");
-                            if($Read->getResult()) {
-                                foreach($Read->getResult() as $Cursos) {
-                                    ?>
+                        $Read = new Read();
+                        $Read->FullRead("SELECT c.*, u.user_name, p.curso_titulo, p.curso_valor
+                            FROM compras c 
+                            LEFT JOIN users u ON u.user_id = c.user_id
+                            LEFT JOIN cursos p ON p.curso_id = c.curso_id
+                            WHERE c.user_id = :id
+                            ", "id={$_SESSION['login']['user_id']}");
+                        if($Read->getResult()) {
+                            foreach($Read->getResult() as $Cursos) {
+                                ?>
                         <tr>
                             <td>
                                 <span><?= $Cursos['curso_titulo'] ?></span>
                             </td>
                             <td>
-                                <span><?= $Cursos['curso_create_date'] ?></span>
+                                <span><?= date('d/m/Y', strtotime($Cursos['compra_date'])) ?></span>
                             </td>
                             <td>
-                                <span><?= $Cursos['curso_valor'] ?></span>
+                                <span>R$<?= number_format($Cursos['curso_valor'], 2, ',', '.') ?></span>
                             </td>
                             <td>
                                 <span><?= $Cursos['user_name'] ?></span>
                             </td>
                             <td style="width: 20%;">
-                                <a href="/" class="table-link">
+                                <a href="/" class="table-link" title="Pesquisar <?= $Cursos['curso_titulo'] ?>">
                                     <span class="fa-stack">
                                         <i class="fa fa-square fa-stack-2x"></i>
                                         <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
                                     </span>
                                 </a>
-                                <a href="/" class="table-link">
+                                <a href="/" class="table-link" title="Atualizar <?= $Cursos['curso_titulo'] ?>">
                                     <span class="fa-stack">
                                         <i class="fa fa-square fa-stack-2x"></i>
                                         <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
                                     </span>
                                 </a>
-                                <a href="/" class="table-link danger">
+                                <a href="/" class="table-link danger" title="Excluir <?= $Cursos['curso_titulo'] ?>">
                                     <span class="fa-stack">
                                         <i class="fa fa-square fa-stack-2x"></i>
                                         <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
@@ -72,7 +77,7 @@ echo $Component->getMenuDashboard();
                         <?php
                                 }
                             } else {
-                                Error("Ainda não existem usuários!");
+                                Error("Ainda não existem compras!");
                             }   
                             ?>
                     </tbody>
