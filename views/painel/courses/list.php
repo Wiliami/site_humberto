@@ -25,6 +25,7 @@ echo $Component->getMenuDashboard();
                             <th><span>Data de cadastro</span></th>
                             <th><span>Descrição</span></th>
                             <th><span>Categoria</span></th>
+                            <th><span>Valor curso</span></th>
                             <th><span>Opções</span></th>
                         </tr>
                     </thead>
@@ -49,12 +50,9 @@ echo $Component->getMenuDashboard();
                                 <span><?= $Cursos['curso_categoria'] ?></span>
                             </td>
                             <td>
-                                <!-- <a href="<?= BASE ?>/" class="table-link" title="Pesquisar usuários">
-                                        <span class="fa-stack">
-                                            <i class="fa fa-square fa-stack-2x"></i>
-                                            <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
-                                        </span>
-                                    </a> -->
+                                <span>R$<?= number_format($Cursos['curso_valor'], 2, ',', '.') ?></span>
+                            </td>
+                            <td>
                                 <a href="<?= BASE ?>/painel/courses/update&curso=<?= $Cursos['curso_id'] ?>" class="table-link" title="Editar <?= $Cursos['curso_titulo'] ?>">
                                     <span class="fa-stack">
                                         <i class="fa fa-square fa-stack-2x"></i>
