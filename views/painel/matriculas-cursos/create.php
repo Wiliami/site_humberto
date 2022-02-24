@@ -36,7 +36,9 @@ echo $Component->getMenuDashboard();
                 value="<?= isset($Post['matriculate_course'])? $Post['matriculate_course']: '' ?>">
                 <?php
                 $Read = new Read();
-                $Read->FullRead("SELECT * FROM cursos");
+                $Read->FullRead("SELECT c.*, u.user_name
+                    FROM cursos c
+                    LEFT JOIN users u ON u.user_id = c.user_id");
                     if($Read->getResult()) {
                         echo "<option value=''>selecionar</option>";
                         foreach($Read->getResult() as $Cursos) {
@@ -47,14 +49,13 @@ echo $Component->getMenuDashboard();
             <select class="form-control" name="matriculate_user_course" 
                 value="<?= isset($Post['matriculate_user_course'])? $Post['matriculate_user_course']: '' ?>">
                 <?php
-                    echo "<option value=''>selecionar</option>";
-                    foreach($Read->getResult() as $User) {
-                            echo "<option value='{$User['user_id']}'>{$User['user_name']}</option>";
-                        } 
+                            foreach($Read->getResult() as $Users) {
+                                echo "<option value='{$Users['user_id']}'>{$Users['user_name']}</option>";
+                            } 
+                        }
+                    } else {
+                        echo "<option value=''>Não existe lista de cursos ou usuários!</option>";
                     }
-                } else {
-                    echo "<option value=''>Não existe lista de cursos ou usuários!</option>";
-                }
                 ?>
             </select>
         </div>
