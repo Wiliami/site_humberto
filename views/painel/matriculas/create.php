@@ -18,8 +18,8 @@ echo $Component->getMenuDashboard();
     <form method="post">
         <?php
         $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
-        if(!empty($Post['matriculate_course'])) {
-            $MatriculateCourse['matricula_id'] = $Post['matriculate_course'];
+        if(!empty($Post['register_matriculate'])) {
+            $MatriculateCourse['matricula_name'] = $Post['matriculate_course'];
             $Course = new Course();
             $Course->matriculateCourse($MatriculateCourse);
                 if($Course->getResult()) {
@@ -30,7 +30,7 @@ echo $Component->getMenuDashboard();
         }
         ?>
         <div class="form-group">         
-            <label for="exampleInputEmail1">Matrícula</label>
+            <label for="exampleInputEmail1">Matricular em curso</label>
             <select class="form-control" id="" name="matriculate_course" value="<?= isset($Post['matriculate_course'])? $Post['matriculate_course']: '' ?>">
                 <?php
                 $Read = new Read();
@@ -40,8 +40,7 @@ echo $Component->getMenuDashboard();
                     foreach($Read->getResult() as $Cursos) {
                         echo "<option value='{$Cursos['curso_id']}'>{$Cursos['curso_titulo']}</option>";
                     }
-                }
-                else {
+                } else {
                     echo "<option value=''>Ainda não existem cursos disponíveis!</option>";
                 }
                 ?>

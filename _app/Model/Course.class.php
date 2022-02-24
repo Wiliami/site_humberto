@@ -4,11 +4,11 @@ class Course {
 	private $Result;
 
 	public function matriculateCourse($matriculate) {
-		if(empty($matriculate['categoria_name'])) {
+		if(empty($matriculate['curso_titulo'])) {
 			$this->Error = "Campo obrigatório!";
 			$this->Resutl = false;
 		} else {
-			$matriculate['matricula_create_date'] = date('Y-m,d H:i:s');
+			$matriculate['matricula_create_date'] = date('Y-m-d H:i:s');
 			$Create = new Create();
 			$Create->ExeCreate('matriculas', $matriculate);
 			if($Read->getResult()) {
