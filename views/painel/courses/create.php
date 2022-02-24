@@ -10,7 +10,7 @@ echo $Component->getLiCoursesDashboard();
 echo $Component->getLiPagesDashboard();
 echo $Component->getMenuDashboard();
 ?>
-<div class="container card-header">
+<div class="container">
     <div class="d-sm-flex align-items-center justify-content-start mb-3">
         <i class="fas fa-layer-plus"></i>
         <h1 class="h3 mb-0 text-gray-800">Cadastro de cursos</h1>
@@ -28,7 +28,7 @@ echo $Component->getMenuDashboard();
             $Course->createCourse($CreateCourse);
             if($Course->getResult()) {
                 Error($Course->getError());
-                header('Location: ' . BASE . '/painel/courses/list');
+                //header('Location: ' . BASE . '/painel/courses/list');
             } else {
                 Error($Course->getError(), 'warning');
             }   
@@ -56,6 +56,7 @@ echo $Component->getMenuDashboard();
                 $Read = new Read();
                 $Read->FullRead('SELECT * FROM categoria_cursos');
                 if($Read->getResult()) {
+                        echo "<option value=''>Selecionar</option>";
                     foreach($Read->getResult() as $category) {
                         echo "<option value='{$category['categoria_id']}'>{$category['categoria_name']}</option>";
                     }
