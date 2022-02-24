@@ -714,9 +714,15 @@ class Component {
                         <a class="collapse-item" href="' . BASE . '/painel/admin/suporte">Suporte</a>
                         <a class="collapse-item" href="' . BASE . '/painel/dashboard">Dashboard</a>
 
+                        <h6 class="collapse-header">Matrícula cursos</h6>
+                        <a class="collapse-item" href="' . BASE . '/painel/matriculas/create">Cadastrar matrícula</a>
+                        <a class="collapse-item" href="' . BASE . '/painel/matriculas/create">Lista de matriculados</a>
+                        <a class="collapse-item" href="' . BASE . '/painel/matriculas/create">Atualizar matrículas</a>
+                        <a class="collapse-item" href="' . BASE . '/painel/matriculas/create">Excluir matrículas</a>
+
                         <h6 class="collapse-header">Matrícula aulas</h6>
-                        <a class="collapse-item" href="' . BASE . '/painel/matriculas/create">Cadastrar matrículas</a>
-                        <a class="collapse-item" href="' . BASE . '/painel/matriculas/list">Lista de matrículas</a>
+                        <a class="collapse-item" href="' . BASE . '/painel/matriculas/create">Cadastrar matrícula</a>
+                        <a class="collapse-item" href="' . BASE . '/painel/matriculas/list">Lista de matriculados</a>
                         <a class="collapse-item" href="' . BASE . '/painel/matriculas/update">Atualizar matrículas</a>
                         <a class="collapse-item" href="' . BASE . '/painel/matriculas/delete">Excluir matrículas</a>
                     </div>
