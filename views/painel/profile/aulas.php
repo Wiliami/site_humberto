@@ -10,19 +10,29 @@ echo $Component->getHeadHtmlDashboard();
         <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?= BASE ?>/painel/dashboard">
             <div class="sidebar-brand-icon rotate-n-15"></div>
         </a>
-        <li class="nav-item active">
-            <a class="nav-link" href="<?= BASE ?>/painel/dashboard">
-                <i class="fas fa-fw fa-tachometer-alt"></i>
-                <span>Painel</span>
-            </a>
-        </li>
-        <hr class="sidebar-divider">
         <?php
         $Read = new Read();
+        $Read->FullRead("SELECT * FROM cursos LIMIT 1");
+            if($Read->getResult()) {
+                foreach($Read->getResult() as $Cursos) {
+                    ?>
+        <li class="nav-item active">
+            <a class="nav-link" href="<?= BASE ?>/painel/dashboard">
+                <span><?= $Cursos['curso_titulo'] ?></span>
+            </a>
+        </li>
+        <?php
+            }
+        } else {
+            Error("Ainda não existe cursos!");
+        }
+        ?>
+        <hr class="sidebar-divider">
+        <?php
         $Read->FullRead("SELECT * FROM modulos");
-        if($Read->getResult()) {
-            foreach($Read->getResult() as $Modulos) {
-                ?>
+            if($Read->getResult()) {
+                foreach($Read->getResult() as $Modulos) {
+                    ?>
         <li class="nav-item">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse<?= $Modulos['modulo_id'] ?>" aria-expanded="true" aria-controls="collapseTwo">
                 <i class="fas fa-fw fa-folder"></i>
