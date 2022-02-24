@@ -715,16 +715,16 @@ class Component {
                         <a class="collapse-item" href="' . BASE . '/painel/dashboard">Dashboard</a>
 
                         <h6 class="collapse-header">Matrícula cursos</h6>
-                        <a class="collapse-item" href="' . BASE . '/painel/matriculas/create">Cadastrar matrícula</a>
-                        <a class="collapse-item" href="' . BASE . '/painel/matriculas/create">Lista de matriculados</a>
-                        <a class="collapse-item" href="' . BASE . '/painel/matriculas/create">Atualizar matrículas</a>
-                        <a class="collapse-item" href="' . BASE . '/painel/matriculas/create">Excluir matrículas</a>
+                        <a class="collapse-item" href="' . BASE . '/painel/matriculas-cursos/create">Cadastrar matrícula</a>
+                        <a class="collapse-item" href="' . BASE . '/painel/matriculas-cursos/list">Lista de matriculados</a>
+                        <a class="collapse-item" href="' . BASE . '/painel/matriculas-cursos/update">Atualizar matrículas</a>
+                        <a class="collapse-item" href="' . BASE . '/painel/matriculas-cursos/delete">Excluir matrículas</a>
 
                         <h6 class="collapse-header">Matrícula aulas</h6>
-                        <a class="collapse-item" href="' . BASE . '/painel/matriculas/create">Cadastrar matrícula</a>
-                        <a class="collapse-item" href="' . BASE . '/painel/matriculas/list">Lista de matriculados</a>
-                        <a class="collapse-item" href="' . BASE . '/painel/matriculas/update">Atualizar matrículas</a>
-                        <a class="collapse-item" href="' . BASE . '/painel/matriculas/delete">Excluir matrículas</a>
+                        <a class="collapse-item" href="' . BASE . '/painel/matriculas-aulas/create">Cadastrar matrícula</a>
+                        <a class="collapse-item" href="' . BASE . '/painel/matriculas-aulas/list">Lista de matriculados</a>
+                        <a class="collapse-item" href="' . BASE . '/painel/matriculas-aulas/update">Atualizar matrículas</a>
+                        <a class="collapse-item" href="' . BASE . '/painel/matriculas-aulas/delete">Excluir matrículas</a>
                     </div>
                 </div>
             </li>
