@@ -31,30 +31,28 @@ if($User->verifyLoginUserON()) {
                     <div class="col-lg-4 col-md-6 mx-auto">
                         <div class="card card-register">
                             <?php 
-                        $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
-                        if(!empty($Post['login'])) {
-                            $User = new User();
-                            $User->exeLogin($Post['email'], $Post['password']);
-                            if($User->getResult()) {
-                                Error($User->getError());
-                                header('Location: ' . BASE . '/painel/dashboard');
-                                die();
-                            } else {
-                                Error($User->getError(), 'danger');
-                            }
-                        } 
-                        ?>
+                            $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+                            if(!empty($Post['login'])) {
+                                $User = new User();
+                                $User->exeLogin($Post['email'], $Post['password']);
+                                if($User->getResult()) {
+                                    Error($User->getError());
+                                    header('Location: ' . BASE . '/painel/dashboard');
+                                    die();
+                                } else {
+                                    Error($User->getError(), 'danger');
+                                }
+                            } 
+                            ?>
                             <h3 class="title mx-auto text-bolder">Já é um membro?</h3>
                             <h5 class="title mx-auto text-bolder">Então entre com seus dados com login e senha.</h5>
+                            <?php 
+                            $User = new User();
+                            if($User->verifyLoginUserON() === true ) {
+                                Error('Sessão esgotada! Faça login novamente!', 'danger');
+                            }                               
+                            ?>
                             <form method="post">
-                                <?php 
-                                $User = new User();
-                                if($User->verifyLoginUserON() === true ){
-                                    return true;
-                                } else {
-                                    echo 'Error';
-                                }                               
-                                ?>
                                 <label class="text-white text-bolder">E-mail</label>
                                 <div class="input-group form-group-no-border">
                                     <div class="input-group-prepend">

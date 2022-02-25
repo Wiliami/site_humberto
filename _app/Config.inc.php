@@ -7,7 +7,7 @@ function MyAutoLoad($Class) {
     $cDir = ['Conn', 'Helpers', 'Model'];
     $iDir = null;
     foreach($cDir as $dirName) {
-        $File = __DIR__ . '/' . $dirName . '/' . $Class. '.class.php';
+        $File = __DIR__ . '/' . $dirName . '/' . $Class. '.class.php'; // Nome.class.php
         if(!$iDir && file_exists($File) && !is_dir($File)) {
             include_once($File); 
             $iDir = true;                                        
