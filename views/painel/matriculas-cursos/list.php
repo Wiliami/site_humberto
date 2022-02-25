@@ -17,12 +17,12 @@ echo $Component->getMenuDashboard();
         </div>
         <div class="card-body">
             <div class="table-responsive">
-                <table id="table-lista-matriculas" class="table table-striped table-bordered" style="width: 100%;">
+                <table id="table-lista-matriculas" class="table table-striped table-bordered">
                     <thead>
                         <tr>
-                            <th><span>Nome do curso</span></th>
+                            <th><span>Curso</span></th>
+                            <th><span>Usuário matriculado</span></th>
                             <th><span>Data de cadastro</span></th>
-                            <th><span>Duração da aula</span></th>
                             <th><span>Opções</span></th>
                         </tr>
                     </thead>
@@ -44,13 +44,13 @@ echo $Component->getMenuDashboard();
                                 <span><?= $Matriculas['matricula_usuario'] ?></span>
                             </td>
                             <td>
-                                <a href="<?= BASE ?>/painel/matriculas/update&matricula=<?= $Matriculas['matricula_id'] ?>" class="table-link" title="Editar <?= $Matriculas['matricula_name'] ?>">
+                                <a href="<?= BASE ?>/painel/matriculas-cursos/update&matricula=<?= $Matriculas['matricula_id'] ?>" class="table-link" title="Editar <?= $Matriculas['matricula_name'] ?>">
                                     <span class="fa-stack">
                                         <i class="fa fa-square fa-stack-2x"></i>
                                         <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
                                     </span>
                                 </a>
-                                <a href="<?= BASE ?>/painel/matriculas/delete&delete_matricula=<?= $Matriculas['matricula_id'] ?>" class="table-link danger" title="Excluir <?= $Matriculas['matricula_name'] ?>">
+                                <a href="<?= BASE ?>/painel/matriculas-cursos/delete&delete_matricula=<?= $Matriculas['matricula_id'] ?>" class="table-link danger" title="Excluir <?= $Matriculas['matricula_name'] ?>">
                                     <span class="fa-stack">
                                         <i class="fa fa-square fa-stack-2x"></i>
                                         <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>

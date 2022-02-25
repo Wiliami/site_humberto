@@ -18,7 +18,7 @@ echo $Component->getMenuDashboard();
         </div>
         <div class="card-body">
             <div class="table-responsive">
-                <table id="table-lista-cursos" class="table table-striped table-bordered" style="width: 100%;">
+                <table id="table-lista-cursos" class="table table-striped table-bordered">
                     <thead>
                         <tr>
                             <th><span>Nome da aula</span></th>
