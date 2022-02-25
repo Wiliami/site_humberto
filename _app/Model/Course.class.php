@@ -5,8 +5,11 @@ class Course {
 
 	public function matriculateCourse($matriculate) {
 		if(empty($matriculate['curso_titulo'])) {
-			$this->Error = "Campo obrigatório!";
+			$this->Error = "Selecione um curso!";
 			$this->Resutl = false;
+		}elseif(empty($matriculate['user_name'])) {
+			$this->Error = "Selecione um usuário!";
+			$this->Result = false;
 		} else {
 			$matriculate['matricula_create_date'] = date('Y-m-d H:i:s');
 			$Create = new Create();

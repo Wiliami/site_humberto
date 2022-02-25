@@ -19,12 +19,12 @@ echo $Component->getMenuDashboard();
         <?php
         $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
         if(!empty($Post['register_matriculate'])) {
-            $MatriculateCourse['matricula_curso'] = $Post['matriculate_course'];
-            $MatriculateCourse['matricula_curso_usuario'] = $Post['matriculate_user_course'];
+            $MatriculateCourse['matricula_id'] = $Post['matriculate_course'];
+            $MatriculateCourse['matricula_curso_usuario'] = $Post['matriculate_user'];
             $Course = new Course();
             $Course->matriculateCourse($MatriculateCourse);
-            if($Course->getResult()) {
-                Error($Course->getResult());
+            if($Course->getResult()) { 
+                Error($Course->getResult());    
             } else {
                 Error($Course->getError(), 'warning');
             }
@@ -33,32 +33,35 @@ echo $Component->getMenuDashboard();
         <div class="form-group">         
             <label for="exampleInputEmail1">Curso</label>
             <select class="form-control" name="matriculate_course" value="<?= isset($Post['matriculate_course'])? $Post['matriculate_course']: '' ?>">
-            <?php
-            $Read = new Read();
-            $Read->FullRead("SELECT c.*, u.user_name
-                FROM cursos c
-                LEFT JOIN users u ON u.user_id = c.user_id");
+                <?php
+                $Read = new Read();
+                $Read->FullRead("SELECT * FROM cursos");
                 if($Read->getResult()) {
                     echo "<option value=''>selecionar</option>";
                     foreach($Read->getResult() as $Cursos) {
                         echo "<option value='{$Cursos['curso_id']}'>{$Cursos['curso_titulo']}</option>";
-                            ?> 
-            </select>    
-            <label for="exampleInputEmail1">Escolher usuário</label>
-            <select class="form-control" name="matriculate_user_course" value="<?= isset($Post['matriculate_user_course'])? $Post['matriculate_user_course']: '' ?>">
-            <?php
-                        echo "<option value=''>selecionar</option>";
-                        foreach($Read->getResult() as $Users) {
-                            echo "<option value='{$Users['user_id']}'>{$Users['user_name']}</option>";
-                        } 
                     }
                 } else {
-                    echo "<option value=''>Não existe lista de cursos ou usuários!</option>";
+                    echo "<option value=''>Não existe lista cursos!</option>";
                 }
-            ?>
+                ?>
+            </select>    
+            <label for="exampleInputEmail1">Escolher usuário</label>            
+            <select class="form-control" name="matriculate_user" value="<?= isset($Post['matriculate_user'])? $Post['matriculate_user']: '' ?>">
+                <?php
+                $Read->FullRead("SELECT * FROM users");
+                if($Read->getResult()) {
+                    echo "<option value=''>selecionar</option>";
+                    foreach($Read->getResult() as $Users) {
+                        echo "<option value='{$Users['user_id']}'>{$Users['user_name']}</option>";
+                    }   
+                } else {
+                    echo "<option value=''>Não existe usuários!</option>";
+                }
+                ?>
             </select>
         </div>
-        <input type="submit" class="btn btn-success mb-2" name="register_matriculate_course" value="Matricular">
+        <input type="submit" class="btn btn-success mb-2" name="register_matriculate" value="Matricular">
     </form>
 </div>
 <?= $Component->getFooterDashboard(); ?>
