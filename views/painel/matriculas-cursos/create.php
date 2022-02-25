@@ -44,7 +44,7 @@ echo $Component->getMenuDashboard();
                         echo "<option value='{$Cursos['curso_id']}'>{$Cursos['curso_titulo']}</option>";
                             ?> 
             </select>    
-            <label for="exampleInputEmail1" class="">Escolher usuário</label>
+            <label for="exampleInputEmail1">Escolher usuário</label>
             <select class="form-control" name="matriculate_user_course" value="<?= isset($Post['matriculate_user_course'])? $Post['matriculate_user_course']: '' ?>">
             <?php
                         echo "<option value=''>selecionar</option>";
