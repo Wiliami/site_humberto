@@ -93,6 +93,7 @@ class User {
 			}	
 		} 
 	}
+	
 	public function verifyExistLoginUser() {
 		if($this->verifyLoginUserON()) {
 			return true;
@@ -102,6 +103,7 @@ class User {
 			return false;
 		}
 	}
+
 	public function verifyLoginUserON () {
 		$Read = new Read();
 		if(!empty($_SESSION['login'])) {

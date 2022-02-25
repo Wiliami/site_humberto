@@ -47,6 +47,14 @@ if($User->verifyLoginUserON()) {
                             <h3 class="title mx-auto text-bolder">Já é um membro?</h3>
                             <h5 class="title mx-auto text-bolder">Então entre com seus dados com login e senha.</h5>
                             <form method="post">
+                                <?php 
+                                $User = new User();
+                                if($User->verifyLoginUserON() === true ){
+                                    return true;
+                                } else {
+                                    echo 'Error';
+                                }                               
+                                ?>
                                 <label class="text-white text-bolder">E-mail</label>
                                 <div class="input-group form-group-no-border">
                                     <div class="input-group-prepend">
