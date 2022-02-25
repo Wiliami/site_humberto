@@ -4,10 +4,10 @@ class Course {
 	private $Result;
 
 	public function matriculateCourse($matriculate) {
-		if(empty($matriculate['curso_titulo'])) {
+		if(empty($matriculate['matricula_curso'])) {
 			$this->Error = "Selecione um curso!";
-			$this->Resutl = false;
-		}elseif(empty($matriculate['user_name'])) {
+			$this->Result = false;
+		} elseif(empty($matriculate['matricula_usuario'])) {
 			$this->Error = "Selecione um usuário!";
 			$this->Result = false;
 		} else {

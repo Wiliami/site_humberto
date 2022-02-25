@@ -19,11 +19,11 @@ echo $Component->getMenuDashboard();
         <?php
         $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
         if(!empty($Post['register_matriculate'])) {
-            $MatriculateCourse['matricula_id'] = $Post['matriculate_course'];
-            $MatriculateCourse['matricula_curso_usuario'] = $Post['matriculate_user'];
+            $MatriculateCourse['matricula_curso'] = $Post['matriculate_course'];
+            $MatriculateCourse['matricula_usuario'] = $Post['matriculate_user'];
             $Course = new Course();
             $Course->matriculateCourse($MatriculateCourse);
-            if($Course->getResult()) { 
+            if($Course->getResult()) {
                 Error($Course->getResult());    
             } else {
                 Error($Course->getError(), 'warning');
@@ -51,6 +51,7 @@ echo $Component->getMenuDashboard();
                 <?php
                 $Read->FullRead("SELECT * FROM users");
                 if($Read->getResult()) {
+                    //Check::var_dump_json($Read->getResult());
                     echo "<option value=''>selecionar</option>";
                     foreach($Read->getResult() as $Users) {
                         echo "<option value='{$Users['user_id']}'>{$Users['user_name']}</option>";

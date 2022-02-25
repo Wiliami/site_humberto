@@ -20,11 +20,11 @@ echo $Component->getMenuDashboard();
             <?php
             $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
             if(!empty($Post['register_lesson'])) {
+                $CreateLesson['curso_titulo'] = $Post['course'];
                 $CreateLesson['modulo_name'] = $Post['module'];
                 $CreateLesson['aula_name'] = $Post['lesson'];
                 $CreateLesson['aula_duracao'] = $Post['time'];
                 $CreateLesson['aula_url'] = $Post['url'];
-                $CreateLesson['curso_titulo'] = $Post['course'];
                 $Course = new Course();
                 $Course->createLesson($CreateLesson);
                 if($Course->getResult()) {
@@ -36,24 +36,24 @@ echo $Component->getMenuDashboard();
             ?>
         <div class="form-group">
             <label for="inputPassword">Selecionar curso</label>
-                <select class="form-control" id="" name="course" 
+                <select class="form-control" name="course" 
                     value="<?= isset($Post['curso_titulo'])? $Post['curso_titulo']: '' ?>">
                     <?php
                     $Read = new Read();
                     $Read->FullRead("SELECT * FROM cursos");
-                        if($Read->getResult()) {
-                            echo "<option value=''>Selecionar</option>";
-                            foreach($Read->getResult() as $Cursos)
-                                echo "<option value='{$Cursos['curso_id']}'>{$Cursos['curso_titulo']}</option>";
-                        } else {
-                            echo "<option value=''>Nenhum curso cadastrado!</option>";
-                        }
+                    if($Read->getResult()) {
+                        echo "<option value=''>Selecionar</option>";
+                        foreach($Read->getResult() as $Cursos)
+                            echo "<option value='{$Cursos['curso_id']}'>{$Cursos['curso_titulo']}</option>";
+                    } else {
+                        echo "<option value=''>Nenhum curso cadastrado!</option>";
+                    }
                     ?>
                 </select>
         </div>
         <div class="form-group">
             <label for="inputPassword">Selecionar módulo</label>
-                <select class="form-control" id="" name="module"
+                <select class="form-control" name="module"
                     value="<?= isset($Post['modulo_name'])? $Post['modulo_name']: '' ?>">
                     <?php
                     $Read->FullRead('SELECT * FROM modulos');
