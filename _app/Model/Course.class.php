@@ -7,7 +7,7 @@ class Course {
 		if(empty($matriculate['curso_titulo'])) {
 			$this->Error = "Selecione um curso!";
 			$this->Result = false;
-		} elseif(empty($matriculate['user_id'])) {
+		} elseif(empty($matriculate['user_name'])) {
 			$this->Error = "Selecione um usuário!";
 			$this->Result = false;
 		} else {

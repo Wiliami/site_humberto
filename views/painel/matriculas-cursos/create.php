@@ -37,22 +37,23 @@ echo $Component->getMenuDashboard();
                 $Read = new Read();
                 $Read->FullRead("SELECT * FROM cursos");
                 if($Read->getResult()) {
-                    echo "<option value=''>selecionar</option>";
+                    echo "<option value=''>Selecionar</option>";
                     foreach($Read->getResult() as $Cursos) {
-                        Check::var_dump_json($Read->getResult());
                         echo "<option value='{$Cursos['curso_id']}'>{$Cursos['curso_titulo']}</option>";
                     }
                 } else {
                     echo "<option value=''>Não existe lista cursos!</option>";
                 }
                 ?>
-            </select>    
+            </select>   
+        </div>
+        <div class="form-group">          
             <label for="exampleInputEmail1">Escolher usuário</label>            
             <select class="form-control" name="matriculate_user" value="<?= isset($Post['matriculate_user'])? $Post['matriculate_user']: '' ?>">
                 <?php
                 $Read->FullRead("SELECT * FROM users");
                 if($Read->getResult()) {
-                    echo "<option value=''>selecionar</option>";
+                    echo "<option value=''>Selecionar</option>";
                     foreach($Read->getResult() as $Users) {
                         echo "<option value='{$Users['user_id']}'>{$Users['user_name']}</option>";
                     }   

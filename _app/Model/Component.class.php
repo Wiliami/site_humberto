@@ -714,6 +714,12 @@ class Component {
                         <a class="collapse-item" href="' . BASE . '/painel/admin/suporte">Suporte</a>
                         <a class="collapse-item" href="' . BASE . '/painel/dashboard">Dashboard</a>
 
+                        <h6 class="collapse-header">Usuários</h6>
+                        <a class="collapse-item" href="' . BASE . '/painel/users/create">Cadastrar usuários</a>
+                        <a class="collapse-item" href="' . BASE . '/painel/users/list">Lista de usuários</a>
+                        <a class="collapse-item" href="' . BASE . '/painel/users/update">Atualizar usuários</a>
+                        <a class="collapse-item" href="' . BASE . '/painel/users/delete">Excluir usuários</a>
+
                         <h6 class="collapse-header">Matrícula cursos</h6>
                         <a class="collapse-item" href="' . BASE . '/painel/matriculas-cursos/create">Cadastrar matrícula</a>
                         <a class="collapse-item" href="' . BASE . '/painel/matriculas-cursos/list">Lista de matriculados</a>
