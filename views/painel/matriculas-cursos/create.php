@@ -39,6 +39,7 @@ echo $Component->getMenuDashboard();
                 if($Read->getResult()) {
                     echo "<option value=''>selecionar</option>";
                     foreach($Read->getResult() as $Cursos) {
+                        Check::var_dump_json($Read->getResult());
                         echo "<option value='{$Cursos['curso_id']}'>{$Cursos['curso_titulo']}</option>";
                     }
                 } else {
@@ -51,7 +52,6 @@ echo $Component->getMenuDashboard();
                 <?php
                 $Read->FullRead("SELECT * FROM users");
                 if($Read->getResult()) {
-                    //Check::var_dump_json($Read->getResult());
                     echo "<option value=''>selecionar</option>";
                     foreach($Read->getResult() as $Users) {
                         echo "<option value='{$Users['user_id']}'>{$Users['user_name']}</option>";
