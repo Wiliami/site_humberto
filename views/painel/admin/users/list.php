@@ -60,22 +60,13 @@ echo $Component->getMenuDashboard();
                                 <?= $User['user_email'] ?>
                             </td>
                             <td>
-                                <a href="<?= BASE ?>/" class="table-link"
-                                    title="Pesquisar <?= $User['user_name'] ?> ">
-                                    <span class="fa-stack">
-                                        <i class="fa fa-square fa-stack-2x"></i>
-                                        <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                                <a href="<?= BASE ?>/" class="table-link"
-                                    title="Atualizar <?= $User['user_name'] ?> ">
+                                <a href="<?= BASE ?>/painel/admin/users/update&update_user=<?= $User['user_id'] ?>" class="table-link" title="Atualizar <?= $User['user_name'] ?> ">
                                     <span class="fa-stack">
                                         <i class="fa fa-square fa-stack-2x"></i>
                                         <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
                                     </span>
                                 </a>
-                                <a href="<?= BASE ?>/" class="table-link" title="Excluir <?= $User['user_name'] ?>"
-                                    data-toggle="modal" data-target="#deleteModal">
+                                <a href="<?= BASE ?>/painel/admin/users/delete&delete_user=<?= $User['user_id'] ?>" class="table-link" title="Excluir <?= $User['user_name'] ?> ">
                                     <span class="fa-stack">
                                         <i class="fa fa-square fa-stack-2x"></i>
                                         <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>

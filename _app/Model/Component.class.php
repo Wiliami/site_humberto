@@ -705,7 +705,6 @@ class Component {
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="' . BASE . '/painel/admin/list-user">Lista de usuários</a>
                         <a class="collapse-item" href="' . BASE . '/painel/admin/cursos-aprovacao">Cursos em análise</a>
                         <a class="collapse-item" href="' . BASE . '/painel/admin/historico-compras">Histórico de compras</a>
                         <a class="collapse-item" href="' . BASE . '/painel/admin/nivel-user">Níveis de Usuários</a>
@@ -715,10 +714,10 @@ class Component {
                         <a class="collapse-item" href="' . BASE . '/painel/dashboard">Dashboard</a>
 
                         <h6 class="collapse-header">Usuários</h6>
-                        <a class="collapse-item" href="' . BASE . '/painel/users/create">Cadastrar usuários</a>
-                        <a class="collapse-item" href="' . BASE . '/painel/users/list">Lista de usuários</a>
-                        <a class="collapse-item" href="' . BASE . '/painel/users/update">Atualizar usuários</a>
-                        <a class="collapse-item" href="' . BASE . '/painel/users/delete">Excluir usuários</a>
+                        <a class="collapse-item" href="' . BASE . '/painel/admin/users/create">Cadastrar usuário</a>
+                        <a class="collapse-item" href="' . BASE . '/painel/admin/users/list">Lista de usuário</a>
+                        <a class="collapse-item" href="' . BASE . '/painel/admin/users/update">Atualizar usuário</a>
+                        <a class="collapse-item" href="' . BASE . '/painel/admin/users/delete">Excluir usuário</a>
 
                         <h6 class="collapse-header">Matrícula cursos</h6>
                         <a class="collapse-item" href="' . BASE . '/painel/matriculas-cursos/create">Cadastrar matrícula</a>
