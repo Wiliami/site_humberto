@@ -39,18 +39,12 @@ echo $Component->getMenuDashboard();
                                 <span><?= $Modulos['modulo_name'] ?></span>
                             </td>
                             <td>
-                                <span><?= $Modulos['modulo_create_date'] ?></span>
+                                <span><?= date('d/m/Y', strtotime($Modulos['modulo_create_date'])) ?></span>
                             </td>
                             <td>
                                 <span><?= $Modulos['modulo_descricao'] ?></span>
                             </td>
                             <td>
-                                <!-- <a href="<?= BASE ?>/" class="table-link" title="Pesquisar usuários">
-                                        <span class="fa-stack">
-                                            <i class="fa fa-square fa-stack-2x"></i>
-                                            <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
-                                        </span>
-                                    </a> -->
                                 <a href="<?= BASE ?>/painel/modules/update&module=<?= $Modulos['modulo_id'] ?>" class="table-link" title="Atualizar <?= $Modulos['modulo_name']?>">
                                     <span class="fa-stack">
                                         <i class="fa fa-square fa-stack-2x"></i>
