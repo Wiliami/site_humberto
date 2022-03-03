@@ -46,5 +46,14 @@ echo $Component->getMenuDashboard();
     <?php
     }
     ?>
+
+    <!-- Administrativo -->
+    <?php
+    if($_SESSION['login']['user_level'] >= 6 ) {
+        ?>
+    <p class="ml-4">Avisos sobre a plataforma</p>
+    <?php
+    }
+    ?>
 </div>
 <?= $Component->getFooterDashboard(); ?>
