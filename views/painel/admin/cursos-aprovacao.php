@@ -40,7 +40,7 @@ echo $Component->getMenuDashboard();
                                 <span><?= $User['compra_curso'] ?></span>
                             </td>
                             <td>
-                                <span><?= $User['compra_date'] ?></span>
+                                <span><?= date('d/m/Y', strtotime($User['compra_date'])) ?></span>
                             </td>
                             <td>
                                 <span><?= $User['compra_status'] ?></span>
