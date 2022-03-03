@@ -8,6 +8,8 @@ echo $Component->getSideBarDashboard();
 echo $Component->getLiAdministrativoDashboard();
 echo $Component->getLiCoursesDashboard();
 echo $Component->getLiPagesDashboard();
+echo $Component->getCreatePagesAdmin();
+echo $Component->getListPagesAdmin();
 echo $Component->getMenuDashboard();
 ?>
 <div class="container-fluid">

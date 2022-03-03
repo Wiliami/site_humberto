@@ -693,50 +693,6 @@ class Component {
         ';
     }
 
-
-    public function getLiAdministrativoDashboard() {
-        if($_SESSION['login']['user_level'] >= 6) {
-            return '
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true"
-                    aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-folder"></i>
-                    <span>Administrativo</span>
-                </a>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="' . BASE . '/painel/admin/cursos-aprovacao">Cursos em análise</a>
-                        <a class="collapse-item" href="' . BASE . '/painel/admin/historico-compras">Histórico de compras</a>
-                        <a class="collapse-item" href="' . BASE . '/painel/admin/nivel-user">Níveis de Usuários</a>
-                        <a class="collapse-item" href="' . BASE . '/painel/admin/settings">Configurações</a>
-                        <a class="collapse-item" href="' . BASE . '/painel/admin/help">Ajuda</a>
-                        <a class="collapse-item" href="' . BASE . '/painel/admin/suporte">Suporte</a>
-                        <a class="collapse-item" href="' . BASE . '/painel/dashboard">Dashboard</a>
-
-                        <h6 class="collapse-header">Usuários</h6>
-                        <a class="collapse-item" href="' . BASE . '/painel/admin/users/create">Cadastrar usuário</a>
-                        <a class="collapse-item" href="' . BASE . '/painel/admin/users/list">Lista de usuário</a>
-                        <a class="collapse-item" href="' . BASE . '/painel/admin/users/update">Atualizar usuário</a>
-                        <a class="collapse-item" href="' . BASE . '/painel/admin/users/delete">Excluir usuário</a>
-
-                        <h6 class="collapse-header">Matrícula cursos</h6>
-                        <a class="collapse-item" href="' . BASE . '/painel/matriculas-cursos/create">Cadastrar matrícula</a>
-                        <a class="collapse-item" href="' . BASE . '/painel/matriculas-cursos/list">Lista de matriculados</a>
-                        <a class="collapse-item" href="' . BASE . '/painel/matriculas-cursos/update">Atualizar matrículas</a>
-                        <a class="collapse-item" href="' . BASE . '/painel/matriculas-cursos/delete">Excluir matrículas</a>
-
-                        <h6 class="collapse-header">Matrícula aulas</h6>
-                        <a class="collapse-item" href="' . BASE . '/painel/matriculas-aulas/create">Cadastrar matrícula</a>
-                        <a class="collapse-item" href="' . BASE . '/painel/matriculas-aulas/list">Lista de matriculados</a>
-                        <a class="collapse-item" href="' . BASE . '/painel/matriculas-aulas/update">Atualizar matrículas</a>
-                        <a class="collapse-item" href="' . BASE . '/painel/matriculas-aulas/delete">Excluir matrículas</a>
-                    </div>
-                </div>
-            </li>
-            ';
-        }
-    }
-
     public function getSideBarDashboard() {
         return '
             <!-- Page Wrapper -->
@@ -766,79 +722,203 @@ class Component {
         ';
         }
 
-        
 
-        public function getLiCoursesDashboard() {
-            if($_SESSION['login']['user_level'] <= 2) {
-                return '
-                <!-- Nav Item - Utilities Collapse Menu -->
-                <li class="nav-item">
-                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true"
-                        aria-controls="collapseUtilities">
-                        <i class="fas fa-book"></i>
-                        <span>Cursos</span>
-                    </a>
-                    <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-                        <div class="bg-white py-2 collapse-inner rounded">
-                            <a class="collapse-item" href="' . BASE . '/painel/profile/meus-cursos">Meus cursos</a>
-                            <a class="collapse-item" href="' . BASE . '/painel/profile/minhas-compras">Minhas compras</a>
-                            <a class="collapse-item" href="' . BASE . '/painel/profile/cursos-finalizados">Cursos finalizados</a>
-                            <a class="collapse-item" href="' . BASE . '/painel/profile/cursos-pendentes">Cursos pendentes</a>
-                            <a class="collapse-item" href="' . BASE . '/painel/profile/help">Ajuda</a>
-                            <a class="collapse-item" href="' . BASE . '/painel/profile/suporte">Suporte</a>
-                            <a class="collapse-item" href="' . BASE . '/painel/profile/settings">Configurações</a>
-                            <a class="collapse-item" href="' . BASE . '/painel/dashboard">Dashboard</a>
-                        </div>
+    public function getLiAdministrativoDashboard() {
+        if($_SESSION['login']['user_level'] >= 6) {
+            return '
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true"
+                    aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Administrativo</span>
+                </a>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Matrícula cursos</h6>
+                        <a class="collapse-item" href="' . BASE . '/painel/matriculas-cursos/create">
+                            <i class="fas fa-book"></i>
+                            Cadastrar matrícula
+                        </a>
+                        <a class="collapse-item" href="' . BASE . '/painel/matriculas-cursos/list">
+                            <i class="fas fa-list"></i>
+                            Lista de matriculados
+                        </a>
+                        <a class="collapse-item" href="' . BASE . '/painel/matriculas-cursos/update">
+                            <i class="fas fa-edit"></i>
+                            Atualizar matrículas
+                        </a>
+                        <a class="collapse-item" href="' . BASE . '/painel/matriculas-cursos/delete">
+                            <i class="fas fa-trash-alt"></i>
+                            Excluir matrículas
+                        </a>
+
+                        <h6 class="collapse-header">Matrícula aulas</h6>
+                        <a class="collapse-item" href="' . BASE . '/painel/matriculas-aulas/create">Cadastrar matrícula</a>
+                        <a class="collapse-item" href="' . BASE . '/painel/matriculas-aulas/list">Lista de matriculados</a>
+                        <a class="collapse-item" href="' . BASE . '/painel/matriculas-aulas/update">Atualizar matrículas</a>
+                        <a class="collapse-item" href="' . BASE . '/painel/matriculas-aulas/delete">Excluir matrículas</a>
                     </div>
-                </li>
-                ';
-            }
+                </div>
+            </li>
+            ';
         }
-        // Somente administradores podem ver
-        public function getLiPagesDashboard() {
-            if($_SESSION['login']['user_level'] >= 6) {
-                return '
+    } 
+    
+    // Somente administradores podem ver
+    public function getLiPagesDashboard() {
+        if($_SESSION['login']['user_level'] >= 6) {
+            return '
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true"
+                    aria-controls="collapsePages">
+                    <i class="fas fa-pager"></i>
+                    <span>Páginas</span>
+                </a>
+                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Páginas</h6>
+                        <a class="collapse-item" href="' . BASE . '/painel/admin/cursos-aprovacao">
+                            <i class="fas fa-book"></i>
+                            Cursos em análise
+                            </a>
+                        <a class="collapse-item" href="' . BASE . '/painel/admin/historico-compras">
+                            <i class="fas fa-history"></i>
+                            Histórico de compras
+                        </a>
+                        <a class="collapse-item" href="' . BASE . '/painel/admin/nivel-user">
+                            <i class="fas fa-level-up-alt"></i>
+                            Níveis de Usuários
+                        </a>
+                        <a class="collapse-item" href="' . BASE . '/painel/admin/settings">
+                            <i class="fas fa-cogs"></i>
+                            Configurações
+                        </a>
+                        <a class="collapse-item" href="' . BASE . '/painel/admin/help">
+                            <i class="fas fa-hands-helping"></i>
+                            Ajuda
+                        </a>
+                        <a class="collapse-item" href="' . BASE . '/painel/admin/suporte">
+                            <i class="fas fa-info-circle"></i>
+                            Suporte
+                        </a>
+                        <a class="collapse-item" href="' . BASE . '/painel/dashboard">
+                            <i class="fas fa-pager"></i>
+                            Dashboard
+                        </a>                      
+                    </div>
+                </div>
+            </li>';
+        }
+    }  
+
+    public function getLiCoursesDashboard() {
+        if($_SESSION['login']['user_level'] <= 2) {
+            return '
+            <!-- Nav Item - Utilities Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true"
+                    aria-controls="collapseUtilities">
+                    <i class="fas fa-book"></i>
+                    <span>Cursos</span>
+                </a>
+                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="' . BASE . '/painel/profile/meus-cursos">Meus cursos</a>
+                        <a class="collapse-item" href="' . BASE . '/painel/profile/minhas-compras">Minhas compras</a>
+                        <a class="collapse-item" href="' . BASE . '/painel/profile/cursos-finalizados">Cursos finalizados</a>
+                        <a class="collapse-item" href="' . BASE . '/painel/profile/cursos-pendentes">Cursos pendentes</a>
+                        <a class="collapse-item" href="' . BASE . '/painel/profile/help">Ajuda</a>
+                        <a class="collapse-item" href="' . BASE . '/painel/profile/suporte">Suporte</a>
+                        <a class="collapse-item" href="' . BASE . '/painel/profile/settings">Configurações</a>
+                        <a class="collapse-item" href="' . BASE . '/painel/dashboard">Dashboard</a>
+                    </div>
+                </div>
+            </li>
+            ';
+        }
+    }
+
+        
+        public function getCreatePagesAdmin() {
+        if( $_SESSION['login']['user_level'] >= 6) {
+            return '
                 <!-- Nav Item - Pages Collapse Menu -->
                 <li class="nav-item">
-                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true"
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCreate" aria-expanded="true"
                         aria-controls="collapsePages">
-                        <i class="fas fa-pager"></i>
-                        <span>Páginas</span>
+                        <i class="fas fa-folder-plus"></i>
+                        <span>Cadastrar</span>
                     </a>
-                    <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div id="collapseCreate" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
-                            <h6 class="collapse-header">Cursos:</h6>
-                            <a class="collapse-item" href="' . BASE . '/painel/courses/create-category">Categoria de cursos</a>
-                            <a class="collapse-item" href="' . BASE . '/painel/courses/list-category">Lista de categoria</a>
-                            <a class="collapse-item" href="' . BASE . '/painel/courses/create">Cadastrar cursos</a>
-                            <a class="collapse-item" href="' . BASE . '/painel/courses/list">Lista de cursos</a>
-                            <a class="collapse-item" href="' . BASE . '/painel/courses/update">Atualizar cursos</a>
-                            <a class="collapse-item" href="' . BASE . '/painel/courses/delete">Excluir cursos</a>
-
-                            <h6 class="collapse-header">Módulos:</h6>
-                            <a class="collapse-item" href="' . BASE . '/painel/modules/create">Cadastrar módulos</a>
-                            <a class="collapse-item" href="' . BASE . '/painel/modules/list">Lista de módulos</a>
-                            <a class="collapse-item" href="' . BASE . '/painel/modules/update">Atualizar módulos</a>
-                            <a class="collapse-item" href="' . BASE . '/painel/modules/delete">Deletar módulos</a>
-                
-                            <h6 class="collapse-header">Aulas:</h6>
-                            <a class="collapse-item" href="' . BASE . '/painel/lesson/create">Cadastrar aulas</a>
-                            <a class="collapse-item" href="' . BASE . '/painel/lesson/list">Lista de aulas</a>
-                            <a class="collapse-item" href="' . BASE . '/painel/lesson/update">Atualizar aulas</a>
-                            <a class="collapse-item" href="' . BASE . '/painel/lesson/delete">Deletar aulas</a>
-
-                            <h6 class="collapse-header">Outras páginas:</h6>
-                            <a class="collapse-item" href="' . BASE . '/painel/admin/help">Ajuda</a>
-                            <a class="collapse-item" href="' . BASE . '/painel/admin/suporte">Suporte</a>
-                            <a class="collapse-item" href="' . BASE . '/painel/admin/settings">Configurações</a>
-                            <a class="collapse-item" href="' . BASE . '/painel/dashboard">Dashboard</a>
+                        <h6 class="collapse-header">Cadastrar</h6>
+                            <a class="collapse-item" href="' . BASE . '/painel/admin/users/create">
+                                <i class="fas fa-user"></i>
+                                Usuários
+                            </a>
+                            <a class="collapse-item" href="' . BASE . '/painel/courses/create">
+                                <i class="fas fa-book"></i>
+                                Cursos
+                            </a>
+                            <a class="collapse-item" href="' . BASE . '/painel/courses/list-category">
+                                <i class="fas fa-book"></i>
+                                Categoria de cursos
+                            </a>
+                            <a class="collapse-item" href="' . BASE . '/painel/modules/create">
+                                <i class="fas fa-columns"></i>
+                                Módulos de cursos
+                            </a>
+                            <a class="collapse-item" href="' . BASE . '/painel/lesson/create">
+                                <i class="fas fa-chalkboard-teacher"></i>
+                                Aulas
+                            </a>
                         </div>
                     </div>
                 </li>';
             }
-        }        
+        }
 
-        public function getMenuOptionsDashboard() {
+    public function getListPagesAdmin() {
+        if($_SESSION['login']['user_level'] >= 6) {
+        return '
+        <!-- Nav Item - Pages Collapse Menu -->
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseList" aria-expanded="true"
+                aria-controls="collapsePages">
+                <i class="fas fa-check-circle"></i>
+                <span>Consultar</span>
+            </a>
+            <div id="collapseList" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <h6 class="collapse-header">Consultar</h6>
+                    <a class="collapse-item" href="' . BASE . '/painel/admin/users/list">
+                        <i class="fas fa-user"></i>
+                        Usuários
+                    </a>
+                    <a class="collapse-item" href="' . BASE . '/painel/courses/list">
+                        <i class="fas fa-book"></i>
+                        Cursos
+                    </a>
+                    <a class="collapse-item" href="' . BASE . '/painel/courses/list-category">
+                        <i class="fas fa-book"></i>
+                        Categoria de cursos
+                    </a>
+                    <a class="collapse-item" href="' . BASE . '/painel/modules/list">
+                        <i class="fas fa-columns"></i>
+                        Módulos de cursos
+                    </a>
+                    <a class="collapse-item" href="' . BASE . '/painel/lesson/list">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                        Aulas
+                    </a>
+                </div>
+            </div>
+        </li>';
+        }
+    }
+
+    public function getMenuOptionsDashboard() {
         return '
         <div class="container-fluid">
             <div class="row">
