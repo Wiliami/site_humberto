@@ -37,11 +37,7 @@ $UserId = $_GET['update_user'];
         <input type="email" class="form-control" id="exampleInputEmail1" name="title" placeholder="E-mail do usuário" 
         value="<?= $User['user_email'] ?>">
     </div>
-    <div class="form-group">
-        <label for="exampleInputEmail1">Senha</label>
-        <input type="password" class="form-control" id="exampleInputEmail1" name="title" placeholder="Senha do usuário" 
-        value="<?= $User['user_password'] ?>">
-    </div>
+    <a href="<?= BASE ?>/painel/admin/users/list" class="btn btn-outline-success mb-2" title="Voltar para lista de usuários">Voltar</a>
     <input type="submit" class="btn btn-success mb-2" name="register_course" value="Atualizar usuário">
     </form>
     <?php

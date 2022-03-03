@@ -62,7 +62,7 @@ echo $Component->getMenuDashboard();
                                 <?= $User['user_email'] ?>
                             </td>
                             <td>
-                                <a href="<?= BASE ?>/painel/admin/users/update&update_user=<?= $User['user_id'] ?>" class="table-link" title="Atualizar <?= $User['user_name'] ?> ">
+                                <a href="<?= BASE ?>/painel/admin/users/update&update_user=<?= $User['user_id'] ?>" class="table-link" title="Editar <?= $User['user_name'] ?> ">
                                     <span class="fa-stack">
                                         <i class="fa fa-square fa-stack-2x"></i>
                                         <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>

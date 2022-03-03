@@ -15,7 +15,7 @@ echo $Component->getMenuDashboard();
 $DeleteUser = $_GET['delete_user'];
 ?>
 <div class="container">
-    <div class="d-sm-flex align-items-center justify-content-start mb-3">
+    <div class=" card-header d-sm-flex align-items-center justify-content-start mb-3">
         <i class="fas fa-layer-plus"></i>
         <h1 class="h3 mb-0 text-gray-800">Excluir usuário</h1>
     </div>
@@ -26,7 +26,7 @@ $DeleteUser = $_GET['delete_user'];
         if($Read->getResult()) {
             foreach($Read->getResult() as $User) {
                 ?>
-    <h1 class="h5 mb-0 text-gray-800 mb-4">Atualizar <?= $User['user_name'] ?></h1>
+    <h1 class="h5 mb-0 text-gray-800 mb-4">Excluir <?= $User['user_name'] ?></h1>
     <div class="form-group">
         <label for="exampleInputEmail1">Nome</label>
         <input type="text" class="form-control" id="exampleInputEmail1" name="title" placeholder="Nome do usuário" 
@@ -37,11 +37,7 @@ $DeleteUser = $_GET['delete_user'];
         <input type="email" class="form-control" id="exampleInputEmail1" name="title" placeholder="E-mail do usuário" 
         value="<?= $User['user_email'] ?>">
     </div>
-    <div class="form-group">
-        <label for="exampleInputEmail1">Senha</label>
-        <input type="password" class="form-control" id="exampleInputEmail1" name="title" placeholder="Senha do usuário" 
-        value="<?= $User['user_password'] ?>">
-    </div>
+    <a href="<?= BASE ?>/painel/admin/users/list" class="btn btn-outline-success mb-2" title="Voltar para lista de usuários">Voltar</a>
     <input type="submit" class="btn btn-success mb-2" name="register_course" value="Excluir usuário">
     </form>
     <?php
