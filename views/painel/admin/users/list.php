@@ -20,7 +20,7 @@ echo $Component->getMenuDashboard();
         </div>
         <div class="card-body">
             <div class="table-responsive">
-                <table id="table-usuarios" class="table table-striped table-bordered" style="width: 100%;">
+                <table id="table-usuarios" class="table table-striped table-bordered">
                     <thead>
                         <tr>
                             <th>*</th>
@@ -66,6 +66,7 @@ echo $Component->getMenuDashboard();
                                     <span class="fa-stack">
                                         <i class="fa fa-square fa-stack-2x"></i>
                                         <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
+                                        <i class="fas fa-pen-to-square"></i>
                                     </span>
                                 </a>
                                 <a href="<?= BASE ?>/painel/admin/users/delete&delete_user=<?= $User['user_id'] ?>" class="table-link" title="Excluir <?= $User['user_name'] ?> ">

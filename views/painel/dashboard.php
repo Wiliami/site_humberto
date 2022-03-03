@@ -15,14 +15,17 @@ echo $Component->getMenuDashboard();
     <div class="d-sm-flex align-items-center justify-content-between mb-4 ml-4">
         <h1 class="h3 mb-0 text-gray-800">Seja bem-vindo(a), <?= $_SESSION['login']['user_name'] ?></h1>
     </div>
+    <?php
+    if($_SESSION['login']['user_level'] <= 2) {
+        ?>
     <p class="ml-4">Cursos que já estão disponíveis</p>
     <div class="row gx-5 container">
         <?php
         $Read = new Read();
         $Read->FullRead("SELECT * FROM cursos");
-            if($Read->getResult()) {
-                foreach($Read->getResult() as $Cursos) {
-                    ?>
+        if($Read->getResult()) {
+            foreach($Read->getResult() as $Cursos) {
+                ?>
         <div class="col-lg-4 mb-5">
             <div class="card" style="width: 18rem;">
                 <img class="card-img-top" src="<?= BASE ?>/src/images/backstage_data.png" alt="banner do curso">
@@ -36,9 +39,12 @@ echo $Component->getMenuDashboard();
         <?php
             }
         } else {
-            Error("Não exise cursos para exibir!");
+            Error("Não existem cursos para serem exibidos aqui!");
         }
         ?>
-    </a>
+    </div>
+    <?php
+    }
+    ?>
 </div>
 <?= $Component->getFooterDashboard(); ?>
