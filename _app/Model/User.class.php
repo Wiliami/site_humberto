@@ -7,7 +7,28 @@ class User {
 	// - getForgot -> envia o email de recuperação de senha ao usuário
 	private $Error;
 	private $Result;
-	// Método para verificar os nivéis de usuário
+
+	public function createLevelUser($createLevel) {
+		if(empty($createLevel['name-level'])) {
+			$this->Error = "Campo obrigatório!";
+			$this->Result = false; 
+		} elseif(empty($createLevel['level'])) {
+			$this->Error = "Qual o número desse nível?";
+			$this->Result = false;
+		}
+		$createLevel['level_create_date'] = date('Y-m-d H:i:is');
+		$Create = new Create();
+		$Creatte->ExeCreate('users_levels', $createLevel);
+		if ($Create->getResult()) {
+			$this->Result = $Create->getResult();
+			$this->Error = "Nível de usuário cadastrado com sucesso!";
+		} else {
+			$this->Result = false;
+			$this->Error = $Create->getError();
+		}
+	}
+
+
 	public function verifyLevelUserModerator() {
 		if($_SESSION['login']['user_level'] >= 6) { 
 			return header('Location: ' . BASE . '/painel/dashboard');
@@ -80,6 +101,23 @@ class User {
 				$this->Error = $Create->getError();
 			}
 		}	
+	}
+
+	public function updateUser() {
+		if(!empty($updateUser['update_user'])) {
+			$this->Error = 'É necessário atualizar pelo menos uma campo para atualizar!';
+			$this->Result = false;
+		} else {
+			$Update = new Update();
+			$Update->ExeUpdate("users", $updateUser, "WHERE user_id = :ui", "ui={$updateUser}");
+			if ($Update->getResult()) {
+				$this->Result = $Update->getResult();
+				$this->Error = "O usuário foi atualizado com sucesso!";
+			} else {
+				$this->Result = false;
+				$this->Error = $Update->getError();
+			}
+		}
 	}
 
 	private function verifyDuplicateUserEmail($email ) {

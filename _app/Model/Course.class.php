@@ -4,26 +4,6 @@ class Course {
     private $Error;
 	private $Result;
 
-	public function createLevelUser($createLevel) {
-		if(empty($createLevel['name-level'])) {
-			$this->Error = "Campo obrigatório!";
-			$this->Result = false; 
-		}
-		elseif(empty($createLevel['level'])) {
-			$this->Error = "Qual o número desse nível?";
-		}
-		$createLevel['level_create_date'] = date('Y-m-d H:i:is');
-		$Create = new Create();
-		$Creatte->ExeCreate('users_levels', $createLevel);
-		if ($Create->getResult()) {
-			$this->Result = $Create->getResult();
-			$this->Error = "Nível de usuário cadastrado com sucesso!";
-		} else {
-			$this->Result = false;
-			$this->Error = $Create->getError();
-		}
-	}
-
 	public function matriculateCourse($matriculate) {
 		if(empty($matriculate['curso_titulo'])) {
 			$this->Error = "Selecione um curso!";

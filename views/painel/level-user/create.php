@@ -25,12 +25,12 @@ echo $Component->getMenuDashboard();
         if(!empty($Post['register_level'])) {
             $createLevel['level_desc'] = $Post['name-level'];
             $createLevel['level_id'] = $Post['level'];
-            $Course = new Course();
-            $Course->createLevelUser($creteLevel);
-            if($Course->getResult()){
-                Error($Course->getError());
+            $User = new User();
+            $User->createLevelUser($creteLevel);
+            if($User->getResult()){
+                Error($User->getError());
             } else {
-                Error($Course->getError(), 'warning'); 
+                Error($User->getError(), 'warning'); 
             }
         }
         ?>
