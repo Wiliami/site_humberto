@@ -42,23 +42,23 @@ class Component {
     }
 
     function getMenuActiveConfig() {
-    return '
-    <script>
-        // Add active class to the current button (highlight it)
-        var header = document.getElementById("myDIV");
-        var btns = header.getElementsByClassName("btn");
-        for (var i = 0; i < btns.length; i++) {
-        btns[i].addEventListener("click", function() {
-        var current = document.getElementsByClassName("active");
-        if (current.length > 0) { 
-            current[0].className = current[0].className.replace(" active", "");
-        }
-        this.className += " active";
-        });
-        }
-    </script>
-    ';
+        return '
+        <script>
+            // Add active class to the current button (highlight it)
+            var header = document.getElementById("myDIV");
+            var btns = header.getElementsByClassName("btn");
+            for (var i = 0; i < btns.length; i++) {
+            btns[i].addEventListener("click", function() {
+            var current = document.getElementsByClassName("active");
+            if (current.length > 0) { 
+                current[0].className = current[0].className.replace(" active", "");
+            }
+            this.className += " active";
+            });
+            }
+        </script>';
     }
+
     public function getHeader() {
         return '
         <header class="bg-white py-5 style="height: 698px;">            
@@ -815,7 +815,7 @@ class Component {
                             Meus cursos
                         </a>
                         <a class="collapse-item" href="' . BASE . '/painel/profile/minhas-compras">
-                            <i class="fas fa-book"></i>
+                            <i class="fas fa-money-bill-alt"></i>
                             Minhas compras
                         </a>
                         <a class="collapse-item" href="' . BASE . '/painel/profile/cursos-finalizados">
@@ -866,6 +866,10 @@ class Component {
                                 <i class="fas fa-user"></i>
                                 Usuários
                             </a>
+                            <a class="collapse-item" href="' . BASE . '/painel/level-user/create">
+                                <i class="fas fa-user"></i>
+                                Níveis de usuários
+                            </a>
                             <a class="collapse-item" href="' . BASE . '/painel/courses/create">
                                 <i class="fas fa-book"></i>
                                 Cursos
@@ -904,6 +908,10 @@ class Component {
                     <a class="collapse-item" href="' . BASE . '/painel/admin/users/list">
                         <i class="fas fa-user"></i>
                         Usuários
+                    </a>
+                    <a class="collapse-item" href="' . BASE . '/painel/level-user/list">
+                        <i class="fas fa-user"></i>
+                        Níveis de usuários
                     </a>
                     <a class="collapse-item" href="' . BASE . '/painel/courses/list">
                         <i class="fas fa-book"></i>
@@ -1058,7 +1066,7 @@ class Component {
                         </div>
                         <div class="modal-body">Selecione "Sair" para encerrar a sua sessão.</div>
                         <div class="modal-footer">
-                            <button class="btn btn-success" type="button" data-dismiss="modal">Cancelar</button>
+                            <button class="btn btn-outline-success" type="button" data-dismiss="modal">Cancelar</button>
                             <a class="btn btn-success" href="' . BASE . '/pages/logout">Sair</a>
                         </div>
                     </div>
@@ -1232,9 +1240,4 @@ class Component {
             return header('Location:' . BASE . '/painel/dashboard');
         }
     }
-
-    public function getBlockPageAcessCourses() {
-        return header('Location:' . BASE . '/painel/dashboard');
-    }
-    
 }

@@ -16,13 +16,13 @@ echo $Component->getMenuDashboard();
         <h1 class="h3 mb-0 text-gray-800">Seja bem-vindo(a), <?= $_SESSION['login']['user_name'] ?></h1>
     </div>
     <?php
-    if($_SESSION['login']['user_level'] <= 2) {
+    if($_SESSION["login"]["user_level"] <= 2) {
         ?>
-    <p class="ml-4">Cursos que já estão disponíveis</p>
+    <p class="ml-4">Lançamentos de cursos</p>
     <div class="row gx-5 container">
         <?php
         $Read = new Read();
-        $Read->FullRead("SELECT * FROM cursos");
+        $Read->FullRead("SELECT * FROM cursos LIMIT 5");
         if($Read->getResult()) {
             foreach($Read->getResult() as $Cursos) {
                 ?>
@@ -44,8 +44,9 @@ echo $Component->getMenuDashboard();
         ?>
     </div>
     <?php
-    }
+        }
     ?>
+          
 
     <!-- Administrativo -->
     <?php

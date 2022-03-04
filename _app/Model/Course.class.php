@@ -1,7 +1,28 @@
 <?php
 class Course {
+
     private $Error;
 	private $Result;
+
+	public function createLevelUser($createLevel) {
+		if(empty($createLevel['name-level'])) {
+			$this->Error = "Campo obrigatório!";
+			$this->Result = false; 
+		}
+		elseif(empty($createLevel['level'])) {
+			$this->Error = "Qual o número desse nível?";
+		}
+		$createLevel['level_create_date'] = date('Y-m-d H:i:is');
+		$Create = new Create();
+		$Creatte->ExeCreate('users_levels', $createLevel);
+		if ($Create->getResult()) {
+			$this->Result = $Create->getResult();
+			$this->Error = "Nível de usuário cadastrado com sucesso!";
+		} else {
+			$this->Result = false;
+			$this->Error = $Create->getError();
+		}
+	}
 
 	public function matriculateCourse($matriculate) {
 		if(empty($matriculate['curso_titulo'])) {
@@ -104,99 +125,99 @@ class Course {
 	
 
 
-        public function createModule($dataModule) {
-			if(empty($dataModule["modulo_name"])) {
-					$this->Error = "O módulo precisa de um nome!";
-					$this->Result = false;
-				} elseif (empty($dataModule["modulo_descricao"])) {
-					$this->Error = "O módulo precisa de uma descrição!";
-					$this->Result = false;
-				} else {
-					$dataModule['modulo_create_date'] = date('Y-m-d H:i:s');
-					$Create = new Create();
-					$Create->ExeCreate("modulos", $dataModule);
-					if($Create->getResult()) {
-						$this->Result = $Create->getResult();
-						$this->Error =  "O módulo foi cadastrado com sucesso!";
-					} else {
-						$this->Result = false;
-						$this->Error = $Create->getError();
-					}
-			}	
-		}
-
-
-		public function createLesson($dataLesson) {
-			if(empty($dataLesson['curso_titulo'])) {
-				$this->Error = "Selecione um curso para cadastrar a aula!";
+	public function createModule($dataModule) {
+		if(empty($dataModule["modulo_name"])) {
+				$this->Error = "O módulo precisa de um nome!";
 				$this->Result = false;
-			} elseif(empty($dataLesson['modulo_name'])) {
-				$this->Error = "Selecione um módulo para cadastrar a aula";
-				$this->Result = false;
-			} elseif(empty($dataLesson['aula_name'])) {
-				$this->Error = "A aula precisa de um nome!";
-				$this->Result = false;
-			} elseif(empty($dataLesson['aula_duracao'])) {
-				$this->Error = "Ops! Qual é a duração da aula?";
-				$this->Result = false;
-			} elseif(empty($dataLesson['aula_url'])) {
-				$this->Error = "A aula precisa de uma url!";
+			} elseif (empty($dataModule["modulo_descricao"])) {
+				$this->Error = "O módulo precisa de uma descrição!";
 				$this->Result = false;
 			} else {
-				$dataLesson['aula_create_date'] = date('Y-m-d H:i:s');
+				$dataModule['modulo_create_date'] = date('Y-m-d H:i:s');
 				$Create = new Create();
-				$Create->exeCreate("aulas", $dataLesson); // eu estou enviando a criação de aulas para a tabela de aulas.
+				$Create->ExeCreate("modulos", $dataModule);
 				if($Create->getResult()) {
 					$this->Result = $Create->getResult();
-					$this->Error = "A aula foi cadastrada com sucesso!";
+					$this->Error =  "O módulo foi cadastrado com sucesso!";
 				} else {
 					$this->Result = false;
 					$this->Error = $Create->getError();
 				}
+		}	
+	}
 
-			}
-		}
 
-		public function updateLesson($updateLesson) {
-			if(empty($updateLesson['aula_name'])) {
-				$this->Error = "É necesário atualizar ao menos um campo para concluir atualização da aula!";
-				$this->Result = false;
+	public function createLesson($dataLesson) {
+		if(empty($dataLesson['curso_titulo'])) {
+			$this->Error = "Selecione um curso para cadastrar a aula!";
+			$this->Result = false;
+		} elseif(empty($dataLesson['modulo_name'])) {
+			$this->Error = "Selecione um módulo para cadastrar a aula";
+			$this->Result = false;
+		} elseif(empty($dataLesson['aula_name'])) {
+			$this->Error = "A aula precisa de um nome!";
+			$this->Result = false;
+		} elseif(empty($dataLesson['aula_duracao'])) {
+			$this->Error = "Ops! Qual é a duração da aula?";
+			$this->Result = false;
+		} elseif(empty($dataLesson['aula_url'])) {
+			$this->Error = "A aula precisa de uma url!";
+			$this->Result = false;
+		} else {
+			$dataLesson['aula_create_date'] = date('Y-m-d H:i:s');
+			$Create = new Create();
+			$Create->exeCreate("aulas", $dataLesson); // eu estou enviando a criação de aulas para a tabela de aulas.
+			if($Create->getResult()) {
+				$this->Result = $Create->getResult();
+				$this->Error = "A aula foi cadastrada com sucesso!";
 			} else {
-				$Update = new Update();
-				$Update->ExeUpdate("aulas", $updateLesson, "WHERE aula_id = :ai", "ai={$updateLesson}");
-				if($Update->getResult()) {
-					$this->Result = $updateLesson->getResult(); 
-					$this->Error = "A aula foi atualizada com sucesso!";
-				} else {
-					$this->Result = false;
-					$this->Error = $updateLesson->getError();
-				}
-			}
-		}
-
-		public function deleteLesson() {
-			if(empty(['aula_id'])) {
-				$this->Error = 'Selecione uma aula para excluir!';
 				$this->Result = false;
+				$this->Error = $Create->getError();
+			}
+
+		}
+	}
+
+	public function updateLesson($updateLesson) {
+		if(empty($updateLesson['aula_name'])) {
+			$this->Error = "É necesário atualizar ao menos um campo para concluir atualização da aula!";
+			$this->Result = false;
+		} else {
+			$Update = new Update();
+			$Update->ExeUpdate("aulas", $updateLesson, "WHERE aula_id = :ai", "ai={$updateLesson}");
+			if($Update->getResult()) {
+				$this->Result = $updateLesson->getResult(); 
+				$this->Error = "A aula foi atualizada com sucesso!";
 			} else {
-				$Delete = new Delete();
-				$Delete->exeDelete('aulas', "WHERE aula_id = :ai", "ai={aula_id}");
-				if($Delete->getResult()) {
-					$this->Result = $$Delete->getError();
-					$this->Error = 'A aula foi deletada com sucesso!';
-				} else {
-					$this->Result = false;
-					$this->Error->$Delete->getError();
-				}
+				$this->Result = false;
+				$this->Error = $updateLesson->getError();
 			}
 		}
+	}
 
-		public function getResult() {
-            return $this->Result;
-        }
+	public function deleteLesson() {
+		if(empty(['aula_id'])) {
+			$this->Error = 'Selecione uma aula para excluir!';
+			$this->Result = false;
+		} else {
+			$Delete = new Delete();
+			$Delete->exeDelete('aulas', "WHERE aula_id = :ai", "ai={aula_id}");
+			if($Delete->getResult()) {
+				$this->Result = $$Delete->getError();
+				$this->Error = 'A aula foi deletada com sucesso!';
+			} else {
+				$this->Result = false;
+				$this->Error->$Delete->getError();
+			}
+		}
+	}
 
-        public function getError() {
-            return $this->Error;
-        }
+	public function getResult() {
+		return $this->Result;
+	}
+
+	public function getError() {
+		return $this->Error;
+	}
 }
 ?>
