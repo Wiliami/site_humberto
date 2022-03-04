@@ -51,6 +51,37 @@ class User {
 		}	
 	}
 
+	public function createUserSystem($dataUserSystem) {
+		if(empty($dataUserSystem["user_name"])) {
+			$this->Error = "Preencha no campo o nome do usuário!";
+			$this->Result = false;
+		} elseif (empty($dataUserSystem["user_email"])) {
+			$this->Error = "Preencha o e-mail do usuário!";
+			$this->Result = false;
+		} elseif (empty($dataUserSystem["user_password"])) {
+			$this->Error = "Preencha a senha!";
+			$this->Result = false;
+		} elseif(empty($dataUserSystem['user_level'])){
+			$this->Error = "Escolha o nível do usuário";
+			$this->Result = false;
+		} elseif ($this->verifyDuplicateUserEmail($dataUserSystem['user_email'])) {
+			$this->Result = false;
+		} else {
+			$dataUserSystem['user_password'] = md5($dataUserSystem['user_password']);
+			$dataUserSystem['user_create_date'] = date('Y-m-d H:i:s');
+			$dataUserSystem['user_inativo'] = '0';
+			$Create = new Create();
+			$Create->ExeCreate("users", $dataUserSystem); // cadastrando usuário no banco de dados
+			if($Create->getResult()) { // resultado
+				$this->Result = $Create->getResult();
+				$this->Error =  "Cadadastro realizado com sucesso!";
+			} else {
+				$this->Result = false;
+				$this->Error = $Create->getError();
+			}
+		}	
+	}
+
 	private function verifyDuplicateUserEmail($email ) {
 		$Read = new Read();
 		$Read->FullRead("SELECT user_name FROM users WHERE user_email = :em", "em={$email}");

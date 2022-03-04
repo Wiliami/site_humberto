@@ -45,12 +45,6 @@ if($User->verifyLoginUserON()) {
                             ?>
                             <h3 class="title mx-auto text-bolder">Já é um membro?</h3>
                             <h5 class="title mx-auto text-bolder">Então entre com seus dados com login e senha.</h5>
-                            <?php 
-                            $User = new User();
-                            if($User->verifyLoginUserON() === true ) {
-                                return Error('Sessão esgotada! Faça login novamente!', 'danger');
-                            }                               
-                            ?>
                             <form method="post">
                                 <label class="text-white text-bolder">E-mail</label>
                                 <div class="input-group form-group-no-border">
@@ -66,7 +60,7 @@ if($User->verifyLoginUserON()) {
                                     <input type="password" class="form-control" name="password"
                                         value="<?= isset($Post['password'])?$Post['password']: '' ?>" placeholder="Senha">
                                 </div>
-                                <input class="btn btn-danger btn-block btn-round" type="submit" value="Entrar" name="login">
+                                <input class="btn btn-danger btn-block btn-round" type="submit" name="login" value="Entrar">
                             </form>
                             <div class="forgot">
                                 <a href="<?= BASE ?>/pages/forgot-password" class="btn btn-link btn-danger">Esqueci a senha</a>
