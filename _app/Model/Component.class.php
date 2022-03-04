@@ -909,7 +909,7 @@ class Component {
                         <i class="fas fa-user"></i>
                         Usuários
                     </a>
-                    <a class="collapse-item" href="' . BASE . '/painel/level-user/list">
+                    <a class="collapse-item" href="' . BASE . '/painel/admin/nivel-user">
                         <i class="fas fa-user"></i>
                         Níveis de usuários
                     </a>

@@ -17,7 +17,6 @@ echo $Component->getMenuDashboard();
     <div class="card shadow mb-4">
         <div class="card-header py-3 d-sm-flex align-items-center justify-content-between">
             <h6 class="m-0 font-weight-bold text-dark">Nível de usuários</h6>
-            <button type="button" class="btn btn-success mb-2" title="Adicionar nível de usuário">Adicionar nível</button>
         </div>
         <div class="card-body">
             <div class="table-responsive">
@@ -41,12 +40,16 @@ echo $Component->getMenuDashboard();
                                 <span><?= $Level['level_desc'] ?></span>
                             </td>
                             <td>
-                                <a href="<?= BASE ?>/painel/level-user/nivel-usuario&nivel=<?= $Level['level_id']?>"
-                                    class="table-link btn btn-primary mb-2"
-                                    title="Pesquisar usuários de nível <?= $Level['level_desc'] ?>">
-                                    <span class="">
-                                        <!-- <i class="fas fa-search"></i> -->
-                                        <i class="fas fa-search fa-sm"></i>
+                                <a href="<?= BASE ?>/painel/level-user/update&level=<?= $Level['level_id'] ?>" class="table-link" title="Editar nível <?= $Level['level_desc'] ?>">
+                                    <span class="fa-stack">
+                                        <i class="fa fa-square fa-stack-2x"></i>
+                                        <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                                <a href="<?= BASE ?>/painel/level-user/delete&nivel_delete=<?= $Level['level_id'] ?>" class="table-link danger" title="Excluir nível <?= $Level['level_desc'] ?>">
+                                    <span class="fa-stack">
+                                        <i class="fa fa-square fa-stack-2x"></i>
+                                        <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
                                     </span>
                                 </a>
                             </td>

@@ -46,10 +46,10 @@ $NivelId = $_GET['nivel'];
                     </thead>
                     <tbody>
                         <?php
-                            $Read->FullRead("SELECT * FROM users WHERE user_level = :ul", "ul={$NivelId}");
-                            if($Read->getResult()) {
-                                foreach($Read->getResult() as $Users) {
-                            ?>
+                        $Read->FullRead("SELECT * FROM users WHERE user_level = :ul", "ul={$NivelId}");
+                        if($Read->getResult()) {
+                            foreach($Read->getResult() as $Users) {
+                                ?>
                         <tr>
                             <td>
                                 <?= $Component->getAvatarUser(); ?>
@@ -76,7 +76,7 @@ $NivelId = $_GET['nivel'];
                         <?php
                             }
                         } else {
-                            Error("Ainda não existem usuários para esse nível!");
+                            Error("Ainda não existe usuários para esse nível!");
                         }
                         ?>
                     </tbody>
