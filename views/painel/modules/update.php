@@ -17,7 +17,6 @@ $ModuleId = $_GET['module'];
 <div class="container card-header">
     <div class="card-header py-3 d-sm-flex align-items-center justify-content-between mb-2">
         <h5 class="h3 mb-0 text-gray-800 ml-2">Atualizar módulos</h5>
-        <a href="<?= BASE ?>/painel/modules/list" class="btn btn-success mb-2" title="Voltar para lista de módulos">Voltar</a>
     </div>
         <form method="">
             <?php
@@ -39,6 +38,8 @@ $ModuleId = $_GET['module'];
                 <label for="exampleInputEmail1">Ordem do módulo</label>
                 <input type="text" class="form-control" id="exampleInputEmail1" name="order" value="<?= $Modulos['modulo_ordem'] ?>">
             </div>
+            <a href="<?= BASE ?>/painel/modules/list" class="btn btn-outline-success" title="Voltar para lista de módulos">Voltar</a>
+            <input type="submit" class="btn btn-success" name="register_module" value="Atualizar módulo">
         </form>  
         <?php
         }

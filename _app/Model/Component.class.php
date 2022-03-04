@@ -864,27 +864,27 @@ class Component {
                         <h6 class="collapse-header">Cadastrar</h6>
                             <a class="collapse-item" href="' . BASE . '/painel/admin/users/create">
                                 <i class="fas fa-user"></i>
-                                Usuários
+                                Usuário
                             </a>
                             <a class="collapse-item" href="' . BASE . '/painel/level-user/create">
                                 <i class="fas fa-user"></i>
-                                Níveis de usuários
+                                Nível de usuário
                             </a>
                             <a class="collapse-item" href="' . BASE . '/painel/courses/create">
                                 <i class="fas fa-book"></i>
-                                Cursos
+                                Curso
                             </a>
                             <a class="collapse-item" href="' . BASE . '/painel/courses/list-category">
                                 <i class="fas fa-book"></i>
-                                Categoria de cursos
+                                Categoria de curso
                             </a>
                             <a class="collapse-item" href="' . BASE . '/painel/modules/create">
                                 <i class="fas fa-columns"></i>
-                                Módulos de cursos
+                                Módulo de curso
                             </a>
                             <a class="collapse-item" href="' . BASE . '/painel/lesson/create">
                                 <i class="fas fa-chalkboard-teacher"></i>
-                                Aulas
+                                Aula
                             </a>
                         </div>
                     </div>
@@ -919,7 +919,7 @@ class Component {
                     </a>
                     <a class="collapse-item" href="' . BASE . '/painel/courses/list-category">
                         <i class="fas fa-book"></i>
-                        Categoria de cursos
+                        Categorias de cursos
                     </a>
                     <a class="collapse-item" href="' . BASE . '/painel/modules/list">
                         <i class="fas fa-columns"></i>

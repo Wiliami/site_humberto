@@ -44,7 +44,8 @@ echo $Component->getMenuDashboard();
             <input type="text" class="form-control" id="exampleInputEmail1" name="description" placeholder="Descrição do módulo"
             value="<?= isset($Post['description'])? $Post['description']: '' ?>">
         </div>
-        <input type="submit" class="btn btn-primary" name="register_module" value="Cadastrar módulo">
+        <a href="<?= BASE ?>/painel/modules/list" class="btn btn-outline-success" title="Voltar para lista de módulos">Voltar</a>
+        <input type="submit" class="btn btn-success" name="register_module" value="Cadastrar módulo">
     </form>
 </div>
 <?= $Component->getFooterDashboard(); ?>

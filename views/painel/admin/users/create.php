@@ -34,7 +34,8 @@ echo $Component->getMenuDashboard();
             <input type="password" class="form-control" id="exampleInputEmail1" name="title" placeholder="Senha do usuário" 
             value="<?= isset($Post['password'])? $Post['password']: '' ?>">
         </div>
-    <input type="submit" class="btn btn-success mb-2" name="register_course" value="Cadastrar usuário">
+        <a href="<?= BASE ?>/painel/admin/users/list" class="btn btn-outline-success mb-2" title="Voltar para lista de usuários">Voltar</a>
+        <input type="submit" class="btn btn-success mb-2" name="register_course" value="Cadastrar usuário">
     </form>
 </div>
 <?= $Component->getFooterDashboard();?>

@@ -17,7 +17,6 @@ $ModuleDelete = $_GET['delete_module'];
 <div class="container card-header">
     <div class="card-header py-3 d-sm-flex align-items-center justify-content-between mb-2">
         <h5 class="h3 mb-0 text-gray-800 ml-2">Excluir módulos</h5>
-        <a href="<?= BASE ?>/painel/modules/list" class="btn btn-success mb-2" title="Voltar para lista de módulos">Voltar</a>
     </div>
     <form action="">
         <?php
@@ -39,7 +38,8 @@ $ModuleDelete = $_GET['delete_module'];
             <label for="exampleInputEmail1">Ordem</label>
             <input type="text" class="form-control" id="exampleInputEmail1" name="order" value="<?= $Modulos['modulo_ordem'] ?>">
         </div>
-        <input type="submit" class="btn btn-primary" name="delete_module" value="Excluir módulo">
+        <a href="<?= BASE ?>/painel/modules/list" class="btn btn-outline-success" title="Voltar para lista de módulos">Voltar</a>
+        <input type="submit" class="btn btn-success" name="delete_module" value="Excluir módulo">
     </form>
     <?php
         }
