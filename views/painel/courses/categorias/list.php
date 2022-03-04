@@ -14,8 +14,8 @@ echo $Component->getListPagesAdmin();
 echo $Component->getMenuDashboard();
 ?>
 <div class="container">
-    <div class="card shadow mb-4">
-        <div class="card-header py-3">
+    <div class="card shadow mb-4">  
+        <div class="card-header py-3 d-sm-flex align-items-center justify-content-between">
             <h6 class="m-0 font-weight-bold text-dark">Lista de categorias</h6>
         </div>
         <div class="card-body">
@@ -24,6 +24,7 @@ echo $Component->getMenuDashboard();
                     <thead>
                         <tr>
                             <th><span>Categoria</span></th>
+                            <th><span>Data de cadastro</span></th>
                             <th><span>Opções</span></th>
                         </tr>
                     </thead>
@@ -39,13 +40,16 @@ echo $Component->getMenuDashboard();
                                 <span><?= $Categoria['categoria_name']?></span>
                             </td>
                             <td>
-                                <a href="<?= BASE ?>/painel/courses/update&categoria=<?= $Categoria['categoria_id'] ?>" class="table-link" title="Editar <?= $Categoria['categoria_name'] ?>">
+                                <span><?= date('d/m/Y', strtotime($Categoria['categoria_create_date'])) ?></span>
+                            </td>
+                            <td>
+                                <a href="<?= BASE ?>/painel/courses/categorias/update&categoria=<?= $Categoria['categoria_id'] ?>" class="table-link" title="Editar <?= $Categoria['categoria_name'] ?>">
                                     <span class="fa-stack">
                                         <i class="fa fa-square fa-stack-2x"></i>
                                         <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
                                     </span>
                                 </a>
-                                <a href="<?= BASE ?>/painel/courses/delete&categoria_delete=<?= $Cursos['categoria_id'] ?>" class="table-link danger" title="Excluir <?= $Categoria['categoria_name'] ?>">
+                                <a href="<?= BASE ?>/painel/courses/categorias/delete&categoria_delete=<?= $Categoria['categoria_id'] ?>" class="table-link danger" title="Excluir <?= $Categoria['categoria_name'] ?>">
                                     <span class="fa-stack">
                                         <i class="fa fa-square fa-stack-2x"></i>
                                         <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>

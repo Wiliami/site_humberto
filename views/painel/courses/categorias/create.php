@@ -39,7 +39,7 @@ echo $Component->getMenuDashboard();
             <input type="text" class="form-control" id="exampleInputEmail1" name="category" placeholder="Nome da categoria" 
             value="<?= isset($Post['category'])? $Post['category']: '' ?>">
         </div>
-        <input type="submit" class="btn btn-success mb-2 ml-0" name="register_category" value="Cadastrar categoria">
+        <input type="submit" class="btn btn-success mb-2" name="register_category" value="Cadastrar categoria">
     </form>
 </div>
 <?= $Component->getFooterDashboard(); ?>

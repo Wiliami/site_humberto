@@ -85,7 +85,6 @@ echo $Component->getMenuDashboard();
                 <input type="text" class="form-control" placeholder="URL da aula" name="url" id="inputPassword"
                     value="<?= isset($Post['url'])? $Post['url']: '' ?>">
         </div>
-        
         <input type="submit" class="btn btn-success mb-2" name="register_lesson" value="Cadastrar aula">
     </form>
 </div>

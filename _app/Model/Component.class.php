@@ -874,7 +874,7 @@ class Component {
                                 <i class="fas fa-book"></i>
                                 Curso
                             </a>
-                            <a class="collapse-item" href="' . BASE . '/painel/courses/list-category">
+                            <a class="collapse-item" href="' . BASE . '/painel/courses/categorias/create">
                                 <i class="fas fa-book"></i>
                                 Categoria de curso
                             </a>
@@ -917,7 +917,7 @@ class Component {
                         <i class="fas fa-book"></i>
                         Cursos
                     </a>
-                    <a class="collapse-item" href="' . BASE . '/painel/courses/list-category">
+                    <a class="collapse-item" href="' . BASE . '/painel/courses/categorias/list">
                         <i class="fas fa-book"></i>
                         Categorias de cursos
                     </a>
