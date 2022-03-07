@@ -11,7 +11,7 @@ class Message {
             $this->Result = false;
         } else {
         $Create = new Create();
-        $Create->exeCreate("alerts_messages", $Messages);
+        $Create->ExeCreate("alerts_messages", $Messages);
             if($Create->getResult()) {
                 $this->Result = $Create->getResult();
                 $this->Error = "A mensagem foi cadastrada com sucesso!";

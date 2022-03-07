@@ -25,10 +25,11 @@ $UserId = $_GET['update_user'];
         $updateUser['user_name'] = $Post['user'];
         $updateUser['user_email'] = $Post['email'];
         $updateUser['user_password'] = $Post['ps'];
-        $updateUser['user_level'] = $Post['level'];
+        //Check::var_dump_json($updateUser); // aqui ele recebe a atualização enviado pelo input
         $User = new User();
-        $User->updateUser($updateUser);
-        if ($User->getResult()) {
+        $User->updateUser($updateUser); // o problema esta aqui
+        Check::var_dump_json($User->updateUser($updateUser));
+        if($User->getResult()) {
             Error($User->getError());
         } else {
             Error($User->getError(), 'warning');
@@ -45,24 +46,24 @@ $UserId = $_GET['update_user'];
     <h1 class="h5 mb-0 text-gray-800 mb-4">Atualizar <?= $User['user_name'] ?></h1>
     <div class="form-group">
         <label for="exampleInputEmail1">Nome</label>
-        <input type="text" class="form-control" id="exampleInputEmail1" name="user" placeholder="Nome do usuário"
+        <input type="text" class="form-control" id="example1" name="user" placeholder="Nome do usuário"
         value="<?= $User['user_name'] ?>">
     </div>
     <div class="form-group">
         <label for="exampleInputEmail1">E-mail</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" name="email" placeholder="E-mail do usuário" 
+        <input type="email" class="form-control" id="example2" name="email" placeholder="E-mail do usuário" 
         value="<?= $User['user_email'] ?>">
     </div>
     <div class="form-group">
         <label for="exampleInputEmail1">Senha</label>
-        <input type="password" class="form-control" id="exampleInputEmail1" name="ps" placeholder="Senha do usuário" 
+        <input type="password" class="form-control" id="example3" name="ps" placeholder="Senha do usuário" 
         value="<?= $User['user_password'] ?>">
     </div>
-    <div class="form-group">
+    <!-- <div class="form-group">
         <label for="example">Nível</label>
-        <select class="form-control" name="level"
+        <select class="form-control" name="level" id="example4"
             placeholder="Nível do usuário">
-            <?php
+            
             $Read = new Read();
             $Read->FullRead('SELECT * FROM users_levels');
             if($Read->getResult()) {
@@ -75,9 +76,9 @@ $UserId = $_GET['update_user'];
             }
             ?>
         </select>
-    </div>
-    <a href="<?= BASE ?>/painel/admin/users/list" class="btn btn-outline-success mb-2" title="Voltar para lista de usuários">Voltar</a>
-    <input type="submit" class="btn btn-success mb-2" name="update_user" value="Atualizar usuário">
+    </div> -->
+        <a href="<?= BASE ?>/painel/admin/users/list" class="btn btn-outline-success mb-2" title="Voltar para lista de usuários">Voltar</a>
+        <input type="submit" class="btn btn-success mb-2" name="update_user" value="Atualizar usuário">
     </form>
     <?php
         }

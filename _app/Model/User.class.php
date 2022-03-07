@@ -104,18 +104,32 @@ class User {
 	}
 
 	public function updateUser($updateUser) {
-		$Update = new Update();
-		$Update->ExeUpdate("users", $updateUser, "WHERE user_id = :ui", "ui={$updateUser}");
-		if ($Update->getResult()) {
-			$this->Result = $Update->getResult();
-			$this->Error = "O usuário foi atualizado com sucesso!";
-		} else {
+		extract($_SESSION['login']);
+		$updateUser = $_SESSION['login']['user_name'];
+		if(empty($updateUser['user_name'])) {
+			$this->Error = "";
+			$this->Result = false; 
+		} elseif(empty($updateUser['user_email'])) {
+			$this->Error = "";
 			$this->Result = false;
-			$this->Error = $Update->getError();
+		} elseif(empty($updateUser['user_password'])) {
+			$this->Error = "";
+			$this->Result = false;
+		} else {
+			$Update = new Update();
+			$Update->ExeUpdate("users", $updateUser, "WHERE user_name = :ui", "ui={$updateUser}");
+			if ($Update->getResult()) {
+				$this->Result = $Update->getResult();
+				$this->Error = "O usuário foi atualizado com sucesso!";
+			} else {
+				$this->Result = false;
+				$this->Error = $Update->getError();
+			}
 		}
 	}
-	
 
+	
+	
 	private function verifyDuplicateUserEmail($email ) {
 		$Read = new Read();
 		$Read->FullRead("SELECT user_name FROM users WHERE user_email = :em", "em={$email}");

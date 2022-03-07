@@ -58,7 +58,7 @@ if($User->verifyLoginUserON()) {
                                     <div class="input-group-prepend">
                                     </div>
                                     <input type="password" class="form-control" name="password"
-                                        value="<?= isset($Post['password'])?$Post['password']: '' ?>" placeholder="Senha">
+                                        value="<?= isset($Post['password'])? $Post['password']: '' ?>" placeholder="Senha">
                                 </div>
                                 <input class="btn btn-danger btn-block btn-round" type="submit" name="login" value="Entrar">
                             </form>
