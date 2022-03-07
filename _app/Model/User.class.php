@@ -103,13 +103,10 @@ class User {
 		}	
 	}
 
-	public function updateUser($updateUser) {
-		if(isset($_POST['submit'])) {
-			$this->Error = "É necessário atualizar pelos menos um campo para concluir atualização!";
-			$this->Result = false;
-		} else {
+	public function updateUser() {
+		if(!empty($_POST['update_user'])) {
 			$Update = new Update();
-			$Update->ExeUpdate("users", $updateUser, "WHERE user_id = :id", "id={$_SESSION['login']['user_name']}");
+			$Update->ExeUpdate("users", "WHERE user_id = :id", "id={$_SESSION['login']['user_name']}");
 			if ($Update->getResult()) {
 				$this->Result = $Update->getResult();
 				$this->Error = "O usuário foi atualizado com sucesso!";
