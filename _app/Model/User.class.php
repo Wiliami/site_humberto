@@ -104,20 +104,12 @@ class User {
 	}
 
 	public function updateUser($updateUser) {
-		extract($_SESSION['login']);
-		$updateUser = $_SESSION['login']['user_name'];
-		if(empty($updateUser['user_name'])) {
-			$this->Error = "Preencha o campo do nome de usuário!";
-			$this->Result = false; 
-		} elseif(empty($updateUser['user_email'])) {
-			$this->Error = "Preencha o campo de e-mail!";
-			$this->Result = false;
-		} elseif(empty($updateUser['user_password'])) {
-			$this->Error = "Preencha o campo de senha!";
+		if(isset($_POST['submit'])) {
+			$this->Error = "É necessário atualizar pelos menos um campo para concluir atualização!";
 			$this->Result = false;
 		} else {
 			$Update = new Update();
-			$Update->ExeUpdate("users", $updateUser, "WHERE user_id = :ui", "ui={$updateUser}");
+			$Update->ExeUpdate("users", $updateUser, "WHERE user_id = :id", "id={$_SESSION['login']['user_name']}");
 			if ($Update->getResult()) {
 				$this->Result = $Update->getResult();
 				$this->Error = "O usuário foi atualizado com sucesso!";
@@ -127,7 +119,7 @@ class User {
 			}
 		}
 	}
-
+	
 	
 	
 	private function verifyDuplicateUserEmail($email ) {
@@ -144,7 +136,7 @@ class User {
 	}
 	public function verifyLogon() { 
         if(isset($_SESSION['usuario']) || isset($_SESSION['senha'])) {
-        header("Location: " . BASE . "/login");
+        header("Location: " . BASE . "/pages/login");
         exit();
         }
     }

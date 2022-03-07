@@ -22,8 +22,8 @@ echo $Component->getMenuDashboard();
             <div class="table-responsive">
                 <table id="table-usuarios" class="table table-striped table-bordered">
                     <thead>
-                        <tr>
-                            <th>*</th>
+                        <tr class="btn-sm">
+                            <th>Profile</th>
                             <th>Usuário</th>
                             <th>Nível</th>
                             <th>Criado</th>
@@ -42,7 +42,7 @@ echo $Component->getMenuDashboard();
                         if($Read->getResult()) {
                             foreach($Read->getResult() as $User) { 
                                 ?>
-                        <tr>
+                        <tr class="btn-sm">
                             <td>
                                 <?= $Component->getAvatarUser(); ?>
                             </td>
@@ -62,14 +62,14 @@ echo $Component->getMenuDashboard();
                                 <?= $User['user_email'] ?>
                             </td>
                             <td>
-                                <a href="<?= BASE ?>/painel/admin/users/update&update_user=<?= $User['user_id'] ?>" class="table-link" title="Editar <?= $User['user_name'] ?> ">
+                                <a href="<?= BASE ?>/painel/admin/users/update&update_user=<?= $User['user_id'] ?>" class="table-link btn-sm" title="Editar <?= $User['user_name'] ?> ">
                                     <span class="fa-stack">
                                         <i class="fa fa-square fa-stack-2x"></i>
                                         <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
                                         <i class="fas fa-pen-to-square"></i>
                                     </span>
                                 </a>
-                                <a href="<?= BASE ?>/painel/admin/users/delete&delete_user=<?= $User['user_id'] ?>" class="table-link" title="Excluir <?= $User['user_name'] ?> ">
+                                <a href="<?= BASE ?>/painel/admin/users/delete&delete_user=<?= $User['user_id'] ?>" class="table-link btn-sm" title="Excluir <?= $User['user_name'] ?> ">
                                     <span class="fa-stack">
                                         <i class="fa fa-square fa-stack-2x"></i>
                                         <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
@@ -85,7 +85,7 @@ echo $Component->getMenuDashboard();
                         ?>
                     </tbody>
                     <tfoot>
-                        <tr>
+                        <tr class="btn-sm">
                             <th>*</th>
                             <th>Usuário</th>
                             <th>Nível</th>

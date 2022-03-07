@@ -22,8 +22,8 @@ echo $Component->getMenuDashboard();
             <div class="table-responsive">
                 <table id="table-lista-cursos" class="table table-striped table-bordered" style="width: 100%;">
                     <thead>
-                        <tr>
-                            <th><span>Nome do curso</span></th>
+                        <tr class="btn-sm">
+                            <th>Nome do curso</th>
                             <th><span>Data de cadastro</span></th>
                             <th><span>Descrição</span></th>
                             <th><span>Categoria</span></th>
@@ -38,7 +38,7 @@ echo $Component->getMenuDashboard();
                         if($Read->getResult()) {
                             foreach($Read->getResult() as $Cursos) {
                                 ?>
-                        <tr>
+                        <tr class="btn-sm">
                             <td>
                                 <span><?= $Cursos['curso_titulo'] ?></span>
                             </td>
@@ -55,13 +55,13 @@ echo $Component->getMenuDashboard();
                                 <span>R$<?= number_format($Cursos['curso_valor'], 2, ',', '.') ?></span>
                             </td>
                             <td>
-                                <a href="<?= BASE ?>/painel/courses/update&curso=<?= $Cursos['curso_id'] ?>" class="table-link" title="Editar <?= $Cursos['curso_titulo'] ?>">
+                                <a href="<?= BASE ?>/painel/courses/update&curso=<?= $Cursos['curso_id'] ?>" class="table-link btn-sm" title="Editar <?= $Cursos['curso_titulo'] ?>">
                                     <span class="fa-stack">
                                         <i class="fa fa-square fa-stack-2x"></i>
                                         <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
                                     </span>
                                 </a>
-                                <a href="<?= BASE ?>/painel/courses/delete&delete=<?= $Cursos['curso_id'] ?>" class="table-link danger" title="Excluir <?= $Cursos['curso_titulo'] ?>">
+                                <a href="<?= BASE ?>/painel/courses/delete&delete=<?= $Cursos['curso_id'] ?>" class="table-link danger btn-sm" title="Excluir <?= $Cursos['curso_titulo'] ?>">
                                     <span class="fa-stack">
                                         <i class="fa fa-square fa-stack-2x"></i>
                                         <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
@@ -76,6 +76,16 @@ echo $Component->getMenuDashboard();
                         }   
                         ?>
                     </tbody>
+                    <tfoot>
+                        <tr class="btn-sm">
+                            <th><span>Nome do curso</span></th>
+                            <th><span>Data de cadastro</span></th>
+                            <th><span>Descrição</span></th>
+                            <th><span>Categoria</span></th>
+                            <th><span>Valor curso</span></th>
+                            <th><span>Opções</span></th>
+                        </tr>
+                    </tfoot>
                 </table>
             </div>
         </div>

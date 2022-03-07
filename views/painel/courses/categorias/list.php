@@ -22,7 +22,7 @@ echo $Component->getMenuDashboard();
             <div class="table-responsive">
                 <table id="table-lista-categoria" class="table table-striped table-bordered" style="width: 100%;">
                     <thead>
-                        <tr>
+                        <tr class="btn-sm"> 
                             <th><span>Categoria</span></th>
                             <th><span>Data de cadastro</span></th>
                             <th><span>Opções</span></th>
@@ -35,7 +35,7 @@ echo $Component->getMenuDashboard();
                         if($Read->getResult()) {
                             foreach($Read->getResult() as $Categoria) {
                                 ?>
-                        <tr>
+                        <tr class="btn-sm">
                             <td>
                                 <span><?= $Categoria['categoria_name']?></span>
                             </td>
@@ -65,8 +65,11 @@ echo $Component->getMenuDashboard();
                         ?>
                     </tbody>
                     <tfoot>
-                        <th><span>Categoria</span></th>
-                        <th><span>Opções</span></th>
+                        <tr class="btn-sm"> 
+                            <th><span>Categoria</span></th>
+                            <th><span>Data de cadastro</span></th>
+                            <th><span>Opções</span></th>
+                        </tr>
                     </tfoot>
                 </table>
             </div>

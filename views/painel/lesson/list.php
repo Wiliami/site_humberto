@@ -22,7 +22,7 @@ echo $Component->getMenuDashboard();
             <div class="table-responsive">
                 <table id="table-lista-cursos" class="table table-striped table-bordered">
                     <thead>
-                        <tr>
+                        <tr class="btn-sm">
                             <th><span>Nome da aula</span></th>
                             <th><span>Data de cadastro</span></th>
                             <th><span>Duração da aula</span></th>
@@ -36,7 +36,7 @@ echo $Component->getMenuDashboard();
                         if($Read->getResult()) {
                             foreach($Read->getResult() as $Aulas) {
                                 ?>
-                        <tr>
+                        <tr class="btn-sm">
                             <td>
                                 <span><?= $Aulas['aula_name'] ?></span>
                             </td>
@@ -47,13 +47,13 @@ echo $Component->getMenuDashboard();
                                 <span><?= $Aulas['aula_duracao'] ?></span>
                             </td>
                             <td>
-                                <a href="<?= BASE ?>/painel/lesson/update&aula=<?= $Aulas['aula_id'] ?>" class="table-link" title="Editar <?= $Aulas['aula_name'] ?>">
+                                <a href="<?= BASE ?>/painel/lesson/update&aula=<?= $Aulas['aula_id'] ?>" class="table-link btn-sm" title="Editar <?= $Aulas['aula_name'] ?>">
                                     <span class="fa-stack">
                                         <i class="fa fa-square fa-stack-2x"></i>
                                         <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
                                     </span>
                                 </a>
-                                <a href="<?= BASE ?>/painel/lesson/delete&delete_aula=<?= $Aulas['aula_id'] ?>" class="table-link danger" title="Excluir <?= $Aulas['aula_name'] ?>">
+                                <a href="<?= BASE ?>/painel/lesson/delete&delete_aula=<?= $Aulas['aula_id'] ?>" class="table-link danger btn-sm" title="Excluir <?= $Aulas['aula_name'] ?>">
                                     <span class="fa-stack">
                                         <i class="fa fa-square fa-stack-2x"></i>
                                         <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
@@ -68,6 +68,14 @@ echo $Component->getMenuDashboard();
                         }   
                         ?>
                     </tbody>
+                    <tfoot>
+                        <tr class="btn-sm">
+                            <th><span>Nome da aula</span></th>
+                            <th><span>Data de cadastro</span></th>
+                            <th><span>Duração da aula</span></th>
+                            <th><span>Opções</span></th>
+                        </tr>
+                    </tfoot>
                 </table>
             </div>
         </div>

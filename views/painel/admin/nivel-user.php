@@ -23,8 +23,9 @@ echo $Component->getMenuDashboard();
                 <table id="table-niveis" class="table table-striped table-bordered" style="width: 100%;">
                     </div>
                     <thead>
-                        <tr>
+                        <tr class="btn-sm">
                             <th>Nível Usuário</th>
+                            <th>Data de criação</th>
                             <th>Opções</th>
                         </tr>
                     </thead>
@@ -35,18 +36,21 @@ echo $Component->getMenuDashboard();
                             if($Read->getResult()) {
                                 foreach($Read->getResult() as $Level) {
                                     ?>
-                        <tr>
+                        <tr class="btn-sm">
                             <td>
                                 <span><?= $Level['level_desc'] ?></span>
                             </td>
                             <td>
-                                <a href="<?= BASE ?>/painel/level-user/update&level=<?= $Level['level_id'] ?>" class="table-link" title="Editar nível <?= $Level['level_desc'] ?>">
+                                <span><?= date('d/m/Y', strtotime($Level['level_create_date'])) ?></span>
+                            </td>
+                            <td>
+                                <a href="<?= BASE ?>/painel/level-user/update&level=<?= $Level['level_id'] ?>" class="table-link btn-sm" title="Editar nível <?= $Level['level_desc'] ?>">
                                     <span class="fa-stack">
                                         <i class="fa fa-square fa-stack-2x"></i>
                                         <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
                                     </span>
                                 </a>
-                                <a href="<?= BASE ?>/painel/level-user/delete&nivel_delete=<?= $Level['level_id'] ?>" class="table-link danger" title="Excluir nível <?= $Level['level_desc'] ?>">
+                                <a href="<?= BASE ?>/painel/level-user/delete&nivel_delete=<?= $Level['level_id'] ?>" class="table-link danger btn-sm" title="Excluir nível <?= $Level['level_desc'] ?>">
                                     <span class="fa-stack">
                                         <i class="fa fa-square fa-stack-2x"></i>
                                         <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
@@ -61,6 +65,13 @@ echo $Component->getMenuDashboard();
                             }   
                             ?>
                     </tbody>
+                    <tfoot>
+                        <tr class="btn-sm">
+                            <th>Nível Usuário</th>
+                            <th>Data de criação</th>
+                            <th>Opções</th>
+                        </tr>
+                    </tfoot>
                 </table>
             </div>
         </div>

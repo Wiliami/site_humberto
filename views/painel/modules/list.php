@@ -22,7 +22,7 @@ echo $Component->getMenuDashboard();
             <div class="table-responsive">
                 <table id="table-lista-modulos" class="table table-striped table-bordered" style="width: 100%;">
                     <thead>
-                        <tr>
+                        <tr class="btn-sm">
                             <th><span>Nome do módulo</span></th>
                             <th><span>Data de cadastro</span></th>
                             <th><span>Descrição</span></th>
@@ -36,7 +36,7 @@ echo $Component->getMenuDashboard();
                         if($Read->getResult()) {
                             foreach($Read->getResult() as $Modulos) {
                                 ?>
-                        <tr>
+                        <tr class="btn-sm">
                             <td>
                                 <span><?= $Modulos['modulo_name'] ?></span>
                             </td>
@@ -47,13 +47,13 @@ echo $Component->getMenuDashboard();
                                 <span><?= $Modulos['modulo_descricao'] ?></span>
                             </td>
                             <td>
-                                <a href="<?= BASE ?>/painel/modules/update&module=<?= $Modulos['modulo_id'] ?>" class="table-link" title="Atualizar <?= $Modulos['modulo_name']?>">
+                                <a href="<?= BASE ?>/painel/modules/update&module=<?= $Modulos['modulo_id'] ?>" class="table-link btn-sm" title="Atualizar <?= $Modulos['modulo_name']?>">
                                     <span class="fa-stack">
                                         <i class="fa fa-square fa-stack-2x"></i>
                                         <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
                                     </span>
                                 </a>
-                                <a href="<?= BASE ?>/painel/modules/delete&delete_module=<?= $Modulos['modulo_id'] ?>" class="table-link danger" title="Excluir <?= $Modulos['modulo_name'] ?>"
+                                <a href="<?= BASE ?>/painel/modules/delete&delete_module=<?= $Modulos['modulo_id'] ?>" class="table-link danger btn-sm" title="Excluir <?= $Modulos['modulo_name'] ?>"
                                     title="Excluir curso">
                                     <span class="fa-stack">
                                         <i class="fa fa-square fa-stack-2x"></i>
@@ -69,6 +69,14 @@ echo $Component->getMenuDashboard();
                         }   
                         ?>
                     </tbody>
+                    <tfoot>
+                        <tr class="btn-sm">
+                            <th><span>Nome do módulo</span></th>
+                            <th><span>Data de cadastro</span></th>
+                            <th><span>Descrição</span></th>
+                            <th><span>Opções</span></th>
+                        </tr>
+                    </tfoot>
                 </table>
             </div>
         </div>
