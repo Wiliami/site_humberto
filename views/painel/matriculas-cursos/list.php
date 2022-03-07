@@ -22,7 +22,7 @@ echo $Component->getMenuDashboard();
             <div class="table-responsive">
                 <table id="lista-matriculas" class="table table-striped table-bordered" style="width: 100%;">
                     <thead>
-                        <tr>
+                        <tr class="btn-sm">
                             <th><span>Usuário matriculado</span></th>
                             <th><span>Curso matriculado</span></th>
                             <th><span>Data da matrícula</span></th>
@@ -36,7 +36,7 @@ echo $Component->getMenuDashboard();
                         if($Read->getResult()) {
                             foreach($Read->getResult() as $Matriculas) {
                                 ?>
-                        <tr>
+                        <tr class="btn-sm">
                             <td>
                                 <span><?= $Matriculas['matricula_usuario'] ?></span>
                             </td>
@@ -47,13 +47,13 @@ echo $Component->getMenuDashboard();
                                 <span><?= date('d/m/Y', strtotime($Matriculas['matricula_create_date'])) ?></span>
                             </td>
                             <td>
-                                <a href="<?= BASE ?>/painel/matriculas-cursos/update&matricula_update=<?= $Matriculas['matricula_id'] ?>" class="table-link" title="Editar matrícula de <?= $Matriculas['matricula_usuario'] ?>">
+                                <a href="<?= BASE ?>/painel/matriculas-cursos/update&matricula_update=<?= $Matriculas['matricula_id'] ?>" class="table-link btn-sm" title="Editar matrícula de <?= $Matriculas['matricula_usuario'] ?>">
                                     <span class="fa-stack">
                                         <i class="fa fa-square fa-stack-2x"></i>
                                         <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
                                     </span>
                                 </a>
-                                <a href="<?= BASE ?>/painel/matriculas-cursos/delete&delete_matricula=<?= $Matriculas['matricula_id'] ?>" class="table-link danger" title="Excluir matrícula de <?= $Matriculas['matricula_usuario'] ?>">
+                                <a href="<?= BASE ?>/painel/matriculas-cursos/delete&delete_matricula=<?= $Matriculas['matricula_id'] ?>" class="table-link danger btn-sm" title="Excluir matrícula de <?= $Matriculas['matricula_usuario'] ?>">
                                     <span class="fa-stack">
                                         <i class="fa fa-square fa-stack-2x"></i>
                                         <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
@@ -68,6 +68,14 @@ echo $Component->getMenuDashboard();
                         }   
                         ?>
                     </tbody>
+                    <tfoot>
+                        <tr class="btn-sm">
+                            <th><span>Usuário matriculado</span></th>
+                            <th><span>Curso matriculado</span></th>
+                            <th><span>Data da matrícula</span></th>
+                            <th><span>Opções</span></th>
+                        </tr>
+                    </tfoot>
                 </table>
             </div>
         </div>
