@@ -107,17 +107,17 @@ class User {
 		extract($_SESSION['login']);
 		$updateUser = $_SESSION['login']['user_name'];
 		if(empty($updateUser['user_name'])) {
-			$this->Error = "";
+			$this->Error = "Preencha o campo do nome de usuário!";
 			$this->Result = false; 
 		} elseif(empty($updateUser['user_email'])) {
-			$this->Error = "";
+			$this->Error = "Preencha o campo de e-mail!";
 			$this->Result = false;
 		} elseif(empty($updateUser['user_password'])) {
-			$this->Error = "";
+			$this->Error = "Preencha o campo de senha!";
 			$this->Result = false;
 		} else {
 			$Update = new Update();
-			$Update->ExeUpdate("users", $updateUser, "WHERE user_name = :ui", "ui={$updateUser}");
+			$Update->ExeUpdate("users", $updateUser, "WHERE user_id = :ui", "ui={$updateUser}");
 			if ($Update->getResult()) {
 				$this->Result = $Update->getResult();
 				$this->Error = "O usuário foi atualizado com sucesso!";
