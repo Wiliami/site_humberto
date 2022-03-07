@@ -103,22 +103,18 @@ class User {
 		}	
 	}
 
-	public function updateUser() {
-		if(!empty($updateUser['update_user'])) {
-			$this->Error = 'É necessário atualizar pelo menos uma campo para atualizar!';
-			$this->Result = false;
+	public function updateUser($updateUser) {
+		$Update = new Update();
+		$Update->ExeUpdate("users", $updateUser, "WHERE user_id = :ui", "ui={$updateUser}");
+		if ($Update->getResult()) {
+			$this->Result = $Update->getResult();
+			$this->Error = "O usuário foi atualizado com sucesso!";
 		} else {
-			$Update = new Update();
-			$Update->ExeUpdate("users", $updateUser, "WHERE user_id = :ui", "ui={$updateUser}");
-			if ($Update->getResult()) {
-				$this->Result = $Update->getResult();
-				$this->Error = "O usuário foi atualizado com sucesso!";
-			} else {
-				$this->Result = false;
-				$this->Error = $Update->getError();
-			}
+			$this->Result = false;
+			$this->Error = $Update->getError();
 		}
 	}
+	
 
 	private function verifyDuplicateUserEmail($email ) {
 		$Read = new Read();
@@ -133,9 +129,7 @@ class User {
 		}
 	}
 	public function verifyLogon() { 
-
         if(isset($_SESSION['usuario']) || isset($_SESSION['senha'])) {
-        // Usuário não logado! Redireciona para a página de login
         header("Location: " . BASE . "/login");
         exit();
         }
