@@ -25,13 +25,12 @@ $UserId = $_GET['update_user'];
         $updateUser['user_name'] = $Post['user'];
         $updateUser['user_email'] = $Post['email'];
         $updateUser['user_password'] = $Post['ps'];
-        //Check::var_dump_json($updateUser); // aqui ele recebe a atualização enviado pelo input
+        //Check::var_dump_json($updateUser);
         $User = new User();
-        $User->updateUser($updateUser); // o problema esta aqui
-        //Check::var_dump_json($User->updateUser());
+        $User->updateUser($updateUser);
         //Check::var_dump_json($User->updateUser($updateUser));
         if($User->getResult()) {
-            //Check::var_dump_json($User->getResult()); // tá vindo como true
+            //Check::var_dump_json($User->getResult());
             Error($User->getError());
         } else {
             Error($User->getError(), 'warning');

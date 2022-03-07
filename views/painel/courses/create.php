@@ -30,7 +30,6 @@ echo $Component->getMenuDashboard();
             $Course->createCourse($CreateCourse);
             if($Course->getResult()) {
                 Error($Course->getError());
-                //header('Location: ' . BASE . '/painel/courses/list');
             } else {
                 Error($Course->getError(), 'warning');
             }   

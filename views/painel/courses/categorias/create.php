@@ -24,14 +24,12 @@ echo $Component->getMenuDashboard();
             $Course = new Course();
             $Course->createCategoryCourse($CreateCategoria);
             if($Course->getResult()) {
-                //header('Location: ' . BASE . '/painel/courses/update');
                 Error($Course->getError());
-                // cadastro realizado com sucesso
             } else {
                 Error($Course->getError(), 'warning');
-                //falta os campos serem preenchidos nos inputs ou o input recebeu alguma informação errada
             }   
         }
+        //header('Location: ' . BASE . '/painel/courses/categorias/list');
         ?>
     <form method="post">
         <div class="form-group">
