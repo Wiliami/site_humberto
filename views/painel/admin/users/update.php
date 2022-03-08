@@ -19,7 +19,7 @@ $Read->FullRead("SELECT * FROM users WHERE user_id = :ui", "ui={$UserId}");
 if($Read->getResult()) {
     $DataUser = $Read->getResult()[0];
 } else {
-    die(Error('Usuário não encontrado!'));
+    die(Error('Usuário não foi encontrado!', 'warning'));
 }
 ?>
 <div class="container">
