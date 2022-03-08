@@ -12,7 +12,7 @@ echo $Component->getLiPagesDashboard();
 echo $Component->getCreatePagesAdmin();
 echo $Component->getListPagesAdmin();
 echo $Component->getMenuDashboard();
-$deleteMatricula = $_GET['delete_matricula']
+$MatriculaId = $_GET['delete_matricula']
 ?>
 <div class="container">
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
@@ -22,7 +22,7 @@ $deleteMatricula = $_GET['delete_matricula']
     <form method="post">
         <?php 
         $Read = new Read();
-        $Read->FullRead("SELECT * FROM matriculas_cursos WHERE matricula_id = :mi", "mi={$deleteMatricula}");
+        $Read->FullRead("SELECT * FROM matriculas_cursos WHERE matricula_id = :mi", "mi={$MatriculaId}");
         if($Read->getResult()) {
             foreach($Read->getResult() as $Matriculas) {
                 ?>
