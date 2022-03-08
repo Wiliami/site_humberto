@@ -59,7 +59,7 @@ if($Read->getResult()) {
         </div>
         <div class="form-group">
             <label for="exampleInputEmail1">Senha</label>
-            <input type="password" class="form-control" id="example3" name="ps" placeholder="Digite a no do usuário">
+            <input type="password" class="form-control" id="example3" name="ps" placeholder="Digite a nova senha do usuário">
         </div>
         <a href="<?= BASE ?>/painel/admin/users/list" class="btn btn-outline-success mb-2" title="Voltar para lista de usuários">Voltar</a>
         <input type="submit" class="btn btn-success mb-2" name="update_user" value="Atualizar usuário">
