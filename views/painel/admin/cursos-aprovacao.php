@@ -51,13 +51,13 @@ echo $Component->getMenuDashboard();
                                 <span><?= $User['user_name']?></span>
                             </td>
                             <td style="width: 20%;">
-                                <a href="/" class="table-link" title="Editar aprovação de <?= $User['compra_curso'] ?>">
+                                <a href="<?= BASE ?>/painel/admin/aprovacao&aprovacao=<?= $User['compra_id'] ?>" class="table-link" title="Editar aprovação de <?= $User['compra_curso'] ?>">
                                     <span class="fa-stack">
                                         <i class="fa fa-square fa-stack-2x"></i>
                                         <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
                                     </span>
                                 </a>
-                                <a href="/" class="table-link danger" title="Excluir aprovação de <?= $User['compra_curso'] ?>">
+                                <a href="<?= BASE ?>/painel/admin/delete-aprovacao&aprovacao_delete=<?= $User['compra_id'] ?>" class="table-link danger" title="Excluir aprovação de <?= $User['compra_curso'] ?>">
                                     <span class="fa-stack">
                                         <i class="fa fa-square fa-stack-2x"></i>
                                         <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
