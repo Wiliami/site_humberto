@@ -12,15 +12,25 @@ echo $Component->getLiPagesDashboard();
 echo $Component->getCreatePagesAdmin();
 echo $Component->getListPagesAdmin();
 echo $Component->getMenuDashboard();
+$CoursesUser = $_GET['course'];
 ?>
 <div class="row gx-5 container">
     <div class="d-sm-flex align-items-center justify-content-start mb-3">
         <i class="fas fa-layer-plus"></i>
-        <h1 class="h3 mb-0 text-gray-800">Cursos do usuário</h1>
+        <?php
+        $Read = new Read();
+        $Read->FullRead("SELECT * FROM users WHERE user_id = :ui", "ui={$CoursesUser}");
+        if($Read->getResult()) {
+            foreach($Read->getResult() as $User) {
+                ?>
+            <h1 class="h3 mb-0 text-gray-800">Cursos de <?= $User['user_name'] ?></h1>
+        <?php
+            }
+        }
+        ?>
     </div>
     <div>
     <?php
-    $Read = new Read();
     $Read->FullRead("SELECT m.*, c.curso_titulo, c.curso_descricao
         FROM matriculas m 
         LEFT JOIN users u ON u.user_id = m.user_id

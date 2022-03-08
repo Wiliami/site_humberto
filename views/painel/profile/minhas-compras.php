@@ -21,11 +21,10 @@ echo $Component->getMenuDashboard();
             <div class="table-responsive">
                 <table id="table-compras-usuario" class="table table-striped table-bordered" style="width: 100%;">
                     <thead>
-                        <tr>
+                        <tr class="btn-sm">
                             <th>Nome do curso</span></th>
                             <th>Data da compra</span></th>
                             <th>Valor do curso</>
-                            </th>
                             <th><span>Opções</span></th>
                         </tr>
                     </thead>
@@ -36,7 +35,7 @@ echo $Component->getMenuDashboard();
                         if($Read->getResult()) {
                             foreach($Read->getResult() as $Cursos) {
                                 ?>
-                        <tr>
+                        <tr class="btn-sm">
                             <td>
                                 <span><?= $Cursos['curso_titulo'] ?></span>
                             </td>
@@ -47,12 +46,12 @@ echo $Component->getMenuDashboard();
                                 <span><?= $Cursos['curso_valor'] ?></span>
                             </td>
                             <td style="width: 20%;">
-                                <a href="/" class="table-link">
+                                <!-- <a href="/" class="table-link">
                                     <span class="fa-stack">
                                         <i class="fa fa-square fa-stack-2x"></i>
                                         <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
                                     </span>
-                                </a>
+                                </a> -->
                                 <a href="/" class="table-link">
                                     <span class="fa-stack">
                                         <i class="fa fa-square fa-stack-2x"></i>
@@ -74,6 +73,14 @@ echo $Component->getMenuDashboard();
                         }   
                         ?>
                     </tbody>
+                    <tfoot>
+                        <tr class="btn-sm">
+                            <th>Nome do curso</span></th>
+                            <th>Data da compra</span></th>
+                            <th>Valor do curso</>
+                            <th><span>Opções</span></th>
+                        </tr>
+                    </tfoot>
                 </table>
             </div>
         </div>

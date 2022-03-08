@@ -21,7 +21,7 @@ echo $Component->getMenuDashboard();
             <div class="table-responsive">
                 <table id="tabela-cursos-pendentes" class="table table-striped table-bordered" style="width: 100%;">
                     <thead>
-                        <tr>
+                        <tr class="btn-sm">
                             <th>Nome do curso</th>
                             <th>Tempo</th>
                             <th>Opções</th>
@@ -34,7 +34,7 @@ echo $Component->getMenuDashboard();
                             if($Read->getResult()) {
                                 foreach($Read->getResult() as $Cursos) {
                                     ?>
-                        <tr>
+                        <tr class="btn-sm">
                             <td>
                                 <span><?= $Cursos['curso_titulo'] ?></span>
                             </td>
@@ -69,6 +69,13 @@ echo $Component->getMenuDashboard();
                             }   
                             ?>
                     </tbody>
+                    <tfoot>
+                        <tr class="btn-sm">
+                            <th>Nome do curso</th>
+                            <th>Tempo</th>
+                            <th>Opções</th>
+                        </tr>
+                    </t>
                 </table>
             </div>
         </div>
