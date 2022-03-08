@@ -10,9 +10,9 @@ echo $Component->getLiCoursesDashboard();
 echo $Component->getLiPagesDashboard();
 echo $Component->getCreatePagesAdmin();
 echo $Component->getListPagesAdmin();
-echo $Component->getMenuDashboard();
 $MatriculaId = $_GET['matricula_update'];
 ?>
+<?= $Component->getMenuDashboard();?>
 <div class="container">
     <div class="card-header py-3 d-sm-flex align-items-center justify-content-between mb-2">
         <h1 class="h3 mb-0 text-gray-800">Atualizar matrícula</h1>
@@ -25,7 +25,7 @@ $MatriculaId = $_GET['matricula_update'];
     if($Read->getResult()) {
         foreach($Read->getResult() as $Matricula) {
             ?>
-    <h1 class="h5 mb-0 text-gray-800 mb-4">Atualizar matrícula no curso <b><?= $Matricula['matricula_curso'] ?> </b>de usuário <?= $Matricula['matricula_usuario'] ?></h1>
+    <h1 class="h5 mb-0 text-gray-800 mb-4">Atualizar matrícula no curso <b><?= $Matricula['matricula_curso'] ?> </b>do usuário <?= $Matricula['matricula_usuario'] ?></h1>
         <div class="form-group">
             <label for="exampleInputEmail1">Curso</label>
             <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Nome da matrícula"  name="course_matriculate" value="<?= $Matricula['matricula_curso'] ?>">

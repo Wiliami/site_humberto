@@ -382,7 +382,7 @@ class Component {
                                     </div>
                                     <div>
                                         <div class="small text-gray-500">05 de Janeiro de 2022</div>
-                                        <span class="font-weight-bold">O curso sobre finanças acaba de ser lançado!</span>
+                                        <span class="font-weight-bold">O curso sobre finanças acaba de ser lançado!</span> 
                                     </div>
                                 </a>
                                 <a class="dropdown-item d-flex align-items-center" href="#">

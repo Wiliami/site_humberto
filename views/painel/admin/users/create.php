@@ -71,6 +71,7 @@ echo $Component->getMenuDashboard();
                 ?>
             </select>
         </div>
+        <a href="<?= BASE ?>/painel/admin/users/list" class="btn btn-outline-success mb-2" title="Voltar para lista de usuários">Voltar</a>
         <input type="submit" class="btn btn-success mb-2" name="register_user" value="Cadastrar usuário">
     </form>
 </div>

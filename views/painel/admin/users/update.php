@@ -80,6 +80,7 @@ $UserId = $_GET['update_user'];
     </div> -->
         <a href="<?= BASE ?>/painel/admin/users/list" class="btn btn-outline-success mb-2" title="Voltar para lista de usuários">Voltar</a>
         <input type="submit" class="btn btn-success mb-2" name="update_user" value="Atualizar usuário">
+        <a href="<?= BASE ?>/painel/profile/courses/courses-users" class="btn btn-outline-success mb-2" title="Voltar para lista de matrículas de cursos">Ver cursos do usuário</a>
     </form>
     <?php
         }
