@@ -13,60 +13,62 @@ echo $Component->getCreatePagesAdmin();
 echo $Component->getListPagesAdmin();
 echo $Component->getMenuDashboard();
 $CourseId = $_GET['update_curso'];
+
+$Read = new Read();
+$Read->FullRead("SELECT * FROM cursos WHERE curso_id = :ci", "ci={$CourseId}");
+if($Read->getResult()) {
+    $DataCourse = $Read->getResult()[0]; // certezad que só existe um dado
+} else {
+    Error("Nenhum curso foi selecionado para atualizar!");
+    }
 ?>
 <div class="container card-header">
     <div class="card-header py-3 d-sm-flex align-items-center justify-content-between mb-2">
         <h5 class="h3 mb-0 text-gray-800">Atualizar cursos</h5>
-        <a href="<?= BASE ?>/painel/courses/list" class="btn btn-success mb-2" title="Voltar para lista de cursos">Voltar</a>
     </div>
-    <form method="GET">
+    <form method="post">
         <?php
         $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
         if(!empty($Post['update_course'])) {
-            $udpateCourse['curso_titulo'] = $Post['course'];
-            $udpateCourse['curso_descricao'] = $Post['description'];
-            $udpateCourse['curso_categoria'] = $Post['category'];
-            $udpateCourse['curso_valor'] = $Post['value'];
-            $Course = new Course();
-            $Course->updateCourse($udpateCourse);
-            if($Course->getResult()) {
-                Error($Course->getError());
+            if(empty($Post['course'])) {
+                $updateCourse['curso_titulo'] = $Post['course'];
+            } elseif(empty($Post['description'])) {
+                $updateCourse['curso_descricao'] = $Post['description'];
+            } elseif(empty($Post['category'])) {
+                $updateCourse['curso_categoria'] = $Post['category'];
+            } elseif(empty($Post['value'])) {
+                $updateCourse['curso_valor'] = $Post['value'];
             } else {
-                Error($Course->getError(), 'warning');
-            }   
+                $DataCourse = $updateCourse;
+                $Course = new Course();
+                $Course->updateCourse($updateCourse, $CourseId);
+                if($Course->getResult()) {
+                    Error($Course->getError());
+                } else {
+                    Error($Course->getError(), 'warning');
+                }   
+            }
         }
         ?>
-        <?php 
-        $Read = new Read();
-        $Read->FullRead("SELECT * FROM cursos WHERE curso_id = :ci", "ci={$CourseId}");
-        if($Read->getResult()) {
-            foreach($Read->getResult() as $Cursos) {
-                ?>
-        <h1 class="h5 mb-0 text-gray-800 mb-4">Atualizar <?= $Cursos['curso_titulo'] ?></h1>
+        <h1 class="h5 mb-0 text-gray-800 mb-4">Atualizar <?= $DataCourse['curso_titulo'] ?></h1>
         <div class="form-group">
             <label for="exampleInputEmail1">Curso</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Nome do curso"  name="course" value="<?= $Cursos['curso_titulo'] ?>">
+            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Nome do curso"  name="course" value="<?= $DataCourse['curso_titulo'] ?>">
         </div>
         <div class="form-group">
             <label for="exampleInputPassword1">Descrição</label>
-            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Descrição do curso" name="description" value="<?= $Cursos['curso_descricao'] ?>">
+            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Descrição do curso" name="description" value="<?= $DataCourse['curso_descricao'] ?>">
         </div>
         <div class="form-group">
             <label for="exampleInputPassword1">Categoria</label>
-            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Categoria do curso" name="category" value="<?= $Cursos['curso_categoria'] ?>">
+            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Categoria do curso" name="category" value="<?= $DataCourse['curso_categoria'] ?>">
         </div>
         <div class="form-group">
             <label for="exampleInputPassword1">Valor</label>
-            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Valor do curso" name="value" value="R$<?= number_format($Cursos['curso_valor'], 2, ',', '.') ?>">
+            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Valor do curso" name="value" value="R$<?= number_format($DataCourse['curso_valor'], 2, ',', '.') ?>">
         </div>
-        <input type="submit" class="btn btn-primary" name="update_course" value="Atualizar curso">
+        <input type="submit" class="btn btn-success" name="update_course" value="Atualizar curso">
+        <a href="<?= BASE ?>/painel/courses/list" class="btn btn-outline-success" title="Voltar para a lista de cursos">Voltar</a>
     </form>
-    <?php
-        }
-    } else {
-        Error("Nenhum curso foi selecionado para atualizar!");
-    }
-    ?>
-<!-- Fim da div container -->
 </div>
 <?= $Component->getFooterDashboard(); ?>

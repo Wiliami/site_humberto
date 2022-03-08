@@ -15,7 +15,7 @@ class Course {
 			$matriculate['matricula_create_date'] = date('Y-m-d H:i:s');
 			$Create = new Create();
 			$Create->ExeCreate('matriculas', $matriculate);
-			if($Read->getResult()) {
+			if($Create->getResult()) {
 				$this->Result = $Create->getResult();
 				$this->Error = "A matrícula foi feita com sucesso!";
 			} else {
@@ -67,13 +67,22 @@ class Course {
 			}	
 		}
 
-	public function updateCourse($updateCourse) {
+	public function updateCourse($updateCourse, $CourseId) {
 		if(empty($updateCourse['curso_titulo'])) {
-			$this->Error = 'É necessário atualizar ao menos um campo para finalizar atualização!';
+			$this->Error = 'É necessário informar alterar o nome do curso para atualizar!';
+			$this->Result = false;
+		} elseif(empty($updateCourse['curso_descricao'])) {
+			$this->Error = "É necessário atualizar o campo de descrição de curso!";
+			$this->Result = false;
+		} elseif(empty($updateCourse['curso_categoria'])) {
+			$this->Error = "É necessário atualizar o campo de categoria!";
+			$this->Result = false;
+		} elseif(empty($updateCourse['curso_valor'])) {
+			$this->Error = "É necessário atualizar o campo de valor de curso!";
 			$this->Result = false;
 		} else {
 			$Update = new Update();
-			$Update->ExeUpdate("cursos", $updateCourse, "WHERE curso_id = :ci", "ci={$updateCourse}");
+			$Update->ExeUpdate("cursos", $updateCourse, "WHERE curso_id = :ci", "ci={$CourseId}");
 			if ($Update->getResult()) {
 				$this->Result = $Update->getResult();
 				$this->Error = "O curso foi atualizado com sucesso!";
@@ -91,7 +100,7 @@ class Course {
 			$this->Result = false;
 		} else {
 			$Delete = new Delete();
-			$Delete->ExeDelete("DELETE cursos WHERE curso_id = :ci", "ci={$deleteCourse}");
+			$Delete->ExeDelete("cursos", "WHERE curso_id = :ci", "ci={$deleteCourse}");
 			if($Delete->getResult()) {
 				$this->Result = $Delete->getError();
 				$this->Error = "O curso foi excluído com sucesso!";

@@ -106,7 +106,7 @@ class User {
 	public function updateUser($updateUser, $userId) {
 		$_SESSION['login']['user_id'];
 		if(empty($updateUser['user_name'])) {
-			$this->Error = "Preencha com um nome";
+			$this->Error = "Preencha com um nome!";
 			$this->Result = false;
 		} elseif(empty($updateUser['user_email'])) {
 			$this->Error = "Preencha com um e-mail!";

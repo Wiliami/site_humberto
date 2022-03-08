@@ -19,7 +19,7 @@ $CourseId = $_GET['delete_curso'];
         <h5 class="h3 mb-0 text-gray-800 ml-2">Excluir | Excluir cursos</h5>
         <a href="<?= BASE ?>/painel/courses/list" class="btn btn-success mb-2" title="Voltar para lista de cursos">Voltar</a>
     </div>
-    <form method="GET">
+    <form method="post">
         <?php
         $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
             if(!empty($Post['delete_course'])) {
