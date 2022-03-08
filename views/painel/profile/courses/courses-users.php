@@ -12,10 +12,10 @@ echo $Component->getLiPagesDashboard();
 echo $Component->getCreatePagesAdmin();
 echo $Component->getListPagesAdmin();
 echo $Component->getMenuDashboard();
-$CoursesUser = $_GET['course'];
+$CoursesUser = $_GET['user'];
 ?>
 <div class="row gx-5 container">
-    <div class="d-sm-flex align-items-center justify-content-start mb-3">
+    <div class="d-sm-flex align-items-center justify-content-between mb-3">
         <i class="fas fa-layer-plus"></i>
         <?php
         $Read = new Read();
@@ -28,6 +28,7 @@ $CoursesUser = $_GET['course'];
             }
         }
         ?>
+        <a href="<?= BASE ?>/painel/admin/users/list" class="btn btn-success mb-2" title="Voltar para lista de cursos de usuário">Voltar</a>
     </div>
     <div>
     <?php
@@ -66,7 +67,7 @@ $CoursesUser = $_GET['course'];
     <?php
         }
     } else {
-        Error("Usuário selecionado(a) ainda não possui cursos!");
+        Error("Usuário selecionado(a) não possui nenhum curso!");
     }   
     ?>
 </div>

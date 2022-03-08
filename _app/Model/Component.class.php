@@ -84,93 +84,7 @@ class Component {
         </header>
         ';
     }
-    public function getFooter() {
-        return '
-        <div class="header-2">
-            <footer class="bg-dark text-center text-lg-start text-white">
-                <div class="container p-4 w-100">
-                    <div class="row my-4">
-                        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                            <p class="text-center">Pr. Humberto Oliveira</p>
-                            <ul class="list-unstyled d-flex flex-row justify-content-center">
-                                <li>
-                                    <a class="text-white px-2" href="/">
-                                        <i class="fab fa-facebook-square"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="text-white px-2" href="/">
-                                        <i class="fab fa-instagram"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="text-white ps-2" href="/">
-                                        <i class="fab fa-youtube"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                            <h5 class="text-uppercase mb-4">Parcerias</h5>
-                            <ul class="list-unstyled">
-                                <li class="mb-2">
-                                    <a href="/" class="text-white"><i class="fas fa-paw pe-3"></i>unitplus</a>
-                                </li>
-                                <li class="mb-2">
-                                    <a href="/" class="text-white"><i class="fas fa-paw pe-3"></i>Igreja Adventista do sétimo dia</a>
-                                </li>
-                                <li class="mb-2">
-                                    <a href="/" class="text-white"><i class="fas fa-paw pe-3"></i>unitbrasil</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                            <h5 class="text-uppercase mb-4">Sobre</h5>
-                            <ul class="list-unstyled">
-                                <li class="mb-2">
-                                    <a href="/" class="text-white"><i class="fas fa-paw pe-3"></i>Ministério Pastoral</a>
-                                </li>
-                                <li class="mb-2">
-                                    <a href="/" class="text-white"><i class="fas fa-paw pe-3"></i>Contato pessoal</a>
-                                </li>
-                                <li class="mb-2">
-                                    <a href="/" class="text-white"><i class="fas fa-paw pe-3"></i>Agenda</a>
-                                </li>
-                                <li class="mb-2">
-                                    <a href="/" class="text-white"><i class="fas fa-paw pe-3"></i>Eventos</a>
-                                </li>
-                                <li class="mb-2">
-                                    <a href="/" class="text-white"><i class="fas fa-paw pe-3"></i>Curiosidades</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                            <h5 class="text-uppercase mb-4">Contato</h5>
-                            <ul class="list-unstyled">
-                                <li>
-                                    <p><i class="fas fa-map-marker-alt pe-2"></i>Amazonas, Av. Timbiras, 0000, Manaus </p>
-                                </li>
-                                <li>
-                                    <p><i class="fas fa-phone pe-2"></i>(55) 92 99999-9999</p>
-                                </li>
-                                <li>
-                                    <p><i class="fas fa-envelope pe-2 mb-0"></i>unitbrasil@.com</p>
-                                </li>
-                            </ul>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="text-center p-3 btn-primary">© 2021 Copyright:
-                    <a class="text-white" href="/">unitbrasil.com</a>
-                </div>
-            </footer>
-            </div>
-        </body>
-    </html>
-        ';
-    }
-
+    
     public function getFooterHome() {
         return '
             <footer class="footer pt-5 mt-5">
@@ -274,7 +188,7 @@ class Component {
                 <div class="col-12">
                 <div class="text-center">
                     <p class="text-dark my-4 text-sm font-weight-normal">
-                    Desenvolvido por Unitplus | Copyright ' . date('Y') . ' © <a href="https://www.unitplus.com.br/" target="_blank">Unitplus</a>.
+                    Desenvolvido por Unitplus | Copyright início-projeto-' . date('Y') . ' © <a href="https://www.unitplus.com.br/" target="_blank">Unitplus</a>.
                     </p>
                 </div>
                 </div>
@@ -1059,15 +973,15 @@ class Component {
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title btn btn-success mb-2 vw-100" id="exampleModalLabel">Pronto para sair?</h5>
+                            <h5 class="modal-title btn btn-primary mb-2 vw-100" id="exampleModalLabel">Pronto para sair?</h5>
                             <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">×</span>
                             </button>
                         </div>
                         <div class="modal-body">Selecione "Sair" para encerrar a sua sessão.</div>
                         <div class="modal-footer">
-                            <button class="btn btn-outline-success" type="button" data-dismiss="modal">Cancelar</button>
-                            <a class="btn btn-success" href="' . BASE . '/pages/logout">Sair</a>
+                            <button class="btn btn-outline-primary" type="button" data-dismiss="modal">Cancelar</button>
+                            <a class="btn btn-primary" href="' . BASE . '/pages/logout">Sair</a>
                         </div>
                     </div>
                 </div>

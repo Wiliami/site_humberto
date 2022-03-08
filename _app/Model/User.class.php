@@ -103,10 +103,11 @@ class User {
 		}	
 	}
 
-	public function updateUser() {
+	public function updateUser($updateUser) {
+		$_SESSION['login']['user_id'];
 		if(!empty($_POST['update_user'])) {
 			$Update = new Update();
-			$Update->ExeUpdate("users", "WHERE user_id = :id", "id={$_SESSION['login']['user_name']}");
+			$Update->ExeUpdate("users", $updateUser, "WHERE user_id = :id", "id={$_SESSION['login']['user_name']}");
 			if ($Update->getResult()) {
 				$this->Result = $Update->getResult();
 				$this->Error = "O usuário foi atualizado com sucesso!";
