@@ -1126,7 +1126,9 @@ class Component {
     // bloquear páginas administrativas 
     public function getBlockPageAdmin() {
         if($_SESSION['login']['user_level'] <= 1) {
-            return header('Location:' . BASE . '/painel/dashboard');
+            header('Location:' . BASE . '/painel/dashboard');
+            die();
+            return false;
         }
     }
 

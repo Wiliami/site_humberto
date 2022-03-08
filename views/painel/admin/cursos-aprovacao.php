@@ -22,7 +22,7 @@ echo $Component->getMenuDashboard();
             <div class="table-responsive">
                 <table id="table-cursos" class="table table-striped table-bordered" style="width:100%">
                     <thead>
-                        <tr class="btn-sm">
+                        <tr class="text-sm">
                             <th>Nome do curso</th>
                             <th>Data da compra</th>
                             <th>Status da compra</th>

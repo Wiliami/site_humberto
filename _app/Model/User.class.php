@@ -18,7 +18,7 @@ class User {
 		}
 		$createLevel['level_create_date'] = date('Y-m-d H:i:is');
 		$Create = new Create();
-		$Creatte->ExeCreate('users_levels', $createLevel);
+		$Create->ExeCreate('users_levels', $createLevel);
 		if ($Create->getResult()) {
 			$this->Result = $Create->getResult();
 			$this->Error = "Nível de usuário cadastrado com sucesso!";
@@ -103,11 +103,20 @@ class User {
 		}	
 	}
 
-	public function updateUser($updateUser) {
+	public function updateUser($updateUser, $userId) {
 		$_SESSION['login']['user_id'];
-		if(!empty($_POST['update_user'])) {
+		if(empty($updateUser['user_name'])) {
+			$this->Error = "Preencha com um nome";
+			$this->Result = false;
+		} elseif(empty($updateUser['user_email'])) {
+			$this->Error = "Preencha com um e-mail!";
+			$this->Result = false;
+		} else {
+			if(!empty($updateUser['user_password'])) {
+				$updateUser['user_password'] = md5($updateUser['user_password']);
+			}
 			$Update = new Update();
-			$Update->ExeUpdate("users", $updateUser, "WHERE user_id = :id", "id={$_SESSION['login']['user_name']}");
+			$Update->ExeUpdate("users", $updateUser, "WHERE user_id = :id", "id={$userId}");
 			if ($Update->getResult()) {
 				$this->Result = $Update->getResult();
 				$this->Error = "O usuário foi atualizado com sucesso!";
