@@ -22,7 +22,7 @@ echo $Component->getMenuDashboard();
             <div class="table-responsive">
                 <table id="table-compras" class="table table-striped table-bordered" style="width: 100%;">
                     <thead>
-                        <tr>
+                        <tr class="btn-sm">
                             <th>Nome do curso</th>
                             <th>Data da compra</th>
                             <th>Valor do curso</th>
@@ -42,7 +42,7 @@ echo $Component->getMenuDashboard();
                         if($Read->getResult()) {
                             foreach($Read->getResult() as $Cursos) {
                                 ?>
-                        <tr>
+                        <tr class="btn-sm">
                             <td>
                                 <span><?= $Cursos['curso_titulo'] ?></span>
                             </td>
@@ -79,10 +79,19 @@ echo $Component->getMenuDashboard();
                         <?php
                                 }
                             } else {
-                                Error("Ainda não existem compras!");
+                                Error("Ainda não existem compras de cursos!");
                             }   
                             ?>
                     </tbody>
+                    <tfoot>
+                        <tr class="btn-sm">
+                            <th>Nome do curso</th>
+                            <th>Data da compra</th>
+                            <th>Valor do curso</th>
+                            <th>Usuário</th>
+                            <th>Opções</th>
+                        </tr>
+                    </tfoot>
                 </table>
             </div>
         </div>

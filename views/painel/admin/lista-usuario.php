@@ -22,7 +22,7 @@ echo $Component->getMenuDashboard();
             <div class="table-responsive">
                 <table id="table-listar-usuarios" class="table table-striped table-bordered" style="width: 100%;">
                     <thead>
-                        <tr>
+                        <tr class="btn-sm">
                             <th>#</th>
                             <th>Usuário</th>
                             <th>Nível</th>
@@ -41,7 +41,7 @@ echo $Component->getMenuDashboard();
                             if($Read->getResult()) {
                                 foreach($Read->getResult() as $User) {                    
                                     ?>
-                        <tr>
+                        <tr class="btn-sm">
                             <td>
                                 <span><?= $Component->getAvatarUser(); ?></span>
                             </td>
@@ -92,7 +92,7 @@ echo $Component->getMenuDashboard();
                         ?>
                     </tbody>
                     <tfoot>
-                        <tr>
+                        <tr class="btn-sm">
                             <th>*</th>
                             <th>Usuário</th>
                             <th>Nível</th>

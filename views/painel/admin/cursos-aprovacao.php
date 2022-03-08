@@ -22,7 +22,7 @@ echo $Component->getMenuDashboard();
             <div class="table-responsive">
                 <table id="table-cursos" class="table table-striped table-bordered" style="width:100%">
                     <thead>
-                        <tr>
+                        <tr class="btn-sm">
                             <th>Nome do curso</th>
                             <th>Data da compra</th>
                             <th>Status da compra</th>
@@ -37,7 +37,7 @@ echo $Component->getMenuDashboard();
                         if($Read->getResult()) {
                             foreach($Read->getResult() as $User) {
                                     ?>
-                        <tr>
+                        <tr class="btn-sm">
                             <td>
                                 <span><?= $User['compra_curso'] ?></span>
                             </td>
@@ -51,19 +51,13 @@ echo $Component->getMenuDashboard();
                                 <span><?= $User['user_name']?></span>
                             </td>
                             <td style="width: 20%;">
-                                <a href="/" class="table-link">
-                                    <span class="fa-stack">
-                                        <i class="fa fa-square fa-stack-2x"></i>
-                                        <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                                <a href="/" class="table-link">
+                                <a href="/" class="table-link" title="Editar aprovação de <?= $User['compra_curso'] ?>">
                                     <span class="fa-stack">
                                         <i class="fa fa-square fa-stack-2x"></i>
                                         <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
                                     </span>
                                 </a>
-                                <a href="/" class="table-link danger">
+                                <a href="/" class="table-link danger" title="Excluir aprovação de <?= $User['compra_curso'] ?>">
                                     <span class="fa-stack">
                                         <i class="fa fa-square fa-stack-2x"></i>
                                         <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
@@ -79,7 +73,7 @@ echo $Component->getMenuDashboard();
                         </tr>
                     </tbody>
                     <tfoot>
-                        <tr>
+                        <tr class="btn-sm">
                             <th>Nome do curso</th>
                             <th>Data da compra</th>
                             <th>Status da compra</th>
@@ -88,25 +82,6 @@ echo $Component->getMenuDashboard();
                         </tr>
                     </tfoot>
                 </table>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Delete Modal -->
-<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title btn btn-success mb-2 vw-100" id="exampleModalLabel">Excluir usuário</h5>
-                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
-                </button>
-            </div>
-            <div class="modal-body">Tem certeza que deseja excluir usuário <?= $User['user_name']?> ?</div>
-            <div class="modal-footer">
-                <button class="btn btn-success mb-2" type="button" data-dismiss="modal">Cancelar</button>
-                <a class="btn btn-danger mb-2" href="<?= BASE ?>/">Excluir</a>
             </div>
         </div>
     </div>
