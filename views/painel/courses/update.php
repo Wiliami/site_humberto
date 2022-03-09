@@ -19,7 +19,7 @@ $Read->FullRead("SELECT * FROM cursos WHERE curso_id = :ci", "ci={$courseId}");
 if($Read->getResult()) {
     $DataCourse = $Read->getResult()[0];
 } else {
-    Error("Nenhum curso foi selecionado para atualizar!");
+    die(Error("Nenhum curso foi selecionado para atualizar!"));
     }
 ?>
 <div class="container card-header">
@@ -30,23 +30,19 @@ if($Read->getResult()) {
         <?php
         $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
         if(!empty($Post['update_course'])) {
-            if(!empty($Post['course'])) {
-                $updateCourse['curso_titulo'] = $Post['course'];
-            } elseif(!empty($Post['description'])) {
-                $updateCourse['curso_descricao'] = $Post['description'];
-            } elseif(!empty($Post['value'])) {
-                $updateCourse['curso_valor'] = $Post['value'];
+            $updateCourse['curso_titulo'] = $Post['course'];
+            $updateCourse['curso_descricao'] = $Post['description'];
+            $updateCourse['curso_valor'] = $Post['value'];
+        } else {
+            $DataCourse = $updateCourse;
+            $Course = new Course();
+            $Course->updateCourse($updateCourse, $CourseId);
+            if($Course->getResult()) {
+                //Check::var_dump_json($Course->getResult());
+                Error($Course->getError());
             } else {
-                $DataCourse = $updateCourse;
-                Check::var_dump_json($updateCourse);
-                $Course = new Course();
-                $Course->updateCourse($updateCourse, $CourseId);
-                if($Course->getResult()) {
-                    Error($Course->getError());
-                } else {
-                    Error($Course->getError(), 'warning');
-                }   
-            }
+                Error($Course->getError(), 'warning');
+            }   
         }
         ?>
         <h1 class="h5 mb-0 text-gray-800 mb-4">Atualizar <?= $DataCourse['curso_titulo'] ?></h1>

@@ -68,11 +68,11 @@ class Course {
 		}
 
 	public function updateCourse($updateCourse, $courseId) {
-		if(!empty($updateCourse['curso_titulo'])) {
+		if(empty($updateCourse['curso_titulo'])) {
 			$updateCourse['curso_titulo'] = $updateCourse['curso_titulo'];
-		} elseif(!empty($updateCourse['curso_descricao'])) {
+		} elseif(empty($updateCourse['curso_descricao'])) {
 			$updateCourse['curso_descricao'] = $updateCourse['curso_descricao'];
-		} elseif(!empty($Post['curso_valor'])) {
+		} elseif(empty($Post['curso_valor'])) {
 			$updateCourse['curso_valor'] = $updateCourse['curso_valor'];
 		} else {
 			$Update = new Update();
