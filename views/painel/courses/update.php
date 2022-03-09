@@ -12,12 +12,12 @@ echo $Component->getLiPagesDashboard();
 echo $Component->getCreatePagesAdmin();
 echo $Component->getListPagesAdmin();
 echo $Component->getMenuDashboard();
-$CourseId = $_GET['update_curso'];
+$courseId = $_GET['update_curso'];
 
 $Read = new Read();
-$Read->FullRead("SELECT * FROM cursos WHERE curso_id = :ci", "ci={$CourseId}");
+$Read->FullRead("SELECT * FROM cursos WHERE curso_id = :ci", "ci={$courseId}");
 if($Read->getResult()) {
-    $DataCourse = $Read->getResult()[0]; // certezad que só existe um dado
+    $DataCourse = $Read->getResult()[0];
 } else {
     Error("Nenhum curso foi selecionado para atualizar!");
     }
@@ -30,16 +30,15 @@ if($Read->getResult()) {
         <?php
         $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
         if(!empty($Post['update_course'])) {
-            if(empty($Post['course'])) {
+            if(!empty($Post['course'])) {
                 $updateCourse['curso_titulo'] = $Post['course'];
-            } elseif(empty($Post['description'])) {
+            } elseif(!empty($Post['description'])) {
                 $updateCourse['curso_descricao'] = $Post['description'];
-            } elseif(empty($Post['category'])) {
-                $updateCourse['curso_categoria'] = $Post['category'];
-            } elseif(empty($Post['value'])) {
+            } elseif(!empty($Post['value'])) {
                 $updateCourse['curso_valor'] = $Post['value'];
             } else {
                 $DataCourse = $updateCourse;
+                Check::var_dump_json($updateCourse);
                 $Course = new Course();
                 $Course->updateCourse($updateCourse, $CourseId);
                 if($Course->getResult()) {
@@ -58,10 +57,6 @@ if($Read->getResult()) {
         <div class="form-group">
             <label for="exampleInputPassword1">Descrição</label>
             <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Descrição do curso" name="description" value="<?= $DataCourse['curso_descricao'] ?>">
-        </div>
-        <div class="form-group">
-            <label for="exampleInputPassword1">Categoria</label>
-            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Categoria do curso" name="category" value="<?= $DataCourse['curso_categoria'] ?>">
         </div>
         <div class="form-group">
             <label for="exampleInputPassword1">Valor</label>

@@ -67,22 +67,16 @@ class Course {
 			}	
 		}
 
-	public function updateCourse($updateCourse, $CourseId) {
-		if(empty($updateCourse['curso_titulo'])) {
-			$this->Error = 'É necessário informar alterar o nome do curso para atualizar!';
-			$this->Result = false;
-		} elseif(empty($updateCourse['curso_descricao'])) {
-			$this->Error = "É necessário atualizar o campo de descrição de curso!";
-			$this->Result = false;
-		} elseif(empty($updateCourse['curso_categoria'])) {
-			$this->Error = "É necessário atualizar o campo de categoria!";
-			$this->Result = false;
-		} elseif(empty($updateCourse['curso_valor'])) {
-			$this->Error = "É necessário atualizar o campo de valor de curso!";
-			$this->Result = false;
+	public function updateCourse($updateCourse, $courseId) {
+		if(!empty($updateCourse['curso_titulo'])) {
+			$updateCourse['curso_titulo'] = $updateCourse['curso_titulo'];
+		} elseif(!empty($updateCourse['curso_descricao'])) {
+			$updateCourse['curso_descricao'] = $updateCourse['curso_descricao'];
+		} elseif(!empty($Post['curso_valor'])) {
+			$updateCourse['curso_valor'] = $updateCourse['curso_valor'];
 		} else {
 			$Update = new Update();
-			$Update->ExeUpdate("cursos", $updateCourse, "WHERE curso_id = :ci", "ci={$CourseId}");
+			$Update->ExeUpdate("cursos", $updateCourse, "WHERE curso_id = :ci", "ci={$courseId}");
 			if ($Update->getResult()) {
 				$this->Result = $Update->getResult();
 				$this->Error = "O curso foi atualizado com sucesso!";

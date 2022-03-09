@@ -104,7 +104,7 @@ class User {
 	}
 
 	public function updateUser($updateUser, $userId) {
-		$_SESSION['login']['user_id'];
+		//$_SESSION['login']['user_id'];
 		if(empty($updateUser['user_name'])) {
 			$this->Error = "Preencha com um nome!";
 			$this->Result = false;
