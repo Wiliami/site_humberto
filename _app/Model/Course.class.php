@@ -68,12 +68,12 @@ class Course {
 		}
 
 	public function updateCourse($updateCourse, $courseId) {
-		if(empty($updateCourse['curso_titulo'])) {
+		if(!empty($updateCourse['curso_titulo'])) {
 			$updateCourse['curso_titulo'] = $updateCourse['curso_titulo'];
-		} elseif(empty($updateCourse['curso_descricao'])) {
-			$updateCourse['curso_descricao'] = $updateCourse['curso_descricao'];
-		} elseif(empty($Post['curso_valor'])) {
-			$updateCourse['curso_valor'] = $updateCourse['curso_valor'];
+		} elseif(!empty($updateCourse['curso_descricao'])) {
+			$updateCourse['curso_titulo'] = $updateCourse['curso_descricao'];
+		}  elseif(!empty($updateCourse['curso_valor'])) {
+			$updateCourse['curso_titulo'] = $updateCourse['curso_valor'];
 		} else {
 			$Update = new Update();
 			$Update->ExeUpdate("cursos", $updateCourse, "WHERE curso_id = :ci", "ci={$courseId}");
@@ -84,24 +84,18 @@ class Course {
 				$this->Result = false;
 				$this->Error = $Update->getError();
 			}
-		}
+		}	
 	}
-	
 
-	public function deleteCourse($deleteCourse) {
-		if(empty($deleteCourse['curso_titulo'])) {
-			$this->Error = 'É necessário selecionar um curso para finalizar exclusão!';
-			$this->Result = false;
+	public function deleteCourse($courseId) {
+		$Delete = new Delete();
+		$Delete->ExeDelete("cursos", "WHERE curso_id = :ci", "ci={$courseId}");
+		if($Delete->getResult()) {
+			$this->Result = $Delete->getError();
+			$this->Error = "O curso foi excluído com sucesso!";
 		} else {
-			$Delete = new Delete();
-			$Delete->ExeDelete("cursos", "WHERE curso_id = :ci", "ci={$deleteCourse}");
-			if($Delete->getResult()) {
-				$this->Result = $Delete->getError();
-				$this->Error = "O curso foi excluído com sucesso!";
-			} else {
-				$this->Result= false;
-				$this->Error = $Delete->getError();
-			}
+			$this->Result= false;
+			$this->Error = $Delete->getError();
 		}
 	}
 
@@ -161,37 +155,27 @@ class Course {
 		}
 	}
 
-	public function updateLesson($updateLesson) {
-		if(empty($updateLesson['aula_name'])) {
-			$this->Error = "É necesário atualizar ao menos um campo para concluir atualização da aula!";
-			$this->Result = false;
+	public function updateLesson($updateLesson, $lessonId) {
+		$Update = new Update();
+		$Update->ExeUpdate("aulas", $updateLesson, "WHERE aula_id = :ai", "ai={$lessonId}");
+		if($Update->getResult()) {
+			$this->Result = $updateLesson->getResult(); 
+			$this->Error = "A aula foi atualizada com sucesso!";
 		} else {
-			$Update = new Update();
-			$Update->ExeUpdate("aulas", $updateLesson, "WHERE aula_id = :ai", "ai={$updateLesson}");
-			if($Update->getResult()) {
-				$this->Result = $updateLesson->getResult(); 
-				$this->Error = "A aula foi atualizada com sucesso!";
-			} else {
-				$this->Result = false;
-				$this->Error = $updateLesson->getError();
-			}
+			$this->Result = false;
+			$this->Error = $updateLesson->getError();
 		}
 	}
 
-	public function deleteLesson() {
-		if(empty(['aula_id'])) {
-			$this->Error = 'Selecione uma aula para excluir!';
-			$this->Result = false;
+	public function deleteLesson($courseId) {
+		$Delete = new Delete();
+		$Delete->ExeDelete('aulas', "WHERE aula_id = :ai", "ai={$courseId}");
+		if($Delete->getResult()) {
+			$this->Result = $Delete->getError();
+			$this->Error = 'A aula foi excluída com sucesso!';
 		} else {
-			$Delete = new Delete();
-			$Delete->exeDelete('aulas', "WHERE aula_id = :ai", "ai={aula_id}");
-			if($Delete->getResult()) {
-				$this->Result = $$Delete->getError();
-				$this->Error = 'A aula foi deletada com sucesso!';
-			} else {
-				$this->Result = false;
-				$this->Error->$Delete->getError();
-			}
+			$this->Result = false;
+			$this->Error->$Delete->getError();
 		}
 	}
 
@@ -203,4 +187,5 @@ class Course {
 		return $this->Error;
 	}
 }
+
 ?>

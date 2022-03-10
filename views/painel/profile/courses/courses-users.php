@@ -12,14 +12,14 @@ echo $Component->getLiPagesDashboard();
 echo $Component->getCreatePagesAdmin();
 echo $Component->getListPagesAdmin();
 echo $Component->getMenuDashboard();
-$CoursesUser = $_GET['user'];
+$coursesId = $_GET['user'];
 ?>
 <div class="row gx-5 container">
     <div class="d-sm-flex align-items-center justify-content-between mb-3">
         <i class="fas fa-layer-plus"></i>
         <?php
         $Read = new Read();
-        $Read->FullRead("SELECT * FROM users WHERE user_id = :ui", "ui={$CoursesUser}");
+        $Read->FullRead("SELECT * FROM users WHERE user_id = :ui", "ui={$coursesId}");
         if($Read->getResult()) {
             foreach($Read->getResult() as $User) {
                 ?>

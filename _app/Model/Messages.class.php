@@ -5,13 +5,13 @@ class Message {
     private $Error;
 
 
-    public function createSendMessagesAndAlerts($Messages) {
-        if(empty($Messages['message_text'])) {
-            $this->Error = 'Escreva uma mensagem no campo';
+    public function createSendMessagesAndAlerts($Message) {
+        if(empty($Message['message_text'])) {
+            $this->Error = 'Campo obrigatório!';
             $this->Result = false;
         } else {
         $Create = new Create();
-        $Create->ExeCreate("alerts_messages", $Messages);
+        $Create->ExeCreate("alerts_messages", $Message);
             if($Create->getResult()) {
                 $this->Result = $Create->getResult();
                 $this->Error = "A mensagem foi cadastrada com sucesso!";
@@ -20,6 +20,15 @@ class Message {
                 $this->Error = $Create->getError();
             }
         }
+    }
+    
+
+    public function getResult() {
+        return $this->Result;
+    }
+
+    public function getError() {
+        return $this->Error;
     }
 
 }

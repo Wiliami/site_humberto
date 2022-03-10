@@ -12,10 +12,10 @@ echo $Component->getLiPagesDashboard();
 echo $Component->getCreatePagesAdmin();
 echo $Component->getListPagesAdmin();
 echo $Component->getMenuDashboard();
-$UserId = $_GET['update_user'];
+$userId = $_GET['update_user'];
 
 $Read = new Read();
-$Read->FullRead("SELECT * FROM users WHERE user_id = :ui", "ui={$UserId}");
+$Read->FullRead("SELECT * FROM users WHERE user_id = :ui", "ui={$userId}");
 if($Read->getResult()) {
     $DataUser = $Read->getResult()[0];
 } else {
@@ -66,4 +66,8 @@ if($Read->getResult()) {
         <a href="<?= BASE ?>/painel/profile/courses/courses-users&user=<?= $User['user_id'] ?>" class="btn btn-outline-success mb-2" title="Área cursos de usuário">Ver cursos do usuário</a>
     </form>
 </div>
+
+
+
+
 <?= $Component->getFooterDashboard(); ?>
