@@ -660,27 +660,27 @@ class Component {
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Páginas admin</h6>
-                        <a class="collapse-item" href="' . BASE . '/painel/admin/cursos-aprovacao">
+                        <a class="collapse-item" href="' . BASE . '/painel/admin/paginas/cursos-aprovacao">
                             <i class="fas fa-book"></i>
                             Cursos em análise
                             </a>
-                        <a class="collapse-item" href="' . BASE . '/painel/admin/historico-compras">
+                        <a class="collapse-item" href="' . BASE . '/painel/admin/paginas/historico-compras">
                             <i class="fas fa-history"></i>
                             Histórico de compras
                         </a>
-                        <a class="collapse-item" href="' . BASE . '/painel/admin/nivel-user">
+                        <a class="collapse-item" href="' . BASE . '/painel/admin/paginas/nivel-user">
                             <i class="fas fa-level-up-alt"></i>
                             Níveis de Usuários
                         </a>
-                        <a class="collapse-item" href="' . BASE . '/painel/admin/settings">
+                        <a class="collapse-item" href="' . BASE . '/painel/admin/paginas/settings">
                             <i class="fas fa-cogs"></i>
                             Configurações
                         </a>
-                        <a class="collapse-item" href="' . BASE . '/painel/admin/help">
+                        <a class="collapse-item" href="' . BASE . '/painel/admin/paginas/help">
                             <i class="fas fa-hands-helping"></i>
                             Ajuda
                         </a>
-                        <a class="collapse-item" href="' . BASE . '/painel/admin/suporte">
+                        <a class="collapse-item" href="' . BASE . '/painel/admin/paginas/suporte">
                             <i class="fas fa-info-circle"></i>
                             Suporte
                         </a>
