@@ -44,13 +44,13 @@ echo $Component->getMenuDashboard();
                                 <span><?= date('d/m/Y', strtotime($Level['level_create_date'])) ?></span>
                             </td>
                             <td>
-                                <a href="<?= BASE ?>/painel/level-user/update&level=<?= $Level['level_id'] ?>" class="table-link btn-sm" title="Editar nível <?= $Level['level_desc'] ?>">
+                                <a href="<?= BASE ?>/painel/admin/level-user/update&level=<?= $Level['level_id'] ?>" class="table-link btn-sm" title="Editar nível <?= $Level['level_desc'] ?>">
                                     <span class="fa-stack">
                                         <i class="fa fa-square fa-stack-2x"></i>
                                         <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
                                     </span>
                                 </a>
-                                <a href="<?= BASE ?>/painel/level-user/delete&level=<?= $Level['level_id'] ?>" class="table-link danger btn-sm" title="Excluir nível <?= $Level['level_desc'] ?>">
+                                <a href="<?= BASE ?>/painel/admin/level-user/delete&level=<?= $Level['level_id'] ?>" class="table-link danger btn-sm" title="Excluir nível <?= $Level['level_desc'] ?>">
                                     <span class="fa-stack">
                                         <i class="fa fa-square fa-stack-2x"></i>
                                         <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
