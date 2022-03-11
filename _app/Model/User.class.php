@@ -28,11 +28,44 @@ class User {
 		}
 	}
 
+	public function updateLevelUser($updateLevelUser, $levelId) {
+		if(empty($updateLevelUser['level_desc'])) {
+			$this->Error = "Preencha o campo de nome de nível";
+			$this->Result = false;
+		} elseif(empty($updateLevelUser['level_id'])) {
+			$this->Error = "Preencha a numeração do nível!";
+			$this->Result = false;
+		} else {
+			$Update = new Update();
+			$Update->ExeUpdate("users_levels", $updateLevelUser, "WHERE level_id = :li", "li={$levelId}");
+			if($Update->getResult()) {
+				$this->Result = false;
+				$this->Error = "O nível foi atualizado com sucesso!";
+			} else {
+				$this->Result = $Update->getResult();
+				$this->Error = $Update->getError();
+			}
+		}
+	}
+
+	public function deleteLevel($levelId) {
+		$Delete = new Delete();
+		$Delete->ExeDelete("users_levels", "WHERE level_id = :li", "li={$levelId}");
+		if($Delete->getResult()) {
+			$this->Result = $Delete->getError();
+			$this->Error = "Nível excluído com sucesso!";
+		} else {
+			$this->Result = false;
+			$this->Error = $Delete->getError();
+		}
+	}	
+
 
 	public function verifyLevelUserModerator() {
 		if($_SESSION['login']['user_level'] >= 6) { 
-			return header('Location: ' . BASE . '/painel/dashboard');
-			exit();
+			header('Location: ' . BASE . '/painel/dashboard');
+			die();
+			return false;
 		} 
 	}
 	
@@ -124,6 +157,18 @@ class User {
 				$this->Result = false;
 				$this->Error = $Update->getError();
 			}
+		}
+	}
+
+	public function deleteUser($userId) {
+		$Delete =  new Delete();
+		$Delete->ExeDelete("users", "WHERE user_id = :ui", "ui={$userId}");
+		if($Delete->getResult()) {
+			$this->Result = $Delete->getError();
+			$this->Error = "O usuário foi excluído com sucesso!";
+		} else {
+			$this->Result = false;
+			$this->Error = $Delete->getError();
 		}
 	}
 	

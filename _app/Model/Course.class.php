@@ -4,6 +4,7 @@ class Course {
     private $Error;
 	private $Result;
 
+	
 	public function matriculateCourse($matriculate) {
 		if(empty($matriculate['curso_titulo'])) {
 			$this->Error = "Selecione um curso!";
@@ -65,7 +66,7 @@ class Course {
 					$this->Error = $Create->getError();
 				}
 			}	
-		}
+		}	
 
 	public function updateCourse($updateCourse, $courseId) {
 		if(empty($updateCourse['curso_titulo'])) {

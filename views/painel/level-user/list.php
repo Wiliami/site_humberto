@@ -12,14 +12,14 @@ echo $Component->getLiPagesDashboard();
 echo $Component->getCreatePagesAdmin();
 echo $Component->getListPagesAdmin();
 echo $Component->getMenuDashboard();
-$NivelId = $_GET['nivel'];
+$nivelId = $_GET['nivel'];
 ?>
 <div class="container">
     <div class="card shadow mb-4">
         <div class="card-header py-3 d-sm-flex align-items-center justify-content-between">
             <?php
             $Read = new Read();
-            $Read->FullRead("SELECT * FROM users_levels WHERE level_id = :ld", "ld={$NivelId}");
+            $Read->FullRead("SELECT * FROM users_levels WHERE level_id = :ld", "ld={$nivelId}");
             if($Read->getResult()) {
                 foreach($Read->getResult() as $LevelUser) {
                     ?>

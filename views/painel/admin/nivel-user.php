@@ -50,7 +50,7 @@ echo $Component->getMenuDashboard();
                                         <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
                                     </span>
                                 </a>
-                                <a href="<?= BASE ?>/painel/level-user/delete&nivel_delete=<?= $Level['level_id'] ?>" class="table-link danger btn-sm" title="Excluir nível <?= $Level['level_desc'] ?>">
+                                <a href="<?= BASE ?>/painel/level-user/delete&level=<?= $Level['level_id'] ?>" class="table-link danger btn-sm" title="Excluir nível <?= $Level['level_desc'] ?>">
                                     <span class="fa-stack">
                                         <i class="fa fa-square fa-stack-2x"></i>
                                         <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
