@@ -21,7 +21,7 @@ $courseId = $_GET['update_curso'];
         if($Read->getResult()) {
             $DataCourse = $Read->getResult()[0];
         } else {
-            Error("Curso não encontrado!");
+            Error("Curso não encontrado!", 'warning');
                 ?>
             <a href="<?= BASE ?>/painel/courses/list" class="btn btn-outline-success" title="Voltar para a lista de cursos">Voltar</a>
     <?php
@@ -63,7 +63,7 @@ $courseId = $_GET['update_curso'];
         </div>
         <div class="form-group">
             <label for="exampleInputPassword2">Valor</label>
-            <input type="number" step="0.01" class="form-control" id="exampleInputPassword2" placeholder="Valor do curso" name="value">
+            <input type="number" step="0.01" class="form-control" id="exampleInputPassword2" placeholder="Valor do curso" name="value" value="<?= number_format($DataCourse['curso_valor'], 2, ',', '.') ?>">
         </div>
         <a href="<?= BASE ?>/painel/courses/list" class="btn btn-outline-success" title="Voltar para a lista de cursos">Voltar</a>
         <input type="submit" class="btn btn-success" name="update_course" value="Atualizar curso">

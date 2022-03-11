@@ -21,14 +21,14 @@ $courseId = $_GET['delete_curso'];
         if($Read->getResult()) {
             $DataCourse = $Read->getResult()[0];
         } else {
-            die(Error("Nenhum curso foi selecionado para excluir!")); 
+            die(Error("Curso não encontrado!")); 
         }
     ?>
 </div>
 
 <div class="container card-header">
     <div class="card-header py-3 d-sm-flex align-items-center justify-content-between mb-2">
-        <h5 class="h3 mb-0 text-gray-800 ml-2">Excluir | Excluir cursos</h5>
+        <h5 class="h3 mb-0 text-gray-800 ml-2">Excluir cursos</h5>
     </div>
     <form method="post">
         <?php
