@@ -62,7 +62,7 @@ $courseId = $_GET['update_curso'];
             <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Descrição do curso" name="description" value="<?= $DataCourse['curso_descricao'] ?>">
         </div>
         <div class="form-group">
-            <label for="exampleInputPassword1">Valor</label>
+            <label for="exampleInputPassword2">Valor</label>
             <input type="number" step="0.01" class="form-control" id="exampleInputPassword2" placeholder="Valor do curso" name="value" value="<?= number_format($DataCourse['curso_valor'], 2, ',', '') ?>">
         </div>
         <a href="<?= BASE ?>/painel/courses/list" class="btn btn-outline-success" title="Voltar para a lista de cursos">Voltar</a>
