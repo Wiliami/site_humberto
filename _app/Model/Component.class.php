@@ -631,11 +631,11 @@ class Component {
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Cadastrar usuário</h6>
-                        <a class="collapse-item" href="' . BASE . '/painel/matriculas-cursos/create">
+                        <a class="collapse-item" href="' . BASE . '/painel/matriculas/cursos/create">
                             <i class="fas fa-folder-plus"></i>
                             No curso
                         </a>
-                        <a class="collapse-item" href="' . BASE . '/painel/matriculas-aulas/create">
+                        <a class="collapse-item" href="' . BASE . '/painel/matriculas/aulas/create">
                             <i class="fas fa-book"></i>
                             Na aula
                         </a>

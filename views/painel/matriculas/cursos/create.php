@@ -15,7 +15,7 @@ echo $Component->getMenuDashboard();
 <div class="container">
     <div class="d-sm-flex align-items-center justify-content-start mb-4">
         <i class="fas fa-layer-plus"></i>
-        <h1 class="h3 mb-0 text-gray-800">Matrículas cursos</h1>
+        <h1 class="h3 mb-0 text-gray-800">Matrícula em curso</h1>
     </div>
     <form method="post">
         <?php
@@ -65,7 +65,7 @@ echo $Component->getMenuDashboard();
                 ?>
             </select>
         </div>
-        <a href="<?= BASE ?>/painel/matriculas-cursos/list" class="btn btn-outline-success mb-2" title="Voltar para lista de matrículas de cursos">Voltar</a>
+        <a href="<?= BASE ?>/painel/matriculas/cursos/list" class="btn btn-outline-success mb-2" title="Voltar para lista de matrículas de cursos">Voltar</a>
         <input type="submit" class="btn btn-success mb-2" name="register_matriculate" value="Matricular">
     </form>
 </div>

@@ -17,7 +17,7 @@ $MatriculaId = $_GET['delete_matricula']
 <div class="container">
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800">Excluir matrícula</h1>
-        <a href="<?= BASE ?>/painel/matriculas-cursos/list" class="btn btn-success mb-2" title="Voltar para lista de matrículas">Voltar</a>
+        <a href="<?= BASE ?>/painel/matricula/cursos/list" class="btn btn-success mb-2" title="Voltar para lista de matrículas">Voltar</a>
     </div>
     <form method="post">
         <?php 
