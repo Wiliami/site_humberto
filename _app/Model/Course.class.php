@@ -68,12 +68,18 @@ class Course {
 		}
 
 	public function updateCourse($updateCourse, $courseId) {
-		if(!empty($updateCourse['curso_titulo'])) {
-			$updateCourse['curso_titulo'] = $updateCourse['curso_titulo'];
-		} elseif(!empty($updateCourse['curso_descricao'])) {
-			$updateCourse['curso_descricao'] = $updateCourse['curso_descricao'];
-		}  elseif(!empty($updateCourse['curso_valor'])) {
-			$updateCourse['curso_valor'] = $updateCourse['curso_valor'];
+		if(empty($updateCourse['curso_titulo'])) {
+			//PReecn
+			$this->Result = false;
+			$this->Error = "Preenchar o título do curso!";
+		} elseif(empty($updateCourse['curso_descricao'])) {
+			//Peicnd
+			$this->Result = false;
+			$this->Error = "Preenchar a descrição do curso!";
+		}  elseif(empty($updateCourse['curso_valor'])) {
+			// Preenca
+			$this->Result = false;
+			$this->Error = "Preenchar o valor do curso!";
 		} else {
 			$Update = new Update();
 			$Update->ExeUpdate("cursos", $updateCourse, "WHERE curso_id = :ci", "ci={$courseId}");

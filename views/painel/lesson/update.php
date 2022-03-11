@@ -28,6 +28,7 @@ if($Read->getResult()) {
     </div>
     <form method="post">
         <?php
+        Check::var_dump_json($DataLesson);
         $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
         if(!empty($Post['update_lesson'])) {
             $updateLesson['aula_name'] = $Post['lesson'];

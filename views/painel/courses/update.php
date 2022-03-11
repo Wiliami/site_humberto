@@ -38,14 +38,14 @@ $courseId = $_GET['update_curso'];
         <?php
         $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
         if(!empty($Post['update_course'])) {
-            $updateCourse['curso_titulo'] = $Post['course'];
-            $updateCourse['curso_descricao'] = $Post['description'];   
-            $updateCourse['curso_valor'] = $Post['value'];
+            $updateCourse['curso_titulo'] = (!empty($Post['course']) ? $Post['course'] : null);
+            $updateCourse['curso_descricao'] = (!empty($Post['description']) ? $Post['description'] : null);
+            $updateCourse['curso_valor'] = (!empty($Post['valor']) ? $Post['valor'] : null);
             $DataCourse = $updateCourse;
+            // Check::var_dump_json($DataCourse);
             $Course = new Course();
             $Course->updateCourse($updateCourse, $courseId);
             if($Course->getResult()) {
-                //Check::var_dump_json($Course->getResult());
                 Error($Course->getError());
             } else {
                 Error($Course->getError(), 'warning');
@@ -63,8 +63,9 @@ $courseId = $_GET['update_curso'];
         </div>
         <div class="form-group">
             <label for="exampleInputPassword2">Valor</label>
-            <input type="number" step="0.01" class="form-control" id="exampleInputPassword2" placeholder="Valor do curso" name="value" value="<?= number_format($DataCourse['curso_valor'], 2, ',', '.') ?>">
+            <input type="number" step="0.01" class="form-control" id="exampleInputPassword2" placeholder="Valor do curso" name="valor" value="<?= $DataCourse['curso_valor'] ?>">
         </div>
+    
         <a href="<?= BASE ?>/painel/courses/list" class="btn btn-outline-success" title="Voltar para a lista de cursos">Voltar</a>
         <input type="submit" class="btn btn-success" name="update_course" value="Atualizar curso">
     </form>
