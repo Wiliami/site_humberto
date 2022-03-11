@@ -13,15 +13,22 @@ echo $Component->getCreatePagesAdmin();
 echo $Component->getListPagesAdmin();
 echo $Component->getMenuDashboard();
 $userId = $_GET['update_user'];
-
-$Read = new Read();
-$Read->FullRead("SELECT * FROM users WHERE user_id = :ui", "ui={$userId}");
-if($Read->getResult()) {
-    $DataUser = $Read->getResult()[0];
-} else {
-    die(Error('Usuário não foi encontrado!', 'warning'));
-}
 ?>
+<div class="container">
+    <?php
+    $Read = new Read();
+    $Read->FullRead("SELECT * FROM users WHERE user_id = :ui", "ui={$userId}");
+    if($Read->getResult()) {
+        $DataUser = $Read->getResult()[0];
+    } else {
+        Error('Usuário não foi encontrado!', 'warning');
+        ?>
+        <a href="<?= BASE ?>/painel/admin/users/list" class="btn btn-outline-success" title="Voltar para a lista de usuários">Voltar</a>
+<?php
+    die();
+    }
+?>
+</div>
 <div class="container">
     <div class="d-sm-flex align-items-center justify-content-start mb-3">
         <i class="fas fa-layer-plus"></i>
@@ -37,7 +44,7 @@ if($Read->getResult()) {
             $updateUser['user_password'] = $Post['ps'];
         }
         $User = new User();
-        $User->updateUser($updateUser, $UserId);
+        $User->updateUser($updateUser, $userId);
         if($User->getResult()) {
             Error($User->getError());
         } else {
@@ -66,8 +73,4 @@ if($Read->getResult()) {
         <a href="<?= BASE ?>/painel/profile/courses/courses-users&user=<?= $User['user_id'] ?>" class="btn btn-outline-success mb-2" title="Área cursos de usuário">Ver cursos do usuário</a>
     </form>
 </div>
-
-
-
-
 <?= $Component->getFooterDashboard(); ?>

@@ -25,7 +25,7 @@ echo $Component->getMenuDashboard();
                         <tr class="btn-sm">
                             <th>Profile</th>
                             <th>Usuário</th>
-                            <th>Nível</th>
+                            <th>Função</th>
                             <th>Criado</th>
                             <th>Status</th>
                             <th>E-mail</th>
@@ -88,7 +88,7 @@ echo $Component->getMenuDashboard();
                         <tr class="btn-sm">
                             <th>*</th>
                             <th>Usuário</th>
-                            <th>Nível</th>
+                            <th>Função</th>
                             <th>Criado</th>
                             <th>Status</th>
                             <th>E-mail</th>

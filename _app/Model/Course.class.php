@@ -71,13 +71,13 @@ class Course {
 		if(!empty($updateCourse['curso_titulo'])) {
 			$updateCourse['curso_titulo'] = $updateCourse['curso_titulo'];
 		} elseif(!empty($updateCourse['curso_descricao'])) {
-			$updateCourse['curso_titulo'] = $updateCourse['curso_descricao'];
+			$updateCourse['curso_descricao'] = $updateCourse['curso_descricao'];
 		}  elseif(!empty($updateCourse['curso_valor'])) {
-			$updateCourse['curso_titulo'] = $updateCourse['curso_valor'];
+			$updateCourse['curso_valor'] = $updateCourse['curso_valor'];
 		} else {
 			$Update = new Update();
 			$Update->ExeUpdate("cursos", $updateCourse, "WHERE curso_id = :ci", "ci={$courseId}");
-			if ($Update->getResult()) {
+			if($Update->getResult()) {
 				$this->Result = $Update->getResult();
 				$this->Error = "O curso foi atualizado com sucesso!";
 			} else {
@@ -121,7 +121,23 @@ class Course {
 					$this->Error = $Create->getError();
 				}
 		}	
+	} 
+
+	// update módulo
+
+
+	public function deleteModule($moduleId) {
+		$Delete = new Delete();
+		$Delete->ExeDelete("modulos", "WHERE modulo_id = :mi", "mi={$moduleId}");
+		if($Delete->getResult()) {
+			$this->Result = $Delete->getError();
+			$this->Error = " O módulo foi excluído com sucesso!";
+		} else {
+			$this->Result = false;
+			$this->Error = $Delete->getError();
+		}
 	}
+	// delete módulo
 
 
 	public function createLesson($dataLesson) {
@@ -175,7 +191,7 @@ class Course {
 			$this->Error = 'A aula foi excluída com sucesso!';
 		} else {
 			$this->Result = false;
-			$this->Error->$Delete->getError();
+			$this->Erro = $Delete->getError();
 		}
 	}
 
