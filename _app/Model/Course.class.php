@@ -172,14 +172,22 @@ class Course {
 	}
 
 	public function updateLesson($updateLesson, $lessonId) {
-		$Update = new Update();
-		$Update->ExeUpdate("aulas", $updateLesson, "WHERE aula_id = :ai", "ai={$lessonId}");
-		if($Update->getResult()) {
-			$this->Result = $updateLesson->getResult(); 
-			$this->Error = "A aula foi atualizada com sucesso!";
+		if(!empty($updateLesson['aula_name'])) {
+			$updateLesson['aula_name'] = $updateLesson['aula_name'];
+		} elseif(!empty($updateLesson['aula_duracao'])) {
+			$updateLesson['aula_duracao'] = $updateLesson['aula_duracao'];
+		} elseif(!empty($updateLesson['aula_url'])) {
+			$updateLesson['aula_url'] = $updateLesson['aula_url'];
 		} else {
-			$this->Result = false;
-			$this->Error = $updateLesson->getError();
+			$Update = new Update();
+			$Update->ExeUpdate("aulas", $updateLesson, "WHERE aula_id = :ai", "ai={$lessonId}");
+			if($Update->getResult()) {
+				$this->Result = $updateLesson->getResult(); 
+				$this->Error = "A aula foi atualizada com sucesso!";
+			} else {
+				$this->Result = false;
+				$this->Error = $updateLesson->getError();
+			}
 		}
 	}
 
