@@ -24,10 +24,8 @@ echo $Component->getMenuDashboard();
                     <thead>
                         <tr class="btn-sm">
                             <th><span>Nome do módulo</span></th>
-                            <th><span>Data de cadastro</span></th>
-                            <th><span>Descrição</span></th>
+                            <th><span>Cadastrado por:</span></th>
                             <th><span>Atualizado por:</span></th>
-                            <th><span>Atualizado em:</span></th>
                             <th><span>Opções</span></th>
                         </tr>
                     </thead>
@@ -42,17 +40,11 @@ echo $Component->getMenuDashboard();
                             <td>
                                 <span><?= $Modulos['modulo_name'] ?></span>
                             </td>
-                            <td>
-                                <span><?= date('d/m/Y', strtotime($Modulos['modulo_create_date'])) ?></span>
+                            <td>    
+                                <span><?= $Modulos['modulo_user_create'] ?></span>
                             </td>
                             <td>
-                                <span><?= $Modulos['modulo_descricao'] ?></span>
-                            </td>
-                            <td>
-                                <span><?= $Modulos['user_id'] ?></span>
-                            </td>
-                            <td>
-                                <span><?= date('d/m/Y', strtotime($Modulos['modulo_update_date'])) ?></span>
+                                <span><?= $Modulos['modulo_user_update'] ?></span>
                             </td>
                             <td>
                                 <a href="<?= BASE ?>/painel/modules/update&module=<?= $Modulos['modulo_id'] ?>" class="table-link btn-sm" title="Atualizar <?= $Modulos['modulo_name']?>">
@@ -81,7 +73,6 @@ echo $Component->getMenuDashboard();
                         <tr class="btn-sm">
                             <th><span>Nome do módulo</span></th>
                             <th><span>Data de cadastro</span></th>
-                            <th><span>Descrição</span></th>
                             <th><span>Atualizado em:</span></th>
                             <th><span>Opções</span></th>
                         </tr>

@@ -17,13 +17,12 @@ echo $Component->getMenuDashboard();
         <i class="fas fa-layer-plus"></i>
         <h1 class="h3 mb-0 text-gray-800 ml-0">Cadastro de módulos</h1>
     </div>
-    <p class="ml-0">Cadastrar módulos em um curso</p>
     <form method="post">
         <?php
         $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
         if(!empty($Post['register_module'])) {
             $CreateModule['modulo_name'] = $Post['module'];
-            $CreateModule['modulo_descricao'] = $Post['description'];
+            $CreateModule['modulo_ordem'] = $Post['order'];
             $Course = new Course();
             $Course->createModule($CreateModule);
             if($Course->getResult()) {
@@ -40,9 +39,9 @@ echo $Component->getMenuDashboard();
             value="<?= isset($Post['module'])? $Post['module']: '' ?>">
         </div>
         <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Descrição</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" name="description" placeholder="Descrição do módulo"
-            value="<?= isset($Post['description'])? $Post['description']: '' ?>">
+            <label for="exampleInputEmail1" class="form-label">Ordem</label>
+            <input type="number" class="form-control" id="exampleInputEmail1" name="order" placeholder="Número de ordem do módulo"
+            value="<?= isset($Post['order'])? $Post['order']: '' ?>">
         </div>
         <a href="<?= BASE ?>/painel/modules/list" class="btn btn-outline-success" title="Voltar para lista de módulos">Voltar</a>
         <input type="submit" class="btn btn-success" name="register_module" value="Cadastrar módulo">

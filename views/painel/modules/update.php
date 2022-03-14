@@ -22,7 +22,7 @@ $moduleId = $_GET['module'];
         if($Read->getResult()) {
             $DataModule = $Read->getResult()[0];
         } else {    
-            die(Error("Módulo não encontrado!", 'danger'));
+            die(Error("Módulo não encontrado!", 'warning'));
         }
     ?>
 </div>
@@ -37,6 +37,7 @@ $moduleId = $_GET['module'];
             if(!empty($Post['update_module'])) {
                 $updateModule['modulo_name'] = (!empty($Post['module']) ? $Post['module'] :  null );
                 $updateModule['modulo_ordem'] = (!empty($Post['order']) ? $Post['order'] : null );
+                $DataModule = $updateModule;
                 $Course = new Course();
                 $Course->updateModule($updateModule, $moduleId);
                 if($Course->getResult()) {

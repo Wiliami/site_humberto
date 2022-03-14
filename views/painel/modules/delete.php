@@ -46,10 +46,6 @@ if($Read->getResult()) {
             <input type="text" class="form-control" id="exampleInputEmail1" name="module" value="<?= $DataModule['modulo_name'] ?>">
         </div>
         <div class="mb-3">
-            <label for="exampleInputEmail1">Descrição</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" name="description" value="<?= $DataModule['modulo_descricao'] ?>">
-        </div>
-        <div class="mb-3">
             <label for="exampleInputEmail1">Ordem</label>
             <input type="text" class="form-control" id="exampleInputEmail1" name="order" value="<?= $DataModule['modulo_ordem'] ?>">
         </div>

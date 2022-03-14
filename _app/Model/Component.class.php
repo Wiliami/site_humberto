@@ -643,8 +643,6 @@ class Component {
                 </div>
             </li>
             ';
-        } else {
-            Error('Sem permissão!');
         }
     } 
     

@@ -21,7 +21,7 @@ $userId = $_GET['update_user'];
     if($Read->getResult()) {
         $DataUser = $Read->getResult()[0];
     } else {
-        Error('Usuário não foi encontrado!', 'warning');
+        Error('Usuário não encontrado!', 'warning');
         ?>
         <a href="<?= BASE ?>/painel/admin/users/list" class="btn btn-outline-success" title="Voltar para a lista de usuários">Voltar</a>
 <?php

@@ -128,7 +128,7 @@ class Course {
 
 	
 
-
+	// ******* MÓDULOS *********
 	public function createModule($dataModule) {
 		if(empty($dataModule["modulo_name"])) {
 				$this->Error = "O módulo precisa de um nome!";
@@ -138,6 +138,7 @@ class Course {
 				$this->Result = false;
 			} else {
 				$dataModule['modulo_create_date'] = date('Y-m-d H:i:s');
+				$dataModule['modulo_user_create'] = $_SESSION['login']['user_name'];
 				$Create = new Create();
 				$Create->ExeCreate("modulos", $dataModule);
 				if($Create->getResult()) {
@@ -150,7 +151,6 @@ class Course {
 		}	
 	} 
 
-	// update módulo
 	public function updateModule($updateModule, $moduleId) {
 		if(empty($updateModule['modulo_name'])) {
 			$this->Error = 'Preencha o campo do nome do módulo!';
@@ -159,11 +159,9 @@ class Course {
 			$this->Error = 'Preencha o campo de ordem de módulo!';
 			$this->Result = false;
 		} else {
-			$updateModule['modulo_update_date'] = date('Y-m-d H:i:s');
-			$User = $_SESSION['login']['user_name'];
-			$updateModule = $User; 
+			$updateModule['modulo_user_update'] = $_SESSION['login']['user_name'];
 			$Update = new Update();
-			$Update->ExeUpdate("modulos", $updateModule, "WHERE modulo_id = :mi", "mi={$moduleId}${$User}");
+			$Update->ExeUpdate("modulos", $updateModule, "WHERE modulo_id = :mi", "mi={$moduleId}");
 			if($Update->getResult()) {
 				$this->Result = $Update->getResult();
 				$this->Error = 'Módulo atualizado com sucesso!';
@@ -179,15 +177,15 @@ class Course {
 		$Delete->ExeDelete("modulos", "WHERE modulo_id = :mi", "mi={$moduleId}");
 		if($Delete->getResult()) {
 			$this->Result = $Delete->getError();
-			$this->Error = " O módulo foi excluído com sucesso!";
+			$this->Error = "Módulo excluído com sucesso!";
 		} else {
 			$this->Result = false;
 			$this->Error = $Delete->getError();
-		}
+		}	
 	}
-	// delete módulo
 
 
+	// ******** AULAS ************
 	public function createLesson($dataLesson) {
 		if(empty($dataLesson['curso_titulo'])) {
 			$this->Error = "Selecione um curso para cadastrar a aula!";
