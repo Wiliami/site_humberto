@@ -643,6 +643,8 @@ class Component {
                 </div>
             </li>
             ';
+        } else {
+            Error('Error: 404');
         }
     } 
     
