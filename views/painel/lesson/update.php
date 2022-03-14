@@ -19,7 +19,7 @@ $Read->FullRead("SELECT * FROM aulas WHERE aula_id = :ai", "ai={$lessonId}");
 if($Read->getResult()) {
     $DataLesson = $Read->getResult()[0];
 } else {
-    die(Error("Aula não foi encontrada!"));
+    die(Error("Aula não encontrada!", "warning"));
 }
 ?>
 <div class="container card-header">

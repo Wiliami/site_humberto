@@ -46,7 +46,7 @@ $userId = $_GET['update_user'];
         $User = new User();
         $User->updateUser($updateUser, $userId);
         if($User->getResult()) {
-            Error($User->getError());
+            Error($User->getError()); // atualizou
         } else {
             Error($User->getError(), 'warning');
         }

@@ -133,8 +133,8 @@ class Course {
 		if(empty($dataModule["modulo_name"])) {
 				$this->Error = "O módulo precisa de um nome!";
 				$this->Result = false;
-			} elseif (empty($dataModule["modulo_descricao"])) {
-				$this->Error = "O módulo precisa de uma descrição!";
+			} elseif (empty($dataModule["modulo_ordem"])) {
+				$this->Error = "O módulo precisa de uma sequência ordinal!";
 				$this->Result = false;
 			} else {
 				$dataModule['modulo_create_date'] = date('Y-m-d H:i:s');
@@ -151,7 +151,28 @@ class Course {
 	} 
 
 	// update módulo
-
+	public function updateModule($updateModule, $moduleId) {
+		if(empty($updateModule['modulo_name'])) {
+			$this->Error = 'Preencha o campo do nome do módulo!';
+			$this->Result = false; 
+		} elseif(empty($updateModule['modulo_ordem'])) {
+			$this->Error = 'Preencha o campo de ordem de módulo!';
+			$this->Result = false;
+		} else {
+			$updateModule['modulo_update_date'] = date('Y-m-d H:i:s');
+			$User = $_SESSION['login']['user_name'];
+			$updateModule = $User; 
+			$Update = new Update();
+			$Update->ExeUpdate("modulos", $updateModule, "WHERE modulo_id = :mi", "mi={$moduleId}${$User}");
+			if($Update->getResult()) {
+				$this->Result = $Update->getResult();
+				$this->Error = 'Módulo atualizado com sucesso!';
+			} else {
+				$this->Result = false;
+				$this->Error = $Update->getError();
+			}
+		}
+	}
 
 	public function deleteModule($moduleId) {
 		$Delete = new Delete();
