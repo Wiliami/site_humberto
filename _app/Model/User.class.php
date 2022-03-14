@@ -121,9 +121,9 @@ class User {
 		} elseif ($this->verifyDuplicateUserEmail($dataUserSystem['user_email'])) {
 			$this->Result = false;
 		} else {
+			$dataUserSystem['user_create_resp'] = $_SESSION['login']['user_name'];
 			$dataUserSystem['user_password'] = md5($dataUserSystem['user_password']);
 			$dataUserSystem['user_create_date'] = date('Y-m-d H:i:s');
-			$dataUserSystem['user_inativo'] = '0';
 			$Create = new Create();
 			$Create->ExeCreate("users", $dataUserSystem); // cadastrando usuário no banco de dados
 			if($Create->getResult()) { // resultado
@@ -148,6 +148,7 @@ class User {
 			if(!empty($updateUser['user_password'])) {
 				$updateUser['user_password'] = md5($updateUser['user_password']);
 			}
+			$updateUser['user_update_resp'] = $_SESSION['login']['user_name'];
 			$Update = new Update();
 			$Update->ExeUpdate("users", $updateUser, "WHERE user_id = :id", "id={$userId}");
 			if ($Update->getResult()) {

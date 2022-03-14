@@ -26,9 +26,9 @@ echo $Component->getMenuDashboard();
                             <th>Profile</th>
                             <th>Usuário</th>
                             <th>Função</th>
-                            <th>Criado</th>
-                            <th>Status</th>
                             <th>E-mail</th>
+                            <th>Cadastrado por:</th>
+                            <th>Atualizado por:</th>
                             <th>Opções</th>
                         </tr>
                     </thead>
@@ -53,14 +53,15 @@ echo $Component->getMenuDashboard();
                                 <?= $User['level_desc'] ?>
                             </td>
                             <td>
-                                <?= date('d/m/Y', strtotime($User['user_create_date'])) ?>
-                            </td>
-                            <td>
-                                <?= $User['user_status'] ?>
-                            </td>
-                            <td>
                                 <?= $User['user_email'] ?>
                             </td>
+                            <td>
+                                <?= $User['user_create_resp'] ?>
+                            </td>
+                            <td>
+                                <?= $User['user_update_resp'] ?>
+                            </td>
+                           
                             <td>
                                 <a href="<?= BASE ?>/painel/admin/users/update&update_user=<?= $User['user_id'] ?>" class="table-link btn-sm" title="Editar <?= $User['user_name'] ?> ">
                                     <span class="fa-stack">
@@ -89,9 +90,9 @@ echo $Component->getMenuDashboard();
                             <th>*</th>
                             <th>Usuário</th>
                             <th>Função</th>
-                            <th>Criado</th>
-                            <th>Status</th>
                             <th>E-mail</th>
+                            <th>Cadastrado por:</th>
+                            <th>Atualizado por:</th>
                             <th>Opções</th>
                         </tr>
                     </tfoot>

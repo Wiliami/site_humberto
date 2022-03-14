@@ -30,7 +30,6 @@ echo $Component->getMenuDashboard();
             $User->createUserSystem($createUser);
             if($User->getResult()) {
                 Error($User->getError());
-                header('Location: ' . BASE . '/painel/admin/users/list');
                 die();
             } else { 
                 Error($User->getError(), 'warning');
