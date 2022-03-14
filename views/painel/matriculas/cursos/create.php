@@ -20,7 +20,7 @@ echo $Component->getMenuDashboard();
     <form method="post">
         <?php
         $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
-        if(!empty($Post['register_matriculate'])) {
+        if(!empty($Post['create_matriculate'])) {
             $MatriculateCourse['matricula_curso'] = $Post['matriculate_course'];
             $MatriculateCourse['matricula_usuario'] = $Post['matriculate_user'];
             $Course = new Course();
@@ -66,7 +66,7 @@ echo $Component->getMenuDashboard();
             </select>
         </div>
         <a href="<?= BASE ?>/painel/matriculas/cursos/list" class="btn btn-outline-success mb-2" title="Voltar para lista de matrículas de cursos">Voltar</a>
-        <input type="submit" class="btn btn-success mb-2" name="register_matriculate" value="Matricular">
+        <input type="submit" class="btn btn-success mb-2" name="create_matriculate" value="Matricular">
     </form>
 </div>
 <?= $Component->getFooterDashboard(); ?>

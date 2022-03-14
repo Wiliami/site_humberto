@@ -3,7 +3,6 @@ class Course {
 
     private $Error;
 	private $Result;
-
 	
 	public function matriculateCourse($matriculate) {
 		if(empty($matriculate['curso_titulo'])) {
@@ -25,6 +24,13 @@ class Course {
 			}
 		}
 	}
+
+	public function matriculateLesson($matriculateLesson) {
+		if(empty($matriculateLesson[''])) {
+			
+		}
+	}
+
 	
 	public function createCategoryCourse($category) {
 		if(empty($category['categoria_name'])) {
