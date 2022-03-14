@@ -18,7 +18,6 @@ echo $Component->getMenuDashboard();
         <i class="fas fa-layer-plus"></i>
         <h1 class="h3 mb-0 text-gray-800">Cadastro de níveis</h1>
     </div>
-    <p class="ml-0">Cadastrar níveis de usários</p>
     <form method="post">
         <?php
         $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
@@ -26,7 +25,7 @@ echo $Component->getMenuDashboard();
             $createLevel['level_desc'] = $Post['name-level'];
             $createLevel['level_id'] = $Post['level'];
             $User = new User();
-            $User->createLevelUser($creteLevel);
+            $User->createLevelUser($createLevel);
             if($User->getResult()){
                 Error($User->getError());
             } else {

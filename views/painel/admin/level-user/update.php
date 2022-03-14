@@ -56,7 +56,7 @@ $levelId = $_GET['level'];
             <input type="number" class="form-control" id="exampleInputEmail1" name="level_number"
             value="<?= $DataLevel['level_id'] ?>">
         </div>
-        <a href="<?= BASE ?>/painel/admin/nivel-user" class="btn btn-outline-success mb-2" title="Voltar para lista de níveis">Voltar</a>
+        <a href="<?= BASE ?>/painel/admin/level-user/nivel-user" class="btn btn-outline-success mb-2" title="Voltar para lista de níveis">Voltar</a>
         <input type="submit" class="btn btn-success mb-2" name="update_lesson" value="Atualizar nível">
     </form>
 </div>

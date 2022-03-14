@@ -644,7 +644,7 @@ class Component {
             </li>
             ';
         } else {
-            Error('Error: 404');
+            Error('Sem permissão!');
         }
     } 
     
