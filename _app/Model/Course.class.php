@@ -26,8 +26,22 @@ class Course {
 	}
 
 	public function matriculateLesson($matriculateLesson) {
-		if(empty($matriculateLesson[''])) {
-			
+		if(empty($matriculateLesson['aula_name'])) {
+			$this->Error = 'Selecione uma aula!';
+			$this->Result = false;
+		} elseif(empty($matriculateLesson['user_name'])) {
+			$this->Error = 'Selecione um usuário!';
+			$this->Result = false;
+		} else {
+			$Create = new Create();
+			$Create->ExeCreate('matriculas_aulas',$matriculateLesson);
+			if($Create->getResult()) {
+				$this->Error = $Create->getResult();
+				$this->Result = 'A matrícula foi realizada com sucesso!';
+			} else {
+				$this->Result = false;
+				$this->Error = $Create->getError();
+			}
 		}
 	}
 

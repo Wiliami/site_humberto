@@ -20,11 +20,14 @@ echo $Component->getMenuDashboard();
     <form method="post">
         <?php
         $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
-        if(!empty($Post['register_matriculate'])) {
-            $MatriculateCourse['matricula_name'] = $Post['matriculate_course'];
+        if(!empty($Post['create_matriculate'])) {
+            $MatriculateCourse['matricula_aula'] = $Post['lesson'];
+            $MatriculateCourse['matricula_usuario'] = $Post['user'];
             $Course = new Course();
-            $Course->matriculateCourse($MatriculateCourse);
+            $Course->matriculateLesson($MatriculateCourse);
             if($Course->getResult()) {
+                //$DataLesson = $Course->getResult();
+                //Check::var_dump_json($DataLesson);
                 Error($Course->getResult());
             } else {
                 Error($Course->getError(), 'warning');
@@ -33,7 +36,7 @@ echo $Component->getMenuDashboard();
         ?>
         <div class="form-group">         
             <label for="exampleInputEmail1">Aula</label>
-            <select class="form-control" id="" name="matriculate_course" value="<?= isset($Post['matriculate_course'])? $Post['matriculate_course']: '' ?>">
+            <select class="form-control" name="lesson" value="<?= isset($Post['lesson'])? $Post['lesson']: '' ?>">
                 <?php
                 $Read = new Read();
                 $Read->FullRead("SELECT * FROM aulas");
@@ -50,7 +53,7 @@ echo $Component->getMenuDashboard();
         </div>
         <div class="form-group">         
             <label for="exampleInputEmail1">Usuário</label>
-            <select class="form-control" id="" name="matriculate_course" value="<?= isset($Post['matriculate_course'])? $Post['matriculate_course']: '' ?>">
+            <select class="form-control" name="user" value="<?= isset($Post['user'])? $Post['user']: '' ?>">
                 <?php
                 $Read = new Read();
                 $Read->FullRead("SELECT * FROM users");
@@ -66,7 +69,7 @@ echo $Component->getMenuDashboard();
             </select>
         </div>
         <a href="<?= BASE ?>/painel/matriculas-aulas/list" class="btn btn-outline-success mb-2" title="Voltar para lista de matrículas de aulas">Voltar</a>
-        <input type="submit" class="btn btn-success mb-2" name="register_matriculate" value="Matricular">
+        <input type="submit" class="btn btn-success mb-2" name="create_matriculate" value="Matricular">
     </form>
 </div>
 <?= $Component->getFooterDashboard(); ?>
