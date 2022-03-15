@@ -201,7 +201,7 @@ class User {
 			$this->Error = "A senha é obrigatória!";
 			$this->Result = false;
 		} else {
-			$password = md5($password);
+			$password['user_password'] = md5($password);
 			$Read = new Read();
 			$Read->FullRead("SELECT user_id, user_name, user_email, user_level FROM users WHERE user_email = :em AND user_password = :ps", "em={$email}&ps={$password}");
 
@@ -250,34 +250,31 @@ class User {
 	//classe de alteração de senha do usuário
 	public function resetUserPassword($resetPassword) {
 		$this->verifyExistLoginUser();
-		if(empty($resetPassword)) {
+		if(empty($resetPassword['user_password'])) {
 			$this->Error = 'Digite a senha atual!';
 			$this->Result = false;
-		} elseif (empty($resetPassword)) {
+		} elseif(empty($resetPassword['user_password'])) {
 			$this->Error = "Digite a nova senha!";
 			$this->Result = false;
-		} elseif(empty($resetPassword)) {
+		} elseif(empty($resetPassword['user_password'])) {
 			$this->Error = "Confirme a nova senha!";
 			$this->Result = false;
 		} elseif($this->verifyExistUserPassword($resetPassword)) {
-			$this->Result = false;
-		}
-		if($resetPassword  === $resetPassword) {
-			$this->Error = "Sua senha deve ser diferente!";
-			$this->Result = false;
+			$this->Error = 'A senha deve ser diferente!';
 		} else {
 			$this->Result = false;
-			$this->Error = $resetPassword->getError();
+			$this->Error = "";
 		}
 	}
 
+
 	private function verifyExistUserPassword($pass) {
+		$pass = $_SESSION['login']['user_password'];
 		$Read = new Read();
 		$pass = md5($pass);
-		$Read->FullRead('SELECT user_password FROM users WHERE user_password = :pss', "pss={$pass}");
+		$Read->FullRead("SELECT user_password FROM users WHERE user_password = :pss", "pss={$pass}");
 		if($Read->getResult()) {
-			$this->Error = "A senha está inválida!";
-			$this->Result = false;
+			$this->Result = true;
 		}
 	}
 	//Método para enviar email de recuperação de senha

@@ -38,7 +38,6 @@ echo $Component->getMenuDashboard();
                         $Read->FullRead("SELECT u.*, ul.level_desc
                             FROM users u
                             LEFT JOIN users_levels ul ON ul.level_id = u.user_level");
-                            // Primeiro eu tenho o id e o campo da tabela que eu quero 
                         if($Read->getResult()) {
                             foreach($Read->getResult() as $User) { 
                                 ?>

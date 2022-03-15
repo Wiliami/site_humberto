@@ -29,11 +29,8 @@ $userId = $_GET['update_user'];
     }
 ?>
 </div>
+
 <div class="container">
-    <div class="d-sm-flex align-items-center justify-content-start mb-3">
-        <i class="fas fa-layer-plus"></i>
-        <h1 class="h3 mb-0 text-gray-800">Atualizar usuário</h1>
-    </div>
     <?php
     $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
     if(!empty($Post['update_user'])) { 
@@ -53,7 +50,7 @@ $userId = $_GET['update_user'];
     }
     ?>
     <form method="post">
-        <h1 class="h5 mb-0 text-gray-800 mb-4">Atualizar <?= $DataUser['user_name'] ?></h1>
+        <h1 class="h5 mb-0 text-gray-800 mb-4">Atualizar <b><?= $DataUser['user_name'] ?></b></h1>
         <div class="form-group">
             <label for="exampleInputEmail1">Nome</label>
             <input type="text" class="form-control" id="example1" name="user" placeholder="Nome do usuário"
