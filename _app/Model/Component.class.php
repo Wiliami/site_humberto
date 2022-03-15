@@ -664,7 +664,7 @@ class Component {
                             <i class="fas fa-history"></i>
                             Histórico de compras
                         </a>
-                        <a class="collapse-item" href="' . BASE . '/painel/admin/paginas/nivel-user">
+                        <a class="collapse-item" href="' . BASE . '/painel/admin/level-user/nivel-user">
                             <i class="fas fa-level-up-alt"></i>
                             Níveis de Usuários
                         </a>

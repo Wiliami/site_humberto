@@ -97,7 +97,7 @@ class User {
 			$Create->ExeCreate("users", $dataUser); // cadastrando usuário no banco de dados
 			if($Create->getResult()) { // resultado
 				$this->Result = $Create->getResult();
-				$this->Error =  "Cadadastro realizado com sucesso!";
+				$this->Error =  "Cadastro realizado com sucesso!";
 			} else {
 				$this->Result = false;
 				$this->Error = $Create->getError();
@@ -128,7 +128,7 @@ class User {
 			$Create->ExeCreate("users", $dataUserSystem); // cadastrando usuário no banco de dados
 			if($Create->getResult()) { // resultado
 				$this->Result = $Create->getResult();
-				$this->Error =  "Cadadastro realizado com sucesso!";
+				$this->Error =  "Cadastro realizado com sucesso!";
 			} else {
 				$this->Result = false;
 				$this->Error = $Create->getError();
@@ -201,7 +201,7 @@ class User {
 			$this->Error = "A senha é obrigatória!";
 			$this->Result = false;
 		} else {
-			$password['user_password'] = md5($password);
+			$password = md5($password);
 			$Read = new Read();
 			$Read->FullRead("SELECT user_id, user_name, user_email, user_level FROM users WHERE user_email = :em AND user_password = :ps", "em={$email}&ps={$password}");
 
@@ -285,7 +285,6 @@ class User {
 		if($Read->getResult()) {
 			$this->Error = "Não possível alterar a senha de acesso!";
 			$this->Result = false;
-			// trecho de código que ainda não é utilizado pra nada neste momento
 			return true;
 		} else {
 			return false;

@@ -13,15 +13,22 @@ echo $Component->getCreatePagesAdmin();
 echo $Component->getListPagesAdmin();
 echo $Component->getMenuDashboard();
 $userId = $_GET['delete_user'];
-
-$Read = new Read();
-$Read->FullRead("SELECT * FROM users WHERE user_id = :ui", "ui={$userId}");
-if($Read->getResult()) {
-    $DataCourse = $Read->getResult()[0];
-} else {
-    die(Error("Usuário não encontrado!"));
-}
 ?>
+<div class="container">
+    <?php
+        $Read = new Read();
+        $Read->FullRead("SELECT * FROM users WHERE user_id = :ui", "ui={$userId}");
+        if($Read->getResult()) {
+            $DataCourse = $Read->getResult()[0];
+                ?>
+            <a href="<?= BASE ?>/painel/admin/users/list" class="btn btn-outline-success" title="Voltar para a lista de usuários">Voltar</a>
+        <?php
+        } else {
+            die(Error("Usuário não encontrado!", 'danger'));
+        }
+    ?>
+</div>
+
 <div class="container">
     <?php
     $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
@@ -48,7 +55,40 @@ if($Read->getResult()) {
         value="<?= $DataCourse['user_email'] ?>">
     </div>
     <a href="<?= BASE ?>/painel/admin/users/list" class="btn btn-outline-success mb-2" title="Voltar para lista de usuários">Voltar</a>
-    <input type="submit" class="btn btn-success mb-2" name="delete_user" value="Excluir usuário">
+        <input type="submit" class="btn btn-success mb-2" name="delete_user" data-toggle="modal" data-target="#exampleModal" value="Excluir usuário" >
     </form>
+</div>
+
+
+
+
+
+
+
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
 </div>
 <?= $Component->getFooterDashboard(); ?>
