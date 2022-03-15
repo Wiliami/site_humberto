@@ -21,7 +21,7 @@ $levelId = $_GET['delete_level'];
     if($Read->getResult()) {
         $DataLevel = $Read->getResult()[0];
     } else {
-        Error('Nível de usuário não encontrado!', 'warning');
+        Error('Nível de usuário não encontrado!', 'danger');
         ?>
         <a href="<?= BASE ?>/painel/admin/level-user/list" class="btn btn-outline-success" title="Voltar para a lista de níveis de usuários!">Voltar</a>
     <?php
@@ -52,7 +52,36 @@ $levelId = $_GET['delete_level'];
             value="<?= $DataLevel['level_desc']?>">
         </div>
         <a href="<?= BASE ?>/painel/admin/level-user/list" class="btn btn-outline-primary mb-2" title="Voltar para lista de níveis">Voltar</a>
-        <input type="submit" class="btn btn-danger mb-2" name="delete_level" value="Excluir">
+        <button type="button" class="btn btn-danger  mb-2" data-toggle="modal" data-target="#exampleModal">
+            Excluir
+        </button>
+
+
+         <!-- Modal -->
+         <div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Excluir <b><?= $DataLevel['level_desc']; ?></b>
+                        </h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Tem certeza que deseja excluir esse nível?
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-outline-primary mb-2" type="button" data-dismiss="modal">
+                            Cancelar
+                        </button>
+                        <input type="submit" class="btn btn-danger mb-2" name="delete_level" value="Excluir">
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </form>
 </div>
 <?= $Component->getFooterDashboard(); ?>

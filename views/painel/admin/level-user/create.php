@@ -14,9 +14,9 @@ echo $Component->getListPagesAdmin();
 echo $Component->getMenuDashboard();
 ?>
 <div class="container">
+    <div class="card-header">
     <div class="d-sm-flex align-items-center justify-content-start mb-4">
-        <i class="fas fa-layer-plus"></i>
-        <h1 class="h3 mb-0 text-gray-800">Cadastro de níveis</h1>
+        <h1 class="h3 mb-0 text-gray-800">Cadastrar Nível</h1>
     </div>
     <form method="post">
         <?php
@@ -43,8 +43,9 @@ echo $Component->getMenuDashboard();
             <input type="text" class="form-control" id="exampleInputEmail1" name="level" placeholder="Número da categoria" 
             value="<?= isset($Post['level'])? $Post['level']: '' ?>">
         </div>
-        <a href="<?= BASE ?>/painel/admin/nivel-user" class="btn btn-outline-success mb-2" title="Voltar para lista de categorias">Voltar</a>
+        <a href="<?= BASE ?>/painel/admin/level-user/list" class="btn btn-outline-success mb-2" title="Voltar para lista de categorias">Voltar</a>
         <input type="submit" class="btn btn-success mb-2" name="register_level" value="Cadastrar nível">
     </form>
+    </div>
 </div>
 <?= $Component->getFooterDashboard(); ?>

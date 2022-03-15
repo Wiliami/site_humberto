@@ -126,7 +126,9 @@ echo $Component->getMenuDashboard();
             }
             ?>
             <div class="modal-footer">
-                <button class="btn btn-success mb-2" type="button" data-dismiss="modal">Cancelar</button>
+                <button class="btn btn-success mb-2" type="button" data-dismiss="modal">
+                    Cancelar
+                </button>
                 <a class="btn btn-danger mb-2" href="<?= BASE ?>/">Excluir</a>
             </div>
         </div>

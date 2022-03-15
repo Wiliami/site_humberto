@@ -46,14 +46,15 @@ class Course {
 	}
 
 	
-	public function createCategoryCourse($category) {
-		if(empty($category['categoria_name'])) {
+	public function createCategoryCourse($createCategory) {
+		if(empty($createCategory['categoria_name'])) {
 			$this->Error = "Campo obrigatório!";
 			$this->Result = false;
 		} else {
-			$category['categoria_create_date'] = date('Y-m-d H:i:s');
+			$createCategory['categoria_user_create'] = $_SESSION['login']['user_name'];
+			$createCategory['categoria_create_date'] = date('Y-m-d H:i:s');
 			$Create = new Create();
-			$Create->ExeCreate('categoria_cursos', $category);
+			$Create->ExeCreate('categoria_cursos', $createCategory);
 				if($Create->getResult()) {
 					$this->Result = $Create->getResult();
 					$this->Error = 'A categoria foi cadastrada com sucesso!';
@@ -61,6 +62,24 @@ class Course {
 					$this->Result = false;
 					$this->Error = $Create->getError(); 
 				}
+		}
+	}
+
+	public function updateCategoryCourse($updateCategory, $categoriaId) {
+		if(empty($updateCategory['categoria_name'])) {
+			$this->Error = "Campo obrigatório!";
+			$this->Result = false;
+		} else {
+			$updateCategory['categoria_user_update'] = $_SESSION['login']['user_name'];
+			$Update = new Update();
+			$Update->ExeUpdate("categoria_cursos", $updateCategory, "WHERE categoria_id = :ci", "ci={$categoriaId}");
+			if($Update->getResult()) {
+				$this->Result = $Update->getResult();
+				$this->Error = 'Categoria atualizada com sucesso!';
+			} else {
+				$this->Result = false;
+				$this->Error = $Update->getError();
+			}
 		}
 	}
 
@@ -92,16 +111,17 @@ class Course {
 		if(empty($updateCourse['curso_titulo'])) {
 			//PReecn
 			$this->Result = false;
-			$this->Error = "Preenchar o título do curso!";
+			$this->Error = "Preencha o título do curso!";
 		} elseif(empty($updateCourse['curso_descricao'])) {
 			//Peicnd
 			$this->Result = false;
-			$this->Error = "Preenchar a descrição do curso!";
+			$this->Error = "Preencha a descrição do curso!";
 		}  elseif(empty($updateCourse['curso_valor'])) {
 			// Preenca
 			$this->Result = false;
-			$this->Error = "Preenchar o valor do curso!";
+			$this->Error = "Preencha o valor do curso!";
 		} else {
+			$updateCourse['curso_user_update'] = $_SESSION['login']['user_name'];
 			$Update = new Update();
 			$Update->ExeUpdate("cursos", $updateCourse, "WHERE curso_id = :ci", "ci={$courseId}");
 			if($Update->getResult()) {

@@ -25,7 +25,8 @@ echo $Component->getMenuDashboard();
                     <thead>
                         <tr class="btn-sm">
                             <th>Nível Usuário</th>
-                            <th>Data de criação</th>
+                            <th>Cadastrado por</th>
+                            <th>Atualizado por</th>
                             <th>Opções</th>
                         </tr>
                     </thead>
@@ -41,7 +42,10 @@ echo $Component->getMenuDashboard();
                                 <span><?= $Level['level_desc'] ?></span>
                             </td>
                             <td>
-                                <span><?= date('d/m/Y', strtotime($Level['level_create_date'])) ?></span>
+                                <span><?= $Level['level_user_create'] ?></span>
+                            </td>
+                            <td>
+                                <span><?= $Level['level_user_update'] ?></span>
                             </td>
                             <td>
                                 <a href="<?= BASE ?>/painel/admin/level-user/update&level=<?= $Level['level_id'] ?>" class="table-link btn-sm" title="Editar nível <?= $Level['level_desc'] ?>">
@@ -50,10 +54,10 @@ echo $Component->getMenuDashboard();
                                         <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
                                     </span>
                                 </a>
-                                <a href="<?= BASE ?>/painel/admin/level-user/delete&delete_level=<?= $Level['level_id'] ?>" class="table-link danger btn-sm" title="Excluir <?= $Level['level_desc'] ?>">
+                                <a href="<?= BASE ?>/painel/admin/level-user/delete&delete_level=<?= $Level['level_id'] ?>" class="table-link btn-sm" title="Excluir <?= $Level['level_desc'] ?>">
                                     <span class="fa-stack">
-                                        <i class="fa fa-square fa-stack-2x"></i>
-                                        <i class="btn btn-danger fa fa-trash-o fa-stack-1x fa-inverse"></i>
+                                        <i class="fa fa-square fa-stack-2x" style="color: red;"></i>
+                                        <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
                                     </span>
                                 </a>
                             </td>
@@ -68,7 +72,8 @@ echo $Component->getMenuDashboard();
                     <tfoot>
                         <tr class="btn-sm">
                             <th>Nível Usuário</th>
-                            <th>Data de criação</th>
+                            <th>Cadastrado por</th>
+                            <th>Atualizado por</th>
                             <th>Opções</th>
                         </tr>
                     </tfoot>

@@ -16,7 +16,8 @@ class User {
 			$this->Error = "Qual o número desse nível?";
 			$this->Result = false;
 		}
-		$createLevel['level_create_date'] = date('Y-m-d H:i:is');
+		$createLevel['level_user_create'] = $_SESSION['login']['user_name'];
+		$createLevel['level_create_date'] = date('Y-m-d');
 		$Create = new Create();
 		$Create->ExeCreate('users_levels', $createLevel);
 		if ($Create->getResult()) {
@@ -36,6 +37,7 @@ class User {
 			$this->Error = "Preencha a numeração do nível!";
 			$this->Result = false;
 		} else {
+			$updateLevelUser['level_user_update'] = $_SESSION['login']['user_name'];
 			$Update = new Update();
 			$Update->ExeUpdate("users_levels", $updateLevelUser, "WHERE level_id = :li", "li={$levelId}");
 			if($Update->getResult()) {

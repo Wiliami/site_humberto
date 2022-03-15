@@ -12,33 +12,43 @@ echo $Component->getLiPagesDashboard();
 echo $Component->getCreatePagesAdmin();
 echo $Component->getListPagesAdmin();
 echo $Component->getMenuDashboard();
-$updateCategoria = $_GET['categoria'];
+$categoriaId = filter_input(INPUT_GET, 'categoria_update', FILTER_VALIDATE_INT);
 ?>
+<div class="container mb-2">
+    <?php
+        $Read = new Read(); 
+        $Read->FullRead("SELECT * FROM categoria_cursos WHERE categoria_id = :ci", "ci={$categoriaId}");
+        if($Read->getResult()) {
+            $DataCategory = $Read->getResult()[0];  
+        } else {
+            die(Error('Categoria não encontrada!', 'danger'));
+        }
+    ?>
+</div>
 <div class="container">
-    <div class="d-sm-flex align-items-center justify-content-start mb-4">
-        <i class="fas fa-layer-plus"></i>
-        <h1 class="h3 mb-0 text-gray-800">Atualizar categoria</h1>
-    </div>
     <form action="" method="post">
         <?php
-        $Read = new Read(); 
-        $Read->FullRead("SELECT * FROM categoria_cursos WHERE categoria_id = :ci", "ci={$updateCategoria}");
-        if($Read->getResult()) {
-            foreach($Read->getResult() as $Cat) {
-            ?>
+        $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+        if(!empty($Post['update_category'])) {
+            $createCategory['categoria_name'] = (!empty($Post['category'])? $Post['category'] : null);
+            $DataCategory = $createCategory;
+            $Course = new Course();
+            $Course->updateCategoryCourse($createCategory, $categoriaId);
+            if($Course->getResult()) {
+                Error($Course->getResult());
+            } else {
+                Error($Course->getError(), 'warning');
+            }
+        }
+        ?>
+        <h1 class="h5 mb-0 text-gray-800">Atualizar <b><?= $DataCategory['categoria_name'] ?></b></h1>
         <div class="form-group">
             <label for="example">Categoria</label>
             <input type="text" class="form-control" id="exampleInputEmail1" name="category" placeholder="Nome da categoria" 
-            value="<?= $Cat['categoria_name'] ?>">
+            value="<?= $DataCategory['categoria_name'] ?>">
         </div>
         <a href="<?= BASE ?>/painel/courses/categorias/list" class="btn btn-outline-success mb-2" title="Voltar para lista de categorias">Voltar</a>
-        <input type="submit" class="btn btn-success mb-2" name="register_category" value="Atualizar categoria">
+        <input type="submit" class="btn btn-success mb-2" name="update_category" value="Atualizar">
     </form>
-    <?php
-        }
-    } else {
-        Error('Nenhuma categoria de curso foi selecionada para atualizar!', 'warning');
-    }
-    ?>
 </div>
 <?= $Component->getFooterDashboard(); ?>

@@ -23,8 +23,9 @@ echo $Component->getMenuDashboard();
                 <table id="table-lista-categoria" class="table table-striped table-bordered" style="width: 100%;">
                     <thead>
                         <tr class="btn-sm"> 
-                            <th><span>Categoria</span></th>
-                            <th><span>Data de cadastro</span></th>
+                            <th><span>Nome da categoria</span></th>
+                            <th><span>Cadastrado por</span></th>
+                            <th><span>Atualizado por</span></th>
                             <th><span>Opções</span></th>
                         </tr>
                     </thead>
@@ -40,16 +41,19 @@ echo $Component->getMenuDashboard();
                                 <span><?= $Categoria['categoria_name']?></span>
                             </td>
                             <td>
-                                <span><?= date('d/m/Y', strtotime($Categoria['categoria_create_date'])) ?></span>
+                                <span><?= $Categoria['categoria_user_create']?></span>
                             </td>
                             <td>
-                                <a href="<?= BASE ?>/painel/courses/categorias/update&categoria=<?= $Categoria['categoria_id'] ?>" class="table-link" title="Editar <?= $Categoria['categoria_name'] ?>">
+                                <span><?= $Categoria['categoria_user_update'] ?></span>
+                            </td>
+                            <td>
+                                <a href="<?= BASE ?>/painel/courses/categorias/update&categoria_update=<?= $Categoria['categoria_id'] ?>" class="table-link" title="Editar <?= $Categoria['categoria_name'] ?>">
                                     <span class="fa-stack">
                                         <i class="fa fa-square fa-stack-2x"></i>
                                         <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
                                     </span>
                                 </a>
-                                <a href="<?= BASE ?>/painel/courses/categorias/delete&categoria_delete=<?= $Categoria['categoria_id'] ?>" class="table-link danger" title="Excluir <?= $Categoria['categoria_name'] ?>">
+                                <a href="<?= BASE ?>/painel/courses/categorias/delete&categoria_delete=<?= $Categoria['categoria_id'] ?>" class="table-link danger" style="color: red;" title="Excluir <?= $Categoria['categoria_name'] ?>">
                                     <span class="fa-stack">
                                         <i class="fa fa-square fa-stack-2x"></i>
                                         <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
@@ -67,7 +71,8 @@ echo $Component->getMenuDashboard();
                     <tfoot>
                         <tr class="btn-sm"> 
                             <th><span>Categoria</span></th>
-                            <th><span>Data de cadastro</span></th>
+                            <th><span>Cadastrado por</span></th>
+                            <th><span>Atualizado por</span></th>
                             <th><span>Opções</span></th>
                         </tr>
                     </tfoot>
