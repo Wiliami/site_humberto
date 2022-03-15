@@ -801,7 +801,7 @@ class Component {
                         <i class="fas fa-user"></i>
                         Usuários
                     </a>
-                    <a class="collapse-item" href="' . BASE . '/painel/admin/nivel-user">
+                    <a class="collapse-item" href="' . BASE . '/painel/admin/level-user/list">
                         <i class="fas fa-user"></i>
                         Níveis de usuários
                     </a>
@@ -951,15 +951,15 @@ class Component {
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title btn btn-success mb-2 vw-100" id="exampleModalLabel">Pronto para sair?</h5>
+                            <h5 class="modal-title btn btn-outline-primary mb-2 vw-100" id="exampleModalLabel">Pronto para sair?</h5>
                             <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">×</span>
                             </button>
                         </div>
                         <div class="modal-body">Selecione "Sair" para encerrar a sua sessão.</div>
                         <div class="modal-footer">
-                            <button class="btn btn-outline-success" type="button" data-dismiss="modal">Cancelar</button>
-                            <a class="btn btn-success" href="' . BASE . '/pages/logout">Sair</a>
+                            <button class="btn btn-outline-primary" type="button" data-dismiss="modal">Cancelar</button>
+                            <a class="btn btn-danger" href="' . BASE . '/pages/logout">Sair</a>
                         </div>
                     </div>
                 </div>

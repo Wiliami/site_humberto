@@ -12,74 +12,66 @@ echo $Component->getLiPagesDashboard();
 echo $Component->getCreatePagesAdmin();
 echo $Component->getListPagesAdmin();
 echo $Component->getMenuDashboard();
-$nivelId = $_GET['nivel'];
 ?>
 <div class="container">
     <div class="card shadow mb-4">
         <div class="card-header py-3 d-sm-flex align-items-center justify-content-between">
-            <?php
-            $Read = new Read();
-            $Read->FullRead("SELECT * FROM users_levels WHERE level_id = :ld", "ld={$nivelId}");
-            if($Read->getResult()) {
-                foreach($Read->getResult() as $LevelUser) {
-                    ?>
-            <h6 class="m-0 font-weight-bold text-dark">Usuários nível: <?= $LevelUser['level_desc'] ?></h6>
-            <a href="<?= BASE ?>/painel/admin/nivel-user" class="btn btn-success mb-2" title="Voltar para lista de usuários">Voltar</a>
-            <?php
-                }
-            } else {
-                Error("Ainda não existe essa lista de usuários!");
-            }   
-            ?>
+            <h6 class="m-0 font-weight-bold text-dark">Nível de usuários</h6>
         </div>
         <div class="card-body">
             <div class="table-responsive">
-                <table id="tabela-niveis" class="table table-striped table-bordered" style="width: 100%;">
+                <table id="table-niveis" class="table table-striped table-bordered" style="width: 100%;">
+                    </div>
                     <thead>
-                        <tr>
-                            <th><span>Perfil</span></th>
-                            <th><span>Usuário</span></th>
-                            <th><span>Status</span></th>
-                            <th><span>E-mail</span></th>
-                            <th><span>Opções</span></th>
+                        <tr class="btn-sm">
+                            <th>Nível Usuário</th>
+                            <th>Data de criação</th>
+                            <th>Opções</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php
-                        $Read->FullRead("SELECT * FROM users WHERE user_level = :ul", "ul={$NivelId}");
-                        if($Read->getResult()) {
-                            foreach($Read->getResult() as $Users) {
-                                ?>
-                        <tr>
+                            $Read = new Read();
+                            $Read->FullRead("SELECT * FROM users_levels");
+                            if($Read->getResult()) {
+                                foreach($Read->getResult() as $Level) {
+                                    ?>
+                        <tr class="btn-sm">
                             <td>
-                                <?= $Component->getAvatarUser(); ?>
+                                <span><?= $Level['level_desc'] ?></span>
                             </td>
                             <td>
-                                <span><?= $Users['user_name'] ?></span>
+                                <span><?= date('d/m/Y', strtotime($Level['level_create_date'])) ?></span>
                             </td>
                             <td>
-                                <span><?= $Users['user_status'] ?></span>
-                            </td>
-                            <td>
-                                <span><?= $Users['user_email'] ?></span>
-                            </td>
-                            <td>
-                                <a href="<?= BASE ?>/" class="table-link"
-                                    title="Alterar o nível de <?= $Users['user_name'] ?>">
+                                <a href="<?= BASE ?>/painel/admin/level-user/update&level=<?= $Level['level_id'] ?>" class="table-link btn-sm" title="Editar nível <?= $Level['level_desc'] ?>">
                                     <span class="fa-stack">
                                         <i class="fa fa-square fa-stack-2x"></i>
                                         <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
                                     </span>
                                 </a>
+                                <a href="<?= BASE ?>/painel/admin/level-user/delete&delete_level=<?= $Level['level_id'] ?>" class="table-link danger btn-sm" title="Excluir <?= $Level['level_desc'] ?>">
+                                    <span class="fa-stack">
+                                        <i class="fa fa-square fa-stack-2x"></i>
+                                        <i class="btn btn-danger fa fa-trash-o fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
                             </td>
                         </tr>
                         <?php
-                            }
-                        } else {
-                            Error("Ainda não existe usuários para esse nível!");
-                        }
-                        ?>
+                                }
+                            } else {
+                                Error("Lista de usuários não encontrada!", 'warning');
+                            }   
+                            ?>
                     </tbody>
+                    <tfoot>
+                        <tr class="btn-sm">
+                            <th>Nível Usuário</th>
+                            <th>Data de criação</th>
+                            <th>Opções</th>
+                        </tr>
+                    </tfoot>
                 </table>
             </div>
         </div>
@@ -90,7 +82,7 @@ $nivelId = $_GET['nivel'];
 <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
 <script type="text/javascript" language="javascript">
 $(document).ready(function() {
-    $("#tabela-niveis").DataTable({
+    $("#table-niveis").DataTable({
         "language": {
             "lengthMenu": "Mostrando _MENU_ registros por página",
             "zeroRecords": "Nenhum registro foi encontrado",

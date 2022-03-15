@@ -12,7 +12,7 @@ echo $Component->getLiPagesDashboard();
 echo $Component->getCreatePagesAdmin();
 echo $Component->getListPagesAdmin();
 echo $Component->getMenuDashboard();
-$levelId = $_GET['level']; 
+$levelId = $_GET['delete_level']; 
 ?>
 <div class="container">
     <?php
@@ -20,11 +20,11 @@ $levelId = $_GET['level'];
     $Read->FullRead("SELECT * FROM users_levels WHERE level_id = :li", "li={$levelId}");
     if($Read->getResult()) {
         $DataLevel = $Read->getResult()[0];
-        Error('Nível de usuário não encontrado!');
-        ?>
-        <a href="<?= BASE ?>/painel/admin/nivel-usuario" class="btn btn-outline-success" title="Voltar para a lista de cursos">Voltar</a>
-    <?php
     } else {
+        Error('Nível de usuário não encontrado!', 'warning');
+        ?>
+        <a href="<?= BASE ?>/painel/admin/level-user/list" class="btn btn-outline-success" title="Voltar para a lista de níveis de usuários!">Voltar</a>
+    <?php
         die();
     }
     ?>
@@ -43,22 +43,16 @@ $levelId = $_GET['level'];
     }
     ?>
     <div class="d-sm-flex align-items-center justify-content-start mb-4">
-        <i class="fas fa-layer-plus"></i>
-        <h1 class="h3 mb-0 text-gray-800">Excluir <b><?= $DataLevel['level_desc'] ?></b></h1>
+        <h1 class="h3 text-gray-800">Excluir <b><?= $DataLevel['level_desc'] ?></b></h1>
     </div>
     <form action="" method="post">
         <div class="form-group">
             <label for="exampleInputEmail1">Nível</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" name="level-name"
+            <input type="text" class="form-control" id="exampleInputEmail1" name="level-name" placeholder="Nível de usuário"
             value="<?= $DataLevel['level_desc']?>">
         </div>
-        <div class="form-group">
-            <label for="exampleInputEmail1">Númeração</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" name="level-number"
-            value="<?= $DataLevel['level_id'] ?>">
-        </div>
-        <a href="<?= BASE ?>/painel/admin/nivel-user" class="btn btn-outline-success mb-2" title="Voltar para lista de níveis">Voltar</a>
-        <input type="submit" class="btn btn-success mb-2" name="delete_level" value="Excluir nível">
+        <a href="<?= BASE ?>/painel/admin/level-user/list" class="btn btn-outline-primary mb-2" title="Voltar para lista de níveis">Voltar</a>
+        <input type="submit" class="btn btn-danger mb-2" name="delete_level" value="Excluir">
     </form>
 </div>
 <?= $Component->getFooterDashboard(); ?>
