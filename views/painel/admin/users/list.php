@@ -80,7 +80,7 @@ echo $Component->getMenuDashboard();
                         <?php
                             }
                         } else{
-                            Error("Ainda não existem usuários!");
+                            Error("Usuários não encontrados!");
                         }
                         ?>
                     </tbody>
@@ -100,9 +100,6 @@ echo $Component->getMenuDashboard();
         </div>
     </div>
 </div>
-
-
-
 
 <!-- Delete Modal -->
 <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
@@ -125,7 +122,7 @@ echo $Component->getMenuDashboard();
             <?php
                 }
             } else {
-                Error("Não foi possível deletar o usuário!");
+                Error("Não foi possível excluir o usuário!");
             }
             ?>
             <div class="modal-footer">
