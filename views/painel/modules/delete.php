@@ -12,7 +12,7 @@ echo $Component->getLiPagesDashboard();
 echo $Component->getCreatePagesAdmin();
 echo $Component->getListPagesAdmin();
 echo $Component->getMenuDashboard();
-$moduleId = $_GET['delete_module'];
+$moduleId = filter_input(INPUT_GET, 'delete_module', FILTER_VALIDATE_INT);
 ?>
 
 <div class="container">

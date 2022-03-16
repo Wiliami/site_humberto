@@ -10,7 +10,7 @@ echo $Component->getLiCoursesDashboard();
 echo $Component->getLiPagesDashboard();
 echo $Component->getCreatePagesAdmin();
 echo $Component->getListPagesAdmin();
-$matriculaId = $_GET['matricula_update'];
+$matriculaId = filter_input(INPUT_GET, 'matricula_update', FILTER_VALIDATE_INT);
 
 $Read = new Read();
 $Read->FullRead("SELECT * FROM matriculas_cursos WHERE matricula_id = :mi", "mi={$matriculaId}");

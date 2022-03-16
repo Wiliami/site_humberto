@@ -12,7 +12,7 @@ echo $Component->getLiPagesDashboard();
 echo $Component->getCreatePagesAdmin();
 echo $Component->getListPagesAdmin();
 echo $Component->getMenuDashboard();
-$moduleId = $_GET['module'];
+$moduleId = filter_input(INPUT_GET, 'module', FILTER_VALIDATE_INT);
 ?>
 
 <div class="container">

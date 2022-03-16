@@ -12,7 +12,7 @@ echo $Component->getLiPagesDashboard();
 echo $Component->getCreatePagesAdmin();
 echo $Component->getListPagesAdmin();
 echo $Component->getMenuDashboard();
-$lessonId = $_GET['aula'];
+$lessonId = filter_input(INPUT_GET, 'aula', FILTER_VALIDATE_INT);
 
 $Read = new Read();
 $Read->FullRead("SELECT * FROM aulas WHERE aula_id = :ai", "ai={$lessonId}");

@@ -12,7 +12,7 @@ echo $Component->getLiPagesDashboard();
 echo $Component->getCreatePagesAdmin();
 echo $Component->getListPagesAdmin();
 echo $Component->getMenuDashboard();
-$MatriculaId = $_GET['delete_matricula']
+$MatriculaId = filter_input(INPUT_GET, 'delete_matricula', FILTER_VALIDATE_INT);
 ?>
 <div class="container">
     <div class="d-sm-flex align-items-center justify-content-between mb-4">

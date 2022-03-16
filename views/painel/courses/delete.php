@@ -12,7 +12,7 @@ echo $Component->getLiPagesDashboard();
 echo $Component->getCreatePagesAdmin();
 echo $Component->getListPagesAdmin();
 echo $Component->getMenuDashboard();
-$courseId = $_GET['delete_curso'];
+$courseId = filter_input(INPUT_GET, 'delete_curso', FILTER_VALIDATE_INT);
 ?>
 <div class="container">
     <?php
