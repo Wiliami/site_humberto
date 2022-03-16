@@ -12,7 +12,7 @@ echo $Component->getLiPagesDashboard();
 echo $Component->getCreatePagesAdmin();
 echo $Component->getListPagesAdmin();
 echo $Component->getMenuDashboard();
-$categoriaId = filter_input( INPUT_GET, 'categoria_delete', FILTER_VALIDATE_INT)
+$categoriaId = filter_input(INPUT_GET, 'categoria_delete', FILTER_VALIDATE_INT)
 ?>
 <div class="container">
     <?php
