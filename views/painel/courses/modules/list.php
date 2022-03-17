@@ -19,9 +19,10 @@ $Read = new Read();
     <div class="card shadow mb-4">
         <div class="card-header py-3">
             <?php
-            $Read->FullRead("SELECT *FROM cursos WHERE curso_id = :ci", "ci={$courseId}");
+            $Read->FullRead("SELECT * FROM cursos WHERE curso_id = :ci", "ci={$courseId}");
             if($Read->getResult()) {
                 $Course = $Read->getResult()[0];
+                //Check::var_dump_json($Course)
                     ?>
                 <h6 class="m-0 font-weight-bold text-dark" style="font-size: 12px;"><?= $Course['curso_titulo'] ?></h6>
             <?php
@@ -34,18 +35,18 @@ $Read = new Read();
             <div class="table-responsive">
                 <table id="table-lista-modulos" class="cell-border compact stripe table-striped" style="width: 100%;">
                     <thead>
-                        <tr style ="font-size: 11px;">
-                            <th><span>Módulos</span></th>
-                            <th><span>Cadastrado por:</span></th>
-                            <th><span>Atualizado por:</span></th>
-                            <th><span>Opções</span></th>
+                        <tr style ="font-size: 10px;">
+                            <th><span>MÓDULOS</span></th>
+                            <th><span>CAD. POR</span></th>
+                            <th><span>ATU. POR</span></th>
+                            <th><span>OPÇOES</span></th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php
                         $Read->FullRead("SELECT m.*, a.aula_name 
                         FROM modulos m 
-                        LEFT JOIN aulas a ON a.aula_name = m.modulo_id");
+                        LEFT JOIN aulas a ON a.aula_id = m.modulo_id");
                         if($Read->getResult()) {
                             foreach($Read->getResult() as $Modulos) {
                                 ?>
@@ -60,9 +61,10 @@ $Read = new Read();
                                 <span><?= $Modulos['modulo_user_update'] ?></span>
                             </td>
                             <td>
-                                <a href="<?= BASE ?>/painel/courses/lesson/list" class="table-link btn-sm" title="Aulas de <?= $Modulos['aula_name'] ?>">
+                                <a href="<?= BASE ?>/painel/courses/lesson/list" class="table-link btn-sm" title="Aulas de <?= $Modulos['aula_name'] ?>" style="color: #1cc88a;">
                                     <span class="fa-stack fa-sm">
-                                        <i class="fas fa-chalkboard-teacher"></i>
+                                        <i class="fa fa-square fa-stack-2x"></i>
+                                        <i class="fas fa-chalkboard-teacher fa-stack-1x fa-inverse"></i>
                                     </span>
                                 </a>
                                 <a href="<?= BASE ?>/painel/modules/update&module=<?= $Modulos['modulo_id'] ?>" class="table-link btn-sm" title="Atualizar <?= $Modulos['modulo_name']?>">
@@ -88,11 +90,11 @@ $Read = new Read();
                         ?>
                     </tbody>
                     <tfoot>
-                        <tr style="font-size: 11px;">
-                            <th><span>Nome do módulo</span></th>
-                            <th><span>Cadastrado por:</span></th>
-                            <th><span>Atualizado por:</span></th>
-                            <th><span>Opções</span></th>
+                        <tr style="font-size: 10px;">
+                            <th><span>MÓDULOS</span></th>
+                            <th><span>CAD. POR</span></th>
+                            <th><span>ATU. POR</span></th>
+                            <th><span>OPÇOES</span></th>
                         </tr>
                     </tfoot>
                 </table>

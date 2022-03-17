@@ -25,7 +25,7 @@ echo $Component->getMenuDashboard();
                         <tr class="btn-sm" style="font-size: 10px">
                             <th><span>AULAS</span></th>
                             <th><span>DURAÇAO DA AULA</span></th>
-                            <th><span>URL</span></th>
+                            <th><span>URL DA AULA</span></th>
                             <th><span>CAD. POR</span></th>
                             <th><span>ATU. POR </span></th>
                             <th><span>OPÇOES</span></th>
@@ -80,7 +80,7 @@ echo $Component->getMenuDashboard();
                         <tr style="font-size: 10px">
                             <th><span>AULAS</span></th>
                             <th><span>DURAÇAO DA AULA</span></th>
-                            <th><span>URL</span></th>
+                            <th><span>URL DA AULA</span></th>
                             <th><span>CAD. POR</span></th>
                             <th><span>ATU. POR </span></th>
                             <th><span>OPÇOES</span></th>

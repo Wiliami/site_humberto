@@ -22,13 +22,13 @@ echo $Component->getMenuDashboard();
             <div class="table-responsive">
                 <table id="table-lista-cursos" class="cell-border compact stripe table-striped" style="width: 100%;">
                     <thead>
-                        <tr class="btn-sm" style="font-size: 11px;">
-                            <th><span>Nome do curso</span></th>
-                            <th><span>Categoria</span></th>
-                            <th><span>Valor curso</span></th>
-                            <th><span>Cad. por</span></th>
-                            <th><span>Atu. por</span></th>
-                            <th><span>Opções</span></th>
+                        <tr class="btn-sm" style="font-size: 10px;">
+                            <th><span>NOME DO CURSO</span></th>
+                            <th><span>CATEGORIA</span></th>
+                            <th><span>VALOR DO CURSO</span></th>
+                            <th><span>CAD. POR</span></th>
+                            <th><span>ATU. POR</span></th>
+                            <th><span>OPÇOES</span></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -55,16 +55,16 @@ echo $Component->getMenuDashboard();
 
                             </td>
                             <td>
-                                <a href="<?= BASE ?>/painel/courses/modules/list&course=<?= $Cursos['curso_id'] ?>" class="table-link btn-sm" title="Módulos de <?= $Cursos['curso_titulo'] ?>" style="color: #1cc88a;">
-                                    <span class="fa-stack fa-sm">
-                                        <i class="fa fa-square fa-stack-2x"></i>
-                                        <i class="fa fa-book fa-stack-1x fa-inverse" aria-hidden="true"></i>
-                                    </span>
-                                </a>
                                 <a href="<?= BASE ?>/painel/courses/update&update_curso=<?= $Cursos['curso_id'] ?>" class="table-link btn-sm" title="Editar <?= $Cursos['curso_titulo'] ?>">
                                     <span class="fa-stack fa-sm">
                                         <i class="fa fa-square fa-stack-2x"></i>
                                         <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                                <a href="<?= BASE ?>/painel/courses/modules/list&course=<?= $Cursos['curso_id'] ?>" class="table-link btn-sm" title="Módulos de <?= $Cursos['curso_titulo'] ?>" style="color: #1cc88a;">
+                                    <span class="fa-stack fa-sm">
+                                        <i class="fa fa-square fa-stack-2x"></i>
+                                        <i class="fa fa-book fa-stack-1x fa-inverse" aria-hidden="true"></i>
                                     </span>
                                 </a>
                                 <a href="<?= BASE ?>/painel/courses/delete&delete_curso=<?= $Cursos['curso_id'] ?>" class="table-link danger btn-sm" title="Excluir <?= $Cursos['curso_titulo'] ?>" style="color: red;">
@@ -83,13 +83,13 @@ echo $Component->getMenuDashboard();
                         ?>
                     </tbody>
                     <tfoot>
-                        <tr class="btn-sm" style="font-size: 11px;">
-                            <th><span>Nome do curso</span></th>
-                            <th><span>Categoria</span></th>
-                            <th><span>Valor curso</span></th>
-                            <th><span>Cad. por</span></th>
-                            <th><span>Atu. por</span></th>
-                            <th><span>Opções</span></th>
+                        <tr class="btn-sm" style="font-size: 10px;">
+                            <th><span>NOME DO CURSO</span></th>
+                            <th><span>CATEGORIA</span></th>
+                            <th><span>VALOR DO CURSO</span></th>
+                            <th><span>CAD. POR</span></th>
+                            <th><span>ATU. POR</span></th>
+                            <th><span>OPÇOES</span></th>
                         </tr>
                     </tfoot>
                 </table>

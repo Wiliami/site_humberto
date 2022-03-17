@@ -656,11 +656,11 @@ class Component {
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Páginas admin</h6>
-                        <a class="collapse-item" href="' . BASE . '/painel/admin/paginas/cursos-aprovacao">
+                        <a class="collapse-item" href="' . BASE . '/painel/admin/pages/cursos-aprovacao">
                             <i class="fas fa-book"></i>
                             Cursos em análise
                             </a>
-                        <a class="collapse-item" href="' . BASE . '/painel/admin/paginas/historico-compras">
+                        <a class="collapse-item" href="' . BASE . '/painel/admin/pages/historico-compras">
                             <i class="fas fa-history"></i>
                             Histórico de compras
                         </a>
@@ -668,15 +668,15 @@ class Component {
                             <i class="fas fa-level-up-alt"></i>
                             Níveis de Usuários
                         </a>
-                        <a class="collapse-item" href="' . BASE . '/painel/admin/paginas/settings">
+                        <a class="collapse-item" href="' . BASE . '/painel/admin/pages/settings">
                             <i class="fas fa-cogs"></i>
                             Configurações
                         </a>
-                        <a class="collapse-item" href="' . BASE . '/painel/admin/paginas/help">
+                        <a class="collapse-item" href="' . BASE . '/painel/admin/pages/help">
                             <i class="fas fa-hands-helping"></i>
                             Ajuda
                         </a>
-                        <a class="collapse-item" href="' . BASE . '/painel/admin/paginas/suporte">
+                        <a class="collapse-item" href="' . BASE . '/painel/admin/pages/suporte">
                             <i class="fas fa-info-circle"></i>
                             Suporte
                         </a>
@@ -812,14 +812,6 @@ class Component {
                     <a class="collapse-item" href="' . BASE . '/painel/courses/categorias/list">
                         <i class="fas fa-book"></i>
                         Categorias de cursos
-                    </a>
-                    <a class="collapse-item" href="' . BASE . '/painel/modules/list">
-                        <i class="fas fa-columns"></i>
-                        Módulos de cursos
-                    </a>
-                    <a class="collapse-item" href="' . BASE . '/painel/lesson/list">
-                        <i class="fas fa-chalkboard-teacher"></i>
-                        Aulas
                     </a>
                 </div>
             </div>

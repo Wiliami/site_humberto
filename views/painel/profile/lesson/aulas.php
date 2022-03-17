@@ -2,7 +2,7 @@
 $User = new User();
 $User->verifyExistLoginUser();
 $Component = new Component();
-//echo $Component->getBlockPageProfile();
+echo $Component->getBlockPageProfile();
 echo $Component->getHeadHtmlDashboard();
 ?>
  <div id="wrapper">

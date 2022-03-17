@@ -16,18 +16,18 @@ echo $Component->getMenuDashboard();
 <div class="container">
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-dark">Cursos | Aprovação de cursos</h6>
+            <h6 class="m-0 font-weight-bold text-dark" style="font-size: 12px;">Cursos | Aprovação de cursos</h6>
         </div>
         <div class="card-body">
             <div class="table-responsive">
-                <table id="table-cursos" class="table table-striped table-bordered" style="width:100%">
+                <table id="table-cursos" class="cell-border compact stripe table-striped" style="width:100%">
                     <thead>
-                        <tr class="text-sm">
-                            <th>Nome do curso</th>
-                            <th>Data da compra</th>
-                            <th>Status da compra</th>
-                            <th>Usuário</th>
-                            <th>Opções</th>
+                        <tr class="text-sm" style="font-size: 10px;">
+                            <th><span>NOME DO CURSO</span></th>
+                            <th><span>DATA DA COMPRA</span></th>
+                            <th>STATUS DA COMPRA</th>
+                            <th>USUÁRIO</th>
+                            <th>OPCOES</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -57,7 +57,7 @@ echo $Component->getMenuDashboard();
                                         <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
                                     </span>
                                 </a>
-                                <a href="<?= BASE ?>/painel/admin/delete-aprovacao&aprovacao_delete=<?= $User['compra_id'] ?>" class="table-link danger" title="Excluir aprovação de <?= $User['compra_curso'] ?>">
+                                <a href="<?= BASE ?>/painel/admin/delete-aprovacao&aprovacao_delete=<?= $User['compra_id'] ?>" class="table-link danger" title="Excluir aprovação de <?= $User['compra_curso'] ?>" style="color: #e74a3b">
                                     <span class="fa-stack">
                                         <i class="fa fa-square fa-stack-2x"></i>
                                         <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
@@ -67,18 +67,18 @@ echo $Component->getMenuDashboard();
                             <?php
                                 }
                             } else {
-                                Error("Ainda não existem usuários!");
+                                Error("Usuários não encontrados!");
                             }   
                             ?>
                         </tr>
                     </tbody>
                     <tfoot>
-                        <tr class="btn-sm">
-                            <th>Nome do curso</th>
-                            <th>Data da compra</th>
-                            <th>Status da compra</th>
-                            <th>Usuário</th>
-                            <th>Opções</th>
+                        <tr class="btn-sm" style="font-size: 10px;">
+                            <th>NOME DO CURSO</th>
+                            <th>DATA DA COMPRA</th>
+                            <th>STATUS DA COMPRA</th>
+                            <th>USUÁRIO</th>
+                            <th>OPCOES</th>
                         </tr>
                     </tfoot>
                 </table>

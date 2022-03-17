@@ -12,14 +12,14 @@ echo $Component->getLiPagesDashboard();
 echo $Component->getCreatePagesAdmin();
 echo $Component->getListPagesAdmin();
 echo $Component->getMenuDashboard();
-$AprovCourse = $_GET['aprovacao'];
+$courseId = filter_input(INPUT_GET, 'aprovacao', FILTER_VALIDATE_INT);
 ?>
 <div class="container card-header">
     <div class="d-sm-flex align-items-center justify-content-start mb-4">
         <i class="fas fa-layer-plus"></i>
         <?php
         $Read = new Read();
-        $Read->FullRead("SELECT * FROM compras WHERE compra_id = :ci", "ci={$AprovCourse}");
+        $Read->FullRead("SELECT * FROM compras WHERE compra_id = :ci", "ci={$courseId}");
         if($Read->getResult()) {
             foreach($Read->getResult() as $Compras) {
                 ?>
@@ -27,7 +27,7 @@ $AprovCourse = $_GET['aprovacao'];
         <?php
             }
         } else {
-            Error("Nenhuma aprovação de curso foi selecionado!");
+            Error("Aprovação de curso não encontrada!");
         }
         ?>
     </div>
