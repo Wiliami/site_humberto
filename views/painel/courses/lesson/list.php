@@ -16,17 +16,19 @@ echo $Component->getMenuDashboard();
 <div class="container">
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-dark">Lista de aulas</h6>
+            <h6 class="m-0 font-weight-bold text-dark" style="font-size: 12px;">Nome do módulo aqui</h6>
         </div>
         <div class="card-body">
             <div class="table-responsive">
-                <table id="table-lista-cursos" class="table table-striped table-bordered">
+                <table id="table-lista-cursos" class="cell-border compact stripe table-striped">
                     <thead>
-                        <tr class="btn-sm">
-                            <th><span>Nome da aula</span></th>
-                            <th><span>Data de cadastro</span></th>
-                            <th><span>Duração da aula</span></th>
-                            <th><span>Opções</span></th>
+                        <tr class="btn-sm" style="font-size: 10px">
+                            <th><span>AULAS</span></th>
+                            <th><span>DURAÇAO DA AULA</span></th>
+                            <th><span>URL</span></th>
+                            <th><span>CAD. POR</span></th>
+                            <th><span>ATU. POR </span></th>
+                            <th><span>OPÇOES</span></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -36,15 +38,21 @@ echo $Component->getMenuDashboard();
                         if($Read->getResult()) {
                             foreach($Read->getResult() as $Aulas) {
                                 ?>
-                        <tr class="btn-sm">
+                        <tr style="font-size: 10px">
                             <td>
                                 <span><?= $Aulas['aula_name'] ?></span>
                             </td>
-                            <td>
-                                <span><?= date('d/m/Y', strtotime($Aulas['aula_create_date'])) ?></span>
+                            <td class="text-center">
+                                <span><?= $Aulas["aula_duracao"] ?></span> 
                             </td>
                             <td>
-                                <span><?= $Aulas['aula_duracao'] ?></span>
+                                <span><?= $Aulas['aula_url'] ?></span>
+                            </td>
+                            <td>
+                                
+                            </td>
+                            <td>
+
                             </td>
                             <td>
                                 <a href="<?= BASE ?>/painel/lesson/update&aula=<?= $Aulas['aula_id'] ?>" class="table-link btn-sm" title="Editar <?= $Aulas['aula_name'] ?>">
@@ -53,7 +61,7 @@ echo $Component->getMenuDashboard();
                                         <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
                                     </span>
                                 </a>
-                                <a href="<?= BASE ?>/painel/lesson/delete&delete_aula=<?= $Aulas['aula_id'] ?>" class="table-link danger btn-sm" title="Excluir <?= $Aulas['aula_name'] ?>">
+                                <a href="<?= BASE ?>/painel/lesson/delete&delete_aula=<?= $Aulas['aula_id'] ?>" class="table-link danger btn-sm" title="Excluir <?= $Aulas['aula_name'] ?>" style="color: #e74a3b;">
                                     <span class="fa-stack">
                                         <i class="fa fa-square fa-stack-2x"></i>
                                         <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
@@ -69,11 +77,13 @@ echo $Component->getMenuDashboard();
                         ?>
                     </tbody>
                     <tfoot>
-                        <tr class="btn-sm">
-                            <th><span>Nome da aula</span></th>
-                            <th><span>Data de cadastro</span></th>
-                            <th><span>Duração da aula</span></th>
-                            <th><span>Opções</span></th>
+                        <tr style="font-size: 10px">
+                            <th><span>AULAS</span></th>
+                            <th><span>DURAÇAO DA AULA</span></th>
+                            <th><span>URL</span></th>
+                            <th><span>CAD. POR</span></th>
+                            <th><span>ATU. POR </span></th>
+                            <th><span>OPÇOES</span></th>
                         </tr>
                     </tfoot>
                 </table>

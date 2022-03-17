@@ -2,7 +2,7 @@
 $User = new User();
 $User->verifyExistLoginUser();
 $Component = new Component();
-echo $Component->getBlockPageProfile();
+//echo $Component->getBlockPageProfile();
 echo $Component->getHeadHtmlDashboard();
 ?>
  <div id="wrapper">
@@ -24,7 +24,7 @@ echo $Component->getHeadHtmlDashboard();
         <?php
             }
         } else {
-            Error("Ainda não existe cursos!");
+            Error("Curso não encontrado!", 'warning');
         }
         ?>
         <hr class="sidebar-divider">

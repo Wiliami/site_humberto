@@ -12,18 +12,30 @@ echo $Component->getLiPagesDashboard();
 echo $Component->getCreatePagesAdmin();
 echo $Component->getListPagesAdmin();
 echo $Component->getMenuDashboard();
+$cursoId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
+$Read = new Read();
 ?>
 <div class="container">
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-dark" style="font-size: 12px;">Lista de módulos</h6>
+            <?php
+            $Read->FullRead("SELECT *FROM cursos WHERE curso_id = :ci", "ci={$courseId}");
+            if($Read->getResult()) {
+                $Course = $Read->getResult()[0];
+                    ?>
+                <h6 class="m-0 font-weight-bold text-dark" style="font-size: 12px;"><?= $Course['curso_titulo'] ?></h6>
+            <?php
+                } else {
+                    Error("Curso não encontrado!");
+                }
+            ?>
         </div>
         <div class="card-body">
             <div class="table-responsive">
                 <table id="table-lista-modulos" class="cell-border compact stripe table-striped" style="width: 100%;">
                     <thead>
                         <tr style ="font-size: 11px;">
-                            <th><span>Nome do módulo</span></th>
+                            <th><span>Módulos</span></th>
                             <th><span>Cadastrado por:</span></th>
                             <th><span>Atualizado por:</span></th>
                             <th><span>Opções</span></th>
@@ -31,8 +43,9 @@ echo $Component->getMenuDashboard();
                     </thead>
                     <tbody>
                         <?php
-                        $Read = new Read();
-                        $Read->FullRead("SELECT * FROM modulos");
+                        $Read->FullRead("SELECT m.*, a.aula_name 
+                        FROM modulos m 
+                        LEFT JOIN aulas a ON a.aula_name = m.modulo_id");
                         if($Read->getResult()) {
                             foreach($Read->getResult() as $Modulos) {
                                 ?>
@@ -47,6 +60,11 @@ echo $Component->getMenuDashboard();
                                 <span><?= $Modulos['modulo_user_update'] ?></span>
                             </td>
                             <td>
+                                <a href="<?= BASE ?>/painel/courses/lesson/list" class="table-link btn-sm" title="Aulas de <?= $Modulos['aula_name'] ?>">
+                                    <span class="fa-stack fa-sm">
+                                        <i class="fas fa-chalkboard-teacher"></i>
+                                    </span>
+                                </a>
                                 <a href="<?= BASE ?>/painel/modules/update&module=<?= $Modulos['modulo_id'] ?>" class="table-link btn-sm" title="Atualizar <?= $Modulos['modulo_name']?>">
                                     <span class="fa-stack fa-sm">
                                         <i class="fa fa-square fa-stack-2x"></i>
@@ -70,7 +88,7 @@ echo $Component->getMenuDashboard();
                         ?>
                     </tbody>
                     <tfoot>
-                        <tr style ="font-size: 11px;">
+                        <tr style="font-size: 11px;">
                             <th><span>Nome do módulo</span></th>
                             <th><span>Cadastrado por:</span></th>
                             <th><span>Atualizado por:</span></th>

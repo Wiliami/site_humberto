@@ -55,9 +55,10 @@ echo $Component->getMenuDashboard();
 
                             </td>
                             <td>
-                                <a href="<?= BASE ?>/painel/courses/" class="table-link btn-sm">
+                                <a href="<?= BASE ?>/painel/courses/modules/list&course=<?= $Cursos['curso_id'] ?>" class="table-link btn-sm" title="Módulos de <?= $Cursos['curso_titulo'] ?>" style="color: #1cc88a;">
                                     <span class="fa-stack fa-sm">
-                                        <i class="fas fa-book"></i>
+                                        <i class="fa fa-square fa-stack-2x"></i>
+                                        <i class="fa fa-book fa-stack-1x fa-inverse" aria-hidden="true"></i>
                                     </span>
                                 </a>
                                 <a href="<?= BASE ?>/painel/courses/update&update_curso=<?= $Cursos['curso_id'] ?>" class="table-link btn-sm" title="Editar <?= $Cursos['curso_titulo'] ?>">
