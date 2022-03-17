@@ -16,13 +16,13 @@ echo $Component->getMenuDashboard();
 <div class="container">
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-dark">Lista de módulos</h6>
+            <h6 class="m-0 font-weight-bold text-dark" style="font-size: 12px;">Lista de módulos</h6>
         </div>
         <div class="card-body">
             <div class="table-responsive">
-                <table id="table-lista-modulos" class="table table-striped table-bordered" style="width: 100%;">
+                <table id="table-lista-modulos" class="cell-border compact stripe table-striped" style="width: 100%;">
                     <thead>
-                        <tr class="btn-sm">
+                        <tr style ="font-size: 11px;">
                             <th><span>Nome do módulo</span></th>
                             <th><span>Cadastrado por:</span></th>
                             <th><span>Atualizado por:</span></th>
@@ -36,7 +36,7 @@ echo $Component->getMenuDashboard();
                         if($Read->getResult()) {
                             foreach($Read->getResult() as $Modulos) {
                                 ?>
-                        <tr class="btn-sm">
+                        <tr style="font-size: 10px;">
                             <td>
                                 <span><?= $Modulos['modulo_name'] ?></span>
                             </td>
@@ -48,14 +48,14 @@ echo $Component->getMenuDashboard();
                             </td>
                             <td>
                                 <a href="<?= BASE ?>/painel/modules/update&module=<?= $Modulos['modulo_id'] ?>" class="table-link btn-sm" title="Atualizar <?= $Modulos['modulo_name']?>">
-                                    <span class="fa-stack">
+                                    <span class="fa-stack fa-sm">
                                         <i class="fa fa-square fa-stack-2x"></i>
                                         <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
                                     </span>
                                 </a>
-                                <a href="<?= BASE ?>/painel/modules/delete&delete_module=<?= $Modulos['modulo_id'] ?>" class="table-link danger btn-sm" title="Excluir <?= $Modulos['modulo_name'] ?>"
+                                <a href="<?= BASE ?>/painel/modules/delete&delete_module=<?= $Modulos['modulo_id'] ?>" class="table-link danger btn-sm" title="Excluir <?= $Modulos['modulo_name'] ?>" style="color: red;"
                                     title="Excluir curso">
-                                    <span class="fa-stack">
+                                    <span class="fa-stack fa-sm">
                                         <i class="fa fa-square fa-stack-2x"></i>
                                         <i class="fa fa-trash-o fa-stack-1x fa-inverse" text="ola"></i>
                                     </span>
@@ -70,10 +70,10 @@ echo $Component->getMenuDashboard();
                         ?>
                     </tbody>
                     <tfoot>
-                        <tr class="btn-sm">
+                        <tr style ="font-size: 11px;">
                             <th><span>Nome do módulo</span></th>
-                            <th><span>Data de cadastro</span></th>
-                            <th><span>Atualizado em:</span></th>
+                            <th><span>Cadastrado por:</span></th>
+                            <th><span>Atualizado por:</span></th>
                             <th><span>Opções</span></th>
                         </tr>
                     </tfoot>

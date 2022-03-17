@@ -930,7 +930,7 @@ class Component {
                 </div>
                 <footer class="sticky-footer bg-white">
                     <div class="container my-auto">
-                        <div class="copyright text-center my-auto">
+                        <div class="copyright text-center my-auto" style="font-size: 10px">
                             <span>Copyright &copy; Unitplus 2021-'. date('Y') . '</span>
                         </div>
                     </div>

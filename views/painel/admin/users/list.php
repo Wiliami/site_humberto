@@ -16,19 +16,19 @@ echo $Component->getMenuDashboard();
 <div class="container">
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-dark">Lista de usuários</h6>
+            <h6 class="m-0 font-weight-bold text-dark" style="font-size: 13px;">Lista de usuários</h6>
         </div>
         <div class="card-body">
             <div class="table-responsive">
-                <table id="table-usuarios" class="table table-striped table-bordered">
+                <table id="table-usuarios" class="cell-border compact stripe table-striped" style="width: 100%">
                     <thead>
-                        <tr class="btn-sm">
-                            <th>Profile</th>
+                        <tr class="btn-sm" style="font-size: 11px;">
+                            <!-- <th>Profile</th> -->
                             <th>Usuário</th>
                             <th>Função</th>
                             <th>E-mail</th>
-                            <th>Cadastrado por:</th>
-                            <th>Atualizado por:</th>
+                            <th>Cad. por:</th>
+                            <th>Atu. por:</th>
                             <th>Opções</th>
                         </tr>
                     </thead>
@@ -39,38 +39,43 @@ echo $Component->getMenuDashboard();
                             FROM users u
                             LEFT JOIN users_levels ul ON ul.level_id = u.user_level");
                         if($Read->getResult()) {
-                            foreach($Read->getResult() as $User) { 
+                            foreach($Read->getResult() as $Users) { 
                                 ?>
-                        <tr class="btn-sm">
+                        <tr class="btn-sm" style="font-size: 11px;">
+                            <!-- <td>
+                                $Component->getAvatarUser(); ?>
+                            </td> -->
                             <td>
-                                <?= $Component->getAvatarUser(); ?>
+                                <?= $Users['user_name'] ?>
                             </td>
                             <td>
-                                <?= $User['user_name'] ?>
+                                <?= $Users['level_desc'] ?>
                             </td>
                             <td>
-                                <?= $User['level_desc'] ?>
+                                <?= $Users['user_email'] ?>
                             </td>
                             <td>
-                                <?= $User['user_email'] ?>
+                                <?= $Users['user_create_resp'] ?>
                             </td>
                             <td>
-                                <?= $User['user_create_resp'] ?>
-                            </td>
-                            <td>
-                                <?= $User['user_update_resp'] ?>
+                                <?= $Users['user_update_resp'] ?>
                             </td>
                            
                             <td>
-                                <a href="<?= BASE ?>/painel/admin/users/update&update_user=<?= $User['user_id'] ?>" class="table-link btn-sm" title="Editar <?= $User['user_name'] ?> ">
-                                    <span class="fa-stack">
+                            <a href="<?= BASE ?>/painel/admin/users/update&update_user=<?= $Users['user_id'] ?>" class="table-link btn-sm" title="Editar <?= $Users['user_name'] ?> ">
+                                    <span class="fa-stack fa-sm">
                                         <i class="fa fa-square fa-stack-2x"></i>
                                         <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
-                                        <i class="fas fa-pen-to-square"></i>
                                     </span>
                                 </a>
-                                <a href="<?= BASE ?>/painel/admin/users/delete&delete_user=<?= $User['user_id'] ?>" class="table-link btn-sm" title="Excluir <?= $User['user_name'] ?> ">
-                                    <span class="fa-stack">
+                                <a href="<?= BASE ?>/painel/admin/users/update&update_user=<?= $Users['user_id'] ?>" class="table-link btn-sm" title="Editar <?= $Users['user_name'] ?> ">
+                                    <span class="fa-stack fa-sm">
+                                        <i class="fa fa-square fa-stack-2x"></i>
+                                        <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                                <a href="<?= BASE ?>/painel/admin/users/delete&delete_user=<?= $Users['user_id'] ?>" class="table-link btn-sm" style="color: red;" title="Excluir <?= $Users['user_name'] ?> ">
+                                    <span class="fa-stack fa-sm">
                                         <i class="fa fa-square fa-stack-2x"></i>
                                         <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
                                     </span>
@@ -85,8 +90,8 @@ echo $Component->getMenuDashboard();
                         ?>
                     </tbody>
                     <tfoot>
-                        <tr class="btn-sm">
-                            <th>*</th>
+                        <tr class="btn-sm" style="font-size: 10px;">
+                            <!-- <th>*</th> -->
                             <th>Usuário</th>
                             <th>Função</th>
                             <th>E-mail</th>

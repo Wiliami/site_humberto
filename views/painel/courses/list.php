@@ -16,13 +16,13 @@ echo $Component->getMenuDashboard();
 <div class="container">
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-dark">Lista de cursos</h6>
+            <h6 class="m-0 font-weight-bold text-dark" style="font-size: 12px">Lista de cursos</h6>
         </div>
         <div class="card-body">
             <div class="table-responsive">
-                <table id="table-lista-cursos" class="table table-striped table-bordered" style="width: 100%;">
+                <table id="table-lista-cursos" class="cell-border compact stripe table-striped" style="width: 100%;">
                     <thead>
-                        <tr class="btn-sm">
+                        <tr class="btn-sm" style="font-size: 11px;">
                             <th>Nome do curso</th>
                             <th><span>Data de cadastro</span></th>
                             <th><span>Descrição</span></th>
@@ -38,7 +38,7 @@ echo $Component->getMenuDashboard();
                         if($Read->getResult()) {
                             foreach($Read->getResult() as $Cursos) {
                                 ?>
-                        <tr class="btn-sm">
+                        <tr class="btn-sm" style="font-size: 10px;">
                             <td>
                                 <span><?= $Cursos['curso_titulo'] ?></span>
                             </td>
@@ -56,13 +56,13 @@ echo $Component->getMenuDashboard();
                             </td>
                             <td>
                                 <a href="<?= BASE ?>/painel/courses/update&update_curso=<?= $Cursos['curso_id'] ?>" class="table-link btn-sm" title="Editar <?= $Cursos['curso_titulo'] ?>">
-                                    <span class="fa-stack">
+                                    <span class="fa-stack fa-sm">
                                         <i class="fa fa-square fa-stack-2x"></i>
                                         <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
                                     </span>
                                 </a>
-                                <a href="<?= BASE ?>/painel/courses/delete&delete_curso=<?= $Cursos['curso_id'] ?>" class="table-link danger btn-sm" title="Excluir <?= $Cursos['curso_titulo'] ?>">
-                                    <span class="fa-stack">
+                                <a href="<?= BASE ?>/painel/courses/delete&delete_curso=<?= $Cursos['curso_id'] ?>" class="table-link danger btn-sm" title="Excluir <?= $Cursos['curso_titulo'] ?>" style="color: red;">
+                                    <span class="fa-stack fa-sm">
                                         <i class="fa fa-square fa-stack-2x"></i>
                                         <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
                                     </span>
@@ -77,7 +77,7 @@ echo $Component->getMenuDashboard();
                         ?>
                     </tbody>
                     <tfoot>
-                        <tr class="btn-sm">
+                        <tr class="btn-sm" style="font-size: 11px;">
                             <th><span>Nome do curso</span></th>
                             <th><span>Data de cadastro</span></th>
                             <th><span>Descrição</span></th>

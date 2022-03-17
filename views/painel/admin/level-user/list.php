@@ -16,14 +16,14 @@ echo $Component->getMenuDashboard();
 <div class="container">
     <div class="card shadow mb-4">
         <div class="card-header py-3 d-sm-flex align-items-center justify-content-between">
-            <h6 class="m-0 font-weight-bold text-dark">Nível de usuários</h6>
+            <h6 class="m-0 font-weight-bold text-dark" style="font-size: 11px;">Nível de usuários</h6>
         </div>
         <div class="card-body">
             <div class="table-responsive">
-                <table id="table-niveis" class="table table-striped table-bordered" style="width: 100%;">
+                <table id="table-niveis" class="cell-border compact stripe table-striped" style="width: 100%;">
                     </div>
                     <thead>
-                        <tr class="btn-sm">
+                        <tr class="btn-sm" style="font-size: 11px;">
                             <th>Nível Usuário</th>
                             <th>Cadastrado por</th>
                             <th>Atualizado por</th>
@@ -37,7 +37,7 @@ echo $Component->getMenuDashboard();
                             if($Read->getResult()) {
                                 foreach($Read->getResult() as $Level) {
                                     ?>
-                        <tr class="btn-sm">
+                        <tr class="btn-sm" style="font-size: 10px;">
                             <td>
                                 <span><?= $Level['level_desc'] ?></span>
                             </td>
@@ -49,13 +49,13 @@ echo $Component->getMenuDashboard();
                             </td>
                             <td>
                                 <a href="<?= BASE ?>/painel/admin/level-user/update&level=<?= $Level['level_id'] ?>" class="table-link btn-sm" title="Editar nível <?= $Level['level_desc'] ?>">
-                                    <span class="fa-stack">
+                                    <span class="fa-stack fa-sm">
                                         <i class="fa fa-square fa-stack-2x"></i>
                                         <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
                                     </span>
                                 </a>
                                 <a href="<?= BASE ?>/painel/admin/level-user/delete&delete_level=<?= $Level['level_id'] ?>" class="table-link btn-sm" title="Excluir <?= $Level['level_desc'] ?>">
-                                    <span class="fa-stack">
+                                    <span class="fa-stack fa-sm">
                                         <i class="fa fa-square fa-stack-2x" style="color: red;"></i>
                                         <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
                                     </span>
@@ -70,7 +70,7 @@ echo $Component->getMenuDashboard();
                             ?>
                     </tbody>
                     <tfoot>
-                        <tr class="btn-sm">
+                        <tr class="btn-sm" style="font-size: 11px;">
                             <th>Nível Usuário</th>
                             <th>Cadastrado por</th>
                             <th>Atualizado por</th>

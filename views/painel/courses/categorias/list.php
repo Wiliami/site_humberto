@@ -16,13 +16,13 @@ echo $Component->getMenuDashboard();
 <div class="container">
     <div class="card shadow mb-4">  
         <div class="card-header py-3 d-sm-flex align-items-center justify-content-between">
-            <h6 class="m-0 font-weight-bold text-dark">Lista de categorias</h6>
+            <h6 class="m-0 font-weight-bold text-dark" style="font-size: 12px;">Lista de categorias</h6>
         </div>
         <div class="card-body">
             <div class="table-responsive">
-                <table id="table-lista-categoria" class="table table-striped table-bordered" style="width: 100%;">
+                <table id="table-lista-categoria" class="cell-border compact stripe table-striped" style="width: 100%;">
                     <thead>
-                        <tr class="btn-sm"> 
+                        <tr class="btn-sm" style="font-size: 11px;"> 
                             <th><span>Nome da categoria</span></th>
                             <th><span>Cadastrado por</span></th>
                             <th><span>Atualizado por</span></th>
@@ -36,7 +36,7 @@ echo $Component->getMenuDashboard();
                         if($Read->getResult()) {
                             foreach($Read->getResult() as $Categoria) {
                                 ?>
-                        <tr class="btn-sm">
+                        <tr class="btn-sm" style="font-size: 11px;">
                             <td>
                                 <span><?= $Categoria['categoria_name']?></span>
                             </td>
@@ -69,7 +69,7 @@ echo $Component->getMenuDashboard();
                         ?>
                     </tbody>
                     <tfoot>
-                        <tr class="btn-sm"> 
+                        <tr class="btn-sm" style="font-size: 11px;"> 
                             <th><span>Categoria</span></th>
                             <th><span>Cadastrado por</span></th>
                             <th><span>Atualizado por</span></th>
