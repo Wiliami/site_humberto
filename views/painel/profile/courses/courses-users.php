@@ -12,34 +12,29 @@ echo $Component->getLiPagesDashboard();
 echo $Component->getCreatePagesAdmin();
 echo $Component->getListPagesAdmin();
 echo $Component->getMenuDashboard();
-$coursesId = $_GET['user'];
+$coursesId = filter_input(INPUT_GET, 'course_user', FILTER_VALIDATE_INT);
 ?>
 <div class="row gx-5 container">
     <div class="d-sm-flex align-items-center justify-content-between mb-3">
-        <i class="fas fa-layer-plus"></i>
         <?php
         $Read = new Read();
         $Read->FullRead("SELECT * FROM users WHERE user_id = :ui", "ui={$coursesId}");
         if($Read->getResult()) {
-            foreach($Read->getResult() as $User) {
+            $User = $Read->getResult()[0];
                 ?>
-            <h1 class="h3 mb-0 text-gray-800">Cursos de <?= $User['user_name'] ?></h1>
+            <h1 class="h3 mb-0 text-gray-800" style="font-size: 17px;">Cursos de <?= $User['user_name'] ?></h1>
         <?php
+            } else {
+                die(Error("Usuário não encontrado!", 'danger'));
             }
-        }
         ?>
-        <a href="<?= BASE ?>/painel/admin/users/list" class="btn btn-success mb-2" title="Voltar para lista de cursos de usuário">Voltar</a>
+        <a href="<?= BASE ?>/painel/admin/users/list" class="btn btn-success">Voltar</a>
     </div>
     <div>
     <?php
-    $Read->FullRead("SELECT m.*, c.curso_titulo, c.curso_descricao
-        FROM matriculas m 
-        LEFT JOIN users u ON u.user_id = m.user_id
-        LEFT JOIN cursos c ON c.curso_id = m.curso_id 
-        WHERE m.user_id = :id
-        ", "id={$_SESSION['login']['user_id']}");
+    $Read->FullRead("SELECT * FROM users");
     if($Read->getResult()) {
-        foreach($Read->getResult() as $Matriculas) {
+        foreach($Read->getResult() as $Users) {
             ?>
     <div class="col-lg-4 mb-5">
         <div class="card h-100 shadow border-0">
@@ -47,16 +42,16 @@ $coursesId = $_GET['user'];
             <div class="card-body p-4">
                 <div class="badge bg-success bg-gradient rounded-pill mb-2 text-white">Curso</div>
                 <a class="text-decoration-none link-dark stretched-link" href="<?= BASE ?>/painel/profile/aulas">
-                    <h5 class="card-title mb-3"><?= $Matriculas['curso_titulo'] ?></h5>
+                    <h5 class="card-title mb-3"><?= $Users['curso_titulo'] ?></h5>
                 </a>
-                <p class="card-text mb-0"><?= $Matriculas['curso_descricao'] ?></p>
+                <p class="card-text mb-0"><?= $Users['curso_descricao'] ?></p>
                 <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
                     <div class="d-flex align-items-end justify-content-between">
                         <div class="d-flex align-items-center">
                             <img class="rounded-circle me-3" src="https://dummyimage.com/40x40/ced4da/6c757d" alt="..." />
                             <div class="small">
-                                <div class="fw-bold"><?= number_format($Matriculas['matricula_valor_pago'], 2, ',', '.')  ?></div>
-                                <div class="text-muted"><?= date('d/m/Y', strtotime($Matriculas['matricula_create_date'])) ?></div>
+                                <!-- <div class="fw-bold"><?= number_format($Cursos['matricula_valor_pago'], 2, ',', '.')  ?></div>
+                                <div class="text-muted"><?= date('d/m/Y', strtotime($Cursos['matricula_create_date'])) ?></div> -->
                             </div>
                         </div>
                     </div>
@@ -67,7 +62,7 @@ $coursesId = $_GET['user'];
     <?php
         }
     } else {
-        Error("Usuário selecionado(a) não possui nenhum curso!");
+        Error("Cursos do usuário não encontrados!", 'danger');
     }   
     ?>
 </div>

@@ -12,7 +12,7 @@ echo $Component->getLiPagesDashboard();
 echo $Component->getCreatePagesAdmin();
 echo $Component->getListPagesAdmin();
 echo $Component->getMenuDashboard();
-$userId = $_GET['update_user'];
+$userId = filter_input(INPUT_GET, 'update_user', FILTER_VALIDATE_INT);
 ?>
 <div class="container">
     <?php
@@ -66,7 +66,7 @@ $userId = $_GET['update_user'];
             <input type="password" class="form-control" id="example3" name="ps" placeholder="Digite a nova senha do usuário">
         </div>
         <a href="<?= BASE ?>/painel/admin/users/list" class="btn btn-outline-success mb-2" title="Voltar para lista de usuários">Voltar</a>
-        <input type="submit" class="btn btn-success mb-2" name="update_user" value="Atualizar usuário">
+        <input type="submit" class="btn btn-success mb-2" name="update_user" value="Atualizar">
         <a href="<?= BASE ?>/painel/profile/courses/courses-users&user=<?= $User['user_id'] ?>" class="btn btn-outline-success mb-2" title="Área cursos de usuário">Ver cursos do usuário</a>
     </form>
 </div>

@@ -68,7 +68,7 @@ echo $Component->getMenuDashboard();
                                         <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
                                     </span>
                                 </a>
-                                <a href="<?= BASE ?>/painel/admin/users/update&course_user=<?= $Users['user_id'] ?>" class="table-link btn-sm" title="Cursos de <?= $Users['user_name'] ?> " style="color: #1cc88a;">
+                                <a href="<?= BASE ?>/painel/profile/courses/courses-users&course_user=<?= $Users['user_id'] ?>" class="table-link btn-sm" title="Cursos de <?= $Users['user_name'] ?> " style="color: #1cc88a;">
                                     <span class="fa-stack fa-sm">
                                         <i class="fa fa-square fa-stack-2x"></i>
                                         <i class="fas fa-book fa-stack-1x fa-inverse"></i>
@@ -86,7 +86,7 @@ echo $Component->getMenuDashboard();
                             }
                         } else{
                             Error("Usuários não encontrados!");
-                        }
+                        } 
                         ?>
                     </tbody>
                     <tfoot>
