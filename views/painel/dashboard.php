@@ -20,7 +20,6 @@ echo $Component->getMenuDashboard();
         ?>
     <p class="ml-4">Lançamentos de cursos</p>
     <div class="row gx-5 container">
-            <a href="">
             <?php
             $Read = new Read();
             $Read->FullRead("SELECT * FROM cursos LIMIT 5");
@@ -43,7 +42,6 @@ echo $Component->getMenuDashboard();
                 Error("Cursos não encontrado", 'danger');
             }
             ?>
-    </a>
         </div>
     <?php
         }
