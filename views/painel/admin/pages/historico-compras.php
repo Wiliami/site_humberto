@@ -16,18 +16,18 @@ echo $Component->getMenuDashboard();
 <div class="container">
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-dark">Histórico | Compras de cursos</h6>
+            <h6 class="m-0 font-weight-bold text-dark" style="font-size: 12px;">Histórico de compras</h6>
         </div>
         <div class="card-body">
             <div class="table-responsive">
                 <table id="table-compras" class="table table-striped table-bordered" style="width: 100%;">
                     <thead>
-                        <tr class="btn-sm">
-                            <th>Nome do curso</th>
-                            <th>Data da compra</th>
-                            <th>Valor do curso</th>
-                            <th>Usuário</th>
-                            <th>Opções</th>
+                        <tr style="font-size: 10px;">
+                            <th>NOME DO CURSO</th>
+                            <th>DATA DA COMPRA</th>
+                            <th>VALOR DO CURSO</th>
+                            <th>USUÁRIO</th>
+                            <th>OPCOES</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -42,7 +42,7 @@ echo $Component->getMenuDashboard();
                         if($Read->getResult()) {
                             foreach($Read->getResult() as $Cursos) {
                                 ?>
-                        <tr class="btn-sm">
+                        <tr style="font-size: 10px;">
                             <td>
                                 <span><?= $Cursos['curso_titulo'] ?></span>
                             </td>
@@ -79,17 +79,17 @@ echo $Component->getMenuDashboard();
                         <?php
                                 }
                             } else {
-                                Error("Ainda não existem compras de cursos!");
+                                Error("Histórico de compras não encontrada!", 'danger');
                             }   
                             ?>
                     </tbody>
                     <tfoot>
-                        <tr class="btn-sm">
-                            <th>Nome do curso</th>
-                            <th>Data da compra</th>
-                            <th>Valor do curso</th>
-                            <th>Usuário</th>
-                            <th>Opções</th>
+                        <tr style="font-size: 10px;">
+                            <th>NOME DO CURSO</th>
+                            <th>DATA DA COMPRA</th>
+                            <th>VALOR DO CURSO</th>
+                            <th>USUÁRIO</th>
+                            <th>OPCOES</th>
                         </tr>
                     </tfoot>
                 </table>

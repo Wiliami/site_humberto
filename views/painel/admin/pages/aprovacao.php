@@ -27,7 +27,7 @@ $courseId = filter_input(INPUT_GET, 'aprovacao', FILTER_VALIDATE_INT);
         <?php
             }
         } else {
-            Error("Aprovação de curso não encontrada!");
+            Error("Aprovação de curso não encontrada!", 'warning');
         }
         ?>
     </div>

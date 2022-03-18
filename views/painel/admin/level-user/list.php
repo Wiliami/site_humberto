@@ -48,7 +48,7 @@ echo $Component->getMenuDashboard();
                                 <span><?= $Level['level_user_update'] ?></span>
                             </td>
                             <td>
-                                <a href="<?= BASE ?>/painel/admin/level-user/update&level=<?= $Level['level_id'] ?>" class="table-link btn-sm" title="Editar nível <?= $Level['level_desc'] ?>">
+                                <a href="<?= BASE ?>/painel/admin/level-user/update&level=<?= $Level['level_id'] ?>" class="table-link btn-sm" title="Editar nível <?= $Level['level_desc'] ?>" style="">
                                     <span class="fa-stack fa-sm">
                                         <i class="fa fa-square fa-stack-2x"></i>
                                         <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>

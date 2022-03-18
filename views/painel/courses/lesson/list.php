@@ -55,13 +55,13 @@ echo $Component->getMenuDashboard();
 
                             </td>
                             <td>
-                                <a href="<?= BASE ?>/painel/lesson/update&aula=<?= $Aulas['aula_id'] ?>" class="table-link btn-sm" title="Editar <?= $Aulas['aula_name'] ?>">
+                                <a href="<?= BASE ?>/painel/courses/lesson/update&aula=<?= $Aulas['aula_id'] ?>" class="table-link btn-sm" title="Editar <?= $Aulas['aula_name'] ?>">
                                     <span class="fa-stack">
                                         <i class="fa fa-square fa-stack-2x"></i>
                                         <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
                                     </span>
                                 </a>
-                                <a href="<?= BASE ?>/painel/lesson/delete&delete_aula=<?= $Aulas['aula_id'] ?>" class="table-link danger btn-sm" title="Excluir <?= $Aulas['aula_name'] ?>" style="color: #e74a3b;">
+                                <a href="<?= BASE ?>/painel/courses/lesson/delete&delete_aula=<?= $Aulas['aula_id'] ?>" class="table-link danger btn-sm" title="Excluir <?= $Aulas['aula_name'] ?>" style="color: #e74a3b;">
                                     <span class="fa-stack">
                                         <i class="fa fa-square fa-stack-2x"></i>
                                         <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
@@ -72,7 +72,7 @@ echo $Component->getMenuDashboard();
                         <?php
                             }
                         } else {
-                            Error("Ainda não existe lista dos cursos!");
+                            Error("Lista de cursos não encontrada!", 'danger');
                         }   
                         ?>
                     </tbody>

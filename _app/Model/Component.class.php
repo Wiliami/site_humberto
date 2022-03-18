@@ -590,7 +590,7 @@ class Component {
             <!-- Page Wrapper -->
             <div id="wrapper">
                 <!-- Sidebar -->
-                <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+                <ul class="navbar-nav bg-gradient-info sidebar sidebar-dark accordion" id="accordionSidebar">
                     <!-- Sidebar - Brand -->
                     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="' . BASE . '/painel/dashboard">
                         <div class="sidebar-brand-icon rotate-n-15">
@@ -943,7 +943,7 @@ class Component {
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title btn btn-primary mb-2 vw-100" id="exampleModalLabel">Pronto para sair?</h5>
+                            <h5 class="modal-title btn btn-info mb-2 vw-100" id="exampleModalLabel">Pronto para sair?</h5>
                             <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">×</span>
                             </button>

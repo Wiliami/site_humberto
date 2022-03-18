@@ -27,7 +27,7 @@ $Read = new Read();
                 <h6 class="m-0 font-weight-bold text-dark" style="font-size: 12px;"><?= $Course['curso_titulo'] ?></h6>
             <?php
                 } else {
-                    Error("Curso não encontrado!");
+                    Error("Curso não encontrado!", 'danger');
                 }
             ?>
         </div>
@@ -67,13 +67,13 @@ $Read = new Read();
                                         <i class="fas fa-chalkboard-teacher fa-stack-1x fa-inverse"></i>
                                     </span>
                                 </a>
-                                <a href="<?= BASE ?>/painel/modules/update&module=<?= $Modulos['modulo_id'] ?>" class="table-link btn-sm" title="Atualizar <?= $Modulos['modulo_name']?>">
+                                <a href="<?= BASE ?>/painel/courses/modules/update&module=<?= $Modulos['modulo_id'] ?>" class="table-link btn-sm" title="Atualizar <?= $Modulos['modulo_name']?>">
                                     <span class="fa-stack fa-sm">
                                         <i class="fa fa-square fa-stack-2x"></i>
                                         <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
                                     </span>
                                 </a>
-                                <a href="<?= BASE ?>/painel/modules/delete&delete_module=<?= $Modulos['modulo_id'] ?>" class="table-link danger btn-sm" title="Excluir <?= $Modulos['modulo_name'] ?>" style="color: red;"
+                                <a href="<?= BASE ?>/painel/courses/modules/delete&delete_module=<?= $Modulos['modulo_id'] ?>" class="table-link danger btn-sm" title="Excluir <?= $Modulos['modulo_name'] ?>" style="color: red;"
                                     title="Excluir curso">
                                     <span class="fa-stack fa-sm">
                                         <i class="fa fa-square fa-stack-2x"></i>

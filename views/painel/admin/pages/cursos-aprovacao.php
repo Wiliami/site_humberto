@@ -16,13 +16,13 @@ echo $Component->getMenuDashboard();
 <div class="container">
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-dark" style="font-size: 12px;">Cursos | Aprovação de cursos</h6>
+            <h6 class="m-0 font-weight-bold text-dark" style="font-size: 12px;">Aprovação de cursos</h6>
         </div>
         <div class="card-body">
             <div class="table-responsive">
                 <table id="table-cursos" class="cell-border compact stripe table-striped" style="width:100%">
                     <thead>
-                        <tr class="text-sm" style="font-size: 10px;">
+                        <tr style="font-size: 10px;">
                             <th><span>NOME DO CURSO</span></th>
                             <th><span>DATA DA COMPRA</span></th>
                             <th>STATUS DA COMPRA</th>
@@ -37,7 +37,7 @@ echo $Component->getMenuDashboard();
                         if($Read->getResult()) {
                             foreach($Read->getResult() as $User) {
                                     ?>
-                        <tr class="btn-sm">
+                        <tr style="font-size: 10px;">
                             <td>
                                 <span><?= $User['compra_curso'] ?></span>
                             </td>
@@ -51,13 +51,13 @@ echo $Component->getMenuDashboard();
                                 <span><?= $User['user_name']?></span>
                             </td>
                             <td style="width: 20%;">
-                                <a href="<?= BASE ?>/painel/admin/aprovacao&aprovacao=<?= $User['compra_id'] ?>" class="table-link" title="Editar aprovação de <?= $User['compra_curso'] ?>">
+                                <a href="<?= BASE ?>/painel/admin/pages/aprovacao&aprovacao=<?= $User['compra_id'] ?>" class="table-link" title="Editar aprovação de <?= $User['compra_curso'] ?>">
                                     <span class="fa-stack">
                                         <i class="fa fa-square fa-stack-2x"></i>
                                         <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
                                     </span>
                                 </a>
-                                <a href="<?= BASE ?>/painel/admin/delete-aprovacao&aprovacao_delete=<?= $User['compra_id'] ?>" class="table-link danger" title="Excluir aprovação de <?= $User['compra_curso'] ?>" style="color: #e74a3b">
+                                <a href="<?= BASE ?>/painel/admin/pages/delete-aprovacao&aprovacao_delete=<?= $User['compra_id'] ?>" class="table-link danger" title="Excluir aprovação de <?= $User['compra_curso'] ?>" style="color: #e74a3b">
                                     <span class="fa-stack">
                                         <i class="fa fa-square fa-stack-2x"></i>
                                         <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
@@ -73,7 +73,7 @@ echo $Component->getMenuDashboard();
                         </tr>
                     </tbody>
                     <tfoot>
-                        <tr class="btn-sm" style="font-size: 10px;">
+                        <tr style="font-size: 10px;">
                             <th>NOME DO CURSO</th>
                             <th>DATA DA COMPRA</th>
                             <th>STATUS DA COMPRA</th>

@@ -41,7 +41,7 @@ echo $Component->getMenuDashboard();
                         if($Read->getResult()) {
                             foreach($Read->getResult() as $Users) { 
                                 ?>
-                        <tr class="btn-sm" style="font-size: 11px;">
+                        <tr style="font-size: 11px;">
                             <!-- <td>
                                 $Component->getAvatarUser(); ?>
                             </td> -->
@@ -62,16 +62,16 @@ echo $Component->getMenuDashboard();
                             </td>
                            
                             <td>
-                            <a href="<?= BASE ?>/painel/admin/users/update&update_user=<?= $Users['user_id'] ?>" class="table-link btn-sm" title="Editar <?= $Users['user_name'] ?> ">
+                                <a href="<?= BASE ?>/painel/admin/users/update&update_user=<?= $Users['user_id'] ?>" class="table-link btn-sm" title="Editar <?= $Users['user_name'] ?> ">
                                     <span class="fa-stack fa-sm">
                                         <i class="fa fa-square fa-stack-2x"></i>
                                         <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
                                     </span>
                                 </a>
-                                <a href="<?= BASE ?>/painel/admin/users/update&update_user=<?= $Users['user_id'] ?>" class="table-link btn-sm" title="Editar <?= $Users['user_name'] ?> ">
+                                <a href="<?= BASE ?>/painel/admin/users/update&course_user=<?= $Users['user_id'] ?>" class="table-link btn-sm" title="Cursos de <?= $Users['user_name'] ?> " style="color: #1cc88a;">
                                     <span class="fa-stack fa-sm">
                                         <i class="fa fa-square fa-stack-2x"></i>
-                                        <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
+                                        <i class="fas fa-book fa-stack-1x fa-inverse"></i>
                                     </span>
                                 </a>
                                 <a href="<?= BASE ?>/painel/admin/users/delete&delete_user=<?= $Users['user_id'] ?>" class="table-link btn-sm" style="color: red;" title="Excluir <?= $Users['user_name'] ?> ">
