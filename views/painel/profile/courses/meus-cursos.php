@@ -9,23 +9,22 @@ echo $Component->getLiAdministrativoDashboard();
 echo $Component->getLiCoursesDashboard();
 echo $Component->getLiPagesDashboard();
 echo $Component->getMenuDashboard();
+$User = $_SESSION['login']['user_name'];
+$useId = $_SESSION['login']['user_id'];
 ?>
 <div class="container-fluid">
     <div class="d-sm-flex align-items-center justify-content-start mb-4 d-block">
-        <h1 class="h3 mb-0 text-gray-800">Olá, <?= $_SESSION['login']['user_name'] ?></h1>
+        <h1 class="h3 mb-0 text-gray-800 ml-1">Olá, <?= $User ?></h1>
     </div>
-</div>
-<div class="row gx-5 container">
     <?php
     $Read = new Read();
     $Read->FullRead("SELECT m.*, c.curso_titulo, c.curso_descricao
             FROM matriculas m 
             LEFT JOIN users u ON u.user_id = m.user_id
             LEFT JOIN cursos c ON c.curso_id = m.curso_id 
-            WHERE m.user_id = :id
-            ", "id={$_SESSION['login']['user_id']}");
+            WHERE m.user_id = :id", "id={$useId}");
     if($Read->getResult()) {
-        foreach($Read->getResult() as $Matriculas) {
+        foreach($Read->getResult() as $Mat) {
             ?>
     <div class="col-lg-4 mb-5">
         <div class="card h-100 shadow border-0">
@@ -53,8 +52,11 @@ echo $Component->getMenuDashboard();
     <?php
         }
     } else {
-        Error("Você não estar matriculado em nenhum curso!");
-    }   
+         Error("Parece que você não está matriculado em nenhum curso!", 'warning');
+    } 
     ?>
+</div>
+<div class="container">
+    <a href="<?= BASE ?>/painel/dashboard" class="btn btn-success">Ver cursos</a>  
 </div>
 <?= $Component->getFooterDashboard(); ?>

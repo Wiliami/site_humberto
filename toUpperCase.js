@@ -4,4 +4,4 @@
 
 letra = 'oi'
 
-console.log('oi'.toUpperCase())
+console.log('opções'.toUpperCase())

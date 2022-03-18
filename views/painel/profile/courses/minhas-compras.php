@@ -21,11 +21,11 @@ echo $Component->getMenuDashboard();
             <div class="table-responsive">
                 <table id="table-compras-usuario" class="table table-striped table-bordered" style="width: 100%;">
                     <thead>
-                        <tr class="btn-sm">
-                            <th>Nome do curso</span></th>
-                            <th>Data da compra</span></th>
-                            <th>Valor do curso</>
-                            <th><span>Opções</span></th>
+                        <tr style="font-size: 10px;">
+                            <th>NOME do curso</span></th>
+                            <th>DATA DA COMPRA</span></th>
+                            <th>VALOR DO CURSO</>
+                            <th><span>OPÇÕES</span></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -35,7 +35,7 @@ echo $Component->getMenuDashboard();
                         if($Read->getResult()) {
                             foreach($Read->getResult() as $Cursos) {
                                 ?>
-                        <tr class="btn-sm">
+                        <tr style="font-size: 10px;">
                             <td>
                                 <span><?= $Cursos['curso_titulo'] ?></span>
                             </td>
@@ -52,13 +52,13 @@ echo $Component->getMenuDashboard();
                                         <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
                                     </span>
                                 </a> -->
-                                <a href="/" class="table-link">
+                                <a href="<?= BASE ?>/painel/" class="table-link" title="Editar <?= $Cursos['curso_titulo'] ?>">
                                     <span class="fa-stack">
                                         <i class="fa fa-square fa-stack-2x"></i>
                                         <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
                                     </span>
                                 </a>
-                                <a href="/" class="table-link danger">
+                                <a href="<?= BASE ?>/painel/courses/" class="table-link danger" title="Excluir <?= $Cursos['curso_titulo']?>" style="color: red;">
                                     <span class="fa-stack">
                                         <i class="fa fa-square fa-stack-2x"></i>
                                         <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
@@ -74,11 +74,11 @@ echo $Component->getMenuDashboard();
                         ?>
                     </tbody>
                     <tfoot>
-                        <tr class="btn-sm">
-                            <th>Nome do curso</span></th>
-                            <th>Data da compra</span></th>
-                            <th>Valor do curso</>
-                            <th><span>Opções</span></th>
+                        <tr style="font-size: 10px;">
+                            <th>NOME DO CURSO</span></th>
+                            <th>DATA DA COMPRA</span></th>
+                            <th>VALOR DO CURSO</>
+                            <th><span>OPÇÕES</span></th>
                         </tr>
                     </tfoot>
                 </table>

@@ -702,30 +702,30 @@ class Component {
                 </a>
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="' . BASE . '/painel/profile/meus-cursos">
+                        <a class="collapse-item" href="' . BASE . '/painel/profile/courses/meus-cursos">
                             <i class="fas fa-book"></i>
                             Meus cursos
                         </a>
-                        <a class="collapse-item" href="' . BASE . '/painel/profile/minhas-compras">
+                        <a class="collapse-item" href="' . BASE . '/painel/profile/courses/minhas-compras">
                             <i class="fas fa-money-bill-alt"></i>
                             Minhas compras
                         </a>
-                        <a class="collapse-item" href="' . BASE . '/painel/profile/cursos-finalizados">
+                        <a class="collapse-item" href="' . BASE . '/painel/profile/courses/cursos-finalizados">
                             <i class="fas fa-book"></i>
                             Cursos finalizados
                         </a>
-                        <a class="collapse-item" href="' . BASE . '/painel/profile/cursos-pendentes">
+                        <a class="collapse-item" href="' . BASE . '/painel/profile/courses/cursos-pendentes">
                             <i class="fas fa-book"></i>
                             Cursos pendentes
                         </a>
-                        <a class="collapse-item" href="' . BASE . '/painel/profile/help">
+                        <a class="collapse-item" href="' . BASE . '/painel/profile/pages/help">
                             <i class="fas fa-hands-helping"></i>
                             Ajuda</a>
-                        <a class="collapse-item" href="' . BASE . '/painel/profile/suporte">
+                        <a class="collapse-item" href="' . BASE . '/painel/profile/pages/suporte">
                             <i class="fas fa-info-circle"></i>
                             Suporte
                         </a>
-                        <a class="collapse-item" href="' . BASE . '/painel/profile/settings">
+                        <a class="collapse-item" href="' . BASE . '/painel/profile/pages/settings">
                             <i class="fas fa-cogs"></i>
                             Configurações
                         </a>
