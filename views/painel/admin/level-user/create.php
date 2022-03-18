@@ -44,7 +44,7 @@ echo $Component->getMenuDashboard();
             value="<?= isset($Post['level'])? $Post['level']: '' ?>">
         </div>
         <a href="<?= BASE ?>/painel/admin/level-user/list" class="btn btn-outline-success mb-2" title="Voltar para lista de categorias">Voltar</a>
-        <input type="submit" class="btn btn-success mb-2" name="register_level" value="Cadastrar nível">
+        <input type="submit" class="btn btn-success mb-2" name="register_level" value="Cadastrar">
     </form>
     </div>
 </div>

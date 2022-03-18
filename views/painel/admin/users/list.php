@@ -24,11 +24,11 @@ echo $Component->getMenuDashboard();
                     <thead>
                         <tr class="btn-sm" style="font-size: 10px;">
                             <th>USUÁRIO</th>
-                            <th>FUNÇAO</th>
+                            <th>FUNÇÃO</th>
                             <th>E-MAIL</th>
                             <th>CAD. POR</th>
                             <th>ATU. POR</th>
-                            <th>OPÇOES</th>
+                            <th>OPÇÕES</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -88,11 +88,11 @@ echo $Component->getMenuDashboard();
                     <tfoot>
                         <tr class="btn-sm" style="font-size: 10px;">
                             <th>USUÁRIO</th>
-                            <th>FUNÇAO</th>
+                            <th>FUNÇÃO</th>
                             <th>E-MAIL</th>
                             <th>CAD. POR</th>
                             <th>ATU. POR</th>
-                            <th>OPÇOES</th>
+                            <th>OPÇÕES</th>
                         </tr>
                     </tfoot>
                 </table>

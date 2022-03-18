@@ -24,10 +24,10 @@ echo $Component->getMenuDashboard();
                     </div>
                     <thead>
                         <tr class="btn-sm" style="font-size: 11px;">
-                            <th>Nível Usuário</th>
-                            <th>Cadastrado por</th>
-                            <th>Atualizado por</th>
-                            <th>Opções</th>
+                            <th>NÍVEL</th>
+                            <th>CAD. POR</th>
+                            <th>ATU. POR</th>
+                            <th>OPÇÕES</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -48,7 +48,7 @@ echo $Component->getMenuDashboard();
                                 <span><?= $Level['level_user_update'] ?></span>
                             </td>
                             <td>
-                                <a href="<?= BASE ?>/painel/admin/level-user/update&level=<?= $Level['level_id'] ?>" class="table-link btn-sm" title="Editar nível <?= $Level['level_desc'] ?>" style="">
+                                <a href="<?= BASE ?>/painel/admin/level-user/update&level=<?= $Level['level_id'] ?>" class="table-link btn-sm" title="Editar <?= $Level['level_desc'] ?>" style="">
                                     <span class="fa-stack fa-sm">
                                         <i class="fa fa-square fa-stack-2x"></i>
                                         <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
@@ -71,10 +71,10 @@ echo $Component->getMenuDashboard();
                     </tbody>
                     <tfoot>
                         <tr class="btn-sm" style="font-size: 11px;">
-                            <th>Nível Usuário</th>
-                            <th>Cadastrado por</th>
-                            <th>Atualizado por</th>
-                            <th>Opções</th>
+                            <th>NÍVEL</th>
+                            <th>CAD. POR</th>
+                            <th>ATU. POR</th>
+                            <th>OPÇÕES</th>
                         </tr>
                     </tfoot>
                 </table>

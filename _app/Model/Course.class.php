@@ -1,23 +1,26 @@
 <?php
+
 class Course {
 
     private $Error;
 	private $Result;
 	
-	public function matriculateCourse($matriculate) {
-		if(empty($matriculate['curso_titulo'])) {
+	public function matriculateCourse($matriculateUser) {
+		if(empty($matriculateUser['curso_titulo'])) {
 			$this->Error = "Selecione um curso!";
 			$this->Result = false;
-		} elseif(empty($matriculate['user_name'])) {
+		} elseif(empty($matriculateUser['user_name'])) {
 			$this->Error = "Selecione um usuário!";
 			$this->Result = false;
 		} else {
-			$matriculate['matricula_create_date'] = date('Y-m-d H:i:s');
+			$matriculateUser['matricula_create_date'] = date('Y-m-d H:i:s');
+			//$matriculateUser['matricula_create_user'] = $_SESSION['login']['user_id'];
+			$matriculateUser['matricula_update_user'] = $_SESSION['login']['user_id'];
 			$Create = new Create();
-			$Create->ExeCreate('matriculas', $matriculate);
+			$Create->ExeCreate('matriculas_cursos', $matriculateUser);
 			if($Create->getResult()) {
 				$this->Result = $Create->getResult();
-				$this->Error = "A matrícula foi feita com sucesso!";
+				$this->Error = "Matrícula realizada com sucesso!";
 			} else {
 				$this->Result = false;
 				$this->Error = $Create->getError();

@@ -12,13 +12,13 @@ echo $Component->getLiPagesDashboard();
 echo $Component->getCreatePagesAdmin();
 echo $Component->getListPagesAdmin();
 echo $Component->getMenuDashboard();
-$coursesId = filter_input(INPUT_GET, 'course_user', FILTER_VALIDATE_INT);
+$courseId = filter_input(INPUT_GET, 'course_user', FILTER_VALIDATE_INT);
 ?>
 <div class="row gx-5 container">
     <div class="d-sm-flex align-items-center justify-content-between mb-3">
         <?php
         $Read = new Read();
-        $Read->FullRead("SELECT * FROM users WHERE user_id = :ui", "ui={$coursesId}");
+        $Read->FullRead("SELECT * FROM users WHERE user_id = :ui", "ui={$courseId}");
         if($Read->getResult()) {
             $User = $Read->getResult()[0];
                 ?>
@@ -32,9 +32,9 @@ $coursesId = filter_input(INPUT_GET, 'course_user', FILTER_VALIDATE_INT);
     </div>
     <div>
     <?php
-    $Read->FullRead("SELECT * FROM cursos");
+    $Read->FullRead("SELECT * FROM matriculas_cursos");
     if($Read->getResult()) {
-        foreach($Read->getResult() as $Cursos) {
+        foreach($Read->getResult() as $Mat) {
             ?>
     <div class="col-lg-4 mb-5">
         <div class="card h-100 shadow border-0">
@@ -42,9 +42,9 @@ $coursesId = filter_input(INPUT_GET, 'course_user', FILTER_VALIDATE_INT);
             <div class="card-body p-4">
                 <div class="badge bg-success bg-gradient rounded-pill mb-2 text-white">Curso</div>
                 <a class="text-decoration-none link-dark stretched-link" href="<?= BASE ?>/painel/profile/aulas">
-                    <h5 class="card-title mb-3"><?= $Cursos['curso_titulo'] ?></h5>
+                    <h5 class="card-title mb-3"><?= $Mat['curso_id'] ?></h5>
                 </a>
-                <p class="card-text mb-0"><?= $Cursos['curso_descricao'] ?></p>
+                <!--<p class="card-text mb-0"><?= $Mat['curso_descricao'] ?></p> --> 
                 <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
                     <div class="d-flex align-items-end justify-content-between">
                         <div class="d-flex align-items-center">

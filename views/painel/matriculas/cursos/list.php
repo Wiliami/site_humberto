@@ -16,17 +16,19 @@ echo $Component->getMenuDashboard();
 <div class="container">
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-dark">Lista de matrículas</h6>
+            <h6 class="m-0 font-weight-bold text-dark" style ="font-size: 13px;">Matrículas de cursos</h6>
         </div>
         <div class="card-body">
             <div class="table-responsive">
                 <table id="lista-matriculas" class="table table-striped table-bordered" style="width: 100%;">
                     <thead>
-                        <tr class="btn-sm">
-                            <th><span>Usuário matriculado</span></th>
-                            <th><span>Curso matriculado</span></th>
-                            <th><span>Data da matrícula</span></th>
-                            <th><span>Opções</span></th>
+                        <tr style="font-size: 10px;">
+                            <th><span>USUÁRIO</span></th>
+                            <th><span>CURSO</span></th>
+                            <th><span>DATA DA MATRÍCULA</span></th>
+                            <th><span>CAD. POR</span></th>
+                            <th><span>ATU. POR</span></th>
+                            <th><span>OPÇÕES</span></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -36,24 +38,26 @@ echo $Component->getMenuDashboard();
                         if($Read->getResult()) {
                             foreach($Read->getResult() as $Matriculas) {
                                 ?>
-                        <tr class="btn-sm">
+                        <tr style="font-size: 10px;">
                             <td>
-                                <span><?= $Matriculas['matricula_usuario'] ?></span>
+                                <span><?= $Matriculas['user_id'] ?></span>
                             </td>
                             <td>
-                                <span><?= $Matriculas['matricula_curso'] ?></span>
+                                <span><?= $Matriculas['curso_id'] ?></span>
                             </td>
                             <td>
                                 <span><?= date('d/m/Y', strtotime($Matriculas['matricula_create_date'])) ?></span>
                             </td>
+                            <td></td>
+                            <td></td>
                             <td>
-                                <a href="<?= BASE ?>/painel/matriculas-cursos/update&matricula_update=<?= $Matriculas['matricula_id'] ?>" class="table-link btn-sm" title="Editar matrícula de <?= $Matriculas['matricula_usuario'] ?>">
+                                <a href="<?= BASE ?>/painel/matriculas/cursos/update&matricula_update=<?= $Matriculas['matricula_id'] ?>" class="table-link btn-sm" title="Editar matrícula de <?= $Matriculas['curso_id'] ?>">
                                     <span class="fa-stack">
                                         <i class="fa fa-square fa-stack-2x"></i>
                                         <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
                                     </span>
                                 </a>
-                                <a href="<?= BASE ?>/painel/matriculas-cursos/delete&delete_matricula=<?= $Matriculas['matricula_id'] ?>" class="table-link danger btn-sm" title="Excluir matrícula de <?= $Matriculas['matricula_usuario'] ?>">
+                                <a href="<?= BASE ?>/painel/matriculas/cursos/delete&delete_matricula=<?= $Matriculas['matricula_id'] ?>" class="table-link danger btn-sm" title="Excluir matrícula de <?= $Matriculas['user_id'] ?>" style="color: red;">
                                     <span class="fa-stack">
                                         <i class="fa fa-square fa-stack-2x"></i>
                                         <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
@@ -69,11 +73,13 @@ echo $Component->getMenuDashboard();
                         ?>
                     </tbody>
                     <tfoot>
-                        <tr class="btn-sm">
-                            <th><span>Usuário matriculado</span></th>
-                            <th><span>Curso matriculado</span></th>
-                            <th><span>Data da matrícula</span></th>
-                            <th><span>Opções</span></th>
+                        <tr style="font-size: 10px;">
+                            <th><span>USUÁRIO</span></th>
+                            <th><span>CURSO</span></th>
+                            <th><span>DATA DA MATRÍCULA</span></th>
+                            <th><span>CAD. POR</span></th>
+                            <th><span>ATU. POR</span></th>
+                            <th><span>OPÇÕES</span></th>
                         </tr>
                     </tfoot>
                 </table>

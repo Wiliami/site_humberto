@@ -67,7 +67,7 @@ $courseId = filter_input(INPUT_GET, 'update_curso', FILTER_VALIDATE_INT);
         </div>
     
         <a href="<?= BASE ?>/painel/courses/list" class="btn btn-outline-success" title="Voltar para a lista de cursos">Voltar</a>
-        <input type="submit" class="btn btn-success" name="update_course" value="Atualizar curso">
+        <input type="submit" class="btn btn-success" name="update_course" value="Atualizar">
     </form>
 </div>
 <?= $Component->getFooterDashboard(); ?>

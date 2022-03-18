@@ -622,11 +622,11 @@ class Component {
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true"
                     aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-folder"></i>
-                    <span>Administrativo</span>
+                    <span>ADMINISTRATIVO</span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Cadastrar usuário</h6>
+                        <h6 class="collapse-header">Matricular usuário</h6>
                         <a class="collapse-item" href="' . BASE . '/painel/matriculas/cursos/create">
                             <i class="fas fa-folder-plus"></i>
                             No curso
@@ -651,7 +651,7 @@ class Component {
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true"
                     aria-controls="collapsePages">
                     <i class="fas fa-pager"></i>
-                    <span>Páginas</span>
+                    <span>PÁGINAS</span>
                 </a>
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
@@ -698,7 +698,7 @@ class Component {
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true"
                     aria-controls="collapseUtilities">
                     <i class="fas fa-book"></i>
-                    <span>Cursos</span>
+                    <span>CURSOS</span>
                 </a>
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
@@ -749,7 +749,7 @@ class Component {
                     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCreate" aria-expanded="true"
                         aria-controls="collapsePages">
                         <i class="fas fa-folder-plus"></i>
-                        <span>Cadastrar</span>
+                        <span>CADASTRAR</span>
                     </a>
                     <div id="collapseCreate" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
@@ -792,7 +792,7 @@ class Component {
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseList" aria-expanded="true"
                 aria-controls="collapsePages">
                 <i class="fas fa-check-circle"></i>
-                <span>Consultar</span>
+                <span>CONSULTAR</span>
             </a>
             <div id="collapseList" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
@@ -943,14 +943,14 @@ class Component {
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title btn btn-info mb-2 vw-100" id="exampleModalLabel">Pronto para sair?</h5>
+                            <h5 class="modal-title btn btn-success mb-2 vw-100" id="exampleModalLabel">Pronto para sair?</h5>
                             <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">×</span>
                             </button>
                         </div>
                         <div class="modal-body">Selecione "Sair" para encerrar a sua sessão.</div>
                         <div class="modal-footer">
-                            <button class="btn btn-outline-dark" type="button" data-dismiss="modal">Cancelar</button>
+                            <button class="btn btn-outline-success" type="button" data-dismiss="modal">Cancelar</button>
                             <a class="btn btn-danger" href="' . BASE . '/pages/logout">Sair</a>
                         </div>
                     </div>
