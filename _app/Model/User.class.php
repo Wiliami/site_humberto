@@ -94,7 +94,7 @@ class User {
 			$dataUser['user_password'] = md5($dataUser['user_password']);
 			$dataUser['user_create_date'] = date('Y-m-d H:i:s');
 			$dataUser['user_level'] = '1';
-			$dataUser['user_inativo'] = '0';
+			//$dataUser['user_inativo'] = '0';
 			$Create = new Create();
 			$Create->ExeCreate("users", $dataUser); // cadastrando usuário no banco de dados
 			if($Create->getResult()) { // resultado

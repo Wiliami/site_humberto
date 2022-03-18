@@ -22,14 +22,13 @@ echo $Component->getMenuDashboard();
             <div class="table-responsive">
                 <table id="table-usuarios" class="cell-border compact stripe table-striped" style="width: 100%">
                     <thead>
-                        <tr class="btn-sm" style="font-size: 11px;">
-                            <!-- <th>Profile</th> -->
-                            <th>Usuário</th>
-                            <th>Função</th>
-                            <th>E-mail</th>
-                            <th>Cad. por:</th>
-                            <th>Atu. por:</th>
-                            <th>Opções</th>
+                        <tr class="btn-sm" style="font-size: 10px;">
+                            <th>USUÁRIO</th>
+                            <th>FUNÇAO</th>
+                            <th>E-MAIL</th>
+                            <th>CAD. POR</th>
+                            <th>ATU. POR</th>
+                            <th>OPÇOES</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -42,9 +41,6 @@ echo $Component->getMenuDashboard();
                             foreach($Read->getResult() as $Users) { 
                                 ?>
                         <tr style="font-size: 11px;">
-                            <!-- <td>
-                                $Component->getAvatarUser(); ?>
-                            </td> -->
                             <td>
                                 <?= $Users['user_name'] ?>
                             </td>
@@ -85,19 +81,18 @@ echo $Component->getMenuDashboard();
                         <?php
                             }
                         } else{
-                            Error("Usuários não encontrados!");
+                            Error("Usuários não encontrados!", 'danger');
                         } 
                         ?>
                     </tbody>
                     <tfoot>
                         <tr class="btn-sm" style="font-size: 10px;">
-                            <!-- <th>*</th> -->
-                            <th>Usuário</th>
-                            <th>Função</th>
-                            <th>E-mail</th>
-                            <th>Cadastrado por:</th>
-                            <th>Atualizado por:</th>
-                            <th>Opções</th>
+                            <th>USUÁRIO</th>
+                            <th>FUNÇAO</th>
+                            <th>E-MAIL</th>
+                            <th>CAD. POR</th>
+                            <th>ATU. POR</th>
+                            <th>OPÇOES</th>
                         </tr>
                     </tfoot>
                 </table>

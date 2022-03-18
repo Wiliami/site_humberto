@@ -32,9 +32,9 @@ $coursesId = filter_input(INPUT_GET, 'course_user', FILTER_VALIDATE_INT);
     </div>
     <div>
     <?php
-    $Read->FullRead("SELECT * FROM users");
+    $Read->FullRead("SELECT * FROM cursos");
     if($Read->getResult()) {
-        foreach($Read->getResult() as $Users) {
+        foreach($Read->getResult() as $Cursos) {
             ?>
     <div class="col-lg-4 mb-5">
         <div class="card h-100 shadow border-0">
@@ -42,9 +42,9 @@ $coursesId = filter_input(INPUT_GET, 'course_user', FILTER_VALIDATE_INT);
             <div class="card-body p-4">
                 <div class="badge bg-success bg-gradient rounded-pill mb-2 text-white">Curso</div>
                 <a class="text-decoration-none link-dark stretched-link" href="<?= BASE ?>/painel/profile/aulas">
-                    <h5 class="card-title mb-3"><?= $Users['curso_titulo'] ?></h5>
+                    <h5 class="card-title mb-3"><?= $Cursos['curso_titulo'] ?></h5>
                 </a>
-                <p class="card-text mb-0"><?= $Users['curso_descricao'] ?></p>
+                <p class="card-text mb-0"><?= $Cursos['curso_descricao'] ?></p>
                 <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
                     <div class="d-flex align-items-end justify-content-between">
                         <div class="d-flex align-items-center">
