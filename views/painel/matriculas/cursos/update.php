@@ -27,12 +27,19 @@ if($Read->getResult()) {
             <h1 class="h5 mb-0 text-gray-800">Atualizar matrícula de <b><?= $DataMatricula['user_id'] ?></b></h1>
         </div>
         <div class="card-body">
-            <form method="post">
+            <form action="" method="post">
                 <?php 
                 $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
                 if(!empty($Post['update_matriculate'])) {
                     $updateMatriculateCourse['curso_id'] = (!empty($Post['course_matriculate'])? $Post['course_matriculate']: null);
                     $updateMatriculateCourse['user_id'] = (!empty($Post['user_matriculate'])? $Post['user_matriculate']: null);
+                    $Course = new Course();
+                    $Course->matriculateUpdateCourse($updateMatriculateCourse, $matriculaId);
+                    if($Course->getResult()) {
+                        Error($Course->getError());
+                    } else {
+                        Error($Course->getError());
+                    }
                 }
                 ?>
                 <div class="form-group">
