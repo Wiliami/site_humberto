@@ -28,6 +28,28 @@ class Course {
 		}
 	}
 
+	public function matriculateUpdateCourse($updateMatriculateCourse, $matriculaId) {
+		if(empty($updateMatriculateCourse['curso_id'])) {
+			$this->Error = "Atualize o curso!";
+			$this->Result = false;
+		} elseif(empty($updateMatriculateCourse['user_id'])) {
+			$this->Error = "Atualize o nome do usuário";
+			$this->Result = false;
+		} else {
+			$updateMatriculateCourse['matricula_update_user'] = $_SESSION['login']['user_name'];
+			$Update = new Update();
+			$Update->ExeUpdate("matriculas_cursos", $updateMatriculateCourse, "WHERE matricula_id = :mi", "mi={$matriculaId}");
+			if($Update->getResult()) {
+				$this->Result = $Update->getResult();
+				$this->Error = "A matrícula foi atualizada com sucesso!"; 
+			} else {
+				$this->Result = false;
+				$this->Error = $Update->getError();
+			}
+
+		}
+	}
+
 	public function matriculateLesson($matriculateLesson) {
 		if(empty($matriculateLesson['aula_name'])) {
 			$this->Error = 'Selecione uma aula!';
@@ -124,7 +146,7 @@ class Course {
 			$this->Result = false;
 			$this->Error = "Preencha o valor do curso!";
 		} else {
-			$updateCourse['curso_user_update'] = $_SESSION['login']['user_name'];
+			$updateCourse['curso_user_update'] = $_SESSION['login']['user_name']; 
 			$Update = new Update();
 			$Update->ExeUpdate("cursos", $updateCourse, "WHERE curso_id = :ci", "ci={$courseId}");
 			if($Update->getResult()) {

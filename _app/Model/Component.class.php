@@ -801,6 +801,10 @@ class Component {
                         <i class="fas fa-user"></i>
                         Usuários
                     </a>
+                    <a class="collapse-item" href="' . BASE . '/painel/matriculas/cursos/list">
+                        <i class="fas fa-user"></i>
+                        Matrículas de cursos
+                    </a>
                     <a class="collapse-item" href="' . BASE . '/painel/admin/level-user/list">
                         <i class="fas fa-user"></i>
                         Níveis de usuários

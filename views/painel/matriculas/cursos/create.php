@@ -15,7 +15,7 @@ echo $Component->getMenuDashboard();
 <div class="container">
     <div class="d-sm-flex align-items-center justify-content-start mb-4">
         <i class="fas fa-layer-plus"></i>
-        <h1 class="h3 mb-0 text-gray-800">Matrícula em curso</h1>
+        <h1 class="h3 mb-0 text-gray-800">Matrícula no curso</h1>
     </div>
     <form method="post">
         <?php
