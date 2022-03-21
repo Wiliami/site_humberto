@@ -14,17 +14,16 @@ echo $Component->getMenuDashboard();
 <div class="container">
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h5 class="m-0 font-weight-bold text-dark">Olá, <?= $_SESSION['login']['user_name'] ?></h5>
-            <span class="m-0 text-dark">Cursos pendentes</span>
+            <h5 class="m-0 text-dark" style="font-size: 13px;">Olá, <b><?= $_SESSION['login']['user_name'] ?></b></h5>
         </div>
         <div class="card-body">
             <div class="table-responsive">
                 <table id="tabela-cursos-pendentes" class="table table-striped table-bordered" style="width: 100%;">
                     <thead>
-                        <tr class="btn-sm">
-                            <th>Nome do curso</th>
-                            <th>Tempo</th>
-                            <th>Opções</th>
+                        <tr style="font-size: 12px;">
+                            <th>NOME DO CURSO</th>
+                            <th>TEMPO</th>
+                            <th>OPÇÕES</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -34,7 +33,7 @@ echo $Component->getMenuDashboard();
                             if($Read->getResult()) {
                                 foreach($Read->getResult() as $Cursos) {
                                     ?>
-                        <tr class="btn-sm">
+                        <tr style="font-size: 11px;">
                             <td>
                                 <span><?= $Cursos['curso_titulo'] ?></span>
                             </td>
@@ -54,7 +53,7 @@ echo $Component->getMenuDashboard();
                                         <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
                                     </span>
                                 </a>
-                                <a href="/" class="table-link danger">
+                                <a href="/" class="table-link danger" style="color: red;">
                                     <span class="fa-stack">
                                         <i class="fa fa-square fa-stack-2x"></i>
                                         <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
@@ -70,10 +69,10 @@ echo $Component->getMenuDashboard();
                             ?>
                     </tbody>
                     <tfoot>
-                        <tr class="btn-sm">
-                            <th>Nome do curso</th>
-                            <th>Tempo</th>
-                            <th>Opções</th>
+                        <tr style="font-size: 12px;">
+                            <th>NOME DO CURSO</th>
+                            <th>TEMPO</th>
+                            <th>OPÇÕES</th>
                         </tr>
                     </t>
                 </table>

@@ -22,28 +22,31 @@ if($Read->getResult()) {
 }
 ?>
 <div class="container">
-    <form method="post">
-    <?php 
-    $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
-    if(!empty($Post['update_matriculate'])) {
-        $updateMatriculateCourse['curso_id'] = (!empty($Post['course_matriculate'])? $Post['course_matriculate']: null);
-        $updateMatriculateCourse['user_id'] = (!empty($Post['user_matriculate'])? $Post['user_matriculate']: null);
-    }
-    ?>
-    <h1 class="h5 mb-0 text-gray-800 mb-4">Atualizar matrícula de <b><?= $DataMatricula['user_name'] ?></b></h1>
-        <?php
-            // Check::var_dump_json($DataMatricula);
-        ?>
-        <div class="form-group">
-            <label for="exampleInputEmail1">Curso</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Nome do curso"  name="course_matriculate" value="<?= $DataMatricula['curso_id'] ?>">
+    <div class="card shadow mb-4">
+        <div class="card-header d-sm-flex align-items-center justify-content-between">
+            <h1 class="h5 mb-0 text-gray-800">Atualizar matrícula de <b><?= $DataMatricula['user_id'] ?></b></h1>
         </div>
-        <div class="form-group">
-            <label for="exampleInputEmail1">Usuário</label> 
-            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Nome do usuário matriculado"  name="user_matriculate" value="<?= $DataMatricula['user_id'] ?>">
+        <div class="card-body">
+            <form method="post">
+                <?php 
+                $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+                if(!empty($Post['update_matriculate'])) {
+                    $updateMatriculateCourse['curso_id'] = (!empty($Post['course_matriculate'])? $Post['course_matriculate']: null);
+                    $updateMatriculateCourse['user_id'] = (!empty($Post['user_matriculate'])? $Post['user_matriculate']: null);
+                }
+                ?>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Curso</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Nome do curso"  name="course_matriculate" value="<?= $DataMatricula['curso_id'] ?>">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Usuário</label> 
+                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Nome do usuário matriculado"  name="user_matriculate" value="<?= $DataMatricula['user_id'] ?>">
+                </div>
+                <a href="<?= BASE ?>/painel/matriculas/cursos/list" class="btn btn-outline-success" title="Voltar para lista de matrículas">Voltar</a>
+                <input type="submit" class="btn btn-success" name="update_matriculate" value="Atualizar">
+            </form>
         </div>
-        <a href="<?= BASE ?>/painel/matriculas/cursos/list" class="btn btn-outline-success" title="Voltar para lista de matrículas">Voltar</a>
-        <input type="submit" class="btn btn-success" name="update_matriculate" value="Atualizar">
-    </form>
+    </div>
 </div>
 <?= $Component->getFooterDashboard(); ?>
