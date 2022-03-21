@@ -15,8 +15,9 @@ echo $Component->getMenuDashboard();
 ?>
 <div class="container">
     <div class="card shadow mb-4">
-        <div class="card-header py-3">
+        <div class="card-header py-3 d-flex justify-content-between align-items-center">
             <h6 class="m-0 font-weight-bold text-dark" style="font-size: 13px;">Lista de usuários</h6>
+            <a href="<?= BASE ?>/painel/admin/users/create" class="btn btn-success rounded-pill" title="Voltar para a lista de usuários" style="border-radius: 50%; font-size: 11px;">Cadastrar novo usuário</a>
         </div>
         <div class="card-body">
             <div class="table-responsive">

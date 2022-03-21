@@ -109,7 +109,7 @@ class User {
 
 	public function createUserSystem($dataUserSystem) {
 		if(empty($dataUserSystem["user_name"])) {
-			$this->Error = "Preencha no campo o nome do usuário!";
+			$this->Error = "Preencha o nome do usuário!";
 			$this->Result = false;
 		} elseif (empty($dataUserSystem["user_email"])) {
 			$this->Error = "Preencha o e-mail do usuário!";

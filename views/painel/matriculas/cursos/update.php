@@ -30,7 +30,7 @@ if($Read->getResult()) {
         $updateMatriculateCourse['user_id'] = (!empty($Post['user_matriculate'])? $Post['user_matriculate']: null);
     }
     ?>
-    <h1 class="h5 mb-0 text-gray-800 mb-4">Atualizar matrícula de <b><?= $DataMatricula['user_id'] ?></b></h1>
+    <h1 class="h5 mb-0 text-gray-800 mb-4">Atualizar matrícula de <b><?= $DataMatricula['user_name'] ?></b></h1>
         <?php
             // Check::var_dump_json($DataMatricula);
         ?>

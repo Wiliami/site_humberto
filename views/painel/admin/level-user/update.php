@@ -22,7 +22,7 @@ $levelId = $_GET['level'];
     if($Read->getResult()) {
         $DataLevel = $Read->getResult()[0];
     } else {
-        Error('Nível de usuário não encontrado!', 'warning');
+        Error('Nível de usuário não encontrado!', 'danger');
     }
     ?>
 </div>
