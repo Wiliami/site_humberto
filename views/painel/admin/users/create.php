@@ -15,10 +15,10 @@ echo $Component->getMenuDashboard();
 ?>
 <div class="container">
     <div class="card shadow mb-4">
+        <div class="card-header py-3 d-sm-flex align-items-center justify-content-start mb-3">
+            <h1 class="h4 mb-0 text-gray-800">Cadastro de usuário</h1>
+        </div>
         <div class="card-body">
-            <div class="card-header py-3 d-sm-flex align-items-center justify-content-start mb-3">
-                <h1 class="h4 mb-0 text-gray-800">Cadastro de usuário</h1>
-            </div>
             <form action="" method="post">
                 <?php
                 $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);

@@ -41,7 +41,7 @@ $courseId = filter_input(INPUT_GET, 'course_user', FILTER_VALIDATE_INT);
             <img src="<?= BASE ?>/src/images/page-sobre.jpg" alt="imagem de fundo"/>
             <div class="card-body p-4">
                 <div class="badge bg-success bg-gradient rounded-pill mb-2 text-white">Curso</div>
-                <a class="text-decoration-none link-dark stretched-link" href="<?= BASE ?>/painel/profile/aulas">
+                <a class="text-decoration-none link-dark stretched-link" href="<?= BASE ?>/painel/profile/courses/lesson/lesson">
                     <h5 class="card-title mb-3"><?= $Mat['curso_id'] ?></h5>
                 </a>
                 <!--<p class="card-text mb-0"><?= $Mat['curso_descricao'] ?></p> --> 

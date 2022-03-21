@@ -49,25 +49,31 @@ $userId = filter_input(INPUT_GET, 'update_user', FILTER_VALIDATE_INT);
         }
     }
     ?>
-    <form method="post">
-        <h1 class="h5 mb-0 text-gray-800 mb-4">Atualizar <b><?= $DataUser['user_name'] ?></b></h1>
-        <div class="form-group">
-            <label for="exampleInputEmail1">Nome</label>
-            <input type="text" class="form-control" id="example1" name="user" placeholder="Nome do usuário"
-            value="<?= $DataUser['user_name'] ?>">
+    <div class="card shadow">
+        <div class="card-header py-3 d-sm-flex align-items-center justify-content-start">
+            <h1 class="h5 mb-0 text-gray-800">Atualizar <b><?= $DataUser['user_name'] ?></b></h1>
         </div>
-        <div class="form-group">
-            <label for="exampleInputEmail1">E-mail</label>
-            <input type="email" class="form-control" id="example2" name="email" placeholder="E-mail do usuário" 
-            value="<?= $DataUser['user_email'] ?>">
+        <div class="card-body">
+            <form action="" method="post">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Nome</label>
+                    <input type="text" class="form-control" id="example1" name="user" placeholder="Nome do usuário"
+                    value="<?= $DataUser['user_name'] ?>">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">E-mail</label>
+                    <input type="email" class="form-control" id="example2" name="email" placeholder="E-mail do usuário" 
+                    value="<?= $DataUser['user_email'] ?>">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Senha</label>
+                    <input type="password" class="form-control" id="example3" name="ps" placeholder="Digite a nova senha do usuário">
+                </div>
+                <a href="<?= BASE ?>/painel/admin/users/list" class="btn btn-outline-success mb-2" title="Voltar para lista de usuários">Voltar</a>
+                <input type="submit" class="btn btn-success mb-2" name="update_user" value="Atualizar">
+                <a href="<?= BASE ?>/painel/profile/courses/courses-users&user=<?= $User['user_id'] ?>" class="btn btn-outline-success mb-2" title="Área cursos de usuário">Ver cursos do usuário</a>
+            </form>
         </div>
-        <div class="form-group">
-            <label for="exampleInputEmail1">Senha</label>
-            <input type="password" class="form-control" id="example3" name="ps" placeholder="Digite a nova senha do usuário">
-        </div>
-        <a href="<?= BASE ?>/painel/admin/users/list" class="btn btn-outline-success mb-2" title="Voltar para lista de usuários">Voltar</a>
-        <input type="submit" class="btn btn-success mb-2" name="update_user" value="Atualizar">
-        <a href="<?= BASE ?>/painel/profile/courses/courses-users&user=<?= $User['user_id'] ?>" class="btn btn-outline-success mb-2" title="Área cursos de usuário">Ver cursos do usuário</a>
-    </form>
+    </div>
 </div>
 <?= $Component->getFooterDashboard(); ?>
