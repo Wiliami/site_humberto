@@ -15,8 +15,9 @@ echo $Component->getMenuDashboard();
 ?>
 <div class="container">
     <div class="card shadow mb-4">
-        <div class="card-header py-3">
+        <div class="card-header py-3 d-sm-flex align-items-center justify-content-between">
             <h6 class="m-0 font-weight-bold text-dark" style="font-size: 12px;">Nome do módulo aqui</h6>
+            <a href="<?= BASE ?>/painel/courses/lesson/create" class="btn btn-success rounded-pill" style="border-radius: 50%; font-size: 11px;">Cadastrar nova aula</a>
         </div>
         <div class="card-body">
             <div class="table-responsive">

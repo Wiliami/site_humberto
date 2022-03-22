@@ -766,7 +766,7 @@ class Component {
                                 <i class="fas fa-book"></i>
                                 Categoria de curso
                             </a>
-                            <a class="collapse-item" href="' . BASE . '/painel/modules/create">
+                            <a class="collapse-item" href="' . BASE . '/painel/courses/modules/create">
                                 <i class="fas fa-columns"></i>
                                 Módulo de curso
                             </a>
