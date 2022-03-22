@@ -35,30 +35,37 @@ echo $Component->getMenuDashboard();
                     <tbody>
                         <?php
                         $Read = new Read();
-                        $Read->FullRead("SELECT * FROM matriculas_cursos");
+                        $Read->FullRead("SELECT mc.*, u.user_name, c.curso_titulo
+                            FROM matriculas_cursos mc
+                            LEFT JOIN users u ON u.user_id = mc.user_id
+                            LEFT JOIN cursos c ON c.curso_id = mc.curso_id");
                         if($Read->getResult()) {
-                            foreach($Read->getResult() as $Matriculas) {
+                            foreach($Read->getResult() as $Mat) {
                                 ?>
                         <tr style="font-size: 10px;">
                             <td>
-                                <span><?= $Matriculas['user_id'] ?></span>
+                                <span><?= $Mat['user_name'] ?></span>
                             </td>
                             <td>
-                                <span><?= $Matriculas['curso_id'] ?></span>
+                                <span><?= $Mat['curso_titulo'] ?></span>
                             </td>
                             <td>
-                                <span><?= date('d/m/Y', strtotime($Matriculas['matricula_create_date'])) ?></span>
+                                <span><?= date('d/m/Y', strtotime($Mat['matricula_create_date'])) ?></span>
                             </td>
-                            <td></td>
-                            <td></td>
                             <td>
-                                <a href="<?= BASE ?>/painel/matriculas/cursos/update&matricula_update=<?= $Matriculas['matricula_id'] ?>" class="table-link btn-sm" title="Editar matrícula de <?= $Matriculas['curso_id'] ?>">
+                                <span><?= $Mat['matricula_create_user'] ?></span>
+                            </td>
+                            <td>
+                                <span><?= $Mat['matricula_update_user'] ?></span>
+                            </td>
+                            <td>
+                                <a href="<?= BASE ?>/painel/matriculas/cursos/update&matricula_update=<?= $Mat['matricula_id'] ?>" class="table-link btn-sm" title="Editar matrícula">
                                     <span class="fa-stack">
                                         <i class="fa fa-square fa-stack-2x"></i>
                                         <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
                                     </span>
                                 </a>
-                                <a href="<?= BASE ?>/painel/matriculas/cursos/delete&delete_matricula=<?= $Matriculas['matricula_id'] ?>" class="table-link danger btn-sm" title="Excluir matrícula de <?= $Matriculas['user_id'] ?>" style="color: red;">
+                                <a href="<?= BASE ?>/painel/matriculas/cursos/delete&delete_matricula=<?= $Mat['matricula_id'] ?>" class="table-link danger btn-sm" title="Excluir matrícula de <?= $Mat['user_name'] ?>" style="color: red;">
                                     <span class="fa-stack">
                                         <i class="fa fa-square fa-stack-2x"></i>
                                         <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>

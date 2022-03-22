@@ -1,7 +1,1 @@
-//console.log('opções'.toUpperCase()); 
-
-
-
-letra = 'oi'
-
-console.log('opções'.toUpperCase())
+console.log('opções'.toUpperCase());

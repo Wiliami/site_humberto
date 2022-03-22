@@ -23,7 +23,7 @@ echo $Component->getMenuDashboard();
             <div class="table-responsive">
                 <table id="table-usuarios" class="cell-border compact stripe table-striped" style="width: 100%">
                     <thead>
-                        <tr class="btn-sm" style="font-size: 10px;">
+                        <tr style="font-size: 10px;">
                             <th>USUÁRIO</th>
                             <th>FUNÇÃO</th>
                             <th>E-MAIL</th>

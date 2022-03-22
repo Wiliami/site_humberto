@@ -22,10 +22,10 @@ echo $Component->getMenuDashboard();
                 <?php
                 $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
                 if(!empty($Post['create_matriculate'])) {
-                    $matriculateUser['curso_titulo'] = $Post['matriculate_course'];
-                    $matriculateUser['user_name'] = $Post['matriculate_user'];
+                    $matriculateUser['curso_id'] = $Post['matriculate_course'];
+                    $matriculateUser['user_id'] = $Post['matriculate_user'];
                     $Course = new Course();
-                    $Course->matriculateCourse($matriculateUser);
+                    $Course->matriculateCreateCourse($matriculateUser);
                     if($Course->getResult()) {
                         Error($Course->getResult());    
                     } else {

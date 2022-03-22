@@ -16,22 +16,19 @@ $userId = filter_input(INPUT_GET, 'update_user', FILTER_VALIDATE_INT);
 ?>
 <div class="container">
     <?php
-    $Read = new Read();
-    $Read->FullRead("SELECT * FROM users WHERE user_id = :ui", "ui={$userId}");
-    if($Read->getResult()) {
-        $DataUser = $Read->getResult()[0];
-    } else {
-        Error('Usuário não encontrado!', 'danger');
-        ?>
-        <a href="<?= BASE ?>/painel/admin/users/list" class="btn btn-outline-success" title="Voltar para a lista de usuários">Voltar</a>
-<?php
-    die();
-    }
-?>
-</div>
-
-<div class="container">
+      $Read = new Read();
+      $Read->FullRead("SELECT * FROM users WHERE user_id = :ui", "ui={$userId}");
+      if($Read->getResult()) {
+          $DataUser = $Read->getResult()[0];
+      } else {
+          Error('Usuário não encontrado!', 'danger');
+          ?>
+          <a href="<?= BASE ?>/painel/admin/users/list" class="btn btn-outline-success" title="Voltar para a lista de usuários">Voltar</a>
     <?php
+      die();
+    } 
+
+
     $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
     if(!empty($Post['update_user'])) { 
         $updateUser['user_name'] = $Post['user'];
@@ -43,7 +40,7 @@ $userId = filter_input(INPUT_GET, 'update_user', FILTER_VALIDATE_INT);
         $User = new User();
         $User->updateUser($updateUser, $userId);
         if($User->getResult()) {
-            Error($User->getError()); // atualizou
+            Error($User->getError());
         } else {
             Error($User->getError(), 'warning');
         }

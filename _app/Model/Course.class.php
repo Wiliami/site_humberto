@@ -5,17 +5,16 @@ class Course {
     private $Error;
 	private $Result;
 	
-	public function matriculateCourse($matriculateUser) {
-		if(empty($matriculateUser['curso_titulo'])) {
+	public function matriculateCreateCourse($matriculateUser) {
+		if(empty($matriculateUser['curso_id'])) {
 			$this->Error = "Selecione um curso!";
 			$this->Result = false;
-		} elseif(empty($matriculateUser['user_name'])) {
+		} elseif(empty($matriculateUser['user_id'])) {
 			$this->Error = "Selecione um usuário!";
 			$this->Result = false;
 		} else {
 			$matriculateUser['matricula_create_date'] = date('Y-m-d H:i:s');
-			//$matriculateUser['matricula_create_user'] = $_SESSION['login']['user_id'];
-			$matriculateUser['matricula_update_user'] = $_SESSION['login']['user_id'];
+			$matriculateUser['matricula_create_user'] = $_SESSION['login']['user_name'];
 			$Create = new Create();
 			$Create->ExeCreate('matriculas_cursos', $matriculateUser);
 			if($Create->getResult()) {
@@ -41,7 +40,7 @@ class Course {
 			$Update->ExeUpdate("matriculas_cursos", $updateMatriculateCourse, "WHERE matricula_id = :mi", "mi={$matriculaId}");
 			if($Update->getResult()) {
 				$this->Result = $Update->getResult();
-				$this->Error = "A matrícula foi atualizada com sucesso!"; 
+				$this->Error = "Matrícula foi atualizada com sucesso!"; 
 			} else {
 				$this->Result = false;
 				$this->Error = $Update->getError();
@@ -50,6 +49,18 @@ class Course {
 		}
 	}
 
+	public function deleteMatriculateCourse($matriculaId) {
+		$Delete = new Delete();
+		$Delete->ExeDelete("matriculas_cursos", "WHERE matricula_id = :mi", "mi={$matriculaId}");
+		if($Delete->getResult()) {
+			$this->Result = $Delete->getResult();
+			$this->Error = "Mátricula foi excluída com sucesso!";
+		} else {
+			$this->Result = false;
+			$this->Error = $Delete->getError();
+		}
+	}
+ 
 	public function matriculateLesson($matriculateLesson) {
 		if(empty($matriculateLesson['aula_name'])) {
 			$this->Error = 'Selecione uma aula!';

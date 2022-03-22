@@ -14,17 +14,21 @@ echo $Component->getMenuDashboard();
 $matriculaId = filter_input(INPUT_GET, 'matricula_update', FILTER_VALIDATE_INT);
 
 $Read = new Read();
-$Read->FullRead("SELECT * FROM matriculas_cursos WHERE matricula_id = :mi", "mi={$matriculaId}");
-if($Read->getResult()) { 
-    $DataMatricula = $Read->getResult()[0];
-} else {
-    die(Error("Mátricula não encontrada!"));
-}
+$Read->FullRead("SELECT mc.*, u.user_name, c.curso_titulo
+    FROM matriculas_cursos mc
+    LEFT JOIN users u ON u.user_id = mc.user_id
+    LEFT JOIN cursos c ON c.curso_id = mc.curso_id
+    WHERE matricula_id = :mi", "mi={$matriculaId}");
+        if($Read->getResult()) { 
+            $DataMatricula = $Read->getResult()[0];
+        } else {
+            die(Error("Mátricula não encontrada!"));
+        }
 ?>
 <div class="container">
     <div class="card shadow mb-4">
         <div class="card-header d-sm-flex align-items-center justify-content-between">
-            <h1 class="h5 mb-0 text-gray-800">Atualizar matrícula de <b><?= $DataMatricula['user_id'] ?></b></h1>
+            <h1 class="h5 mb-0 text-gray-800">Atualizar matrícula de <b><?= $DataMatricula['user_name'] ?></b></h1>
         </div>
         <div class="card-body">
             <form action="" method="post">
@@ -38,17 +42,17 @@ if($Read->getResult()) {
                     if($Course->getResult()) {
                         Error($Course->getError());
                     } else {
-                        Error($Course->getError());
+                        Error($Course->getError(), 'warning');
                     }
                 }
                 ?>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Curso</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Nome do curso"  name="course_matriculate" value="<?= $DataMatricula['curso_id'] ?>">
+                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Nome do curso"  name="course_matriculate" value="<?= $DataMatricula['curso_titulo'] ?>">
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Usuário</label> 
-                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Nome do usuário matriculado"  name="user_matriculate" value="<?= $DataMatricula['user_id'] ?>">
+                    <label for="exampleInputEmail2">Usuário</label> 
+                    <input type="text" class="form-control" id="exampleInputEmail2" placeholder="Nome do usuário matriculado"  name="user_matriculate" value="<?= $DataMatricula['user_name'] ?>">
                 </div>
                 <a href="<?= BASE ?>/painel/matriculas/cursos/list" class="btn btn-outline-success" title="Voltar para lista de matrículas">Voltar</a>
                 <input type="submit" class="btn btn-success" name="update_matriculate" value="Atualizar">

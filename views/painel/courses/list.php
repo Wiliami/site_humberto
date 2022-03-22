@@ -29,7 +29,7 @@ echo $Component->getMenuDashboard();
                             <th><span>VALOR DO CURSO</span></th>
                             <th><span>CAD. POR</span></th>
                             <th><span>ATU. POR</span></th>
-                            <th><span>OPÇOES</span></th>
+                            <th><span>OPÇÕES</span></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -90,7 +90,7 @@ echo $Component->getMenuDashboard();
                             <th><span>VALOR DO CURSO</span></th>
                             <th><span>CAD. POR</span></th>
                             <th><span>ATU. POR</span></th>
-                            <th><span>OPÇOES</span></th>
+                            <th><span>OPÇÕES</span></th>
                         </tr>
                     </tfoot>
                 </table>
