@@ -56,7 +56,7 @@ $userId = $_GET['delete_user'];
                     <input type="email" class="form-control" id="exampleInputEmail1" name="title"
                         placeholder="E-mail do usuário" value="<?= $DataUser['user_email'] ?>">
                 </div>
-                <a href="<?= BASE ?>/painel/admin/users/list" class="btn btn-outline-primary" title="Voltar para lista de usuários">Voltar</a>
+                <a href="<?= BASE ?>/painel/admin/users/list" class="btn btn-outline-success" title="Voltar para lista de usuários">Voltar</a>
                 <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
                     Excluir
                 </button>

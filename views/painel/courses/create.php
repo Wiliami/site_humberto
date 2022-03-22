@@ -17,7 +17,6 @@ echo $Component->getMenuDashboard();
         <div class="card-header d-sm-flex align-items-center justify-content-start mb-3">
             <h1 class="h5 mb-0 text-gray-800">Cadastro de cursos</h1>
         </div>
-        <a href="<?= BASE ?>/painel/admin/users/list" class="btn btn-outline-success mb-2" title="Voltar para lista de usuários">Voltar</a>
         <div class="card-body">
             <form method="post">
                 <?php
@@ -68,7 +67,8 @@ echo $Component->getMenuDashboard();
                         ?>
                         </select>
                 </div>
-                <input type="submit" class="btn btn-success mb-2" name="register_course" value="Cadastrar curso">
+                <a href="<?= BASE ?>/painel/courses/list" class="btn btn-outline-success mb-2" title="Voltar para lista de usuários">Voltar</a>
+                <input type="submit" class="btn btn-success mb-2" name="create_course" value="Cadastrar">
             </form>
         </div>
     </div>
