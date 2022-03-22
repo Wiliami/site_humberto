@@ -12,4 +12,4 @@ const EMAIL_USER = '';
 const EMAIL_PASS = '';
 const EMAIL_PORT = '';
 
-const BASE = 'http://localhost/PHP_Humberto';
+const BASE = '';

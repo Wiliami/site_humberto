@@ -5,7 +5,8 @@ $Component = new Component();
 echo $Component->getBlockPageProfile();
 echo $Component->getHeadHtmlDashboard();
 ?>
- <div id="wrapper">
+
+ <!-- <div id="wrapper">
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
         <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?= BASE ?>/painel/dashboard">
             <div class="sidebar-brand-icon rotate-n-15"></div>
@@ -13,9 +14,9 @@ echo $Component->getHeadHtmlDashboard();
         <?php
         $Read = new Read();
         $Read->FullRead("SELECT * FROM cursos LIMIT 1");
-            if($Read->getResult()) {
-                foreach($Read->getResult() as $Cursos) {
-                    ?>
+        if($Read->getResult()) {
+            foreach($Read->getResult() as $Cursos) {
+                ?>
         <li class="nav-item active">
             <a class="nav-link" href="<?= BASE ?>/painel/dashboard">
                 <span><?= $Cursos['curso_titulo'] ?></span>
@@ -78,6 +79,8 @@ echo $Component->getHeadHtmlDashboard();
                 </div> -->
     <!-- /.container-fluid -->
     <!-- End of Main Content -->
+
+
 <?= $Component->getMenuDashboardForPageLesson(); ?>
     <header class="navbar navbar-expand bg-dark static-top shadow d-flex align-items-center justify-content-center justify-content-md-between">
         <ul class="header1" style="list-style: none;">
@@ -103,6 +106,12 @@ echo $Component->getHeadHtmlDashboard();
     <div class="embed-responsive embed-responsive-16by9">
         <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/137857207"
             allowfullscreen>
-        </iframe>
+        </iframe> -->
     </div>
+
+
+
+
+
+
 <?= $Component->getFooterDashboard(); ?>
