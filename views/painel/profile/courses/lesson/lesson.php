@@ -65,7 +65,7 @@ echo $Component->getHeadHtmlDashboard();
             <button class="rounded-circle border-0" id="sidebarToggle"></button>
         </div>
     </ul>
-    <!-- End of Topbar -->
+   End of Topbar -->
     <!-- Conteúdo que vai ser exibido na dashboard
                 <div class="container-fluid">
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">

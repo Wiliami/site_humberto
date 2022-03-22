@@ -14,27 +14,28 @@ echo $Component->getMenuDashboard();
 <div class="container">
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h5 class="m-0 font-weight-bold text-dark">Olá, <?= $_SESSION['login']['user_name'] ?></h5>
-            <span class="m-0 text-dark">Cursos finalizados</span>
+            <h5 class="h5 m-0 text-dark">Olá, <b><?= $_SESSION['login']['user_name'] ?></b></h5>
         </div>
         <div class="card-body">
             <div class="table-responsive">
                 <table id="tabela-cursos-finalizados" class="table table-striped table-bordered" style="width: 100%;">
                     <thead>
-                        <tr class="btn-sm">
-                            <th>Nome do curso</th>
-                            <th>Tempo</th>
-                            <th>Opções</th>
+                        <tr style="font-size: 10px;">
+                            <th>NOME DO CURSO</th>
+                            <th>TEMPO</th>
+                            <th>OPCOES</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php
-                            $Read = new Read();
-                            $Read->FullRead("SELECT c.*, u.user_name FROM cursos c LEFT JOIN users u ON u.user_id");
-                            if($Read->getResult()) {
-                                foreach($Read->getResult() as $Cursos) {
-                                    ?>
-                        <tr class="btn-sm">
+                        $Read = new Read();
+                        $Read->FullRead("SELECT c.*, u.user_name 
+                            FROM cursos c 
+                            LEFT JOIN users u ON u.user_id");
+                        if($Read->getResult()) {
+                            foreach($Read->getResult() as $Cursos) {
+                                ?>
+                        <tr style="font-size: 10px;">
                             <td>
                                 <span><?= $Cursos['curso_titulo'] ?></span>
                             </td>
@@ -42,7 +43,7 @@ echo $Component->getMenuDashboard();
                                 <span><?= $Cursos['curso_create_date'] ?></span>
                             </td>
                             <td style="width: 20%;">
-                                <a href="/" class="table-link">
+                                <a href="/" class="table-link" style="color: green;">
                                     <span class="fa-stack">
                                         <i class="fa fa-square fa-stack-2x"></i>
                                         <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
@@ -54,7 +55,7 @@ echo $Component->getMenuDashboard();
                                         <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
                                     </span>
                                 </a>
-                                <a href="/" class="table-link danger">
+                                <a href="/" class="table-link danger" style="color: red;">
                                     <span class="fa-stack">
                                         <i class="fa fa-square fa-stack-2x"></i>
                                         <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
@@ -65,15 +66,15 @@ echo $Component->getMenuDashboard();
                         <?php
                                 }
                             } else {
-                                Error("Ainda não existem usuários!");
+                                Error("Lista de usuários não encontrada!");
                             }   
                             ?>
                     </tbody>
                     <tfoot>
-                        <tr class="btn-sm">
-                            <th>Nome do curso</th>
-                            <th>Tempo</th>
-                            <th>Opções</th>
+                        <tr style="font-size: 10px;">
+                            <th>NOME DO CURSO</th>
+                            <th>TEMPO</th>
+                            <th>OPCOES</th>
                         </tr>
                     </tfoot>
                 </table>

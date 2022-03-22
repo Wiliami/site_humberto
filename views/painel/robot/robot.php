@@ -25,7 +25,7 @@ echo $Component->getMenuDashboard();
             die("Você não pode fazer updload desse tipo de arquivo!");
         } else {
             echo 'Upload feito com sucesso';
-            move_uploaded_file($arquivo['tmp_name'], 'uploads/'.$arquivo['name']);
+            move_uploaded_file($arquivo['tmp_name'], 'uploads/images'.$arquivo['name']);
         }
     }
     ?>
