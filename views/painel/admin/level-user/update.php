@@ -40,7 +40,7 @@ $levelId = $_GET['level'];
     ?>
      <div class="card shadow">
         <div class="card-header d-sm-flex align-items-center justify-content-start mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Atualizar <b><?= $DataLevel['level_desc'] ?></b></h1>
+            <h1 class="h5 mb-0 text-gray-800">Atualizar <b><?= $DataLevel['level_desc'] ?></b></h1>
         </div>
         <div class="card-body">
             <form action="" method="post">

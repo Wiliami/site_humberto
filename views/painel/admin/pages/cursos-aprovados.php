@@ -16,7 +16,7 @@ echo $Component->getMenuDashboard();
 <div class="container">
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-dark" style="font-size: 12px;">Aprovação de cursos</h6>
+            <h6 class="m-0 font-weight-bold text-dark" style="font-size: 12px;">Cursos aprovados</h6>
         </div>
         <div class="card-body">
             <div class="table-responsive">

@@ -656,17 +656,13 @@ class Component {
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Páginas admin</h6>
-                        <a class="collapse-item" href="' . BASE . '/painel/admin/pages/cursos-aprovacao">
+                        <a class="collapse-item" href="' . BASE . '/painel/admin/pages/cursos-aprovados">
                             <i class="fas fa-book"></i>
                             Cursos em análise
                             </a>
                         <a class="collapse-item" href="' . BASE . '/painel/admin/pages/historico-compras">
                             <i class="fas fa-history"></i>
                             Histórico de compras
-                        </a>
-                        <a class="collapse-item" href="' . BASE . '/painel/admin/level-user/nivel-user">
-                            <i class="fas fa-level-up-alt"></i>
-                            Níveis de Usuários
                         </a>
                         <a class="collapse-item" href="' . BASE . '/painel/admin/pages/settings">
                             <i class="fas fa-cogs"></i>

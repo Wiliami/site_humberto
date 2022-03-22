@@ -15,11 +15,11 @@ echo $Component->getMenuDashboard();
 ?>
 <div class="container">
     <div class="card shadow mb-4">
+        <div class="card-header d-sm-flex align-items-center justify-content-start mb-4">
+            <h1 class="h5 mb-0 text-gray-800">Cadastrar Nível</h1>
+        </div>
         <div class="card-body">
-            <div class="card-header d-sm-flex align-items-center justify-content-start mb-4">
-                <h1 class="h3 mb-0 text-gray-800">Cadastrar Nível</h1>
-            </div>
-            <form method="post">
+            <form action="" method="post">
                 <?php
                 $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
                 if(!empty($Post['register_level'])) {

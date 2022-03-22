@@ -17,7 +17,7 @@ echo $Component->getMenuDashboard();
     <div class="card shadow mb-4">
         <div class="card-header py-3 d-sm-flex align-items-center justify-content-between">
             <h6 class="m-0 font-weight-bold text-dark" style="font-size: 13px;">Nível de usuários</h6>
-            <a href="<?= BASE ?>/painel/admin/level-user/create" class="btn btn-success rounded-pill" title="Voltar para a lista de usuários" style="border-radius: 50%; font-size: 11px;">Cadastrar novo nível</a>
+            <a href="<?= BASE ?>/painel/admin/level-user/create" class="btn btn-success rounded-pill" title="Voltar para a lista de usuários" style="border-radius: 50%; font-size: 11px;">Novo nível</a>
         </div>
         <div class="card-body">
             <div class="table-responsive">
