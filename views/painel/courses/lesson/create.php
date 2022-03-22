@@ -17,7 +17,6 @@ echo $Component->getMenuDashboard();
         <i class="fas fa-layer-plus"></i>
         <h1 class="h3 mb-0 text-gray-800">Cadastro de aulas</h1>
     </div>
-    <p class="ml-0">Cadastrar aula em um curso</p>
     <form method="post">
             <?php
             $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);

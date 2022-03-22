@@ -13,12 +13,12 @@ echo $Component->getListPagesAdmin();
 echo $Component->getMenuDashboard();
 ?>
 <div class="container">
-    <div class="card-header">
-        <div class="d-sm-flex align-items-center justify-content-start mb-4">
-            <i class="fas fa-layer-plus"></i>
-            <h1 class="h3 mb-0 text-gray-800 ml-0">Cadastrar categoria</h1>
+    <div class="card shadow">
+        <div class="card-header d-sm-flex align-items-center justify-content-start mb-4">
+            <h1 class="h5 mb-0 text-gray-800 ml-0">Cadastrar categoria</h1>
         </div>
-        <?php
+        <div class="card-body">
+            <?php
             $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
             if(!empty($Post['register_category'])) {
                 $CreateCategoria['categoria_name'] = $Post['category'];
@@ -32,15 +32,16 @@ echo $Component->getMenuDashboard();
             }
             //header('Location: ' . BASE . '/painel/courses/categorias/list');
             ?>
-        <form method="post">
-            <div class="form-group">
-                <label for="example">Categoria</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" name="category" placeholder="Nome da categoria" 
-                value="<?= isset($Post['category'])? $Post['category']: '' ?>">
-            </div>
-            <a href="<?= BASE ?>/painel/courses/categorias/list" class="btn btn-outline-success mb-2" title="Voltar para a lista de categorias">Voltar</a>
-            <input type="submit" class="btn btn-success mb-2" name="register_category" value="Cadastrar">
-        </form>
+                <form action="" method="post">
+                    <div class="form-group">
+                        <label for="example">Categoria</label>
+                        <input type="text" class="form-control" id="exampleInputEmail1" name="category" placeholder="Nome da categoria" 
+                        value="<?= isset($Post['category'])? $Post['category']: '' ?>">
+                    </div>
+                    <a href="<?= BASE ?>/painel/courses/categorias/list" class="btn btn-outline-success mb-2" title="Voltar para a lista de categorias">Voltar</a>
+                    <input type="submit" class="btn btn-success mb-2" name="register_category" value="Cadastrar">
+                </form>
+            </div> 
     </div> 
 </div>
 <?= $Component->getFooterDashboard(); ?>

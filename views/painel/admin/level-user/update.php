@@ -14,7 +14,6 @@ echo $Component->getListPagesAdmin();
 echo $Component->getMenuDashboard();
 $levelId = $_GET['level']; 
 ?>
-
 <div class="container">
     <?php
     $Read = new Read();
@@ -24,10 +23,8 @@ $levelId = $_GET['level'];
     } else {
         Error('Nível de usuário não encontrado!', 'danger');
     }
-    ?>
-</div>
-<div class="container">
-    <?php
+
+
     $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
     if(!empty($Post['update_lesson'])) {
         $updateLevelUser['level_id'] = (!empty($Post['level_name']) ? $Post['level_number'] : null );
@@ -41,23 +38,26 @@ $levelId = $_GET['level'];
         }
     }
     ?>
-    <div class="d-sm-flex align-items-center justify-content-start mb-4">
-        <i class="fas fa-layer-plus"></i>
-        <h1 class="h3 mb-0 text-gray-800">Atualizar <b><?= $DataLevel['level_desc'] ?></b></h1>
+     <div class="card shadow">
+        <div class="card-header d-sm-flex align-items-center justify-content-start mb-4">
+            <h1 class="h3 mb-0 text-gray-800">Atualizar <b><?= $DataLevel['level_desc'] ?></b></h1>
+        </div>
+        <div class="card-body">
+            <form action="" method="post">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Nível</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" name="level_name" placeholder="Nome do nível de usuário"
+                    value="<?= $DataLevel['level_desc'] ?>">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Númeração</label>
+                    <input type="number" class="form-control" id="exampleInputEmail1" name="level_number"
+                    value="<?= $DataLevel['level_id'] ?>">
+                </div>
+                <a href="<?= BASE ?>/painel/admin/level-user/list" class="btn btn-outline-success mb-2" title="Voltar para lista de níveis">Voltar</a>
+                <input type="submit" class="btn btn-success mb-2" name="update_lesson" value="Atualizar">
+            </form>
+        </div>
     </div>
-    <form action="" method="post" class="card-header">
-        <div class="form-group">
-            <label for="exampleInputEmail1">Nível</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" name="level_name" placeholder="Nome do nível de usuário"
-            value="<?= $DataLevel['level_desc'] ?>">
-        </div>
-        <div class="form-group">
-            <label for="exampleInputEmail1">Númeração</label>
-            <input type="number" class="form-control" id="exampleInputEmail1" name="level_number"
-            value="<?= $DataLevel['level_id'] ?>">
-        </div>
-        <a href="<?= BASE ?>/painel/admin/level-user/list" class="btn btn-outline-primary mb-2" title="Voltar para lista de níveis">Voltar</a>
-        <input type="submit" class="btn btn-success mb-2" name="update_lesson" value="Atualizar">
-    </form>
 </div>
 <?= $Component->getFooterDashboard(); ?>
