@@ -79,7 +79,7 @@ echo $Component->getMenuDashboard();
                         <?php
                             }
                         } else {
-                            Error("Ainda não existe lista dos cursos!", 'warning');
+                            Error("Cursos não encontrados", 'warning');
                         }   
                         ?>
                     </tbody>

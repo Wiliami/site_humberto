@@ -22,7 +22,7 @@ $userId = $_SESSION['login']['user_id'];
         FROM matriculas_cursos m 
         LEFT JOIN users u ON u.user_id = m.user_id
         LEFT JOIN cursos c ON c.curso_id = m.curso_id 
-        WHERE m.user_id = :id", "id={$userId}");
+        WHERE m.user_id = :ui", "ui={$userId}");
     if($Read->getResult()) {
         foreach($Read->getResult() as $Mat) {
             //Check::var_dump_json($Mat);

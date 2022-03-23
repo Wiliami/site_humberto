@@ -20,7 +20,9 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
         <div class="card-header py-3 d-sm-flex align-items-center justify-content-between">
             <?php
             $Read = new Read();
-            $Read->FullRead("SELECT * FROM cursos WHERE curso_id = :ci", "ci={$courseId}");
+            $Read->FullRead("SELECT * 
+                FROM cursos 
+                WHERE curso_id = :ci", "ci={$courseId}");
             if($Read->getResult()) {
                 $DataCourse = $Read->getResult()[0];
                 //Check::var_dump_json($Course)
@@ -50,7 +52,7 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
                             FROM matriculas_modulos mm 
                             LEFT JOIN cursos c ON c.curso_id = mm.curso_id
                             LEFT JOIN modulos m ON m.modulo_id = mm.modulo_id
-                            WHERE m.modulo_id = :mi", "mi={$courseId}");
+                            WHERE mm.modulo_id = :mi", "mi={$courseId}");
                         if($Read->getResult()) {
                             foreach($Read->getResult() as $Modulos) {
                                 ?>
