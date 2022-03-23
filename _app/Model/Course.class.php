@@ -76,26 +76,59 @@ class Course {
 		}
 	}
  
-	public function matriculateLesson($matriculateLesson) {
-		if(empty($matriculateLesson['aula_name'])) {
+	public function matriculateCreateLesson($matriculateLesson) {
+		if(empty($matriculateLesson['aula_id'])) {
 			$this->Error = 'Selecione uma aula!';
 			$this->Result = false;
-		} elseif(empty($matriculateLesson['user_name'])) {
+		} elseif(empty($matriculateLesson['user_id'])) {
 			$this->Error = 'Selecione um usuário!';
 			$this->Result = false;
 		} else {
+			$matriculateLesson['matricula_create_date'] = date('Y-m-d H:i:s');
+			$matriculateLesson['matricula_user_create'] = $_SESSION['login']['user_name'];
 			$Create = new Create();
-			$Create->ExeCreate('matriculas_aulas',$matriculateLesson);
+			$Create->ExeCreate('matriculas_aulas', $matriculateLesson);
 			if($Create->getResult()) {
 				$this->Error = $Create->getResult();
-				$this->Result = 'A matrícula foi realizada com sucesso!';
+				$this->Result = 'A matrícula na aula foi realizada com sucesso!';
 			} else {
 				$this->Result = false;
 				$this->Error = $Create->getError();
 			}
 		}
 	}
+	public function updateMatriculateLesson($updateMatriculateLesson, $matriculaId) {
+		if(empty($updateMatriculateLesson['aula_id'])) {
+			$this->Error = "Atualize a aula!";
+			$this->Result = false;
+		} elseif(empty($updateMatriculateLesson['user_id'])) {
+			$this->Error = "Atualize o nome do usuário!";
+			$this->Result = false;
+		} else {
+			$updateMatriculateLesson['matricula_user_update'] = $_SESSION['login']['user_name'];
+			$Update = new Update();
+			$Update->ExeUpdate("matriculas_aulas", $updateMatriculateLesson, "WHERE matricula_id = :mi", "mi={$matriculaId}");
+			if($Update->getResult()) {
+				$this->Result = $Update->getResult();
+				$this->Error = "A matrícula foi atualizada com sucesso!";
+			} else {
+				$this->Result = false;
+				$this->Error = $Update->getError();
+			}
+		}
+	}
 
+	public function deleteMatriculateLesson($matriculaId) {
+		$Delete = new Delete();
+		$Delete->ExeDelete("matriculas_aulas", "WHERE matricula_id = :mi", "mi={$matriculaId}");
+		if($Delete->getResult()) {
+			$this->Result = $Delete->getResult();
+			$this->Error = "Matrícual foi excluída com sucesso!";
+		} else {
+			$this->Result = false;
+			$this->Error = $Delete->getError();
+		}
+	}
 	
 	public function createCategoryCourse($createCategory) {
 		if(empty($createCategory['categoria_name'])) {

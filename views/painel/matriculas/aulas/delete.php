@@ -11,30 +11,48 @@ echo $Component->getLiPagesDashboard();
 echo $Component->getCreatePagesAdmin();
 echo $Component->getListPagesAdmin();
 echo $Component->getMenuDashboard();
+$matriculaId = filter_input(INPUT_GET, 'delete_matricula_aula', FILTER_VALIDATE_INT);
+
+$Read = new Read();
+$Read->FullRead("SELECT ma.*, u.user_name, a.aula_name
+    FROM matriculas_aulas ma
+    LEFT JOIN users u ON u.user_id = ma.user_id
+    LEFT JOIN aulas a ON a.aula_id = ma.aula_id
+    WHERE matricula_id = :mi", "mi={$matriculaId}");
+if($Read->getResult()) {
+    $DataMatriculaLesson = $Read->getResult()[0];
+} else {
+    Error('Matrícula não encontrada!');
+}
 ?>
-<div class="container card-header">
-    <div class="py-3 d-sm-flex align-items-center justify-content-between mb-2">
-        <h1 class="h3 mb-0 text-gray-800">Excluir aulas</h1>
-        <a href="<?= BASE ?>/painel/lesson/list" class="btn btn-success mb-2" title="Voltar para lista de aulas">Voltar</a>
-    </div>
-    <form method="post">
-        <?php
-        $Read = new Read();
-        $Read->FullRead("SELECT * FROM matriculas_aulas");
-        if($Read->getResult()) {
-            foreach($Read->getResult() as $Aulas) {
-                ?>
-        <h1 class="h5 mb-0 text-gray-800 mb-4">Excluir <?= $Aulas['matricula_aula'] ?></h1>
-        <div class="form-group">
-            <label for="exampleInputEmail1">Aula</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nome da aula" value="<?= $Aulas['matricula_aula'] ?>">
+<div class="container">
+    <div class="card shadow mb-4">
+        <div class="card-header py-3 d-sm-flex align-items-center justify-content-between">
+            <h1 class="h5 mb-0 text-gray-800">Excluir <?= $DataMatriculaLesson['aula_name'] ?></h1>
+            <a href="<?= BASE ?>/painel/lesson/list" class="btn btn-success" title="Voltar para lista de aulas" style="font-size: 11px;">Voltar</a>
         </div>
-        <a href="<?= BASE ?>/painel/matriculas-aulas/list" class="btn btn-outline-success" title="Voltar para lista de matrículas de aulas">Voltar</a>
-        <input type="submit" class="btn btn-success" name="delete_matricula" value="Excluir matrícula">     
-    </form>
-    <?php
-        }
-    }
-    ?>
+        <div class="card-body">
+            <?php
+            $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+                if(!empty($Post['delete_matriculate'])) {
+                    $Course = new Course();
+                    $Course->deleteMatriculateLesson($matriculaId);
+                    if($Course->getResult()) {
+                        Error($Course->getError());
+                    } else {
+                        Error($Course->getError(), 'warning');
+                    }
+                }
+            ?>
+            <form method="post">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Aula</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nome da aula" value="<?= $DataMatriculaLesson['aula_name'] ?>">
+                </div>
+                <a href="<?= BASE ?>/painel/matriculas/aulas/list" class="btn btn-outline-success" title="Voltar para lista de matrículas de aulas">Voltar</a>
+                <input type="submit" class="btn btn-danger" name="delete_matriculate" value="Excluir">     
+            </form>
+        </div>
+    </div>
 </div>
 <?= $Component->getFooterDashboard(); ?>

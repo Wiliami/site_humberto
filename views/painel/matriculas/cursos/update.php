@@ -22,7 +22,7 @@ $Read->FullRead("SELECT mc.*, u.user_name, c.curso_titulo
         if($Read->getResult()) { 
             $DataMatricula = $Read->getResult()[0];
         } else {
-            die(Error("Mátricula não encontrada!"));
+            die(Error("Mátricula não encontrada!", 'warning'));
         }
 ?>
 <div class="container">

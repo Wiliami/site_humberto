@@ -15,17 +15,17 @@ echo $Component->getMenuDashboard();
 <div class="container">
     <div class="card shadow mb-4">
         <div class="card-header d-sm-flex align-items-center justify-content-start mb-4">
-            <h1 class="h5 mb-0 text-gray-800">Matrícula aula</h1>
+            <h1 class="h5 mb-0 text-gray-800">Matrícula na aula</h1>
         </div>
         <div class="card-body">
-            <form method="post">
+            <form action="" method="post">
                 <?php
                 $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
                 if(!empty($Post['create_matriculate'])) {
-                    $MatriculateCourse['matricula_aula'] = $Post['lesson'];
-                    $MatriculateCourse['matricula_usuario'] = $Post['user'];
+                    $MatriculateCourse['aula_id'] = $Post['lesson'];
+                    $MatriculateCourse['user_id'] = $Post['user'];
                     $Course = new Course();
-                    $Course->matriculateLesson($MatriculateCourse);
+                    $Course->matriculateCreateLesson($MatriculateCourse);
                     if($Course->getResult()) {
                         //$DataLesson = $Course->getResult();
                         //Check::var_dump_json($DataLesson);

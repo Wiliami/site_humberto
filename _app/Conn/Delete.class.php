@@ -74,7 +74,7 @@ class Delete extends Conn {
             $this->Delete->execute($this->Places);
             $this->Result = true;
             $this->Delete->closeCursor();
-        } catch (PDOxception $e) {
+        } catch (PDOexception $e) {
             $this->Result = null;
             $this->Error = $e->getMessage();
             error_handler($e->getCode(), "Tabela: {$this->Tabela} - Erro ao deletar: " . $e->getMessage(), $e->getFile(), $e->getLine());
