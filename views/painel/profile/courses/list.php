@@ -22,17 +22,21 @@ $courseId = filter_input(INPUT_GET, 'course_user', FILTER_VALIDATE_INT);
         if($Read->getResult()) {
             $User = $Read->getResult()[0];
                 ?>
-        <h1 class="h3 mb-0 text-gray-800" style="font-size: 17px;">Cursos de <?= $User['user_name'] ?></h1>
+        <h1 class="h3 mb-0 text-gray-800" style="font-size: 17px;">Cursos de <b><?= $User['user_name'] ?></b></h1>
         <?php
             } else {
-                die(Error("Usuário não encontrado!", 'danger'));
+                die(Error("Usuário(a) não encontrado!", 'danger'));
             }
         ?>
-        <a href="<?= BASE ?>/painel/admin/users/list" class="btn btn-success" title="Voltar lista de usuários" style="font-size: 10px;">Voltar</a>
+        <a href="<?= BASE ?>/painel/admin/users/list" class="btn btn-success" title="Voltar para lista de usuários" style="font-size: 10px;">Voltar</a>
     </div>
     <div>
         <?php
-        $Read->FullRead("SELECT * FROM matriculas_cursos");
+        $Read->FullRead("SELECT mc.*, c.curso_titulo, c.curso_descricao
+            FROM matriculas_cursos mc
+            LEFT JOIN users u ON u.user_id = mc.user_id
+            LEFT JOIN cursos c ON c.curso_id = mc.curso_id
+            WHERE mc.user_id = :ui", "ui={$courseId}");
         if($Read->getResult()) {
             foreach($Read->getResult() as $Mat) {
                 ?>
@@ -43,7 +47,7 @@ $courseId = filter_input(INPUT_GET, 'course_user', FILTER_VALIDATE_INT);
                     <div class="badge bg-success bg-gradient rounded-pill mb-2 text-white">Curso</div>
                     <a class="text-decoration-none link-dark stretched-link"
                         href="<?= BASE ?>/painel/profile/courses/lesson/lesson">
-                        <h5 class="card-title mb-3"><?= $Mat['curso_id'] ?></h5>
+                        <h5 class="card-title mb-3"><?= $Mat['curso_titulo'] ?></h5>
                     </a>
                     <!--<p class="card-text mb-0"><?= $Mat['curso_descricao'] ?></p> -->
                     <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
@@ -64,7 +68,7 @@ $courseId = filter_input(INPUT_GET, 'course_user', FILTER_VALIDATE_INT);
         <?php
         }
     } else {
-        Error("Cursos do usuário não encontrados!", 'danger');
+        Error("Usuário(a) não possui nenhum curso!", 'danger');
     }   
     ?>
     </div>

@@ -4,6 +4,19 @@ class Course {
 
     private $Error;
 	private $Result;
+
+	private function verfiyDuplicateUserCourse($courseId) {
+		$Read = new Read();
+		$Read->FullRead("SELECT user_id FROM matriculas_cursos WHERE curso_id = :ci", "ci={$courseId}");
+
+		if($Read->getResult()) {
+			$this->Error = "Este curso já foi cadastrado para esse usuário!";
+			return true;
+		} else {
+			return false;
+		}
+	}
+
 	
 	public function matriculateCreateCourse($matriculateUser) {
 		if(empty($matriculateUser['curso_id'])) {
@@ -11,6 +24,8 @@ class Course {
 			$this->Result = false;
 		} elseif(empty($matriculateUser['user_id'])) {
 			$this->Error = "Selecione um usuário!";
+			$this->Result = false;
+		} elseif($this->verfiyDuplicateUserCourse($matriculateUser['curso_id'])) {
 			$this->Result = false;
 		} else {
 			$matriculateUser['matricula_create_date'] = date('Y-m-d H:i:s');

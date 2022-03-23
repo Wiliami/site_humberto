@@ -189,6 +189,7 @@ class User {
 			return false;
 		}
 	}
+
 	public function verifyLogon() { 
         if(isset($_SESSION['usuario']) || isset($_SESSION['senha'])) {
         header("Location: " . BASE . "/pages/login");
@@ -279,6 +280,7 @@ class User {
 			$this->Result = true;
 		}
 	}
+	
 	//Método para enviar email de recuperação de senha
 	public function getForgotPasswordUser($password) {
 		$Read = new Read();
