@@ -10,10 +10,11 @@ echo $Component->getLiPagesDashboard();
 echo $Component->getCreatePagesAdmin();
 echo $Component->getListPagesAdmin();
 echo $Component->getMenuDashboard();
+$Username = $_SESSION['login']['user_name'];
 ?>
 <div class="container-fluid">
     <div class="d-sm-flex align-items-center justify-content-between mb-4 ml-4">
-        <h1 class="h3 mb-0 text-gray-800">Seja bem-vindo(a), <?= $_SESSION['login']['user_name'] ?></h1>
+        <h1 class="h3 mb-0 text-gray-800">Seja bem-vindo(a), <?= $Username ?></h1>
     </div>
     <?php
     if($_SESSION["login"]["user_level"] <= 2) {

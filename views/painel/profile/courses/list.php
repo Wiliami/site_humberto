@@ -28,7 +28,7 @@ $courseId = filter_input(INPUT_GET, 'course_user', FILTER_VALIDATE_INT);
                 die(Error("Usuário não encontrado!", 'danger'));
             }
         ?>
-        <a href="<?= BASE ?>/painel/admin/users/list" class="btn btn-success">Voltar</a>
+        <a href="<?= BASE ?>/painel/admin/users/list" class="btn btn-success" title="Voltar lista de usuários" style="font-size: 10px;">Voltar</a>
     </div>
     <div>
         <?php

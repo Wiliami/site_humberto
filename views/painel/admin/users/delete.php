@@ -75,10 +75,10 @@ $userId = $_GET['delete_user'];
                                 </button>
                             </div>
                             <div class="modal-body">
-                                Tem certeza que deseja excluir esse usuário?
+                                Tem certeza que deseja excluir usuário?
                             </div>
                             <div class="modal-footer">
-                                <button class="btn btn-outline-primary mb-2" type="button" data-dismiss="modal">
+                                <button class="btn btn-outline-success mb-2" type="button" data-dismiss="modal">
                                     Cancelar
                                 </button>
                                 <input type="submit" class="btn btn-danger mb-2" name="delete_user" value="Excluir">
