@@ -36,7 +36,7 @@ echo $Component->getMenuDashboard();
                         $Read->FullRead("SELECT ma.*, u.user_name, a.aula_name
                             FROM matriculas_aulas ma
                             LEFT JOIN users u ON u.user_id = ma.user_id
-                            LEFT JOIN aulas a ON a.curso_id = ma.aula_id");
+                            LEFT JOIN aulas a ON a.aula_id = ma.aula_id");
                         if($Read->getResult()) {
                             foreach($Read->getResult() as $MatLesson) {
                                 ?>

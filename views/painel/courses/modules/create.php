@@ -11,21 +11,31 @@ echo $Component->getLiPagesDashboard();
 echo $Component->getCreatePagesAdmin();
 echo $Component->getListPagesAdmin();
 echo $Component->getMenuDashboard();
+$courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
 ?>
 <div class="container">
     <div class="card shadow mb-4">
+        <?php
+        $Read = new Read();
+        $Read->FullRead("SELECT * FROM cursos WHERE curso_id = :ci", "ci={$courseId}");
+        if($Read->getResult()) {
+            $DataCourse = $Read->getResult()[0];
+        } else {
+            Error("Curso não encontrado!", 'danger');
+        }
+        ?>
         <div class="card-header d-sm-flex align-items-center justify-content-start mb-4">
-            <h1 class="h5 mb-0 text-gray-800 ml-0">Cadastro de módulos</h1>
+            <div class="h6 mb-0 text-gray-800 ml-0">Cadastrar módulo no curso <b><?= $DataCourse['curso_titulo'] ?></b></div>
         </div>
         <div class="card-body">
             <form action="" method="post">
                 <?php
                 $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
-                if(!empty($Post['register_module'])) {
+                if(!empty($Post['create_module'])) {
                     $CreateModule['modulo_name'] = $Post['module'];
                     $CreateModule['modulo_ordem'] = $Post['order'];
                     $Course = new Course();
-                    $Course->createModule($CreateModule);
+                    $Course->createModuleCourse($CreateModule);
                     if($Course->getResult()) {
                         //header('Location: ' . BASE . '/painel/aulas');
                         Error($Course->getError());

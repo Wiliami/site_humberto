@@ -12,19 +12,21 @@ echo $Component->getLiPagesDashboard();
 echo $Component->getCreatePagesAdmin();
 echo $Component->getListPagesAdmin();
 echo $Component->getMenuDashboard();
-$cursoId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
-$Read = new Read();
+$courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
+
 ?>
 <div class="container">
     <div class="card shadow mb-4">
-        <div class="card-header py-3">
+        <div class="card-header py-3 d-sm-flex align-items-center justify-content-between">
             <?php
+            $Read = new Read();
             $Read->FullRead("SELECT * FROM cursos WHERE curso_id = :ci", "ci={$courseId}");
             if($Read->getResult()) {
-                $Course = $Read->getResult()[0];
+                $DataCourse = $Read->getResult()[0];
                 //Check::var_dump_json($Course)
                     ?>
-                <h6 class="m-0 font-weight-bold text-dark" style="font-size: 12px;"><?= $Course['curso_titulo'] ?></h6>
+                <div class="h3 m-0 text-dark" style="font-size: 12px;">Módulos de <b><?= $DataCourse['curso_titulo'] ?></b></div>
+                <a href="<?= BASE ?>/painel/courses/modules/create&course=<?= $DataCourse['curso_id'] ?>" class="btn btn-success rounded-pill" style="border-radius: 50%; font-size: 11px;">Cadastrar módulo</a>
             <?php
                 } else {
                     Error("Curso não encontrado!", 'danger');
@@ -39,14 +41,16 @@ $Read = new Read();
                             <th><span>MÓDULOS</span></th>
                             <th><span>CAD. POR</span></th>
                             <th><span>ATU. POR</span></th>
-                            <th><span>OPÇOES</span></th>
+                            <th><span>OPÇÕES</span></th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php
-                        $Read->FullRead("SELECT m.*, a.aula_name 
-                        FROM modulos m 
-                        LEFT JOIN aulas a ON a.aula_id = m.modulo_id");
+                        $Read->FullRead("SELECT mm.*, m.modulo_name
+                            FROM matriculas_modulos mm 
+                            LEFT JOIN cursos c ON c.curso_id = mm.curso_id
+                            LEFT JOIN modulos m ON m.modulo_id = mm.modulo_id
+                            WHERE m.modulo_id = :mi", "mi={$courseId}");
                         if($Read->getResult()) {
                             foreach($Read->getResult() as $Modulos) {
                                 ?>
@@ -54,19 +58,15 @@ $Read = new Read();
                             <td>
                                 <span><?= $Modulos['modulo_name'] ?></span>
                             </td>
-                            <td>    
-                                <span><?= $Modulos['modulo_user_create'] ?></span>
-                            </td>
+                            <td></td>
+                            <td></td>
                             <td>
-                                <span><?= $Modulos['modulo_user_update'] ?></span>
-                            </td>
-                            <td>
-                                <a href="<?= BASE ?>/painel/courses/lesson/list" class="table-link btn-sm" title="Aulas de <?= $Modulos['aula_name'] ?>" style="color: #1cc88a;">
+                                <!-- <a href="/painel/courses/lesson/list&lesson $Modulos['aula_id']" class="table-link btn-sm" title="Aulas de $Modulos['aula_name'] " style="color: #1cc88a;">
                                     <span class="fa-stack fa-sm">
                                         <i class="fa fa-square fa-stack-2x"></i>
                                         <i class="fas fa-chalkboard-teacher fa-stack-1x fa-inverse"></i>
                                     </span>
-                                </a>
+                                </a> -->
                                 <a href="<?= BASE ?>/painel/courses/modules/update&module=<?= $Modulos['modulo_id'] ?>" class="table-link btn-sm" title="Atualizar <?= $Modulos['modulo_name']?>">
                                     <span class="fa-stack fa-sm">
                                         <i class="fa fa-square fa-stack-2x"></i>
@@ -85,7 +85,7 @@ $Read = new Read();
                         <?php
                             }
                         } else {
-                            Error("Ainda não existe lista dos módulos!");
+                            Error("Módulos não encontrados!", 'warning');
                         }   
                         ?>
                     </tbody>
@@ -94,7 +94,7 @@ $Read = new Read();
                             <th><span>MÓDULOS</span></th>
                             <th><span>CAD. POR</span></th>
                             <th><span>ATU. POR</span></th>
-                            <th><span>OPÇOES</span></th>
+                            <th><span>OPÇÕES</span></th>
                         </tr>
                     </tfoot>
                 </table>

@@ -353,6 +353,28 @@ class Course {
 		}
 	}
 
+	// ************** MÓDULOS DE CURSOS **************
+	public function createModuleCourse($createModuleCourse) {
+		if(empty($createModuleCourse['modulo_name'])) {
+			$this->Error = "Preencha o campo de nome do módulo!";
+			$this->Result = false;
+		} elseif(empty($createModuleCourse['modulo_ordem'])) {
+			$this->Error = "Preencha o campo de número/ordem do módulo!";
+			$this->Result = false;
+		} else {
+			$createModuleCourse['modulo_user_create'] = $_SESSION['login']['user_name'];
+			$Create = new Create();
+			$Create->ExeCreate("modulos", $createModuleCourse);
+			if($Create->getResult()) {
+				$this->Result = $Create->getResult();
+				$this->Error = "Módulo cadastrado com sucesso!";
+			} else {
+				$this->Result = false;
+				$this->Error = $Create->getError();
+			}
+ 		}
+	}
+
 	public function getResult() {
 		return $this->Result;
 	}

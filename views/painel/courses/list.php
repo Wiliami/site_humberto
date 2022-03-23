@@ -16,7 +16,7 @@ echo $Component->getMenuDashboard();
 <div class="container">
     <div class="card shadow mb-4">
         <div class="card-header py-3 d-sm-flex align-items-center justify-content-between">
-            <h6 class="m-0 font-weight-bold text-dark" style="font-size: 13px">Lista de cursos</h6>
+            <div class="h5 m-0 text-dark" style="font-size: 14px">Lista de cursos</div>
             <a href="<?= BASE ?>/painel/courses/create" class="btn btn-success rounded-pill" style="border-radius: 50%; font-size: 11px;">Cadastrar novo curso</a>
         </div>
         <div class="card-body">
