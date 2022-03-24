@@ -15,8 +15,8 @@ echo $Component->getMenu();
                         style="height: 200px; width: 300px;">
                     <h1 class="display-5 fw-bolder text-white mb-2">Junte-se a nós!</h1>
                     <p class="lead text-white mt-3">
-                    Se inscreva em nosso canal <br>
-                    do youtube para acompanhar <br>
+                    Se inscreva em nosso canal<br>
+                    do youtube para acompanhar<br>
                     novos conteúdos!
                     </p>
                 </div>
@@ -29,8 +29,8 @@ echo $Component->getMenu();
     </div>
 </header>
 
-<section class="header-2 mt-4">
-    <div class="page-header min-vh-100 relative">
+<section class="mt-4">
+    <div class="min-vh-100 relative">
         <span class="mask opacity-4"></span>
         <div class="container">
             <div class="row">
@@ -41,6 +41,7 @@ echo $Component->getMenu();
                 Acreditamos que as mídias sociais têm o poder<br> de impulsionar conteúdos relevantes para as
                 pessoas. <br>Então, usamos esta ferramenta de divulgação de conteúdos,<br> o youtube, para criar e
                 postar conteúdos de qualidade.
+                </p>
                 </div>
                 <div class="d-grid gap-3 d--flsmex justify-content-sm-center justify-content-xl-start">
                     <a class="btn btn-primary btn-lg px-4 me-sm-3" style="margin-top: 10px;" href="https://www.youtube.com/channel/UClFMwemd5j7EsXlV-gTw5Xg">Canal no youtube</a>
@@ -50,14 +51,11 @@ echo $Component->getMenu();
     </div>
 </section>
 
-
-
-
 <!-- Vídeos background -->
 <section class="py-5 bg-white">
     <div class="container px-5 my-5">
         <div class="d-flex justify-content-start align-items-center mb-2">
-            <span class="fw-bolder text-dark"> Lançamentos | Confira os vídeos mais recentes do canal</span>
+            <span class="text-dark"> <b>Lançamentos</b> | Confira os vídeos mais recentes do canal</span>
         </div>
         <div class="row gx-5">
             <div class="col-lg-4 mb-5">

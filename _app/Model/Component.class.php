@@ -71,110 +71,110 @@ class Component {
         return '
             <footer class="footer pt-5 mt-5">
             <div class="container">
-            <div class=" row">
-                <div class="col-md-3 mb-4 ms-auto">
-                <div>
-                    <!-- <a href=" ' . BASE . '/" type=\"button\" class=\" nav btn btn-black mb-2 mb-md-0\" style="width: 250; height: 100;">
-                        <img src="' . BASE . '/src/images/icon_small.png" alt="Logo" style=" width: 50px; height: 50px;">
-                    </a> -->
-                    <h6 class="font-weight-bolder mb-4">Humberto Oliveira</h6>
-                </div>
-                <div>
-                    <ul class="d-flex flex-row ms-n3 nav">
+                <div class=" row">
+                    <div class="col-md-3 mb-4 ms-auto">
+                    <div>
+                        <!-- <a href=" ' . BASE . '/" type=\"button\" class=\" nav btn btn-black mb-2 mb-md-0\" style="width: 250; height: 100;">
+                            <img src="' . BASE . '/src/images/icon_small.png" alt="Logo" style=" width: 50px; height: 50px;">
+                        </a> -->
+                        <h6 class="font-weight-bolder mb-4">Humberto Oliveira</h6>
+                    </div>
+                    <div>
+                        <ul class="d-flex flex-row ms-n3 nav">
+                            <li class="nav-item">
+                                <a class="nav-link pe-1" href="https://www.facebook.com/educacaoetreinamentos/" target="_blank">
+                                    <i class="fab fa-facebook text-lg opacity-8"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link pe-1" href="https://www.youtube.com/channel/UClFMwemd5j7EsXlV-gTw5Xg" target="_blank">
+                                    <i class="fab fa-youtube text-lg opacity-8"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    </div>
+                    <div class="col-md-2 col-sm-6 col-6 mb-4">
+                    <div>
+                        <h6 class="text-sm">Parcerias</h6>
+                        <ul class="flex-column ms-n3 nav">
                         <li class="nav-item">
-                            <a class="nav-link pe-1" href="https://www.facebook.com/educacaoetreinamentos/" target="_blank">
-                                <i class="fab fa-facebook text-lg opacity-8"></i>
+                            <a class="nav-link" href="https://www.unitbrasil.com/" target="_blank">
+                            UNITBRASIL
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link pe-1" href="https://www.youtube.com/channel/UClFMwemd5j7EsXlV-gTw5Xg" target="_blank">
-                                <i class="fab fa-youtube text-lg opacity-8"></i>
+                            <a class="nav-link" href="https://www.adventistas.org/pt/" target="_blank">
+                            Igreja Adventista
                             </a>
                         </li>
-                    </ul>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://www.unitplus.com.br/" target="_blank">
+                            Unitplus
+                            </a>
+                        </li>
+                        </ul>
+                    </div>
+                    </div>
+                    <!-- <div class="col-md-2 col-sm-6 col-6 mb-4">
+                    <div>
+                        <h6 class="text-sm">Recursos</h6>
+                        <ul class="flex-column ms-n3 nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://iradesign.io/" target="_blank">
+                            Fotos
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://www.creative-tim.com/bits" target="_blank">
+                            Eventos
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://www.creative-tim.com/affiliates/new" target="_blank">
+                            Patron me
+                            </a>
+                        </li>
+                        </ul>
+                    </div>
+                    </div> -->
+                    <div class="col-md-2 col-sm-6 col-6 mb-4">
+                    <div>
+                        <h6 class="text-sm">Ajuda & Suporte</h6>
+                        <ul class="flex-column ms-n3 nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="' . BASE . '/home/contato">
+                            Entre em contato
+                            </a>
+                        </li> 
+                        </ul>
+                    </div>
+                    </div>
+                    <div class="col-md-2 col-sm-6 col-6 mb-4 me-auto">
+                    <div>
+                        <h6 class="text-sm">Legal</h6>
+                        <ul class="flex-column ms-n3 nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="' . BASE . '/pages/termos-de-uso">
+                            Termos & Condições
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="' . BASE . '/pages/politica-privacidade">
+                            Política de privacidade
+                            </a>
+                        </li>
+                        </ul>
+                    </div>
+                    </div>
+                    <div class="col-12">
+                    <div class="text-center">
+                        <p class="text-dark my-4 text-sm font-weight-normal">
+                        Desenvolvido por Unitplus | Copyright ' . date('Y') . ' © <a href="https://www.unitplus.com.br/" target="_blank">Unitplus</a>.
+                        </p>
+                    </div>
+                    </div>
                 </div>
-                </div>
-                <div class="col-md-2 col-sm-6 col-6 mb-4">
-                <div>
-                    <h6 class="text-sm">Parcerias</h6>
-                    <ul class="flex-column ms-n3 nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://www.unitbrasil.com/" target="_blank">
-                        UNITBRASIL
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://www.adventistas.org/pt/" target="_blank">
-                        Igreja Adventista
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://www.unitplus.com.br/" target="_blank">
-                        Unitplus
-                        </a>
-                    </li>
-                    </ul>
-                </div>
-                </div>
-                <!-- <div class="col-md-2 col-sm-6 col-6 mb-4">
-                <div>
-                    <h6 class="text-sm">Recursos</h6>
-                    <ul class="flex-column ms-n3 nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://iradesign.io/" target="_blank">
-                        Fotos
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://www.creative-tim.com/bits" target="_blank">
-                        Eventos
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://www.creative-tim.com/affiliates/new" target="_blank">
-                        Patron me
-                        </a>
-                    </li>
-                    </ul>
-                </div>
-                </div> -->
-                <div class="col-md-2 col-sm-6 col-6 mb-4">
-                <div>
-                    <h6 class="text-sm">Ajuda & Suporte</h6>
-                    <ul class="flex-column ms-n3 nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="' . BASE . '/home/contato">
-                        Entre em contato
-                        </a>
-                    </li> 
-                    </ul>
-                </div>
-                </div>
-                <div class="col-md-2 col-sm-6 col-6 mb-4 me-auto">
-                <div>
-                    <h6 class="text-sm">Legal</h6>
-                    <ul class="flex-column ms-n3 nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="' . BASE . '/pages/termos-de-uso">
-                        Termos & Condições
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="' . BASE . '/pages/politica-privacidade">
-                        Política de privacidade
-                        </a>
-                    </li>
-                    </ul>
-                </div>
-                </div>
-                <div class="col-12">
-                <div class="text-center">
-                    <p class="text-dark my-4 text-sm font-weight-normal">
-                    Desenvolvido por Unitplus | Copyright ' . date('Y') . ' © <a href="https://www.unitplus.com.br/" target="_blank">Unitplus</a>.
-                    </p>
-                </div>
-                </div>
-            </div>
             </div>
         </footer>
       </body>
