@@ -170,7 +170,7 @@ class Component {
                 <div class="col-12">
                 <div class="text-center">
                     <p class="text-dark my-4 text-sm font-weight-normal">
-                    Desenvolvido por Unitplus | Copyright início-projeto-' . date('Y') . ' © <a href="https://www.unitplus.com.br/" target="_blank">Unitplus</a>.
+                    Desenvolvido por Unitplus | Copyright ' . date('Y') . ' © <a href="https://www.unitplus.com.br/" target="_blank">Unitplus</a>.
                     </p>
                 </div>
                 </div>

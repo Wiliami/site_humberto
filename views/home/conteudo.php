@@ -14,8 +14,11 @@ echo $Component->getMenu();
                         class="d-sm-flex justify-content-sm-center justify-content-xl-start" alt="youtube logo"
                         style="height: 200px; width: 300px;">
                     <h1 class="display-5 fw-bolder text-white mb-2">Junte-se a nós!</h1>
-                    <p class="lead text-white mt-3">Se inscreva em nosso canal <br> do youtube para acompanhar <br>
-                        novos conteúdos!</p>
+                    <p class="lead text-white mt-3">
+                    Se inscreva em nosso canal <br>
+                    do youtube para acompanhar <br>
+                    novos conteúdos!
+                    </p>
                 </div>
                 <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
                     <a class="btn btn-primary btn-lg px-4 me-sm-3"
@@ -25,33 +28,36 @@ echo $Component->getMenu();
         </div>
     </div>
 </header>
-<section class="py-sm-7 py-5 position-relative">
-    <div class="container">
-        <div class="row">
-            <div class="col-12 mx-auto text-center text-xl-start">
-                <div class="row py-5">
-                    <div class="col-lg-7 col-md-7 z-index-2 position-relative px-md-2 px-sm-5 mx-auto mt-4">
-                        <div class="d-flex justify-content-between align-items-center mb-2">
-                            <!-- Title -->
-                            <h3 class="mb-0">Conteúdo através da mídia</h3>
-                        </div>
-                        <p class="text-lg mb-0 text-start">
-                            Acreditamos que as mídias sociais têm o poder de impulsionar conteúdos relevantes para as
-                            pessoas. Então, usamos esta ferramenta de divulgação de conteúdos, o youtube, para criar e
-                            postar conteúdos de qualidade.</p>
-                        </div>
-                    </div>
+
+<section class="header-2 mt-4">
+    <div class="page-header min-vh-100 relative">
+        <span class="mask opacity-4"></span>
+        <div class="container">
+            <div class="row">
+                <div class="my-5 text-center text-xl-start">
+                    <h3 class="mb-0">Conteúdo através da mídia</h3>
+                </div>
+                <p class="text-lg mb-0">
+                Acreditamos que as mídias sociais têm o poder<br> de impulsionar conteúdos relevantes para as
+                pessoas. <br>Então, usamos esta ferramenta de divulgação de conteúdos,<br> o youtube, para criar e
+                postar conteúdos de qualidade.
+                </div>
+                <div class="d-grid gap-3 d--flsmex justify-content-sm-center justify-content-xl-start">
+                    <a class="btn btn-primary btn-lg px-4 me-sm-3" style="margin-top: 10px;" href="https://www.youtube.com/channel/UClFMwemd5j7EsXlV-gTw5Xg">Canal no youtube</a>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+
+
+
 <!-- Vídeos background -->
 <section class="py-5 bg-white">
     <div class="container px-5 my-5">
         <div class="d-flex justify-content-start align-items-center mb-2">
-            <h3 class="">Lançamentos |</h3>
-            <span class="fw-bolder text-dark"> Confira os vídeos mais recentes do canal</span>
+            <span class="fw-bolder text-dark"> Lançamentos | Confira os vídeos mais recentes do canal</span>
         </div>
         <div class="row gx-5">
             <div class="col-lg-4 mb-5">
@@ -91,7 +97,7 @@ echo $Component->getMenu();
                         <div class="container h-100">
                             <div class="d-flex h-100 text-center align-items-center mt-3">
                                 <div class="my-5 text-center text-xl-start">
-                                    <h1 class="display-5 fw-bolder text-dark mb-2">Camporee 2021</h1>
+                                    <h1 class="display-5 fw-bolder text-dark mb-2">Eventos</h1>
                                     <p class="lead fw-normal text-dark-50 mb-4">Camporee de Conquistadores realizado em
                                         23 de outubro de 2021 na Venezuela</p>
                                     <div
