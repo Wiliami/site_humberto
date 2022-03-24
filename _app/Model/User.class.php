@@ -177,7 +177,7 @@ class User {
 	
 	
 	
-	private function verifyDuplicateUserEmail($email ) {
+	private function verifyDuplicateUserEmail($email) {
 		$Read = new Read();
 		$Read->FullRead("SELECT user_name FROM users WHERE user_email = :em", "em={$email}");
 

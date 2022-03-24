@@ -766,14 +766,6 @@ class Component {
                                 <i class="fas fa-book"></i>
                                 Categoria de curso
                             </a>
-                            <a class="collapse-item" href="' . BASE . '/painel/courses/modules/create">
-                                <i class="fas fa-columns"></i>
-                                Módulo de curso
-                            </a>
-                            <a class="collapse-item" href="' . BASE . '/painel/lesson/create">
-                                <i class="fas fa-chalkboard-teacher"></i>
-                                Aula
-                            </a>
                         </div>
                     </div>
                 </li>';
@@ -797,21 +789,21 @@ class Component {
                         <i class="fas fa-user"></i>
                         Usuários
                     </a>
-                    <a class="collapse-item" href="' . BASE . '/painel/matriculas/cursos/list">
-                        <i class="fas fa-user"></i>
-                        Matrículas de cursos
-                    </a>
-                    <a class="collapse-item" href="' . BASE . '/painel/admin/level-user/list">
-                        <i class="fas fa-user"></i>
-                        Níveis de usuários
-                    </a>
                     <a class="collapse-item" href="' . BASE . '/painel/courses/list">
                         <i class="fas fa-book"></i>
                         Cursos
                     </a>
+                    <a class="collapse-item" href="' . BASE . '/painel/matriculas/cursos/list">
+                        <i class="fas fa-user"></i>
+                        Matrículas cursos
+                    </a>
+                    <a class="collapse-item" href="' . BASE . '/painel/admin/level-user/list">
+                        <i class="fas fa-user"></i>
+                        Níveis usuários
+                    </a>
                     <a class="collapse-item" href="' . BASE . '/painel/courses/categorias/list">
                         <i class="fas fa-book"></i>
-                        Categorias de cursos
+                        Categorias cursos
                     </a>
                 </div>
             </div>

@@ -71,7 +71,7 @@
                 <div class="col-md-7">
                     <div class="">
                         <div class="text-center"> <img src="<?= BASE ?>/src/images/humberto.png" alt="humberto" width="100" class="rounded-circle"> </div>
-                        <div class="text-center mt-3"> <span class="bg-secondary p-1 px-4 rounded text-white">CEO</span>
+                        <div class="text-center mt-3"> <span class="bg-warning p-1 px-4 rounded text-white">CEO</span>
                             <h5 class="mt-2 mb-0">Humberto Oliveira</h5> <span>Empresário • Palestrante • Educador • Coach • Administrador • Teólogo/Pr.</span>
                             <div class="px-4 mt-1">
                                 <p class="fonts">"Atraímos pessoas quando nos preparamos <br> para resolver os problemas delas!".</p>
@@ -94,8 +94,8 @@
                                 </li>
                             </ul>
                             <div class="buttons">
-                                <button class="btn btn-outline-primary px-4"><a href="<?= BASE ?>/home/page-profile" class="text-primary">Leia mais</a></button>
-                                <button class="btn btn-primary px-4 ms-3"><a href="<?= BASE ?>/home/contato" class="text-white">Contato</a></button> 
+                                <button class="btn btn-outline-warning px-4"><a href="<?= BASE ?>/home/page-profile" class="text-warning">Leia mais</a></button>
+                                <button class="btn btn-warning px-4 ms-3"><a href="<?= BASE ?>/home/contato" class="text-white">Contato</a></button> 
                             </div>
                         </div>
                     </div>
