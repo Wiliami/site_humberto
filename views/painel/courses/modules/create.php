@@ -32,8 +32,8 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
                 <?php
                 $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
                 if(!empty($Post['create_module'])) {
-                    $CreateModule['modulo_name'] = $Post['module'];
-                    $CreateModule['modulo_ordem'] = $Post['order'];
+                    $CreateModule['modulo_id'] = $Post['module'];
+                    //$CreateModule['modulo_ordem'] = $Post['order'];
                     $Course = new Course();
                     $Course->createModuleCourse($CreateModule);
                     if($Course->getResult()) {
@@ -49,11 +49,11 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
                     <input type="text" class="form-control" id="exampleInputEmail1" name="module" placeholder="Nome do módulo"
                     value="<?= isset($Post['module'])? $Post['module']: '' ?>">
                 </div>
-                <div class="mb-3">
+                <!-- <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Ordem</label>
                     <input type="number" class="form-control" id="exampleInputEmail1" name="order" placeholder="Número de ordem do módulo"
-                    value="<?= isset($Post['order'])? $Post['order']: '' ?>">
-                </div>
+                    value=" isset($Post['order'])? $Post['order']: '' ">
+                </div> -->
                 <a href="<?= BASE ?>/painel/courses/modules/list" class="btn btn-outline-success" title="Voltar para lista de módulos">Voltar</a>
                 <input type="submit" class="btn btn-success" name="create_module" value="Cadastrar">
             </form>
