@@ -13,7 +13,6 @@ echo $Component->getCreatePagesAdmin();
 echo $Component->getListPagesAdmin();
 echo $Component->getMenuDashboard();
 $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
-
 ?>
 <div class="container">
     <div class="card shadow mb-4">
@@ -27,7 +26,7 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
                 $DataCourse = $Read->getResult()[0];
                 //Check::var_dump_json($Course)
                     ?>
-                <div class="h3 m-0 text-dark" style="font-size: 12px;">Módulos de <b><?= $DataCourse['curso_titulo'] ?></b></div>
+                <div class="h3 m-0 text-dark" style="font-size: 12px;">Módulos do curso: <b><?= $DataCourse['curso_titulo'] ?></b></div>
                 <a href="<?= BASE ?>/painel/courses/modules/create&course=<?= $DataCourse['curso_id'] ?>" class="btn btn-success rounded-pill" style="border-radius: 50%; font-size: 11px;">Cadastrar módulo</a>
             <?php
                 } else {
@@ -48,9 +47,8 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
                     </thead>
                     <tbody>
                         <?php
-                        $Read->FullRead("SELECT m.*, a.aula_name
+                        $Read->FullRead("SELECT m.*
                             FROM modulos m
-                            LEFT JOIN aulas a ON a.aula_id = m.aula_id
                             WHERE m.curso_id = :mi", "mi={$courseId}");
                         if($Read->getResult()) {
                             foreach($Read->getResult() as $Modulos) {
@@ -68,7 +66,7 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
                                         <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
                                     </span>
                                 </a>
-                                <a href="/painel/courses/lesson/list&lesson=<?= $Modulos['aula_id'] ?>" class="table-link btn-sm" title="Aulas de <?= $Modulos['aula_name'] ?>" style="color: #1cc88a;">
+                                <a href="<?= BASE ?>/painel/courses/lesson/list&modulo=<?= $Modulos['modulo_id'] ?>" class="table-link btn-sm" title="Aulas de <?= $Modulos['modulo_name'] ?>" style="color: #1cc88a;">
                                     <span class="fa-stack fa-sm">
                                         <i class="fa fa-square fa-stack-2x"></i>
                                         <i class="fas fa-chalkboard-teacher fa-stack-1x fa-inverse"></i>
@@ -108,7 +106,7 @@ $(document).ready(function() {
     $("#table-lista-modulos").DataTable({
         "language": {
             "lengthMenu": "Mostrando _MENU_ registros por página",
-            "zeroRecords": "Nenhum registro foi encontrado",
+            "zeroRecords": "Nenhum módulo foi encontrado",
             "info": "Mostrando página _PAGE_ de _PAGES_ registros",
             "infoEmpty": "Nenhum registro foi encontrado",
             "infoFiltered": "(filtrado de _MAX_ registros no total)"

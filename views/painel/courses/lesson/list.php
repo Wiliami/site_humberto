@@ -12,11 +12,23 @@ echo $Component->getLiPagesDashboard();
 echo $Component->getCreatePagesAdmin();
 echo $Component->getListPagesAdmin();
 echo $Component->getMenuDashboard();
+$moduleId = filter_input(INPUT_GET, 'modulo', FILTER_VALIDATE_INT);
 ?>
 <div class="container">
     <div class="card shadow mb-4">
         <div class="card-header py-3 d-sm-flex align-items-center justify-content-between">
-            <h6 class="m-0 font-weight-bold text-dark" style="font-size: 12px;">Nome do módulo aqui</h6>
+            <?php
+            $Read = new Read();
+            $Read->FullRead("SELECT * FROM modulos WHERE modulo_id = :mi", "mi={$moduleId}");
+            if($Read->getResult()) {
+                $DataModule = $Read->getResult()[0];
+                    ?>
+                <h6 class="m-0 text-dark" style="font-size: 13px;">Aulas do módulo: <b><?= $DataModule['modulo_name'] ?></b></h6>
+            <?php
+            } else  {
+                Error("Módulo não encontrado!", 'danger');
+            }
+            ?>
             <a href="<?= BASE ?>/painel/courses/lesson/create" class="btn btn-success rounded-pill" style="border-radius: 50%; font-size: 11px;">Cadastrar nova aula</a>
         </div>
         <div class="card-body">
@@ -25,11 +37,11 @@ echo $Component->getMenuDashboard();
                     <thead>
                         <tr class="btn-sm" style="font-size: 10px">
                             <th><span>AULAS</span></th>
-                            <th><span>DURAÇAO DA AULA</span></th>
+                            <th><span>DURAÇÃO DA AULA</span></th>
                             <th><span>URL DA AULA</span></th>
                             <th><span>CAD. POR</span></th>
                             <th><span>ATU. POR </span></th>
-                            <th><span>OPÇOES</span></th>
+                            <th><span>OPÇÕES</span></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -80,11 +92,11 @@ echo $Component->getMenuDashboard();
                     <tfoot>
                         <tr style="font-size: 10px">
                             <th><span>AULAS</span></th>
-                            <th><span>DURAÇAO DA AULA</span></th>
+                            <th><span>DURAÇÃO DA AULA</span></th>
                             <th><span>URL DA AULA</span></th>
                             <th><span>CAD. POR</span></th>
                             <th><span>ATU. POR </span></th>
-                            <th><span>OPÇOES</span></th>
+                            <th><span>OPÇÕES</span></th>
                         </tr>
                     </tfoot>
                 </table>
