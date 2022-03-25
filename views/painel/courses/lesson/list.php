@@ -108,15 +108,15 @@ $moduleId = filter_input(INPUT_GET, 'modulo', FILTER_VALIDATE_INT);
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
 <script>
-    $(document).ready(function() {
-        $("#table-lista-cursos").DataTable({
-            "language": {
-                "lengthMenu": "Mostrando _MENU_ registros por página",
-                "zeroRecords": "Nenhum resultado foi encontrado",
-                "info": "Mostrando página _PAGE_ de _PAGES_",
-                "infoEmpty": "Nenhum registro disponível",
-                "infoFiltered": "(filtrado de _MAX_ registros no total)"
-            }
-        });
+$(document).ready(function() {
+    $("#table-lista-cursos").DataTable({
+        "language": {
+            "lengthMenu": "Mostrando _MENU_ registros por página",
+            "zeroRecords": "Nenhum resultado foi encontrado",
+            "info": "Mostrando página _PAGE_ de _PAGES_",
+            "infoEmpty": "Nenhum registro disponível",
+            "infoFiltered": "(filtrado de _MAX_ registros no total)"
+        }
     });
+});
 </script>
