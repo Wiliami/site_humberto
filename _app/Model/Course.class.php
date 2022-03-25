@@ -243,7 +243,7 @@ class Course {
 				$this->Result = false;
 			} else {
 				$dataModule['modulo_create_date'] = date('Y-m-d H:i:s');
-				$dataModule['modulo_user_create'] = $_SESSION['login']['user_name'];
+				$dataModule['modulo_user_create'] = $_SESSION['login']['user_id'];
 				$Create = new Create();
 				$Create->ExeCreate("modulos", $dataModule);
 				if($Create->getResult()) {
@@ -290,25 +290,20 @@ class Course {
 	}
 
 
-	// ******** AULAS ************
-	public function createLesson($dataLesson) {
-		if(empty($dataLesson['curso_titulo'])) {
-			$this->Error = "Selecione um curso para cadastrar a aula!";
-			$this->Result = false;
-		} elseif(empty($dataLesson['modulo_name'])) {
-			$this->Error = "Selecione um módulo para cadastrar a aula";
-			$this->Result = false;
-		} elseif(empty($dataLesson['aula_name'])) {
+	// *************** AULAS ***************
+	public function createLessonModule($dataLesson) {
+		if(empty($dataLesson['aula_name'])) {
 			$this->Error = "A aula precisa de um nome!";
 			$this->Result = false;
 		} elseif(empty($dataLesson['aula_duracao'])) {
-			$this->Error = "Ops! Qual é a duração da aula?";
+			$this->Error = "Qual é a duração da aula?";
 			$this->Result = false;
 		} elseif(empty($dataLesson['aula_url'])) {
 			$this->Error = "A aula precisa de uma url!";
 			$this->Result = false;
 		} else {
 			$dataLesson['aula_create_date'] = date('Y-m-d H:i:s');
+			$dataLesson['aula_create_user'] = $_SESSION['login']['user_id'];
 			$Create = new Create();
 			$Create->exeCreate("aulas", $dataLesson); // eu estou enviando a criação de aulas para a tabela de aulas.
 			if($Create->getResult()) {
@@ -355,7 +350,7 @@ class Course {
 	}
 
 	// ************** MÓDULOS DE CURSOS **************
-	public function createModuleCourse($createModuleCourse, $DataCourse) {
+	public function createModuleCourse($createModuleCourse) {
 		if(empty($createModuleCourse['modulo_name'])) {
 			$this->Error = "Preencha o campo de nome do módulo!";
 			$this->Result = false;

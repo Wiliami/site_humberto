@@ -29,7 +29,7 @@ $moduleId = filter_input(INPUT_GET, 'modulo', FILTER_VALIDATE_INT);
                 Error("Módulo não encontrado!", 'danger');
             }
             ?>
-            <a href="<?= BASE ?>/painel/courses/lesson/create" class="btn btn-success rounded-pill" style="border-radius: 50%; font-size: 11px;">Cadastrar nova aula</a>
+            <a href="<?= BASE ?>/painel/courses/lesson/create&module=<?= $DataModule['modulo_id'] ?>" class="btn btn-success rounded-pill" style="border-radius: 50%; font-size: 11px;">Cadastrar nova aula</a>
         </div>
         <div class="card-body">
             <div class="table-responsive">
