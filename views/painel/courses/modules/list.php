@@ -48,11 +48,10 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
                     </thead>
                     <tbody>
                         <?php
-                        $Read->FullRead("SELECT mm.*, m.modulo_name
-                            FROM matriculas_modulos mm 
-                            LEFT JOIN cursos c ON c.curso_id = mm.curso_id
-                            LEFT JOIN modulos m ON m.modulo_id = mm.modulo_id
-                            WHERE mm.modulo_id = :mi", "mi={$courseId}");
+                        $Read->FullRead("SELECT m.*, a.aula_name
+                            FROM modulos m
+                            LEFT JOIN aulas a ON a.aula_id = m.aula_id
+                            WHERE m.curso_id = :mi", "mi={$courseId}");
                         if($Read->getResult()) {
                             foreach($Read->getResult() as $Modulos) {
                                 ?>
@@ -63,16 +62,16 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
                             <td></td>
                             <td></td>
                             <td>
-                                <!-- <a href="/painel/courses/lesson/list&lesson $Modulos['aula_id']" class="table-link btn-sm" title="Aulas de $Modulos['aula_name'] " style="color: #1cc88a;">
-                                    <span class="fa-stack fa-sm">
-                                        <i class="fa fa-square fa-stack-2x"></i>
-                                        <i class="fas fa-chalkboard-teacher fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a> -->
-                                <a href="<?= BASE ?>/painel/courses/modules/update&module=<?= $Modulos['modulo_id'] ?>" class="table-link btn-sm" title="Atualizar <?= $Modulos['modulo_name']?>">
+                                <a href="<?= BASE ?>/painel/courses/modules/update&module=<?= $Modulos['modulo_id'] ?>" class="table-link btn-sm" title="Atualizar <?= $Modulos['modulo_name'] ?>">
                                     <span class="fa-stack fa-sm">
                                         <i class="fa fa-square fa-stack-2x"></i>
                                         <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                                <a href="/painel/courses/lesson/list&lesson=<?= $Modulos['aula_id'] ?>" class="table-link btn-sm" title="Aulas de <?= $Modulos['aula_name'] ?>" style="color: #1cc88a;">
+                                    <span class="fa-stack fa-sm">
+                                        <i class="fa fa-square fa-stack-2x"></i>
+                                        <i class="fas fa-chalkboard-teacher fa-stack-1x fa-inverse"></i>
                                     </span>
                                 </a>
                                 <a href="<?= BASE ?>/painel/courses/modules/delete&delete_module=<?= $Modulos['modulo_id'] ?>" class="table-link danger btn-sm" title="Excluir <?= $Modulos['modulo_name'] ?>" style="color: red;" title="Excluir curso">
@@ -85,9 +84,7 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
                         </tr>
                         <?php
                             }
-                        } else {
-                            Error("Módulos não encontrados!", 'warning');
-                        }   
+                        }  
                         ?>
                     </tbody>
                     <tfoot>

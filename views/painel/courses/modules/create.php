@@ -32,10 +32,13 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
                 <?php
                 $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
                 if(!empty($Post['create_module'])) {
-                    $CreateModule['modulo_id'] = $Post['module'];
+                    $CreateModule['modulo_name'] = $Post['module'];
+
+                    
                     //$CreateModule['modulo_ordem'] = $Post['order'];
+                    $CreateModule['curso_id'] = $courseId;
                     $Course = new Course();
-                    $Course->createModuleCourse($CreateModule);
+                    $Course->createModuleCourse($CreateModule, $DataCourse);
                     if($Course->getResult()) {
                         //header('Location: ' . BASE . '/painel/aulas');
                         Error($Course->getError());

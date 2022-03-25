@@ -97,6 +97,7 @@ class Course {
 			}
 		}
 	}
+
 	public function updateMatriculateLesson($updateMatriculateLesson, $matriculaId) {
 		if(empty($updateMatriculateLesson['aula_id'])) {
 			$this->Error = "Atualize a aula!";
@@ -354,14 +355,15 @@ class Course {
 	}
 
 	// ************** MÓDULOS DE CURSOS **************
-	public function createModuleCourse($createModuleCourse) {
-		if(empty($createModuleCourse['modulo_id'])) {
+	public function createModuleCourse($createModuleCourse, $DataCourse) {
+		if(empty($createModuleCourse['modulo_name'])) {
 			$this->Error = "Preencha o campo de nome do módulo!";
 			$this->Result = false;
 		} else {
-			$createModuleCourse['matricula_create_user'] = $_SESSION['login']['user_name'];
+			$createModuleCourse['modulo_create_user'] = $_SESSION['login']['user_id'];
+			$createModuleCourse['modulo_create_date'] = date('Y-m-d H:i:s');
 			$Create = new Create();
-			$Create->ExeCreate("matriculas_modulos", $createModuleCourse);
+			$Create->ExeCreate("modulos", $createModuleCourse);
 			if($Create->getResult()) {
 				$this->Result = $Create->getResult();
 				$this->Error = "Módulo cadastrado com sucesso!";
