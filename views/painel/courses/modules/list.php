@@ -26,7 +26,7 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
                 $DataCourse = $Read->getResult()[0];
                 //Check::var_dump_json($Course)
                     ?>
-                <div class="h3 m-0 text-dark" style="font-size: 12px;">Módulos do curso: <b><?= $DataCourse['curso_titulo'] ?></b></div>
+                <div class="h3 m-0 text-dark" style="font-size: 15px;">Módulos do curso: <b><?= $DataCourse['curso_titulo'] ?></b></div>
                 <a href="<?= BASE ?>/painel/courses/modules/create&course=<?= $DataCourse['curso_id'] ?>" class="btn btn-success rounded-pill" style="border-radius: 50%; font-size: 11px;">Cadastrar módulo</a>
             <?php
                 } else {
@@ -36,7 +36,7 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
         </div>
         <div class="card-body">
             <div class="table-responsive">
-                <table id="table-lista-modulos" class="cell-border compact stripe table-striped" style="width: 100%;">
+                <table id="table_lista_modulos" class="cell-border compact stripe table-striped" style="width: 100%;">
                     <thead>
                         <tr style ="font-size: 10px;">
                             <th><span>MÓDULOS</span></th>
@@ -103,7 +103,7 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
 <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
 <script>
 $(document).ready(function() {
-    $("#table-lista-modulos").DataTable({
+    $("#table_lista_modulos").DataTable({
         "language": {
             "lengthMenu": "Mostrando _MENU_ registros por página",
             "zeroRecords": "Nenhum módulo foi encontrado",

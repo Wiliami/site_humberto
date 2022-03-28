@@ -11,14 +11,26 @@ echo $Component->getLiPagesDashboard();
 echo $Component->getCreatePagesAdmin();
 echo $Component->getListPagesAdmin();
 echo $Component->getMenuDashboard();
+$userId = filter_input(INPUT_GET, 'user', FILTER_VALIDATE_INT);
 ?>
 <div class="container">
     <div class="card shadow mb-4">
         <div class="card-header d-sm-flex align-items-center justify-content-start mb-4">
-            <h1 class="h5 mb-0 text-gray-800">Matrícula de curso</h1>
+            <?php
+            $Read = new Read();
+            $Read->FullRead("SELECT * FROM users WHERE user_id = :ui", "ui={$userId}");
+            if($Read->getResult()) {
+                $Username = $Read->getResult()[0];
+            ?>
+            <h1 class="h5 mb-0 text-gray-800"><?= $Username['user_name'] ?></h1>
+            <?php
+            } else {
+                die(Error("Usuário não encontrados!", "warning"));
+            }
+            ?>
         </div>
         <div class="card-body">
-            <form method="post">
+            <form action="" method="post">
                 <?php
                 $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
                 if(!empty($Post['create_matriculate'])) {
@@ -27,7 +39,7 @@ echo $Component->getMenuDashboard();
                     $Course = new Course();
                     $Course->matriculateCreateCourse($matriculateUser);
                     if($Course->getResult()) {
-                        Error($Course->getResult());    
+                        Error($Course->getError());    
                     } else {
                         Error($Course->getError(), 'warning');
                     }

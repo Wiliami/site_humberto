@@ -57,26 +57,10 @@ echo $Component->getMenuDashboard();
                             <td>
                                 <?= $Users['user_update_resp'] ?>
                             </td>
-                           
                             <td>
-                                <a href="<?= BASE ?>/painel/admin/users/update&update_user=<?= $Users['user_id'] ?>" class="table-link btn-sm" title="Editar <?= $Users['user_name'] ?> ">
-                                    <span class="fa-stack fa-sm">
-                                        <i class="fa fa-square fa-stack-2x"></i>
-                                        <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                                <a href="<?= BASE ?>/painel/profile/courses/list&course_user=<?= $Users['user_id'] ?>" class="table-link btn-sm" title="Cursos de <?= $Users['user_name'] ?> " style="color: #1cc88a;">
-                                    <span class="fa-stack fa-sm">
-                                        <i class="fa fa-square fa-stack-2x"></i>
-                                        <i class="fas fa-book fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                                <a href="<?= BASE ?>/painel/admin/users/delete&delete_user=<?= $Users['user_id'] ?>" class="table-link btn-sm" style="color: red;" title="Excluir <?= $Users['user_name'] ?> ">
-                                    <span class="fa-stack fa-sm">
-                                        <i class="fa fa-square fa-stack-2x"></i>
-                                        <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
+                                <a href="<?= BASE ?>/painel/admin/users/update&update_user=<?= $Users['user_id'] ?>" class="btn-sm btn-primary" title="Editar <?= $Users['user_name'] ?> "><i class="fas fa-edit"></i></a>
+                                <a href="<?= BASE ?>/painel/profile/courses/list&user=<?= $Users['user_id'] ?>" class="btn-sm btn-success" title="Cursos de <?= $Users['user_name'] ?> "><i class="fas fa-book"></i></a>
+                                <a href="<?= BASE ?>/painel/admin/users/delete&delete_user=<?= $Users['user_id'] ?>" class="btn-sm btn-danger" title="Excluir <?= $Users['user_name'] ?> "><i class="fa fa-trash-o"></i></a>
                             </td>
                         </tr>
                         <?php

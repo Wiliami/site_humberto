@@ -12,23 +12,23 @@ echo $Component->getLiPagesDashboard();
 echo $Component->getCreatePagesAdmin();
 echo $Component->getListPagesAdmin();
 echo $Component->getMenuDashboard();
-$courseId = filter_input(INPUT_GET, 'course_user', FILTER_VALIDATE_INT);
+$userId = filter_input(INPUT_GET, 'user', FILTER_VALIDATE_INT);
 ?>
 <div class="row gx-5 container">
     <div class="d-sm-flex align-items-center justify-content-between mb-3">
         <?php
         $Read = new Read();
-        $Read->FullRead("SELECT * FROM users WHERE user_id = :ui", "ui={$courseId}");
+        $Read->FullRead("SELECT * FROM users WHERE user_id = :ui", "ui={$userId}");
         if($Read->getResult()) {
-            $User = $Read->getResult()[0];
+            $Username = $Read->getResult()[0];
                 ?>
-        <h1 class="h3 mb-0 text-gray-800" style="font-size: 17px;">Cursos de <b><?= $User['user_name'] ?></b></h1>
+        <h1 class="h3 mb-0 text-gray-800" style="font-size: 17px;">Cursos de <b><?= $Username['user_name'] ?></b></h1>
         <?php
             } else {
                 die(Error("Usuário(a) não encontrado!", 'danger'));
             }
         ?>
-        <a href="<?= BASE ?>/painel/admin/users/list" class="btn btn-success" title="Voltar para lista de usuários" style="font-size: 10px;">Voltar</a>
+        <a href="<?= BASE ?>/painel/matriculas/cursos/create&user" class="btn btn-success" title="Voltar para lista de usuários" style="font-size: 10px;">Matricular</a>
     </div>
     <div>
         <?php
@@ -36,7 +36,7 @@ $courseId = filter_input(INPUT_GET, 'course_user', FILTER_VALIDATE_INT);
             FROM matriculas_cursos mc
             LEFT JOIN users u ON u.user_id = mc.user_id
             LEFT JOIN cursos c ON c.curso_id = mc.curso_id
-            WHERE mc.user_id = :ui", "ui={$courseId}");
+            WHERE mc.user_id = :ui", "ui={$userId}");
         if($Read->getResult()) {
             foreach($Read->getResult() as $Mat) {
                 ?>
