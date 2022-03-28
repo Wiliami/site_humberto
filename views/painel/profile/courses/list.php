@@ -14,63 +14,99 @@ echo $Component->getListPagesAdmin();
 echo $Component->getMenuDashboard();
 $userId = filter_input(INPUT_GET, 'user', FILTER_VALIDATE_INT);
 ?>
-<div class="row gx-5 container">
-    <div class="d-sm-flex align-items-center justify-content-between mb-3">
-        <?php
-        $Read = new Read();
-        $Read->FullRead("SELECT * FROM users WHERE user_id = :ui", "ui={$userId}");
-        if($Read->getResult()) {
-            $Username = $Read->getResult()[0];
+<div class="container">
+    <div class="card shadow mb-4">
+        <div class="card-header py-3 d-sm-flex align-items-center justify-content-between">
+            <?php
+            $Read = new Read();
+            $Read->FullRead("SELECT * FROM users WHERE user_id = :ui", "ui={$userId}");
+            if($Read->getResult()) {
+                $Username = $Read->getResult()[0];
                 ?>
-        <h1 class="h3 mb-0 text-gray-800" style="font-size: 17px;">Cursos de <b><?= $Username['user_name'] ?></b></h1>
-        <?php
+            <h6 class="m-0 text-dark" style ="font-size: 13px;">Cursos de <b><?= $Username['user_name'] ?></b></h6>
+            <?php
             } else {
-                die(Error("Usuário(a) não encontrado!", 'danger'));
+                die(Error("Usuário não encontrado!", "danger"));
             }
-        ?>
-        <a href="<?= BASE ?>/painel/matriculas/cursos/create&user" class="btn btn-success" title="Voltar para lista de usuários" style="font-size: 10px;">Matricular</a>
-    </div>
-    <div>
-        <?php
-        $Read->FullRead("SELECT mc.*, c.curso_titulo, c.curso_descricao
-            FROM matriculas_cursos mc
-            LEFT JOIN users u ON u.user_id = mc.user_id
-            LEFT JOIN cursos c ON c.curso_id = mc.curso_id
-            WHERE mc.user_id = :ui", "ui={$userId}");
-        if($Read->getResult()) {
-            foreach($Read->getResult() as $Mat) {
-                ?>
-        <div class="col-lg-4 mb-5">
-            <div class="card h-100 shadow border-0">
-                <img src="<?= BASE ?>/src/images/page-sobre.jpg" alt="imagem de fundo" />
-                <div class="card-body p-4">
-                    <div class="badge bg-success bg-gradient rounded-pill mb-2 text-white">Curso</div>
-                    <a class="text-decoration-none link-dark stretched-link"
-                        href="<?= BASE ?>/painel/profile/courses/lesson/lesson">
-                        <h5 class="card-title mb-3"><?= $Mat['curso_titulo'] ?></h5>
-                    </a>
-                    <!--<p class="card-text mb-0"><?= $Mat['curso_descricao'] ?></p> -->
-                    <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
-                        <div class="d-flex align-items-end justify-content-between">
-                            <div class="d-flex align-items-center">
-                                <img class="rounded-circle me-3" src="https://dummyimage.com/40x40/ced4da/6c757d"
-                                    alt="..." />
-                                <div class="small">
-                                    <!-- <div class="fw-bold"><?= number_format($Cursos['matricula_valor_pago'], 2, ',', '.')  ?></div>
-                                <div class="text-muted"><?= date('d/m/Y', strtotime($Cursos['matricula_create_date'])) ?></div> -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            ?>
+            <a href="<?= BASE ?>/painel/matriculas/cursos/create" class="btn btn-success rounded-pill" style="border-radius: 50%; font-size: 11px;">Nova matrícula</a>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table id="table_courses_users" class="table table-striped table-bordered" style="width: 100%;">
+                    <thead>
+                        <tr style="font-size: 10px;">
+                            <th><span>CURSO</span></th>
+                            <th><span>DATA DA MATRÍCULA</span></th>
+                            <th><span>CAD. POR</span></th>
+                            <th><span>ATU. POR</span></th>
+                            <th><span>OPÇÕES</span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        $Read = new Read();
+                        $Read->FullRead("SELECT mc.*, u.user_name, c.curso_titulo, c.curso_descricao
+                            FROM matriculas_cursos mc
+                            LEFT JOIN users u ON u.user_id = mc.user_id
+                            LEFT JOIN cursos c ON c.curso_id = mc.curso_id
+                            WHERE mc.user_id = :ui", "ui={$userId}");
+                            if($Read->getResult()) {
+                                foreach($Read->getResult() as $Mat) {
+                                    ?>
+                        <tr style="font-size: 10px;">
+                
+                            <td>
+                                <span><?= $Mat['curso_titulo'] ?></span>
+                            </td>
+                            <td>
+                                <span><?= date('d/m/Y', strtotime($Mat['matricula_create_date'])) ?></span>
+                            </td>
+                            <td>
+                                <span><?= $Mat['matricula_create_user'] ?></span>
+                            </td>
+                            <td>
+                                <span><?= $Mat['matricula_update_user'] ?></span>
+                            </td>
+                            <td>
+                                <a href="<?= BASE ?>/painel/matriculas/cursos/update&matricula_update=<?= $Mat['matricula_id'] ?>" class="btn-sm btn-sm" title="Editar matrícula"><i class="fas fa-edit"></i></a>
+                                <a href="<?= BASE ?>/painel/matriculas/cursos/delete&delete_matricula=<?= $Mat['matricula_id'] ?>" class="btn-sm danger btn-sm" title="Excluir matrícula" style="color: red;"><i class="fa fa-trash-o"></i></a>
+                            </td>
+                        </tr>
+                        <?php
+                            }
+                        } else {
+                            Error("Lista de matrículas encontrados!", "warning");
+                        }   
+                        ?>
+                    </tbody>
+                    <tfoot>
+                        <tr style="font-size: 10px;">
+                            <th><span>CURSO</span></th>
+                            <th><span>DATA DA MATRÍCULA</span></th>
+                            <th><span>CAD. POR</span></th>
+                            <th><span>ATU. POR</span></th>
+                            <th><span>OPÇÕES</span></th>
+                        </tr>
+                    </tfoot>
+                </table>
             </div>
         </div>
-        <?php
-        }
-    } else {
-        Error("Usuário(a) não possui nenhum curso!", 'danger');
-    }   
-    ?>
     </div>
 </div>
 <?= $Component->getFooterDashboard(); ?>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" language="javascript">
+$(document).ready(function() {
+    $("#table_courses_users").DataTable({
+        "language": {
+            "lengthMenu": "Mostrando _MENU_ registros por página",
+            "zeroRecords": "Nenhum registro foi encontrado",
+            "info": "Mostrando página _PAGE_ de _PAGES_ registros",
+            "infoEmpty": "Nenhum registro foi encontrado",
+            "infoFiltered": "(filtrado de _MAX_ registros no total)"
+        }
+    });
+});
+</script>
