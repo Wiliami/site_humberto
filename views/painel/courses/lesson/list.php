@@ -84,9 +84,7 @@ $moduleId = filter_input(INPUT_GET, 'modulo', FILTER_VALIDATE_INT);
                         </tr>
                         <?php
                             }
-                        } else {
-                            Error("Lista de cursos não encontrada!", 'danger');
-                        }   
+                        } 
                         ?>
                     </tbody>
                     <tfoot>

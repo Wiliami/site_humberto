@@ -35,8 +35,7 @@ $Read->FullRead("SELECT mc.*, u.user_name, c.curso_titulo
                 <?php 
                 $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
                 if(!empty($Post['update_matriculate'])) {
-                    $updateMatriculateCourse['curso_id'] = (!empty($Post['course_matriculate'])? $Post['course_matriculate']: null);
-                    $updateMatriculateCourse['user_id'] = (!empty($Post['user_matriculate'])? $Post['user_matriculate']: null);
+                    $updateMatriculateCourse['curso_id'] = (!empty($Post['course'])? $Post['course']: null);
                     $Course = new Course();
                     $Course->matriculateUpdateCourse($updateMatriculateCourse, $matriculaId);
                     if($Course->getResult()) {
@@ -48,11 +47,7 @@ $Read->FullRead("SELECT mc.*, u.user_name, c.curso_titulo
                 ?>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Curso</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Nome do curso"  name="course_matriculate" value="<?= $DataMatricula['curso_titulo'] ?>">
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputEmail2">Usuário</label> 
-                    <input type="text" class="form-control" id="exampleInputEmail2" placeholder="Nome do usuário matriculado"  name="user_matriculate" value="<?= $DataMatricula['user_name'] ?>">
+                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Nome do curso"  name="course" value="<?= $DataMatricula['curso_titulo'] ?>">
                 </div>
                 <a href="<?= BASE ?>/painel/matriculas/cursos/list" class="btn btn-outline-success" title="Voltar para lista de matrículas">Voltar</a>
                 <input type="submit" class="btn btn-success" name="update_matriculate" value="Atualizar">

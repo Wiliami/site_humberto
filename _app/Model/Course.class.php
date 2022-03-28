@@ -46,11 +46,8 @@ class Course {
 		if(empty($updateMatriculateCourse['curso_id'])) {
 			$this->Error = "Atualize o curso!";
 			$this->Result = false;
-		} elseif(empty($updateMatriculateCourse['user_id'])) {
-			$this->Error = "Atualize o nome do usuário";
-			$this->Result = false;
 		} else {
-			$updateMatriculateCourse['matricula_update_user'] = $_SESSION['login']['user_name'];
+			$updateMatriculateCourse['matricula_update_user'] = $_SESSION['login']['user_id'];
 			$Update = new Update();
 			$Update->ExeUpdate("matriculas_cursos", $updateMatriculateCourse, "WHERE matricula_id = :mi", "mi={$matriculaId}");
 			if($Update->getResult()) {

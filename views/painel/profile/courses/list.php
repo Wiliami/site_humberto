@@ -75,9 +75,7 @@ $userId = filter_input(INPUT_GET, 'user', FILTER_VALIDATE_INT);
                         </tr>
                         <?php
                             }
-                        } else {
-                            Error("Lista de matrículas encontrados!", "warning");
-                        }   
+                        }
                         ?>
                     </tbody>
                     <tfoot>
@@ -102,7 +100,7 @@ $(document).ready(function() {
     $("#table_courses_users").DataTable({
         "language": {
             "lengthMenu": "Mostrando _MENU_ registros por página",
-            "zeroRecords": "Nenhum registro foi encontrado",
+            "zeroRecords": "Nenhum curso foi encontrado",
             "info": "Mostrando página _PAGE_ de _PAGES_ registros",
             "infoEmpty": "Nenhum registro foi encontrado",
             "infoFiltered": "(filtrado de _MAX_ registros no total)"

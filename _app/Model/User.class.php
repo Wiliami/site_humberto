@@ -150,7 +150,7 @@ class User {
 			if(!empty($updateUser['user_password'])) {
 				$updateUser['user_password'] = md5($updateUser['user_password']);
 			}
-			$updateUser['user_update_resp'] = $_SESSION['login']['user_name'];
+			$updateUser['user_update_resp'] = $_SESSION['login']['user_id'];
 			$Update = new Update();
 			$Update->ExeUpdate("users", $updateUser, "WHERE user_id = :id", "id={$userId}");
 			if ($Update->getResult()) {

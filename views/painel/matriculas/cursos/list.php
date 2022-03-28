@@ -59,25 +59,13 @@ echo $Component->getMenuDashboard();
                                 <span><?= $Mat['matricula_update_user'] ?></span>
                             </td>
                             <td>
-                                <a href="<?= BASE ?>/painel/matriculas/cursos/update&matricula_update=<?= $Mat['matricula_id'] ?>" class="table-link btn-sm" title="Editar matrícula">
-                                    <span class="fa-stack">
-                                        <i class="fa fa-square fa-stack-2x"></i>
-                                        <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                                <a href="<?= BASE ?>/painel/matriculas/cursos/delete&delete_matricula=<?= $Mat['matricula_id'] ?>" class="table-link danger btn-sm" title="Excluir matrícula de <?= $Mat['user_name'] ?>" style="color: red;">
-                                    <span class="fa-stack">
-                                        <i class="fa fa-square fa-stack-2x"></i>
-                                        <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
+                                <a href="<?= BASE ?>/painel/matriculas/cursos/update&matricula_update=<?= $Mat['matricula_id'] ?>" class="btn-sm" title="Editar matrícula"><i class="fas fa-edit"></i></a>
+                                <a href="<?= BASE ?>/painel/matriculas/cursos/delete&delete_matricula=<?= $Mat['matricula_id'] ?>" class="btn-sm" title="Excluir matrícula de <?= $Mat['user_name'] ?>" style="color: red;"><i class="fa fa-trash-o"></i></a>
                             </td>
                         </tr>
                         <?php
                             }
-                        } else {
-                            Error("Ainda não existe lista de matrículas!");
-                        }   
+                        } 
                         ?>
                     </tbody>
                     <tfoot>
@@ -103,7 +91,7 @@ $(document).ready(function() {
     $("#lista-matriculas").DataTable({
         "language": {
             "lengthMenu": "Mostrando _MENU_ registros por página",
-            "zeroRecords": "Nenhum resultado foi encontrado",
+            "zeroRecords": "Nenhum curso foi encontrado",
             "info": "Mostrando página _PAGE_ de _PAGES_",
             "infoEmpty": "Nenhum registro disponível",
             "infoFiltered": "(filtrado de _MAX_ registros no total)"
