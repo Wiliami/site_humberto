@@ -24,13 +24,12 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
                 WHERE curso_id = :ci", "ci={$courseId}");
             if($Read->getResult()) {
                 $DataCourse = $Read->getResult()[0];
-                //Check::var_dump_json($Course)
                     ?>
                 <div class="h3 m-0 text-dark" style="font-size: 15px;">Módulos do curso: <b><?= $DataCourse['curso_titulo'] ?></b></div>
                 <a href="<?= BASE ?>/painel/courses/modules/create&course=<?= $DataCourse['curso_id'] ?>" class="btn btn-success rounded-pill" style="border-radius: 50%; font-size: 11px;">Cadastrar módulo</a>
             <?php
                 } else {
-                    Error("Curso não encontrado!", 'danger');
+                    Error("Curso não encontrado!", "danger");
                 }
             ?>
         </div>
@@ -39,26 +38,33 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
                 <table id="table_lista_modulos" class="cell-border compact stripe table-striped" style="width: 100%;">
                     <thead>
                         <tr style ="font-size: 10px;">
-                            <th><span>MÓDULOS</span></th>
-                            <th><span>CAD. POR</span></th>
-                            <th><span>ATU. POR</span></th>
-                            <th><span>OPÇÕES</span></th>
+                            <th>MÓDULOS</th>
+                            <th>CAD. POR</th>
+                            <th>ATU. POR</th>
+                            <th>OPÇÕES</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php
-                        $Read->FullRead("SELECT m.*
+                        $Read->FullRead("SELECT m.*, uc.user_name, uu.user_name as update_user
                             FROM modulos m
+                            LEFT JOIN users uc ON uc.user_id = m.modulo_create_user
+                            LEFT JOIN users uu ON uu.user_id = m.modulo_update_user
+                            -- LEFT JOIN users uc ON uc.user_id = m.modulo_create_user
                             WHERE m.curso_id = :mi", "mi={$courseId}");
                         if($Read->getResult()) {
                             foreach($Read->getResult() as $Modulos) {
                                 ?>
                         <tr style="font-size: 10px;">
                             <td>
-                                <span><?= $Modulos['modulo_name'] ?></span>
+                                <?= $Modulos['modulo_name'] ?>
                             </td>
-                            <td></td>
-                            <td></td>
+                            <td>
+                                <?= $Modulos['user_name'] ?>
+                            </td>
+                            <td>
+                                <?= $Modulos['update_user'] ?>
+                            </td>
                             <td>
                                 <a href="<?= BASE ?>/painel/courses/modules/update&module=<?= $Modulos['modulo_id'] ?>" class="table-link btn-sm" title="Atualizar <?= $Modulos['modulo_name'] ?>">
                                     <span class="fa-stack fa-sm">

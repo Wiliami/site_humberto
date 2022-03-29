@@ -16,7 +16,7 @@ echo $Component->getMenuDashboard();
 <div class="container">
     <div class="card shadow mb-4">
         <div class="card-header py-3 d-sm-flex align-items-center justify-content-between">   
-            <h6 class="m-0 font-weight-bold text-dark" style ="font-size: 13px;">Cursos e matrículas</h6>
+            <h6 class="m-0 font-weight-bold text-dark" style ="font-size: 13px;">Lista de cursos</h6>
             <a href="<?= BASE ?>/painel/matriculas/cursos/create&username=<?= $Username['user_id'] ?>" class="btn btn-success rounded-pill" style="border-radius: 50%; font-size: 11px;">Nova matrícula</a>
         </div>
         <div class="card-body">
@@ -24,11 +24,11 @@ echo $Component->getMenuDashboard();
                 <table id="lista-matriculas" class="table table-striped table-bordered" style="width: 100%;">
                     <thead>
                         <tr style="font-size: 10px;">
-                            <th class="text-center"><span>CURSO</span></th>
-                            <th class="text-center"><span>DATA DA CRIAÇÃO</span></th>
-                            <th class="text-center"><span>CAD. POR</span></th>
-                            <th class="text-center"><span>ATU. POR</span></th>
-                            <th class="text-center"><span>OPÇÕES</span></th>
+                            <th><span>CURSO</span></th>
+                            <th><span>DATA DA CRIAÇÃO</span></th>
+                            <th><span>CAD. POR</span></th>
+                            <th><span>ATU. POR</span></th>
+                            <th><span>OPÇÕES</span></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -39,21 +39,21 @@ echo $Component->getMenuDashboard();
                             foreach($Read->getResult() as $matriculation) {
                                 ?>
                         <tr style="font-size: 10px;">
-                            <td class="text-center">
+                            <td>
                                 <span><?= $matriculation['curso_titulo'] ?></span>
                             </td>
-                            <td class="text-center">
+                            <td>
                                 <span><?= date('d/m/Y', strtotime($matriculation['curso_create_date'])) ?></span>
                             </td>
-                            <td class="text-center"> 
+                            <td> 
                                 <span><?= $matriculation['curso_user_create'] ?></span>
                             </td>
-                            <td class="text-center">
+                            <td>
                                 <span><?= $matriculation['curso_user_update'] ?></span>
                             </td>
-                            <td class="text-center">
+                            <td>
                                 <a href="<?= BASE ?>/painel/matriculas/cursos/update&matricula_update=<?= $matriculation['curso_id'] ?>" class="btn-sm" title="Editar matrícula"><i class="fas fa-edit"></i></a>
-                                <a href="<?= BASE ?>/painel/matriculas/cursos/usuarios_matriculados&course=<?= $matriculation['curso_id'] ?>" title="Usuários cadastrados em <?= $matriculation['curso_titulo'] ?>"><i class="fas fa-book"></i></a>
+                                <a href="<?= BASE ?>/painel/matriculas/cursos/matriculados&course=<?= $matriculation['curso_id'] ?>" title="Usuários cadastrados em <?= $matriculation['curso_titulo'] ?>"><i class="fas fa-book"></i></a>
                                 <a href="<?= BASE ?>/painel/matriculas/cursos/delete&delete_matricula=<?= $matriculation['curso_id'] ?>" class="btn-sm" title="Excluir curso <?= $matriculation['curso_titulo'] ?>" style="color: red;"><i class="fa fa-trash-o"></i></a>
                             </td>
                         </tr>
@@ -64,11 +64,11 @@ echo $Component->getMenuDashboard();
                     </tbody>
                     <tfoot>
                         <tr style="font-size: 10px;">
-                            <th class="text-center"><span>CURSO</span></th>
-                            <th class="text-center"><span>DATA DA CRIAÇÃO</span></th>
-                            <th class="text-center"><span>CAD. POR</span></th>
-                            <th class="text-center"><span>ATU. POR</span></th>
-                            <th class="text-center"><span>OPÇÕES</span></th>
+                            <th><span>CURSO</span></th>
+                            <th><span>DATA DA CRIAÇÃO</span></th>
+                            <th><span>CAD. POR</span></th>
+                            <th><span>ATU. POR</span></th>
+                            <th><span>OPÇÕES</span></th>
                         </tr>
                     </tfoot>
                 </table>
