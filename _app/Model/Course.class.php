@@ -177,11 +177,12 @@ class Course {
 				$this->Result = false;
 			}  else {
 				$dataCourse["curso_create_date"] = date('Y-m-d H:i:s');
+				$dataCourse['curso_user_create'] = $_SESSION['login']['user_id'];
 				$Create = new Create();
 				$Create->ExeCreate("cursos", $dataCourse); 
 				if($Create->getResult()) {
 					$this->Result = $Create->getResult();
-					$this->Error =  "O curso foi cadastrado com sucesso!";
+					$this->Error =  "Curso cadastrado com sucesso!";
 				} else {
 					$this->Result = false;
 					$this->Error = $Create->getError();
@@ -191,24 +192,21 @@ class Course {
 
 	public function updateCourse($updateCourse, $courseId) {
 		if(empty($updateCourse['curso_titulo'])) {
-			//PReecn
 			$this->Result = false;
 			$this->Error = "Preencha o título do curso!";
 		} elseif(empty($updateCourse['curso_descricao'])) {
-			//Peicnd
 			$this->Result = false;
 			$this->Error = "Preencha a descrição do curso!";
 		}  elseif(empty($updateCourse['curso_valor'])) {
-			// Preenca
 			$this->Result = false;
 			$this->Error = "Preencha o valor do curso!";
 		} else {
-			$updateCourse['curso_user_update'] = $_SESSION['login']['user_name']; 
+			$updateCourse['curso_user_update'] = $_SESSION['login']['user_id']; 
 			$Update = new Update();
 			$Update->ExeUpdate("cursos", $updateCourse, "WHERE curso_id = :ci", "ci={$courseId}");
 			if($Update->getResult()) {
 				$this->Result = $Update->getResult();
-				$this->Error = "O curso foi atualizado com sucesso!";
+				$this->Error = "Curso atualizado com sucesso!";
 			} else {
 				$this->Result = false;
 				$this->Error = $Update->getError();

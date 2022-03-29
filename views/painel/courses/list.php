@@ -37,28 +37,28 @@ echo $Component->getMenuDashboard();
                         $Read = new Read();
                         $Read->FullRead("SELECT * FROM cursos");
                         if($Read->getResult()) {
-                            foreach($Read->getResult() as $Cursos) {
+                            foreach($Read->getResult() as $Courses) {
                                 ?>
                         <tr class="btn-sm" style="font-size: 10px;">
                             <td>
-                                <span><?= $Cursos['curso_titulo'] ?></span>
+                                <span><?= $Courses['curso_titulo'] ?></span>
                             </td>
                             <td>
-                                <span><?= $Cursos['curso_categoria'] ?></span>
+                                <span><?= $Courses['curso_categoria'] ?></span>
                             </td>
                             <td>
-                                <span>R$<?= number_format($Cursos['curso_valor'], 2, ',', '.') ?></span>
+                                <span>R$<?= number_format($Courses['curso_valor'], 2, ',', '.') ?></span>
                             </td>
                             <td>
-
+                                <span><?= $Courses['curso_user_create'] ?></span>
                             </td>
                             <td>
-
+                                <span><?= $Courses['curso_user_update'] ?></span>
                             </td>
                             <td>
-                                <a href="<?= BASE ?>/painel/courses/update&update_curso=<?= $Cursos['curso_id'] ?>" class="table-link btn-sm" title="Editar <?= $Cursos['curso_titulo'] ?>"><i class="fas fa-edit"></i></a>
-                                <a href="<?= BASE ?>/painel/courses/modules/list&course=<?= $Cursos['curso_id'] ?>" class="table-link btn-sm" title="Módulos de <?= $Cursos['curso_titulo'] ?>" style="color: #1cc88a;"><i class="fas fa-book"></i></a>
-                                <a href="<?= BASE ?>/painel/courses/delete&delete_curso=<?= $Cursos['curso_id'] ?>" class="table-link danger btn-sm" title="Excluir <?= $Cursos['curso_titulo'] ?>" style="color: red;"><i class="fa fa-trash-o"></i></a>
+                                <a href="<?= BASE ?>/painel/courses/update&update_curso=<?= $Courses['curso_id'] ?>" class="btn-sm" title="Editar <?= $Courses['curso_titulo'] ?>"><i class="fas fa-edit"></i></a>
+                                <a href="<?= BASE ?>/painel/courses/modules/list&course=<?= $Courses['curso_id'] ?>" class="btn-sm" title="Módulos de <?= $Courses['curso_titulo'] ?>" style="color: #1cc88a;"><i class="fas fa-book"></i></a>
+                                <a href="<?= BASE ?>/painel/courses/delete&delete_curso=<?= $Courses['curso_id'] ?>" class="danger btn-sm" title="Excluir <?= $Courses['curso_titulo'] ?>" style="color: red;"><i class="fa fa-trash-o"></i></a>
                             </td>
                         </tr>
                         <?php

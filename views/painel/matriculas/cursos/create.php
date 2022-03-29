@@ -25,7 +25,7 @@ $userId = filter_input(INPUT_GET, 'user', FILTER_VALIDATE_INT);
             <h1 class="h5 mb-0 text-gray-800" style="font-size: 15px;">Matricular <?= $Username['user_name'] ?></h1>
             <?php
             } else {
-                die(Error("Usuário não encontrados!", "warning"));
+                die(Error("Usuário não encontrado!", "warning"));
             }
             ?>
         </div>

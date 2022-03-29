@@ -21,7 +21,7 @@ echo $Component->getMenuDashboard();
             <form method="post">
                 <?php
                 $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
-                if(!empty($Post['register_course'])) {
+                if(!empty($Post['create_course'])) {
                     $CreateCourse['curso_titulo'] = $Post['title'];
                     $CreateCourse['curso_descricao'] = $Post['description'];
                     $CreateCourse['curso_categoria'] = $Post['category'];
