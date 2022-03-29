@@ -35,7 +35,11 @@ echo $Component->getMenuDashboard();
                     <tbody>
                         <?php
                         $Read = new Read();
-                        $Read->FullRead("SELECT * FROM cursos");
+                        $Read->FullRead("SELECT c.*, ul.level_desc, uc.user_name as user_create, uu.user_name as user_update
+                            FROM cursos c
+                            LEFT JOIN users_levels ul ON ul.level_id = c.user_level
+                            LEFT JOIN users uc ON uc.user_id = c.curso_user_create
+                            LEFT JOIN users uu ON uu.user_id = c.curso_user_update");
                         if($Read->getResult()) {
                             foreach($Read->getResult() as $Courses) {
                                 ?>
@@ -44,16 +48,16 @@ echo $Component->getMenuDashboard();
                                 <span><?= $Courses['curso_titulo'] ?></span>
                             </td>
                             <td>
-                                <span><?= $Courses['curso_categoria'] ?></span>
+                                <span><?= $Courses['level_desc'] ?></span>
                             </td>
                             <td>
                                 <span>R$<?= number_format($Courses['curso_valor'], 2, ',', '.') ?></span>
                             </td>
                             <td>
-                                <span><?= $Courses['curso_user_create'] ?></span>
+                                <span><?= $Courses['user_create'] ?></span>
                             </td>
                             <td>
-                                <span><?= $Courses['curso_user_update'] ?></span>
+                                <span><?= $Courses['user_update'] ?></span>
                             </td>
                             <td>
                                 <a href="<?= BASE ?>/painel/courses/update&update_curso=<?= $Courses['curso_id'] ?>" class="btn-sm" title="Editar <?= $Courses['curso_titulo'] ?>"><i class="fas fa-edit"></i></a>
