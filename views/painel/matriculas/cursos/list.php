@@ -53,7 +53,7 @@ echo $Component->getMenuDashboard();
                             </td>
                             <td class="text-center">
                                 <a href="<?= BASE ?>/painel/matriculas/cursos/update&matricula_update=<?= $matriculation['curso_id'] ?>" class="btn-sm" title="Editar matrícula"><i class="fas fa-edit"></i></a>
-                                <a href="<?= BASE ?>/painel/matriculas/cursos" title="Usuários matriculados em <?= $matriculation['curso_titulo'] ?>"><i class="fas fa-book"></i></a>
+                                <a href="<?= BASE ?>/painel/matriculas/cursos/usuarios_matriculados&course=<?= $matriculation['curso_id'] ?>" title="Usuários cadastrados em <?= $matriculation['curso_titulo'] ?>"><i class="fas fa-book"></i></a>
                                 <a href="<?= BASE ?>/painel/matriculas/cursos/delete&delete_matricula=<?= $matriculation['curso_id'] ?>" class="btn-sm" title="Excluir curso <?= $matriculation['curso_titulo'] ?>" style="color: red;"><i class="fa fa-trash-o"></i></a>
                             </td>
                         </tr>
