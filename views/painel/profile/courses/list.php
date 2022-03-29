@@ -45,7 +45,6 @@ $userId = filter_input(INPUT_GET, 'user', FILTER_VALIDATE_INT);
                     </thead>
                     <tbody>
                         <?php
-                        $Read = new Read();
                         $Read->FullRead("SELECT mc.*, u.user_name, c.curso_titulo, c.curso_descricao
                             FROM matriculas_cursos mc
                             LEFT JOIN users u ON u.user_id = mc.user_id
