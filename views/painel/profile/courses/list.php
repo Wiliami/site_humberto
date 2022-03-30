@@ -45,9 +45,10 @@ $userId = filter_input(INPUT_GET, 'user', FILTER_VALIDATE_INT);
                     </thead>
                     <tbody>
                         <?php
-                        $Read->FullRead("SELECT mc.*, u.user_name, c.curso_titulo, c.curso_descricao
+                        $Read->FullRead("SELECT mc.*, u.user_name, c.curso_titulo, c.curso_descricao, uc.user_name as create_user
                             FROM matriculas_cursos mc
                             LEFT JOIN users u ON u.user_id = mc.user_id
+                            LEFT JOIN users uc ON uc.user_id = u.matricula_create_user
                             LEFT JOIN cursos c ON c.curso_id = mc.curso_id
                             WHERE mc.user_id = :ui", "ui={$userId}");
                             if($Read->getResult()) {
@@ -62,7 +63,7 @@ $userId = filter_input(INPUT_GET, 'user', FILTER_VALIDATE_INT);
                                 <span><?= date('d/m/Y', strtotime($Mat['matricula_create_date'])) ?></span>
                             </td>
                             <td>
-                                <span><?= $Mat['matricula_create_user'] ?></span>
+                                <span><?= $Mat['create_user'] ?></span>
                             </td>
                             <td>
                                 <span><?= $Mat['matricula_update_user'] ?></span>

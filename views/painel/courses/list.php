@@ -24,11 +24,11 @@ echo $Component->getMenuDashboard();
                 <table id="table-lista-cursos" class="cell-border compact stripe table-striped" style="width: 100%;">
                     <thead>
                         <tr class="btn-sm" style="font-size: 10px;">
-                            <th><span>NOME DO CURSO</span></th>
-                            <th><span>VALOR DO CURSO</span></th>
-                            <th><span>CAD. POR</span></th>
-                            <th><span>ATU. POR</span></th>
-                            <th><span>OPÇÕES</span></th>
+                            <th>NOME DO CURSO</th>
+                            <th>VALOR DO CURSO</th>
+                            <th>CAD. POR</th>
+                            <th>ATU. POR</th>
+                            <th>OPÇÕES</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -43,16 +43,16 @@ echo $Component->getMenuDashboard();
                                 ?>
                         <tr class="btn-sm" style="font-size: 10px;">
                             <td>
-                                <span><?= $Courses['curso_titulo'] ?></span>
+                                <?= $Courses['curso_titulo'] ?> 
                             </td>
                             <td>
-                                <span>R$<?= number_format($Courses['curso_valor'], 2, ',', '.') ?></span>
+                                R$<?= number_format($Courses['curso_valor'], 2, ',', '.') ?>    
                             </td>
                             <td>
-                                <span><?= $Courses['user_create'] ?></span>
+                                <?= $Courses['user_create'] ?>  
                             </td>
                             <td>
-                                <span><?= $Courses['user_update'] ?></span>
+                                <?= $Courses['user_update'] ?>  
                             </td>
                             <td>
                                 <a href="<?= BASE ?>/painel/courses/update&update_curso=<?= $Courses['curso_id'] ?>" class="btn-sm" title="Editar <?= $Courses['curso_titulo'] ?>"><i class="fas fa-edit"></i></a>
@@ -69,11 +69,11 @@ echo $Component->getMenuDashboard();
                     </tbody>
                     <tfoot>
                         <tr class="btn-sm" style="font-size: 10px;">
-                            <th><span>NOME DO CURSO</span></th>
-                            <th><span>VALOR DO CURSO</span></th>
-                            <th><span>CAD. POR</span></th>
-                            <th><span>ATU. POR</span></th>
-                            <th><span>OPÇÕES</span></th>
+                            <th>NOME DO CURSO</th>
+                            <th>VALOR DO CURSO</th>
+                            <th>CAD. POR</th>
+                            <th>ATU. POR</th>
+                            <th>OPÇÕES</th>
                         </tr>
                     </tfoot>
                 </table>

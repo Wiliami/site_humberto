@@ -16,7 +16,7 @@ echo $Component->getMenuDashboard();
 <div class="container">
     <div class="card shadow mb-4">
         <div class="card-header py-3 d-sm-flex align-items-center justify-content-between">   
-            <h6 class="m-0 font-weight-bold text-dark" style ="font-size: 13px;">Lista de cursos</h6>
+            <h6 class="m-0 text-dark" style ="font-size: 13px;">Lista de cursos</h6>
             <a href="<?= BASE ?>/painel/matriculas/cursos/create&username=<?= $Username['user_id'] ?>" class="btn btn-success rounded-pill" style="border-radius: 50%; font-size: 11px;">Nova matrícula</a>
         </div>
         <div class="card-body">
@@ -34,7 +34,10 @@ echo $Component->getMenuDashboard();
                     <tbody>
                         <?php
                         $Read = new Read();
-                        $Read->FullRead("SELECT * FROM cursos");
+                        $Read->FullRead("SELECT c.*, uc.user_name as user_create, uu.user_name as user_update
+                            FROM cursos c
+                            LEFT JOIN users uc ON uc.user_id = c.curso_user_create
+                            LEFT JOIN users uu ON uu.user_id = c.curso_user_update");
                         if($Read->getResult()) {
                             foreach($Read->getResult() as $matriculation) {
                                 ?>
@@ -46,10 +49,10 @@ echo $Component->getMenuDashboard();
                                 <span><?= date('d/m/Y', strtotime($matriculation['curso_create_date'])) ?></span>
                             </td>
                             <td> 
-                                <span><?= $matriculation['curso_user_create'] ?></span>
+                                <span><?= $matriculation['user_create'] ?></span>
                             </td>
                             <td>
-                                <span><?= $matriculation['curso_user_update'] ?></span>
+                                <span><?= $matriculation['user_update'] ?></span>
                             </td>
                             <td>
                                 <a href="<?= BASE ?>/painel/matriculas/cursos/update&matricula_update=<?= $matriculation['curso_id'] ?>" class="btn-sm" title="Editar matrícula"><i class="fas fa-edit"></i></a>
