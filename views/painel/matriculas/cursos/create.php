@@ -22,7 +22,7 @@ $userId = filter_input(INPUT_GET, 'user', FILTER_VALIDATE_INT);
             if($Read->getResult()) {
                 $Username = $Read->getResult()[0];
             ?>
-            <h1 class="h5 mb-0 text-gray-800" style="font-size: 15px;">Matricular <?= $Username['user_name'] ?></h1>
+            <h1 class="h4 mb-0 text-gray-800" style="font-size: 20px;">Matricular <?= $Username['user_name'] ?></h1>
             <?php
             } else {
                 die(Error("Usuário não encontrado!", "warning"));
@@ -39,7 +39,9 @@ $userId = filter_input(INPUT_GET, 'user', FILTER_VALIDATE_INT);
                     $Course = new Course();
                     $Course->matriculateCreateCourse($matriculateUser);
                     if($Course->getResult()) {
-                        Error($Course->getError());    
+                        Error($Course->getError());
+                        header('Location: ' . BASE . '/painel/profile/courses/list');
+                        die(); 
                     } else {
                         Error($Course->getError(), 'warning');
                     }
@@ -56,7 +58,7 @@ $userId = filter_input(INPUT_GET, 'user', FILTER_VALIDATE_INT);
                             foreach($Read->getResult() as $Cursos) {
                                 echo "<option value='{$Cursos['curso_id']}'>{$Cursos['curso_titulo']}</option>";
                             }
-                        } else {
+                        } else {    
                             echo "<option value=''>Lista de usuários não encontrados!</option>";
                         }
                         ?>

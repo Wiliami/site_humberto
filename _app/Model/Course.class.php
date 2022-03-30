@@ -10,7 +10,7 @@ class Course {
 		$Read->FullRead("SELECT user_id FROM matriculas_cursos WHERE curso_id = :ci AND user_id = :ui", "ci={$courseId}&ui={$userId}");
 
 		if($Read->getResult()) {
-			$this->Error = "Este curso já foi cadastrado para esse usuário!";
+			$this->Error = "Esse curso já foi cadastrado. Selecione outro curso!";
 			return true;
 		} else {
 			return false;
@@ -296,7 +296,7 @@ class Course {
 			$this->Error = 'Preencha o campo de ordem de módulo!';
 			$this->Result = false;
 		} else {
-			$updateModule['modulo_user_update'] = $_SESSION['login']['user_name'];
+			$updateModule['modulo_user_update'] = $_SESSION['login']['user_id'];
 			$Update = new Update();
 			$Update->ExeUpdate("modulos", $updateModule, "WHERE modulo_id = :mi", "mi={$moduleId}");
 			if($Update->getResult()) {
@@ -357,14 +357,15 @@ class Course {
 		} elseif(!empty($updateLesson['aula_url'])) {
 			$updateLesson['aula_url'] = $updateLesson['aula_url'];
 		} else {
+			$updateLesson['aula_create_user'] = $_SESSION['login']['user_id'];
 			$Update = new Update();
 			$Update->ExeUpdate("aulas", $updateLesson, "WHERE aula_id = :ai", "ai={$lessonId}");
 			if($Update->getResult()) {
-				$this->Result = $updateLesson->getResult(); 
+				$this->Result = $Update->getResult(); 
 				$this->Error = "A aula foi atualizada com sucesso!";
 			} else {
 				$this->Result = false;
-				$this->Error = $updateLesson->getError();
+				$this->Error = $Update->getError();
 			}
 		}
 	}

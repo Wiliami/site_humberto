@@ -25,7 +25,7 @@ echo $Component->getMenuDashboard();
                     <thead>
                         <tr style="font-size: 10px;">
                             <th>USUÁRIO</th>
-                            <th>FUNÇÃO</th>
+                            <th class="text-center">FUNÇÃO</th>
                             <th>E-MAIL</th>
                             <th>CAD. POR</th>
                             <th>ATU. POR</th>
@@ -35,8 +35,10 @@ echo $Component->getMenuDashboard();
                     <tbody>
                         <?php
                         $Read = new Read();
-                        $Read->FullRead("SELECT u.*, ul.level_desc
+                        $Read->FullRead("SELECT u.*, ul.level_desc, uc.user_name as create_user, uu.user_name as update_user
                             FROM users u
+                            LEFT JOIN users uc ON uc.user_id = u.user_create_resp
+                            LEFT JOIN users uu ON uu.user_id = u.user_update_resp
                             LEFT JOIN users_levels ul ON ul.level_id = u.user_level");
                         if($Read->getResult()) {
                             foreach($Read->getResult() as $Users) { 
@@ -52,10 +54,10 @@ echo $Component->getMenuDashboard();
                                 <?= $Users['user_email'] ?>
                             </td>
                             <td>
-                                <?= $Users['user_create_resp'] ?>
+                                <?= $Users['create_user'] ?>
                             </td>
                             <td>
-                                <?= $Users['user_update_resp'] ?>
+                                <?= $Users['update_user'] ?>
                             </td>
                             <td>
                                 <a href="<?= BASE ?>/painel/admin/users/update&update_user=<?= $Users['user_id'] ?>" class="btn-sm btn-primary" title="Editar <?= $Users['user_name'] ?> "><i class="fas fa-edit"></i></a>
@@ -73,7 +75,7 @@ echo $Component->getMenuDashboard();
                     <tfoot>
                         <tr class="btn-sm" style="font-size: 10px;">
                             <th>USUÁRIO</th>
-                            <th>FUNÇÃO</th>
+                            <th class="text-center">FUNÇÃO</th>
                             <th>E-MAIL</th>
                             <th>CAD. POR</th>
                             <th>ATU. POR</th>

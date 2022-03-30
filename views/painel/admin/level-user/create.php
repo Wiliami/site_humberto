@@ -16,19 +16,20 @@ echo $Component->getMenuDashboard();
 <div class="container">
     <div class="card shadow mb-4">
         <div class="card-header d-sm-flex align-items-center justify-content-start mb-4">
-            <h1 class="h5 mb-0 text-gray-800">Cadastrar Nível</h1>
+            <h1 class="h6 mb-0">Cadastrar Nível</h1>
         </div>
         <div class="card-body">
             <form action="" method="post">
                 <?php
                 $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
-                if(!empty($Post['register_level'])) {
-                    $createLevel['level_desc'] = $Post['name-level'];
-                    $createLevel['level_id'] = $Post['level'];
+                if(!empty($Post['create_level'])) {
+                    $createLevel['level_desc'] = $Post['name_level'];
                     $User = new User();
                     $User->createLevelUser($createLevel);
                     if($User->getResult()){
                         Error($User->getError());
+                        header('Location: ' . BASE . '/painel/admin/level-user/list');
+                        die();
                     } else {
                         Error($User->getError(), 'warning'); 
                     }
@@ -36,16 +37,11 @@ echo $Component->getMenuDashboard();
                 ?>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Categoria</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" name="name-level" placeholder="Nome da categoria" 
-                    value="<?= isset($Post['name-level'])? $Post['name-level']: '' ?>">
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Nível</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" name="level" placeholder="Número da categoria" 
-                    value="<?= isset($Post['level'])? $Post['level']: '' ?>">
+                    <input type="text" class="form-control" id="exampleInputEmail1" name="name_level" placeholder="Nome da categoria" 
+                    value="<?= isset($Post['name_level'])? $Post['name_level']: '' ?>">
                 </div>
                 <a href="<?= BASE ?>/painel/admin/level-user/list" class="btn btn-outline-success mb-2" title="Voltar para lista de categorias">Voltar</a>
-                <input type="submit" class="btn btn-success mb-2" name="register_level" value="Cadastrar">
+                <input type="submit" class="btn btn-success mb-2" name="create_level" value="Cadastrar">
             </form>
         </div>
     </div>

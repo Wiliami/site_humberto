@@ -35,10 +35,13 @@ if($Read->getResult()) {
                     $updateLesson['aula_name'] = $Post['lesson'];
                     $updateLesson['aula_duracao'] = $Post['time'];
                     $updateLesson['aula_url'] = $Post['url'];
+                    $DataLesson = $updateLesson;
                     $Course = new Course();
                     $Course->updateLesson($updateLesson, $lessonId);
                     if($Course->getResult()) {
                         Error($Course->getError());
+                        header('Location: ' . BASE . '/painel/courses/lesson/list');
+                        die();
                     } else {
                         Error($Course->getError(), 'warning');
                     }   

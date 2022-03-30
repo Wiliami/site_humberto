@@ -9,23 +9,21 @@ class User {
 	private $Result;
 
 	public function createLevelUser($createLevel) {
-		if(empty($createLevel['name-level'])) {
+		if(empty($createLevel['level_desc'])) {
 			$this->Error = "Campo obrigatório!";
 			$this->Result = false; 
-		} elseif(empty($createLevel['level'])) {
-			$this->Error = "Qual o número desse nível?";
-			$this->Result = false;
-		}
-		$createLevel['level_user_create'] = $_SESSION['login']['user_name'];
-		$createLevel['level_create_date'] = date('Y-m-d');
-		$Create = new Create();
-		$Create->ExeCreate('users_levels', $createLevel);
-		if ($Create->getResult()) {
-			$this->Result = $Create->getResult();
-			$this->Error = "Nível de usuário cadastrado com sucesso!";
 		} else {
-			$this->Result = false;
-			$this->Error = $Create->getError();
+			$createLevel['level_user_create'] = $_SESSION['login']['user_id'];
+			$createLevel['level_create_date'] = date('Y-m-d H:i:s');
+			$Create = new Create();
+			$Create->ExeCreate('users_levels', $createLevel);
+			if ($Create->getResult()) {
+				$this->Result = $Create->getResult();
+				$this->Error = "Nível de usuário cadastrado com sucesso!";
+			} else {
+				$this->Result = false;
+				$this->Error = $Create->getError();
+			}
 		}
 	}
 
@@ -33,11 +31,8 @@ class User {
 		if(empty($updateLevelUser['level_desc'])) {
 			$this->Error = "Preencha o campo de nome de nível";
 			$this->Result = false;
-		} elseif(empty($updateLevelUser['level_id'])) {
-			$this->Error = "Preencha a numeração do nível!";
-			$this->Result = false;
 		} else {
-			$updateLevelUser['level_user_update'] = $_SESSION['login']['user_name'];
+			$updateLevelUser['level_user_update'] = $_SESSION['login']['user_id'];
 			$Update = new Update();
 			$Update->ExeUpdate("users_levels", $updateLevelUser, "WHERE level_id = :li", "li={$levelId}");
 			if($Update->getResult()) {
@@ -50,17 +45,31 @@ class User {
 		}
 	}
 
-	public function deleteLevel($levelId) {
-		$Delete = new Delete();
-		$Delete->ExeDelete("users_levels", "WHERE level_id = :li", "li={$levelId}");
-		if($Delete->getResult()) {
-			$this->Result = $Delete->getError();
-			$this->Error = "Nível excluído com sucesso!";
-		} else {
+	public function deleteLevelUser($levelId) {
+		if($this->verifyLevelUser($levelId)) {
 			$this->Result = false;
-			$this->Error = $Delete->getError();
+			$this->Error = "O nível possui usuários cadastrados!";
+		} else {
+			$Delete = new Delete();
+			$Delete->ExeDelete("users_levels", "WHERE level_id = :li", "li={$levelId}");
+			if($Delete->getResult()) {
+				$this->Result = $Delete->getResult();
+				$this->Error = "Nível excluído com sucesso!";
+			} else {
+				$this->Result = false;
+				$this->Error = $Delete->getError();
+			}
 		}
 	}	
+
+	public function verifyLevelUser($levelId) {
+		$Read = new Read();
+		$Read->FullRead("SELECT * FROM users WHERE user_level = :ul", "ul={$levelId}");
+		if($Read->getResult()) {
+			return true;
+		}
+		return false;
+	}
 
 
 	public function verifyLevelUserModerator() {
@@ -87,6 +96,7 @@ class User {
 		} else {
 			$dataUser['user_password'] = md5($dataUser['user_password']);
 			$dataUser['user_create_date'] = date('Y-m-d H:i:s');
+			$dataUser['user_create_resp'] = $_SESSION['login']['user_id'];
 			$dataUser['user_level'] = '1';
 			//$dataUser['user_inativo'] = '0';
 			$Create = new Create();
@@ -111,13 +121,10 @@ class User {
 		} elseif (empty($dataUserSystem["user_password"])) {
 			$this->Error = "Preencha a senha!";
 			$this->Result = false;
-		} elseif(empty($dataUserSystem['user_level'])){
-			$this->Error = "Escolha o nível do usuário";
-			$this->Result = false;
-		} elseif ($this->verifyDuplicateUserEmail($dataUserSystem['user_email'])) {
+		}  elseif ($this->verifyDuplicateUserEmail($dataUserSystem['user_email'])) {
 			$this->Result = false;
 		} else {
-			$dataUserSystem['user_create_resp'] = $_SESSION['login']['user_name'];
+			$dataUserSystem['user_create_resp'] = $_SESSION['login']['user_id'];
 			$dataUserSystem['user_password'] = md5($dataUserSystem['user_password']);
 			$dataUserSystem['user_create_date'] = date('Y-m-d H:i:s');
 			$Create = new Create();
@@ -133,7 +140,6 @@ class User {
 	}
 
 	public function updateUser($updateUser, $userId) {
-		//$_SESSION['login']['user_id'];
 		if(empty($updateUser['user_name'])) {
 			$this->Error = "Preencha com um nome!";
 			$this->Result = false;
@@ -149,7 +155,7 @@ class User {
 			$Update->ExeUpdate("users", $updateUser, "WHERE user_id = :id", "id={$userId}");
 			if ($Update->getResult()) {
 				$this->Result = $Update->getResult();
-				$this->Error = "O usuário foi atualizado com sucesso!";
+				$this->Error = "Usuário atualizado com sucesso!";
 			} else {
 				$this->Result = false;
 				$this->Error = $Update->getError();

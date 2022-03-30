@@ -36,7 +36,7 @@ $moduleId = filter_input(INPUT_GET, 'modulo', FILTER_VALIDATE_INT);
                 <table id="table_lista_cursos" class="cell-border compact stripe table-striped">
                     <thead>
                         <tr class="btn-sm" style="font-size: 10px">
-                            <th><span>AULAS</span></th>
+                            <th><span>NOME DA AULA</span></th>
                             <th><span>DURAÇÃO DA AULA</span></th>
                             <th><span>URL DA AULA</span></th>
                             <th><span>CAD. POR</span></th>
@@ -47,7 +47,11 @@ $moduleId = filter_input(INPUT_GET, 'modulo', FILTER_VALIDATE_INT);
                     <tbody>
                         <?php
                         $Read = new Read();
-                        $Read->FullRead("SELECT * FROM aulas WHERE modulo_id = :mi", "mi={$moduleId}");
+                        $Read->FullRead("SELECT a.*, uc.user_name as create_user, uu.user_name as update_user
+                        FROM aulas a 
+                        LEFT JOIN users uc ON uc.user_id = a.aula_create_user
+                        LEFT JOIN users uu ON uu.user_id = a.aula_update_user
+                        WHERE modulo_id = :mi", "mi={$moduleId}");
                         if($Read->getResult()) {
                             foreach($Read->getResult() as $Lesson) {
                                 ?>
@@ -62,24 +66,14 @@ $moduleId = filter_input(INPUT_GET, 'modulo', FILTER_VALIDATE_INT);
                                 <span><?= $Lesson['aula_url'] ?></span>
                             </td>
                             <td>
-                                <span><?= $Lesson['aula_create_user'] ?></span>
+                                <span><?= $Lesson['create_user'] ?></span>
                             </td>
                             <td>
-                                <span><?= $Lesson['aula_update_user'] ?></span>
+                                <span><?= $Lesson['update_user'] ?></span>
                             </td>
                             <td>
-                                <a href="<?= BASE ?>/painel/courses/lesson/update&aula=<?= $Lesson['aula_id'] ?>" class="table-link btn-sm" title="Editar <?= $Lesson['aula_name'] ?>">
-                                    <span class="fa-stack">
-                                        <i class="fa fa-square fa-stack-2x"></i>
-                                        <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                                <a href="<?= BASE ?>/painel/courses/lesson/delete&delete_aula=<?= $Lesson['aula_id'] ?>" class="table-link danger btn-sm" title="Excluir <?= $Lesson['aula_name'] ?>" style="color: #e74a3b;">
-                                    <span class="fa-stack">
-                                        <i class="fa fa-square fa-stack-2x"></i>
-                                        <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
+                                <a href="<?= BASE ?>/painel/courses/lesson/update&aula=<?= $Lesson['aula_id'] ?>" class="btn-sm" title="Editar <?= $Lesson['aula_name'] ?>"><i class="fa fa-edit"></i></a>
+                                <a href="<?= BASE ?>/painel/courses/lesson/delete&delete_aula=<?= $Lesson['aula_id'] ?>" class="danger btn-sm" title="Excluir <?= $Lesson['aula_name'] ?>" style="color: #e74a3b;"><i class="fa fa-trash-o"></i></a>
                             </td>
                         </tr>
                         <?php
@@ -89,7 +83,7 @@ $moduleId = filter_input(INPUT_GET, 'modulo', FILTER_VALIDATE_INT);
                     </tbody>
                     <tfoot>
                         <tr style="font-size: 10px">
-                            <th><span>AULAS</span></th>
+                            <th><span>NOME DA AULA</span></th>
                             <th><span>DURAÇÃO DA AULA</span></th>
                             <th><span>URL DA AULA</span></th>
                             <th><span>CAD. POR</span></th>

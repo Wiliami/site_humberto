@@ -12,7 +12,7 @@ echo $Component->getLiPagesDashboard();
 echo $Component->getCreatePagesAdmin();
 echo $Component->getListPagesAdmin();
 echo $Component->getMenuDashboard();
-$levelId = $_GET['delete_level']; 
+$levelId = filter_input(INPUT_GET, 'delete_level', FILTER_VALIDATE_INT);
 ?>
 <div class="container">
     <?php
@@ -27,29 +27,25 @@ $levelId = $_GET['delete_level'];
     <?php
         die();
     }
-
     $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
     if(!empty($Post['delete_level'])) {
         $User = new User();
-        $User->deleteLevel($levelId);
+        $User->deleteLevelUser($levelId);
         if($User->getResult()) { 
             Error($User->getError());
+            header('Location: ' . BASE . '/painel/admin/level-user/list');
+            die();
         } else {
-            Error($User->getError());
+            Error($User->getError(), 'warning');
         }
     }
     ?>
     <div class="card shadow mb-4">
         <div class="card-header d-sm-flex align-items-center justify-content-start mb-4">
-            <h1 class="h5 text-gray-800">Excluir <b><?= $DataLevel['level_desc'] ?></b></h1>
+            <h1 class="h5 mb-0">Excluir <b><?= $DataLevel['level_desc'] ?></b></h1>
         </div>
         <div class="card-body">
             <form action="" method="post">
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Nível</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" name="level-name" placeholder="Nível de usuário"
-                    value="<?= $DataLevel['level_desc']?>">
-                </div>
                 <a href="<?= BASE ?>/painel/admin/level-user/list" class="btn btn-outline-success mb-2" title="Voltar para lista de níveis">Voltar</a>
                 <button type="button" class="btn btn-danger  mb-2" data-toggle="modal" data-target="#exampleModal">
                     Excluir
@@ -72,7 +68,7 @@ $levelId = $_GET['delete_level'];
                                 Tem certeza que deseja excluir esse nível?
                             </div>
                             <div class="modal-footer">
-                                <button class="btn btn-outline-primary mb-2" type="button" data-dismiss="modal">
+                                <button class="btn btn-outline-success mb-2" type="button" data-dismiss="modal">
                                     Cancelar
                                 </button>
                                 <input type="submit" class="btn btn-danger mb-2" name="delete_level" value="Excluir">

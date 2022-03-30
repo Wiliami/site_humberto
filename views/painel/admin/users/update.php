@@ -41,6 +41,8 @@ $userId = filter_input(INPUT_GET, 'update_user', FILTER_VALIDATE_INT);
         $User->updateUser($updateUser, $userId);
         if($User->getResult()) {
             Error($User->getError());
+            header('Location: ' . BASE . '/painel/admin/users/list');
+            die();
         } else {
             Error($User->getError(), 'warning');
         }

@@ -27,6 +27,8 @@ $MatriculaId = filter_input(INPUT_GET, 'delete_matricula', FILTER_VALIDATE_INT);
                 $Course->deleteMatriculateCourse($MatriculaId);
                 if($Course->getResult()) {
                     Error($Course->getError());
+                    header('Location: ' . BASE . '/painel/profile/courses/list');
+                    die();
                 } else {
                     Error($Course->getError(), 'warning');
                 }
@@ -43,14 +45,6 @@ $MatriculaId = filter_input(INPUT_GET, 'delete_matricula', FILTER_VALIDATE_INT);
                 if($Read->getResult()) {
                     foreach($Read->getResult() as $Mat) {
                         ?>
-                <div class="mb-3">
-                    <label for="exampleInputEmail1">Curso</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" name="matriculate_course" value="<?= $Mat['curso_titulo'] ?>">
-                </div> 
-                <div class="mb-3">
-                    <label for="exampleInputEmail1">Usuário</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" name="matriculate_user" value="<?= $Mat['user_name'] ?>">
-                </div> 
                 <?php
                     }
                 }

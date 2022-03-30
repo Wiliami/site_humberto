@@ -15,7 +15,7 @@ echo $Component->getMenuDashboard();
 $userId = filter_input(INPUT_GET, 'user', FILTER_VALIDATE_INT);
 ?>
 <div class="container">
-    <div class="card shadow mb-4">
+    <div class="card shadow mb-4">  
         <div class="card-header py-3 d-sm-flex align-items-center justify-content-between">
             <?php
             $Read = new Read();
@@ -23,13 +23,13 @@ $userId = filter_input(INPUT_GET, 'user', FILTER_VALIDATE_INT);
             if($Read->getResult()) {
                 $Username = $Read->getResult()[0];
                 ?>
-            <h6 class="m-0 text-dark" style ="font-size: 13px;">Cursos de <b><?= $Username['user_name'] ?></b></h6>
+            <h6 class="m-0 text-dark" style ="font-size: 15px;">Cursos de <b><?= $Username['user_name'] ?></b></h6>
             <?php
             } else {
                 die(Error("Usuário não encontrado!", "danger"));
             }
             ?>
-            <a href="<?= BASE ?>/painel/matriculas/cursos/create" class="btn btn-success rounded-pill" style="border-radius: 50%; font-size: 11px;">Nova matrícula</a>
+            <a href="<?= BASE ?>/painel/matriculas/cursos/create&user=<?= $Username['user_id'] ?>" class="btn btn-success rounded-pill" style="border-radius: 50%; font-size: 11px;">Nova matrícula</a>
         </div>
         <div class="card-body">
             <div class="table-responsive">
@@ -45,10 +45,10 @@ $userId = filter_input(INPUT_GET, 'user', FILTER_VALIDATE_INT);
                     </thead>
                     <tbody>
                         <?php
-                        $Read->FullRead("SELECT mc.*, u.user_name, c.curso_titulo, c.curso_descricao, uc.user_name as create_user
+                        $Read->FullRead("SELECT mc.*, c.curso_titulo, c.curso_descricao, uc.user_name as create_user, uu.user_name as update_user
                             FROM matriculas_cursos mc
-                            LEFT JOIN users u ON u.user_id = mc.user_id
-                            LEFT JOIN users uc ON uc.user_id = u.matricula_create_user
+                            LEFT JOIN users uc ON uc.user_id = mc.matricula_create_user
+                            LEFT JOIN users uu ON uu.user_id = mc.matricula_update_user
                             LEFT JOIN cursos c ON c.curso_id = mc.curso_id
                             WHERE mc.user_id = :ui", "ui={$userId}");
                             if($Read->getResult()) {
@@ -66,7 +66,7 @@ $userId = filter_input(INPUT_GET, 'user', FILTER_VALIDATE_INT);
                                 <span><?= $Mat['create_user'] ?></span>
                             </td>
                             <td>
-                                <span><?= $Mat['matricula_update_user'] ?></span>
+                                <span><?= $Mat['update_user'] ?></span>
                             </td>
                             <td>
                                 <a href="<?= BASE ?>/painel/matriculas/cursos/update&matricula_update=<?= $Mat['matricula_id'] ?>" class="btn-sm btn-sm" title="Editar matrícula"><i class="fas fa-edit"></i></a>
