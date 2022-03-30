@@ -16,18 +16,18 @@ echo $Component->getMenuDashboard();
 <div class="container">
     <div class="card shadow mb-4">  
         <div class="card-header py-3 d-sm-flex align-items-center justify-content-between">
-            <h6 class="m-0 font-weight-bold text-dark" style="font-size: 12px;">Lista de categorias</h6>
-            <a href="<?= BASE ?>/painel/courses/categorias/create" class="btn btn-success rounded-pill" style="border-radius: 50%; font-size: 11px;">Criar categoria</a>
+            <h6 class="m-0 text-dark" style="font-size: 14px;">Lista de categorias</h6>
+            <a href="<?= BASE ?>/painel/courses/categorias/create" class="btn btn-success rounded-pill" style="border-radius: 50%; font-size: 11px;">Cadastrar categoria</a>
         </div>
         <div class="card-body">
             <div class="table-responsive">
                 <table id="table-lista-categoria" class="cell-border compact stripe table-striped" style="width: 100%;">
                     <thead>
                         <tr class="btn-sm" style="font-size: 11px;"> 
-                            <th><span>Nome da categoria</span></th>
-                            <th><span>Cadastrado por</span></th>
-                            <th><span>Atualizado por</span></th>
-                            <th><span>Opções</span></th>
+                            <th><span>NOME DA CATEGORIA</span></th>
+                            <th><span>CAD. POR</span></th>
+                            <th><span>ATU. POR</span></th>
+                            <th><span>OPÇÕES</span></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -42,10 +42,10 @@ echo $Component->getMenuDashboard();
                                 <span><?= $Categoria['categoria_name']?></span>
                             </td>
                             <td>
-                                <span><?= $Categoria['categoria_user_create']?></span>
+                                <span><?= $Categoria['categoria_create_user']?></span>
                             </td>
                             <td>
-                                <span><?= $Categoria['categoria_user_update'] ?></span>
+                                <span><?= $Categoria['categoria_update_user'] ?></span>
                             </td>
                             <td>
                                 <a href="<?= BASE ?>/painel/courses/categorias/update&categoria_update=<?= $Categoria['categoria_id'] ?>" class="table-link" title="Editar <?= $Categoria['categoria_name'] ?>">
@@ -64,17 +64,15 @@ echo $Component->getMenuDashboard();
                         </tr>
                         <?php
                             }
-                        } else {
-                            Error("Ainda não existe lista de categoria!");
-                        }   
+                        }
                         ?>
                     </tbody>
                     <tfoot>
                         <tr class="btn-sm" style="font-size: 11px;"> 
-                            <th><span>Categoria</span></th>
-                            <th><span>Cadastrado por</span></th>
-                            <th><span>Atualizado por</span></th>
-                            <th><span>Opções</span></th>
+                            <th><span>NOME DA CATEGORIA</span></th>
+                            <th><span>CAD. POR</span></th>
+                            <th><span>ATU. POR</span></th>
+                            <th><span>OPÇÕES</span></th>
                         </tr>
                     </tfoot>
                 </table>
@@ -90,7 +88,7 @@ $(document).ready(function() {
     $("#table-lista-categoria").DataTable({
         "language": {
             "lengthMenu": "Mostrando _MENU_ registros por página",
-            "zeroRecords": "Nenhum registro foi encontrado",
+            "zeroRecords": "Categoria não encontrada",
             "info": "Mostrando página _PAGE_ de _PAGES_ registros",
             "infoEmpty": "Nenhum registro foi encontrado",
             "infoFiltered": "(filtrado de _MAX_ registros no total)"

@@ -25,7 +25,6 @@ echo $Component->getMenuDashboard();
                     <thead>
                         <tr class="btn-sm" style="font-size: 10px;">
                             <th><span>NOME DO CURSO</span></th>
-                            <th><span>CATEGORIA</span></th>
                             <th><span>VALOR DO CURSO</span></th>
                             <th><span>CAD. POR</span></th>
                             <th><span>ATU. POR</span></th>
@@ -35,9 +34,8 @@ echo $Component->getMenuDashboard();
                     <tbody>
                         <?php
                         $Read = new Read();
-                        $Read->FullRead("SELECT c.*, ul.level_desc, uc.user_name as user_create, uu.user_name as user_update
+                        $Read->FullRead("SELECT c.*, uc.user_name as user_create, uu.user_name as user_update
                             FROM cursos c
-                            LEFT JOIN users_levels ul ON ul.level_id = c.user_level
                             LEFT JOIN users uc ON uc.user_id = c.curso_user_create
                             LEFT JOIN users uu ON uu.user_id = c.curso_user_update");
                         if($Read->getResult()) {
@@ -46,9 +44,6 @@ echo $Component->getMenuDashboard();
                         <tr class="btn-sm" style="font-size: 10px;">
                             <td>
                                 <span><?= $Courses['curso_titulo'] ?></span>
-                            </td>
-                            <td>
-                                <span><?= $Courses['level_desc'] ?></span>
                             </td>
                             <td>
                                 <span>R$<?= number_format($Courses['curso_valor'], 2, ',', '.') ?></span>
@@ -75,7 +70,6 @@ echo $Component->getMenuDashboard();
                     <tfoot>
                         <tr class="btn-sm" style="font-size: 10px;">
                             <th><span>NOME DO CURSO</span></th>
-                            <th><span>CATEGORIA</span></th>
                             <th><span>VALOR DO CURSO</span></th>
                             <th><span>CAD. POR</span></th>
                             <th><span>ATU. POR</span></th>

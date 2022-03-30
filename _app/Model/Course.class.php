@@ -133,13 +133,13 @@ class Course {
 			$this->Error = "Campo obrigatório!";
 			$this->Result = false;
 		} else {
-			$createCategory['categoria_user_create'] = $_SESSION['login']['user_name'];
+			$createCategory['categoria_create_user'] = $_SESSION['login']['user_id'];
 			$createCategory['categoria_create_date'] = date('Y-m-d H:i:s');
 			$Create = new Create();
 			$Create->ExeCreate('categoria_cursos', $createCategory);
 				if($Create->getResult()) {
 					$this->Result = $Create->getResult();
-					$this->Error = 'A categoria foi cadastrada com sucesso!';
+					$this->Error = 'Categoria cadastrada com sucesso!';
 				} else {
 					$this->Result = false;
 					$this->Error = $Create->getError(); 
@@ -215,17 +215,54 @@ class Course {
 	}
 
 	public function deleteCourse($courseId) {
-		$Delete = new Delete();
-		$Delete->ExeDelete("cursos", "WHERE curso_id = :ci", "ci={$courseId}");
-		if($Delete->getResult()) {
-			$this->Result = $Delete->getError();
-			$this->Error = "O curso foi excluído com sucesso!";
+		if($this->verifyCursoMatricula($courseId)) {
+			$this->Result = false;
+			$this->Error = "Existem matrículas neste curso!";
+		} elseif($this->verifyModuleCourse($courseId)) {
+			$this->Result = false;
+			$this->Error = "Existem módulos neste curso!";
+		} elseif($this->verifyLessonCourse($courseId)) {
+			$this->Result = false;
+			$this->Error = "Existem aulas neste curso!";
 		} else {
-			$this->Result= false;
-			$this->Error = $Delete->getError();
+			$Delete = new Delete();
+			$Delete->ExeDelete("cursos", "WHERE curso_id = :ci", "ci={$courseId}");
+			if($Delete->getResult()) {
+				$this->Result = $Delete->getError();
+				$this->Error = "Curso excluído com sucesso!";
+			} else {
+				$this->Result= false;
+				$this->Error = $Delete->getError();
+			}
 		}
 	}
 
+	public function verifyCursoMatricula($courseId) {
+		$Read = new Read();
+		$Read->FullRead("SELECT * FROM matriculas_cursos WHERE curso_id = :ci", "ci={$courseId}");
+		if($Read->getResult()) {
+			return true;
+		}
+		return false;
+	}
+
+	public function verifyModuleCourse($courseId) {
+		$Read = new Read();
+		$Read->FullRead("SELECT * FROM modulos WHERE curso_id = :ci", "ci={$courseId}");
+		if($Read->getResult()) {
+			return true;
+		}
+		return false;
+	}
+
+	public function verifyLessonCourse($courseId) {
+		$Read = new Read();
+		$Read->FullRead("SELECT * FROM aulas WHERE curso_id = :ci", "ci={$courseId}");
+		if($Read->getResult()) {
+			return true;
+		}
+		return false;
+	}
 	
 
 	// ******* MÓDULOS *********

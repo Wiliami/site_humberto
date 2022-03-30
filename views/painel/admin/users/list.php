@@ -16,7 +16,7 @@ echo $Component->getMenuDashboard();
 <div class="container">
     <div class="card shadow mb-4">
         <div class="card-header py-3 d-flex justify-content-between align-items-center">
-            <h6 class="m-0 font-weight-bold text-dark" style="font-size: 13px;">Lista de usuários</h6>
+            <h6 class="m-0 text-dark" style="font-size: 14px;">Lista de usuários</h6>
             <a href="<?= BASE ?>/painel/admin/users/create" class="btn btn-success rounded-pill" title="Cadastrar novo usuário" style="border-radius: 50%; font-size: 10px;">Cadastrar novo usuário</a>
         </div>
         <div class="card-body">
@@ -101,13 +101,13 @@ echo $Component->getMenuDashboard();
             $Delete = new Delete();
             $Delete->ExeDelete("users", "WHERE user_id = :id", "id={user_id}");
             if($Delete->getResult()) {
-                foreach($Delete->getResult() as $Id) {
+                $Username = $Delete->getResult()[0];
                  ?>
-            <div class="modal-body">Tem certeza que deseja excluir usuário <?= $Id['user_name']?> ?</div>
+            <div class="modal-body">Tem certeza que deseja excluir usuário <?= $Username['user_name']?> ?</div>
             <?php
-                }
-            } else {
-                Error("Não foi possível excluir o usuário!");
+                } 
+            else {
+                Error("Não foi possível excluir o usuário!", "danger");
             }
             ?>
             <div class="modal-footer">
@@ -120,8 +120,6 @@ echo $Component->getMenuDashboard();
     </div>
 </div>
 <?= $Component->getFooterDashboard(); ?>
-<script src="<? BASE ?>/src/datatables/jquery.dataTables.min.js"></script>
-<script src="<? BASE ?>/src/datatables/dataTables.bootstrap4.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
 <script type="text/javascript" language="javascript">

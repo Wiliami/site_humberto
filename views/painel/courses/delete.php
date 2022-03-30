@@ -32,7 +32,7 @@ $courseId = filter_input(INPUT_GET, 'delete_curso', FILTER_VALIDATE_INT);
 
     <div class="card shadow">
         <div class="card-header py-3 d-sm-flex align-items-center justify-content-start">
-            <h1 class="h5 mb-0 text-gray-800">Excluir <b><?= $DataCourse['curso_titulo'] ?></b></h1>
+            <h6 class="h5 mb-0 text-gray-800">Excluir <b><?= $DataCourse['curso_titulo'] ?></b></h6>
         </div>
         <div class="card-body">
             <form action="" method="post">
@@ -43,25 +43,14 @@ $courseId = filter_input(INPUT_GET, 'delete_curso', FILTER_VALIDATE_INT);
                     $Course->deleteCourse($courseId);
                     if($Course->getResult()) {
                         Error($Course->getError());
+                        header('Location: ' . BASE . '/painel/courses/list');
                     } else {
-                        Error($Course->getError());
+                        Error($Course->getError(), 'warning');
                     }
                 } 
                 ?>
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Curso</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Nome do curso" name="course" value="<?= $DataCourse['curso_titulo'] ?>">
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputPassword1">Descrição</label>
-                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Descrição do curso" name="description" value="<?= $DataCourse['curso_descricao'] ?>">
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputPassword1">Categoria</label>
-                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Categoria do curso" name="categoria" value="<?= $DataCourse['curso_categoria'] ?>">
-                </div>
+               
                 <a href="<?= BASE ?>/painel/courses/list" class="btn btn-outline-success mb-2" title="Voltar para lista de cursos">Voltar</a>
-                <!-- <input type="submit" class="btn btn-success mb-2" data-toggle="modal" data-target="#modalMatricula" name="delete_course" value="Excluir curso"> --> 
                 <button type="button" class="btn btn-danger mb-2" data-toggle="modal" data-target="#exampleModal">
                     Excluir
                 </button>
