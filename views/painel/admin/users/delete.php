@@ -12,7 +12,7 @@ echo $Component->getLiPagesDashboard();
 echo $Component->getCreatePagesAdmin();
 echo $Component->getListPagesAdmin();
 echo $Component->getMenuDashboard();
-$userId = $_GET['delete_user'];
+$userId = filter_input(INPUT_GET, 'delete_user', FILTER_VALIDATE_INT);
 ?>
 <div class="container">
     <?php
@@ -35,27 +35,19 @@ $userId = $_GET['delete_user'];
         $User->deleteUser($userId);
         if($User->getResult()) {
             Error($User->getError());
+            header('Location: ' . BASE . '/painel/admin/users/list');
+            die();
         } else {
-            Error($User->getError());
+            Error($User->getError(), 'warning');
         }
     }
     ?>
     <div class="card shadow">
         <div class="card-header py-3 d-sm-flex align-items-center justify-content-start">
-            <h1 class="h5 mb-0 text-gray-800">Excluir <b><?= $DataUser['user_name'] ?></b></h1>
+            <h5 class="h6 mb-0 text-gray-800">Excluir <b><?= $DataUser['user_name'] ?></b></h1>
         </div>
         <div class="card-body">
             <form action="" method="post">
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Nome</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" name="title" placeholder="Nome do usuário"
-                        value="<?= $DataUser['user_name'] ?>">
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputEmail1">E-mail</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" name="title"
-                        placeholder="E-mail do usuário" value="<?= $DataUser['user_email'] ?>">
-                </div>
                 <a href="<?= BASE ?>/painel/admin/users/list" class="btn btn-outline-success" title="Voltar para lista de usuários">Voltar</a>
                 <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
                     Excluir

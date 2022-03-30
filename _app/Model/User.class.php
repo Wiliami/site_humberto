@@ -70,13 +70,7 @@ class User {
 			return false;
 		} 
 	}
-	
-	public function searchCourse() {
-		if(empty($course['aula_name'])) {
-			$this->Error = "Pesquisa alguma coisa!";
-			$this->Result = false;
-		}
-	}
+
 
 	public function createUser($dataUser) {
 	if(empty($dataUser["user_name"])) {
@@ -164,15 +158,29 @@ class User {
 	}
 
 	public function deleteUser($userId) {
-		$Delete =  new Delete();
-		$Delete->ExeDelete("users", "WHERE user_id = :ui", "ui={$userId}");
-		if($Delete->getResult()) {
-			$this->Result = $Delete->getError();
-			$this->Error = "O usuário foi excluído com sucesso!";
-		} else {
+		if($this->verifyMatriculaCourse($userId)) {
 			$this->Result = false;
-			$this->Error = $Delete->getError();
+			$this->Error = "Usuário possui matrículas!";
+		} else {
+			$Delete =  new Delete();
+			$Delete->ExeDelete("users", "WHERE user_id = :ui", "ui={$userId}");
+			if($Delete->getResult()) {
+				$this->Result = $Delete->getError();
+				$this->Error = "Usuário excluído com sucesso!";
+			} else {
+				$this->Result = false;
+				$this->Error = $Delete->getError();
+			}
 		}
+	}
+
+	public function verifyMatriculaCourse($userId) {
+		$Read = new Read();
+		$Read->FullRead("SELECT * FROM matriculas_cursos WHERE user_id = :ci", "ci={$userId}"); 
+		if($Read->getResult()) {
+			return true;
+		}
+		return false;
 	}
 	
 	
@@ -180,7 +188,6 @@ class User {
 	private function verifyDuplicateUserEmail($email) {
 		$Read = new Read();
 		$Read->FullRead("SELECT user_name FROM users WHERE user_email = :em", "em={$email}");
-
 		if($Read->getResult()) { //get result (dados) é o resultado da busca no banco de dados
 			$this->Error = "Este e-mail já está sendo utilizado por outro usuário!";
 			// {$Read->getResult()[0]['user_name']}";	
@@ -207,7 +214,6 @@ class User {
 			$password = md5($password);
 			$Read = new Read();
 			$Read->FullRead("SELECT user_id, user_name, user_email, user_level FROM users WHERE user_email = :em AND user_password = :ps", "em={$email}&ps={$password}");
-
 			if($Read->getResult()) {
 				$_SESSION['login'] = $Read->getResult()[0];
 				$this->Result = true;
@@ -287,11 +293,11 @@ class User {
 		$Read->FullRead('SELECT user_password FROM users WHERE user_password = :pw', "pw={$password}");
 		$password = md5($password);
 		if($Read->getResult()) {
-			$this->Error = "Não possível alterar a senha de acesso!";
-			$this->Result = false;
-			return true;
+			$this->Result = $Read->getResult();
+			$this->Error = "Senha alterada com sucesso!";
 		} else {
-			return false;
+			$this->Result = false;
+			$this->Error = "";
 		}
 	}
 
