@@ -32,7 +32,7 @@ $userId = $_SESSION['login']['user_id'];
             <img src="<?= BASE ?>/src/images/page-sobre.jpg" alt="imagem de fundo"/>
             <div class="card-body p-4">
                 <div class="badge bg-success bg-gradient rounded-pill mb-2 text-white">Curso</div>
-                <a class="text-decoration-none link-dark stretched-link" href="<?= BASE ?>/painel/profile/courses/lesson/lesson">
+                <a class="text-decoration-none link-dark stretched-link" href="<?= BASE ?>/painel/profile/courses/lesson/area-course">
                     <h5 class="card-title mb-3"><?= $Mat['curso_titulo'] ?></h5>
                 </a>
                 <p class="card-text mb-0"><?= $Mat['curso_descricao'] ?></p>

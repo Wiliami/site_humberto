@@ -377,11 +377,11 @@ class Component {
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="' . BASE . '/painel/profile/profile-user">
+                                <a class="dropdown-item" href="' . BASE . '/painel/profile/pages/profile-user">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Minha conta
                                 </a>
-                                <a class="dropdown-item" href="' . BASE . '/painel/profile/reset-password">
+                                <a class="dropdown-item" href="' . BASE . '/painel/profile/pages/reset-password">
                                     <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Mudar senha
                                 </a>

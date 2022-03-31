@@ -10,13 +10,24 @@ $Username = $_SESSION['login']['user_name'];
 <div id="wrapper">
     <!-- Sidebar -->
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+        <!-- Sidebar - Brand -->
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <div class="sidebar-brand-icon rotate-n-15">
+                <img src="<?= BASE ?>/src/images/icon_small.png" alt="logo unit" class="btn-sm" style="width: 40px; height: 50px;">
+            </div>
+            <div class="sidebar-brand-text mx-3 btn-sm">Unitbrasil</div>
+        </a>
+
         <!-- Divider -->
         <hr class="sidebar-divider my-0">
         <!-- Nav Item - Dashboard -->
         <li class="nav-item active">
-            <a class="nav-link" href="index.html">
-                <i class="fas fa-fw fa-tachometer-alt"></i>
-                <span>Nome do curso</span></a>
+            <?php
+            ?>
+            <a class="nav-link" href="<?= BASE ?>/painel/dashboard">
+                <i class="fas fa-book"></i>
+                <span>Nome do curso</span>
+            </a>
         </li>
 
         <!-- Divider -->
@@ -25,7 +36,7 @@ $Username = $_SESSION['login']['user_name'];
         <li class="nav-item">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                 aria-expanded="true" aria-controls="collapseTwo">
-                <i class="fas fa-fw fa-cog"></i>
+                <i class="fas fa-history"></i>
                 <span>Nome do módulo</span>
             </a>
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
@@ -122,11 +133,11 @@ $Username = $_SESSION['login']['user_name'];
                         <!-- Dropdown - User Information -->
                         <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                             aria-labelledby="userDropdown">
-                            <a class="dropdown-item" href="<?= BASE ?>/painel/">
+                            <a class="dropdown-item" href="<?= BASE ?>/painel/profile/pages/profile-user">
                                 <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                 Minha conta
                             </a>
-                            <a class="dropdown-item" href="<?= BASE ?>/painel/profile/reset-password">
+                            <a class="dropdown-item" href="<?= BASE ?>/painel/profile/pages/reset-password">
                                 <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                                 Mudar senha
                             </a>
