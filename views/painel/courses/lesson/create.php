@@ -21,11 +21,11 @@ $moduleId = filter_input(INPUT_GET, 'module', FILTER_VALIDATE_INT);
             $Read->FullRead("SELECT * FROM modulos WHERE modulo_id = :mi", "mi={$moduleId}");
             if($Read->getResult()) {
                 $DataModule = $Read->getResult()[0];
-                ?>
-                <div class="h6 mb-0 text-gray-800">Cadastrar aula no módulo: <b><?= $DataModule['modulo_name'] ?></b></div>
+                    ?>
+            <div class="h6 mb-0 text-gray-800">Cadastrar aula no módulo: <b><?= $DataModule['modulo_name'] ?></b></div>
             <?php
             } else {
-                Error("Módulo não encontrado!", "danger");
+                Error('Módulo não encontrado!', 'danger');
             }
             ?>
         </div>
@@ -42,6 +42,8 @@ $moduleId = filter_input(INPUT_GET, 'module', FILTER_VALIDATE_INT);
                     $Course->createLessonModule($CreateLesson);
                     if($Course->getResult()) {
                         Error($Course->getError());
+                        header('Location: ' . BASE . '/painel/courses/lesson/list');
+                        die();
                     } else {
                         Error($Course->getError(), 'warning');
                     } 

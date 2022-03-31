@@ -23,9 +23,9 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
                 FROM cursos 
                 WHERE curso_id = :ci", "ci={$courseId}");
             if($Read->getResult()) {
-                $DataCourse = $Read->getResult()[0];
+                $DataCourse = $Read->getResult()[0]; 
                     ?>
-                <div class="h3 m-0 text-dark" style="font-size: 15px;">Módulos do curso: <b><?= $DataCourse['curso_titulo'] ?></b></div>
+                <div class="h3 m-0 text-dark" style="font-size: 15px;">Módulos de: <b><?= $DataCourse['curso_titulo'] ?></b></div>
                 <a href="<?= BASE ?>/painel/courses/modules/create&course=<?= $DataCourse['curso_id'] ?>" class="btn btn-success rounded-pill" style="border-radius: 50%; font-size: 11px;">Cadastrar módulo</a>
             <?php
                 } else {
@@ -66,24 +66,9 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
                                 <?= $Modulos['update_user'] ?>
                             </td>
                             <td>
-                                <a href="<?= BASE ?>/painel/courses/modules/update&module=<?= $Modulos['modulo_id'] ?>" class="table-link btn-sm" title="Atualizar <?= $Modulos['modulo_name'] ?>">
-                                    <span class="fa-stack fa-sm">
-                                        <i class="fa fa-square fa-stack-2x"></i>
-                                        <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                                <a href="<?= BASE ?>/painel/courses/lesson/list&modulo=<?= $Modulos['modulo_id'] ?>" class="table-link btn-sm" title="Aulas de <?= $Modulos['modulo_name'] ?>" style="color: #1cc88a;">
-                                    <span class="fa-stack fa-sm">
-                                        <i class="fa fa-square fa-stack-2x"></i>
-                                        <i class="fas fa-chalkboard-teacher fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                                <a href="<?= BASE ?>/painel/courses/modules/delete&delete_module=<?= $Modulos['modulo_id'] ?>" class="table-link danger btn-sm" title="Excluir <?= $Modulos['modulo_name'] ?>" style="color: red;" title="Excluir curso">
-                                    <span class="fa-stack fa-sm">
-                                        <i class="fa fa-square fa-stack-2x"></i>
-                                        <i class="fa fa-trash-o fa-stack-1x fa-inverse" text="ola"></i>
-                                    </span>
-                                </a>
+                                <a href="<?= BASE ?>/painel/courses/modules/update&module=<?= $Modulos['modulo_id'] ?>" class="btn-sm" title="Atualizar <?= $Modulos['modulo_name'] ?>"> <i class="fas fa-edit"></i></a>
+                                <a href="<?= BASE ?>/painel/courses/lesson/list&module=<?= $Modulos['modulo_id'] ?>" class="btn-sm" title="Ver aulas desse módulo" style="color: #1cc88a;"><i class="fas fa-chalkboard-teacher fa-stack-1x fa-inverse"></i></a>
+                                <a href="<?= BASE ?>/painel/courses/modules/delete&delete_module=<?= $Modulos['modulo_id'] ?>" class="danger btn-sm" title="Excluir <?= $Modulos['modulo_name'] ?>" style="color: red;" title="Excluir curso"><i class="fa fa-trash-o" text="ola"></i></a>
                             </td>
                         </tr>
                         <?php
@@ -112,7 +97,7 @@ $(document).ready(function() {
     $("#table_lista_modulos").DataTable({
         "language": {
             "lengthMenu": "Mostrando _MENU_ registros por página",
-            "zeroRecords": "Nenhum módulo foi encontrado",
+            "zeroRecords": "Nenhum módulo foi encontrado nesse curso",
             "info": "Mostrando página _PAGE_ de _PAGES_ registros",
             "infoEmpty": "Nenhum registro foi encontrado",
             "infoFiltered": "(filtrado de _MAX_ registros no total)"

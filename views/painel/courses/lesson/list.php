@@ -12,7 +12,7 @@ echo $Component->getLiPagesDashboard();
 echo $Component->getCreatePagesAdmin();
 echo $Component->getListPagesAdmin();
 echo $Component->getMenuDashboard();
-$moduleId = filter_input(INPUT_GET, 'modulo', FILTER_VALIDATE_INT);
+$moduleId = filter_input(INPUT_GET, 'module', FILTER_VALIDATE_INT);
 ?>
 <div class="container">
     <div class="card shadow mb-4">
@@ -24,6 +24,7 @@ $moduleId = filter_input(INPUT_GET, 'modulo', FILTER_VALIDATE_INT);
                 $DataModule = $Read->getResult()[0];
                     ?>
                 <h6 class="m-0 text-dark" style="font-size: 15px;">Aulas do módulo: <b><?= $DataModule['modulo_name'] ?></b></h6>
+
             <?php
             } else  {
                 die(Error("Módulo não encontrado!", 'danger'));
@@ -104,7 +105,7 @@ $(document).ready(function() {
     $("#table_lista_cursos").DataTable({
         "language": {
             "lengthMenu": "Mostrando _MENU_ registros por página",
-            "zeroRecords": "Nenhum resultado foi encontrado",
+            "zeroRecords": "Nenhuma aula foi encontrada",
             "info": "Mostrando página _PAGE_ de _PAGES_",
             "infoEmpty": "Nenhum registro disponível",
             "infoFiltered": "(filtrado de _MAX_ registros no total)"
