@@ -21,29 +21,29 @@ $Username = $_SESSION['login']['user_name'];
         ?>
     <p class="ml-4">Lançamentos de cursos</p>
     <div class="row gx-5 container">
-            <?php
-            $Read = new Read();
-            $Read->FullRead("SELECT * FROM cursos LIMIT 5");
-            if($Read->getResult()) {
-                foreach($Read->getResult() as $Cursos) {
-                    ?>
-            <div class="col-lg-4 mb-5">
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="<?= BASE ?>/src/images/backstage_data.png" alt="banner do curso">
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title"><?= $Cursos['curso_titulo'] ?></h5>
-                    <p class="card-text"><?= $Cursos['curso_descricao'] ?></p>
-                    <a href="<?= BASE ?>/painel/profile/compra-curso" class="text-black">R$<?= number_format($Cursos['curso_valor'], 2, ',', '.') ?></a>
-                </div>
+        <?php
+        $Read = new Read();
+        $Read->FullRead("SELECT * FROM cursos LIMIT 5");
+        if($Read->getResult()) {
+            foreach($Read->getResult() as $Cursos) {
+                ?>
+        <div class="col-lg-4 mb-5">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="<?= BASE ?>/src/images/backstage_data.png" alt="banner do curso">
             </div>
-            <?php
-                }
-            } else {
-                Error("Cursos não encontrado", 'danger');
-            }
-            ?>
+            <div class="card-body">
+                <h5 class="card-title"><?= $Cursos['curso_titulo'] ?></h5>
+                <p class="card-text"><?= $Cursos['curso_descricao'] ?></p>
+                <a href="<?= BASE ?>/painel/profile/compra-curso" class="text-black">R$<?= number_format($Cursos['curso_valor'], 2, ',', '.') ?></a>
+            </div>
         </div>
+        <?php
+            }
+        } else {
+            Error("Cursos não encontrados", 'danger');
+        }
+        ?>
+    </div>
     <?php
         }
     ?>

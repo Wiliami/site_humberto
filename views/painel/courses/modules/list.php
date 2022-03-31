@@ -25,7 +25,7 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
             if($Read->getResult()) {
                 $DataCourse = $Read->getResult()[0]; 
                     ?>
-                <div class="h3 m-0 text-dark" style="font-size: 15px;">Módulos de: <b><?= $DataCourse['curso_titulo'] ?></b></div>
+                <div class="h3 m-0 text-dark" style="font-size: 15px;">Módulos de <b><?= $DataCourse['curso_titulo'] ?></b></div>
                 <a href="<?= BASE ?>/painel/courses/modules/create&course=<?= $DataCourse['curso_id'] ?>" class="btn btn-success rounded-pill" style="border-radius: 50%; font-size: 11px;">Cadastrar módulo</a>
             <?php
                 } else {
@@ -67,7 +67,7 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
                             </td>
                             <td>
                                 <a href="<?= BASE ?>/painel/courses/modules/update&module=<?= $Modulos['modulo_id'] ?>" class="btn-sm" title="Atualizar <?= $Modulos['modulo_name'] ?>"> <i class="fas fa-edit"></i></a>
-                                <a href="<?= BASE ?>/painel/courses/lesson/list&module=<?= $Modulos['modulo_id'] ?>" class="btn-sm" title="Ver aulas desse módulo" style="color: #1cc88a;"><i class="fas fa-chalkboard-teacher fa-stack-1x fa-inverse"></i></a>
+                                <a href="<?= BASE ?>/painel/courses/lesson/list&module=<?= $Modulos['modulo_id'] ?>" class="btn-sm" title="Ver aulas desse módulo" style="color: #1cc88a;"><i class="fas fa-chalkboard-teacher"></i></a>
                                 <a href="<?= BASE ?>/painel/courses/modules/delete&delete_module=<?= $Modulos['modulo_id'] ?>" class="danger btn-sm" title="Excluir <?= $Modulos['modulo_name'] ?>" style="color: red;" title="Excluir curso"><i class="fa fa-trash-o" text="ola"></i></a>
                             </td>
                         </tr>

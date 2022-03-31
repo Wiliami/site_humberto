@@ -5,6 +5,7 @@ $Component = new Component();
 echo $Component->getBlockPageProfile();
 echo $Component->getHeadHtmlDashboard();
 $Username = $_SESSION['login']['user_name'];
+$courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
 ?>
 <!-- Page Wrapper -->
 <div id="wrapper">
@@ -13,7 +14,7 @@ $Username = $_SESSION['login']['user_name'];
         <!-- Sidebar - Brand -->
         <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
             <div class="sidebar-brand-icon rotate-n-15">
-                <img src="<?= BASE ?>/src/images/icon_small.png" alt="logo unit" class="btn-sm" style="width: 40px; height: 50px;">
+                <img src="<?= BASE ?>/src/images/icon_small.png" alt="logo unit" class="btn-sm" style="width: 45px; height: 40px;">
             </div>
             <div class="sidebar-brand-text mx-3 btn-sm">Unitbrasil</div>
         </a>
@@ -23,29 +24,53 @@ $Username = $_SESSION['login']['user_name'];
         <!-- Nav Item - Dashboard -->
         <li class="nav-item active">
             <?php
-            ?>
-            <a class="nav-link" href="<?= BASE ?>/painel/dashboard">
+            $Read = new Read();
+            $Read->FullRead("SELECT mc.*, c.curso_titulo
+                FROM matriculas_cursos mc
+                LEFT JOIN cursos c ON c.curso_id = mc.curso_id
+                WHERE mc.curso_id = :ci", "ci={$courseId}");
+            if($Read->getResult()) {
+                $DataCourse = $Read->getResult()[0];
+                    ?>
+            <a class="nav-link" href="<?= BASE ?>/painel/profile/courses/meus-cursos">
                 <i class="fas fa-book"></i>
-                <span>Nome do curso</span>
-            </a>
+                <?= $DataCourse['curso_titulo'] ?>
+            </a>    
+        <?php
+        } else {
+            die(Error('Curso não encontrado!', 'warning'));
+        }
+        ?>
         </li>
-
         <!-- Divider -->
         <hr class="sidebar-divider">
         <!-- Nav Item - Pages Collapse Menu -->
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                aria-expanded="true" aria-controls="collapseTwo">
-                <i class="fas fa-history"></i>
-                <span>Nome do módulo</span>
-            </a>
-            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                <div class="bg-white py-2 collapse-inner rounded">
-                    <a class="collapse-item" href="b">Nome da aula</a>
-                </div>
-            </div>
-        </li>
 
+        <?php
+        $Read->FullRead("SELECT * FROM modulos WHERE curso_id = :ci", "ci={$courseId}");
+        if($Read->getResult()) {
+            foreach($Read->getResult() as $Modules) {
+                ?>
+                <li class="nav-item">
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse<?= $Modules['modulo_id'] ?>"
+                        aria-expanded="true" aria-controls="collapseTwo">
+                        <i class="fas fa-history"></i>
+                        <span><?= $Modules['modulo_name'] ?></span>
+                    </a>
+                    <div id="collapse<?= $Modules['modulo_id'] ?>" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                        <div class="bg-white py-2 collapse-inner rounded">
+                            <a class="collapse-item" href="#">Nome da aula</a>
+                        </div>
+                    </div>
+                </li>
+        <?php
+            }
+        } else {
+            Error('Módulo não encontrado', 'warning');
+        }
+        ?>
+        
+      
         <!-- Nav Item - Utilities Collapse Menu -->
         
 
@@ -144,7 +169,7 @@ $Username = $_SESSION['login']['user_name'];
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                                 <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                Logout
+                                Sair
                             </a>
                         </div>
                     </li>
@@ -215,16 +240,16 @@ $Username = $_SESSION['login']['user_name'];
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Pronto para sair?</h5>
+                    <h5 class="modal-title btn btn-success vw-100" id="exampleModalLabel">Pronto para sair?</h5>
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
                 <div class="modal-body">Selecione "Sair" para encerrar a sua sessão.</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-                    <a class="btn btn-primary" href="<?= BASE ?>/pages/logout">Logout</a>
-                </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-outline-dark" type="button" data-dismiss="modal">Cancelar</button>
+                        <a class="btn btn-success" href="<?= BASE ?>/pages/logout">Sair</a>
+                    </div>
             </div>
         </div>
     </div>

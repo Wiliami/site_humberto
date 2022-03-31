@@ -942,8 +942,8 @@ class Component {
                     </div>
                     <div class="modal-body">Selecione "Sair" para encerrar a sua sessão.</div>
                     <div class="modal-footer">
-                        <button class="btn btn-outline-success" type="button" data-dismiss="modal">Cancelar</button>
-                        <a class="btn btn-danger" href="' . BASE . '/pages/logout">Sair</a>
+                        <button class="btn btn-outline-dark" type="button" data-dismiss="modal">Cancelar</button>
+                        <a class="btn btn-success" href="' . BASE . '/pages/logout">Sair</a>
                     </div>
                 </div>
             </div>
