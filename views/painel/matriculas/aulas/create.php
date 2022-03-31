@@ -27,8 +27,6 @@ echo $Component->getMenuDashboard();
                     $Course = new Course();
                     $Course->matriculateCreateLesson($MatriculateCourse);
                     if($Course->getResult()) {
-                        //$DataLesson = $Course->getResult();
-                        //Check::var_dump_json($DataLesson);
                         Error($Course->getResult());
                     } else {
                         Error($Course->getError(), 'warning');
@@ -47,7 +45,7 @@ echo $Component->getMenuDashboard();
                                 echo "<option value='{$Aulas['aula_id']}'>{$Aulas['aula_name']}</option>";
                             }
                         } else {
-                            echo "<option value=''>Ainda não existem cursos disponíveis!</option>";
+                            echo "<option value=''>Aulas não encontradas!</option>";
                         }
                         ?>
                     </select>
@@ -64,7 +62,7 @@ echo $Component->getMenuDashboard();
                                 echo "<option value='{$Users['user_id']}'>{$Users['user_name']}</option>";
                             }
                         } else {
-                            echo "<option value=''>Ainda não existem cursos disponíveis!</option>";
+                            echo "<option value=''>Cursos não encontrados!</option>";
                         }
                         ?>
                     </select>
