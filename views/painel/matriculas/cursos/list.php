@@ -17,18 +17,18 @@ echo $Component->getMenuDashboard();
     <div class="card shadow mb-4">
         <div class="card-header py-3 d-sm-flex align-items-center justify-content-between">   
             <h6 class="m-0 text-dark" style ="font-size: 13px;">Lista de cursos</h6>
-            <a href="<?= BASE ?>/painel/matriculas/cursos/create&username=<?= $Username['user_id'] ?>" class="btn btn-success rounded-pill" style="border-radius: 50%; font-size: 11px;">Nova matrícula</a>
+            <a href="<?= BASE ?>/painel/courses/create" class="btn btn-success rounded-pill" style="border-radius: 50%; font-size: 11px;">Cadastrar novo curso</a>
         </div>
         <div class="card-body">
             <div class="table-responsive">
                 <table id="lista-matriculas" class="table table-striped table-bordered" style="width: 100%;">
                     <thead>
                         <tr style="font-size: 10px;">
-                            <th><span>CURSO</span></th>
-                            <th><span>DATA DA CRIAÇÃO</span></th>
-                            <th><span>CAD. POR</span></th>
-                            <th><span>ATU. POR</span></th>
-                            <th><span>OPÇÕES</span></th>
+                            <th>CURSO</th>
+                            <th>DATA DA CRIAÇÃO</th>
+                            <th>CAD. POR</th>
+                            <th>ATU. POR</th>
+                            <th>OPÇÕES</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -43,16 +43,16 @@ echo $Component->getMenuDashboard();
                                 ?>
                         <tr style="font-size: 10px;">
                             <td>
-                                <span><?= $matriculation['curso_titulo'] ?></span>
+                                <?= $matriculation['curso_titulo'] ?>
                             </td>
                             <td>
-                                <span><?= date('d/m/Y', strtotime($matriculation['curso_create_date'])) ?></span>
+                                <?= date('d/m/Y', strtotime($matriculation['curso_create_date'])) ?>
                             </td>
                             <td> 
-                                <span><?= $matriculation['user_create'] ?></span>
+                                <?= $matriculation['user_create'] ?>
                             </td>
                             <td>
-                                <span><?= $matriculation['user_update'] ?></span>
+                                <?= $matriculation['user_update'] ?>
                             </td>
                             <td>
                                 <a href="<?= BASE ?>/painel/matriculas/cursos/update&matricula_update=<?= $matriculation['curso_id'] ?>" class="btn-sm" title="Editar matrícula"><i class="fas fa-edit"></i></a>
@@ -67,11 +67,11 @@ echo $Component->getMenuDashboard();
                     </tbody>
                     <tfoot>
                         <tr style="font-size: 10px;">
-                            <th><span>CURSO</span></th>
-                            <th><span>DATA DA CRIAÇÃO</span></th>
-                            <th><span>CAD. POR</span></th>
-                            <th><span>ATU. POR</span></th>
-                            <th><span>OPÇÕES</span></th>
+                            <th>CURSO</th>
+                            <th>DATA DA CRIAÇÃO</th>
+                            <th>CAD. POR</th>
+                            <th>ATU. POR</th>
+                            <th>OPÇÕES</th>
                         </tr>
                     </tfoot>
                 </table>

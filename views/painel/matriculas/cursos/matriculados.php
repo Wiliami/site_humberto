@@ -24,7 +24,7 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
                 foreach($Read->getResult() as $Course) {
                     ?>
                 <div class="h5 m-0 text-dark" style="font-size: 14px">Usuários matriculados em <b><?= $Course['curso_titulo'] ?></b></div>
-                <a href="<?= BASE ?>/painel/courses/create" class="btn btn-success rounded-pill" style="border-radius: 50%; font-size: 11px;">...</a>
+                <a href="<?= BASE ?>/painel/matriculas/cursos/create" class="btn btn-success rounded-pill" style="border-radius: 50%; font-size: 11px;">Nova matrícula</a>
             <?php
                 }
             } else {
