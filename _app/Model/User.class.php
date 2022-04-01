@@ -82,7 +82,7 @@ class User {
 
 
 	public function createUser($dataUser) {
-	if(empty($dataUser["user_name"])) {
+		if(empty($dataUser["user_name"])) {
 			$this->Error = "Preencha no campo um nome!";
 			$this->Result = false;
 		} elseif (empty($dataUser["user_email"])) {

@@ -16,7 +16,7 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
 ?>
 <div class="container">
     <div class="card shadow mb-4">
-        <div class="card-header py-3 d-sm-flex align-items-center justify-content-between">
+        <div class="card-body card-header py-3 d-sm-flex align-items-center justify-content-between">
             <?php
             $Read = new Read();
             $Read->FullRead("SELECT * 
@@ -29,7 +29,7 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
                 <a href="<?= BASE ?>/painel/courses/modules/create&course=<?= $DataCourse['curso_id'] ?>" class="btn btn-success rounded-pill" style="border-radius: 50%; font-size: 11px;">Cadastrar módulo</a>
             <?php
                 } else {
-                    Error("Curso não encontrado!", "danger");
+                    Error("Curso não encontrado!", "warning");
                 }
             ?>
         </div>
@@ -66,9 +66,9 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
                                 <?= $Modulos['update_user'] ?>
                             </td>
                             <td>
-                                <a href="<?= BASE ?>/painel/courses/modules/update&module=<?= $Modulos['modulo_id'] ?>" class="btn-sm" title="Atualizar <?= $Modulos['modulo_name'] ?>"> <i class="fas fa-edit"></i></a>
+                                <a href="<?= BASE ?>/painel/courses/modules/update&module=<?= $Modulos['modulo_id'] ?>" class="btn-sm" title="Atualizar módulo"><i class="fas fa-edit"></i></a>
                                 <a href="<?= BASE ?>/painel/courses/lesson/list&module=<?= $Modulos['modulo_id'] ?>" class="btn-sm" title="Ver aulas desse módulo" style="color: #1cc88a;"><i class="fas fa-chalkboard-teacher"></i></a>
-                                <a href="<?= BASE ?>/painel/courses/modules/delete&delete_module=<?= $Modulos['modulo_id'] ?>" class="danger btn-sm" title="Excluir <?= $Modulos['modulo_name'] ?>" style="color: red;" title="Excluir curso"><i class="fa fa-trash-o" text="ola"></i></a>
+                                <a href="<?= BASE ?>/painel/courses/modules/delete&delete_module=<?= $Modulos['modulo_id'] ?>" class="danger btn-sm" title="Excluir módulo" style="color: red;" title="Excluir curso"><i class="fa fa-trash-o"></i></a>
                             </td>
                         </tr>
                         <?php
@@ -97,7 +97,7 @@ $(document).ready(function() {
     $("#table_lista_modulos").DataTable({
         "language": {
             "lengthMenu": "Mostrando _MENU_ registros por página",
-            "zeroRecords": "Nenhum módulo foi encontrado nesse curso",
+            "zeroRecords": "Nenhum módulo foi encontrado",
             "info": "Mostrando página _PAGE_ de _PAGES_ registros",
             "infoEmpty": "Nenhum registro foi encontrado",
             "infoFiltered": "(filtrado de _MAX_ registros no total)"

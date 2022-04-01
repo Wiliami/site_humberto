@@ -12,11 +12,11 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
     <!-- Sidebar -->
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
         <!-- Sidebar - Brand -->
-        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="">
             <div class="sidebar-brand-icon rotate-n-15">
                 <img src="<?= BASE ?>/src/images/icon_small.png" alt="logo unit" class="btn-sm" style="width: 45px; height: 40px;">
             </div>
-            <div class="sidebar-brand-text mx-3 btn-sm">Unitbrasil</div>
+            <!-- <div class="sidebar-brand-text mx-3 btn-sm">Unitbrasil</div> -->
         </a>
 
         <!-- Divider -->
@@ -38,14 +38,13 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
             </a>    
         <?php
         } else {
-            die(Error('Curso não encontrado!', 'warning'));
+            die(Error('Curso não encontrado!', ''));
         }
         ?>
         </li>
         <!-- Divider -->
         <hr class="sidebar-divider">
         <!-- Nav Item - Pages Collapse Menu -->
-
         <?php
         $Read->FullRead("SELECT * FROM modulos WHERE curso_id = :ci", "ci={$courseId}");
         if($Read->getResult()) {
@@ -54,26 +53,33 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
                 <li class="nav-item">
                     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse<?= $Modules['modulo_id'] ?>"
                         aria-expanded="true" aria-controls="collapseTwo">
-                        <i class="fas fa-history"></i>
+                        <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
                         <span><?= $Modules['modulo_name'] ?></span>
                     </a>
                     <div id="collapse<?= $Modules['modulo_id'] ?>" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
-                            <a class="collapse-item" href="#">Nome da aula</a>
+                            <?php
+                            $Read->FullRead("SELECT * FROM aulas WHERE modulo_id = :mi", "mi={$Modules['modulo_id']}");
+                            if($Read->getResult()) {
+                                foreach($Read->getResult() as $Lesson) {
+                                    ?>
+                            <a class="collapse-item" href="#"><?= $Lesson['aula_name'] ?></a>
+                            <?php           
+                                }
+                            } else {
+                                Error('Aula não encontrada!', '');
+                            }
+                            ?>
                         </div>
                     </div>
                 </li>
         <?php
             }
         } else {
-            Error('Módulo não encontrado', 'warning');
+            Error('Módulos não encontrados', 'warning');
         }
         ?>
-        
-      
         <!-- Nav Item - Utilities Collapse Menu -->
-        
-
         <!-- Divider -->
         <hr class="sidebar-divider d-none d-md-block">
 

@@ -9,6 +9,9 @@ echo $Component->getLiAdministrativoDashboard();
 echo $Component->getLiCoursesDashboard();
 echo $Component->getLiPagesDashboard();
 echo $Component->getMenuDashboard();
+$Username = $_SESSION['login']['user_name'];
+$UserEmail = $_SESSION['login']['user_email'];
+$UserContact = '(92) 99164-5357';
 ?>
 <div class="container">
     <div class="card shadow mb-4">
@@ -20,24 +23,22 @@ echo $Component->getMenuDashboard();
                 <div class="form-group row">
                     <label for="inputPassword" class="col-sm-2 col-form-label">Nome</label>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control" value="<?= $_SESSION['login']['user_name'] ?>"
-                            id="inputPassword">
+                        <input type="text" class="form-control" value="<?= $Username ?>">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="inputPassword" class="col-sm-2 col-form-label">E-mail</label>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control" value="<?= $_SESSION['login']['user_email'] ?>"
-                            id="inputPassword">
+                        <input type="text" class="form-control" value="<?= $UserEmail ?>">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="inputPassword" class="col-sm-2 col-form-label">Contato</label>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control" id="inputPassword">
+                        <input type="text" class="form-control" value="<?= $UserContact ?>">
                     </div>
                 </div>
-                <input type="submit" class="btn btn-success mb-2" name="update-user" value="Continuar">
+                <input type="submit" class="btn btn-success mb-2" name="update_user" value="Continuar">
             </form>
         </div>
     </div>

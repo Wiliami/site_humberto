@@ -44,7 +44,6 @@ $courseId = filter_input(INPUT_GET, 'update_curso', FILTER_VALIDATE_INT);
                     $updateCourse['curso_descricao'] = (!empty($Post['description']) ? $Post['description'] : null);
                     $updateCourse['curso_valor'] = (!empty($Post['valor']) ? $Post['valor'] : null);
                     $DataCourse = $updateCourse;
-                    // Check::var_dump_json($DataCourse);
                     $Course = new Course();
                     $Course->updateCourse($updateCourse, $courseId);
                     if($Course->getResult()) {

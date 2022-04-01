@@ -32,9 +32,9 @@ if($Read->getResult()) {
                 <?php
                 $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
                 if(!empty($Post['update_lesson'])) {
-                    $updateLesson['aula_name'] = $Post['lesson'];
-                    $updateLesson['aula_duracao'] = $Post['time'];
-                    $updateLesson['aula_url'] = $Post['url'];
+                    $updateLesson['aula_name'] = (!empty($Post['lesson'])? $Post['lesson']: null);
+                    $updateLesson['aula_duracao'] = (!empty($Post['time'])? $Post['time']: null);
+                    $updateLesson['aula_url'] = (!empty($Post['url'])? $Post['url']: null);
                     $DataLesson = $updateLesson;
                     $Course = new Course();
                     $Course->updateLesson($updateLesson, $lessonId);
@@ -61,7 +61,7 @@ if($Read->getResult()) {
                             value="<?= $DataLesson['aula_url'] ?>">
                     </div>
                     <a href="<?= BASE ?>/painel/courses/lesson/list" class="btn btn-outline-success mb-2" title="Voltar para lista de aulas">Voltar</a>
-                    <input type="submit" class="btn btn-success mb-2"   name="update_lesson" value="Atualizar">
+                    <input type="submit" class="btn btn-success mb-2" name="update_lesson" value="Atualizar">
             </form>
         </div>
     </div>

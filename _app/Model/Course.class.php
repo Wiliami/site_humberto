@@ -8,7 +8,6 @@ class Course {
 	private function verfiyDuplicateUserCourse($courseId, $userId) {
 		$Read = new Read();
 		$Read->FullRead("SELECT user_id FROM matriculas_cursos WHERE curso_id = :ci AND user_id = :ui", "ci={$courseId}&ui={$userId}");
-
 		if($Read->getResult()) {
 			$this->Error = "Esse curso já foi cadastrado. Selecione outro curso!";
 			return true;
@@ -82,7 +81,7 @@ class Course {
 			$this->Result = false;
 		} else {
 			$matriculateLesson['matricula_create_date'] = date('Y-m-d H:i:s');
-			$matriculateLesson['matricula_user_create'] = $_SESSION['login']['user_name'];
+			$matriculateLesson['matricula_user_create'] = $_SESSION['login']['user_id'];
 			$Create = new Create();
 			$Create->ExeCreate('matriculas_aulas', $matriculateLesson);
 			if($Create->getResult()) {
@@ -103,7 +102,7 @@ class Course {
 			$this->Error = "Atualize o nome do usuário!";
 			$this->Result = false;
 		} else {
-			$updateMatriculateLesson['matricula_user_update'] = $_SESSION['login']['user_name'];
+			$updateMatriculateLesson['matricula_user_update'] = $_SESSION['login']['user_id'];
 			$Update = new Update();
 			$Update->ExeUpdate("matriculas_aulas", $updateMatriculateLesson, "WHERE matricula_id = :mi", "mi={$matriculaId}");
 			if($Update->getResult()) {
@@ -152,7 +151,7 @@ class Course {
 			$this->Error = "Campo obrigatório!";
 			$this->Result = false;
 		} else {
-			$updateCategory['categoria_user_update'] = $_SESSION['login']['user_name'];
+			$updateCategory['categoria_user_update'] = $_SESSION['login']['user_id'];
 			$Update = new Update();
 			$Update->ExeUpdate("categoria_cursos", $updateCategory, "WHERE categoria_id = :ci", "ci={$categoriaId}");
 			if($Update->getResult()) {
@@ -275,7 +274,7 @@ class Course {
 				$this->Result = false;
 			} else {
 				$dataModule['modulo_create_date'] = date('Y-m-d H:i:s');
-				$dataModule['modulo_user_create'] = $_SESSION['login']['user_id'];
+				$dataModule['modulo_create_user'] = $_SESSION['login']['user_id'];
 				$Create = new Create();
 				$Create->ExeCreate("modulos", $dataModule);
 				if($Create->getResult()) {
@@ -296,7 +295,7 @@ class Course {
 			$this->Error = 'Preencha o campo de ordem de módulo!';
 			$this->Result = false;
 		} else {
-			$updateModule['modulo_user_update'] = $_SESSION['login']['user_id'];
+			$updateModule['modulo_update_user'] = $_SESSION['login']['user_id'];
 			$Update = new Update();
 			$Update->ExeUpdate("modulos", $updateModule, "WHERE modulo_id = :mi", "mi={$moduleId}");
 			if($Update->getResult()) {
@@ -351,18 +350,21 @@ class Course {
 
 	public function updateLesson($updateLesson, $lessonId) {
 		if(!empty($updateLesson['aula_name'])) {
-			$updateLesson['aula_name'] = $updateLesson['aula_name'];
+			$this->Result = false;
+			$this->Error = "Preencha o nome da aula!";
 		} elseif(!empty($updateLesson['aula_duracao'])) {
-			$updateLesson['aula_duracao'] = $updateLesson['aula_duracao'];
+			$this->Result = false;
+			$this->Error = "Preencha a duração da aula!";
 		} elseif(!empty($updateLesson['aula_url'])) {
-			$updateLesson['aula_url'] = $updateLesson['aula_url'];
+			$this->Result = false;
+			$this->Error = "Informe a url da aula!";
 		} else {
 			$updateLesson['aula_create_user'] = $_SESSION['login']['user_id'];
 			$Update = new Update();
 			$Update->ExeUpdate("aulas", $updateLesson, "WHERE aula_id = :ai", "ai={$lessonId}");
 			if($Update->getResult()) {
 				$this->Result = $Update->getResult(); 
-				$this->Error = "A aula foi atualizada com sucesso!";
+				$this->Error = "Aula atualizada com sucesso!";
 			} else {
 				$this->Result = false;
 				$this->Error = $Update->getError();

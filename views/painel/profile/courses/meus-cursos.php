@@ -18,24 +18,26 @@ $userId = $_SESSION['login']['user_id'];
     </div>
     <div class="row gx-5 container">
         <?php
-          $Read = new Read();
-          $Read->FullRead("SELECT m.*, c.curso_titulo, c.curso_descricao
-              FROM matriculas_cursos m 
-              LEFT JOIN users u ON u.user_id = m.user_id
-              LEFT JOIN cursos c ON c.curso_id = m.curso_id 
-              WHERE m.user_id = :ui", "ui={$userId}");
-          if($Read->getResult()) {
-              foreach($Read->getResult() as $Mat) {
-                  ?>
-        <div class="col-lg-4 mb-5">
-            <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="<?= BASE ?>/src/images/backstage_data.png" alt="banner do curso">
+        $Read = new Read();
+        $Read->FullRead("SELECT m.*, c.curso_titulo, c.curso_descricao
+            FROM matriculas_cursos m 
+            LEFT JOIN users u ON u.user_id = m.user_id
+            LEFT JOIN cursos c ON c.curso_id = m.curso_id 
+            WHERE m.user_id = :ui", "ui={$userId}");
+        if($Read->getResult()) {
+            foreach($Read->getResult() as $Mat) {
+                ?>
+        <a href="<?= BASE ?>/painel/profile/courses/lesson/area-course&course=<?= $Mat['curso_id'] ?>">
+            <div class="col-lg-4 mb-5">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="<?= BASE ?>/src/images/backstage_data.png" alt="banner do curso">
+                </div>
+                <a href="" class="card-body text-dark">
+                    <h5 class="card-title"><?= $Mat['curso_titulo'] ?></h5>
+                    <p class="card-text"><?= $Mat['curso_descricao'] ?></p>
+                </a>
             </div>
-            <a href="<?= BASE ?>/painel/profile/courses/lesson/area-course&course=<?= $Mat['curso_id'] ?>"class="card-body">
-                <h5 class="card-title"><?= $Mat['curso_titulo'] ?></h5>
-                <p class="card-text"><?= $Mat['curso_descricao'] ?></p>
-            </a>
-        </div>
+        </a>
         <?php
             }
         } else {
