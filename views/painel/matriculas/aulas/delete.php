@@ -28,8 +28,7 @@ if($Read->getResult()) {
 <div class="container">
     <div class="card shadow mb-4">
         <div class="card-header py-3 d-sm-flex align-items-center justify-content-between">
-            <h1 class="h5 mb-0 text-gray-800">Excluir <?= $DataMatriculaLesson['aula_name'] ?></h1>
-            <a href="<?= BASE ?>/painel/lesson/list" class="btn btn-success" title="Voltar para lista de aulas" style="font-size: 11px;">Voltar</a>
+            <h1 class="h5 mb-0 text-gray-800">Excluir <b><?= $DataMatriculaLesson['aula_name'] ?></b></h1>
         </div>
         <div class="card-body">
             <?php
@@ -45,10 +44,6 @@ if($Read->getResult()) {
                 }
             ?>
             <form method="post">
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Aula</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nome da aula" value="<?= $DataMatriculaLesson['aula_name'] ?>">
-                </div>
                 <a href="<?= BASE ?>/painel/matriculas/aulas/list" class="btn btn-outline-success" title="Voltar para lista de matrículas de aulas">Voltar</a>
                 <input type="submit" class="btn btn-danger" name="delete_matriculate" value="Excluir">     
             </form>

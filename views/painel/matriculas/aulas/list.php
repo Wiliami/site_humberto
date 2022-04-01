@@ -17,7 +17,7 @@ echo $Component->getMenuDashboard();
     <div class="card shadow mb-4">
         <div class="card-header py-3 d-sm-flex align-items-center justify-content-between">
             <h6 class="m-0 h6 text-dark">Lista de matrículas</h6>
-            <a href="<?= BASE ?>/painel/matriculas/aulas/create" class="btn btn-success rounded-pill" style="border-radius: 50%; font-size: 11px;" title="Nova matrícula de aula">Nova matrícula</a>
+            <a href="<?= BASE ?>/painel/matriculas/aulas/create" class="btn btn-success rounded-pill" style="border-radius: 50%; font-size: 11px;" title="Nova matrícula de aula">Nova matrícula em aula</a>
         </div>
         <div class="card-body">
             <div class="table-responsive">
