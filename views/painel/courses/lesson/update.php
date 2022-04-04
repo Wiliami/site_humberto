@@ -40,7 +40,7 @@ if($Read->getResult()) {
                     $Course->updateLesson($updateLesson, $lessonId);
                     if($Course->getResult()) {
                         Error($Course->getError());
-                        header('Location: ' . BASE . '/painel/courses/lesson/list');
+                        //header('Location: ' . BASE . '/painel/courses/lesson/list');
                         die();
                     } else {
                         Error($Course->getError(), 'warning');

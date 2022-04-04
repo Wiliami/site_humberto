@@ -349,13 +349,13 @@ class Course {
 	}
 
 	public function updateLesson($updateLesson, $lessonId) {
-		if(!empty($updateLesson['aula_name'])) {
+		if(empty($updateLesson['aula_name'])) {
 			$this->Result = false;
 			$this->Error = "Preencha o nome da aula!";
-		} elseif(!empty($updateLesson['aula_duracao'])) {
+		} elseif(empty($updateLesson['aula_duracao'])) {
 			$this->Result = false;
 			$this->Error = "Preencha a duração da aula!";
-		} elseif(!empty($updateLesson['aula_url'])) {
+		} elseif(empty($updateLesson['aula_url'])) {
 			$this->Result = false;
 			$this->Error = "Informe a url da aula!";
 		} else {

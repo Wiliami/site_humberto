@@ -18,7 +18,6 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
             </div>
             <!-- <div class="sidebar-brand-text mx-3 btn-sm">Unitbrasil</div> -->
         </a>
-
         <!-- Divider -->
         <hr class="sidebar-divider my-0">
         <!-- Nav Item - Dashboard -->
@@ -63,7 +62,7 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
                             if($Read->getResult()) {
                                 foreach($Read->getResult() as $Lesson) {
                                     ?>
-                            <a class="collapse-item" href="#"><?= $Lesson['aula_name'] ?></a>
+                            <a class="collapse-item" href="https://player.vimeo.com/video/137857207"><?= $Lesson['aula_name'] ?></a>
                             <?php           
                                 }
                             } else {
@@ -82,31 +81,22 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
         <!-- Nav Item - Utilities Collapse Menu -->
         <!-- Divider -->
         <hr class="sidebar-divider d-none d-md-block">
-
         <!-- Sidebar Toggler (Sidebar) -->
         <div class="text-center d-none d-md-inline">
             <button class="rounded-circle border-0" id="sidebarToggle"></button>
         </div>
-
-
-
     </ul>
     <!-- End of Sidebar -->
-
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
-
         <!-- Main Content -->
         <div id="content">
-
             <!-- Topbar -->
             <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-
                 <!-- Sidebar Toggle (Topbar) -->
                 <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                     <i class="fa fa-bars"></i>
                 </button>
-
                 <!-- Topbar Search -->
                 <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                     <div class="input-group">
@@ -119,10 +109,8 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
                         </div>
                     </div>
                 </form>
-
                 <!-- Topbar Navbar -->
                 <ul class="navbar-nav ml-auto">
-
                     <!-- Nav Item - Search Dropdown (Visible Only XS) -->
                     <li class="nav-item dropdown no-arrow d-sm-none">
                         <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
@@ -146,14 +134,8 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
                             </form>
                         </div>
                     </li>
-
-                   
-
-
-
                     <div class="topbar-divider d-none d-sm-block"></div>
-
-                    <!-- Nav Item - User Information | Minha conta-->
+                    <!-- Nav Item - User Information | Minha conta -->
                     <li class="nav-item dropdown no-arrow">
                         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -179,16 +161,11 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
                             </a>
                         </div>
                     </li>
-
                 </ul>
-
             </nav>
             <!-- End of Topbar -->
-
             <!-- Begin Page Content -->
-            <div class="container-fluid">
-
-                
+            <div class="container mt-0">
                 <header class="navbar navbar-expand bg-success static-top shadow d-flex align-items-center justify-content-center justify-content-md-between">
                     <ul class="header1" style="list-style: none;">
                         <li>
@@ -210,54 +187,17 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
                         </li>
                     </ul>
                 </header>    
-                <div class="embed-responsive embed-responsive-16by9">
+                <!-- <div class="embed-responsive embed-responsive-16by9">
                     <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/137857207" allowfullscreen></iframe>
-                </div>
+                </div> -->
+                <video class="video-fluid z-depth-1" autoplay controls loop muted>
+                    <source src="" type="video/mp4" />
+                    <!-- <progress value="0.5" max=""></progress> -->
+                </video>
             </div>
             <!-- /.container-fluid -->
-
         </div>
         <!-- End of Main Content -->
-
-        <!-- Footer -->
-        <footer class="sticky-footer bg-white">
-            <div class="container my-auto">
-                <div class="copyright text-center my-auto">
-                    <span>Copyright &copy; Unitplus <?= date('Y') ?></span>
-                </div>
-            </div>
-        </footer>
-    
-        <!-- End of Footer -->
-
-    </div>
-    <!-- End of Content Wrapper -->
-
-    </div>
-    <!-- End of Page Wrapper -->
-
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-    <i class="fas fa-angle-up"></i>
-    </a>
-
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title btn btn-success vw-100" id="exampleModalLabel">Pronto para sair?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">Selecione "Sair" para encerrar a sua sessão.</div>
-                    <div class="modal-footer">
-                        <button class="btn btn-outline-dark" type="button" data-dismiss="modal">Cancelar</button>
-                        <a class="btn btn-success" href="<?= BASE ?>/pages/logout">Sair</a>
-                    </div>
-            </div>
-        </div>
-    </div>
-
+       
+        
 <?= $Component->getLinkScriptFooterDashboard(); ?>

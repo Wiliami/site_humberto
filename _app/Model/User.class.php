@@ -211,10 +211,10 @@ class User {
     }
 	public function exeLogin($email, $password) {
 		if(empty($email)) {
-			$this->Error = "O e-mail é obrigatório!";
+			$this->Error = "Informe um e-mail válido!";
 			$this->Result = false;
 		} elseif (empty($password)) {
-			$this->Error = "A senha é obrigatória!";
+			$this->Error = "Informe a senha!";
 			$this->Result = false;
 		} else {
 			$password = md5($password);
