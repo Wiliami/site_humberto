@@ -191,12 +191,11 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
                 <div class="embed-responsive embed-responsive-16by9">
                     <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/137857207"></iframe>
                 </div>
-                <div class="d-flex flex-row mt-3">
-                    <p>Título do curso</p> 
-                    <i class="fas fa-solid fa-angle-right"></i>
-                    <p>Descrição do curso</p>
+                <div class="d-flex align-items-center justify-content-start mt-3">
+                    <div class="ml-0 h6">Título do curso</div>
+                    <div class="ml-3 h6">Descrição do curso</div>
                 </div>
-                <h1 class="h4">Nome da aula</h1>
+                <h1 class="h5 text-gray-900 mb-4">Nome da aula<?= $Lesson[''] ?></h1>
                 <hr>
             </div>
             <!-- /.container-fluid -->
