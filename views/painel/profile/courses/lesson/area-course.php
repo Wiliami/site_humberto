@@ -52,7 +52,8 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
                 <li class="nav-item">
                     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse<?= $Modules['modulo_id'] ?>"
                         aria-expanded="true" aria-controls="collapseTwo">
-                        <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                        <!-- <i class="fas fa-clipboard-list fa-2x text-gray-300"></i> -->
+                        <!-- <i class="fas fa-solid fa-angle-right"></i> -->
                         <span><?= $Modules['modulo_name'] ?></span>
                     </a>
                     <div id="collapse<?= $Modules['modulo_id'] ?>" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
@@ -62,7 +63,7 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
                             if($Read->getResult()) {
                                 foreach($Read->getResult() as $Lesson) {
                                     ?>
-                            <a class="collapse-item" href="https://player.vimeo.com/video/137857207"><?= $Lesson['aula_name'] ?></a>
+                            <a class="collapse-item" href="#"><?= $Lesson['aula_name'] ?></a>
                             <?php           
                                 }
                             } else {
@@ -165,14 +166,14 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
             </nav>
             <!-- End of Topbar -->
             <!-- Begin Page Content -->
-            <div class="container mt-0">
+            <div class="container mt-0 w-100">
                 <header class="navbar navbar-expand bg-success static-top shadow d-flex align-items-center justify-content-center justify-content-md-between">
                     <ul class="header1" style="list-style: none;">
                         <li>
                             <a href="<?= BASE ?>/painel/aulas/nome-da-aula-anterior" class="small text-gray-200">
                                 <div class="fw-normal text-white-50 mb-1">Anterior</div>
                                 <i class="fas fa-arrow-circle-left mr-2 text-gray-200"></i>
-                                <span>Título da aula anterior</span>
+                                <span>React Native</span>
                             </a>
                         </li>
                     </ul>
@@ -181,23 +182,24 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
                         <li>
                             <a href="<?= BASE ?>/painel/aulas/nome-da-proxima-aula" class="small text-gray-200">
                                 <div class="fw-normal text-white-50 mb-1">Próxima</div>
-                                <span>Título da próxima aula</span>
+                                <span>React JS</span>
                                 <i class="fas fa-arrow-circle-right mr-2 text-gray-200"></i>
                             </a>
                         </li>
                     </ul>
                 </header>    
-                <!-- <div class="embed-responsive embed-responsive-16by9">
-                    <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/137857207" allowfullscreen></iframe>
-                </div> -->
-                <video class="video-fluid z-depth-1" autoplay controls loop muted>
-                    <source src="" type="video/mp4" />
-                    <!-- <progress value="0.5" max=""></progress> -->
-                </video>
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/137857207"></iframe>
+                </div>
+                <div class="d-flex flex-row mt-3">
+                    <p>Título do curso</p> 
+                    <i class="fas fa-solid fa-angle-right"></i>
+                    <p>Descrição do curso</p>
+                </div>
+                <h1 class="h4">Nome da aula</h1>
+                <hr>
             </div>
             <!-- /.container-fluid -->
         </div>
         <!-- End of Main Content -->
-       
-        
 <?= $Component->getLinkScriptFooterDashboard(); ?>
