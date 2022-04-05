@@ -21,6 +21,23 @@ class Message {
             }
         }
     }
+
+    public function createCommentLesson($Message) {
+        if(empty($Message['comment_text'])) {
+            $this->Error = "Campo obrigatório!";
+            $this->Result = false;
+        } else {
+            $Create = new Create();
+            $Create->ExeCreate("comments", $Message);
+            if($Create->getResult()) {
+                $this->Result = $Create->getResult();
+                $this->Error = "Comentário enviado com sucesso!";
+            } else {
+                $this->Result = false;
+                $this->Error = $Create->getError();
+            }
+        }
+    }
     
 
     public function getResult() {

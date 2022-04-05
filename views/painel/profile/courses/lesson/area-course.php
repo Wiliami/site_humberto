@@ -24,7 +24,7 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
         <li class="nav-item active">
             <?php
             $Read = new Read();
-            $Read->FullRead("SELECT mc.*, c.curso_titulo
+            $Read->FullRead("SELECT mc.*, c.curso_titulo, c.curso_descricao
                 FROM matriculas_cursos mc
                 LEFT JOIN cursos c ON c.curso_id = mc.curso_id
                 WHERE mc.curso_id = :ci", "ci={$courseId}");
@@ -191,12 +191,38 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
                 <div class="embed-responsive embed-responsive-16by9">
                     <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/137857207"></iframe>
                 </div>
-                <div class="d-flex align-items-center justify-content-start mt-3">
-                    <div class="ml-0 h6">Título do curso</div>
-                    <div class="ml-3 h6">Descrição do curso</div>
+                <div class="d-flex flex-row mt-3">
+                    <p class="ml-0 h6"><?= $DataCourse['curso_titulo'] ?></p>
+                    <i class="fas fa-solid fa-chevron-right ml-2"></i>
+                    <p class="ml-2 h6"><?= $DataCourse['curso_descricao'] ?></p>
                 </div>
-                <h1 class="h5 text-gray-900 mb-4">Nome da aula<?= $Lesson[''] ?></h1>
+                <h1 class="h5 text-gray-900 mb-4 mt-4"><?= $Lesson['aula_name'] ?></h1>
                 <hr>
+                <form action="" method="post">
+                    <div class="form-group">
+                        <label for="exampleFormControlTextarea1" class="h5 text-gray-900">Comentários</label>
+                            <?php 
+                            $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+                            if(!empty($Post['enviar'])) {
+                                $CreateComment['comment_user'] = $Post['comment'];
+                                $Comment = new Comment();
+                                $Comment->createCommentLesson($CreateComment);
+                                if($Comment->getResult()) {
+                                    Error($Comment->getError());
+                                } else {
+                                    Error($Comment->getError(), 'warning');
+                                }
+                            } 
+                            ?>
+                        <div class="mt-3 d-flex justify-content-between">
+                            <img class="img-profile rounded-circle" style="width: 40px; height: 40px;" src="<?= BASE ?>/src/images/undraw_profile.svg">
+                            <textarea class="form-control ml-3" id="exampleFormControlTextarea1" name="comment" placeholder="Escreva seu comentário..." rows="3"></textarea>
+                        </div>
+                        <div class="d-flex">
+                            <input type="submit" class="btn btn-danger mt-3 ml-auto p-2" name="enviar" value="Publicar">
+                        </div>
+                    </div>
+                </form>
             </div>
             <!-- /.container-fluid -->
         </div>
