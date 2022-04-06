@@ -27,7 +27,7 @@ $Username = $_SESSION['login']['user_name'];
         if($Read->getResult()) {
             foreach($Read->getResult() as $Cursos) {
                 ?>
-        <a href="<?= BASE ?>/painel/profile/compra-curso">
+        <a href="<?= BASE ?>/painel/profile/area-curso">
             <div class="col-lg-4 mb-5">
                 <div class="card" style="width: 18rem;">
                     <img class="card-img-top" src="<?= BASE ?>/src/images/backstage_data.png" alt="banner do curso">
@@ -35,7 +35,7 @@ $Username = $_SESSION['login']['user_name'];
                 <div class="card-body">
                     <h5 class="card-title text-dark"><?= $Cursos['curso_titulo'] ?></h5>
                     <p class="card-text text-dark"><?= $Cursos['curso_descricao'] ?></p>
-                    <a href="<?= BASE ?>/painel/profile/compra-curso" class="text-dark">R$<?= number_format($Cursos['curso_valor'], 2, ',', '.') ?></a>
+                    <a href="<?= BASE ?>/painel/profile/area-curso" class="text-dark">R$<?= number_format($Cursos['curso_valor'], 2, ',', '.') ?></a>
                 </div>
             </div>
             <?php
