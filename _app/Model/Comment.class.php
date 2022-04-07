@@ -11,6 +11,9 @@ class Comment {
             $this->Error = "Campo obrigatório!";
             $this->Result = false;
         } else {
+            $CreateComment['comment_create_date'] = date("Y-m-d H:i:s");
+            $CreateComment['comment_create_user'] = $_SESSION['login']['user_id'];
+            $CreateComment['comment_aprovacao'] = 'Aguardando aprovação';
             $Create = new Create();
             $Create->ExeCreate("comments", $CreateComment);
             if($Create->getResult()) {

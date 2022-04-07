@@ -99,7 +99,7 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
                     <i class="fa fa-bars"></i>
                 </button>
                 <!-- Topbar Search -->
-                <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                <form method="post" class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                     <div class="input-group">
                         <input type="text" class="form-control bg-light border-0 small" placeholder="Procurar aulas..."
                             aria-label="Search" aria-describedby="basic-addon2">
@@ -121,9 +121,9 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
                         <!-- Dropdown - Messages -->
                         <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
                             aria-labelledby="searchDropdown">
-                            <form class="form-inline mr-auto w-100 navbar-search">
-                                <div class="input-group">
-                                    <input type="text" class="form-control bg-light border-0 small"
+                            <form method="post" class="form-inline mr-auto w-100 navbar-search">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control bg-light border-0 small"
                                         placeholder="Procurar aulas..." aria-label="Search"
                                         aria-describedby="basic-addon2">
                                     <div class="input-group-append">
@@ -221,6 +221,28 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
                         <div class="d-flex">
                             <input type="submit" class="btn btn-danger mt-3 ml-auto p-2" name="enviar" value="Publicar">
                         </div>
+                        <?php
+                        $Read->FullRead("SELECT c.*, u.user_name
+                            FROM comments c
+                            LEFT JOIN users u ON u.user_id = c.comment_create_user");
+                        if($Read->getResult()) {    
+                            $CommentUser = $Read->getResult()[0];
+                            //Check::var_dump_json($CommentUser);
+                                ?>
+                                <div class="d-flex align-items-center justify-content-start">
+                                    <img class="img-profile rounded-circle" style="width: 40px; height: 40px;" src="<?= BASE ?>/src/images/undraw_profile.svg">
+                                    <h1 class="h6 ml-2"><?= $CommentUser['user_name'] ?></h1>
+                                </div>
+                                <div class="d-flex justify-content-between rounded card-body bg-dark">
+                                    <h2 class="h6 text-white"><?= $CommentUser['comment_user'] ?></h2>
+                                    <div class="d-flex align-items-center justify-content-end">
+                                        <a href="" class="btn-sm btn-light" title="Editar comentário"><i class="fas fa-edit"></i></a>   
+                                        <a href="" class="btn-sm btn-light ml-2" title="Excluir comentário"><i class="fas fa-solid fa-trash"></i></a>
+                                    </div>
+                                </div>
+                        <?php
+                        }
+                        ?>
                     </div>
                 </form>
             </div>

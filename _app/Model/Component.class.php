@@ -43,27 +43,27 @@ class Component {
 
     public function getHeader() {
         return '
-        <header class="bg-white py-5 style="height: 698px;">            
-            <div class="overlay"></div>
-            <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
-                <source src="https://storage.googleapis.com/coverr-main/mp4/Mt_Baker.mp4" type="video/mp4">
-            </video>
-            <div class="container h-100">
-                 <div class="d-flex h-100 text-center align-items-center">
-                    <div class="my-5 text-center text-xl-start">
-                        <h1 class="display-5 fw-bolder text-white mb-2">Plataforma de <br /> evangelismo online <br />e desenvolvimento <br>pesssoal.</h1>
-                        <p class="lead fw-normal text-white-50 mb-4">Comece um tour pelo site<br /> e saiba como funciona o <br> evangelismo web.</p>
-                        <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
-                            <!-- <a class="btn btn-warning btn-lg px-4 me-sm-3" href=" ' . BASE . '/cadastro">Começar</a> -->
-                            <a class="btn btn-warning btn-lg px-4" href="#content-overview">Saiba mais</a>
-                            <!-- <div class="justify-content-sm-center justify-content-xl-end">
-                                <a class="btn btn-success text-black btn-lg px-4" href="/">Suporte</a>
-                            </div> -->
-                        </div>  
+            <header class="bg-white py-5 style="height: 698px;">            
+                <div class="overlay"></div>
+                <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+                    <source src="https://storage.googleapis.com/coverr-main/mp4/Mt_Baker.mp4" type="video/mp4">
+                </video>
+                <div class="container h-100">
+                    <div class="d-flex h-100 text-center align-items-center">
+                        <div class="my-5 text-center text-xl-start">
+                            <h1 class="display-5 fw-bolder text-white mb-2">Plataforma de <br /> evangelismo online <br />e desenvolvimento <br>pesssoal.</h1>
+                            <p class="lead fw-normal text-white-50 mb-4">Comece um tour pelo site<br /> e saiba como funciona o <br> evangelismo web.</p>
+                            <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
+                                <!-- <a class="btn btn-warning btn-lg px-4 me-sm-3" href=" ' . BASE . '/cadastro">Começar</a> -->
+                                <a class="btn btn-warning btn-lg px-4" href="#content-overview">Saiba mais</a>
+                                <!-- <div class="justify-content-sm-center justify-content-xl-end">
+                                    <a class="btn btn-success text-black btn-lg px-4" href="/">Suporte</a>
+                                </div> -->
+                            </div>  
+                        </div>
                     </div>
                 </div>
-            </div>
-        </header>
+            </header>
         ';
     }
 
