@@ -28,7 +28,7 @@ $courseId = filter_input(INPUT_GET, 'curso', FILTER_VALIDATE_INT);
                         ?>
                     </div>
                     <div>
-                        <img src="<?= BASE ?>/src/images/backstage_data.png" class="rounded" alt="capa do curso" style="height: 200px; width: 230px;">
+                        <img src="<?= BASE ?>/src/images/page-youtube1.jpg" class="rounded-top" alt="capa do curso" style="height: 250px; width: 400px;">
                     </div>
                 </div>
                 <div class="d-flex align-items-center justify-content-start">
