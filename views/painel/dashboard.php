@@ -27,7 +27,7 @@ $Username = $_SESSION['login']['user_name'];
         if($Read->getResult()) {
             foreach($Read->getResult() as $Cursos) {
                 ?>
-        <a href="<?= BASE ?>/painel/profile/area-curso">
+        <a href="<?= BASE ?>/painel/profile/area-curso&curso=<?= $Cursos['curso_id'] ?>">
             <div class="col-lg-4 mb-5">
                 <div class="card" style="width: 18rem;">
                     <img class="card-img-top" src="<?= BASE ?>/src/images/backstage_data.png" alt="banner do curso">
@@ -41,7 +41,7 @@ $Username = $_SESSION['login']['user_name'];
             <?php
                 }
             } else {
-                Error("Cursos não encontrados", 'danger');
+                Error("Cursos não encontrados", 'warning');
             }
             ?>
         </a>
