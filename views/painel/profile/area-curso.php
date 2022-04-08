@@ -10,10 +10,10 @@ $courseId = filter_input(INPUT_GET, 'curso', FILTER_VALIDATE_INT);
             <div class="overlay"></div>
             <div class="container h-100">
                 <div class="d-flex align-items-center justify-content-start">
-                    <p class="" style="font-size: 12px;">Categoria do curso do curso</p>
+                    <p class="ml-0" style="font-size: 12px;">Categoria do curso do curso</p>
                     <p class="ml-4" style="font-size: 12px;">Categoria</p>
                 </div>
-                <div class="d-flex h-100 text-center align-items-center">
+                <div class="d-flex h-100 text-center align-items-center justify-content-between">
                     <div class="my-5 text-center text-xl-start">
                         <?php 
                         $Read = new Read();
@@ -27,13 +27,13 @@ $courseId = filter_input(INPUT_GET, 'curso', FILTER_VALIDATE_INT);
                         }
                         ?>
                     </div>
+                    <div>
+                        <img src="<?= BASE ?>/src/images/backstage_data.png" class="rounded" alt="capa do curso" style="height: 200px; width: 230px;">
+                    </div>
                 </div>
                 <div class="d-flex align-items-center justify-content-start">
                     <p class="" style="font-size: 12px;">Atualização do curso</p>
                     <p class="ml-4" style="font-size: 12px;">Linguaguem do curso</p>
-                </div>
-                <div class="">
-                    <img src="<?= BASE ?>/src/site/images/logo.png" alt="">
                 </div>
             </div>
         </header>
