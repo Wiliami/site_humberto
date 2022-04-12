@@ -5,6 +5,7 @@ class User {
 	// - verifyDuplicateUserEmail -> verificar se o usuário digitou o email que já está em uso. 
 	// - resetUserPassword -> alterar a senha do usuário
 	// - getForgot -> envia o email de recuperação de senha ao usuário
+	
 	private $Error;
 	private $Result;
 
