@@ -32,6 +32,7 @@
             <i class="fas fa-pause-circle"></i>
             <i class="fas fa-step-forward"></i>
         </div>
-        <audio src=""></audio>             
+        <audio src=""></audio>  
+        <script src="<?= BASE ?>/src/js/pagina-video.js"></script>
     </body>
 </html>
