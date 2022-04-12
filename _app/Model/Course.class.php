@@ -404,6 +404,11 @@ class Course {
  		}
 	}
 
+	public function purchaseUserCourse() {
+		$this->Error = 'Compra realizada com sucesso!';
+		$this->Result = false;
+	} 
+
 	public function getResult() {
 		return $this->Result;
 	}
@@ -412,5 +417,3 @@ class Course {
 		return $this->Error;
 	}
 }
-
-?>

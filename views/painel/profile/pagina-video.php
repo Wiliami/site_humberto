@@ -7,11 +7,11 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="<?= BASE ?>/src/css/video-pagina.css">
-        <source>
-        <title>Document</title>
+        <title>Humberto Oliveira | Aulas</title>
     </head>
     <body>
-        <img src="<?=BASE ?>/src/images/speech-post.jpg" alt="imagem do vídeo" style="width: 300px; height: 300;">
+        <img src="<?=BASE ?>/src/images/speech-post.jpg" alt="imagem do vídeo" 
+        style="width: 700px; height: 700px;">
         <div class="descricao">
             <h2>Nome do curso</h2>
             <i>Nome da aula</i>
@@ -32,6 +32,6 @@
             <i class="fas fa-pause-circle"></i>
             <i class="fas fa-step-forward"></i>
         </div>
-        <audio src=""></audio>              
+        <audio src=""></audio>             
     </body>
 </html>
