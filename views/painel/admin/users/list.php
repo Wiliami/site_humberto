@@ -60,9 +60,9 @@ echo $Component->getMenuDashboard();
                                 <?= $Users['update_user'] ?>
                             </td>
                             <td>
-                                <a href="<?= BASE ?>/painel/admin/users/update&update_user=<?= $Users['user_id'] ?>" class="btn-sm btn-primary" title="Editar <?= $Users['user_name'] ?> "><i class="fas fa-edit"></i></a>
-                                <a href="<?= BASE ?>/painel/profile/courses/list&user=<?= $Users['user_id'] ?>" class="btn-sm btn-success" title="Cursos de <?= $Users['user_name'] ?> "><i class="fas fa-book"></i></a>
-                                <a href="<?= BASE ?>/painel/admin/users/delete&delete_user=<?= $Users['user_id'] ?>" class="btn-sm btn-danger" title="Excluir <?= $Users['user_name'] ?> "><i class="fa fa-trash-o"></i></a>
+                                <a href="<?= BASE ?>/painel/admin/users/update&update_user=<?= $Users['user_id'] ?>" class="btn-sm" title="Editar <?= $Users['user_name'] ?> "style="color: #4e73df;"><i class="fas fa-edit"></i></a>
+                                <a href="<?= BASE ?>/painel/profile/courses/list&user=<?= $Users['user_id'] ?>" class="btn-sm" title="Cursos de <?= $Users['user_name'] ?> "style="color: #1cc88a;"><i class="fas fa-book"></i></a>
+                                <a href="<?= BASE ?>/painel/admin/users/delete&delete_user=<?= $Users['user_id'] ?>" class="btn-sm" title="Excluir <?= $Users['user_name'] ?> " style="color: #e74a3b;"><i class="fa fa-trash-o"></i></a>
                             </td>
                         </tr>
                         <?php

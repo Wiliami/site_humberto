@@ -27,8 +27,11 @@ $courseId = filter_input(INPUT_GET, 'curso', FILTER_VALIDATE_INT);
                         }
                         ?>
                     </div>
-                    <div>
-                        <img src="<?= BASE ?>/src/images/page-youtube1.jpg" class="rounded-top" alt="capa do curso" style="height: 250px; width: 400px;">
+                    <div class="d-flex flex-row">
+                        <a href="<?= BASE ?>/painel/profile/courses/compra-curso" class="">
+                            <img src="<?= BASE ?>/src/images/thumbnail-course.jpg" class="rounded-top p-2" alt="capa do curso" style="height: 250px; width: 400px;">
+                            <span class="p-2">Preço do curso</span>
+                        </a>
                     </div>
                 </div>
                 <div class="d-flex align-items-center justify-content-start">
