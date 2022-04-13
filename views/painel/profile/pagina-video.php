@@ -10,7 +10,7 @@
         <title>Humberto Oliveira | Aulas</title>
     </head>
     <body>
-        <img src="<?=BASE ?>/src/images/speech-post.jpg" alt="imagem do vídeo" 
+        <img src="<?= BASE ?>/src/images/speech-post.jpg" alt="imagem do vídeo" 
         style="width: 700px; height: 700px;">
         <div class="descricao">
             <h2>Nome do curso</h2>

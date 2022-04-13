@@ -3,17 +3,30 @@ $User = new User();
 $User->verifyExistLoginUser();
 $Component = new Component();
 echo $Component->getBlockPageProfile();
-echo $Component->getHeadHtmlHome(); 
 $courseId = filter_input(INPUT_GET, 'curso', FILTER_VALIDATE_INT);
 ?>
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Plataforma</title>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
+        <link id="pagestyle" href="<?= BASE ?>/src/css/material-kit.css?v=3.0.0" rel="stylesheet" />
+        <!-- <link rel="stylesheet" href="' . BASE . '/src/css/menu-active.css" type="text/css"> -->
+        <!-- Estiliza todos os ícons de deshboard -->
+        <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
         <header class="bg-dark py-5">
             <div class="overlay"></div>
-            <div class="container-fluid">
-                <div class="d-flex align-items-center justify-content-around">
-                    <p class="ml-0" style="font-size: 12px;">Categoria do curso do curso</p>
-                    <p class="ml-4" style="font-size: 12px;">Categoria</p>
+            <div class="container">
+                <div class="d-flex justify-content-start">
+                    <p style="font-size: 12px;">Categoria do curso do curso</p>
+                    <p style="font-size: 12px;">Categoria</p>
                 </div>
-                <div class="d-flex text-center align-items-center justify-content-around">
+                <div class="d-flex text-center align-items-center justify-content-between">
                     <div class="my-5 text-center text-xl-start">
                         <?php 
                         $Read = new Read();
@@ -50,9 +63,9 @@ $courseId = filter_input(INPUT_GET, 'curso', FILTER_VALIDATE_INT);
 
                 </div>
 
-                <div class="d-flex align-items-center justify-content-around">
-                    <p class="" style="font-size: 12px;">Atualização do curso</p>
-                    <p class="ml-4" style="font-size: 12px;">Linguaguem do curso</p>
+                <div class="d-flex justify-content-start">
+                    <p style="font-size: 12px;">Atualização do curso</p>
+                    <p style="font-size: 12px;">Linguaguem do curso</p>
                 </div>
             </div>
         </header>
@@ -70,10 +83,11 @@ $courseId = filter_input(INPUT_GET, 'curso', FILTER_VALIDATE_INT);
             </div>
 
             <h5 class="mb-1 mt-5">Conteúdo do curso:</h5>    
-            <div class="d-flex align-items-center justify-content-start">
-                <p class="" style="font-size: 12px;">Número de Módulos</p>
-                <p class="ml-2" style="font-size: 12px;">Total de aulas</p>
-                <p class="ml-2" style="font-size: 12px;">Total de horas do curso</p>
+            <div class="d-flex flex-row">
+                <p class="ml-auto p-2" style="font-size: 12px;">Número de Módulos</p>
+                <p class="p-2" style="font-size: 12px;">Total de aulas</p>
+    
+                <p class="p-2" style="font-size: 12px;">Total de horas do curso</p>
             </div>
             <div class="list-group">
                 <div class="list-group-item flex-column align-items-start bg-light">
