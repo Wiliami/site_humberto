@@ -46,8 +46,8 @@ $levelId = filter_input(INPUT_GET, 'delete_level', FILTER_VALIDATE_INT);
         </div>
         <div class="card-body">
             <form action="" method="post">
-                <a href="<?= BASE ?>/painel/admin/level-user/list" class="btn btn-outline-success mb-2" title="Voltar para lista de níveis">Voltar</a>
-                <button type="button" class="btn btn-danger  mb-2" data-toggle="modal" data-target="#exampleModal">
+                <a href="<?= BASE ?>/painel/admin/level-user/list" class="btn btn-outline-danger mb-2" title="Voltar para lista de níveis">Voltar</a>
+                <button type="button" class="btn btn-success mb-2" data-toggle="modal" data-target="#exampleModal">
                     Excluir
                 </button>
 
@@ -68,10 +68,10 @@ $levelId = filter_input(INPUT_GET, 'delete_level', FILTER_VALIDATE_INT);
                                 Tem certeza que deseja excluir esse nível?
                             </div>
                             <div class="modal-footer">
-                                <button class="btn btn-outline-success mb-2" type="button" data-dismiss="modal">
+                                <button class="btn btn-outline-danger mb-2" type="button" data-dismiss="modal">
                                     Cancelar
                                 </button>
-                                <input type="submit" class="btn btn-danger mb-2" name="delete_level" value="Excluir">
+                                <input type="submit" class="btn btn-success mb-2" name="delete_level" value="Excluir">
                             </div>
                         </div>
                     </div>
