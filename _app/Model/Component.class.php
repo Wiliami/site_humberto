@@ -991,6 +991,7 @@ class Component {
                             </div>
                         </div>
                     </div>
+                <script src="'. BASE .'/src/assets/js/JQuery/jquery-3.6.0.min.js"></script>
                 <script src="'. BASE .'/res/site/js/jquery.min.js"></script>
                 <script src="'. BASE .'/res/site/js/bootstrap.bundle.min.js"></script>
                 <script src="'. BASE .'/res/site/js/jquery.easing.min.js"></script>

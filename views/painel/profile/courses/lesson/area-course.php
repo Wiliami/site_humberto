@@ -198,7 +198,7 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
                 </div>
                 <h1 class="h5 text-gray-900 mb-4 mt-4"><?= $Lesson['aula_name'] ?></h1>
                 <hr>
-                <form action="" method="post">
+                <form action="" method="post" id="form1">
                     <div class="form-group">
                         <label for="exampleFormControlTextarea1" class="h5 text-gray-900">Comentários</label>
                             <?php 
@@ -219,7 +219,7 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
                             <textarea class="form-control ml-3" id="exampleFormControlTextarea1" name="comment" placeholder="Escreva seu comentário..." rows="3"></textarea>
                         </div>
                         <div class="d-flex">
-                            <input type="submit" class="btn btn-danger mt-3 ml-auto p-2" name="enviar" value="Publicar">
+                            <input type="submit" form="form1" class="btn btn-danger mt-3 ml-auto p-2" name="enviar" value="Publicar">
                         </div>
                         <?php
                         $Read->FullRead("SELECT c.*, u.user_name
@@ -249,4 +249,21 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
             <!-- /.container-fluid -->
         </div>
         <!-- End of Main Content -->
-<?= $Component->getLinkScriptFooterDashboard(); ?>
+
+        <footer class="sticky-footer bg-white">
+            <div class="container my-auto">
+                <div class="copyright text-center my-auto">
+                    <span>Copyright &copy; Unitplus ' . date('Y') . '</span>
+                </div>
+            </div>
+        </footer>
+
+        <script src="<?= BASE ?>/src/assets/js/JQuery/jquery-3.6.0.min.js"></script>
+        <script scr="<?= BASE ?>/src/assets/js/script.js"></script>
+
+        <script src="<?= BASE ?>/res/site/js/jquery.min.js"></script>
+        <script src="<?= BASE ?>/res/site/js/bootstrap.bundle.min.js"></script>
+        <script src="<?= BASE ?>/res/site/js/jquery.easing.min.js"></script>
+        <script src="<?= BASE ?>/res/site/js/sb-admin-2.min.js"></script>
+    </body>
+</html>

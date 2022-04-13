@@ -125,7 +125,6 @@ $courseId = filter_input(INPUT_GET, 'curso', FILTER_VALIDATE_INT);
                 </div>  
             </div>
         </footer>
-
     </body>
 </html>
        
