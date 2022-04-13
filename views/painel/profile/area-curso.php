@@ -8,12 +8,12 @@ $courseId = filter_input(INPUT_GET, 'curso', FILTER_VALIDATE_INT);
 ?>
         <header class="bg-dark py-5">
             <div class="overlay"></div>
-            <div class="container h-100">
-                <div class="d-flex align-items-center justify-content-start">
+            <div class="container-fluid">
+                <div class="d-flex align-items-center justify-content-around">
                     <p class="ml-0" style="font-size: 12px;">Categoria do curso do curso</p>
                     <p class="ml-4" style="font-size: 12px;">Categoria</p>
                 </div>
-                <div class="d-flex h-100 text-center align-items-center justify-content-between">
+                <div class="d-flex text-center align-items-center justify-content-around">
                     <div class="my-5 text-center text-xl-start">
                         <?php 
                         $Read = new Read();
@@ -27,14 +27,30 @@ $courseId = filter_input(INPUT_GET, 'curso', FILTER_VALIDATE_INT);
                         }
                         ?>
                     </div>
-                    <div class="d-flex align-items-center justify-content-start">
-                        <img src="<?= BASE ?>/src/images/thumbnail-course.jpg" class="rounded-top" alt="capa do curso" style="height: 250px; width: 400px;">
-                        <a href="<?= BASE ?>/painel/profile/courses/compra-curso" class=""></a>
-                        <span class="">Preço do curso</span>
-                        <button type="button" class="btn-sm btn-danger">Adicionar ao carinho</button>
+                    
+                        <div class="card shadow">
+                            <div class="card-body">
+                                <div class="text-center">
+                                    <!-- <img src="<?= BASE ?>/src/images/thumbnail-course.jpg" class="rounded-top" alt="capa do curso" style="height: 250px; width: 400px;"> -->
+                                    <video width="320" height="240" style="border-radius: 8px;" controls>
+                                        <source src="<?= BASE ?>/src/video" type="video/mp4">
+                                    </video>
+                                    <h6 class="m-0 font-weight-bold text-primary mt-2">Pré-visualização do curso</h6>
+                                </div>
+                                <div class="py-3 d-flex flex-column align-items-start">
+                                    <h6 class="m-0 font-weight-bold text-dark">R$30,00</h6>
+                                    <span>Descrições do curso</span>
+                                </div>
+                                <div class="d-flex flex-column">
+                                    <a href="<?= BASE ?>/painel/profile/courses/compra-curso" class="btn btn-danger">Adicionar ao carrinho</a>
+                                    <a href="<?= BASE ?>/painel/profile/courses/compra-curso" class="btn btn-outline-danger">Comprar agora</a>
+                                </div>
+                            </div>
                     </div>
+
                 </div>
-                <div class="d-flex align-items-center justify-content-start">
+
+                <div class="d-flex align-items-center justify-content-around">
                     <p class="" style="font-size: 12px;">Atualização do curso</p>
                     <p class="ml-4" style="font-size: 12px;">Linguaguem do curso</p>
                 </div>
@@ -52,7 +68,6 @@ $courseId = filter_input(INPUT_GET, 'curso', FILTER_VALIDATE_INT);
                     <li>Item 5</li> 
                 </ul>
             </div>
-
 
             <h5 class="mb-1 mt-5">Conteúdo do curso:</h5>    
             <div class="d-flex align-items-center justify-content-start">
@@ -96,6 +111,7 @@ $courseId = filter_input(INPUT_GET, 'curso', FILTER_VALIDATE_INT);
                 </div>  
             </div>
         </footer>
+
     </body>
 </html>
        
