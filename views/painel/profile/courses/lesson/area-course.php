@@ -274,10 +274,10 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
         
             // var user_name = $('#user').val();
             var comment = $('#comment').val();
-            console.log(comment);
+            // console.log(comment);
         
             $.ajax({
-                url: '<?= BASE ?>/api/lesson/comments/comments.json',
+                url: '<?= BASE ?>/api?route=comment&action=create',
                 type: 'POST',
                 data: {comment: comment, action: 'add_comment'},
                 dataType: 'json',
