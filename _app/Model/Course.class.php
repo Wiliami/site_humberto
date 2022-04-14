@@ -404,6 +404,21 @@ class Course {
  		}
 	}
 
+
+	// comment users on lesson
+	public function deleteCommentUserLesson($commentId) {     
+		$Delete = new Delete();
+		$Delete->ExeDelete('comments', 'WHERE comment_id = :ci', "ci={$commentId}");
+		if($Delete->getResult()) {
+			$this->Result = $Delete->getResult();
+			$this->Error = "Comentário excluído com sucesso!";
+		} else {
+			$this->Result = false;
+			$this->Error = $Delete->getError();
+		}
+    }
+
+
 	public function purchaseUserCourse() {
 		$this->Error = 'Compra realizada com sucesso!';
 		$this->Result = false;

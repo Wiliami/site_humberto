@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 $User = new User();
 $User->verifyExistLoginUser();
 $Component = new Component();
@@ -204,7 +204,7 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
                             <?php 
                             $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
                             if(!empty($Post['enviar'])) {
-                                $CreateComment['comment_user'] = $Post['comment'];
+                                $CreateComment['comment_text'] = $Post['comment'];
                                 $Comment = new Comment();
                                 $Comment->createCommentLesson($CreateComment);
                                 if($Comment->getResult()) {
@@ -226,15 +226,14 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
                             FROM comments c
                             LEFT JOIN users u ON u.user_id = c.comment_create_user");
                         if($Read->getResult()) {    
-                            $CommentUser = $Read->getResult()[0];
-                            //Check::var_dump_json($CommentUser);
+                            $DataComment = $Read->getResult()[0];                                   
                                 ?>
                                 <div class="d-flex align-items-center justify-content-start">
                                     <img class="img-profile rounded-circle" style="width: 40px; height: 40px;" src="<?= BASE ?>/src/images/undraw_profile.svg">
-                                    <h1 class="h6 ml-2"><?= $CommentUser['user_name'] ?></h1>
+                                    <h1 class="h6 ml-2"><?= $DataComment['user_name'] ?></h1>
                                 </div>
                                 <div class="d-flex justify-content-between rounded card-body bg-dark">
-                                    <h2 class="h6 text-white"><?= $CommentUser['comment_user'] ?></h2>
+                                    <h2 class="h6 text-white"><?= $DataComment['comment_text'] ?></h2>
                                     <div class="d-flex align-items-center justify-content-end">
                                         <a href="" class="btn-sm btn-light" title="Editar comentário"><i class="fas fa-edit"></i></a>   
                                         <a href="" class="btn-sm btn-light ml-2" title="Excluir comentário"><i class="fas fa-solid fa-trash"></i></a>
@@ -262,19 +261,17 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
         <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
         <!-- <script scr="<?= BASE ?>/src/assets/js/script.js"></script> -->
 
-        <!-- <script src="<?= BASE ?>/res/site/js/jquery.min.js"></script> -->
+        <script src="<?= BASE ?>/res/site/js/jquery.min.js"></script>
         <script src="<?= BASE ?>/res/site/js/bootstrap.bundle.min.js"></script>
-        <!-- <script src="<?= BASE ?>/res/site/js/jquery.easing.min.js"></script> -->
+        <script src="<?= BASE ?>/res/site/js/jquery.easing.min.js"></script>
         <script src="<?= BASE ?>/res/site/js/sb-admin-2.min.js"></script>
     </body>
 
     <script>
     $(function() {
         $('#form1').submit(function() {
-        
-            // var user_name = $('#user').val();
+       
             var comment = $('#comment').val();
-            // console.log(comment);
         
             $.ajax({
                 url: '<?= BASE ?>/api?route=comment&action=create',
@@ -284,9 +281,19 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
                 }).done(function(result) {
                     $('#comment').val('');
                     console.log(result);
-                });
-            return false;
             });
+            return false;
+        });
     });
+
+    function getComments() {
+        $.ajax({
+            url: '<?= BASE ?>/api?route=comment&action=create',
+            type: 'GET',
+            dataType: 'json',
+            }).done(function(result) {
+                console.log(result);
+        });
+    }
     </script>
-</html>
+</html> -->

@@ -1,4 +1,5 @@
 <?php
+session_start();
 // require_once('./_app/Config.inc.php');
 require_once('_app/Config.inc.php');
 
