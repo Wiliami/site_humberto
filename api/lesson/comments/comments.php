@@ -4,7 +4,6 @@ $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 
 switch ($action) {
     case 'create';
-        // $Post['comment'] = $comment;
         $DataCreate['user'] = $_SESSION['login']['user_id'];
         $DataCreate['aula'] = $Post['aula_name'];
         $DataCreate['comment'] = $Post['comment'];
@@ -12,7 +11,7 @@ switch ($action) {
         $Create->ExeCreate('comments', $DataCreate);
         if($Create->getResult()) {
             $this->Result = $Create->getResult();
-            $this->Error = "Comentário publicado com sucesso!"; 
+            $this->Error = "Comentário publicado com sucesso!";
         } else {
             $this->Result = false;
             $this->Error = $Create->getError();

@@ -270,9 +270,9 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
     <script>
     $(function() {
         $('#form1').submit(function() {
-       
-            var comment = $('#comment').val();
-        
+
+            var comment = $('#comment').val(); // comment
+
             $.ajax({
                 url: '<?= BASE ?>/api?route=comment&action=create',
                 type: 'POST',
@@ -286,14 +286,6 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
         });
     });
 
-    function getComments() {
-        $.ajax({
-            url: '<?= BASE ?>/api?route=comment&action=create',
-            type: 'GET',
-            dataType: 'json',
-            }).done(function(result) {
-                console.log(result);
-        });
-    }
+    
     </script>
-</html> -->
+</html>
