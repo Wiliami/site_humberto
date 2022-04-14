@@ -253,17 +253,40 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
         <footer class="sticky-footer bg-white">
             <div class="container my-auto">
                 <div class="copyright text-center my-auto">
-                    <span>Copyright &copy; Unitplus ' . date('Y') . '</span>
+                    <span>Copyright &copy; Unitplus <?= date('Y') ?></span>
                 </div>
             </div>
         </footer>
 
-        <script src="<?= BASE ?>/src/assets/js/JQuery/jquery-3.6.0.min.js"></script>
-        <script scr="<?= BASE ?>/src/assets/js/script.js"></script>
+        <!-- <script src="<?= BASE ?>/src/assets/js/JQuery/jquery-3.6.0.min.js"></script> -->
+        <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+        <!-- <script scr="<?= BASE ?>/src/assets/js/script.js"></script> -->
 
-        <script src="<?= BASE ?>/res/site/js/jquery.min.js"></script>
+        <!-- <script src="<?= BASE ?>/res/site/js/jquery.min.js"></script> -->
         <script src="<?= BASE ?>/res/site/js/bootstrap.bundle.min.js"></script>
-        <script src="<?= BASE ?>/res/site/js/jquery.easing.min.js"></script>
+        <!-- <script src="<?= BASE ?>/res/site/js/jquery.easing.min.js"></script> -->
         <script src="<?= BASE ?>/res/site/js/sb-admin-2.min.js"></script>
     </body>
+
+    <script>
+    $(function() {
+        $('#form1').submit(function() {
+        
+            // var user_name = $('#user').val();
+            var comment = $('#comment').val();
+            console.log(comment);
+        
+            $.ajax({
+                url: '<?= BASE ?>/api/lesson/comments/comments.json',
+                type: 'POST',
+                data: {comment: comment, action: 'add_comment'},
+                dataType: 'json',
+                }).done(function(result) {
+                    $('#comment').val('');
+                    console.log(result);
+                });
+            return false;
+            });
+    });
+    </script>
 </html>
