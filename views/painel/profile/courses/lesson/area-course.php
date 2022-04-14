@@ -216,7 +216,7 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
                             ?>
                         <div class="mt-3 d-flex justify-content-between">
                             <img class="img-profile rounded-circle" style="width: 40px; height: 40px;" src="<?= BASE ?>/src/images/undraw_profile.svg">
-                            <textarea class="form-control ml-3" id="exampleFormControlTextarea1" name="comment" placeholder="Escreva seu comentário..." rows="3"></textarea>
+                            <textarea class="form-control ml-3" id="comment" name="comment" placeholder="Escreva seu comentário..." rows="3"></textarea>
                         </div>
                         <div class="d-flex">
                             <input type="submit" form="form1" class="btn btn-danger mt-3 ml-auto p-2" name="enviar" value="Publicar">
