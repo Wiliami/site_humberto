@@ -308,6 +308,21 @@ class User {
 		}
 	}
 
+
+	// Comentários de usuários naa aulas
+
+	public function deleteCommentUserLesson($deleteId) {
+		$Delete = new Delete();
+		$Delete->ExeDelete('comments', 'WHERE comment_id = :ci', "ci={$deleteId}");
+		if($Delete->getResult()) {
+			$this->Result = $Delete->getResult();
+			$this->Error = "Comentário deletado com sucesso!";
+		} else {
+			$this->Result = false;
+			$this->Error = $Delete->getError();
+		}
+	}
+
 	public function getResult() {
 		return $this->Result;
 	}

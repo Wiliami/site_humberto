@@ -1,4 +1,4 @@
-<!-- <?php
+<?php
 $User = new User();
 $User->verifyExistLoginUser();
 $Component = new Component();
@@ -196,52 +196,59 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
                     <i class="fas fa-solid fa-chevron-right ml-2"></i>
                     <p class="ml-2 h6"><?= $DataCourse['curso_descricao'] ?></p>
                 </div>
-                <h1 class="h5 text-gray-900 mb-4 mt-4"><?= $Lesson['aula_name'] ?></h1>
+                <h1 class="h3 text-gray-900 mb-4 mt-4"><?= $Lesson['aula_name'] ?></h1>
                 <hr>
                 <form action="" method="post" id="form1">
                     <div class="form-group">
-                        <label for="exampleFormControlTextarea1" class="h5 text-gray-900">Comentários</label>
-                            <?php 
-                            $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
-                            if(!empty($Post['enviar'])) {
-                                $CreateComment['comment_text'] = $Post['comment'];
-                                $Comment = new Comment();
-                                $Comment->createCommentLesson($CreateComment);
-                                if($Comment->getResult()) {
-                                    Error($Comment->getError());
-                                } else {
-                                    Error($Comment->getError(), 'warning');
-                                }
-                            } 
-                            ?>
-                        <div class="mt-3 d-flex justify-content-between">
-                            <img class="img-profile rounded-circle" style="width: 40px; height: 40px;" src="<?= BASE ?>/src/images/undraw_profile.svg">
-                            <textarea class="form-control ml-3" id="comment" name="comment" placeholder="Escreva seu comentário..." rows="3"></textarea>
+                        <?php 
+                        $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+                        if(!empty($Post['enviar'])) {
+                            $CreateComment['comment_text'] = $Post['comment'];
+                            $Comment = new Comment();
+                            $Comment->createCommentLesson($CreateComment);
+                            if($Comment->getResult()) {
+                                Error($Comment->getError());
+                            } else {
+                                Error($Comment->getError(), 'warning');
+                            }
+                        } 
+                        ?>
+                        <!-- Illustrations -->
+                        <div class="py-3">
+                            <h6 class="h4 text-dark">Comentários</h6>
                         </div>
-                        <div class="d-flex">
-                            <input type="submit" form="form1" class="btn btn-danger mt-3 ml-auto p-2" name="enviar" value="Publicar">
-                        </div>
-                        <?php
-                        $Read->FullRead("SELECT c.*, u.user_name
-                            FROM comments c
-                            LEFT JOIN users u ON u.user_id = c.comment_create_user");
-                        if($Read->getResult()) {    
-                            $DataComment = $Read->getResult()[0];                                   
-                                ?>
+                        <div class="card-body">
+                            <div class="text-start">
+                                <img class="img-profile rounded-circle" style="width: 40px; height: 40px;" src="<?= BASE ?>/src/images/undraw_profile.svg">
+                                <textarea class="form-control mt-3" id="comment" name="comment" placeholder="Escreva seu comentário..." rows="3"></textarea>
+                            </div>
+                            <div class="d-flex justify-content-end">
+                                <input type="submit" form="form1" class="btn btn-danger mt-3 p-2 ml-2" name="enviar" value="Publicar">
+                            </div>
+                            <?php
+                            $Read->FullRead("SELECT c.*, u.user_name
+                                FROM comments c
+                                LEFT JOIN users u ON u.user_id = c.comment_create_user");
+                            if($Read->getResult()) {    
+                                $DataComment = $Read->getResult()[0];           
+                                    ?>  
                                 <div class="d-flex align-items-center justify-content-start">
                                     <img class="img-profile rounded-circle" style="width: 40px; height: 40px;" src="<?= BASE ?>/src/images/undraw_profile.svg">
-                                    <h1 class="h6 ml-2"><?= $DataComment['user_name'] ?></h1>
                                 </div>
-                                <div class="d-flex justify-content-between rounded card-body bg-dark">
-                                    <h2 class="h6 text-white"><?= $DataComment['comment_text'] ?></h2>
-                                    <div class="d-flex align-items-center justify-content-end">
-                                        <a href="" class="btn-sm btn-light" title="Editar comentário"><i class="fas fa-edit"></i></a>   
-                                        <a href="" class="btn-sm btn-light ml-2" title="Excluir comentário"><i class="fas fa-solid fa-trash"></i></a>
+                                <div class="d-flex flex-column rounded card-body bg-dark">
+                                    <div class="d-flex justify-content-between">
+                                        <h1 class="h6">Usuário</h1>
+                                        <span class="btn btn-success btn-sm"><?= $DataComment['comment_aprovacao'] ?></span>
                                     </div>
+                                    <span class="h6 text-white"><?= $DataComment['comment_text'] ?></span>
+                                <div class="mt-4">
+                                    <a href="" class="btn-sm btn-light" title="Editar comentário"><i class="fas fa-edit"></i></a>   
+                                    <a href="" class="btn-sm btn-light" title="Excluir comentário"><i class="fas fa-solid fa-trash"></i></a>
                                 </div>
-                        <?php
-                        }
-                        ?>
+                                <?php
+                                }
+                                ?>
+                            </div>  
                     </div>
                 </form>
             </div>
@@ -257,35 +264,53 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
             </div>
         </footer>
 
-        <!-- <script src="<?= BASE ?>/src/assets/js/JQuery/jquery-3.6.0.min.js"></script> -->
+        <!-- Logout Modal -->
+        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" 
+        aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title btn btn-success mb-2 vw-100" id="exampleModalLabel">Pronto para sair?</h5>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">Selecione "Sair" para encerrar a sua sessão.</div>
+                    <div class="modal-footer">
+                        <button class="btn btn-outline-dark" type="button" data-dismiss="modal">Cancelar</button>
+                        <a class="btn btn-success" href="<?= BASE ?>/pages/logout">Sair</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
         <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
-        <!-- <script scr="<?= BASE ?>/src/assets/js/script.js"></script> -->
 
         <script src="<?= BASE ?>/res/site/js/jquery.min.js"></script>
         <script src="<?= BASE ?>/res/site/js/bootstrap.bundle.min.js"></script>
         <script src="<?= BASE ?>/res/site/js/jquery.easing.min.js"></script>
         <script src="<?= BASE ?>/res/site/js/sb-admin-2.min.js"></script>
-    </body>
 
-    <script>
-    $(function() {
-        $('#form1').submit(function() {
 
-            var comment = $('#comment').val(); // comment
+        <script>
+        $(function() {
+            $('#form1').submit(function(e) {
+                // e.preventDefault();
+                let  comment = $('#comment').val(); // comment
 
-            $.ajax({
-                url: '<?= BASE ?>/api?route=comment&action=create',
-                type: 'POST',
-                data: {comment: comment, action: 'add_comment'},
-                dataType: 'json',
-                }).done(function(result) {
-                    $('#comment').val('');
-                    console.log(result);
+                $.ajax({
+                    url: '<?= BASE ?>/api?route=comment&action=create',
+                    type: 'POST',
+                    data: {comment: comment, action: 'add_comment'},
+                    dataType: 'json',
+                    }).done(function(result) {
+                        // $('#comment').val('');
+                        console.log(result);
+                });
+                return false;
             });
-            return false;
         });
-    });
-
-    
-    </script>
+        </script>
+    </body>
 </html>
