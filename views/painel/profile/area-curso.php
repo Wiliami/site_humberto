@@ -5,7 +5,6 @@ $Component = new Component();
 echo $Component->getBlockPageProfile();
 $courseId = filter_input(INPUT_GET, 'curso', FILTER_VALIDATE_INT);
 ?>
-
 <!DOCTYPE html>
 <html lang="pt-BR">
     <head>
@@ -127,4 +126,3 @@ $courseId = filter_input(INPUT_GET, 'curso', FILTER_VALIDATE_INT);
         </footer>
     </body>
 </html>
-       
