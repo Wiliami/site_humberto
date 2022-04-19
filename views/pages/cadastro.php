@@ -5,66 +5,69 @@
         <link rel="apple-touch-icon" sizes="76x76" href="./assets/img//apple-icon.png">
         <link rel="icon" type="image/png" href="./assets/img//favicon.png">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-        <title>Página| Cadastro</title>
+        <title>Humberto Oliveira| Login</title>
         <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
         <!-- Fonts and icons -->
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
-        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet"> 
-        <link id="pagestyle" href="<?= BASE ?>/src/css/material-kit.css?v=3.0.0" rel="stylesheet" />
-        <!-- CSS Files -->
-        <link href="<?= BASE ?>/res/site/css/bootstrap.min.css" rel="stylesheet" />
-        <link href="<?= BASE ?>/res/site/css/paper-kit.css?v=2.2.0" rel="stylesheet" />
+        <link href="<?= BASE ?>/res/site/css/all.min.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+        <link href="<?= BASE ?>/res/site/css/sb-admin-2.min.css" rel="stylesheet">
     </head>
-    <body class="index-page sidebar-collapse">
-        <div class="section section-image section-login" style="background-color: #403233;">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-4 col-md-6 mx-auto">
-                        <div class="card card-register">
-                            <?php 
-                            $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
-                            if(!empty($Post['cadastro'])) {
-                                $DataCreate['user_name'] = $Post['name'];
-                                $DataCreate['user_email'] = $Post['email'];
-                                $DataCreate['user_password'] = $Post['password'];
-                                $User = new User();
-                                $User->createUser($DataCreate);
-                                if($User->getResult()) {
-                                    $User->exeLogin($Post['email'], $Post['password']);
-                                    if($User->getResult()) {
-                                        Error($User->getError());
-                                        header('Location: ' . BASE . '/painel/dashboard');
-                                        die();
-                                    } else {
-                                        Error($User->getError(), 'danger');
-                                    }
-                                } else {
-                                    Error($User->getError(), 'danger');
-                                }
-                            }
-                            ?>
-                            <h3 class="title mx-auto text-bolder">Faça o seu cadastro</h3>
-                            <form class="" method="post">
-                                <label class="text-white">Nome</label>
-                                    <div class="input-group form-group-no-border">
-                                        <div class="input-group-prepend">
-                                            </div>
-                                                <input type="" class="form-control" name="name" value="<?= isset($Post['name'])?$Post['name']: '' ?>" placeholder="Name">
-                                            </div>
-                                <label class="text-white">Email</label>
-                                <div class="input-group form-group-no-border">
-                                    <div class="input-group-prepend">
+    <body class="bg-gradient-primary">
+        <div class="container">
+            <!-- Outer Row -->
+            <div class="row justify-content-center">
+                <div class="col-xl-10 col-lg-12 col-md-9">
+                    <div class="card o-hidden border-0 shadow-lg my-5">
+                        <div class="card-body p-0">
+                            <!-- Nested Row within Card Body -->
+                            <div class="row">
+                                <div class="col-lg-6 d-none d-lg-block"></div>
+                                    <!-- <h1 class="h4 text-gray-900 mb-4">Faça seu login na plataforma!</h1> -->
+                                <div class="col-lg-6">
+                                    <div class="p-5">
+                                        <div class="text-center">
+                                            <h1 class="h4 text-gray-900 mb-4">Faça o seu cadastro</h1>
                                         </div>
-                                            <input type="email" class="form-control" name="email" value="<?= isset($Post['email'])?$Post['email']: '' ?>" placeholder="E-mail">
-                                        </div>
-                                <label class="text-white">Senha</label>
-                                <div class="input-group form-group-no-border">
-                                    <div class="input-group-prepend">
-                                        </div>
-                                            <input type="password" class="form-control" name="password" value="<?= isset($Post['password'])?$Post['password']: '' ?>" placeholder="Senha">
-                                        </div>
-                                <input class="btn btn-danger btn-block btn-round" type="submit" value="Cadastrar" name="cadastro">
+                                        <?php
+                                        $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+                                        if(!empty($Post['cadastro'])) {
+                                            $DataCreate['user_name'] = $Post['name'];
+                                            $DataCreate['user_email'] = $Post['email'];
+                                            $DataCreate['user_password'] = $Post['password'];
+                                            $User = new User();
+                                            $User->createUser($DataCreate);
+                                            if($User->getResult()) {
+                                                $User->exeLogin($Post['email'], $Post['password']);
+                                                if($User->getResult()) {
+                                                    Error($User->getError());
+                                                    header('Location: ' . BASE . '/painel/dashboard');
+                                                    die();
+                                                } else {
+                                                    Error($User->getError(), 'danger');
+                                                }
+                                            } else {
+                                                Error($User->getError(), 'danger');
+                                            }
+                                        }
+                                    ?>
+                            <form action="" class="" method="post">
+                                <div class="form-group">
+                                    <label>Nome</label>
+                                    <input type="name" class="form-control" name="name" value="<?= isset($Post['name'])?$Post['name']: '' ?>" placeholder="Name">
+                                </div>
+                                <div class="form-group">
+                                    <label>E-mail</label>
+                                    <input type="email" class="form-control" name="email" value="<?= isset($Post['email'])?$Post['email']: '' ?>" placeholder="E-mail">
+                                </div>
+                                <div class="form-group">
+                                    <label>Senha</label>
+                                    <input type="password" class="form-control" name="password" value="<?= isset($Post['password'])?$Post['password']: '' ?>" placeholder="Senha">
+                                </div>
+                                <input type="submit" class="btn btn-primary btn-block btn-round" name="cadastro" value="Cadastrar">
                             </form>
+                            </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

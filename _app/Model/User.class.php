@@ -309,8 +309,7 @@ class User {
 	}
 
 
-	// Comentários de usuários naa aulas
-
+	// Comentários de usuários nas aulas
 	public function deleteCommentUserLesson($deleteId) {
 		$Delete = new Delete();
 		$Delete->ExeDelete('comments', 'WHERE comment_id = :ci', "ci={$deleteId}");

@@ -172,8 +172,9 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
                 </div>
                 <h1 class="h3 text-gray-900 mb-4 mt-4"><?= $Lesson['aula_name'] ?></h1>
                 <hr>
-                <form action="" method="post" id="form1">
-                    <div class="form-group">
+
+                <div class="alert" id="alert">
+                    <form action="" method="post" id="form1">
                         <?php 
                         $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
                         if(!empty($Post['enviar'])) {
@@ -187,44 +188,45 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
                             }
                         } 
                         ?>
-                        <!-- Illustrations -->
-                        <div class="py-3">
-                            <h6 class="h4 text-dark">Comentários</h6>
-                        </div>
-                        <div class="card-body">
-                            <div class="text-start">
-                                <img class="img-profile rounded-circle" style="width: 40px; height: 40px;" src="<?= BASE ?>/src/images/undraw_profile.svg">
-                                <textarea class="form-control mt-3" id="comment" name="comment" placeholder="Escreva seu comentário..." rows="3"></textarea>
+                        <div class="form-group">
+                            <div class="py-3">
+                                <h6 class="h4 text-dark">Comentários</h6>
                             </div>
-                            <div class="d-flex justify-content-end">
-                                <input type="submit" form="form1" class="btn btn-danger mt-3 p-2 ml-2" name="enviar" value="Publicar">
-                            </div>
-                            <?php
-                            $Read->FullRead("SELECT c.*, u.user_name
-                                FROM comments c
-                                LEFT JOIN users u ON u.user_id = c.comment_create_user");
-                            if($Read->getResult()) {    
-                                $DataComment = $Read->getResult()[0];           
-                                    ?>  
-                                <div class="d-flex align-items-center justify-content-start">
+                            <div class="card-body">
+                                <div class="text-start">
                                     <img class="img-profile rounded-circle" style="width: 40px; height: 40px;" src="<?= BASE ?>/src/images/undraw_profile.svg">
+                                    <textarea class="form-control mt-3" id="comment" name="comment" placeholder="Escreva seu comentário..." rows="3"></textarea>
                                 </div>
-                                <div class="d-flex flex-column rounded card-body bg-dark">
-                                    <div class="d-flex justify-content-between">
-                                        <h1 class="h6">Usuário</h1>
-                                        <span class="btn btn-success btn-sm"><?= $DataComment['comment_aprovacao'] ?></span>
-                                    </div>
-                                    <span class="h6 text-white"><?= $DataComment['comment_text'] ?></span>
-                                <div class="mt-4">
-                                    <a href="" class="btn-sm btn-light" title="Editar comentário"><i class="fas fa-edit"></i></a>   
-                                    <a href="" class="btn-sm btn-light" title="Excluir comentário"><i class="fas fa-solid fa-trash"></i></a>
+                                <div class="d-flex justify-content-end">
+                                    <input type="submit" id="submit" form="form1" class="btn btn-danger mt-3 p-2 ml-2" name="enviar" value="Publicar">
                                 </div>
                                 <?php
-                                }
-                                ?>
-                            </div>  
-                    </div>
-                </form>
+                                $Read->FullRead("SELECT c.*, u.user_name
+                                    FROM comments c
+                                    LEFT JOIN users u ON u.user_id = c.comment_create_user");
+                                if($Read->getResult()) {    
+                                    $DataComment = $Read->getResult()[0];           
+                                        ?>  
+                                    <div class="d-flex align-items-center justify-content-start">
+                                        <img class="img-profile rounded-circle" style="width: 40px; height: 40px;" src="<?= BASE ?>/src/images/undraw_profile.svg">
+                                    </div>
+                                    <div class="d-flex flex-column rounded card-body bg-dark mt-3">
+                                        <div class="d-flex justify-content-between">
+                                            <h1 class="h6"><?= $Username ?></h1>
+                                            <span class="btn btn-success btn-sm"><?= $DataComment['comment_aprovacao'] ?></span>
+                                        </div>
+                                        <span class="h6 text-white"><?= $DataComment['comment_text'] ?></span>
+                                    <div class="mt-4">
+                                        <a href="" class="btn-sm btn-light" title="Editar comentário"><i class="fas fa-edit"></i></a>   
+                                        <a href="" class="btn-sm btn-light" title="Excluir comentário"><i class="fas fa-solid fa-trash"></i></a>
+                                    </div>
+                                    <?php
+                                    }
+                                    ?>
+                                </div>  
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
         <footer class="sticky-footer bg-white">
@@ -252,31 +254,43 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
                         <a class="btn btn-success" href="<?= BASE ?>/pages/logout">Sair</a>
                     </div>
                 </div>
-            </div>
+            </div>      
         </div>
 
 
         <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+
         <script src="<?= BASE ?>/res/site/js/jquery.min.js"></script>
         <script src="<?= BASE ?>/res/site/js/bootstrap.bundle.min.js"></script>
         <script src="<?= BASE ?>/res/site/js/jquery.easing.min.js"></script>
         <script src="<?= BASE ?>/res/site/js/sb-admin-2.min.js"></script>
-        
-        <script>
-        $(function() {
-            $('#form1').submit(function(e) {
-                // e.preventDefault();
-                let  comment = $('#comment').val(); // comment
 
+
+        <script type="text/javascript">
+        $(document).ready(function() {
+
+            $('#submit').click(function(e) {
+                e.preventDefault();
+
+                var comment = $('#comment').val();
+
+                $('#alert').html('');
+                if(comment == '') {
+                    $('#alert').html('Preencha este campo!');
+                    $('#alert').addClass('alert-danger');
+                    return false;   
+                }
+                
                 $.ajax({
                     url: '<?= BASE ?>/api?route=comment&action=create',
                     type: 'POST',
-                    data: {comment: comment, action: 'add_comment'},
+                    data: { comentario: comment, action: 'add_comment'},
                     dataType: 'json',
                     }).done(function(result) {
-                        // $('#comment').val('');
                         console.log(result);
-                });
+                    }).fail(function(data) {
+                        console.log('Ocorreu um erro!');
+                    });
                 return false;
             });
         });
