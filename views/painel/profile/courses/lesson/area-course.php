@@ -7,20 +7,14 @@ echo $Component->getHeadHtmlDashboard();
 $Username = $_SESSION['login']['user_name'];
 $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
 ?>
-<!-- Page Wrapper -->
 <div id="wrapper">
-    <!-- Sidebar -->
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-        <!-- Sidebar - Brand -->
         <a class="sidebar-brand d-flex align-items-center justify-content-center" href="">
             <div class="sidebar-brand-icon rotate-n-15">
                 <img src="<?= BASE ?>/src/images/icon_small.png" alt="logo unit" class="btn-sm" style="width: 45px; height: 40px;">
             </div>
-            <!-- <div class="sidebar-brand-text mx-3 btn-sm">Unitbrasil</div> -->
         </a>
-        <!-- Divider -->
         <hr class="sidebar-divider my-0">
-        <!-- Nav Item - Dashboard -->
         <li class="nav-item active">
             <?php
             $Read = new Read();
@@ -41,9 +35,7 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
         }
         ?>
         </li>
-        <!-- Divider -->
         <hr class="sidebar-divider">
-        <!-- Nav Item - Pages Collapse Menu -->
         <?php
         $Read->FullRead("SELECT * FROM modulos WHERE curso_id = :ci", "ci={$courseId}");
         if($Read->getResult()) {
@@ -52,8 +44,6 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
                 <li class="nav-item">
                     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse<?= $Modules['modulo_id'] ?>"
                         aria-expanded="true" aria-controls="collapseTwo">
-                        <!-- <i class="fas fa-clipboard-list fa-2x text-gray-300"></i> -->
-                        <!-- <i class="fas fa-solid fa-angle-right"></i> -->
                         <span><?= $Modules['modulo_name'] ?></span>
                     </a>
                     <div id="collapse<?= $Modules['modulo_id'] ?>" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
@@ -79,26 +69,17 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
             Error('Módulos não encontrados', 'warning');
         }
         ?>
-        <!-- Nav Item - Utilities Collapse Menu -->
-        <!-- Divider -->
         <hr class="sidebar-divider d-none d-md-block">
-        <!-- Sidebar Toggler (Sidebar) -->
         <div class="text-center d-none d-md-inline">
             <button class="rounded-circle border-0" id="sidebarToggle"></button>
         </div>
     </ul>
-    <!-- End of Sidebar -->
-    <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
-        <!-- Main Content -->
         <div id="content">
-            <!-- Topbar -->
             <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-                <!-- Sidebar Toggle (Topbar) -->
                 <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                     <i class="fa fa-bars"></i>
                 </button>
-                <!-- Topbar Search -->
                 <form method="post" class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                     <div class="input-group">
                         <input type="text" class="form-control bg-light border-0 small" placeholder="Procurar aulas..."
@@ -110,15 +91,12 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
                         </div>
                     </div>
                 </form>
-                <!-- Topbar Navbar -->
                 <ul class="navbar-nav ml-auto">
-                    <!-- Nav Item - Search Dropdown (Visible Only XS) -->
                     <li class="nav-item dropdown no-arrow d-sm-none">
                         <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="fas fa-search fa-fw"></i>
                         </a>
-                        <!-- Dropdown - Messages -->
                         <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
                             aria-labelledby="searchDropdown">
                             <form method="post" class="form-inline mr-auto w-100 navbar-search">
@@ -136,7 +114,6 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
                         </div>
                     </li>
                     <div class="topbar-divider d-none d-sm-block"></div>
-                    <!-- Nav Item - User Information | Minha conta -->
                     <li class="nav-item dropdown no-arrow">
                         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -144,7 +121,6 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
                             <img class="img-profile rounded-circle"
                                 src="<?= BASE ?>/src/images/undraw_profile.svg">
                         </a>
-                        <!-- Dropdown - User Information -->
                         <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                             aria-labelledby="userDropdown">
                             <a class="dropdown-item" href="<?= BASE ?>/painel/profile/pages/profile-user">
@@ -164,8 +140,6 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
                     </li>
                 </ul>
             </nav>
-            <!-- End of Topbar -->
-            <!-- Begin Page Content -->
             <div class="container mt-0 w-100">
                 <header class="navbar navbar-expand bg-success static-top shadow d-flex align-items-center justify-content-center justify-content-md-between">
                     <ul class="header1" style="list-style: none;">
@@ -252,10 +226,7 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
                     </div>
                 </form>
             </div>
-            <!-- /.container-fluid -->
         </div>
-        <!-- End of Main Content -->
-
         <footer class="sticky-footer bg-white">
             <div class="container my-auto">
                 <div class="copyright text-center my-auto">
@@ -286,13 +257,11 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
 
 
         <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
-
         <script src="<?= BASE ?>/res/site/js/jquery.min.js"></script>
         <script src="<?= BASE ?>/res/site/js/bootstrap.bundle.min.js"></script>
         <script src="<?= BASE ?>/res/site/js/jquery.easing.min.js"></script>
         <script src="<?= BASE ?>/res/site/js/sb-admin-2.min.js"></script>
-
-
+        
         <script>
         $(function() {
             $('#form1').submit(function(e) {
