@@ -315,7 +315,7 @@ class User {
 		$Delete->ExeDelete('comments', 'WHERE comment_id = :ci', "ci={$deleteId}");
 		if($Delete->getResult()) {
 			$this->Result = $Delete->getResult();
-			$this->Error = "Comentário deletado com sucesso!";
+			$this->Error = "Comentário excluído com sucesso!";
 		} else {
 			$this->Result = false;
 			$this->Error = $Delete->getError();

@@ -277,8 +277,8 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
                 $('#alert').html('');
                 if(comment == '') {
                     $('#alert').html('Preencha este campo!');
-                    $('#alert').addClass('alert-danger');
-                    return false;   
+                    $('#alert').addClass('alert-warning');
+                    return false;
                 }
                 
                 $.ajax({

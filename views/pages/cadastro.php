@@ -30,7 +30,7 @@
                                         </div>
                                         <?php
                                         $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
-                                        if(!empty($Post['cadastro'])) {
+                                        if(!empty($Post['register'])) {
                                             $DataCreate['user_name'] = $Post['name'];
                                             $DataCreate['user_email'] = $Post['email'];
                                             $DataCreate['user_password'] = $Post['password'];
@@ -43,29 +43,29 @@
                                                     header('Location: ' . BASE . '/painel/dashboard');
                                                     die();
                                                 } else {
+                                                    Error($User->getError());
+                                                }
+                                                } else {
                                                     Error($User->getError(), 'danger');
                                                 }
-                                            } else {
-                                                Error($User->getError(), 'danger');
-                                            }
                                         }
-                                    ?>
-                            <form action="" class="" method="post">
-                                <div class="form-group">
-                                    <label>Nome</label>
-                                    <input type="name" class="form-control" name="name" value="<?= isset($Post['name'])?$Post['name']: '' ?>" placeholder="Name">
-                                </div>
-                                <div class="form-group">
-                                    <label>E-mail</label>
-                                    <input type="email" class="form-control" name="email" value="<?= isset($Post['email'])?$Post['email']: '' ?>" placeholder="E-mail">
-                                </div>
-                                <div class="form-group">
-                                    <label>Senha</label>
-                                    <input type="password" class="form-control" name="password" value="<?= isset($Post['password'])?$Post['password']: '' ?>" placeholder="Senha">
-                                </div>
-                                <input type="submit" class="btn btn-primary btn-block btn-round" name="cadastro" value="Cadastrar">
-                            </form>
-                            </div>
+                                        ?>
+                                        <form action="" class="" method="post">
+                                            <div class="form-group">
+                                                <label>Nome</label>
+                                                <input type="text" class="form-control form-control-user" name="name" value="<?= isset($Post['name'])?$Post['name']: '' ?>" placeholder="Name">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>E-mail</label>
+                                                <input type="email" class="form-control form-control-user" name="email" value="<?= isset($Post['email'])?$Post['email']: '' ?>" placeholder="E-mail">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Senha</label>
+                                                <input type="password" class="form-control form-control-user" name="password" value="<?= isset($Post['password'])?$Post['password']: '' ?>" placeholder="Senha">
+                                            </div>
+                                            <input type="submit" class="btn btn-primary btn-block btn-round" name="register" value="Cadastrar">
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>
