@@ -274,7 +274,6 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
                     url: '<?= BASE ?>/api/comments?route=comment&action=create',
                     type: 'POST',
                     data: { comentario: comment, action: 'add_comment'},
-                    contentType: "application/json; charset=utf-8",
                     dataType: 'json',
                     }).done(function(result) {
                         console.log(result);
