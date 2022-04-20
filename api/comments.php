@@ -5,7 +5,7 @@ $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 switch ($action) {
     case 'create';
         $DataCreate['user'] = $_SESSION['login']['user_id'];
-        // $DataCreate['aula'] = $Post['aula'];
+        $DataCreate['aula'] = $Post['aula'];
         $DataCreate['comment_text'] = $Post['comment'];
         $Create = new Create();
         $Create->ExeCreate('comments', $DataCreate);
