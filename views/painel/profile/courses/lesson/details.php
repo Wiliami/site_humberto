@@ -5,15 +5,16 @@ $Component = new Component();
 echo $Component->getBlockPageProfile();
 echo $Component->getHeadHtmlDashboard();
 $Username = $_SESSION['login']['user_name'];
-$courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
+$aulaId = filter_input(INPUT_GET, 'a', FILTER_VALIDATE_INT);
 
-// $Read = new Read();
-// $Read->FullRead('SELECT * FROM aulas WHERE aula_id = :ai', "ai={$aulaId}");
-// if($Read->getResult()) {
-//     $DataLesson = $Read->getResult()[0];
-// } else {
-//     die(Error('Aula não encontrada!', 'warning'));
-// }
+$Read = new Read();
+$Read->FullRead('SELECT * FROM aulas WHERE aula_id = :ai', "ai={$aulaId}");
+if($Read->getResult()) {
+    $DataLesson = $Read->getResult()[0];
+    $courseId = $DataLesson['curso_id'];
+} else {
+    die(Error('Aula não encontrada!', 'warning'));
+}
 ?>
 <div id="wrapper">
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
@@ -23,10 +24,28 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
             </div>
         </a>
         <hr class="sidebar-divider my-0">
-        <li class="nav-item active"></li>
+        <li class="nav-item active">
+            <?php
+            $Read = new Read();
+            $Read->FullRead("SELECT mc.*, c.curso_titulo, c.curso_descricao
+                FROM matriculas_cursos mc
+                LEFT JOIN cursos c ON c.curso_id = mc.curso_id
+                WHERE mc.curso_id = :ci", "ci={$courseId}");
+            if($Read->getResult()) {
+                $DataCourse = $Read->getResult()[0];
+                    ?>
+            <a class="nav-link" href="<?= BASE ?>/painel/profile/courses/meus-cursos">
+                <i class="fas fa-book"></i>
+                <?= $DataCourse['curso_titulo'] ?>
+            </a>    
+        <?php
+        } else {
+            die(Error('Aula não encontrada!', 'warning'));
+        }
+        ?>
+        </li>
         <hr class="sidebar-divider">
         <?php
-        $Read = new Read();
         $Read->FullRead("SELECT * FROM modulos WHERE curso_id = :ci", "ci={$courseId}");
         if($Read->getResult()) {
             foreach($Read->getResult() as $Modules) {
@@ -43,7 +62,7 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
                             if($Read->getResult()) {
                                 foreach($Read->getResult() as $Lesson) {
                                     ?>
-                            <a class="collapse-item" href="<?= BASE ?>/painel/profile/courses/lesson/details&a=<?= $Lesson['aula_id'] ?>"><?= $Lesson['aula_name'] ?></a>
+                            <a class="collapse-item" href="<?= BASE ?>/painel/profile/courses/lesson/area-course&a=<?= $Lesson['aula_id'] ?>"><?= $Lesson['aula_name'] ?></a>
                             <!-- <a href="/painel/profile/courses/lesson= $Lesson['aula_id'] "></a> -->
                             <?php               
                                 }
@@ -131,45 +150,90 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
                     </li>
                 </ul>
             </nav>
-
-
-
-
-            <!-- Conteúdo da página -->
-              <!-- Begin Page Content -->
-              <div class="container">
-                <!-- Page Heading -->
-                <h1 class="h3 mb-4 text-gray-800">Área do curso</h1>
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <!-- Brand Buttons -->
-                            <div class="card shadow mb-4">
-                                <div class="card-header py-3">
+            <div class="container mt-0 w-100">
+                <header class="navbar navbar-expand bg-success static-top shadow d-flex align-items-center justify-content-center justify-content-md-between">
+                    <ul class="header1" style="list-style: none;">
+                        <li>
+                            <a href="<?= BASE ?>/painel/aulas/nome-da-aula-anterior" class="small text-gray-200">
+                                <div class="fw-normal text-white-50 mb-1">Anterior</div>
+                                <i class="fas fa-arrow-circle-left mr-2 text-gray-200"></i>
+                                <span>React Native</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="topbar-divider d-none d-sm-block"></div>
+                    <ul class="header2" style="list-style: none;">
+                        <li>
+                            <a href="<?= BASE ?>/painel/aulas/nome-da-proxima-aula" class="small text-gray-200">
+                                <div class="fw-normal text-white-50 mb-1">Próxima</div>
+                                <span>React JS</span>
+                                <i class="fas fa-arrow-circle-right mr-2 text-gray-200"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </header>    
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/137857207"></iframe>
+                </div>
+                <div class="d-flex flex-row mt-3">
+                    <p class="ml-0 h6"><?= $DataCourse['curso_titulo'] ?></p>
+                    <i class="fas fa-solid fa-chevron-right ml-2"></i>
+                    <p class="ml-2 h6"><?= $DataCourse['curso_descricao'] ?></p>
+                </div>
+                <h1 class="h3 text-gray-900 mb-4 mt-4"><?= $Lesson['aula_name'] ?></h1>
+                <hr>
+                <form action="" method="post" id="form1">
+                    <!-- // $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+                    // if(!empty($Post['enviar'])) {
+                    //     $CreateComment['comment_text'] = $Post['comment'];
+                    //     $Comment = new Comment();
+                    //     $Comment->createCommentLesson($CreateComment);
+                    //     if($Comment->getResult()) {
+                    //         Error($Comment->getError());
+                    //     } else {
+                    //         Error($Comment->getError(), 'warning');
+                    //     }
+                    // } 
+                    // -->
+                    <div class="form-group">
+                        <div class="py-3">
+                            <h6 class="h4 text-dark">Comentários</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="text-start">
+                                <img class="img-profile rounded-circle" style="width: 40px; height: 40px;" src="<?= BASE ?>/src/images/undraw_profile.svg">
+                                <textarea class="form-control mt-3" id="comment" name="comment" placeholder="Escreva seu comentário..." rows="3" required></textarea>
+                            </div>
+                            <div class="d-flex justify-content-end">
+                                <input type="submit" id="submit" form="form1" class="btn btn-danger mt-3 p-2 ml-2" name="enviar" value="Publicar">
+                            </div>
+                            <?php
+                            $Read->FullRead("SELECT c.*, u.user_name
+                                FROM comments c
+                                LEFT JOIN users u ON u.user_id = c.comment_create_user");
+                            if($Read->getResult()) {    
+                                $DataComment = $Read->getResult()[0];           
+                                    ?>  
+                                <div class="d-flex align-items-center justify-content-start">
+                                    <img class="img-profile rounded-circle" style="width: 40px; height: 40px;" src="<?= BASE ?>/src/images/undraw_profile.svg">
+                                </div>
+                                <div class="d-flex flex-column rounded card-body bg-dark mt-3">
+                                    <div class="d-flex justify-content-between">
+                                        <h1 class="h6"><?= $Username ?></h1>
+                                        <span class="btn btn-success btn-sm"><?= $DataComment['comment_aprovacao'] ?></span>
+                                    </div>
+                                    <span class="h6 text-white"><?= $DataComment['comment_text'] ?></span>
+                                <div class="mt-4">
+                                    <a href="" class="btn-sm btn-light" title="Editar comentário"><i class="fas fa-edit"></i></a>   
+                                    <a href="" class="btn-sm btn-light" title="Excluir comentário"><i class="fas fa-solid fa-trash"></i></a>
+                                </div>
                                 <?php
-                                $Read = new Read();
-                                $Read->FullRead("SELECT mc.*, c.curso_titulo, c.curso_descricao
-                                    FROM matriculas_cursos mc
-                                    LEFT JOIN cursos c ON c.curso_id = mc.curso_id
-                                    WHERE mc.curso_id = :ci", "ci={$courseId}");
-                                if($Read->getResult()) {
-                                    $DataCourse = $Read->getResult()[0];
-                                        ?>
-                                    <h6 class="m-0 font-weight-bold text-primary"><?= $DataCourse['curso_titulo'] ?></h6>
-                                    <?php
-                                } else {
-                                    die(Error('Curso não encontrado!', 'warning'));
                                 }
                                 ?>
-
-                                </div>
-                                <div class="card-body">
-                                    <a href="<?= BASE ?>/painel/profile/courses/lesson" class="btn btn-danger btn-block"></a>
-                                </div>
-                            </div>
-                        </div>
+                            </div>  
                     </div>
-                </div>
-
+                </form>
+            </div>
         </div>
         <footer class="sticky-footer bg-white">
             <div class="container my-auto">
