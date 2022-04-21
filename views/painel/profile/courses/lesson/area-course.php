@@ -271,7 +271,7 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
                 var comment = $('#comment').val();
              
                 $.ajax({
-                    url: '<?= BASE ?>/api/comments?route=comment&action=create',
+                    url: '<?= BASE ?>/api?route=comments&action=create',
                     type: 'POST',
                     data: { comentario: comment, action: 'add_comment'},
                     dataType: 'json',

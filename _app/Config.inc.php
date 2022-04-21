@@ -1,5 +1,5 @@
 <?php
-require_once '_app/ENV.php';
+require_once __DIR__ . '/ENV.php';
 //require_once '_app/ENV.example.php';
 
 

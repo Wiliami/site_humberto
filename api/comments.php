@@ -7,10 +7,14 @@ switch ($action) {
         $DataCreate['user'] = $_SESSION['login']['user_id'];
         $DataCreate['aula'] = $Post['aula'];
         $DataCreate['comment_text'] = $Post['comment'];
+        $DataCreate['comment_create_date'] = date('Y-m-d H:i:s');
+        $DataCrete['comment_create_user'] = $_SESSION['login']['user_id'];
+        $DataCreate['comment_aprovacao'] = 'aguardando aprovação';
         $Create = new Create();
         $Create->ExeCreate('comments', $DataCreate);
         if($Create->getResult()) {
-            $jSon['result'] = $Create->getResult();
+            // Check::var_dump_json($Create->getResult());
+            $jSon['result'] = $Create->getResult(); 
             $jSon['error']['text'] = "Comentário publicado com sucesso!";
         } else {
             $jSon['result'] = false;
