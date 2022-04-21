@@ -5,11 +5,11 @@ $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 switch ($action) {
     case 'create';
         $DataCreate['user'] = $_SESSION['login']['user_id'];
-        $DataCreate['aula'] = $Post['aula'];
-        $DataCreate['comment_text'] = $Post['comment'];
+        $DataCreate['aula'] =  $Post[''];
+        $DataCreate['comment_text'] =  $Post['comment'];
         $DataCreate['comment_create_date'] = date('Y-m-d H:i:s');
-        $DataCrete['comment_create_user'] = $_SESSION['login']['user_id'];
-        $DataCreate['comment_aprovacao'] = 'aguardando aprovação';
+        $DataCreate['comment_create_user'] = $_SESSION['login']['user_id'];
+        $DataCreate['comment_aprovacao'] = 'Aguardando aprovação';
         $Create = new Create();
         $Create->ExeCreate('comments', $DataCreate);
         if($Create->getResult()) {

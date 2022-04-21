@@ -9,7 +9,7 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
 ?>
 <div id="wrapper">
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="">
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?= BASE ?>/painel/dashboard">
             <div class="sidebar-brand-icon rotate-n-15">
                 <img src="<?= BASE ?>/src/images/icon_small.png" alt="logo unit" class="btn-sm" style="width: 45px; height: 40px;">
             </div>
@@ -31,7 +31,7 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
             </a>    
         <?php
         } else {
-            die(Error('Curso não encontrado!', ''));
+            die(Error('Curso não encontrado!', 'warning'));
         }
         ?>
         </li>
@@ -197,8 +197,6 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
                             <div class="d-flex justify-content-end">
                                 <input type="submit" id="submit" form="form1" class="btn btn-danger mt-3 p-2 ml-2" name="enviar" value="Publicar">
                             </div>
-
-
                             <?php
                             $Read->FullRead("SELECT c.*, u.user_name
                                 FROM comments c
@@ -273,7 +271,7 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
                 $.ajax({
                     url: '<?= BASE ?>/api?route=comments&action=create',
                     type: 'POST',
-                    data: { comentario: comment, action: 'add_comment'},
+                    data: { comment: comment, action: 'add_comment'},
                     dataType: 'json',
                     }).done(function(result) {
                         console.log(result);

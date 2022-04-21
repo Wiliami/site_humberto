@@ -12,14 +12,16 @@ echo $Component->getListPagesAdmin();
 echo $Component->getMenuDashboard();
 $Username = $_SESSION['login']['user_name'];
 ?>
-<div class="container-fluid">
-    <div class="d-sm-flex align-items-center justify-content-between mb-4 ml-4">
-        <h1 class="h3 mb-0 text-gray-800">Seja bem-vindo(a), <?= $Username ?></h1>
+<div class="container">
+    
+    <div class="d-sm-flex flex-column mb-4 ml-4">
+        <h1 class="h3">Painel</h1>  
+        <h2 class="h5 mb-0 text-gray-800 mt-4">Seja bem-vindo(a), <?= $Username ?></h2>
     </div>
     <?php
     if($_SESSION["login"]["user_level"] <= 2) {
         ?>
-    <p class="ml-4">Lançamentos de cursos</p>
+    <h3 class="h6 ml-4">Lançamentos de cursos</h3>
     <div class="row gx-5 container">
         <?php
         $Read = new Read();
@@ -41,7 +43,7 @@ $Username = $_SESSION['login']['user_name'];
             <?php
                 }
             } else {
-                Error("Cursos não encontrados", 'warning');
+                Error("Ainda não existem cursos", 'warning');
             }
             ?>
         </a>
