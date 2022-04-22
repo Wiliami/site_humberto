@@ -11,14 +11,6 @@ echo $Component->getLiPagesDashboard();
 echo $Component->getMenuDashboard();
 $Username = $_SESSION['login']['user_name'];
 $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
-
-// $Read = new Read();
-// $Read->FullRead('SELECT * FROM aulas WHERE au    la_id = :ai', "ai={$aulaId}");
-// if($Read->getResult()) {
-//     $DataLesson = $Read->getResult()[0];
-// } else {
-//     die(Error('Aula não encontrada!', 'warning'));
-// }
 ?>
 <div class="container">
     <div class="row">
@@ -34,40 +26,49 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
                 if($Read->getResult()) {
                     $DataCourse = $Read->getResult()[0];
                         ?>
-                    <h6 class="m-0 font-weight-bold text-primary"><?= $DataCourse['curso_titulo'] ?></h6>
+                    <h6 class="m-0 font-weight-bold text-dark text-center"><?= $DataCourse['curso_titulo'] ?></h6>
                     <?php
                 } else {
-                    die(Error('Curso não encontrado!', 'warning'));
+                    die(Error('Curso não encontrado!', 'success'));
                 }
                 ?>
-
                 </div>
+
                 <div class="card-body">
-                    <div class="accordion" id="accordionExample">
-                        <div class="card">
+                <?php
+                $Read->FullRead("SELECT * FROM modulos WHERE curso_id = :ci", "ci={$courseId}");
+                if($Read->getResult()) {
+                    foreach($Read->getResult() as $Modules) {
+                        ?>
+                    <li class="nav-item" style="list-style: none;">
+                        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse<?= $Modules['modulo_id'] ?>" aria-expanded="true"
+                            aria-controls="collapseTwo">
+                            <i class="fas fa-fw fa-folder"></i>
+                            <span><?= $Modules['modulo_name'] ?></span>
+                        </a>
+                        <div id="collapse<?= $Modules['modulo_id'] ?>" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                            <div class="bg-white py-2 collapse-inner rounded">
                             <?php
-                            $Read->FullRead("SELECT * FROM modulos WHERE curso_id = :ci", "ci={$courseId}");
+                            $Read->FullRead("SELECT * FROM aulas WHERE modulo_id = :mi", "mi={$Modules['modulo_id']}");
                             if($Read->getResult()) {
-                                foreach($Read->getResult() as $Modules) {
+                                foreach($Read->getResult() as $Lesson) {
                                     ?>
-                            <div class="card-header" id="headingOne">
-                                <h5 class="mb-0">
-                                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse<?= $Modules['modulo_id'] ?>" aria-expanded="true" aria-controls="collapseOne"> 
-                                    <?= $Modules['modulo_name'] ?>
-                                    </button>
-                                </h5>
-                            </div>
-                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-                                <div class="card-body">Nome da aula</div>
-                            </div>
-                            <?php
+                                <a class="collapse-item btn btn-light" href="<?= BASE ?>/painel/profile/courses/lesson/details&a=<?= $Lesson['aula_id'] ?>&course=<?= $DataCourse['curso_id'] ?>"><?= $Lesson['aula_name'] ?></a>
+                                <?php               
+                                    }
+                                } else {
+                                    Error('Aula não encontrada!', 'light');
                                 }
-                            } else {
-                                Error('Módulos não encontrados', 'warning');
-                            }
-                            ?>
+                                ?>
+                            </div>
                         </div>
-                    </div>
+                    </li>
+                <?php
+                        }
+                } else {
+                    Error('Módulos não encontrados', 'success');
+                }
+                ?>
                 </div>
             </div>
         </div>
@@ -80,7 +81,6 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
         </div>
     </div>
 </footer>        
-
 
         <!-- Logout Modal -->
         <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" 
@@ -131,8 +131,5 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
             });
         });
         </script>
-
-
-     
     </body>
 </html>
