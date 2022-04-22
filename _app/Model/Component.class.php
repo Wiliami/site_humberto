@@ -215,11 +215,11 @@ class Component {
 
     public function getMenuDashboard() {
         return '
-        <!-- Divider -->
-        <hr class="sidebar-divider d-none d-md-block">
+        <!-- <hr class="sidebar-divider d-none d-md-block">
         <div class="text-center d-none d-md-inline">
             <button class="rounded-circle border-0" id="sidebarToggle"></button>
         </div>
+        -->
         </ul>
         <!-- End of Sidebar -->
         <!-- Content Wrapper -->
@@ -387,7 +387,7 @@ class Component {
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="' . BASE . '/pages/logout" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Logout
+                                    Sair
                                 </a>
                             </div>
                         </li>
@@ -693,7 +693,7 @@ class Component {
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true"
                     aria-controls="collapseUtilities">
                     <i class="fas fa-book"></i>
-                    <span>CURSOS</span>
+                    <span>CURSO</span>
                 </a>
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
