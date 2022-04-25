@@ -947,6 +947,8 @@ class Component {
                         </div>
                     </div>
                 </div>
+
+            <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
             <script src="'. BASE .'/res/site/js/jquery.min.js"></script>
             <script src="'. BASE .'/res/site/js/bootstrap.bundle.min.js"></script>
             <script src="'. BASE .'/res/site/js/jquery.easing.min.js"></script>

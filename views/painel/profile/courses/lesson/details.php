@@ -4,6 +4,10 @@ $User->verifyExistLoginUser();
 $Component = new Component();
 echo $Component->getBlockPageProfile();
 echo $Component->getHeadHtmlDashboard();
+echo $Component->getSideBarDashboard();
+echo $Component->getLiAdministrativoDashboard();
+echo $Component->getLiCoursesDashboard();
+echo $Component->getLiPagesDashboard();
 echo $Component->getMenuDashboard();
 $Username = $_SESSION['login']['user_name'];
 $aulaId = filter_input(INPUT_GET, 'a', FILTER_VALIDATE_INT);
@@ -19,7 +23,7 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
 // }
 
 ?>
-<div class="container mt-0">
+<div class="container">
     <header class="navbar navbar-expand bg-success static-top shadow d-flex align-items-center justify-content-center justify-content-md-between">
         <ul class="header1" style="list-style: none;">
             <li>
@@ -62,16 +66,15 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
         ?>
         <i class="fas fa-solid fa-chevron-right ml-2"></i>
         <?php
-        // $Read->FullRead("SELECT * FROM modulos WHERE curso_id = :ci", "ci={$courseId}");
-        // if($Read->getResult()) {
-        //     foreach($Read->getResult() as $Modules) {
+        $Read->FullRead("SELECT * FROM modulos WHERE curso_id = :ci", "ci={$courseId}");
+        if($Read->getResult()) {
+            $DataModule = $Read->getResult()[0];
                 ?>
-        <p class="ml-2 h6">Nome do módulo</p>
+        <p class="ml-2 h6"><?= $DataModule['modulo_name'] ?></p>
         <?php
-        //         }
-        // } else {
-        //     Error('Módulos não encontrados', 'success');
-        // }
+        } else {
+            Error('Módulos não encontrados', 'success');
+        }
         ?>
     </div>
     <?php
@@ -141,61 +144,30 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
         </form>
     </div>
 </div>
-<footer class="sticky-footer bg-white">
-    <div class="container my-auto">
-        <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Unitplus <?= date('Y') ?></span>
-        </div>
-    </div>
-</footer>
 
-        <!-- Logout Modal -->
-        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" 
-        aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title btn btn-success mb-2 vw-100" id="exampleModalLabel">Pronto para sair?</h5>
-                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">×</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">Selecione "Sair" para encerrar a sua sessão.</div>
-                    <div class="modal-footer">
-                        <button class="btn btn-outline-dark" type="button" data-dismiss="modal">Cancelar</button>
-                        <a class="btn btn-success" href="<?= BASE ?>/pages/logout">Sair</a>
-                    </div>
-                </div>
-            </div>      
-        </div>
+<script type="text/javascript">
+    $(function() {
+        $('#form1').submit(function(e) {
+            e.preventDefault();
 
-
-        <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
-            <script src="<?= BASE ?>/res/site/js/jquery.min.js"></script>
-        <script src="<?= BASE ?>/res/site/js/bootstrap.bundle.min.js"></script>
-        <script src="<?= BASE ?>/res/site/js/jquery.easing.min.js"></script>
-        <script src="<?= BASE ?>/res/site/js/sb-admin-2.min.js"></script>
-
-        <script type="text/javascript">
-        $(function() {
-            $('#form1').submit(function(e) {
-                e.preventDefault();
-
-                var comment = $('#comment').val();
-             
-                $.ajax({
-                    url: '<?= BASE ?>/api?route=comments&action=create',
-                    type: 'POST',
-                    data: { comment: comment, action: 'add_comment'},
-                    dataType: 'json',
-                    }).done(function(result) {
-                        console.log(result);
-                    }).fail(function(data) {
-                        console.log(data);
-                    });
-                return false;
-            });
+            var comment = $('#comment').val();
+            
+            $.ajax({
+                url: '<?= BASE ?>/api?route=comments&action=create',
+                type: 'POST',
+                data: { comment: comment, action: 'add_comment'},
+                dataType: 'json',
+                }).done(function(result) {
+                    console.log(result);
+                }).fail(function(data) {
+                    console.log(data);
+                });
+            return false;
         });
-        </script>
-    </body>
-</html>
+    });
+</script>
+<?= $Component->getFooterDashboard(); ?>
+
+       
+       
+    
