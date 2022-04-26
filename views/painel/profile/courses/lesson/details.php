@@ -13,7 +13,6 @@ $Username = $_SESSION['login']['user_name'];
 $aulaId = filter_input(INPUT_GET, 'a', FILTER_VALIDATE_INT);
 $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
 
-// $Read = new Read();
 // $Read->FullRead('SELECT * FROM aulas WHERE aula_id = :ai', "ai={$aulaId}");
 // if($Read->getResult()) {
 //     $DataLesson = $Read->getResult()[0];
@@ -21,33 +20,35 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
 // } else {
 //     die(Error('Aula não encontrada!', 'warning'));
 // }
-
+$Read = new Read();
+$Read->FullRead('SELECT * FROM aulas');
+if($Read->getResult()) {
+    $DataLesson = $Read->getResult()[0];
+} else {
+    Error('Aula não encontrada', '');
+}
 ?>
 <div class="container">
-    <header class="navbar navbar-expand bg-success static-top shadow d-flex align-items-center justify-content-center justify-content-md-between">
-        <ul class="header1" style="list-style: none;">
-            <li>
-                <a href="<?= BASE ?>/painel/aulas/nome-da-aula-anterior" class="small text-gray-200">
-                    <div class="fw-normal text-white-50 mb-1">Anterior</div>
-                    <i class="fas fa-arrow-circle-left mr-2 text-gray-200"></i>
-                    <span>React Native</span>
-                </a>
-            </li>
-        </ul>
-        <div class="topbar-divider d-none d-sm-block"></div>
-        <ul class="header2" style="list-style: none;">
-            <li>
-                <a href="<?= BASE ?>/painel/aulas/nome-da-proxima-aula" class="small text-gray-200">
-                    <div class="fw-normal text-white-50 mb-1">Próxima</div>
-                    <span>React JS</span>
-                    <i class="fas fa-arrow-circle-right mr-2 text-gray-200"></i>
-                </a>
-            </li>
-        </ul>
-    </header>    
-    <div class="embed-responsive embed-responsive-16by9">
-        <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/137857207"></iframe>
+    <na class="navbar navbar-expand navbar-light bg-success static-top shadow d-flex align-items-center justify-content-center justify-content-md-between" title="Voltar para aula anterior">
+        <div class="container-fluid">
+            <a href="<?= BASE ?>/painel/profile/courses/lesson/details&p=<?= $DataLesson['aula_id'] ?>" class="navbar-brand d-flex flex-column text-start text-white">
+                Anterior 
+                <i class="fas fa-solid fa-angle-left"></i>
+            </a>
+            <i class="fas fa-solid fa-pipe"></i>
+            <a href="<?= BASE ?>/painel/profile/courses/lesson/details&n=<?= $DataLesson['aula_id'] ?>"class="navbar-brand d-flex flex-column text-end text-white" title="Avançar para próxima aula">
+                Avançar
+                <i class="fas fa-solid fa-angle-right"></i>
+            </a>
+        </div>
+    </na>
+
+    <div class="">
+        <video id="video-aula" poster="" width="100%" controls prealod="none">
+            <source src="<?= BASE ?>/src/video/humberto.mp4" type="video/mp4">     
+        </video>
     </div>
+  
     <div class="d-flex flex-row mt-3">
         <?php
         $Read = new Read();
