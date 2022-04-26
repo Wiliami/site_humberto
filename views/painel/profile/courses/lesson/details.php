@@ -45,7 +45,7 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
             </li>
         </ul>
     </header>    
-    <div class="embed-responsive embed-responsive-21by9">
+    <div class="embed-responsive embed-responsive-16by9">
         <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/137857207"></iframe>
     </div>
     <div class="d-flex flex-row mt-3">
@@ -167,7 +167,3 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
     });
 </script>
 <?= $Component->getFooterDashboard(); ?>
-
-       
-       
-    
