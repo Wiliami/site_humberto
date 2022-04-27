@@ -22,7 +22,7 @@ $moduleId = filter_input(INPUT_GET, 'module', FILTER_VALIDATE_INT);
             if($Read->getResult()) {
                 $DataModule = $Read->getResult()[0];
                     ?>
-            <h1 class="h6 mb-0 text-gray-800">Cadastrar aula no módulo: <b><?= $DataModule['modulo_name'] ?></b></h1>
+            <h1 class="h6 mb-0 text-dark">Cadastrar aula no módulo: <b><?= $DataModule['modulo_name'] ?></b></h1>
             <?php
             } else {
                 Error('Módulo não encontrado!', 'danger');
