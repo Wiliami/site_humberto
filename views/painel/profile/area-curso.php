@@ -4,6 +4,7 @@ $User->verifyExistLoginUser();
 $Component = new Component();
 echo $Component->getBlockPageProfile();
 $courseId = filter_input(INPUT_GET, 'curso', FILTER_VALIDATE_INT);
+$moduleId = filter_input(INPUT_GET, 'm', FILTER_VALIDATE_INT);
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">

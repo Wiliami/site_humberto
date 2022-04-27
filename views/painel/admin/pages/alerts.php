@@ -40,7 +40,7 @@ echo $Component->getMenuDashboard();
                                 if($Message->getResult()) {
                                     Error($Message->getError());
                                 } else {
-                                    Error($Message->getError(), 'warning');
+                                    Error($Message->getError(), 'danger');
                                 }
                          }
                         ?>

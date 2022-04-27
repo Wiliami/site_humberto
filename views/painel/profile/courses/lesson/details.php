@@ -59,7 +59,9 @@ if($Read->getResult()) {
         if($Read->getResult()) {
             $DataCourse = $Read->getResult()[0];
                 ?>
-        <p class="ml-0 h6"><?= $DataCourse['curso_titulo'] ?></p>
+        <a href="<?= BASE ?>/painel/profile/courses/lesson/area-course&course=<?= $DataCourse['curso_id'] ?>" class="ml-0 h6 text-dark">
+            <?= $DataCourse['curso_titulo'] ?>
+        </a>
         <?php 
         } else {
             die(Error('Curso não encontrado!', 'success'));
@@ -71,7 +73,9 @@ if($Read->getResult()) {
         if($Read->getResult()) {
             $DataModule = $Read->getResult()[0];
                 ?>
-        <p class="ml-2 h6"><?= $DataModule['modulo_name'] ?></p>
+        <a href="<?= BASE ?>/painel/profile/courses/lesson/area-course&course=<?= $DataModule['curso_id'] ?>" class="ml-2 h6 text-dark">
+            <?= $DataModule['modulo_name'] ?>
+        </a>
         <?php
         } else {
             Error('Módulos não encontrados', 'success');
