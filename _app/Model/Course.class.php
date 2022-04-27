@@ -166,13 +166,16 @@ class Course {
 
     public function createCourse($dataCourse) {
 		if(empty($dataCourse["curso_titulo"])) {
-				$this->Error = "O curso precisa de um nome!";
+				$this->Error = "Informe o nome do curso!";
 				$this->Result = false;
 			} elseif (empty($dataCourse["curso_descricao"])) {
-				$this->Error = "O curso precisa de uma descrição!";
+				$this->Error = "Informe uma descrição para o curso!";
 				$this->Result = false;	
+			} elseif(empty($dataCourse['curso_valor'])) {
+				$this->Error = "Informe o valor do curso!";
+				$this->Result =  false; 
 			} elseif (empty($dataCourse["curso_categoria"])) {
-				$this->Error = "Por favor, selecione uma categoria para o curso!";
+				$this->Error = "Selecione a categoria do curso!";
 				$this->Result = false;
 			}  else {
 				$dataCourse["curso_create_date"] = date('Y-m-d H:i:s');

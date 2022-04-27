@@ -32,7 +32,7 @@ $userId = filter_input(INPUT_GET, 'user', FILTER_VALIDATE_INT);
                         // header('Location: ' . BASE . '/painel/profile/courses/list');
                         // die(); 
                     } else {
-                        Error($Course->getError(), 'warning');
+                        Error($Course->getError(), 'danger');
                     }
                 }
                 ?>

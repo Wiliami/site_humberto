@@ -18,7 +18,7 @@ echo $Component->getMenuDashboard();
             <h1 class="h5 mb-0 text-gray-800">Cadastro de cursos</h1>
         </div>
         <div class="card-body">
-            <form method="post">
+            <form action="" method="post">
                 <?php
                 $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
                 if(!empty($Post['create_course'])) {

@@ -29,7 +29,7 @@ echo $Component->getMenuDashboard();
                     if($Course->getResult()) {
                         Error($Course->getResult());
                     } else {
-                        Error($Course->getError(), 'warning');
+                        Error($Course->getError(), 'danger');
                     }
                 }
                 ?>
