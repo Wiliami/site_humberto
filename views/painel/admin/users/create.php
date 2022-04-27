@@ -32,7 +32,7 @@ echo $Component->getMenuDashboard();
                         Error($User->getError());
                         die();
                     } else { 
-                        Error($User->getError(), 'warning');
+                        Error($User->getError(), 'danger');
                     }
                 
                 }

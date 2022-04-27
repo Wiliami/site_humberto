@@ -79,7 +79,7 @@ echo $Component->getMenuDashboard();
                         <?php
                                 }
                             } else {
-                                Error("Histórico de compras não encontrada!", 'danger');
+                                Error("Histórico de compras não encontrada!", 'primary');
                             }   
                             ?>
                     </tbody>
