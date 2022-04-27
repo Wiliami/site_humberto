@@ -27,9 +27,11 @@ echo $Component->getMenuDashboard();
                     $CreateCourse['curso_categoria'] = $Post['category'];
                     $CreateCourse['curso_valor'] = $Post['value'];
                     $Course = new Course();
-                    $Course->createCourse($CreateCourse);
+                    $Course->createCourse($CreateCourse);   
                     if($Course->getResult()) {
                         Error($Course->getError());
+                        header('Location: ' . BASE . '/painel/courses/list');
+                        die();
                     } else {
                         Error($Course->getError(), 'danger');
                     }   

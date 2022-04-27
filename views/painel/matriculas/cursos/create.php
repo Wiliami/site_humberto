@@ -29,35 +29,18 @@ $userId = filter_input(INPUT_GET, 'user', FILTER_VALIDATE_INT);
                     $Course->matriculateCreateCourse($matriculateUser);
                     if($Course->getResult()) {
                         Error($Course->getError());
-                        // header('Location: ' . BASE . '/painel/profile/courses/list');
-                        // die(); 
+                        header('Location: ' . BASE . '/painel/profile/courses/list');
+                        die(); 
                     } else {
                         Error($Course->getError(), 'danger');
                     }
                 }
                 ?>
                 <div class="form-group">         
-                    <label for="exampleInputEmail1">Usuário</label>
-                    <select class="form-control" name="matriculate_user" value="<?= isset($Post['matriculate_user'])? $Post['matriculate_user']: '' ?>">
-                        <?php
-                        $Read = new Read();
-                        $Read->FullRead("SELECT * FROM users");
-                        if($Read->getResult()) {
-                            echo "<option value=''>selecionar</option>";
-                            foreach($Read->getResult() as $Users) {
-                                echo "<option value='{$Users['user_id']}'>{$Users['user_name']}</option>";
-                            }
-                        } else {    
-                            echo "<option value=''>Usuários não encontrados!</option>";
-                        }
-                        ?>
-                    </select>   
-                </div>
-                <div class="form-group">         
                     <label for="exampleInputEmail1">Curso</label>
                     <select class="form-control" name="matriculate_course" value="<?= isset($Post['matriculate_course'])? $Post['matriculate_course']: '' ?>">
                         <?php
-                        $Read->FullRead("SELECT * FROM cursos");
+                        $Read->FullRead("SELECT * FROM cursos WHERE user_id = :ui", "ui={$userId}");
                         if($Read->getResult()) {
                             echo "<option value=''>selecionar</option>";
                             foreach($Read->getResult() as $Cursos) {

@@ -18,14 +18,14 @@ $Read = new Read();
 $Read->FullRead("SELECT * FROM aulas WHERE aula_id = :ai", "ai={$lessonId}");
 if($Read->getResult()) {
     $DataLesson = $Read->getResult()[0];
-} else {
-    die(Error("Aula não encontrada!", "warning"));
+    } else {
+        die(Error("Aula não encontrada!", "primary"));
 }
 ?>
 <div class="container">
     <div class="card shadow mb-4">
         <div class="card-header py-3 d-sm-flex align-items-center justify-content-between">
-            <h1 class="h5 mb-0 text-gray-800">Atualizar <b><?= $DataLesson['aula_name'] ?></b></h1>
+            <h1 class="h6 mb-0">Atualizar <b><?= $DataLesson['aula_name'] ?></b></h1>
         </div>
         <div class="card-body"> 
             <form action="" method="post">
@@ -40,15 +40,15 @@ if($Read->getResult()) {
                     $Course->updateLesson($updateLesson, $lessonId);
                     if($Course->getResult()) {
                         Error($Course->getError());
-                        //header('Location: ' . BASE . '/painel/courses/lesson/list');
+                        header('Location: ' . BASE . '/painel/courses/lesson/list');
                         die();
                     } else {
-                        Error($Course->getError(), 'warning');
+                        Error($Course->getError(), 'danger');
                     }   
                 }
                 ?>
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Aula</label>
+                        <label for="exampleInputEmail1">Nome da aula</label>
                         <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nome da aula" name="lesson" value="<?= $DataLesson['aula_name'] ?>">
                     </div>
                     <div class="form-group">

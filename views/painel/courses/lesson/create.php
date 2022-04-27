@@ -22,7 +22,7 @@ $moduleId = filter_input(INPUT_GET, 'module', FILTER_VALIDATE_INT);
             if($Read->getResult()) {
                 $DataModule = $Read->getResult()[0];
                     ?>
-            <div class="h6 mb-0 text-gray-800">Cadastrar aula no módulo: <b><?= $DataModule['modulo_name'] ?></b></div>
+            <h1 class="h6 mb-0 text-gray-800">Cadastrar aula no módulo: <b><?= $DataModule['modulo_name'] ?></b></h1>
             <?php
             } else {
                 Error('Módulo não encontrado!', 'danger');
@@ -45,12 +45,12 @@ $moduleId = filter_input(INPUT_GET, 'module', FILTER_VALIDATE_INT);
                         header('Location: ' . BASE . '/painel/courses/lesson/list');
                         die();
                     } else {
-                        Error($Course->getError(), 'warning');
+                        Error($Course->getError(), 'danger');
                     } 
                 }
                 ?>
                 <div class="form-group">
-                    <label for="inputPassword">Aula</label>
+                    <label for="inputPassword">Nome da aula</label>
                         <input type="text" class="form-control" placeholder="Nome da aula" name="lesson" id="inputPassword"
                             value="<?= isset($Post['lesson'])? $Post['lesson']: '' ?>">
                 </div>

@@ -38,7 +38,7 @@ $userId = filter_input(INPUT_GET, 'delete_user', FILTER_VALIDATE_INT);
             header('Location: ' . BASE . '/painel/admin/users/list');
             die();
         } else {
-            Error($User->getError(), 'warning');
+            Error($User->getError(), 'danger'); 
         }
     }
     ?>
@@ -49,7 +49,7 @@ $userId = filter_input(INPUT_GET, 'delete_user', FILTER_VALIDATE_INT);
         <div class="card-body">
             <form action="" method="post">
                 <a href="<?= BASE ?>/painel/admin/users/list" class="btn btn-outline-success" title="Voltar para lista de usuários">Voltar</a>
-                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
+                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
                     Excluir
                 </button>
 
@@ -73,7 +73,7 @@ $userId = filter_input(INPUT_GET, 'delete_user', FILTER_VALIDATE_INT);
                                 <button class="btn btn-outline-success mb-2" type="button" data-dismiss="modal">
                                     Cancelar
                                 </button>
-                                <input type="submit" class="btn btn-danger mb-2" name="delete_user" value="Excluir">
+                                <input type="submit" class="btn btn-success mb-2" name="delete_user" value="Excluir">
                             </div>
                         </div>
                     </div>
