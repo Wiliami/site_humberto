@@ -20,17 +20,24 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
 // } else {
 //     die(Error('Aula não encontrada!', 'warning'));
 // }
-$Read = new Read();
-$Read->FullRead('SELECT * FROM aulas');
-if($Read->getResult()) {
-    $DataLesson = $Read->getResult()[0];
-} else {
-    Error('Aula não encontrada', '');
-}
 ?>
+
+<div class="container">
+    <?php
+    $Read = new Read();
+    $Read->FullRead('SELECT * FROM aulas');
+    if($Read->getResult()) {
+        $DataLesson = $Read->getResult()[0];
+    } else {
+        Error('Aula não encontrada', 'danger');
+    }
+    ?>
+</div>
+
+
 <div class="container">
     <na class="navbar navbar-expand navbar-light bg-success static-top shadow d-flex align-items-center justify-content-center justify-content-md-between" title="Voltar para aula anterior">
-        <div class="container-fluid">
+        <div class="container">
             <a href="<?= BASE ?>/painel/profile/courses/lesson/details&p=<?= $DataLesson['aula_id'] ?>" class="navbar-brand d-flex flex-column text-start text-white">
                 Anterior 
                 <i class="fas fa-solid fa-angle-left"></i>
@@ -43,13 +50,13 @@ if($Read->getResult()) {
         </div>
     </na>
 
-    <div class="">
+    <div class="mt-0">
         <video id="video-aula" poster="" width="100%" controls prealod="none">
             <source src="<?= BASE ?>/src/video/humberto.mp4" type="video/mp4">     
         </video>
     </div>
   
-    <div class="d-flex flex-row mt-3">
+    <div class="d-flex flex-row mt-2">
         <?php
         $Read = new Read();
         $Read->FullRead("SELECT mc.*, c.curso_titulo, c.curso_descricao
@@ -59,9 +66,9 @@ if($Read->getResult()) {
         if($Read->getResult()) {
             $DataCourse = $Read->getResult()[0];
                 ?>
-        <a href="<?= BASE ?>/painel/profile/courses/lesson/area-course&course=<?= $DataCourse['curso_id'] ?>" class="ml-0 h6 text-dark">
-            <?= $DataCourse['curso_titulo'] ?>
-        </a>
+            <a href="<?= BASE ?>/painel/profile/courses/lesson/area-course&course=<?= $DataCourse['curso_id'] ?>" class="ml-0 h6 text-dark">
+                <?= $DataCourse['curso_titulo'] ?>
+            </a>
         <?php 
         } else {
             die(Error('Curso não encontrado!', 'success'));
@@ -73,9 +80,9 @@ if($Read->getResult()) {
         if($Read->getResult()) {
             $DataModule = $Read->getResult()[0];
                 ?>
-        <a href="<?= BASE ?>/painel/profile/courses/lesson/area-course&course=<?= $DataModule['curso_id'] ?>" class="ml-2 h6 text-dark">
-            <?= $DataModule['modulo_name'] ?>
-        </a>
+            <a href="<?= BASE ?>/painel/profile/courses/lesson/area-course&course=<?= $DataModule['curso_id'] ?>" class="ml-2 h6 text-dark">
+                <?= $DataModule['modulo_name'] ?>
+            </a>
         <?php
         } else {
             Error('Módulos não encontrados', 'success');
@@ -150,6 +157,25 @@ if($Read->getResult()) {
     </div>
 </div>
 
+
+
+
+<div class="container">
+    <div class="card-header bg-dark">
+        <a class="text-white" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+            Nome do módulo  
+        </a>
+        <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+                Nome da aulas
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 <script type="text/javascript">
     $(function() {
         $('#form1').submit(function(e) {
@@ -163,6 +189,7 @@ if($Read->getResult()) {
                 data: { comment: comment, action: 'add_comment'},
                 dataType: 'json',
                 }).done(function(result) {
+                    // alert('Comentário publicado com sucesso!');
                     console.log(result);
                 }).fail(function(data) {
                     console.log(data);
