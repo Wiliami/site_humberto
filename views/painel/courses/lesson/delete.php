@@ -15,7 +15,6 @@ echo $Component->getListPagesAdmin();
 echo $Component->getMenuDashboard();
 $courseId = filter_input(INPUT_GET, 'delete_aula', FILTER_VALIDATE_INT);
 ?>
-
 <div class="container">
     <?php
     $Read = new Read();
@@ -31,7 +30,7 @@ $courseId = filter_input(INPUT_GET, 'delete_aula', FILTER_VALIDATE_INT);
             <h1 class="h5 mb-0 text-gray-800">Excluir <b><?= $DataLesson['aula_name'] ?></b></h1>
         </div>
         <div class="card-body"> 
-            <form method="post">
+            <form action="" method="post">
                 <?php 
                 $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
                 if(!empty($Post['lesson_delete'])) {

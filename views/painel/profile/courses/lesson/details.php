@@ -21,7 +21,6 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
 //     die(Error('Aula não encontrada!', 'warning'));
 // }
 ?>
-
 <div class="container">
     <?php
     $Read = new Read();
@@ -127,30 +126,30 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
                 <div class="d-flex justify-content-end">
                     <input type="submit" id="submit" form="form1" class="btn btn-danger mt-3 p-2 ml-2" name="enviar" value="Publicar">
                 </div>
-                <?php
+                <!-- 
                 $Read = new Read();
                 $Read->FullRead("SELECT c.*, u.user_name
                     FROM comments c 
                     LEFT JOIN users u ON u.user_id = c.comment_create_user");
                  if($Read->getResult()) {
                     $DataComment = $Read->getResult()[0];           
-                        ?>  
+                        ?>   -->
                     <div class="d-flex align-items-center justify-content-start">
                         <img class="img-profile rounded-circle" style="width: 40px; height: 40px;" src="<?= BASE ?>/src/images/undraw_profile.svg">
                     </div>
                     <div class="d-flex flex-column rounded card-body bg-dark mt-3">
                         <div class="d-flex justify-content-between">
-                            <h1 class="h6"><?= $Username ?></h1>
-                            <span class="btn btn-success btn-sm"><?= $DataComment['comment_aprovacao'] ?></span>
+                            <!-- Nome do usuário -->
+                            <h1 class="h6">Usuário</h1>
+                            <!-- Aprovando comentário do usuário -->
+                            <span class="btn btn-success btn-sm">Aguardando aprovação</span>
                         </div>
-                        <span class="h6 text-white"><?= $DataComment['comment_text'] ?></span>
+                        <!-- Comentário do usuário -->
+                        <span class="h6 text-white">Comentário do usuário</span>
                     <div class="mt-4">
-                        <a href="" class="btn-sm btn-light" title="Editar comentário"><i class="fas fa-edit"></i></a>   
-                        <a href="" class="btn-sm btn-light" title="Excluir comentário"><i class="fas fa-solid fa-trash"></i></a>
+                        <span class="btn-sm btn-light" title="Editar comentário"><i class="fas fa-edit"></i></span>   
+                        <span class="btn-sm btn-light" title="Excluir comentário"><i class="fas fa-solid fa-trash"></i></span>
                     </div>
-                    <?php
-                    }
-                    ?>
                 </div>  
             </div>
         </form>
@@ -163,7 +162,7 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
         $('#form1').submit(function(e) {
             e.preventDefault();
 
-            var comment = $('#comment').val();
+            var comment = $('#comments').val();
             
             $.ajax({
                 url: '<?= BASE ?>/api?route=comments&action=create',
@@ -171,10 +170,10 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
                 data: { comment: comment, action: 'add_comment'},
                 dataType: 'json',
                 }).done(function(result) {
-                    // alert('Comentário publicado com sucesso!');
-                    console.log(result);
+                    alert('Comentário publicado com sucesso!');
+                    // console.log(result);
                 }).fail(function(data) {
-                    console.log(data);
+                    alert('Falha ao cadastrar comentário!');
                 });
             return false;
         });

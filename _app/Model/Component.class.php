@@ -625,14 +625,18 @@ class Component {
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Matricular usuário</h6>
+                        <h6 class="collapse-header">Matrículas</h6>
                         <a class="collapse-item" href="' . BASE . '/painel/matriculas/cursos/create">
-                            <i class="fas fa-folder-plus"></i>
+                        <i class="fas fa-folder-plus"></i>
                             No curso
                         </a>
                         <a class="collapse-item" href="' . BASE . '/painel/matriculas/aulas/create">
-                            <i class="fas fa-book"></i>
+                        <i class="fas fa-book"></i>
                             Na aula
+                        </a>
+                        <a class="collapse-item" href="' . BASE . '/painel/courses/lesson/comments/approval-comments">
+                        <i class="fas fa-book"></i>
+                            Cursos
                         </a>
                     </div>
                 </div>

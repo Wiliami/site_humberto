@@ -25,7 +25,7 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
             if($Read->getResult()) {
                 $DataCourse = $Read->getResult()[0]; 
                     ?>
-                <div class="h3 m-0 text-dark" style="font-size: 15px;">Módulos de <b><?= $DataCourse['curso_titulo'] ?></b></div>
+                <div class="h3 m-0 text-dark" style="font-size: 15px;"><b><?= $DataCourse['curso_titulo'] ?></b></div>
                 <a href="<?= BASE ?>/painel/courses/modules/create&course=<?= $DataCourse['curso_id'] ?>" class="btn btn-success rounded-pill" style="border-radius: 50%; font-size: 11px;">Cadastrar módulo</a>
             <?php
                 } else {
@@ -38,7 +38,7 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
                 <table id="table_lista_modulos" class="cell-border compact stripe table-striped" style="width: 100%;">
                     <thead>
                         <tr style ="font-size: 10px;">
-                            <th>MÓDULOS</th>
+                            <th>MÓDULOS DO CURSO</th>
                             <th>CAD. POR</th>
                             <th>ATU. POR</th>
                             <th>OPÇÕES</th>
@@ -78,7 +78,7 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
                     </tbody>
                     <tfoot>
                         <tr style="font-size: 10px;">
-                            <th><span>MÓDULOS</span></th>
+                            <th><span>MÓDULOS DO CURSO</span></th>
                             <th><span>CAD. POR</span></th>
                             <th><span>ATU. POR</span></th>
                             <th><span>OPÇÕES</span></th>

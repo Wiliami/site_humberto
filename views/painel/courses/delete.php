@@ -68,7 +68,7 @@ $courseId = filter_input(INPUT_GET, 'delete_curso', FILTER_VALIDATE_INT);
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
-                            <div class="modal-body">
+                            <div class="modal-body">    
                                 Tem certeza que deseja excluir curso?
                             </div>
                             <div class="modal-footer">

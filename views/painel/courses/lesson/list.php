@@ -23,7 +23,7 @@ $moduleId = filter_input(INPUT_GET, 'module', FILTER_VALIDATE_INT);
             if($Read->getResult()) {
                 $DataModule = $Read->getResult()[0];
                     ?>
-                <h6 class="m-0 text-dark" style="font-size: 15px;">Aulas do módulo <b><?= $DataModule['modulo_name'] ?></b></h6>
+                <h6 class="m-0 text-dark" style="font-size: 15px;"><b>Módulo:</b> <?= $DataModule['modulo_name'] ?></h6>
 
             <?php
             } else  {
