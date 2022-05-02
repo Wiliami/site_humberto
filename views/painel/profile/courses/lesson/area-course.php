@@ -40,12 +40,10 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
                     foreach($Read->getResult() as $Modules) {
                         ?>
                     <li class="nav-item" style="list-style: none;">
-                        <a class="nav-link collapsed text-dark" href="#" data-toggle="collapse" data-target="#collapse<?= $Modules['modulo_id'] ?>" aria-expanded="true"
-                            aria-controls="collapseTwo">
+                        <a class="nav-link collapsed text-dark" href="#" data-toggle="collapse" data-target="#collapse<?= $Modules['modulo_id'] ?>" aria-expanded="true" aria-controls="collapseTwo">
                             <i class="fas fa-solid fa-angle-right"></i>
                             <span><?= $Modules['modulo_name'] ?></span>
                         </a>
-                       
                         <div id="collapse<?= $Modules['modulo_id'] ?>" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                             <div class="bg-white py-2 collapse-inner rounded">
                                 <?php
@@ -88,11 +86,20 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
                 type: 'POST',
                 data: { comment: comment, action: 'add_comment'},
                 dataType: 'json',
-                }).done(function(result) {
-                    console.log(result);
-                }).fail(function(data) {
-                    console.log(data);
-                });
+                success: function(result) {
+                    data.html(result);
+                },
+                beforeSend: function() {
+                    data.html('Buscando...');
+                },
+                error: function(data) {
+                    data.html('Error ao buscar');   
+                }
+                // }).done(function(result) {
+                    //     console.log(result);
+                    // }).fail(function(data) {    
+                        //     console.log(data);
+             });
             return false;
         });
     });

@@ -36,7 +36,7 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
 
 
 <div class="container">
-    <na class="navbar navbar-expand navbar-light bg-success static-top shadow d-flex align-items-center justify-content-center justify-content-md-between" title="Voltar para aula anterior">
+    <nav class="navbar navbar-expand navbar-light bg-success static-top shadow d-flex align-items-center justify-content-center justify-content-md-between" title="Voltar para aula anterior">
         <div class="container">
             <a href="<?= BASE ?>/painel/profile/courses/lesson/details&p=<?= $DataLesson['aula_id'] ?>" class="navbar-brand d-flex flex-column text-start text-white">
                 Anterior 
@@ -48,10 +48,10 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
                 <i class="fas fa-solid fa-angle-right"></i>
             </a>
         </div>
-    </na>
+    </nav>
 
     <div class="mt-0">
-        <video id="video-aula" poster="" width="100%" controls prealod="none">
+        <video id="video-aula" poster="<?= BASE ?>/src/images/alexandre.jpg" width="100%" controls prealod="none">
             <source src="<?= BASE ?>/src/video/humberto.mp4" type="video/mp4">     
         </video>
     </div>
@@ -130,9 +130,9 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
                 <?php
                 $Read = new Read();
                 $Read->FullRead("SELECT c.*, u.user_name
-                    FROM comments c
+                    FROM comments c 
                     LEFT JOIN users u ON u.user_id = c.comment_create_user");
-                if($Read->getResult()) {    
+                 if($Read->getResult()) {
                     $DataComment = $Read->getResult()[0];           
                         ?>  
                     <div class="d-flex align-items-center justify-content-start">
@@ -156,24 +156,6 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
         </form>
     </div>
 </div>
-
-
-
-
-<div class="container">
-    <div class="card-header bg-dark">
-        <a class="text-white" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-            Nome do módulo  
-        </a>
-        <div class="collapse" id="collapseExample">
-            <div class="card card-body">
-                Nome da aulas
-            </div>
-        </div>
-    </div>
-</div>
-
-
 
 <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 <script type="text/javascript">
