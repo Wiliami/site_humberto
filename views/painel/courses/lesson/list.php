@@ -24,13 +24,15 @@ $moduleId = filter_input(INPUT_GET, 'module', FILTER_VALIDATE_INT);
                 $DataModule = $Read->getResult()[0];
                     ?>
                 <h6 class="m-0 text-dark" style="font-size: 15px;"><b>Módulo:</b> <?= $DataModule['modulo_name'] ?></h6>
-
             <?php
             } else  {
                 die(Error("Módulo não encontrado!", 'danger'));
             }
             ?>
-            <a href="<?= BASE ?>/painel/courses/lesson/create&module=<?= $DataModule['modulo_id'] ?>" class="btn btn-success rounded-pill" style="border-radius: 50%; font-size: 11px;">Cadastrar nova aula</a>
+            <div class="d-flex flex-end">
+                <a href="<?= BASE ?>/painel/courses/lesson/create&module=<?= $DataModule['modulo_id'] ?>" class="btn btn-success rounded-pill ml-2" style="border-radius: 50%; font-size: 11px;">Cadastrar nova aula</a>
+                <a href="<?= BASE ?>/painel/courses/lesson/" class="btn btn-success rounded-pill" style="border-radius: 50%; font-size: 11px;">Comentários das aulas</a>
+            </div>
         </div>
         <div class="card-body">
             <div class="table-responsive">

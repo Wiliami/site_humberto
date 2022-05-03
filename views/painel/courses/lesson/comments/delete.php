@@ -26,7 +26,7 @@ if ($Read->getResult()) {
 <div class="container">
     <div class="card shadow">
         <div class="card-header py-3 d-sm-flex align-items-center justify-content-start">
-            <h5 class="h6 mb-0 text-gray-800">Excluir <?= $DataComment['comment_text'] ?></h1>
+            <h1 class="h6 mb-0 text-gray-800">Excluir <?= $DataComment['comment_text'] ?></h1>
         </div>
         <div class="card-body">
             <form action="" method="post">
