@@ -30,8 +30,8 @@ $moduleId = filter_input(INPUT_GET, 'module', FILTER_VALIDATE_INT);
             }
             ?>
             <div class="d-flex flex-end">
-                <a href="<?= BASE ?>/painel/courses/lesson/create&module=<?= $DataModule['modulo_id'] ?>" class="btn btn-success rounded-pill ml-2" style="border-radius: 50%; font-size: 11px;">Cadastrar nova aula</a>
-                <a href="<?= BASE ?>/painel/courses/lesson/" class="btn btn-success rounded-pill" style="border-radius: 50%; font-size: 11px;">Comentários das aulas</a>
+                <a href="<?= BASE ?>/painel/courses/lesson/create&module=<?= $DataModule['modulo_id'] ?>" class="btn btn-success rounded-pill" style="border-radius: 50%; font-size: 11px;">Cadastrar nova aula</a>
+                <a href="<?= BASE ?>/painel/courses/lesson/comments/list" class="btn btn-success rounded-pill ml-2" style="border-radius: 50%; font-size: 11px;">Comentários das aulas</a>
             </div>
         </div>
         <div class="card-body">
@@ -109,7 +109,7 @@ $(document).ready(function() {
             "lengthMenu": "Mostrando _MENU_ registros por página",
             "zeroRecords": "Nenhuma aula foi encontrada",
             "info": "Mostrando página _PAGE_ de _PAGES_",
-            "infoEmpty": "Nenhum registro disponível",
+            "infoEmpty": "Nenhuma aula foi encontrada",
             "infoFiltered": "(filtrado de _MAX_ registros no total)"
         }
     });

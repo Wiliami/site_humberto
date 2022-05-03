@@ -24,16 +24,19 @@ echo $Component->getMenuDashboard();
                     <thead>
                         <tr style="font-size: 10px;">
                             <th>USUÁRIO</th>
+                            <th>AULA</th>
                             <th>COMENTÁRIO</th>
+                            <th>STATUS DO COMENTÁRIO</th>
                             <th>OPÇÕES</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php
                         $Read = new Read();
-                        $Read->FullRead("SELECT c.*, u.user_name 
+                        $Read->FullRead("SELECT c.*, u.user_name, a.aula_name
                             FROM comments c
                             LEFT JOIN users u ON u.user_id = c.user
+                            LEFT JOIN aulas a ON a.aula_id = c.aula
                             ");
                         if($Read->getResult()) {
                             foreach($Read->getResult() as $DataComment) {
@@ -43,10 +46,16 @@ echo $Component->getMenuDashboard();
                                     <?= $DataComment['user_name'] ?>
                                 </td>
                                 <td>
+                                    <?= $DataComment['aula_name'] ?>
+                                </td>
+                                <td>
                                     <?= $DataComment['comment_text'] ?>
                                 </td>
                                 <td>
-                                    <a href="<?= BASE ?>/painel/admin/users/update" class="btn-sm" title="Editar comentário" style="color: #4e73df;"><i class="fas fa-edit"></i></a>
+                                    <?= $DataComment['comment_status'] ?>
+                                </td>
+                                <td>
+                                    <a href="<?= BASE ?>/painel/courses/lesson/comments/update&comment=<?= $DataComment['comment_id'] ?>" class="btn-sm" title="Editar comentário" style="color: #4e73df;"><i class="fas fa-edit"></i></a>
                                     <a href="<?= BASE ?>/painel/courses/lesson/comments/delete&delete_comment=<?= $DataComment['comment_id'] ?>" class="btn-sm" title="Excluir comentário" style="color: #e74a3b;"><i class="fa fa-trash-o"></i></a>
                                 </td>
                             </tr>
@@ -58,7 +67,9 @@ echo $Component->getMenuDashboard();
                     <tfoot>
                         <tr class="btn-sm" style="font-size: 10px;">
                             <th>USUÁRIO</th>
+                            <th>AULA</th>
                             <th>COMENTÁRIO</th>
+                            <th>STATUS DO COMENTÁRIO</th>
                             <th>OPÇÕES</th>
                         </tr>
                     </tfoot>

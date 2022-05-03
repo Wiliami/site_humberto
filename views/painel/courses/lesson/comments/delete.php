@@ -30,6 +30,18 @@ if ($Read->getResult()) {
         </div>
         <div class="card-body">
             <form action="" method="post">
+                <?php
+                $Post =  filter_input_array(INPUT_POST, FILTER_DEFAULT);
+                if(!empty($Post['delete_user'])) {
+                    $Course = new Course();
+                    $Course->deleteComment($commentId);
+                    if($Course->getResult()) {
+                        Error($Course->getError());
+                    } else {
+                        Error($Course->getResult(), 'danger');
+                    } 
+                }
+                ?>
                 <a href="<?= BASE ?>/painel/courses/lesson/comments/approval-comments" class="btn btn-outline-success" title="Voltar para lista de comentários">Voltar</a>
                 <button type="button" class="btn btn-success" data-toggle="modal" data-target="#delete">
                     Excluir

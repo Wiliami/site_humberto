@@ -634,10 +634,6 @@ class Component {
                         <i class="fas fa-book"></i>
                             Na aula
                         </a>
-                        <a class="collapse-item" href="' . BASE . '/painel/courses/lesson/comments/approval-comments">
-                        <i class="fas fa-book"></i>
-                            Cursos
-                        </a>
                     </div>
                 </div>
             </li>
