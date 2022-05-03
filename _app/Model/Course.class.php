@@ -166,31 +166,31 @@ class Course {
 
     public function createCourse($dataCourse) {
 		if(empty($dataCourse["curso_titulo"])) {
-				$this->Error = "Informe o nome do curso!";
+			$this->Error = "Informe o nome do curso!";
+			$this->Result = false;
+		} elseif (empty($dataCourse["curso_descricao"])) {
+			$this->Error = "Informe uma descrição para o curso!";
+			$this->Result = false;	
+		} elseif(empty($dataCourse['curso_valor'])) {
+			$this->Error = "Informe o valor do curso!";
+			$this->Result =  false; 
+		} elseif (empty($dataCourse["curso_categoria"])) {
+			$this->Error = "Selecione a categoria do curso!";
+			$this->Result = false;
+		}  else {
+			$dataCourse["curso_create_date"] = date('Y-m-d H:i:s');
+			$dataCourse['curso_user_create'] = $_SESSION['login']['user_id'];
+			$Create = new Create();
+			$Create->ExeCreate("cursos", $dataCourse); 
+			if($Create->getResult()) {
+				$this->Result = $Create->getResult();
+				$this->Error =  "Curso cadastrado com sucesso!";
+			} else {
 				$this->Result = false;
-			} elseif (empty($dataCourse["curso_descricao"])) {
-				$this->Error = "Informe uma descrição para o curso!";
-				$this->Result = false;	
-			} elseif(empty($dataCourse['curso_valor'])) {
-				$this->Error = "Informe o valor do curso!";
-				$this->Result =  false; 
-			} elseif (empty($dataCourse["curso_categoria"])) {
-				$this->Error = "Selecione a categoria do curso!";
-				$this->Result = false;
-			}  else {
-				$dataCourse["curso_create_date"] = date('Y-m-d H:i:s');
-				$dataCourse['curso_user_create'] = $_SESSION['login']['user_id'];
-				$Create = new Create();
-				$Create->ExeCreate("cursos", $dataCourse); 
-				if($Create->getResult()) {
-					$this->Result = $Create->getResult();
-					$this->Error =  "Curso cadastrado com sucesso!";
-				} else {
-					$this->Result = false;
-					$this->Error = $Create->getError();
-				}
-			}	
+				$this->Error = $Create->getError();
+			}
 		}	
+	}	
 
 	public function updateCourse($updateCourse, $courseId) {
 		if(empty($updateCourse['curso_titulo'])) {
@@ -421,7 +421,20 @@ class Course {
 		}
     }
 
-	// Comentários de usuários nas aulas
+	//Comentários de usuários nas aulas
+	public function updateCommentUserLesson($DataComment, $commentId) {
+		$DataComment['comment_update_user'] = $_SESSION['login']['user_id'];
+		$Update = new Update();
+		$Update->ExeUpdate('comments', $DataComment, 'WHERE comment_id = :ci', "ci={$commentId}");
+		if($Update->getResult()) {
+			$this->Result = $Update->getResult();
+			$this->Error = 'Status do comentário atualizado com sucesso!';
+		} else {
+			$this->Result = false;
+			$this->Error = $Update->getError();
+		}
+	}
+	
 	public function deleteComment($commentId) {
 		$Delete = new Delete();
 		$Delete->ExeDelete('comments', 'WHERE comment_id = :ci', "ci={$commentId}");
