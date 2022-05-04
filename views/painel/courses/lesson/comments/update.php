@@ -65,8 +65,8 @@ dos dados dos comentários dos usuários nas aulas
                 </div>
 
                 <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Status do comentário:</label>
-                <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" name="comment_status">
-                    <option>selecionar</option>
+                <select class="form-control mb-3" id="inlineFormCustomSelectPref" name="comment_status">
+                    <option value="">Selecionar</option>
                     <option value="">Aprovado</option>  
                     <option value="">Reprovado</option>
                 </select>
