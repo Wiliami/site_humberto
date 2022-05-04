@@ -37,7 +37,7 @@ echo $Component->getMenuDashboard();
                             FROM comments c
                             LEFT JOIN users u ON u.user_id = c.user
                             LEFT JOIN aulas a ON a.aula_id = c.aula
-                            ");
+                        ");
                         if($Read->getResult()) {
                             foreach($Read->getResult() as $DataComment) {
                                 ?>

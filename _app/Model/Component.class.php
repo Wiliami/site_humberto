@@ -915,7 +915,7 @@ class Component {
                     <footer class="sticky-footer bg-white">
                         <div class="container my-auto">
                             <div class="copyright text-center my-auto" style="font-size: 10px">
-                                <span>Copyright &copy; Unitplus' . date('Y') . ' </span>
+                                <span>Copyright &copy; Unitplus ' . date('Y') . ' </span>
                             </div>
                         </div>
                     </footer>

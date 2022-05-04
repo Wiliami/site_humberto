@@ -51,17 +51,6 @@ dos dados dos comentários dos usuários nas aulas
             }
             ?>
             <form action="" method="post">
-                <?php
-                $Read = new Read();
-                $Read->FullRead('SELECT c.*, u.user_name
-                    FROM comments c
-                    LEFT JOIN users u ON u.user_id = c.user');
-                if($Read->getResult()) {
-                    $DataComment = $Read->getResult()[0];
-                } else {
-                    Error('');
-                }
-                ?>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Nome da aula</label>
                     <input type="text" class="form-control" id="example1" name="comment_lesson" value="Nome da aula">
@@ -77,8 +66,8 @@ dos dados dos comentários dos usuários nas aulas
 
                 <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Status do comentário:</label>
                 <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" name="comment_status">
-                    <option selected>selecionar</option>
-                    <option value="">Aprovado</option>
+                    <option>selecionar</option>
+                    <option value="">Aprovado</option>  
                     <option value="">Reprovado</option>
                 </select>
                 <a href="<?= BASE ?>/painel/courses/lesson/comments/list" class="btn btn-outline-success mb-2" title="Voltar para lista de usuários">Voltar</a>
