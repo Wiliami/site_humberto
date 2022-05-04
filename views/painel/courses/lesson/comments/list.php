@@ -55,7 +55,7 @@ echo $Component->getMenuDashboard();
                                     <?= $DataComment['comment_status'] ?>
                                 </td>
                                 <td>
-                                    <a href="<?= BASE ?>/painel/courses/lesson/comments/update&comment=<?= $DataComment['comment_id'] ?>" class="btn-sm" title="Editar comentário" style="color: #4e73df;"><i class="fas fa-edit"></i></a>
+                                    <a href="<?= BASE ?>/painel/courses/lesson/comments/update&id=<?= $DataComment['comment_id'] ?>" class="btn-sm" title="Editar comentário" style="color: #4e73df;"><i class="fas fa-edit"></i></a>
                                     <a href="<?= BASE ?>/painel/courses/lesson/comments/delete&delete_comment=<?= $DataComment['comment_id'] ?>" class="btn-sm" title="Excluir comentário" style="color: #e74a3b;"><i class="fa fa-trash-o"></i></a>
                                 </td>
                             </tr>
