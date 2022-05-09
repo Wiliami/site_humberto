@@ -47,21 +47,21 @@ if($Read->getResult()) {
                     }   
                 }
                 ?>
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Nome da aula</label>
-                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nome da aula" name="lesson" value="<?= $DataLesson['aula_name'] ?>">
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">Duração</label>
-                        <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Duração da aula" name="time" value="<?= $DataLesson['aula_duracao'] ?>">
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">URL</label>
-                        <input type="text" class="form-control" placeholder="URL da aula" name="url" id="inputPassword" 
-                            value="<?= $DataLesson['aula_url'] ?>">
-                    </div>
-                    <a href="<?= BASE ?>/painel/courses/lesson/list" class="btn btn-outline-success mb-2" title="Voltar para lista de aulas">Voltar</a>
-                    <input type="submit" class="btn btn-success mb-2" name="update_lesson" value="Atualizar">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Nome da aula</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nome da aula" name="lesson" value="<?= $DataLesson['aula_name'] ?>">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Duração</label>
+                    <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Duração da aula" name="time" value="<?= $DataLesson['aula_duracao'] ?>">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">URL</label>
+                    <input type="text" class="form-control" placeholder="URL da aula" name="url" id="inputPassword" 
+                        value="<?= $DataLesson['aula_url'] ?>">
+                </div>
+                <a href="<?= BASE ?>/painel/courses/lesson/list" class="btn btn-outline-success mb-2" title="Voltar para lista de aulas">Voltar</a>
+                <input type="submit" class="btn btn-success mb-2" name="update_lesson" value="Atualizar">
             </form>
         </div>
     </div>

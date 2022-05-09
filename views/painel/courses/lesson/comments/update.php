@@ -21,14 +21,13 @@ $commentId = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
         FROM comments c
         LEFT JOIN users u ON u.user_id = c.user
         WHERE comment_id = :ci", "ci={$commentId}");
-    if($Read->getResult()) {
+    if($Read->getResult()) { 
         $DataComment = $Read->getResult()[0];
     } else {
         die(Error('Comentário não encontrado!', 'danger'));
     }
     ?>
 </div>
-
 <!-- 
 Fazer uma tabela para poder atualizar pequenas informações 
 dos dados dos comentários dos usuários nas aulas
@@ -40,20 +39,21 @@ dos dados dos comentários dos usuários nas aulas
     </div>
     <div class="card shadow">
         <div class="card-body">
-            <?php
-            $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
-            if(!empty($Post['update_comment'])) {
-                $DataComment2['comment_status'] = $Post['comment_status'];
-                $Course = new Course();
-                $Course->updateCommentUserLesson($DataComment2, $commentId);
-                if($Course->getResult()) {
-                    Error($Course->getError());
-                } else {
-                    Error($Course->getError(), 'danger');
-                }
-            }
-            ?>
             <form action="" method="post">
+                <?php
+                $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+                if(!empty($Post['update_comment'])) {
+                    $DataCommentCreate['comment_status'] = $Post['status_comment'];
+                    $Course = new Course();
+                    $Course->updateCommentUserLesson($DataCommentCreate, $commentId);
+                    if($Course->getResult()) {
+                        // Check::var_dump_json($Course->getResult());
+                        Error($Course->getError());
+                    } else {
+                        Error($Course->getError(), 'danger');
+                    }
+                }
+                ?>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Nome da aula</label>
                     <input type="text" class="form-control" id="example1" value="Nome da aula" disabled>
@@ -64,11 +64,11 @@ dos dados dos comentários dos usuários nas aulas
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Comentário nessa aula</label>
-                    <textarea type="text" class="form-control" id="example2" name="comment_text"><?= $DataComment['comment_text'] ?></textarea>
+                    <textarea type="text" class="form-control" id="example2"><?= $DataComment['comment_text'] ?></textarea>
                 </div>
 
                 <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Status do comentário:</label>
-                <select class="form-control mb-3" id="inlineFormCustomSelectPref" name="comment_status">
+                <select class="form-control mb-3" id="inlineFormCustomSelectPref" name="status_comment">
                     <option value="">Selecionar</option>
                     <option value="">Aprovado</option>  
                     <option value="">Reprovado</option>

@@ -51,18 +51,18 @@ $moduleId = filter_input(INPUT_GET, 'module', FILTER_VALIDATE_INT);
                 ?>
                 <div class="form-group">
                     <label for="inputPassword">Nome da aula</label>
-                        <input type="text" class="form-control" placeholder="Nome da aula" name="lesson" id="inputPassword"
-                            value="<?= isset($Post['lesson'])? $Post['lesson']: '' ?>">
+                    <input type="text" class="form-control" placeholder="Nome da aula" name="lesson" id="inputPassword"
+                    value="<?= isset($Post['lesson'])? $Post['lesson']: '' ?>">
                 </div>
                 <div class="form-group">
                     <label for="inputPassword">Duração</label>
-                        <input type="text" class="form-control" placeholder="Duração da aula" name="time" id="inputPassword"
-                            value="<?= isset($Post['time'])? $Post['time']: '' ?>">
+                    <input type="text" class="form-control" placeholder="Duração da aula" name="time" id="inputPassword"
+                    value="<?= isset($Post['time'])? $Post['time']: '' ?>">
                 </div>
                 <div class="form-group">
                     <label for="inputPassword">URL</label>
-                        <input type="text" class="form-control" placeholder="URL da aula" name="url" id="inputPassword"
-                            value="<?= isset($Post['url'])? $Post['url']: '' ?>">
+                    <input type="text" class="form-control" placeholder="URL da aula" name="url" id="inputPassword"
+                    value="<?= isset($Post['url'])? $Post['url']: '' ?>">
                 </div>
                 <a href="<?= BASE ?>/painel/courses/lesson/list" class="btn btn-outline-success mb-2" title="Voltar para lista de categorias">Voltar</a>
                 <input type="submit" class="btn btn-success mb-2" name="create_lesson" value="Cadastrar">

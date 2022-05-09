@@ -422,10 +422,10 @@ class Course {
     }
 
 	//Comentários de usuários nas aulas
-	public function updateCommentUserLesson($DataComment, $commentId) {
-		$DataComment['comment_update_user'] = $_SESSION['login']['user_id'];
+	public function updateCommentUserLesson($DataCommentCreate, $commentId) {
+		$DataCommentCreate['comment_update_user'] = $_SESSION['login']['user_id'];
 		$Update = new Update();
-		$Update->ExeUpdate('comments', $DataComment, 'WHERE comment_id = :ci', "ci={$commentId}");
+		$Update->ExeUpdate('comments', $DataCommentCreate, 'WHERE comment_id = :ci', "ci={$commentId}");
 		if($Update->getResult()) {
 			$this->Result = $Update->getResult();
 			$this->Error = 'Status do comentário atualizado com sucesso!';
