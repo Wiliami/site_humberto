@@ -57,8 +57,7 @@ if($Read->getResult()) {
                 </div>
                 <div class="form-group">
                     <label for="exampleInputPassword1">URL</label>
-                    <input type="text" class="form-control" placeholder="URL da aula" name="url" id="inputPassword" 
-                        value="<?= $DataLesson['aula_url'] ?>">
+                    <input type="text" class="form-control" placeholder="URL da aula" name="url" id="inputPassword" value="<?= $DataLesson['aula_url'] ?>">
                 </div>
                 <a href="<?= BASE ?>/painel/courses/lesson/list" class="btn btn-outline-success mb-2" title="Voltar para lista de aulas">Voltar</a>
                 <input type="submit" class="btn btn-success mb-2" name="update_lesson" value="Atualizar">

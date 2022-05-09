@@ -20,6 +20,7 @@ $commentId = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
     $Read->FullRead("SELECT c.*, u.user_name 
         FROM comments c
         LEFT JOIN users u ON u.user_id = c.user
+        LEFT JOIN aulas a ON a.aula_id = u.user_id
         WHERE comment_id = :ci", "ci={$commentId}");
     if($Read->getResult()) { 
         $DataComment = $Read->getResult()[0];
@@ -28,8 +29,8 @@ $commentId = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
     }
     ?>
 </div>
-<!-- 
-Fazer uma tabela para poder atualizar pequenas informações 
+<!--  
+Fazer uma tabela para poder atualizar pequenas informações
 dos dados dos comentários dos usuários nas aulas
 -->
 
@@ -43,11 +44,11 @@ dos dados dos comentários dos usuários nas aulas
                 <?php
                 $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
                 if(!empty($Post['update_comment'])) {
-                    $DataCommentCreate['comment_status'] = $Post['status_comment'];
+                    $DataCommentCreate['comment_detail'] = $Post['detail'];
+                    $DataCommentCreate['comment_id'] = $Post['status'];
                     $Course = new Course();
                     $Course->updateCommentUserLesson($DataCommentCreate, $commentId);
                     if($Course->getResult()) {
-                        // Check::var_dump_json($Course->getResult());
                         Error($Course->getError());
                     } else {
                         Error($Course->getError(), 'danger');
@@ -60,15 +61,18 @@ dos dados dos comentários dos usuários nas aulas
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Usuário</label>
-                    <input type="text" class="form-control" id="example3" value="<?= $DataComment['user_name'] ?>" disabled>
+                    <input type="text" class="form-control" id="example2" value="<?= $DataComment['user_name'] ?>" disabled>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Detalhes</label>
+                    <input type="text" class="form-control" id="example2" name="detail">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Comentário nessa aula</label>
-                    <textarea type="text" class="form-control" id="example2"><?= $DataComment['comment_text'] ?></textarea>
+                    <textarea type="text" class="form-control" id="example3"><?= $DataComment['comment_text'] ?></textarea>
                 </div>
-
                 <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Status do comentário:</label>
-                <select class="form-control mb-3" id="inlineFormCustomSelectPref" name="status_comment">
+                <select class="form-control mb-3" id="inlineFormCustomSelectPref" name="status" required>
                     <option value="">Selecionar</option>
                     <option value="">Aprovado</option>  
                     <option value="">Reprovado</option>
