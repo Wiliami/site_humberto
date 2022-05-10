@@ -35,26 +35,11 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
 
 
 <div class="container">
-    <nav class="navbar navbar-expand navbar-light bg-success static-top shadow d-flex align-items-center justify-content-center justify-content-md-between" title="Voltar para aula anterior">
-        <div class="container">
-            <a href="<?= BASE ?>/painel/profile/courses/lesson/details&p=<?= $DataLesson['aula_id'] ?>" class="navbar-brand d-flex flex-column text-start text-white">
-                Anterior 
-                <i class="fas fa-solid fa-angle-left"></i>
-            </a>
-            <i class="fas fa-solid fa-pipe"></i>
-            <a href="<?= BASE ?>/painel/profile/courses/lesson/details&n=<?= $DataLesson['aula_id'] ?>"class="navbar-brand d-flex flex-column text-end text-white" title="Avançar para próxima aula">
-                Avançar
-                <i class="fas fa-solid fa-angle-right"></i>
-            </a>
-        </div>
-    </nav>
-
     <div class="mt-0">
         <video id="video-aula" poster="<?= BASE ?>/src/images/alexandre.jpg" width="100%" controls prealod="none">
             <source src="<?= BASE ?>/src/video/humberto.mp4" type="video/mp4">     
         </video>
     </div>
-  
     <div class="d-flex flex-row mt-2">
         <?php
         $Read = new Read();
@@ -86,7 +71,15 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
         } else {
             Error('Módulos não encontrados', 'success');
         }
-        ?>
+        ?>       
+    </div>
+    <div class="d-flex justify-content-end">
+        <a href="<?= BASE ?>/painel/profile/courses/lesson/details&p=<?= $DataLesson['aula_id'] ?>" class="p-2 text-dark btn btn-outline-dark">
+            Anterior 
+        </a>
+        <a href="<?= BASE ?>/painel/profile/courses/lesson/details&n=<?= $DataLesson['aula_id'] ?>" class="p-2 text-dark btn btn-outline-dark ml-2" title="Avançar para próxima aula">
+            Avançar
+        </a>
     </div>
     <?php
     $Read->FullRead("SELECT * FROM aulas WHERE aula_id = :ai", "ai={$aulaId}");
@@ -121,7 +114,7 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
             <div class="card-body">
                 <div class="text-start">
                     <img class="img-profile rounded-circle" style="width: 40px; height: 40px;" src="<?= BASE ?>/src/images/undraw_profile.svg">
-                    <textarea class="form-control mt-3" id="comment" name="comment" placeholder="Escreva seu comentário..." rows="3" required></textarea>
+                    <textarea class="form-control mt-3" id="comment_user" name="comment" placeholder="Escreva seu comentário..." rows="3" required></textarea>
                 </div>
                 <div class="d-flex justify-content-end">
                     <input type="submit" id="submit" form="form1" class="btn btn-danger mt-3 p-2 ml-2" name="enviar" value="Publicar">
@@ -145,7 +138,7 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
                             <span class="btn btn-success btn-sm">Aguardando aprovação</span>
                         </div>
                         <!-- Comentário do usuário -->
-                        <span class="h6 text-white">Comentário do usuário</span>
+                        <div class="h6 text-white" id="comment"></div>
                     <div class="mt-4">
                         <span class="btn-sm btn-light" title="Editar comentário"><i class="fas fa-edit"></i></span>   
                         <span class="btn-sm btn-light" title="Excluir comentário"><i class="fas fa-solid fa-trash"></i></span>
@@ -162,18 +155,18 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
         $('#form1').submit(function(e) {
             e.preventDefault();
 
-            var comment = $('#comments').val();
+            var comment = $('#comment_user').val();
             
             $.ajax({
                 url: '<?= BASE ?>/api?route=comments&action=create',
                 type: 'POST',
-                data: { comment: comment, action: 'add_comment'},
+                data: { comentario: comment, action: 'add_comment' },
                 dataType: 'json',
                 }).done(function(result) {
-                    alert('Comentário publicado com sucesso!');
-                    // console.log(result);
+                    // $('#comment').text(result);
+                    console.log(result);
                 }).fail(function(data) {
-                    alert('Falha ao cadastrar comentário!');
+                    $('#comment').text('Falha ao cadastrar comentário!');
                 });
             return false;
         });

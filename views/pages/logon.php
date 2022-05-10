@@ -21,35 +21,31 @@ if($User->verifyLoginUserON()) {
     </head>
     <body class="bg-gradient-primary">
         <div class="container">
-            <!-- Outer Row -->
             <div class="row justify-content-center">
                 <div class="col-xl-10 col-lg-12 col-md-9">
                     <div class="card o-hidden border-0 shadow-lg my-5">
                         <div class="card-body p-0">
-                            <!-- Nested Row within Card Body -->
                             <div class="row">
-                                <div class="col-lg-6 d-none d-lg-block"></div>
-                                    <!-- <h1 class="h4 text-gray-900 mb-4">Faça seu login na plataforma!</h1> -->
                                 <div class="col-lg-6">
                                     <div class="p-5">
                                         <div class="text-center">
                                             <h1 class="h4 text-gray-900 mb-4">Seja bem-vindo!</h1>
                                         </div>
-                                        <?php 
-                                        $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
-                                        if(!empty($Post['logon'])) {
-                                            $User = new User();
-                                            $User->exeLogin($Post['email'], $Post['password']);
-                                            if($User->getResult()) {
-                                                Error($User->getError());
-                                                header('Location: ' . BASE . '/painel/dashboard');
-                                                die();
-                                            } else {
-                                                Error($User->getError(), 'danger');
-                                            }
-                                        } 
-                                        ?>
-                                        <form class="user" method="post">
+                                        <form action="" class="user" method="post">
+                                            <?php 
+                                            $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+                                            if(!empty($Post['logon'])) {
+                                                $User = new User();
+                                                $User->exeLogin($Post['email'], $Post['password']);
+                                                if($User->getResult()) {
+                                                    Error($User->getError());
+                                                    header('Location: ' . BASE . '/painel/dashboard');
+                                                    die();
+                                                } else {
+                                                    Error($User->getError(), 'danger');
+                                                }
+                                            } 
+                                            ?>
                                             <div class="form-group">
                                                 <input type="email" class="form-control form-control-user" name="email"
                                                     id="exampleInputEmail" placeholder="Email" 
