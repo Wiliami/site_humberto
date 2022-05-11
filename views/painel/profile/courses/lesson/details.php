@@ -167,7 +167,6 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
                     $('#comment').text(result);
                 }).fail(function(data) {
                     $('#comment').text('Falha ao cadastrar comentário!');
-                });
             return false;
         });
     });
