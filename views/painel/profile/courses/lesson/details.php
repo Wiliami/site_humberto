@@ -37,7 +37,7 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
 <div class="container">
     <div class="mt-0">
         <video id="video-aula" poster="<?= BASE ?>/src/images/alexandre.jpg" width="100%" controls prealod="none">
-            <source src="<?= BASE ?>/src/video/humberto.mp4" type="video/mp4">     
+            <source src="<?= BASE ?>/src/video/humberto.mp4" type="video/mp4">
         </video>
     </div>
         <div class="d-flex align-items-center justify-content-between">
@@ -75,10 +75,10 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
                 ?>       
             </div>
             <div class="d-flex justify-content-end">
-                <a href="<?= BASE ?>/painel/profile/courses/lesson/details&p=<?= $DataLesson['aula_id'] ?>" class="p-2 text-dark btn btn-outline-dark">
+                <a href="<?= BASE ?>/painel/profile/courses/lesson/details&p=<?= $DataLesson['aula_id'] ?>" class="p-2 btn btn-outline-dark">
                     Anterior 
                 </a>
-                <a href="<?= BASE ?>/painel/profile/courses/lesson/details&n=<?= $DataLesson['aula_id'] ?>" class="p-2 text-dark btn btn-outline-dark ml-2" title="Avançar para próxima aula">
+                <a href="<?= BASE ?>/painel/profile/courses/lesson/details&n=<?= $DataLesson['aula_id'] ?>" class="p-2 btn btn-outline-dark ml-2" title="Avançar para próxima aula">
                     Avançar
                 </a>
             </div>
@@ -141,8 +141,8 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
                         <!-- Comentário do usuário -->
                         <div class="h6 text-white" id="comment"></div>
                         <div class="mt-4">
-                            <span class="btn-sm btn btn-light" title="Editar comentário"><i class="fas fa-edit"></i></span>   
-                            <span class="btn-sm btn btn-light" title="Excluir comentário"><i class="fas fa-solid fa-trash"></i></span>
+                            <span class="btn btn-light btn-sm" title="Editar comentário"><i class="fas fa-edit"></i></span>   
+                            <span class="btn btn-light btn-sm" title="Excluir comentário"><i class="fas fa-solid fa-trash"></i></span>
                         </div>
                     </div> 
                 </div> 
@@ -150,24 +150,28 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
         </form>
     </div>
 </div>
+
+
 <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 <script type="text/javascript">
+
     $(function() {
         $('#form1').submit(function(e) {
             e.preventDefault();
 
             var comment = $('#comment_user').val();
-
-            $.ajax({
+            
+            $ajax({
                 url: '<?= BASE ?>/api?route=comments&action=create',
                 type: 'POST',
-                data: { comentario: comment, action: 'add_comment' },
+                data: {comentario: comment, action: 'add_comment'},
                 dataType: 'json',
-                }).done(function(result) {
-                    $('#comment').text(result);
-                }).fail(function(data) {
-                    $('#comment').text('Falha ao cadastrar comentário!');
-            return false;
+            }).done(function(result) {
+                $('#comment').text(result);
+            }).fail(function(data) {
+                $('#comment').text('Falha ao cadastrar comentário!');
+                return false;
+            });
         });
     });
 </script>
