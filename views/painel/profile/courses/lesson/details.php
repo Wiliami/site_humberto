@@ -160,13 +160,14 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
             e.preventDefault();
 
             var comment = $('#comment_user').val();
-            
-            $ajax({
+
+            $.ajax({
                 url: '<?= BASE ?>/api?route=comments&action=create',
                 type: 'POST',
                 data: {comentario: comment, action: 'add_comment'},
                 dataType: 'json',
             }).done(function(result) {
+                // console.log(result);
                 $('#comment').text(result);
             }).fail(function(data) {
                 $('#comment').text('Falha ao cadastrar comentário!');
