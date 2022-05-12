@@ -12,14 +12,6 @@ echo $Component->getMenuDashboard();
 $Username = $_SESSION['login']['user_name'];
 $aulaId = filter_input(INPUT_GET, 'a', FILTER_VALIDATE_INT);
 $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
-
-// $Read->FullRead('SELECT * FROM aulas WHERE aula_id = :ai', "ai={$aulaId}");
-// if($Read->getResult()) {
-//     $DataLesson = $Read->getResult()[0];
-//     $courseId = $DataLesson['curso_id'];
-// } else {
-//     die(Error('Aula não encontrada!', 'warning'));
-// }
 ?>
 <div class="container">
     <?php
@@ -31,10 +23,6 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
         Error('Aula não encontrada', 'danger');
     }
     ?>
-</div>
-
-
-<div class="container">
     <div class="mt-0">
         <video id="video-aula" poster="<?= BASE ?>/src/images/alexandre.jpg" width="100%" controls prealod="none">
             <source src="<?= BASE ?>/src/video/humberto.mp4" type="video/mp4">
@@ -97,18 +85,6 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
     ?>
     <hr>
     <form action="" method="post" id="form1">
-        <!-- // $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
-        // if(!empty($Post['enviar'])) {
-        //     $CreateComment['comment_text'] = $Post['comment'];
-        //     $Comment = new Comment();
-        //     $Comment->createCommentLesson($CreateComment);
-        //     if($Comment->getResult()) {
-        //         Error($Comment->getError());
-        //     } else {
-        //         Error($Comment->getError(), 'warning');
-        //     }
-        // } 
-        // -->
         <div class="form-group">
             <div class="py-3">
                 <h6 class="h5 text-gray-900">Comentários</h6>
@@ -121,14 +97,6 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
                 <div class="d-flex justify-content-end">
                     <input type="submit" id="submit" form="form1" class="btn btn-danger mt-3 p-2 ml-2" name="enviar" value="Publicar">
                 </div>
-                <!-- 
-                $Read = new Read();
-                $Read->FullRead("SELECT c.*, u.user_name
-                    FROM comments c 
-                    LEFT JOIN users u ON u.user_id = c.comment_create_user");
-                 if($Read->getResult()) {
-                    $DataComment = $Read->getResult()[0];           
-                        ?>   -->
                 <div class="d-flex align-items-center mt-4">
                     <img class="img-profile rounded-circle" style="width: 40px; height: 40px;" src="<?= BASE ?>/src/images/undraw_profile.svg">
                     <div class="d-flex flex-column rounded card-body bg-dark mt-3 ml-2">
@@ -150,11 +118,8 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
         </form>
     </div>
 </div>
-
-
 <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 <script type="text/javascript">
-
     $(function() {
         $('#form1').submit(function(e) {
             e.preventDefault();
