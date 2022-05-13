@@ -2,7 +2,6 @@
 $action = filter_input(INPUT_GET, 'action', FILTER_DEFAULT);
 $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 $courseId = 1;
-
 switch ($action) {
     case 'create';
         $DataCreateComment['user'] = $_SESSION['login']['user_id'];

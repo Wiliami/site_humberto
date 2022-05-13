@@ -102,8 +102,8 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
                     <div class="d-flex flex-column rounded card-body bg-dark mt-3 ml-2">
                         <div class="d-flex align-items-center justify-content-between">
                             <!-- Nome do usuário -->
-                            <div class="h6" id="user">Nome do usuário</div>
-                            <!-- Aprovando comentário do usuário -->
+                            <div class="h6" id="username">Nome do usuário</div>
+                            <!-- Aprovação comentário -->
                             <div class="h6 btn btn-success btn-sm">Aguardando aprovação</div>
                         </div>
                         <!-- Comentário do usuário -->
@@ -132,7 +132,6 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
                 data: {comentario: comment, action: 'add_comment'},
                 dataType: 'json',
             }).done(function(result) {
-                // console.log(result);
                 $('#comment').text(result);
             }).fail(function(data) {
                 $('#comment').text('Falha ao cadastrar comentário!');
