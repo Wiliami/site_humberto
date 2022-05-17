@@ -71,6 +71,9 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
                 </a>
             </div>
         </div>
+        <div class="progress">
+            <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+        </div>
     <?php
     $Read->FullRead("SELECT * FROM aulas WHERE aula_id = :ai", "ai={$aulaId}");
     if($Read->getResult()) {
@@ -107,7 +110,7 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
                             <div class="h6 btn btn-success btn-sm">Aguardando aprovação</div>
                         </div>
                         <!-- Comentário do usuário -->
-                        <div class="h6 text-white" id="comment"></div>
+                        <div class="h6 text-white" id="error"></div>
                         <div class="mt-4">
                             <span class="btn btn-light btn-sm" title="Editar comentário"><i class="fas fa-edit"></i></span>   
                             <span class="btn btn-light btn-sm" title="Excluir comentário"><i class="fas fa-solid fa-trash"></i></span>
@@ -127,14 +130,14 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
             var comment = $('#comment_user').val();
 
             $.ajax({
-                url: '<?= BASE ?>/api?route=comments&action=create',
+                url: '<?= BASE ?>/api/?route=comments&action=create',
                 type: 'POST',
-                data: {comentario: comment, action: 'add_comment'},
+                data: {comment_user: comment, action: 'add_comment'},
                 dataType: 'json',
             }).done(function(result) {
-                $('#comment').text(result);
+                $('#error').text(result.error.text);
             }).fail(function(data) {
-                $('#comment').text('Falha ao cadastrar comentário!');
+                $('#error').text(data.error.text);
                 return false;
             });
         });

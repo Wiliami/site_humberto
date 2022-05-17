@@ -6,7 +6,7 @@ switch ($action) {
     case 'create';
         $DataCreateComment['user'] = $_SESSION['login']['user_id'];
         $DataCreateComment['aula'] =  $courseId;
-        $DataCreateComment['comment_text'] = $Post['comment'];
+        $DataCreateComment['comment_text'] = $Post['comment_user']; 
         $DataCreateComment['comment_aprovacao'] = 'Aguardando aprovação';
         $DataCreateComment['comment_create_date'] = date('Y-m-d H:i:s');
         $DataCreateComment['comment_create_user'] = $_SESSION['login']['user_id'];
