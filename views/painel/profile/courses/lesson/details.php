@@ -12,6 +12,10 @@ echo $Component->getMenuDashboard();
 $Username = $_SESSION['login']['user_name'];
 $aulaId = filter_input(INPUT_GET, 'a', FILTER_VALIDATE_INT);
 $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
+
+$total       = rand(1, 5000);
+$progresso   = rand(1, $total);
+$porcentagem = ($total/$progresso) * 100;
 ?>
 <div class="container">
     <?php
@@ -71,9 +75,12 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
                 </a>
             </div>
         </div>
+
+        <!-- Barra de progresso -->
         <div class="progress">
-            <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+            <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><?= $porcentagem.'%'; ?></div>
         </div>
+
     <?php
     $Read->FullRead("SELECT * FROM aulas WHERE aula_id = :ai", "ai={$aulaId}");
     if($Read->getResult()) {
