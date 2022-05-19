@@ -77,9 +77,12 @@ $porcentagem = ($total/$progresso) * 100;
         </div>
 
         <!-- Barra de progresso -->
-        <div class="progress">
-            <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><?= $porcentagem.'%'; ?></div>
+        <div class="">
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><?= $porcentagem.'%'; ?></div>
+            </div>
         </div>
+        
 
     <?php
     $Read->FullRead("SELECT * FROM aulas WHERE aula_id = :ai", "ai={$aulaId}");
@@ -94,6 +97,9 @@ $porcentagem = ($total/$progresso) * 100;
     }
     ?>
     <hr>
+
+
+    <!-- Barra de comentários postados do usuário -->
     <form action="" method="post" id="form1">
         <div class="form-group">
             <div class="py-3">
@@ -107,26 +113,27 @@ $porcentagem = ($total/$progresso) * 100;
                 <div class="d-flex justify-content-end">
                     <input type="submit" id="submit" form="form1" class="btn btn-danger mt-3 p-2 ml-2" name="enviar" value="Publicar">
                 </div>
-                <div class="d-flex align-items-center mt-4">
-                    <img class="img-profile rounded-circle" style="width: 40px; height: 40px;" src="<?= BASE ?>/src/images/undraw_profile.svg">
-                    <div class="d-flex flex-column rounded card-body bg-dark mt-3 ml-2">
-                        <div class="d-flex align-items-center justify-content-between">
-                            <!-- Nome do usuário -->
-                            <div class="h6" id="username">Nome do usuário</div>
-                            <!-- Aprovação comentário -->
-                            <div class="h6 btn btn-success btn-sm">Aguardando aprovação</div>
-                        </div>
-                        <!-- Comentário do usuário -->
-                        <div class="h6 text-white" id="error"></div>
-                        <div class="mt-4">
-                            <span class="btn btn-light btn-sm" title="Editar comentário"><i class="fas fa-edit"></i></span>   
-                            <span class="btn btn-light btn-sm" title="Excluir comentário"><i class="fas fa-solid fa-trash"></i></span>
-                        </div>
-                    </div> 
-                </div> 
             </div>
-        </form>
-    </div>
+
+         
+                <!-- <div>
+                    <img class="img-profile rounded-circle" style="width: 40px; height: 40px;" src="<?= BASE ?>/src/images/undraw_profile.svg">
+                </div> -->
+                <div class="card">
+                    <div class="card-header d-flex align-items-center justify-content-between">
+                        <div class="h6" id="username">Nome do usuário</div>
+                        <h5 class="btn btn-success btn-sm">Aguardando aprovação</h5>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text" id="error">Comentário do usuário no container</p>
+                        <a href="<?= BASE ?>/" class="btn btn-dark"><i class="fas fa-edit"></i></a>
+                        <a href="<?= BASE ?>/" class="btn btn-dark"><i class="fas fa-solid fa-trash"></i></a>
+                    </div>
+                </div>
+
+
+        </div>
+    </form>
 </div>
 <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 <script type="text/javascript">
