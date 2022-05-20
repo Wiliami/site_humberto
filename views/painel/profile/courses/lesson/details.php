@@ -114,23 +114,22 @@ $porcentagem = ($total/$progresso) * 100;
                     <input type="submit" id="submit" form="form1" class="btn btn-danger mt-3 p-2 ml-2" name="enviar" value="Publicar">
                 </div>
             </div>
-
-         
-            <div class="card">
+               
+            <div class="card" id="card-comment">
                 <div class="card-header d-flex align-items-center justify-content-between">
                     <div class="h6" id="username">Nome do usuário</div>
                     <h5 class="btn btn-success btn-sm">Aguardando aprovação</h5>
                 </div>
                 <div class="card-body">
                     <p class="card-text" id="error">Comentário do usuário no container</p>
-                    <a href="<?= BASE ?>/" class="btn btn-dark"><i class="fas fa-edit"></i></a>
-                    <a href="<?= BASE ?>/" class="btn btn-dark"><i class="fas fa-solid fa-trash"></i></a>
+                    <a href="<?= BASE ?>/" class="btn btn-dark" title="Editar comentário"><i class="fas fa-edit"></i></a>
+                    <a href="<?= BASE ?>/" class="btn btn-dark" name="delete_comment" title="Excluir comentário"><i class="fas fa-solid fa-trash"></i></a>
                 </div>
             </div>
 
-
         </div>
     </form>
+    <button class="btn btn-success" id="button">Clique aqui</button>
 </div>
 <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 <script type="text/javascript">
