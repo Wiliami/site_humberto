@@ -114,22 +114,9 @@ $porcentagem = ($total/$progresso) * 100;
                     <input type="submit" id="submit" form="form1" class="btn btn-danger mt-3 p-2 ml-2" name="enviar" value="Publicar">
                 </div>
             </div>
-               
-            <div class="card" id="card-comment">
-                <div class="card-header d-flex align-items-center justify-content-between">
-                    <div class="h6" id="username">Nome do usuário</div>
-                    <h5 class="btn btn-success btn-sm">Aguardando aprovação</h5>
-                </div>
-                <div class="card-body">
-                    <p class="card-text" id="error">Comentário do usuário no container</p>
-                    <a href="<?= BASE ?>/" class="btn btn-dark" title="Editar comentário"><i class="fas fa-edit"></i></a>
-                    <a href="<?= BASE ?>/" class="btn btn-dark" name="delete_comment" title="Excluir comentário"><i class="fas fa-solid fa-trash"></i></a>
-                </div>
-            </div>
-
+            <div id="list_comments"></div>
         </div>
     </form>
-    <button class="btn btn-success" id="button">Clique aqui</button>
 </div>
 <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 <script type="text/javascript">
@@ -138,6 +125,7 @@ $porcentagem = ($total/$progresso) * 100;
             e.preventDefault();
 
             var comment = $('#comment_user').val();
+            let url = $(this).data('url')
 
             $.ajax({
                 url: '<?= BASE ?>/api/?route=comments&action=create',
@@ -145,11 +133,41 @@ $porcentagem = ($total/$progresso) * 100;
                 data: {comment_user: comment, action: 'add_comment'},
                 dataType: 'json',
             }).done(function(result) {
+                console.log(result);
+                if(result.script) {
+                    eval(result.script);
+                }
                 $('#error').text(result.error.text);
             }).fail(function(data) {
                 $('#error').text(data.error.text);
                 return false;
             });
+        });
+        $( "body" ).on( "click", ".deleteComment", function() {
+            let id = $(this).data('id');
+            var result = confirm("Deseja realmente excluir o comentário?");
+
+            if (result) {
+                // Delete the user
+                $.ajax({
+                    url: '<?= BASE ?>/api/?route=comments&action=delete_pending',
+                    type: 'POST',
+                    data: {comment_id: id, action: 'delete_pending'},
+                    dataType: 'json',
+                }).done(function(result) {
+                    console.log(result);
+                    if(result.script) {
+                        eval(result.script);
+                    }
+                    $('#error').text(result.error.text);
+                }).fail(function(data) {
+                    $('#error').text(data.error.text);
+                    return false;
+            });
+            } else {
+                // Do nothing; they cancelled
+            }
+            return false;
         });
     });
 </script>
