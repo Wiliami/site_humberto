@@ -116,20 +116,17 @@ $porcentagem = ($total/$progresso) * 100;
             </div>
 
          
-                <!-- <div>
-                    <img class="img-profile rounded-circle" style="width: 40px; height: 40px;" src="<?= BASE ?>/src/images/undraw_profile.svg">
-                </div> -->
-                <div class="card">
-                    <div class="card-header d-flex align-items-center justify-content-between">
-                        <div class="h6" id="username">Nome do usuário</div>
-                        <h5 class="btn btn-success btn-sm">Aguardando aprovação</h5>
-                    </div>
-                    <div class="card-body">
-                        <p class="card-text" id="error">Comentário do usuário no container</p>
-                        <a href="<?= BASE ?>/" class="btn btn-dark"><i class="fas fa-edit"></i></a>
-                        <a href="<?= BASE ?>/" class="btn btn-dark"><i class="fas fa-solid fa-trash"></i></a>
-                    </div>
+            <div class="card">
+                <div class="card-header d-flex align-items-center justify-content-between">
+                    <div class="h6" id="username">Nome do usuário</div>
+                    <h5 class="btn btn-success btn-sm">Aguardando aprovação</h5>
                 </div>
+                <div class="card-body">
+                    <p class="card-text" id="error">Comentário do usuário no container</p>
+                    <a href="<?= BASE ?>/" class="btn btn-dark"><i class="fas fa-edit"></i></a>
+                    <a href="<?= BASE ?>/" class="btn btn-dark"><i class="fas fa-solid fa-trash"></i></a>
+                </div>
+            </div>
 
 
         </div>
