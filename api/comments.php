@@ -13,7 +13,7 @@ switch ($action) {
         $Create = new Create();
         $Create->ExeCreate('comments', $DataCreateComment);
         if($Create->getResult()) {
-            $jSon['result'] = $Create->getResult(); 
+            $jSon['result'] = $Create->getResult();
             $jSon['error']['text'] = "Comentário publicado com sucesso!";
             $ScriptHtml = "<div class='card comment_{$Create->getResult()}' id='card-comment'> "
             . "<div class='card-header d-flex align-items-center justify-content-between'> "
