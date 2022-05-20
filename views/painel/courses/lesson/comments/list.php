@@ -37,6 +37,7 @@ echo $Component->getMenuDashboard();
                             FROM comments c
                             LEFT JOIN users u ON u.user_id = c.user
                             LEFT JOIN aulas a ON a.aula_id = c.aula
+                            -- LEFT JOIN situation s ON s.id = a.desc
                         ");
                         if($Read->getResult()) {
                             foreach($Read->getResult() as $DataComment) {
@@ -114,5 +115,5 @@ $(document).ready(function() {
             "infoFiltered": "(filtrado de _MAX_ registros no total)"
         }
     });
-});
+}); 
 </script>
