@@ -1,5 +1,5 @@
 <?php
-$action = filter_input(INPUT_GET, 'action', FILTER_DEFAULT);
+$action = filter_input(INPUT_GET, 'action', FILTER_DEFAULT); // nome da variável passado via get
 $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 $courseId = 1;
 switch ($action) {
@@ -15,17 +15,18 @@ switch ($action) {
         if($Create->getResult()) {
             $jSon['result'] = $Create->getResult();
             $jSon['error']['text'] = "Comentário publicado com sucesso!";
-            $ScriptHtml = "<div class='card comment_{$Create->getResult()}' id='card-comment'> "
-            . "<div class='card-header d-flex align-items-center justify-content-between'> "
-                . "<div class='h6' id='username'>{$_SESSION['login']['user_name']}</div>"
-                . "<h5 class='btn btn-success btn-sm'>Aguardando aprovação</h5>"
-            . "</div> "
-            . "<div class='card-body'> "
-                . "<p class='card-text'>" . str_replace("\n"," ", nl2br($Post['comment_user'], false)) . "</p> "
-                . "<a href='" . BASE . "/' class='btn btn-dark' title='Editar comentário'><i class='fas fa-edit'></i></a> "
-                . "<a href='" . BASE . "/' class='btn btn-dark deleteComment' data-id='{$Create->getResult()}' name='delete_comment' title='Excluir comentário'><i class='fas fa-solid fa-trash'></i></a> "
-            . "</div> "
-        . "</div> ";
+            $ScriptHtml = 
+            "<div class='card comment_{$Create->getResult()}' id='card-comment'> "
+                . "<div class='card-header d-flex align-items-center justify-content-between'> "
+                    . "<div class='h6' id='username'>{$_SESSION['login']['user_name']}</div>"
+                    . "<h5 class='btn btn-success btn-sm'>Aguardando aprovação</h5>"
+                . "</div> "
+                . "<div class='card-body'> "
+                    . "<p class='card-text'>" . str_replace("\n"," ", nl2br($Post['comment_user'], false)) . "</p> "
+                    . "<a href='" . BASE . "/' class='btn btn-dark' title='Editar comentário'><i class='fas fa-edit'></i></a> "
+                    . "<a href='" . BASE . "/' class='btn btn-dark deleteComment' data-id='{$Create->getResult()}' name='delete_comment' title='Excluir comentário'><i class='fas fa-solid fa-trash'></i></a> "
+                . "</div> "
+            . "</div> ";
             $jSon['script'] = "
                 $('#list_comments').append(\"{$ScriptHtml}\");
                 $('#comment_user').val('');
@@ -49,7 +50,7 @@ switch ($action) {
                 $jSon['script'] = "$('.comment_{$IdComment}').remove();";
             } else {
                 $jSon['result'] = false;
-            $jSon['error']['text'] = 'Não foi possivel excluir!';
+                $jSon['error']['text'] = 'Não foi possivel excluir!';
             }
         } else {
             $jSon['result'] = false;

@@ -40,6 +40,7 @@ $userId = filter_input(INPUT_GET, 'user', FILTER_VALIDATE_INT);
                     <label for="exampleInputEmail1">Curso</label>
                     <select class="form-control" name="matriculate_course" value="<?= isset($Post['matriculate_course'])? $Post['matriculate_course']: '' ?>">
                         <?php
+                        $Read = new Read();
                         $Read->FullRead("SELECT * FROM cursos WHERE user_id = :ui", "ui={$userId}");
                         if($Read->getResult()) {
                             echo "<option value=''>selecionar</option>";
@@ -48,6 +49,23 @@ $userId = filter_input(INPUT_GET, 'user', FILTER_VALIDATE_INT);
                             }
                         } else {    
                             echo "<option value=''>Cursos não encontrados!</option>";
+                        }
+                        ?>
+                    </select>   
+                </div>
+                <div class="form-group">         
+                    <label for="exampleInputEmail1">Usuário</label>
+                    <select class="form-control" name="matriculate_user" value="<?= isset($Post['matriculate_user'])? $Post['matriculate_user']: '' ?>">
+                        <?php
+                        $Read = new Read();
+                        $Read->FullRead("SELECT * FROM users WHERE user_id = :ui", "ui={$userId}");
+                        if($Read->getResult()) {
+                            echo "<option value=''>selecionar</option>";
+                            foreach($Read->getResult() as $User) {
+                                echo "<option value='{$User['user_id']}'>{$User['user_name']}</option>";
+                            }
+                        } else {    
+                            echo "<option value=''>Usuário não encontrado!</option>";
                         }
                         ?>
                     </select>   

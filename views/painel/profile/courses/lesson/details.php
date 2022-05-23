@@ -77,11 +77,11 @@ $porcentagem = ($total/$progresso) * 100;
         </div>
 
         <!-- Barra de progresso -->
-        <div class="">
+        <!-- <div class="">
             <div class="progress">
                 <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><?= $porcentagem.'%'; ?></div>
             </div>
-        </div>
+        </div> -->
         
 
     <?php
@@ -90,10 +90,10 @@ $porcentagem = ($total/$progresso) * 100;
         foreach($Read->getResult() as $Lesson) {
             ?>
     <h1 class="h3 text-gray-900 mb-4 mt-4"><?= $Lesson['aula_name'] ?></h1>
-    <?php               
+    <?php              
         }
     } else {
-        Error('Aula não encontrada!', 'success ');
+        Error('Aula não encontrada!', 'success');
     }
     ?>
     <hr>
@@ -114,9 +114,29 @@ $porcentagem = ($total/$progresso) * 100;
                     <input type="submit" id="submit" form="form1" class="btn btn-danger mt-3 p-2 ml-2" name="enviar" value="Publicar">
                 </div>
             </div>
-            <div id="list_comments"></div>
+            <div id="list_comments">
+                <?php
+                $Read->FullRead("SELECT * FROM comments WHERE aula = :ai AND user = :ui", "ai={$aulaId}&ui={$_SESSION['login']['user_id']}");
+                    if($Read->getResult()) {
+                    foreach($Read->getResult() as $Comment) {
+                    echo  
+                        "<div class='card comment_{$Create->getResult()}' id='card-comment'> "
+                            . "<div class='card-header d-flex align-items-center justify-content-between'> "
+                                . "<div class='h6' id='username'>{$Comment['login']['user_id']}</div>"
+                                . "<h5 class='btn btn-success btn-sm'>Aguardando aprovação</h5>"
+                            . "</div> "
+                            . "<div class='card-body'> "
+                                . "<p class='card-text'>" . str_replace("\n"," ", nl2br($Comment['comment_user'], false)) . "</p> "
+                                . "<a href='" . BASE . "/' class='btn btn-dark' title='Editar comentário'><i class='fas fa-edit'></i></a> "
+                                . "<a href='" . BASE . "/' class='btn btn-dark deleteComment' data-id='{$Create->getResult()}' name='delete_comment' title='Excluir comentário'><i class='fas fa-solid fa-trash'></i></a>"
+                            . "</div> "
+                    .   "</div> ";
+                    }
+                }
+                ?>
+            </div>
         </div>
-    </form>
+    </form>        
 </div>
 <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 <script type="text/javascript">

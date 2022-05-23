@@ -11,6 +11,7 @@ echo $Component->getLiPagesDashboard();
 echo $Component->getCreatePagesAdmin();
 echo $Component->getListPagesAdmin();
 echo $Component->getMenuDashboard();
+$Read = new Read();
 ?>
 <div class="container">
     <div class="card shadow mb-4">
@@ -37,7 +38,6 @@ echo $Component->getMenuDashboard();
                     <label for="exampleInputEmail1">Aula</label>
                     <select class="form-control" name="lesson" value="<?= isset($Post['lesson'])? $Post['lesson']: '' ?>">
                         <?php
-                        $Read = new Read();
                         $Read->FullRead("SELECT * FROM aulas");
                         if($Read->getResult()) {
                             echo "<option value=''>selecionar</option>";
@@ -54,7 +54,6 @@ echo $Component->getMenuDashboard();
                     <label for="exampleInputEmail1">Usuário</label>
                     <select class="form-control" name="user" value="<?= isset($Post['user'])? $Post['user']: '' ?>">
                         <?php
-                        $Read = new Read();
                         $Read->FullRead("SELECT * FROM users");
                         if($Read->getResult()) {
                             echo "<option value=''>selecionar</option>";
