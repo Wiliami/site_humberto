@@ -67,7 +67,7 @@ $porcentagem = ($total/$progresso) * 100;
                 ?>       
             </div>
             <div class="d-flex justify-content-end">
-                <a href="<?= BASE ?>/painel/profile/courses/lesson/details&p=<?= $DataLesson['aula_id'] ?>" class="p-2 btn btn-outline-dark">
+                <a href="<?= BASE ?>/painel/profile/courses/lesson/details&p=<?= $DataLesson['aula_id'] ?>" class="p-2 btn btn-outline-dark" title="Voltar para aula anterior">
                     Anterior 
                 </a>
                 <a href="<?= BASE ?>/painel/profile/courses/lesson/details&n=<?= $DataLesson['aula_id'] ?>" class="p-2 btn btn-outline-dark ml-2" title="Avançar para próxima aula">
@@ -116,13 +116,16 @@ $porcentagem = ($total/$progresso) * 100;
             </div>
             <div id="list_comments">
                 <?php
-                $Read->FullRead("SELECT * FROM comments WHERE aula = :ai AND user = :ui", "ai={$aulaId}&ui={$_SESSION['login']['user_id']}");
-                    if($Read->getResult()) {
+                $Read->FullRead("SELECT c.*, u.user_name
+                FROM comments c
+                LEFT JOIN users u ON u.user_id = c.user
+                WHERE aula = :ai AND user = :ui", "ai={$aulaId}&ui={$_SESSION['login']['user_id']}");
+                if($Read->getResult()) {
                     foreach($Read->getResult() as $Comment) {
                     echo  
                         "<div class='card comment_{$Create->getResult()}' id='card-comment'> "
                             . "<div class='card-header d-flex align-items-center justify-content-between'> "
-                                . "<div class='h6' id='username'>{$Comment['login']['user_id']}</div>"
+                                . "<div class='h6' id='username'>{$Comment['user_name']}</div>"
                                 . "<h5 class='btn btn-success btn-sm'>Aguardando aprovação</h5>"
                             . "</div> "
                             . "<div class='card-body'> "
