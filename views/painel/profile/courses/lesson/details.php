@@ -10,7 +10,7 @@ echo $Component->getLiCoursesDashboard();
 echo $Component->getLiPagesDashboard();
 echo $Component->getMenuDashboard();
 $Username = $_SESSION['login']['user_name'];
-$aulaId = filter_input(INPUT_GET, 'a', FILTER_VALIDATE_INT);
+$aulaId = filter_input(INPUT_GET, 'aula', FILTER_VALIDATE_INT);
 $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
 
 $total       = rand(1, 5000);
@@ -141,7 +141,7 @@ $porcentagem = ($total/$progresso) * 100;
         </div>
     </form>        
 </div>
-<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+<!-- <script src="https://code.jquery.com/jquery-3.5.0.js"></script> -->
 <script type="text/javascript">
     $(function() {
         $('#form1').submit(function(e) {
