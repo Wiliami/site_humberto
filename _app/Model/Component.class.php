@@ -194,8 +194,6 @@ class Component {
                 <meta name="author" content=""> 
                 <title>' . $title . '</title>
                 <link href="'. BASE .'/res/site/css/sb-admin-2.min.css" rel="stylesheet">
-                <link href="'. BASE .'/res/css/dataTables.bootstrap5.min.css" rel="stylesheet">
-                <link href="'. BASE .'/res/css/bootstrap.min.css" rel="stylesheet">
                 <script src="'. BASE .'/src/js/fontawesome.js"></script>
                 <script src="'. BASE .'/src/js/Jquery.js"></script>
                 <script src="'. BASE .'/scr/js/Jquery-3.5.1.js"></script>
@@ -214,6 +212,7 @@ class Component {
             <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap5.min.css">
         ';
     }
+
 
     public function getMenuDashboard() {
         return '
