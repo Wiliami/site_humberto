@@ -4,7 +4,7 @@ $User->verifyExistLoginUser();
 $Component = new Component();
 echo $Component->getBlockPageAdmin();
 echo $Component->getHeadHtmlDashboard();
-echo $Component->getHeadHtmlDataTable();
+// echo $Component->getHeadHtmlDataTable();
 echo $Component->getSideBarDashboard();
 echo $Component->getLiAdministrativoDashboard();
 echo $Component->getLiCoursesDashboard();

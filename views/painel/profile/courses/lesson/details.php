@@ -75,15 +75,12 @@ $porcentagem = ($total/$progresso) * 100;
                 </a>
             </div>
         </div>
-
         <!-- Barra de progresso -->
         <!-- <div class="">
             <div class="progress">
                 <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><?= $porcentagem.'%'; ?></div>
             </div>
         </div> -->
-        
-
     <?php
     $Read->FullRead("SELECT * FROM aulas WHERE aula_id = :ai", "ai={$aulaId}");
     if($Read->getResult()) {
@@ -97,8 +94,6 @@ $porcentagem = ($total/$progresso) * 100;
     }
     ?>
     <hr>
-
-
     <!-- Barra de comentários postados do usuário -->
     <form action="" method="post" id="form1">
         <div class="form-group">
@@ -117,9 +112,9 @@ $porcentagem = ($total/$progresso) * 100;
             <div id="list_comments">
                 <?php
                 $Read->FullRead("SELECT c.*, u.user_name
-                FROM comments c
-                LEFT JOIN users u ON u.user_id = c.user
-                WHERE aula = :ai AND user = :ui", "ai={$aulaId}&ui={$_SESSION['login']['user_id']}");
+                    FROM comments c
+                    LEFT JOIN users u ON u.user_id = c.user
+                    WHERE aula = :ai AND user = :ui", "ai={$aulaId}&ui={$_SESSION['login']['user_id']}");
                 if($Read->getResult()) {
                     foreach($Read->getResult() as $Comment) {
                     echo  
@@ -141,14 +136,13 @@ $porcentagem = ($total/$progresso) * 100;
         </div>
     </form>        
 </div>
-<!-- <script src="https://code.jquery.com/jquery-3.5.0.js"></script> -->
 <script type="text/javascript">
     $(function() {
         $('#form1').submit(function(e) {
             e.preventDefault();
 
             var comment = $('#comment_user').val();
-            let url = $(this).data('url')
+            let url = $(this).data('url');
 
             $.ajax({
                 url: '<?= BASE ?>/api/?route=comments&action=create',
