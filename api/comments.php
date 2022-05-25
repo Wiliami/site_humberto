@@ -1,11 +1,10 @@
 <?php
 $action = filter_input(INPUT_GET, 'action', FILTER_DEFAULT); // nome da variável passado via get
 $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
-$courseId = 1;
 switch ($action) {
     case 'create';
         $DataCreateComment['user'] = $_SESSION['login']['user_id'];
-        $DataCreateComment['aula'] =  $courseId;
+        $DataCreateComment['aula'] =  $Post['aula'];
         $DataCreateComment['comment_text'] = $Post['comment_user']; 
         $DataCreateComment['comment_status'] = '3';
         $DataCreateComment['comment_create_date'] = date('Y-m-d H:i:s');

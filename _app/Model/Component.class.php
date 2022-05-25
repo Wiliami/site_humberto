@@ -195,9 +195,6 @@ class Component {
                 <title>' . $title . '</title>
                 <link href="'. BASE .'/res/site/css/sb-admin-2.min.css" rel="stylesheet">
                 <script src="'. BASE .'/src/js/fontawesome.js"></script>
-                <script src="'. BASE .'/src/js/Jquery.js"></script>
-                <script src="'. BASE .'/scr/js/Jquery-3.5.1.js"></script>
-                <script src="'. BASE .'/scr/js/Jquery.dataTables.min.js"></script>
             </head>
             <body id="page-top">
         ';

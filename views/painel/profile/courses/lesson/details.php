@@ -4,6 +4,7 @@ $User->verifyExistLoginUser();
 $Component = new Component();
 echo $Component->getBlockPageProfile();
 echo $Component->getHeadHtmlDashboard();
+echo $Component->getHeadHtmlDataTable();
 echo $Component->getSideBarDashboard();
 echo $Component->getLiAdministrativoDashboard();
 echo $Component->getLiCoursesDashboard();
@@ -115,6 +116,7 @@ $porcentagem = ($total/$progresso) * 100;
                     FROM comments c
                     LEFT JOIN users u ON u.user_id = c.user
                     WHERE aula = :ai AND user = :ui", "ai={$aulaId}&ui={$_SESSION['login']['user_id']}");
+                    // Check::var_dump_json($Read);
                 if($Read->getResult()) {
                     foreach($Read->getResult() as $Comment) {
                     echo  
@@ -136,18 +138,20 @@ $porcentagem = ($total/$progresso) * 100;
         </div>
     </form>        
 </div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
     $(function() {
         $('#form1').submit(function(e) {
             e.preventDefault();
 
             var comment = $('#comment_user').val();
+
             let url = $(this).data('url');
 
             $.ajax({
                 url: '<?= BASE ?>/api/?route=comments&action=create',
                 type: 'POST',
-                data: {comment_user: comment, action: 'add_comment'},
+                data: {comment_user: comment, aula: <?= $aulaId ?>, action: 'add_comment'},
                 dataType: 'json',
             }).done(function(result) {
                 console.log(result);
