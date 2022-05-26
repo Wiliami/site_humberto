@@ -77,11 +77,11 @@ $porcentagem = ($total/$progresso) * 100;
             </div>
         </div>
         <!-- Barra de progresso -->
-        <!-- <div class="">
+        <div class="">
             <div class="progress">
                 <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><?= $porcentagem.'%'; ?></div>
             </div>
-        </div> -->
+        </div>
     <?php
     $Read->FullRead("SELECT * FROM aulas WHERE aula_id = :ai", "ai={$aulaId}");
     if($Read->getResult()) {
