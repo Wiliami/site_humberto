@@ -11,7 +11,7 @@ echo $Component->getLiCoursesDashboard();
 echo $Component->getLiPagesDashboard();
 echo $Component->getMenuDashboard();
 $Username = $_SESSION['login']['user_name'];
-$aulaId = filter_input(INPUT_GET, 'aula', FILTER_VALIDATE_INT);
+$aulaId = filter_input(INPUT_GET, 'a', FILTER_VALIDATE_INT);
 $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
 
 $total       = rand(1, 5000);
@@ -112,23 +112,23 @@ $porcentagem = ($total/$progresso) * 100;
             </div>
             <div id="list_comments">
                 <?php
-                $Read->FullRead("SELECT c.*, u.user_name
+                $Read->FullRead("SELECT c.*, u.user_name, s.desc
                     FROM comments c
                     LEFT JOIN users u ON u.user_id = c.user
-                    WHERE aula = :ai AND user = :ui", "ai={$aulaId}&ui={$_SESSION['login']['user_id']}");
-                    // Check::var_dump_json($Read);
+                    LEFT JOIN situation s ON s.id = c.comment_status
+                    WHERE aula = :ai", "ai={$aulaId}");
                 if($Read->getResult()) {
                     foreach($Read->getResult() as $Comment) {
-                    echo  
-                        "<div class='card comment_{$Create->getResult()}' id='card-comment'> "
+                    echo 
+                        "<div class='card comment_{$Comment['comment_id']} mt-4' id='card-comment'> "
                             . "<div class='card-header d-flex align-items-center justify-content-between'> "
                                 . "<div class='h6' id='username'>{$Comment['user_name']}</div>"
-                                . "<h5 class='btn btn-success btn-sm'>Aguardando aprovação</h5>"
+                                . "<h5 class='btn btn-success btn-sm'>{$Comment['desc']}</h5>"
                             . "</div> "
                             . "<div class='card-body'> "
-                                . "<p class='card-text'>" . str_replace("\n"," ", nl2br($Comment['comment_user'], false)) . "</p> "
+                                . "<p class='card-text'>" . str_replace("\n"," ", nl2br($Comment['comment_text'], false)) . "</p> "
                                 . "<a href='" . BASE . "/' class='btn btn-dark' title='Editar comentário'><i class='fas fa-edit'></i></a> "
-                                . "<a href='" . BASE . "/' class='btn btn-dark deleteComment' data-id='{$Create->getResult()}' name='delete_comment' title='Excluir comentário'><i class='fas fa-solid fa-trash'></i></a>"
+                                . "<a href='" . BASE . "/' class='btn btn-dark deleteComment' data-id='{$Comment['comment_id']}' name='delete_comment' title='Excluir comentário'><i class='fas fa-solid fa-trash'></i></a>"
                             . "</div> "
                     .   "</div> ";
                     }
@@ -145,13 +145,12 @@ $porcentagem = ($total/$progresso) * 100;
             e.preventDefault();
 
             var comment = $('#comment_user').val();
-
             let url = $(this).data('url');
 
             $.ajax({
                 url: '<?= BASE ?>/api/?route=comments&action=create',
                 type: 'POST',
-                data: {comment_user: comment, aula: <?= $aulaId ?>, action: 'add_comment'},
+                data: {comment_user: comment, aula: '<?= $aulaId ?>', action: 'add_comment'},
                 dataType: 'json',
             }).done(function(result) {
                 console.log(result);
