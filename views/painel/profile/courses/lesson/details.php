@@ -12,7 +12,7 @@ echo $Component->getLiPagesDashboard();
 echo $Component->getMenuDashboard();
 $Username = $_SESSION['login']['user_name'];
 $aulaId = filter_input(INPUT_GET, 'a', FILTER_VALIDATE_INT);
-$courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
+$courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT); 
 
 $total       = rand(1, 5000);
 $progresso   = rand(1, $total);
