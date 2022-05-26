@@ -12,11 +12,12 @@ echo $Component->getLiPagesDashboard();
 echo $Component->getCreatePagesAdmin();
 echo $Component->getListPagesAdmin();
 echo $Component->getMenuDashboard();
+// $lessonId = filter_input(INPUT_GET, 'aula', FILTER_VALIDATE_INT);
 ?>
 <div class="container">
     <div class="card shadow mb-4">
         <div class="card-header py-3 d-flex justify-content-between align-items-center">
-            <h6 class="m-0" style="font-size: 14px;">Lista de comentários</h6>
+            <h6 class="ml-0" style="font-size: 14px;">Comentários das aulas</h6>
         </div>
         <div class="card-body">
             <div class="table-responsive">
@@ -24,7 +25,6 @@ echo $Component->getMenuDashboard();
                     <thead>
                         <tr style="font-size: 10px;">
                             <th>USUÁRIO</th>
-                            <th>AULA</th>
                             <th>COMENTÁRIO</th>
                             <th>STATUS DO COMENTÁRIO</th>
                             <th>OPÇÕES</th>
@@ -33,12 +33,10 @@ echo $Component->getMenuDashboard();
                     <tbody>
                         <?php
                         $Read = new Read();
-                        $Read->FullRead("SELECT c.*, u.user_name, a.aula_name
+                        $Read->FullRead("SELECT c.*, u.user_name, s.desc
                             FROM comments c
                             LEFT JOIN users u ON u.user_id = c.user
-                            LEFT JOIN aulas a ON a.aula_id = c.aula
-                            -- LEFT JOIN situation s ON s.id = a.desc
-                        ");
+                            LEFT JOIN situation s ON s.id = c.comment_status");
                         if($Read->getResult()) {
                             foreach($Read->getResult() as $DataComment) {
                                 ?>
@@ -47,16 +45,13 @@ echo $Component->getMenuDashboard();
                                     <?= $DataComment['user_name'] ?>
                                 </td>
                                 <td>
-                                    <?= $DataComment['aula_name'] ?>
-                                </td>
-                                <td>
                                     <?= $DataComment['comment_text'] ?>
                                 </td>
                                 <td>
-                                    <?= $DataComment['comment_status'] ?>
+                                    <?= $DataComment['desc'] ?>
                                 </td>
                                 <td>
-                                    <a href="<?= BASE ?>/painel/courses/lesson/comments/update&id=<?= $DataComment['comment_id'] ?>" class="btn-sm" title="Editar comentário" style="color: #4e73df;"><i class="fas fa-edit"></i></a>
+                                    <a href="<?= BASE ?>/painel/courses/lesson/comments/update&comment=<?= $DataComment['comment_id'] ?>&lesson=<?= $DataLesson['aula_id'] ?>" class="btn-sm" title="Editar comentário" style="color: #4e73df;"><i class="fas fa-edit"></i></a>
                                     <a href="<?= BASE ?>/painel/courses/lesson/comments/delete&delete_comment=<?= $DataComment['comment_id'] ?>" class="btn-sm" title="Excluir comentário" style="color: #e74a3b;"><i class="fa fa-trash-o"></i></a>
                                 </td>
                             </tr>
@@ -68,7 +63,6 @@ echo $Component->getMenuDashboard();
                     <tfoot>
                         <tr class="btn-sm" style="font-size: 10px;">
                             <th>USUÁRIO</th>
-                            <th>AULA</th>
                             <th>COMENTÁRIO</th>
                             <th>STATUS DO COMENTÁRIO</th>
                             <th>OPÇÕES</th>

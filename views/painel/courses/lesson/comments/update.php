@@ -12,7 +12,8 @@ echo $Component->getLiPagesDashboard();
 echo $Component->getCreatePagesAdmin();
 echo $Component->getListPagesAdmin();
 echo $Component->getMenuDashboard();
-$commentId = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
+$commentId = filter_input(INPUT_GET, 'comment', FILTER_VALIDATE_INT);
+$lessonId = filter_input(INPUT_GET, 'lesson', FILTER_VALIDATE_INT);
 ?>
 <div class="container">
     <?php
@@ -21,20 +22,13 @@ $commentId = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
         FROM comments c
         LEFT JOIN users u ON u.user_id = c.user
         LEFT JOIN aulas a ON a.aula_id = u.user_id
-        WHERE comment_id = :ci", "ci={$commentId}");
+        WHERE comment_id = :ci", "ci={$commentId}");    
     if($Read->getResult()) { 
         $DataComment = $Read->getResult()[0];
     } else {
         die(Error('Comentário não encontrado!', 'danger'));
     }
     ?>
-</div>
-<!--  
-Fazer uma tabela para poder atualizar pequenas informações
-dos dados dos comentários dos usuários nas aulas
--->
-
-<div class="container">
     <div class="card-header py-3 d-sm-flex align-items-center justify-content-start">   
         <h1 class="h6 mb-0">Atualizar comentário</h1>
     </div>
@@ -44,7 +38,6 @@ dos dados dos comentários dos usuários nas aulas
                 <?php
                 $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
                 if(!empty($Post['update_comment'])) {
-                    $DataCommentCreate['comment_detail'] = $Post['detail'];
                     $DataCommentCreate['comment_id'] = $Post['status'];
                     $Course = new Course();
                     $Course->updateCommentUserLesson($DataCommentCreate, $commentId);
@@ -56,19 +49,7 @@ dos dados dos comentários dos usuários nas aulas
                 }
                 ?>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Nome da aula</label>
-                    <input type="text" class="form-control" id="example1" value="Nome da aula" disabled>
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Usuário</label>
-                    <input type="text" class="form-control" id="example2" value="<?= $DataComment['user_name'] ?>" disabled>
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Detalhes</label>
-                    <input type="text" class="form-control" id="example2" name="detail">
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Comentário nessa aula</label>
+                    <label for="exampleInputEmail1">Comentário:</label>
                     <textarea type="text" class="form-control" id="example3"><?= $DataComment['comment_text'] ?></textarea>
                 </div>
                 <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Status do comentário:</label>

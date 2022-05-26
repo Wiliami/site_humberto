@@ -802,6 +802,11 @@ class Component {
                         <i class="fas fa-book"></i>
                         Categorias cursos
                     </a>
+                    <a class="collapse-item" href="' . BASE . '/painel/courses/lesson/comments/list">
+                        <i class="fas fa-solid fa-comments"></i>   
+                        Comentários de aulas
+                    </a>
+
                 </div>
             </div>
         </li>';

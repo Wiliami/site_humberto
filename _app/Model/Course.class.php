@@ -408,7 +408,7 @@ class Course {
 	}
 
 
-	// comment users on lesson
+	// Comentários de usuários na aulas
 	public function deleteCommentUserLesson($commentId) {     
 		$Delete = new Delete();
 		$Delete->ExeDelete('comments', 'WHERE comment_id = :ci', "ci={$commentId}");
@@ -423,7 +423,6 @@ class Course {
 
 	//Comentários de usuários nas aulas
 	public function updateCommentUserLesson($DataCommentCreate, $commentId) {
-		$DataCommentCreate['comment_update_user'] = $_SESSION['login']['user_id'];
 		$Update = new Update();
 		$Update->ExeUpdate('comments', $DataCommentCreate, 'WHERE comment_id = :ci', "ci={$commentId}");
 		if($Update->getResult()) {
@@ -444,6 +443,14 @@ class Course {
 		} else {
 			$this->Result = false;
 			$this->Error = $Delete->getError();
+		}
+	}
+
+	public function pendingCommentUserLesson($commentId) {
+		$Read = new Read();
+		$Read->FullRead('SELECT * FROM comments WHERE comment_id = :ci', "ci={$commentId}");
+		if($Read->getResult()) {
+			
 		}
 	}
 
