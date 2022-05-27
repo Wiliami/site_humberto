@@ -148,7 +148,7 @@ $porcentagem = ($total/$progresso) * 100;
             let url = $(this).data('url');
 
             $.ajax({
-                url: '<?= BASE ?>/api/?route=comments&action=create',
+                url: '<?= BASE ?>/api/?route=comments&action=create', // nome da pasta que irá os dados
                 type: 'POST',
                 data: {comment_user: comment, aula: '<?= $aulaId ?>', action: 'add_comment'},
                 dataType: 'json',
