@@ -14,16 +14,17 @@ echo $Component->getCreatePagesAdmin();
 echo $Component->getListPagesAdmin();
 echo $Component->getMenuDashboard();
 $commentId = filter_input(INPUT_GET, 'delete_comment', FILTER_VALIDATE_INT);
-
-$Read = new Read();
-$Read->FullRead("SELECT * FROM comments WHERE comment_id = :ci", "ci={$commentId}");
-if ($Read->getResult()) {
-    $DataComment = $Read->getResult()[0];
-} else {
-    Error('Comentário não encontrado!', 'danger');
-}
 ?>
 <div class="container">
+    <?php
+    $Read = new Read();
+    $Read->FullRead("SELECT * FROM comments WHERE comment_id = :ci", "ci={$commentId}");
+    if ($Read->getResult()) {
+        $DataComment = $Read->getResult()[0];
+    } else {
+        die(Error('Comentário não encontrado!', 'danger'));
+    }
+    ?>
     <div class="card shadow">
         <div class="card-header py-3 d-sm-flex align-items-center justify-content-start">
             <h1 class="h6 mb-0 text-gray-800">Excluir <?= $DataComment['comment_text'] ?></h1>
@@ -32,7 +33,7 @@ if ($Read->getResult()) {
             <form action="" method="post">
                 <?php
                 $Post =  filter_input_array(INPUT_POST, FILTER_DEFAULT);
-                if(!empty($Post['delete_user'])) {
+                if(!empty($Post['delete_comment'])) {
                     $Course = new Course();
                     $Course->deleteComment($commentId);
                     if($Course->getResult()) {
@@ -42,7 +43,7 @@ if ($Read->getResult()) {
                     } 
                 }
                 ?>
-                <a href="<?= BASE ?>/painel/courses/lesson/comments/approval-comments" class="btn btn-outline-success" title="Voltar para lista de comentários">Voltar</a>
+                <a href="<?= BASE ?>/painel/courses/lesson/comments/list" class="btn btn-outline-success" title="Voltar para lista de comentários">Voltar</a>
                 <button type="button" class="btn btn-success" data-toggle="modal" data-target="#delete">
                     Excluir
                 </button>
@@ -52,20 +53,17 @@ if ($Read->getResult()) {
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Excluir</b>
-                                </h5>
+                                <h5 class="modal-title" id="exampleModalLabel">Excluir</b></h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
-                            <div class="modal-body">
-                                Tem certeza que deseja excluir comentário?
-                            </div>
+                            <div class="modal-body">Tem certeza que deseja excluir comentário?</div>
                             <div class="modal-footer">
                                 <button class="btn btn-outline-success mb-2" type="button" data-dismiss="modal">
                                     Cancelar
                                 </button>
-                                <input type="submit" class="btn btn-success mb-2" name="delete_user" value="Excluir">
+                                <input type="submit" class="btn btn-success mb-2" name="delete_comment" value="Excluir">
                             </div>
                         </div>
                     </div>
