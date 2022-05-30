@@ -446,15 +446,7 @@ class Course {
 		}
 	}
 
-	public function pendingCommentUserLesson($commentId) {
-		$Read = new Read();
-		$Read->FullRead('SELECT * FROM comments WHERE comment_id = :ci', "ci={$commentId}");
-		if($Read->getResult()) {
-			
-		}
-	}
-
-	// compras de cursos os de usuários 
+	// compras de cursos dos usuários 
 	public function purchaseUserCourse() {
 		$this->Error = 'Compra realizada com sucesso!';
 		$this->Result = false;

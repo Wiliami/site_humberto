@@ -106,7 +106,7 @@ $(document).ready(function() {
             "zeroRecords": "Nenhum comentário foi encontrado",
             "info": "Mostrando página _PAGE_ de _PAGES_ registros",
             "infoEmpty": "Nenhum comentário foi encontrado",
-            "infoFiltered": "(filtrado de _MAX_ registros no total)"
+            "infoFiltered": "(filtrado de _MAX_ registros no total)",
         }
     });
 }); 

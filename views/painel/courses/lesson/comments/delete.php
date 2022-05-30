@@ -73,8 +73,6 @@ $commentId = filter_input(INPUT_GET, 'delete_comment', FILTER_VALIDATE_INT);
     </div>
 </div>
 
-
-
 <!-- Delete Modal -->
 <div class="modal fade" id="delete_comment" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">

@@ -25,7 +25,7 @@ $porcentagem = ($total/$progresso) * 100;
     if($Read->getResult()) {
         $DataLesson = $Read->getResult()[0];
     } else {
-        Error('Aula não encontrada', 'danger');
+        die(Error('Aula não encontrada', 'danger'));
     }
     ?>
     <div class="mt-0">
@@ -76,6 +76,7 @@ $porcentagem = ($total/$progresso) * 100;
                 </a>
             </div>
         </div>
+
         <!-- Barra de progresso -->
         <div class="">
             <div class="progress">
@@ -127,8 +128,8 @@ $porcentagem = ($total/$progresso) * 100;
                             . "</div> "
                             . "<div class='card-body'> "
                                 . "<p class='card-text'>" . str_replace("\n"," ", nl2br($Comment['comment_text'], false)) . "</p> "
-                                . "<a href='" . BASE . "/' class='btn btn-dark' title='Editar comentário'><i class='fas fa-edit'></i></a> "
-                                . "<a href='" . BASE . "/' class='btn btn-dark deleteComment' data-id='{$Comment['comment_id']}' name='delete_comment' title='Excluir comentário'><i class='fas fa-solid fa-trash'></i></a>"
+                                . "<a href='" . BASE . "/painel/profile/courses/lesson/update&comment=<?= ?> class='btn btn-light' title='Editar comentário'><i class='fas fa-edit'></i></a> "
+                                . "<a href='" . BASE . "/' class='btn btn-light deleteComment' data-id='{$Comment['comment_id']}' name='delete_comment' title='Excluir comentário'><i class='fas fa-solid fa-trash'></i></a>"
                             . "</div> "
                     .   "</div> ";
                     }
