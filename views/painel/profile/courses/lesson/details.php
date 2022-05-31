@@ -44,7 +44,7 @@ $porcentagem = ($total/$progresso) * 100;
                 if($Read->getResult()) {
                     $DataCourse = $Read->getResult()[0];
                         ?>
-                    <a href="<?= BASE ?>/painel/profile/courses/lesson/area-course&course=<?= $DataCourse['curso_id'] ?>" class="ml-0 h6 text-dark" title="Nome do curso">
+                    <a href="<?= BASE ?>/painel/profile/courses/lesson/area-course&course=<?= $DataCourse['curso_id'] ?>" class="ml-0 h6 text-gray-800" title="Nome do curso">
                         <?= $DataCourse['curso_titulo'] ?>
                     </a>
                 <?php 
@@ -52,18 +52,18 @@ $porcentagem = ($total/$progresso) * 100;
                     die(Error('Curso não encontrado!', 'success'));
                 }
                 ?>
-                <i class="fas fa-solid fa-chevron-right ml-2"></i>
+                <i class="fas fa-solid fa-chevron-right ml-2 text-gray-800"></i>
                 <?php
                 $Read->FullRead("SELECT * FROM modulos WHERE curso_id = :ci", "ci={$courseId}");
                 if($Read->getResult()) {
                     $DataModule = $Read->getResult()[0];
                         ?>
-                    <a href="<?= BASE ?>/painel/profile/courses/lesson/area-course&course=<?= $DataModule['curso_id'] ?>" class="ml-2 h6 text-dark" title="Nome do módulo">
+                    <a href="<?= BASE ?>/painel/profile/courses/lesson/area-course&course=<?= $DataModule['curso_id'] ?>" class="ml-2 h6 text-gray-800" title="Nome do módulo">
                         <?= $DataModule['modulo_name'] ?>
                     </a>
                 <?php
                 } else {
-                    Error('Módulos não encontrados', 'success');
+                    die(Error('Módulos não encontrados', 'success')); 
                 }
                 ?>       
             </div>
@@ -79,10 +79,14 @@ $porcentagem = ($total/$progresso) * 100;
 
         <!-- Barra de progresso -->
         <div class="">
-            <div class="progress">
-                <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><?= $porcentagem.'%'; ?></div>
-            </div>
+            <form action="" method="post">
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><?= $porcentagem.'%'; ?></div>
+                </div>
+            <input type="submit" class="btn btn-outline-success mt-4" name="concluido" value="Marcar como concluído">
+            </form>
         </div>
+
     <?php
     $Read->FullRead("SELECT * FROM aulas WHERE aula_id = :ai", "ai={$aulaId}");
     if($Read->getResult()) {
@@ -128,8 +132,8 @@ $porcentagem = ($total/$progresso) * 100;
                             . "</div> "
                             . "<div class='card-body'> "
                                 . "<p class='card-text'>" . str_replace("\n"," ", nl2br($Comment['comment_text'], false)) . "</p> "
-                                . "<a href='" . BASE . "/painel/profile/courses/lesson/update&comment=<?= ?> class='btn btn-light' title='Editar comentário'><i class='fas fa-edit'></i></a> "
-                                . "<a href='" . BASE . "/' class='btn btn-light deleteComment' data-id='{$Comment['comment_id']}' name='delete_comment' title='Excluir comentário'><i class='fas fa-solid fa-trash'></i></a>"
+                                . "<a href='" . BASE . "/painel/profile/courses/lesson/update&comment=<?= ?> class='' title='Editar comentário'><i class='fas fa-edit'></i></a> "
+                                . "<a href='" . BASE . "/' class='deleteComment' data-id='{$Comment['comment_id']}' name='delete_comment' style='color: red;' title='Excluir comentário'><i class='fas fa-solid fa-trash'></i></a>"
                             . "</div> "
                     .   "</div> ";
                     }

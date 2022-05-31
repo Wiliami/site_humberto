@@ -446,6 +446,14 @@ class Course {
 		}
 	}
 
+	public function finishLesson($lessonId) {
+		$Read = new Read();
+		$Read->FullRead('SELECT * FROM aulas WHERE aula_id = :ai', "ai={$lessonId}");
+		if($Read->getResult()) {
+			
+		}
+	}
+
 	// compras de cursos dos usuários 
 	public function purchaseUserCourse() {
 		$this->Error = 'Compra realizada com sucesso!';
