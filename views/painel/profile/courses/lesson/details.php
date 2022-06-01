@@ -33,7 +33,9 @@ $porcentagem = ($total/$progresso) * 100;
             <source src="<?= BASE ?>/src/video/humberto.mp4" type="video/mp4">
         </video>
     </div>
-        <div class="d-flex align-items-center justify-content-between">
+
+    <div class="d-flex flex-row justify-content-between mt-3">
+        <div class="d-flex flex-row d-md-block d-none">
             <div class="d-flex flex-row mt-2">
                 <?php
                 $Read = new Read();
@@ -58,7 +60,7 @@ $porcentagem = ($total/$progresso) * 100;
                 if($Read->getResult()) {
                     $DataModule = $Read->getResult()[0];
                         ?>
-                    <a href="<?= BASE ?>/painel/profile/courses/lesson/area-course&course=<?= $DataModule['curso_id'] ?>" class="ml-2 h6 text-gray-800" title="Nome do módulo">
+                    <a href="<?= BASE ?>/painel/profile/courses/lesson/area-course&course=<?= $DataModule['curso_id'] ?>" class="ml-2 h6 text-gray-800 d-md-block d-none" title="Nome do módulo">
                         <?= $DataModule['modulo_name'] ?>
                     </a>
                 <?php
@@ -67,25 +69,43 @@ $porcentagem = ($total/$progresso) * 100;
                 }
                 ?>       
             </div>
-            <div class="d-flex justify-content-end">
-                <a href="<?= BASE ?>/painel/profile/courses/lesson/details&p=<?= $DataLesson['aula_id'] ?>" class="p-2 btn btn-outline-dark" title="Voltar para aula anterior">
-                    Anterior 
+        </div>
+
+
+        <!-- <div class="d-flex justify-content-end mb-2">
+            <div class="mb-4">
+                <a href="" class="btn btn-outline-dark shadow" title="Voltar para aula anterior">
+                    Anterior    
                 </a>
-                <a href="<?= BASE ?>/painel/profile/courses/lesson/details&n=<?= $DataLesson['aula_id'] ?>" class="p-2 btn btn-outline-dark ml-2" title="Avançar para próxima aula">
+            </div>
+            <div class="mb-4">
+                <a href="" class="btn btn-outline-dark shadow ml-3" title="Avançar para próxima aula">
+                    Avançar
+                </a>
+            </div>
+        </div> -->
+
+        <div class="row col-sm-3 text-center">
+            <div class="col-lg-6 mb-4">
+                <a href="" class="btn btn-outline-dark shadow">
+                    Anterior
+                </a>
+            </div>
+            <div class="col-lg-6 mb-4">
+                <a href="" class="btn btn-outline-dark shadow">
                     Avançar
                 </a>
             </div>
         </div>
+    </div>
 
         <!-- Barra de progresso -->
-        <div class="">
-            <form action="" method="post">
-                <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><?= $porcentagem.'%'; ?></div>
-                </div>
+        <!-- <div class="mt-4">
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><?= $porcentagem.'%'; ?></div>
+            </div>
             <input type="submit" class="btn btn-outline-success mt-4" name="concluido" value="Marcar como concluído">
-            </form>
-        </div>
+        </div> -->
 
     <?php
     $Read->FullRead("SELECT * FROM aulas WHERE aula_id = :ai", "ai={$aulaId}");
@@ -96,7 +116,7 @@ $porcentagem = ($total/$progresso) * 100;
     <?php              
         }
     } else {
-        Error('Aula não encontrada!', 'success');
+        die(Error('Aula não encontrada!', 'success'));
     }
     ?>
     <hr>
@@ -106,6 +126,7 @@ $porcentagem = ($total/$progresso) * 100;
             <div class="py-3">
                 <h6 class="h5 text-gray-900">Comentários</h6>
             </div>
+
             <div class="card-body">
                 <div class="d-flex align-items-center text-start">
                     <img class="img-profile rounded-circle" style="width: 40px; height: 40px;" src="<?= BASE ?>/src/images/undraw_profile.svg">
