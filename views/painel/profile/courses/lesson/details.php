@@ -12,7 +12,7 @@ echo $Component->getLiPagesDashboard();
 echo $Component->getMenuDashboard();
 $Username = $_SESSION['login']['user_name'];
 $aulaId = filter_input(INPUT_GET, 'a', FILTER_VALIDATE_INT);
-$courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT); 
+$courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
 
 $total       = rand(1, 5000);
 $progresso   = rand(1, $total);
@@ -30,7 +30,7 @@ $porcentagem = ($total/$progresso) * 100;
     ?>
     <div class="mt-0">
         <video id="video-aula" poster="<?= BASE ?>/src/images/alexandre.jpg" width="100%" controls prealod="none">
-            <source src="<?= BASE ?>/src/video/humberto.mp4" type="video/mp4">
+            <source src="<?= BASE ?>/src/video/humberto.mp4" id="audio" type="video/mp4">
         </video>
     </div>
 
@@ -71,20 +71,6 @@ $porcentagem = ($total/$progresso) * 100;
             </div>
         </div>
 
-
-        <!-- <div class="d-flex justify-content-end mb-2">
-            <div class="mb-4">
-                <a href="" class="btn btn-outline-dark shadow" title="Voltar para aula anterior">
-                    Anterior    
-                </a>
-            </div>
-            <div class="mb-4">
-                <a href="" class="btn btn-outline-dark shadow ml-3" title="Avançar para próxima aula">
-                    Avançar
-                </a>
-            </div>
-        </div> -->
-
         <div class="row col-sm-3 text-center">
             <div class="col-lg-6 mb-4">
                 <a href="" class="btn btn-outline-dark shadow">
@@ -99,13 +85,6 @@ $porcentagem = ($total/$progresso) * 100;
         </div>
     </div>
 
-        <!-- Barra de progresso -->
-        <!-- <div class="mt-4">
-            <div class="progress">
-                <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><?= $porcentagem.'%'; ?></div>
-            </div>
-            <input type="submit" class="btn btn-outline-success mt-4" name="concluido" value="Marcar como concluído">
-        </div> -->
 
     <?php
     $Read->FullRead("SELECT * FROM aulas WHERE aula_id = :ai", "ai={$aulaId}");

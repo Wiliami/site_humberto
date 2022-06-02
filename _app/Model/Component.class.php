@@ -194,6 +194,8 @@ class Component {
                 <meta name="author" content=""> 
                 <title>' . $title . '</title>
                 <link href="'. BASE .'/res/site/css/sb-admin-2.min.css" rel="stylesheet">
+                <link type = "text/css" href = "/skin/pink.flag/jplayer.pink.flag.css" rel="stylesheet" />    
+                <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>  
                 <script src="'. BASE .'/src/js/fontawesome.js"></script>
             </head>
             <body id="page-top">
