@@ -182,7 +182,7 @@ class Component {
         ';
     }
 
-    public function getHeadHtmlDashboard($title = 'Plataforma Cursos | Painel') {
+    public function getHeadHtmlDashboard($title = 'Plataforma de Cursos | Painel') {
         return '
         <!DOCTYPE html>
         <html lang="pt-BR">
@@ -194,9 +194,6 @@ class Component {
                 <meta name="author" content=""> 
                 <title>' . $title . '</title>
                 <link href="'. BASE .'/res/site/css/sb-admin-2.min.css" rel="stylesheet">
-                <link type = "text/css" href="https://jplayer.org/latest/dist/skin/pink.flag/css/jplayer.pink.flag.css" rel="stylesheet" />
-                <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
-                <script src="'. BASE .'/src/js/jquery.jplayer.min.js"></script>
                 <script src="'. BASE .'/src/js/fontawesome.js"></script>
             </head>
             <body id="page-top">

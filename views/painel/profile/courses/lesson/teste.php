@@ -1,84 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link type="text/css" href="https://jplayer.org/latest/dist/skin/pink.flag/css/jplayer.pink.flag.css"
-        rel="stylesheet" />
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
-    <script src="<?= BASE ?>/src/js/jquery.jplayer.min.js"></script>
+    <link href="<?= BASE ?>/res/site/css/sb-admin-2.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <div style="text-align:center"> 
+        <h3>Contando o tempo: </h3><div id="tempo" style="color: red"></div>
+        <button onclick="playPause()">Play/Pausar</button> 
+        <button onclick="muteUnMute()">SemSom/comSom</button> 
+        <br/>
+        <video id="video1" width="420">
+            <source src="mov_bbb.mp4" type="video/mp4" />
+            <source src="http://thumb.mais.uol.com.br/13277141.mp4" type="video/ogg" />
+            Seu browser não suporta HTML5 video.
+        </video>
+    </div>
 
-    <script type="text/javascript">
-    $(document).ready(function() {
-        $("#jquery_jplayer_1").jPlayer({
-            ready: function() {
-                $(this).jPlayer("setMedia", {
-                    title: "Big Buck Bunny Trailer",
-                    m4v: "<?= $DataLesson['link_lesson'] ?>/",
-                    ogv: "http://www.jplayer.org/video/ogv/Big_Buck_Bunny_Trailer.ogv",
-                    poster: "http://www.jplayer.org/video/poster/Big_Buck_Bunny_Trailer_480x270.png"
-                });
-            },
-            cssSelectorAncestor: "#jp_container_1",
-            swfPath: "<?= BASE ?>/src/js",
-            supplied: "m4v, ogv",
-            useStateClassSkin: true,
-            autoBlur: false,
-            smoothPlayBar: true,
-            keyEnabled: true,
-            remainingDuration: true,
-            toggleDuration: true
-        });
+    <script text="text/javascript" >
+    //Criando as funcionalidades do video
+    var myVideo = document.getElementById("#video1"); 
+
+    function playPause()
+    { 
+        if (myVideo.paused) 
+        myVideo.play(); 
+    else 
+    myVideo.pause(); 
+    } 
+
+    function muteUnMute()
+    { 
+        if( !myVideo.muted)
+    myVideo.muted = 'muted';
+    else
+
+    myVideo.muted = false;
+    } 
+
+    //Criando as propriedades do video
+
+    var videoStartTime = 0;
+    var durationTime = 0;
+
+    myVideo.addEventListener('loadedmetadata', function() {
+      
+      //DETERMINADO PONTO DE PARTIDA DO VÍDEO
+      videoStartTime = 0;
+      
+      //DURAÇÃO DO VÍDEO PROGRAMADA
+      durationTime = 10;
+      this.currentTime = videoStartTime;
+    }, false);
+
+    //Função que conta o progresso do vídeo
+    myVideo.addEventListener('timeupdate', function() {
+      
+      //Setando na div o a duração do vídeo
+      var div = document.getElementById('tempo');
+      div.innerHTML = this.currentTime;
+      
+      //Condição para pausar o video em determinado tempo      
+      if(this.currentTime > videoStartTime + durationTime){
+        this.pause();
+      }
     });
     </script>
-</head>
-
-<body>
-    <div id="jp_container_1" class="jp-video " role="application" aria-label="media player">
-        <div class="jp-type-single">
-            <div id="jquery_jplayer_1" class="jp-jplayer"></div>
-            <div class="jp-gui">
-                <div class="jp-video-play">
-                    <button class="jp-video-play-icon" role="button" tabindex="0">play</button>
-                </div>
-                <div class="jp-interface">
-                    <div class="jp-progress">
-                        <div class="jp-seek-bar">
-                            <div class="jp-play-bar"></div>
-                        </div>
-                    </div>
-                    <div class="jp-current-time" role="timer" aria-label="time">&nbsp;</div>
-                    <div class="jp-duration" role="timer" aria-label="duration">&nbsp;</div>
-                    <div class="jp-details">
-                        <div class="jp-title" aria-label="title">&nbsp;</div>
-                    </div>
-                    <div class="jp-controls-holder">
-                        <div class="jp-volume-controls">
-                            <button class="jp-mute" role="button" tabindex="0">mute</button>
-                            <button class="jp-volume-max" role="button" tabindex="0">max volume</button>
-                            <div class="jp-volume-bar">
-                                <div class="jp-volume-bar-value"></div>
-                            </div>
-                        </div>
-                        <div class="jp-controls">
-                            <button class="jp-play" role="button" tabindex="0">play</button>
-                            <button class="jp-stop" role="button" tabindex="0">stop</button>
-                        </div>
-                        <div class="jp-toggles">
-                            <button class="jp-repeat" role="button" tabindex="0">repeat</button>
-                            <button class="jp-full-screen" role="button" tabindex="0">full screen</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="jp-no-solution">
-                <span>Update Required</span>
-                To play the media you will need to either update your browser to a recent version or update your <a
-                    href="https://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
-            </div>
-        </div>
-    </div>
-</body>
+  </body>
+</html>
