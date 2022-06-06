@@ -21,7 +21,7 @@ $porcentagem = ($total/$progresso) * 100;
 <div class="container">
     <?php
     $Read = new Read();
-    $Read->FullRead('SELECT * FROM aulas');
+    $Read->FullRead('SELECT * FROM aulas WHERE aula_id = :ai', "ai={$aulaId}");
     if($Read->getResult()) {
         $DataLesson = $Read->getResult()[0];
     } else {
@@ -29,21 +29,19 @@ $porcentagem = ($total/$progresso) * 100;
     }
     ?>
 
-    <!-- AREA DO VIDEO AULA -->
-    <!-- <div class="embed-responsive embed-responsive-16by9" id="video-lesson">
-        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" allowfullscreen></iframe>
-    </div> -->
-
-    <div style="text-align: center"> 
-        <h3>Contando o tempo: </h3><div id="tempo" style="color: red"></div>
-        <button onclick="playPause()">Play/Pausar</button>
-        <button onclick="muteUnMute()">SemSom/comSom</button> 
-        <br/>
-        <video id="video1" width="420">
-            <source src="mov_bbb.mp4" type="video/mp4" />
-            <source src="https://www.youtube.com/watch?v=ABzDOSQkhTM" type="video/ogg" />
-            Seu browser não suporta HTML5 video.
+     <!-- Area aula-video -->
+    <div>
+        <video class="embed-responsive embed-responsive-16by9" id="video" controls>
+            <source src="<?= $DataLesson['aula_url'] ?>">   
         </video>
+        <div class="mt-3">
+            <button class="btn btn-success" id="play">PLAY</button>
+            <button class="btn btn-danger" id="pause">PAUSE</button>
+
+            <p id="duration"></p>
+            <p id="currenttime"></p>
+            <p id="ola"></p>
+        </div>
     </div>
 
 
@@ -86,12 +84,12 @@ $porcentagem = ($total/$progresso) * 100;
 
         <div class="row col-sm-3 text-center">
             <div class="col-lg-6 mb-4">
-                <a href="" class="btn btn-outline-dark shadow">
+                <a href="<?= $DataLesson['aula_url'] ?>" class="btn btn-outline-dark shadow">
                     Anterior
                 </a>
             </div>
             <div class="col-lg-6 mb-4">
-                <a href="" class="btn btn-outline-dark shadow">
+                <a href="<?= $DataLesson['aula_url'] ?>" class="btn btn-outline-dark shadow">
                     Avançar
                 </a>
             </div>
@@ -112,6 +110,7 @@ $porcentagem = ($total/$progresso) * 100;
     }
     ?>
     <hr>
+
     <!-- Barra de comentários postados do usuário -->
     <form action="" method="post" id="form1">
         <div class="form-group">
@@ -213,51 +212,44 @@ $porcentagem = ($total/$progresso) * 100;
 
 <script text="text/javascript" >
     //Criando as funcionalidades do video
-    var myVideo = document.getElementById("#video1"); 
 
-    function playPause()
-    { 
-        if (myVideo.paused) 
-        myVideo.play(); 
-    else 
-    myVideo.pause(); 
-    } 
+    var myVideo = document.getElementById("#video");
+    var btnPlay = document.getElementById("#play");
+    var btnPause = document.getElementById("#pause");
+    var textduration = document.getElementById("#duration");
+    var textcurrenttime = document.getElementById("#currenttime");
+    var textseconds = document.getElementById("#ola");
 
-    function muteUnMute()
-    { 
-        if( !myVideo.muted)
-    myVideo.muted = 'muted';
-    else
+    btnPlay.addEventListener("click", function() {myVideo.play();}, false);
+    btnPause.addEventListener("click", function() {myVideo.pause();}, false);
+    
+    myVideo.addEventListener("loadedmetadata", function() {textduration.innerHTML = "Duration: " + convertTime(myVideo.duration);}, false);
+    myVideo.addEventListener("timeupdate", function() {textcurrenttime.innerHTML = "Current Time: " + convertTime(myVideo.currentTime);}, false);
+    myVideo.addEventListener("secondupdate", function() {textseconds.innerHTML = "Seconds: " + convertTime(myVideo.currentTime);}, false);
 
-    myVideo.muted = false;
-    } 
+    function convertSeconds(org) {
+        var minute = Math.floor(org * 60) % 60;
+        var second = Math.floor(org % 60);
+        var seconds = (minute * 60) + second;
+        return seconds;
+    }
 
-    //Criando as propriedades do video
+    function convertTime(org) {
+        var minute = Math.floor(org / 60) % 60;
+        var second = Math.floor(org % 60);
+        return( minute + ' : ' + second);
+    }
 
-    var videoStartTime = 0;
-    var durationTime = 0;
+    function saltar(tempo) {
+        var vid = document.getElementById("#video");
+        document.getElementById("#video").currentTime = tempo;
+        vid.pause();
+    }
 
-    myVideo.addEventListener('loadedmetadata', function() {
-      
-      //DETERMINADO PONTO DE PARTIDA DO VÍDEO
-      videoStartTime = 0;
-      
-      //DURAÇÃO DO VÍDEO PROGRAMADA
-      durationTime = 10;
-      this.currentTime = videoStartTime;
-    }, false);
+</script>
 
-    //Função que conta o progresso do vídeo
-    myVideo.addEventListener('timeupdate', function() {
-      
-      //Setando na div o a duração do vídeo
-      var div = document.getElementById('tempo');
-      div.innerHTML = this.currentTime;
-      
-      //Condição para pausar o video em determinado tempo      
-      if(this.currentTime > videoStartTime + durationTime){
-        this.pause();
-      }
-    });
-    </script>
+    Momento 1 - <button onclick="saltar(8)" class="btn btn-success">Saltar</button><br>
+    Momento 2 - <button onclick="saltar(14)" class="btn btn-success mt-2">Saltar</button><br>
+    Momento 3 - <button onclick="saltar(172)" class="btn btn-success mt-2">Saltar</button><br>
+
 <?= $Component->getFooterDashboard(); ?>

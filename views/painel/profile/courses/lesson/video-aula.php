@@ -10,7 +10,6 @@ echo $Component->getLiCoursesDashboard();
 echo $Component->getLiPagesDashboard();
 echo $Component->getMenuDashboard();
 
-
 $Read = new Read();
 $Read->FullRead("SELECT * FROM aulas");
 if($Read->getResult()) {

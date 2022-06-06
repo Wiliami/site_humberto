@@ -304,7 +304,7 @@ class User {
 			$this->Error = "Senha alterada com sucesso!";
 		} else {
 			$this->Result = false;
-			$this->Error = "";
+			$this->Error = $Read;
 		}
 	}
 

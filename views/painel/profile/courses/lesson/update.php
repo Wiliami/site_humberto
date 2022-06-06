@@ -10,7 +10,6 @@ echo $Component->getLiAdministrativoDashboard();
 echo $Component->getLiCoursesDashboard();
 echo $Component->getLiPagesDashboard();
 echo $Component->getMenuDashboard();
-$title = 'Comentário do usuário';
 $commentId = filter_input(INPUT_GET, 'comment', FILTER_VALIDATE_INT);
 ?>
 <div class="container"> 
