@@ -17,52 +17,5 @@
                 Seu browser não suporta HTML5 video.
             </video>
         </div> 
-        <script>
-        //Criando as funcionalidades do video
-        var myVideo=document.getElementById("video1");
-
-        function playPause() { 
-            if(myVideo.paused) 
-                myVideo.play(); 
-            else 
-                myVideo.pause(); 
-        } 
-
-        function muteUnMute() { 
-            if( !myVideo.muted)
-                myVideo.muted = 'muted';
-            else
-                myVideo.muted = false;
-        } 
-
-        //Criando as propriedades do video
-
-        var videoStartTime = 0;
-        var durationTime = 0;
-
-        myVideo.addEventListener('loadedmetadata', function() {
-        
-        //DETERMINADO PONTO DE PARTIDA DO VÍDEO
-        videoStartTime = 0;
-        
-        //DURAÇÃO DO VÍDEO PROGRAMADA
-        durationTime = 10;
-        this.currentTime = videoStartTime;
-        }, false);
-
-        //Função que conta o progresso do vídeo
-        myVideo.addEventListener('timeupdate', function() {
-        
-        //Setando na div o a duração do vídeo
-        var div = document.getElementById('tempo');
-        div.innerHTML = this.currentTime;
-        
-        //Condição para pausar o video em determinado tempo      
-        if(this.currentTime > videoStartTime + durationTime){
-            this.pause();
-        }
-        });
-
-    </script>
     </body>
 </html>

@@ -29,19 +29,11 @@ $porcentagem = ($total/$progresso) * 100;
     }
     ?>
 
-     <!-- Area aula-video -->
+    <!-- Area aula-video -->
     <div>
-        <video class="embed-responsive embed-responsive-16by9" id="video" controls>
-            <source src="<?= $DataLesson['aula_url'] ?>">   
+        <video class="embed-responsive embed-responsive-16by9" id="idVideo" controls>
+            <source src="<?= $DataLesson['aula_url'] ?>">
         </video>
-        <div class="mt-3">
-            <button class="btn btn-success" id="play">PLAY</button>
-            <button class="btn btn-danger" id="pause">PAUSE</button>
-
-            <p id="duration"></p>
-            <p id="currenttime"></p>
-            <p id="ola"></p>
-        </div>
     </div>
 
 
@@ -165,7 +157,7 @@ $porcentagem = ($total/$progresso) * 100;
             let url = $(this).data('url');
 
             $.ajax({
-                url: '<?= BASE ?>/api/?route=comments&action=create', // nome da pasta que irá os dados
+                url: '<?= BASE ?>/api/?route=comments&action=create',
                 type: 'POST',
                 data: {comment_user: comment, aula: '<?= $aulaId ?>', action: 'add_comment'},
                 dataType: 'json',
@@ -210,46 +202,10 @@ $porcentagem = ($total/$progresso) * 100;
 </script>
 
 
-<script text="text/javascript" >
-    //Criando as funcionalidades do video
-
-    var myVideo = document.getElementById("#video");
-    var btnPlay = document.getElementById("#play");
-    var btnPause = document.getElementById("#pause");
-    var textduration = document.getElementById("#duration");
-    var textcurrenttime = document.getElementById("#currenttime");
-    var textseconds = document.getElementById("#ola");
-
-    btnPlay.addEventListener("click", function() {myVideo.play();}, false);
-    btnPause.addEventListener("click", function() {myVideo.pause();}, false);
-    
-    myVideo.addEventListener("loadedmetadata", function() {textduration.innerHTML = "Duration: " + convertTime(myVideo.duration);}, false);
-    myVideo.addEventListener("timeupdate", function() {textcurrenttime.innerHTML = "Current Time: " + convertTime(myVideo.currentTime);}, false);
-    myVideo.addEventListener("secondupdate", function() {textseconds.innerHTML = "Seconds: " + convertTime(myVideo.currentTime);}, false);
-
-    function convertSeconds(org) {
-        var minute = Math.floor(org * 60) % 60;
-        var second = Math.floor(org % 60);
-        var seconds = (minute * 60) + second;
-        return seconds;
-    }
-
-    function convertTime(org) {
-        var minute = Math.floor(org / 60) % 60;
-        var second = Math.floor(org % 60);
-        return( minute + ' : ' + second);
-    }
-
-    function saltar(tempo) {
-        var vid = document.getElementById("#video");
-        document.getElementById("#video").currentTime = tempo;
-        vid.pause();
-    }
-
+<script type="text/javascript">
+    (function () {
+        var obj = document.getElementById("idVideo");
+        console.log(obj.currentTime, obj.duration, obj.ended);
+    })();
 </script>
-
-    Momento 1 - <button onclick="saltar(8)" class="btn btn-success">Saltar</button><br>
-    Momento 2 - <button onclick="saltar(14)" class="btn btn-success mt-2">Saltar</button><br>
-    Momento 3 - <button onclick="saltar(172)" class="btn btn-success mt-2">Saltar</button><br>
-
 <?= $Component->getFooterDashboard(); ?>
