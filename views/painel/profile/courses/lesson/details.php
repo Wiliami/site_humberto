@@ -13,10 +13,6 @@ echo $Component->getMenuDashboard();
 $Username = $_SESSION['login']['user_name'];
 $aulaId = filter_input(INPUT_GET, 'a', FILTER_VALIDATE_INT);
 $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
-
-$total       = rand(1, 5000);
-$progresso   = rand(1, $total);
-$porcentagem = ($total/$progresso) * 100;
 ?>
 <div class="container">
     <?php
@@ -30,12 +26,11 @@ $porcentagem = ($total/$progresso) * 100;
     ?>
 
     <!-- Area aula-video -->
-    <div>
-        <video class="embed-responsive embed-responsive-16by9" id="idVideo" controls>
+    <div class="btn btn-warning">
+        <video class="embed-responsive embed-responsive-16by9" id="video" controls>
             <source src="<?= $DataLesson['aula_url'] ?>">
         </video>
     </div>
-
 
     <div class="d-flex flex-row justify-content-between mt-3">
         <div class="d-flex flex-row d-md-block d-none">
@@ -68,7 +63,7 @@ $porcentagem = ($total/$progresso) * 100;
                     </a>
                 <?php
                 } else {
-                    die(Error('Módulos não encontrados', 'success')); 
+                    die(Error('Módulos não encontrados', 'success'));
                 }
                 ?>       
             </div>
@@ -88,6 +83,14 @@ $porcentagem = ($total/$progresso) * 100;
         </div>
     </div>
 
+
+    <button type="button" id="playBtn" class="btn btn-success">Tocar</button>
+    <button type="button" id="pegarBtn" class="btn btn-success">Pegar butão</button>
+    <button type="button" id="pauseBtn" class="btn btn-danger">Pause</button> 
+    
+    <div class="progress mt-4">
+        <div class="progress-bar bg-success" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" id="BarraProgress">25%</div>
+    </div>
 
     <?php
     $Read->FullRead("SELECT * FROM aulas WHERE aula_id = :ai", "ai={$aulaId}");
@@ -145,7 +148,7 @@ $porcentagem = ($total/$progresso) * 100;
                 ?>
             </div>
         </div>
-    </form>        
+    </form> 
 </div>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
@@ -203,9 +206,24 @@ $porcentagem = ($total/$progresso) * 100;
 
 
 <script type="text/javascript">
-    (function () {
-        var obj = document.getElementById("idVideo");
-        console.log(obj.currentTime, obj.duration, obj.ended);
-    })();
+
+    var meuVideo = document.getElementById('video');
+    var pegarBtn = document.getElementById('pegarBtn');
+    var playBtn = document.getElementById('playBtn');
+    var pauseBtn = document.getElementById('pauseBtn');
+
+    pegarBtn.onclick = function () {
+        console.log("posição atual:", meuVideo.currentTime);
+        console.log("duração:", meuVideo.duration);
+    };
+
+    playBtn.onclick = function () {
+        meuVideo.play();
+    };
+
+    pauseBtn.onclick = function () {
+        meuVideo.pause();
+    };
+
 </script>
 <?= $Component->getFooterDashboard(); ?>
