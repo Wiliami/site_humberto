@@ -13,7 +13,6 @@ echo $Component->getMenuDashboard();
 $Username = $_SESSION['login']['user_name'];
 ?>
 <div class="container">
-    
     <div class="d-sm-flex flex-column mb-4 ml-4">
         <h1 class="h3">Painel</h1>  
         <h2 class="h5 mb-0 text-gray-800 mt-4">Seja bem-vindo(a), <?= $Username ?></h2>

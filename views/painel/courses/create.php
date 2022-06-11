@@ -14,33 +14,37 @@ echo $Component->getMenuDashboard();
 ?>
 <div class="container">
     <div class="card shadow mb-4">
-        <div class="card-header d-sm-flex align-items-center justify-content-start mb-3">
-            <h1 class="h5 mb-0 text-gray-800">Cadastro de cursos</h1>
-        </div>
+        <?= $Component->getTitlePage('Título da página'); ?>
         <div class="card-body">
             <form action="" method="post">
                 <?php
                 $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
                 if(!empty($Post['create_course'])) {
                     $CreateCourse['curso_titulo'] = $Post['title'];
+                    $CreateCourse['curso_img'] = $Post['img'];
                     $CreateCourse['curso_descricao'] = $Post['description'];
                     $CreateCourse['curso_categoria'] = $Post['category'];
                     $CreateCourse['curso_valor'] = $Post['value'];
                     $Course = new Course();
                     $Course->createCourse($CreateCourse);   
-                    if($Course->getResult()) {
+                    if($Course->getResult()) {  
                         Error($Course->getError());
                         header('Location: ' . BASE . '/painel/courses/list');
                         die();
                     } else {
                         Error($Course->getError(), 'danger');
-                    }   
+                    }
                 }
                 ?>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Curso</label>
                     <input type="text" class="form-control" id="exampleInputEmail1" name="title" placeholder="Nome do curso" 
                     value="<?= isset($Post['title'])? $Post['title']: '' ?>">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Image do curso</label>
+                    <input type="text" class="form-control" id="exampleInputPassword1" name="img" placeholder="Imagem do curso" 
+                    value="<?= isset($Post['img'])? $Post['img']: '' ?>">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputPassword1">Descrição</label>

@@ -1177,6 +1177,14 @@ class Component {
         ';
     }
 
+    public function getTitlePage($title = '') {
+       return '
+        <div class="card-header d-sm-flex align-items-center justify-content-start mb-3">
+            <h1 class="h5 mb-0 text-gray-800">'. $title .'</h1>
+        </div>
+       '; 
+    }
+
     // bloquear páginas administrativas 
     public function getBlockPageAdmin() {
         if($_SESSION['login']['user_level'] <= 1) {
