@@ -1,17 +1,17 @@
 <?php 
 
-class Message {
+class message {
     private $Result;
     private $Error;
 
 
-    public function createSendMessagesAndAlerts($Message) {
-        if(empty($Message['message_text'])) {
+    public function createSendMessagesAndAlerts($messageId) {
+        if(empty($messageId['message_text'])) {
             $this->Error = 'Campo obrigatório!';
             $this->Result = false;
         } else {
         $Create = new Create();
-        $Create->ExeCreate("alerts_messages", $Message);
+        $Create->ExeCreate("alerts_messages", $messageId);
             if($Create->getResult()) {
                 $this->Result = $Create->getResult();
                 $this->Error = "A mensagem foi cadastrada com sucesso!";
@@ -22,13 +22,13 @@ class Message {
         }
     }
 
-    public function createCommentLesson($Message) {
-        if(empty($Message['comment_text'])) {
+    public function createCommentLesson($messageId) {
+        if(empty($messageId['comment_text'])) {
             $this->Error = "Campo obrigatório!";
             $this->Result = false;
         } else {
             $Create = new Create();
-            $Create->ExeCreate("comments", $Message);
+            $Create->ExeCreate("comments", $messageId);
             if($Create->getResult()) {
                 $this->Result = $Create->getResult();
                 $this->Error = "Comentário enviado com sucesso!";
