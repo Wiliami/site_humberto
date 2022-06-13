@@ -3,7 +3,7 @@
 // - getMenuAndSideBarDashboard - exemplo de menu;
 // - 
 class Component {
-    public function getHeadHtmlHome($title = "Humberto Oliveira | Plataform course") {
+    public function getHeadHtmlHome($title = "Humberto Oliveira") {
         return '
         <!DOCTYPE html>
         <html lang="pt-BR">
@@ -11,8 +11,8 @@ class Component {
                 <meta charset="utf-8" />
                 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
                 <title>' . $title . '</title>
-                <link id="pagestyle" href="' . BASE . '/src/css/material-kit.css?v=3.0.0" rel="stylesheet" />
-                <!-- <link rel="stylesheet" href="' . BASE . '/src/css/menu-active.css" type="text/css"> -->
+                <link id="pagestyle" href="' . BASE . '/assets/css/material-kit.css?v=3.0.0" rel="stylesheet" />
+                <!-- <link rel="stylesheet" href="' . BASE . '/assets/css/menu-active.css" type="text/css"> -->
                 <!-- Estiliza todos os ícons de deshboard -->
                 <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
             </head>
@@ -23,7 +23,7 @@ class Component {
         <div class=\"container vw-100\">
             <nav class=\"d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3\">
                 <a href=' " . BASE . "/' type=\"button\" class=\" nav btn btn-black mb-2 mb-md-0\">
-                    <img src='" . BASE . "/src/images/icon_small.png' alt='Logo' style='width: 50px; height: 50px;'>
+                    <img src='" . BASE . "/assets/images/icon_small.png' alt='Logo' style='width: 50px; height: 50px;'>
                 </a>
                 <ul class=\"nav col-12 col-md-auto mb-2 justify-content-center mb-md-0 text-center\">
                     <li><a href=' " . BASE . "/' class=\"nav-link px-2 link-secondary\">Home</a></li>
@@ -75,7 +75,7 @@ class Component {
                     <div class="col-md-3 mb-4 ms-auto">
                     <div>
                         <!-- <a href=" ' . BASE . '/" type=\"button\" class=\" nav btn btn-black mb-2 mb-md-0\" style="width: 250; height: 100;">
-                            <img src="' . BASE . '/src/images/icon_small.png" alt="Logo" style=" width: 50px; height: 50px;">
+                            <img src="' . BASE . '/assets/images/icon_small.png" alt="Logo" style=" width: 50px; height: 50px;">
                         </a> -->
                         <h6 class="font-weight-bolder mb-4">Humberto Oliveira</h6>
                     </div>
@@ -751,10 +751,6 @@ class Component {
                                 <i class="fas fa-user"></i>
                                 Usuário
                             </a>
-                            <a class="collapse-item" href="' . BASE . '/painel/admin/level-user/create">
-                                <i class="fas fa-user"></i>
-                                Nível de usuário
-                            </a>
                             <a class="collapse-item" href="' . BASE . '/painel/courses/create">
                                 <i class="fas fa-book"></i>
                                 Curso
@@ -793,11 +789,7 @@ class Component {
                     <a class="collapse-item" href="' . BASE . '/painel/matriculas/cursos/list">
                         <i class="fas fa-user"></i>
                         Matrículas cursos
-                    </a>
-                    <a class="collapse-item" href="' . BASE . '/painel/admin/level-user/list">
-                        <i class="fas fa-user"></i>
-                        Níveis usuários
-                    </a>
+                    </a>    
                     <a class="collapse-item" href="' . BASE . '/painel/courses/categorias/list">
                         <i class="fas fa-book"></i>
                         Categorias cursos

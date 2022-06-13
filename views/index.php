@@ -6,8 +6,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Humberto Oliveira | Home</title>
-        <link rel="stylesheet" href="<?= BASE ?>/src/css/index.css" type="text/css">
-        <link href="<?= BASE ?>/src/css/material-kit.css?v=3.0.0" id="pagestyle" rel="stylesheet" />
+        <link rel="stylesheet" href="<?= BASE ?>/assets/css/index.css" type="text/css">
+        <link href="<?= BASE ?>/assets/css/material-kit.css?v=3.0.0" id="pagestyle" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
         <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
     </head>
@@ -67,7 +67,7 @@
             <div class="row d-flex justify-content-center">
                 <div class="col-md-7">
                     <div class="">
-                        <div class="text-center"> <img src="<?= BASE ?>/src/images/humberto.png" alt="humberto" width="100" class="rounded-circle"> </div>
+                        <div class="text-center"> <img src="<?= BASE ?>/assets/images/humberto.png" alt="humberto" width="100" class="rounded-circle"> </div>
                         <div class="text-center mt-3"> <span class="bg-warning p-1 px-4 rounded text-white">CEO</span>
                             <h5 class="mt-2 mb-0">Humberto Oliveira</h5> <span>Empresário • Palestrante • Educador • Coach • Administrador • Teólogo/Pr.</span>
                             <div class="px-4 mt-1">
@@ -319,7 +319,7 @@
                                     <a href="javascript:;">
                                         <div class="p-3 pe-md-0">
                                             <img class="w-100 border-radius-md shadow-lg"
-                                                src="<?= BASE ?>/src/images/rodrigo-oliveira.jpeg" alt="imagem">
+                                                src="<?= BASE ?>/assets/images/rodrigo-oliveira.jpeg" alt="imagem">
                                         </div>
                                     </a>
                                 </div>
@@ -340,7 +340,7 @@
                                     <a href="javascript:;">
                                         <div class="p-3 pe-md-0">
                                             <img class="w-100 border-radius-md shadow-lg"
-                                                src="<?= BASE ?>/src/images/odelfrance-oliveira.jpg" alt="imagem">
+                                                src="<?= BASE ?>/assets/images/odelfrance-oliveira.jpg" alt="imagem">
                                         </div>
                                     </a>
                                 </div>
@@ -363,7 +363,7 @@
                                     <a href="javascript:;">
                                         <div class="p-3 pe-md-0">
                                             <img class="w-100 border-radius-md shadow-lg"
-                                                src="<?= BASE ?>/src/images/lana-araujo.JPG" alt="imagem">
+                                                src="<?= BASE ?>/assets/images/lana-araujo.JPG" alt="imagem">
                                         </div>
                                     </a>
                                 </div>
@@ -384,7 +384,7 @@
                                     <a href="javascript:;">
                                         <div class="p-3 pe-md-0">
                                             <img class="w-100 border-radius-md shadow-lg"
-                                                src="<?= BASE ?>/src/images/josenias.JPG" alt="imagem">
+                                                src="<?= BASE ?>/assets/images/josenias.JPG" alt="imagem">
                                         </div>
                                     </a>
                                 </div>

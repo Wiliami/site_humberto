@@ -4,7 +4,7 @@ echo $Component->getHeadHtmlHome();
 echo $Component->getMenu();
 ?>
 <header class="header-2">
-    <div class="page-header min-vh-100 relative" style="background-image: url('<?= BASE ?>/src/images/page-youtube.jpg')">
+    <div class="page-header min-vh-100 relative" style="background-image: url('<?= BASE ?>/assets/images/page-youtube.jpg')">
         <span class="mask bg-gradient-dark opacity-4"></span>
         <div class="container">
             <div class="row">

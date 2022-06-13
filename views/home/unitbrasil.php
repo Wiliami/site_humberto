@@ -4,7 +4,7 @@
     echo $Component->getMenu();
     ?>
     <header>
-        <div class="page-header min-vh-100" style="background-image: url('<?= BASE ?>/src/images/unitbrasil-background.jpeg')" loading="lazy">
+        <div class="page-header min-vh-100" style="background-image: url('<?= BASE ?>/assets/images/unitbrasil-background.jpeg')" loading="lazy">
             <span class="mask bg-gradient-secondary opacity-4"></span>
             <div class="container">
             <div class="row">
