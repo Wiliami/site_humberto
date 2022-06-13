@@ -1,6 +1,5 @@
 <?php
 
-
 class Comment {
 
     private $Error;
