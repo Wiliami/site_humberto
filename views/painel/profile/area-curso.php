@@ -13,9 +13,7 @@ $moduleId = filter_input(INPUT_GET, 'm', FILTER_VALIDATE_INT);
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>Plataforma</title>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
-        <link id="pagestyle" href="<?= BASE ?>/src/css/material-kit.css?v=3.0.0" rel="stylesheet" />
-        <!-- <link rel="stylesheet" href="' . BASE . '/src/css/menu-active.css" type="text/css"> -->
-        <!-- Estiliza todos os ícons de deshboard -->
+        <link id="pagestyle" href="<?= BASE ?>/assets/css/material-kit.css?v=3.0.0" rel="stylesheet" />
         <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
     </head>
     <body>

@@ -30,7 +30,7 @@ $userId = $_SESSION['login']['user_id'];
         <a href="<?= BASE ?>/painel/profile/courses/lesson/area-course&course=<?= $Mat['curso_id'] ?>">
             <div class="col-lg-4 mb-5">
                 <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="<?= BASE ?>/src/images/backstage_data.png" alt="banner do curso">
+                    <img class="card-img-top" src="<?= BASE ?>/assets/images/backstage_data.png" alt="banner do curso">
                 </div>
                 <a href="" class="card-body text-dark">
                     <h5 class="card-title"><?= $Mat['curso_titulo'] ?></h5>
@@ -41,7 +41,7 @@ $userId = $_SESSION['login']['user_id'];
         <?php
             }
         } else {
-            Error("Cursos não encontrados", 'danger');
+            die(Error("Cursos não encontrados", 'warning'));
         }
         ?>
     </div>

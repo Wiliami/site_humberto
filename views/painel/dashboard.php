@@ -31,7 +31,7 @@ $Username = $_SESSION['login']['user_name'];
         <a href="<?= BASE ?>/painel/profile/area-curso&curso=<?= $Cursos['curso_id'] ?>">
             <div class="col-lg-4 mb-5">
                 <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="<?= BASE ?>/src/images/medias-sociais.jpg" alt="banner do curso">
+                    <img class="card-img-top" src="<?= BASE ?>/assets/images/medias-sociais.jpg" alt="banner do curso">
                 </div>
                 <div class="card-body">
                     <h5 class="card-title text-dark"><?= $Cursos['curso_titulo'] ?></h5>
@@ -42,7 +42,7 @@ $Username = $_SESSION['login']['user_name'];
             <?php
                 }
             } else {
-                Error("Ainda não existem cursos", 'warning');
+                die(Error("Ainda não existem cursos", 'warning'));
             }
             ?>
         </a>
