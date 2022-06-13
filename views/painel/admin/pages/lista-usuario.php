@@ -20,7 +20,7 @@ echo $Component->getMenuDashboard();
         </div>
         <div class="card-body">
             <div class="table-responsive">
-                <table id="table-listar-usuarios" class="table table-striped table-bordered" style="width: 100%;">
+                <table id="table-list-users" class="table table-striped table-bordered" style="width: 100%;">
                     <thead>
                         <tr class="btn-sm">
                             <th>#</th>
@@ -114,7 +114,7 @@ echo $Component->getMenuDashboard();
 <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
 <script type="text/javascript" language="javascript">
 $(document).ready(function() {
-    $("#table-listar-usuarios").DataTable({
+    $("#table-list-users").DataTable({
         "language": {
             "lengthMenu": "Mostrando _MENU_ registros por página",
             "zeroRecords": "Nenhum registro foi encontrado",

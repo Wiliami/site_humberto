@@ -60,7 +60,7 @@ $levelId = filter_input(INPUT_GET, 'level', FILTER_VALIDATE_INT);
             </form>
             <?php
             } else {
-                Error('Nível não encontrado!', 'warning');
+                die(Error('Nível não encontrado!', 'warning'));
             }
             ?>
         </div>
