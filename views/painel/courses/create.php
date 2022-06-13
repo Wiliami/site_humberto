@@ -14,7 +14,7 @@ echo $Component->getMenuDashboard();
 ?>
 <div class="container">
     <div class="card shadow mb-4">
-        <?= $Component->getTitlePage('Título da página'); ?>
+        <?= $Component->getTitlePage('Nome da página'); ?>
         <div class="card-body">
             <form action="" method="post">
                 <?php
@@ -41,10 +41,9 @@ echo $Component->getMenuDashboard();
                     <input type="text" class="form-control" id="exampleInputEmail1" name="title" placeholder="Nome do curso" 
                     value="<?= isset($Post['title'])? $Post['title']: '' ?>">
                 </div>
-                <div class="form-group">
-                    <label for="exampleInputPassword1">Image do curso</label>
-                    <input type="text" class="form-control" id="exampleInputPassword1" name="img" placeholder="Imagem do curso" 
-                    value="<?= isset($Post['img'])? $Post['img']: '' ?>">
+                <div class="mb-3">
+                    <label for="formFile" class="form-label">Imagem do curso</label>
+                    <input class="form-control" type="file" name="img">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputPassword1">Descrição</label>
