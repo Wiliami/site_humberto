@@ -13,5 +13,3 @@ const EMAIL_PASS = '';
 const EMAIL_PORT = '';
 
 const BASE = '';
-
-const USERNAME = 'Wiliamis';
