@@ -12,11 +12,19 @@ echo $Component->getCreatePagesAdmin();
 echo $Component->getListPagesAdmin();
 echo $Component->getMenuDashboard();
 ?>
-<div class="container">
+<div class="container"> 
+    <?php
+    $DataImages = $_FILES['curso_img']['curso_img'];
+    $Upload = new Upload();
+    $Upload->image($DataImages);
+    if($Upload->getResult()) {
+        Check::var_dump_json($Upload);
+    }
+    ?>
     <div class="card shadow mb-4">
         <?= $Component->getTitlePage('Nome da página'); ?>
         <div class="card-body">
-            <form action="" method="post">
+            <form action="" method="POST" enctype="multipart/form-data">
                 <?php
                 $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
                 if(!empty($Post['create_course'])) {
@@ -43,7 +51,7 @@ echo $Component->getMenuDashboard();
                 </div>
                 <div class="mb-3">
                     <label for="formFile" class="form-label">Imagem do curso</label>
-                    <input class="form-control" type="file" name="img">
+                    <input class="form-control" type="file" name="curso_img">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputPassword1">Descrição</label>

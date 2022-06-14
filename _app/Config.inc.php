@@ -15,7 +15,6 @@ function MyAutoLoad($Class) {
     }
 }
 
-
 spl_autoload_register('MyAutoLoad'); // chamando as classes do meu projeto;
 
 /** Personaliza o gatilho do PHP e salva no banco de dados para ser enviado ao desenvolvedor futuramente
