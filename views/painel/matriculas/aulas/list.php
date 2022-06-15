@@ -21,7 +21,7 @@ echo $Component->getMenuDashboard();
         </div>
         <div class="card-body">
             <div class="table-responsive">
-                <table id="lista-matriculas-aulas" class="table table-striped table-bordered" style="width: 100%;">
+                <table id="matriculas-aulas" class="table table-striped table-bordered" style="width: 100%;">
                     <thead>
                         <tr style="font-size: 10px;">
                             <th><span>USUÁRIO MATRICULADO</span></th>
@@ -68,7 +68,7 @@ echo $Component->getMenuDashboard();
                         <?php
                             }
                         } else {
-                            Error("Lista de matrículas não encontrada!");
+                            die(Error("Lista de matrículas não encontrada!", 'warning'));
                         }   
                         ?>
                     </tbody>
@@ -86,11 +86,14 @@ echo $Component->getMenuDashboard();
     </div>
 </div>
 <?= $Component->getFooterDashboard(); ?>
-<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-<script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+<!-- <script src="https://code.jquery.com/jquery-3.5.1.js"></script> -->
+<script src="<?= BASE ?>/public/js/jquery-3.5.1.js"></script>
+<script src="<?= BASE ?>/public/js/jquery.dataTables.min.js"></script>
+<!-- <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script> -->
 <script>
 $(document).ready(function() {
-    $("#lista-matriculas-aulas").DataTable({
+    $("#matriculas-aulas").DataTable({
+        responsive: true,
         "language": {
             "lengthMenu": "Mostrando _MENU_ registros por página",
             "zeroRecords": "Nenhum resultado foi encontrado",

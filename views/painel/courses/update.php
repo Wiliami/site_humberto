@@ -1,4 +1,5 @@
 <?php 
+$Read = new Read();
 $User = new User();
 $User->verifyExistLoginUser();
 $Component = new Component();
@@ -13,20 +14,23 @@ echo $Component->getCreatePagesAdmin();
 echo $Component->getListPagesAdmin();
 echo $Component->getMenuDashboard();
 $courseId = filter_input(INPUT_GET, 'update_curso', FILTER_VALIDATE_INT);
+$CreateMsg = filter_input(INPUT_GET, 'create', FILTER_VALIDATE_BOOL);
 ?>
 <div class="container">
     <?php
-        $Read = new Read();
-        $Read->FullRead("SELECT * FROM cursos WHERE curso_id = :ci", "ci={$courseId}");
-        if($Read->getResult()) {
-            $DataCourse = $Read->getResult()[0];
-        } else {
-            Error("Curso não encontrado!", 'warning');
-                ?>
-            <a href="<?= BASE ?>/painel/courses/list" class="btn btn-outline-success" title="Voltar para a lista de cursos">Voltar</a>
-    <?php
+    if($CreateMsg) {
+        Error("Curso cadastrado com sucesso!", 'success');
+    }
+    $Read->FullRead("SELECT * FROM cursos WHERE curso_id = :ci", "ci={$courseId}");
+    if($Read->getResult()) {
+        $DataCourse = $Read->getResult()[0];
+    } else {
+        Error("Curso não encontrado!", 'warning');
+            ?>
+        <a href="<?= BASE ?>/painel/courses/list" class="btn btn-outline-success" title="Voltar para a lista de cursos">Voltar</a>
+        <?php
         die();
-        }   
+    }   
     ?>
 </div>
 
@@ -35,6 +39,14 @@ $courseId = filter_input(INPUT_GET, 'update_curso', FILTER_VALIDATE_INT);
         <div class="card-header py-3 d-sm-flex align-items-center justify-content-between">
             <h1 class="h5 mb-0 text-gray-800">Atualizar <b><?= $DataCourse['curso_titulo'] ?></b></h1>
         </div>
+        <?php
+        if($DataCourse['curso_img']) {
+            ?>
+            <img src="<?= BASE ?>/uploads/<?= $DataCourse['curso_img']; ?>" />
+            <?php
+        }
+        ?>
+    
         <div class="card-body">
             <form action="" method="post">
                 <?php

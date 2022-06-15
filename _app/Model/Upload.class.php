@@ -30,7 +30,7 @@ class Upload {
      * <b>../uploads/</b>
      */
     function __construct($BaseDir = null) {
-        self::$BaseDir = ( (string) $BaseDir ? $BaseDir : '../uploads/');
+        self::$BaseDir = ( (string) $BaseDir ? $BaseDir : 'uploads/');
         if (!file_exists(self::$BaseDir) && !is_dir(self::$BaseDir)):
             mkdir(self::$BaseDir, 0777);
         endif;
@@ -48,7 +48,7 @@ class Upload {
         $this->File = $Image;
         $this->Ext = mb_strtolower(strrchr($this->File["name"], "."));
         $this->Name = strtolower((string) $Name ? $Name : substr($Image['name'], 0, strrpos($Image['name'], '.')) );
-        $this->Width = ( (int) $Width ? $Width : IMAGE_W );
+        $this->Width = ( (int) $Width ? $Width : 1200 );
         $this->Folder = ( (string) $Folder ? $Folder : 'images' );
 
         //VALID EXTENSION FOR IMAGES

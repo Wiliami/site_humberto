@@ -23,31 +23,31 @@ echo $Component->getMenuDashboard();
                 $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
                 if(!empty($Post['create_course'])) {
                     $CreateCourse['curso_titulo'] = $Post['title'];
-                    $CreateCourse['curso_img'] = $Post['img'];
                     $CreateCourse['curso_descricao'] = $Post['description'];
                     $CreateCourse['curso_categoria'] = $Post['category'];
                     $CreateCourse['curso_valor'] = $Post['value'];
                     $Course = new Course();
                     $Course->createCourse($CreateCourse);   
                     if($Course->getResult()) {  
-                        Error($Course->getError());
-                        header('Location: ' . BASE . '/painel/courses/list');
-                        die();
-
+                    
                         if(!empty($_FILES['curso_img'])) {
-                            $DataImages = $_FILES['curso_img'];
-                            Check::var_dump_json($_FILES);
+                            // Check::var_dump_json($_FILES);
                             $Upload = new Upload();
-                            $Upload->image($DataImages);
+                            $Upload->image($_FILES['curso_img']);
                             if($Upload->getResult()) {
                                 $DataUpdateCourse['curso_img'] = $Upload->getResult();
                                 $Update = new Update();
-                                $Update->ExeUpdate('cursos', $DataUpdateCourse, 'WHERE curso_id = :ci', "ci={$DataImages}");
+                                $Update->ExeUpdate('cursos', $DataUpdateCourse, 'WHERE curso_id = :ci', "ci={$Course->getResult()}");
                                 if($Update->getResult()) {
                                     Error($Update->getError());
                                 }
                             }
                         }
+
+                        Error($Course->getError());
+                        header('Location: ' . BASE . '/painel/courses/update&create=true&update_curso=' . $Course->getResult());
+                        die();
+
 
                     } else {
                         Error($Course->getError(), 'danger');
