@@ -30,7 +30,7 @@ $Read = new Read();
                     if($Course->getResult()) {
                         Error($Course->getResult());
                     } else {
-                        Error($Course->getError(), 'danger');
+                        Error($Course->getError(), 'warning');
                     }
                 }
                 ?>
