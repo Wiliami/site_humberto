@@ -6,8 +6,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Humberto Oliveira | Home</title>
-        <link rel="stylesheet" href="<?= BASE ?>/assets/css/index.css" type="text/css">
-        <link href="<?= BASE ?>/assets/css/material-kit.css?v=3.0.0" id="pagestyle" rel="stylesheet" />
+        <link rel="stylesheet" href="<?= BASE ?>/public/css/index.css" type="text/css">
+        <link href="<?= BASE ?>/public/css/material-kit.css?v=3.0.0" id="pagestyle" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
         <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
     </head>

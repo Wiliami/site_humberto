@@ -943,10 +943,10 @@ class Component {
                 </div>
             </div>
 
-        <script src="'. BASE .'/assets/js/jquery.min.js"></script>
-        <script src="'. BASE .'/assets/js/bootstrap.bundle.min.js"></script>
-        <script src="'. BASE .'/assets/js/jquery.easing.min.js"></script>
-        <script src="'. BASE .'/assets/js/sb-admin-2.min.js"></script>
+        <script src="'. BASE .'/public/js/jquery.min.js"></script>
+        <script src="'. BASE .'/public/js/bootstrap.bundle.min.js"></script>
+        <script src="'. BASE .'/public/js/jquery.easing.min.js"></script>
+        <script src="'. BASE .'/public/js/sb-admin-2.min.js"></script>
         </body>
     </html>';
     }
