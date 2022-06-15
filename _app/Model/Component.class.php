@@ -11,8 +11,8 @@ class Component {
                 <meta charset="utf-8" />
                 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
                 <title>' . $title . '</title>
-                <link id="pagestyle" href="' . BASE . '/assets/css/material-kit.css?v=3.0.0" rel="stylesheet" />
-                <!-- <link rel="stylesheet" href="' . BASE . '/assets/css/menu-active.css" type="text/css"> -->
+                <link id="pagestyle" href="' . BASE . '/public/css/material-kit.css?v=3.0.0" rel="stylesheet" />
+                <!-- <link rel="stylesheet" href="' . BASE . '/public/css/menu-active.css" type="text/css"> -->
                 <!-- Estiliza todos os ícons de deshboard -->
                 <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
             </head>
@@ -370,7 +370,7 @@ class Component {
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Seja bem-vindo(a), 
                                     ' . $_SESSION["login"]["user_name"] . '
                                 </span>
-                                <img class="img-profile rounded-circle" src="' . BASE . '/src/images/undraw_profile.svg">
+                                <img class="img-profile rounded-circle" src="' . BASE . '/assets/images/undraw_profile.svg">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
@@ -557,7 +557,7 @@ class Component {
                             <li class="nav-item dropdown no-arrow">
                                 <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <span class="mr-2 d-none d-lg-inline text-gray-600 small">Seja bem-vindo(a), '. $_SESSION["login"]["user_name"] .'</span>
-                                    <img class="img-profile rounded-circle" src="' . BASE . '/src/images/undraw_profile.svg">
+                                    <img class="img-profile rounded-circle" src="' . BASE . '/assets/images/undraw_profile.svg">
                                 </a>
                                 <!-- Dropdown - User Information -->
                                 <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
@@ -619,7 +619,7 @@ class Component {
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true"
                     aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-folder"></i>
-                    <span>ADMINISTRATIVO</span>
+                    <span>AÇÕES</span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
@@ -634,8 +634,7 @@ class Component {
                         </a>
                     </div>
                 </div>
-            </li>
-            ';
+            </li>';
         }
     } 
     
@@ -987,11 +986,11 @@ class Component {
                             </div>
                         </div>
                     </div>
-                <script src="'. BASE .'/src/assets/js/JQuery/jquery-3.6.0.min.js"></script>
-                <script src="'. BASE .'/res/site/js/jquery.min.js"></script>
-                <script src="'. BASE .'/res/site/js/bootstrap.bundle.min.js"></script>
-                <script src="'. BASE .'/res/site/js/jquery.easing.min.js"></script>
-                <script src="'. BASE .'/res/site/js/sb-admin-2.min.js"></script>
+                <script src="'. BASE .'/assets/assets/js/JQuery/jquery-3.6.0.min.js"></script>
+                <script src="'. BASE .'/assets/site/js/jquery.min.js"></script>
+                <script src="'. BASE .'/assets/site/js/bootstrap.bundle.min.js"></script>
+                <script src="'. BASE .'/assets/site/js/jquery.easing.min.js"></script>
+                <script src="'. BASE .'/assets/site/js/sb-admin-2.min.js"></script>
             </body>
         </html>
         ';
@@ -1089,15 +1088,9 @@ class Component {
     ';
     }
 
-    public function getSearchDashboard() {
+    public function getAvatarUser($getAvatarUser) {
         return '
-            <h1>Área de pesquisa de itens</h1>
-        ';
-    }
-
-    public function getAvatarUser() {
-        return '
-            <img src="" class="rounded-circle" alt="avatar" style="width: 50px; height: 50px">
+            <img src="'. $getAvatarUser .'" class="rounded-circle" alt="avatar" style="width: 50px; height: 50px">
         ';
     }
 
@@ -1167,14 +1160,6 @@ class Component {
         </div>
         
         ';
-    }
-
-    public function getTitlePage($title = '') {
-       return '
-        <div class="card-header d-sm-flex align-items-center justify-content-start mb-3">
-            <h1 class="h5 mb-0 text-gray-800">'. $title .'</h1>
-        </div>
-       '; 
     }
 
     // bloquear páginas administrativas 

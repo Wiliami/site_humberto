@@ -13,16 +13,10 @@ echo $Component->getListPagesAdmin();
 echo $Component->getMenuDashboard();
 ?>
 <div class="container"> 
-    <?php
-    $DataImages = $_FILES['curso_img']['curso_img'];
-    $Upload = new Upload();
-    $Upload->image($DataImages);
-    if($Upload->getResult()) {
-        Check::var_dump_json($Upload);
-    }
-    ?>
     <div class="card shadow mb-4">
-        <?= $Component->getTitlePage('Nome da página'); ?>
+        <div class="card-header d-sm-flex align-items-center justify-content-start mb-3">
+            <h1 class="h5 mb-0 text-gray-800">Nome da página</h1>
+        </div>
         <div class="card-body">
             <form action="" method="POST" enctype="multipart/form-data">
                 <?php
@@ -39,6 +33,22 @@ echo $Component->getMenuDashboard();
                         Error($Course->getError());
                         header('Location: ' . BASE . '/painel/courses/list');
                         die();
+
+                        if(!empty($_FILES['curso_img'])) {
+                            $DataImages = $_FILES['curso_img'];
+                            Check::var_dump_json($_FILES);
+                            $Upload = new Upload();
+                            $Upload->image($DataImages);
+                            if($Upload->getResult()) {
+                                $DataUpdateCourse['curso_img'] = $Upload->getResult();
+                                $Update = new Update();
+                                $Update->ExeUpdate('cursos', $DataUpdateCourse, 'WHERE curso_id = :ci', "ci={$DataImages}");
+                                if($Update->getResult()) {
+                                    Error($Update->getError());
+                                }
+                            }
+                        }
+
                     } else {
                         Error($Course->getError(), 'danger');
                     }
@@ -68,14 +78,14 @@ echo $Component->getMenuDashboard();
                         <select class="form-control" id="inputPassword" name="category">
                         <?php
                         $Read = new Read();
-                        $Read->FullRead('SELECT * FROM categoria_cursos');
+                        $Read->FullRead('SELECT * FROM category_course');
                         if($Read->getResult()) {
                                 echo "<option value=''>Selecionar</option>";
-                            foreach($Read->getResult() as $category) {
-                                echo "<option value='{$category['categoria_id']}'>{$category['categoria_name']}</option>";
+                            foreach($Read->getResult() as $DataCategory) {
+                                echo "<option value='{$DataCategory['categoria_id']}'>{$DataCategory['categoria_name']}</option>";
                             }
                         } else {
-                            echo "<option value=''>Ainda não existem categorias!</option>"; 
+                            echo "<option value=''>Ainda não existem categorias!</option>";
                         }
                         ?>
                         </select>

@@ -164,24 +164,24 @@ class Course {
 		}
 	}
 
-    public function createCourse($dataCourse) {
-		if(empty($dataCourse["curso_titulo"])) {
+    public function createCourse($DataCourse) {
+		if(empty($DataCourse["curso_titulo"])) {
 			$this->Error = "Informe o nome do curso!";
 			$this->Result = false;
-		} elseif (empty($dataCourse["curso_descricao"])) {
+		} elseif (empty($DataCourse["curso_descricao"])) {
 			$this->Error = "Informe uma descrição para o curso!";
 			$this->Result = false;	
-		} elseif(empty($dataCourse['curso_valor'])) {
+		} elseif(empty($DataCourse['curso_valor'])) {
 			$this->Error = "Informe o valor do curso!";
 			$this->Result =  false; 
-		} elseif (empty($dataCourse["curso_categoria"])) {
+		} elseif (empty($DataCourse["curso_categoria"])) {
 			$this->Error = "Selecione a categoria do curso!";
 			$this->Result = false;
 		}  else {
-			$dataCourse["curso_create_date"] = date('Y-m-d H:i:s');
-			$dataCourse['curso_user_create'] = $_SESSION['login']['user_id'];
+			$DataCourse["curso_create_date"] = date('Y-m-d H:i:s');
+			$DataCourse['curso_user_create'] = $_SESSION['login']['user_id'];
 			$Create = new Create();
-			$Create->ExeCreate("cursos", $dataCourse); 
+			$Create->ExeCreate("cursos", $DataCourse); 
 			if($Create->getResult()) {
 				$this->Result = $Create->getResult();
 				$this->Error =  "Curso cadastrado com sucesso!";
