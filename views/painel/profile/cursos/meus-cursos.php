@@ -41,12 +41,13 @@ $userId = $_SESSION['login']['user_id'];
         <?php
             }
         } else {
-            die(Error("Cursos não encontrados", 'warning'));
+            ?>
+            <div class="alert alert-primary d-block" role="alert">
+                Você não possui cursos ainda! <a href="<?= BASE ?>/painel/dashboard">Ver cursos</a>
+            </div>
+        <?php
         }
         ?>
-    </div>
-    <div class="container">
-        <a href="<?= BASE ?>/painel/dashboard" class="btn btn-success">Ver cursos</a>  
-    </div>
+    </div> 
 </div>
 <?= $Component->getFooterDashboard(); ?>
