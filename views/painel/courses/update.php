@@ -86,11 +86,14 @@ $CreateMsg = filter_input(INPUT_GET, 'create', FILTER_VALIDATE_BOOL);
                     if($DataCourse['curso_img']) {
                         ?>
                         <img style="width: 200; height: 200px;" class="img-thumbnail" src="<?= BASE ?>/uploads/<?= $DataCourse['curso_img']; ?>" />
-                        <?php
+                    <?php
                     } else {
-                        die(Error('Imagem não encontrada', 'warning'));
+                        ?>
+                        <img style="width: 320; height: 320px;" class="img-thumbnail" src="<?= BASE ?>/assets/images/image-not-found.png" />
+                    <?php
                     }
-                    ?>   
+                    ?>
+                <button class="btn btn-light mt-2">Download image</button>
                 </div>
             </div>
         </div>
