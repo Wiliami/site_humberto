@@ -13,7 +13,7 @@ $moduleId = filter_input(INPUT_GET, 'm', FILTER_VALIDATE_INT);
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>Plataforma</title>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
-        <link id="pagestyle" href="<?= BASE ?>/assets/css/material-kit.css?v=3.0.0" rel="stylesheet" />
+        <link id="pagestyle" href="<?= BASE ?>/public/css/material-kit.css?v=3.0.0" rel="stylesheet" />
         <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
     </head>
     <body>
@@ -43,8 +43,8 @@ $moduleId = filter_input(INPUT_GET, 'm', FILTER_VALIDATE_INT);
                             <div class="card-body">
                                 <div class="text-center">
                                     <!-- <img src="<?= BASE ?>/src/images/thumbnail-course.jpg" class="rounded-top" alt="capa do curso" style="height: 250px; width: 400px;"> -->
-                                    <video width="320" height="240" style="border-radius: 8px;" controls>
-                                        <source src="<?= BASE ?>/src/video" type="video/mp4">
+                                    <video width="320" height="240" class="img-fluid" poster="<?= BASE ?>/assets/images/backstage_data.png" style="border-radius: 8px;" controls>
+                                        <source src="<?= BASE ?>/assets/video/humberto.mp4" type="video/mp4">
                                     </video>
                                     <h6 class="m-0 font-weight-bold text-primary mt-2">Pré-visualização do curso</h6>
                                 </div>
