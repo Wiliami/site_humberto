@@ -10,88 +10,36 @@ echo $Component->getLiAdministrativoDashboard();
 echo $Component->getLiCoursesDashboard();
 echo $Component->getLiPagesDashboard();
 echo $Component->getMenuDashboard();
+$userId =$_SESSION['login']['user_id'];
 ?>
 <div class="container">
-    <div class="card shadow mb-4">
-        <div class="card-header py-3">
-            <h1 class="h5 text-gray-800">Minhas compras</h1>
-        </div>
-        <div class="card-body">
-            <div class="table-responsive">
-                <table id="table-purchase-user" class="table table-striped table-bordered" style="width: 100%;">
-                    <thead>
-                        <tr style="font-size: 10px;">
-                            <th>NOME do curso</span></th>
-                            <th>DATA DA COMPRA</span></th>
-                            <th>VALOR DO CURSO</>
-                            <th><span>OPÇÕES</span></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php
-                        $Read = new Read();
-                        $Read->FullRead("SELECT c.*, u.user_name FROM cursos c LEFT JOIN users u ON u.user_id");
-                        if($Read->getResult()) {
-                            foreach($Read->getResult() as $Cursos) {
-                                ?>
-                        <tr style="font-size: 10px;">
-                            <td>
-                                <span><?= $Cursos['curso_titulo'] ?></span>
-                            </td>
-                            <td>
-                                <span><?= date('d/m/Y', strtotime($Cursos['curso_create_date'])) ?></span>
-                            </td>
-                            <td>
-                                <span><?= $Cursos['curso_valor'] ?></span>
-                            </td>
-                            <td style="width: 20%;">
-                                <a href="<?= BASE ?>/painel/profile/courses/update" class="table-link" title="Editar <?= $Cursos['curso_titulo'] ?>">
-                                    <span class="fa-stack">
-                                        <i class="fa fa-square fa-stack-2x"></i>
-                                        <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                                <a href="<?= BASE ?>/painel/profile/courses/minhas-compras/delete" class="table-link danger" title="Excluir <?= $Cursos['curso_titulo']?>" style="color: red;">
-                                    <span class="fa-stack">
-                                        <i class="fa fa-square fa-stack-2x"></i>
-                                        <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                            </td>
-                        </tr>
-                        <?php
-                            }
-                        } else {
-                            die(Error("Ainda não existem usuários!"));
-                        }   
-                        ?>
-                    </tbody>
-                    <tfoot>
-                        <tr style="font-size: 10px;">
-                            <th>NOME DO CURSO</span></th>
-                            <th>DATA DA COMPRA</span></th>
-                            <th>VALOR DO CURSO</>
-                            <th><span>OPÇÕES</span></th>
-                        </tr>
-                    </tfoot>
-                </table>
-            </div>
-        </div>
+    <div class="d-sm-flex align-items-center justify-content-start mb-4 d-block">
+        <h1 class="h5 mb-0 text-gray-800 ml-4">Minhas compras</h1>
     </div>
+    <?php
+    $Read = new Read();
+    $Read->FullRead('SELECT *
+        FROM purchase p
+        WHERE user_id = :ui', "ui=$userId}");
+    if($Read->getResult()) {
+        foreach($Read->getResult() as $DataPurchaseUser) {
+            ?>
+    <a href="<?= BASE ?>/painel/profile/courses/lesson/area-course&course">
+        <div class="col-lg-4 mb-5">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="<?= BASE ?>/assets/images/backstage_data.png" alt="banner do curso">
+            </div>
+            <a href="" class="card-body text-dark">
+                <h5 class="card-title"><?= $DataPurchaseUser['compra_curso']?></h5>
+                <p class="card-text"><?= $DataPurchaseUser['compra_valor'] ?></p>
+            </a>
+        </div>
+     </a>
+     <?php
+        }
+    } else {
+        Error('Compra não encontrada', 'warning');
+    }
+    ?>
 </div>
 <?= $Component->getFooterDashboard(); ?>
-<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-<script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
-<script type="text/javascript" language="javascript">
-$(document).ready(function() {
-    $("#table-purchase-user").DataTable({
-        "language": {
-            "lengthMenu": "Mostrando _MENU_ registros por página",
-            "zeroRecords": "Nenhum registro foi encontrado",
-            "info": "Mostrando página _PAGE_ de _PAGES_ registros",
-            "infoEmpty": "Nenhum registro foi encontrado",
-            "infoFiltered": "(filtrado de _MAX_ registros no total)"
-        }
-    });
-});
-</script>

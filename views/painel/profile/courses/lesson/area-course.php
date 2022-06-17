@@ -9,12 +9,71 @@ echo $Component->getLiAdministrativoDashboard();
 echo $Component->getLiCoursesDashboard();
 echo $Component->getLiPagesDashboard();
 echo $Component->getMenuDashboard();
-$Username = $_SESSION['login']['user_name'];
 $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
 ?>
+
 <div class="container">
     <div class="row">
-        <div class="col-lg-6">
+        <div class="col">
+            <div class="card-body">
+                <?php
+                $Read = new Read();
+                $Read->FullRead("SELECT mc.*, c.curso_titulo, c.curso_descricao
+                FROM matriculas_cursos mc
+                LEFT JOIN cursos c ON c.curso_id = mc.curso_id
+                WHERE mc.curso_id = :ci", "ci={$courseId}");
+                if($Read->getResult()) {
+                    $DataCourse = $Read->getResult()[0];
+                        ?>
+                <h5 class="card-title text-dark"><?= $DataCourse['curso_titulo'] ?></h5>
+                <p class="card-text"><?= $DataCourse['curso_descricao'] ?></p>
+                <?php
+                } else {
+                    die(Error('Curso não encontrado!', 'success'));
+                }
+                ?>
+                <small>1h 3m</small>
+                •
+                <small>23 conteúdos</small>
+            </div>
+        </div>
+        <div class="col-7">
+            <div id="accordion" class="mt-4">
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <h5 class="mb-0">
+                            <?php
+                            $Read->FullRead("SELECT * FROM modulos WHERE curso_id = :ci", "ci={$courseId}");
+                            if($Read->getResult()) {
+                                foreach($Read->getResult() as $DataModule) {
+                                    ?>
+                            <a href="" class="nav-link collapsed text-dark" data-toggle="collapse" data-target="#collapse<?= $DataModule['modulo_id'] ?>" aria-expanded="true" aria-controls="collapseOne">
+                                <?= $DataModule['modulo_name'] ?>
+                            </a>
+                            <?php }
+                            } else {
+                                die(Error('Curso não encontrado!', 'success'));
+                            }
+                            ?>
+                        </h5>
+                    </div>
+
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                        <div class="card-body">
+                            <i class="fas fa-play-circle"></i>
+                            Nome da aula
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- <div class="container">
+    <div class="row">
+        <div class="col-lg-12">
             <div class="card shadow">
                 <div class="card-header py-3">
                     <?php
@@ -26,7 +85,7 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
                     if($Read->getResult()) {
                         $DataCourse = $Read->getResult()[0];
                             ?>
-                    <h6 class="h4 m-0 font-weight-bold text-dark text-center"><?= $DataCourse['curso_titulo'] ?></h6>
+                    <h6 class="h4 m-0 font-weight-bold text-dark text-start"><?= $DataCourse['curso_titulo'] ?></h6>
                         <?php
                     } else {
                         die(Error('Curso não encontrado!', 'success'));
@@ -37,31 +96,31 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
                 <?php
                 $Read->FullRead("SELECT * FROM modulos WHERE curso_id = :ci", "ci={$courseId}");
                 if($Read->getResult()) {
-                    foreach($Read->getResult() as $Modules) {
+                    foreach($Read->getResult() as $DataModule) {
                         ?>
                     <li class="nav-item" style="list-style: none;">
-                        <a class="nav-link collapsed text-dark" href="#" data-toggle="collapse" data-target="#collapse<?= $Modules['modulo_id'] ?>" aria-expanded="true" aria-controls="collapseTwo">
+                        <a class="nav-link collapsed text-dark" href="#" data-toggle="collapse" data-target="#collapse<?= $DataModule['modulo_id'] ?>" aria-expanded="true" aria-controls="collapseTwo">
                             <i class="fas fa-solid fa-angle-right"></i>
-                            <span><?= $Modules['modulo_name'] ?></span>
+                            <span><?= $DataModule['modulo_name'] ?></span>
                         </a>
-                        <div id="collapse<?= $Modules['modulo_id'] ?>" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                        <div id="collapse<?= $DataModule['modulo_id'] ?>" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                             <div class="bg-white py-2 collapse-inner rounded">
                                 <?php
-                                $Read->FullRead("SELECT * FROM aulas WHERE modulo_id = :mi", "mi={$Modules['modulo_id']}");
+                                $Read->FullRead("SELECT * FROM aulas WHERE modulo_id = :mi", "mi={$DataModule['modulo_id']}");
                                 if($Read->getResult()) {
                                     foreach($Read->getResult() as $Lesson) {
                                         ?>
                                     <div class="d-flex flex-column">
-                                        <a class="collapse-item btn btn-success mt-2" href="<?= BASE ?>/painel/profile/courses/lesson/details&a=<?= $Lesson['aula_id'] ?>&course=<?= $DataCourse['curso_id'] ?>"><?= $Lesson['aula_name'] ?></a>
+                                        <a class="collapse-item btn btn-light mt-2" href="<?= BASE ?>/painel/profile/courses/lesson/details&a=<?= $Lesson['aula_id'] ?>&course=<?= $DataCourse['curso_id'] ?>"><?= $Lesson['aula_name'] ?></a>
                                     </div>
                                 <?php               
                                     }
                                 } else {
-                                    Error('Aula não encontrada!', 'btn btn-success');
+                                    Error('Aula não encontrada!', 'success');
                                 }
                                 ?>
                             </div>
-                        </div>
+                        </div>  
                     </li>
                 <?php
                         }
@@ -73,35 +132,5 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
             </div>
         </div>
     </div>
-</div>
-<script type="text/javascript">
-    $(function() {
-        $('#form1').submit(function(e) {
-            e.preventDefault();
-
-            var comment = $('#comment').val();
-        
-            $.ajax({
-                url: '<?= BASE ?>/api?route=comments&action=create',
-                type: 'POST',
-                data: { comment: comment, action: 'add_comment'},
-                dataType: 'json',
-                success: function(result) {
-                    data.html(result);
-                },
-                beforeSend: function() {
-                    data.html('Buscando...');
-                },
-                error: function(data) {
-                    data.html('Error ao buscar');   
-                }
-                // }).done(function(result) {
-                    //     console.log(result);
-                    // }).fail(function(data) {    
-                        //     console.log(data);
-             });
-            return false;
-        });
-    });
-</script>
+</div> -->
  <?= $Component->getFooterDashboard(); ?>

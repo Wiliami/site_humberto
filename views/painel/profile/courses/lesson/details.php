@@ -115,7 +115,7 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
 
             <div class="card-body">
                 <div class="d-flex align-items-center text-start">
-                    <img class="img-profile rounded-circle" style="width: 40px; height: 40px;" src="<?= BASE ?>/src/images/undraw_profile.svg">
+                    <img class="img-profile rounded-circle" style="width: 40px; height: 40px;" src="<?= BASE ?>/assets/images/undraw_profile.svg">
                     <textarea class="form-control mt-3 ml-2" id="comment_user" name="comment" placeholder="Escreva seu comentário..." rows="3" required></textarea>
                 </div>
                 <div class="d-flex justify-content-end">

@@ -698,7 +698,7 @@ class Component {
                             <i class="fas fa-book"></i>
                             Meus cursos
                         </a>
-                        <a class="collapse-item" href="' . BASE . '/painel/profile/courses/minhas-compras/list">
+                        <a class="collapse-item" href="' . BASE . '/painel/profile/courses/minhas-compras">
                             <i class="fas fa-money-bill-alt"></i>
                             Minhas compras
                         </a>
