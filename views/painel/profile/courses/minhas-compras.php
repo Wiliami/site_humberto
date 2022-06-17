@@ -18,7 +18,7 @@ echo $Component->getMenuDashboard();
         </div>
         <div class="card-body">
             <div class="table-responsive">
-                <table id="table-compras-usuario" class="table table-striped table-bordered" style="width: 100%;">
+                <table id="table-purchase-user" class="table table-striped table-bordered" style="width: 100%;">
                     <thead>
                         <tr style="font-size: 10px;">
                             <th>NOME do curso</span></th>
@@ -45,19 +45,13 @@ echo $Component->getMenuDashboard();
                                 <span><?= $Cursos['curso_valor'] ?></span>
                             </td>
                             <td style="width: 20%;">
-                                <!-- <a href="/" class="table-link">
-                                    <span class="fa-stack">
-                                        <i class="fa fa-square fa-stack-2x"></i>
-                                        <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a> -->
-                                <a href="<?= BASE ?>/painel/" class="table-link" title="Editar <?= $Cursos['curso_titulo'] ?>">
+                                <a href="<?= BASE ?>/painel/profile/courses/update" class="table-link" title="Editar <?= $Cursos['curso_titulo'] ?>">
                                     <span class="fa-stack">
                                         <i class="fa fa-square fa-stack-2x"></i>
                                         <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
                                     </span>
                                 </a>
-                                <a href="<?= BASE ?>/painel/courses/" class="table-link danger" title="Excluir <?= $Cursos['curso_titulo']?>" style="color: red;">
+                                <a href="<?= BASE ?>/painel/profile/courses/minhas-compras/delete" class="table-link danger" title="Excluir <?= $Cursos['curso_titulo']?>" style="color: red;">
                                     <span class="fa-stack">
                                         <i class="fa fa-square fa-stack-2x"></i>
                                         <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
@@ -68,7 +62,7 @@ echo $Component->getMenuDashboard();
                         <?php
                             }
                         } else {
-                            Error("Ainda não existem usuários!");
+                            die(Error("Ainda não existem usuários!"));
                         }   
                         ?>
                     </tbody>
@@ -90,7 +84,7 @@ echo $Component->getMenuDashboard();
 <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
 <script type="text/javascript" language="javascript">
 $(document).ready(function() {
-    $("#table-compras-usuario").DataTable({
+    $("#table-purchase-user").DataTable({
         "language": {
             "lengthMenu": "Mostrando _MENU_ registros por página",
             "zeroRecords": "Nenhum registro foi encontrado",
