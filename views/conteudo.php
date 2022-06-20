@@ -4,15 +4,14 @@ echo $Component->getHeadHtmlHome();
 echo $Component->getMenu();
 ?>
 <header class="header-2">
-    <div class="page-header min-vh-100 relative" 
-        style="background-image: url('<?= BASE ?>/assets/images/page-youtube1.jpg')">
+    <div class="page-header min-vh-100 relative" style="background-image: url('<?= BASE ?>/assets/images/background-youtube.jpg')">
         <span class="mask bg-gradient-secondary opacity-4"></span>
         <div class="container">
+            <div class="">
+                <img src="<?= BASE ?>/assets/images/youtube-white.png" alt="Youtube logo" style="height: 200px; width: 300px;">
+            </div>
             <div class="row">
                 <div class="my-5 text-center text-xl-start">
-                    <img src="<?= BASE ?>/assets/images/youtube-white.png"
-                        class="d-sm-flex justify-content-sm-center justify-content-xl-start" alt="youtube logo"
-                        style="height: 200px; width: 300px;">
                     <h1 class="display-5 fw-bolder text-white mb-2">Junte-se a nós!</h1>
                     <p class="lead text-white mt-3">
                     Se inscreva em nosso canal<br>
@@ -42,7 +41,6 @@ echo $Component->getMenu();
                 pessoas. <br>Então, usamos esta ferramenta de divulgação de conteúdos,<br> o youtube, para criar e
                 postar conteúdos de qualidade.
                 </p>
-                </div>
                 <div class="d-grid gap-3 d--flsmex justify-content-sm-center justify-content-xl-start">
                     <a class="btn btn-primary btn-lg px-4 me-sm-3" style="margin-top: 10px;" href="https://www.youtube.com/channel/UClFMwemd5j7EsXlV-gTw5Xg">Canal no youtube</a>
                 </div>
