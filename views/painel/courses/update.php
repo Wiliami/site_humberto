@@ -40,7 +40,7 @@ $CreateMsg = filter_input(INPUT_GET, 'create', FILTER_VALIDATE_BOOL);
                     <h1 class="h2 m-0 text-gray-800" style="font-size: 14px;">Atualizar <?= $DataCourse['curso_titulo'] ?></h1>
                 </div>
                 <div class="card-body">
-                    <form action="" method="post">
+                    <form action="" method="post" enctype="multipart/form">
                         <?php
                         $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
                         if(!empty($Post['update_course'])) {

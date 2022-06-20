@@ -29,16 +29,17 @@ echo $Component->getMenuDashboard();
                     <tbody>
                         <?php
                             $Read = new Read();
-                            $Read->FullRead("SELECT c.*, u.user_name FROM cursos c LEFT JOIN users u ON u.user_id");
+                            $Read->FullRead("SELECT c.*, u.user_name 
+                                FROM cursos c LEFT JOIN users u ON u.user_id");
                             if($Read->getResult()) {
-                                foreach($Read->getResult() as $Cursos) {
+                                foreach($Read->getResult() as $DataCourse) {
                                     ?>
                         <tr style="font-size: 11px;">
                             <td>
-                                <span><?= $Cursos['curso_titulo'] ?></span>
+                                <span><?= $DataCourse['curso_titulo'] ?></span>
                             </td>
                             <td>
-                                <span><?= $Cursos['curso_create_date'] ?></span>
+                                <span><?= $DataCourse['curso_create_date'] ?></span>
                             </td>
                             <td style="width: 20%;">
                                 <a href="/" class="table-link">

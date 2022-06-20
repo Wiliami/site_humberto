@@ -9,8 +9,7 @@ $moduleId = filter_input(INPUT_GET, 'm', FILTER_VALIDATE_INT);
 <div class="container">
     <div class="row">
         <div class="bg-dark py-5 mt-4 col-md-8">
-            <div style="font-size: 12px;" class="d-inline">Categoria do curso</div>
-            |
+            <div style="font-size: 12px;" class="d-inline">Categoria do curso</div>|
             <div style="font-size: 12px;" class="d-inline">Categoria</div>
             <div class="d-flex text-center align-items-center justify-content-between">
                 <div class="my-5 text-center text-xl-start">
@@ -27,8 +26,7 @@ $moduleId = filter_input(INPUT_GET, 'm', FILTER_VALIDATE_INT);
                     ?>
                 </div>
             </div>  
-            <div class="d-inline" style="font-size: 12px;">Atualização do curso</div>
-            |
+            <div class="d-inline" style="font-size: 12px;">Atualização do curso</div>|
             <div class="d-inline" style="font-size: 12px;">Linguaguem do curso</div>
         </div>
             

@@ -34,7 +34,7 @@ $userId =$_SESSION['login']['user_id'];
                 <p class="card-text"><?= $DataPurchaseUser['compra_valor'] ?></p>
             </a>
         </div>
-     </a>
+    </a>
      <?php
         }
     } else {

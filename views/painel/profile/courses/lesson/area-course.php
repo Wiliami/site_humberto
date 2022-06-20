@@ -11,7 +11,6 @@ echo $Component->getLiPagesDashboard();
 echo $Component->getMenuDashboard();
 $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
 ?>
-
 <div class="container">
     <div class="row">
         <div class="col">
@@ -29,7 +28,7 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
                 <p class="card-text"><?= $DataCourse['curso_descricao'] ?></p>
                 <?php
                 } else {
-                    die(Error('Curso não encontrado!', 'success'));
+                    die(Error('Curso não encontrado!', 'warning'));
                 }
                 ?>
                 <small>1h 3m</small>
@@ -52,7 +51,7 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
                             </a>
                             <?php }
                             } else {
-                                die(Error('Curso não encontrado!', 'success'));
+                                die(Error('Curso não encontrado!', 'warning'));
                             }
                             ?>
                         </h5>
