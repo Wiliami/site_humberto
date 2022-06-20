@@ -19,7 +19,7 @@ $userId = $_SESSION['login']['user_id'];
     <div class="row gx-5 container">
         <?php
         $Read = new Read();
-        $Read->FullRead("SELECT m.*, c.curso_titulo, c.curso_descricao, c.curso_img
+         $Read->FullRead("SELECT m.*, c.curso_titulo, c.curso_descricao, c.curso_img
             FROM matriculas_cursos m 
             LEFT JOIN users u ON u.user_id = m.user_id
             LEFT JOIN cursos c ON c.curso_id = m.curso_id 
@@ -30,7 +30,6 @@ $userId = $_SESSION['login']['user_id'];
                 ?>
         <a href="<?= BASE ?>/painel/profile/courses/lesson/area-course&course=<?= $DataMatriculas['curso_id'] ?>">
             <div class="col-lg-4 mb-5">
-
                 <div class="card" style="width: 18rem;">
                 <?php
                     if($DataMatriculas['curso_img']) {
