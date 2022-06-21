@@ -702,17 +702,6 @@ class Component {
                             <i class="fas fa-money-bill-alt"></i>
                             Minhas compras
                         </a>
-                        <a class="collapse-item" href="' . BASE . '/painel/profile/courses/cursos-finalizados">
-                            <i class="fas fa-book"></i>
-                            Cursos finalizados
-                        </a>
-                        <a class="collapse-item" href="' . BASE . '/painel/profile/courses/cursos-pendentes">
-                            <i class="fas fa-book"></i>
-                            Cursos pendentes
-                        </a>
-                        <a class="collapse-item" href="' . BASE . '/painel/profile/pages/help">
-                            <i class="fas fa-hands-helping"></i>
-                            Ajuda</a>
                         <a class="collapse-item" href="' . BASE . '/painel/profile/pages/suporte">
                             <i class="fas fa-info-circle"></i>
                             Suporte
