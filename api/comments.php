@@ -17,7 +17,7 @@ switch ($action) {
             $jSon['error']['text'] = "Comentário publicado com sucesso!";
             $ScriptHtml = 
             "<div class='card comment_{$Create->getResult()}' id='card-comment'> "
-                . "<div class='card-header d-flex align-items-center justify-content-between'> "
+                . "<div class='card-header d-flex align-it  ems-center justify-content-between'> "
                     . "<div class='h6' id='username'>{$_SESSION['login']['user_name']}</div>"
                     . "<h5 class='btn btn-success btn-sm'>Aguardando aprovação</h5>"
                 . "</div> "

@@ -33,7 +33,7 @@ $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
                         <a class="dropdown-item" href="<?= BASE ?>/painel/profile/courses/">Específicas (lista)</a>
                     </div>
                 </li>
-                <li class="nav-item dropdown">
+                <li class="nav-item dropdown ml-2">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Progresso
                     </a>
@@ -62,7 +62,7 @@ $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
             $Parse = "&title=%{$Post['filter']}%";
         }
         $Read = new Read();
-         $Read->FullRead("SELECT m.*, c.curso_titulo, c.curso_descricao, c.curso_img
+        $Read->FullRead("SELECT m.*, c.curso_titulo, c.curso_descricao, c.curso_img
             FROM matriculas_cursos m
             LEFT JOIN users u ON u.user_id = m.user_id
             LEFT JOIN cursos c ON c.curso_id = m.curso_id
@@ -105,4 +105,9 @@ $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
         ?>
     </div>
 </div>
+
+
+<script type="text/javascript">
+    
+</script>
 <?= $Component->getFooterDashboard(); ?>
