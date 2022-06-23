@@ -53,7 +53,7 @@ $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 
 
 
-    <div class="row gx-5 container">
+    <div class="row gx-5 container" id="">
         <?php
         $Query = null;
         $Parse = null;
@@ -67,6 +67,7 @@ $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
             LEFT JOIN users u ON u.user_id = m.user_id
             LEFT JOIN cursos c ON c.curso_id = m.curso_id
             WHERE m.user_id = :ui{$Query}", "ui={$userId}{$Parse}");
+            // WHERE m.user_id = :ui", "ui={$userId}");
         if($Read->getResult()) {
             foreach($Read->getResult() as $DataMatriculas) {
                 // Check::var_dump_json($DataMatriculas);
@@ -97,7 +98,7 @@ $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
         } else {
             ?>
             <div class="alert alert-primary d-block" role="alert">
-                Você ainda não possui cursos!
+                Parece que você ainda não possui cursos!
                 <a href="<?= BASE ?>/painel/dashboard">Ver cursos</a>
             </div>
         <?php
@@ -105,9 +106,27 @@ $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
         ?>
     </div>
 </div>
-
-
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
-    
+    $(function() {
+        $('#').submit(function(e) {
+            e.preventDefault();
+
+            var search = $('#').val();
+
+            $.ajax({
+                url: '<?= BASE ?>/api/?route=meus-cursos&action=read',
+                type: 'POST',
+                data: {search_course: search, action: 'search_courses'},
+                dataType: 'json',
+            }).done(function(result) {
+                console.log(result);
+            }).fail(function(data) {
+                $('#error').text(data.error.text);
+                return false;
+            });
+
+        });
+    });
 </script>
 <?= $Component->getFooterDashboard(); ?>

@@ -8,9 +8,9 @@
         <title>Humberto Oliveira | Home</title>
         <link rel="stylesheet" href="<?= BASE ?>/public/css/index.css" type="text/css">
         <link href="<?= BASE ?>/public/css/material-kit.css?v=3.0.0" id="pagestyle" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+        <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet"> -->
         <!-- <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script> -->
-        <script src="<?= BASE ?>'/js/kit.fontawesome.js" crossorigin="anonymous"></script>
+        <!-- <script src="<?= BASE ?>'/public/js/kit.fontawesome.js" crossorigin="anonymous"></script> -->
     </head>
     <body>
     <?= $Component->getMenu(); ?>
@@ -68,7 +68,7 @@
             <div class="row d-flex justify-content-center">
                 <div class="col-md-7">
                     <div class="">
-                        <div class="text-center"> <img src="<?= BASE ?>/assets/images/humberto.png" alt="humberto" width="100" class="rounded-circle"> </div>
+                        <div class="text-center"> <img src="<?= BASE ?>/assets/images/humberto.png" alt="humberto" width="150" class="rounded-circle"> </div>
                         <div class="text-center mt-3"> <span class="bg-warning p-1 px-4 rounded text-white">CEO</span>
                             <h5 class="mt-2 mb-0">Humberto Oliveira</h5> <span>Empresário • Palestrante • Educador • Coach • Administrador • Teólogo/Pr.</span>
                             <div class="px-4 mt-1">

@@ -18,7 +18,7 @@ class Component {
             </head>';
     }
 
-    public function getMenu($Active = 'btn') {
+    public function getMenu() {
         return "
         <div class=\"container vw-100\">
             <nav class=\"d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3\">

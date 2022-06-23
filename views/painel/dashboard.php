@@ -61,4 +61,4 @@ $Username = $_SESSION['login']['user_name'];
     }
     ?>
 </div>
-<?= $Component->getFooterDashboard(); ?>
+<?= $Component->getFooterDashboard(); ?>        
