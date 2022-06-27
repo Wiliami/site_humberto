@@ -16,7 +16,7 @@ $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 ?>
 <div class="container">
     <div class="d-sm-flex align-items-center justify-content-start mb-4 d-block">
-        <h1 class="h5 mb-0 text-gray-800 ml-4">Cursos pendentes</h1>
+        <h1 class="h5 mb-0 text-gray-800 ml-4">Cursos em andamento</h1>
     </div>
 
     <h2 class="h6 mb-0 text-gray-800 ml-4 mt-4">Filtrar por</h2>
