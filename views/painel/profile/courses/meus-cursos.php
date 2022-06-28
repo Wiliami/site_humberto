@@ -97,9 +97,9 @@ $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
             }
         } else {
             ?>
-            <div class="alert alert-primary d-block" role="alert">
-                Parece que você ainda não possui cursos!
-                <a href="<?= BASE ?>/painel/dashboard">Ver cursos</a>
+            <div class="alert alert-warning d-block" role="alert">
+                Nenhuma correspondência foi encontrada!
+                <a href="<?= BASE ?>/painel/dashboard" class="text-dark">Ver cursos</a>
             </div>
         <?php
         }
