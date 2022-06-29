@@ -694,7 +694,7 @@ class Component {
                 </a>
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="' . BASE . '/painel/profile/courses/meus-cursos">
+                        <a class="collapse-item" href="' . BASE . '/area-courses/my-courses">
                             <i class="fas fa-book"></i>
                             Meus cursos
                         </a>

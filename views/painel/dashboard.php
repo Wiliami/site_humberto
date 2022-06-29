@@ -11,26 +11,26 @@ echo $Component->getCreatePagesAdmin();
 echo $Component->getListPagesAdmin();
 echo $Component->getMenuDashboard();
 $Username = $_SESSION['login']['user_name'];
+
+$itens_por_pagina = 10;
+
+// pegar a pagina atual
+$pagina = intval($_GET['pagina']);
+
+// puxar os produtos]
+
+
+// pegar a quantidade total de objetos no banco de dados por
+
+// definir o número de páginas
+$num_paginas = ceil($num_total/$itens_por_pagina);
+
+
 ?>
 <div class="container">
-    <div class="row">
-        <div class="col-6">
-            <div class="d-sm-flex flex-column mb-4 ml-4">
-                <h1 class="h3">Painel</h1>  
-                <h2 class="h5 mb-0 text-gray-800 mt-4">Seja bem-vindo(a), <?= $Username ?></h2>
-            </div>
-        </div>
-        <div class="col-6">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <form class="form-inline my-2 my-lg-0" method="POST">
-                        <input type="search" class="form-control mr-sm-2" name="filter" placeholder="Pesquisar meus cursos" value="<?= (!empty($Post['filter']) ? $Post['filter'] : null) ?>" aria-label="Search">
-                        <button type="submit" class="btn btn-outline-success my-2 my-sm-0">Pesquisar</button>
-                    </form>
-                </div>
-            </nav>
-        </div>
-    <!-- Fim da row -->
+    <div class="d-sm-flex flex-column mb-4 ml-4">
+        <h1 class="h3">Painel</h1>  
+        <h2 class="h5 mb-0 text-gray-800 mt-4">Seja bem-vindo(a), <?= $Username ?></h2>
     </div>
     
     <?php
@@ -40,9 +40,10 @@ $Username = $_SESSION['login']['user_name'];
     <div class="row gx-5 container">
         <?php
         $Read = new Read();
-        $Read->FullRead("SELECT * FROM cursos");
+        $Read->FullRead("SELECT * FROM cursos LIMIT $pagina, $itens_por_pagina");
         if($Read->getResult()) {
             foreach($Read->getResult() as $DataCourse) {
+                // Check::var_dump_json($DataCourse);
                 ?>
         <a href="<?= BASE ?>/painel/profile/area-curso&curso=<?= $DataCourse['curso_id'] ?>">
             <div class="col-lg-4 mb-5">
@@ -73,6 +74,23 @@ $Username = $_SESSION['login']['user_name'];
             ?>
         </a>
     </div>
+    <nav aria-label="Navegação de página exemplo">
+        <ul class="pagination justify-content-center">
+            <li class="page-item disabled">
+                <?php
+                $num_total = $Read->getResult();
+                Check::var_dump_json($num_total);
+
+                $num_paginas = ceil($num_total/$itens_por_pagina);
+                ?>
+                <a class="page-link" href="#" tabindex="-1">Anterior</a>
+            </li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item">
+                <a class="page-link" href="#">Próximo</a>
+            </li>
+        </ul>
+    </nav>
     <?php
         }
     ?>
