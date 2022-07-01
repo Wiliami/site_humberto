@@ -12,18 +12,18 @@ echo $Component->getListPagesAdmin();
 echo $Component->getMenuDashboard();
 $Username = $_SESSION['login']['user_name'];
 
-$itens_por_pagina = 10;
+// $itens_por_pagina = 10;
 
-// pegar a pagina atual
-$pagina = intval($_GET['pagina']);
+// // pegar a pagina atual
+// $pagina = intval($_GET['pagina']);
 
-// puxar os produtos]
+// // puxar os produtos]
 
 
-// pegar a quantidade total de objetos no banco de dados por
+// // pegar a quantidade total de objetos no banco de dados por
 
-// definir o número de páginas
-$num_paginas = ceil($num_total/$itens_por_pagina);
+// // definir o número de páginas
+// $num_paginas = ceil($num_total/$itens_por_pagina);
 
 
 ?>
@@ -40,7 +40,7 @@ $num_paginas = ceil($num_total/$itens_por_pagina);
     <div class="row gx-5 container">
         <?php
         $Read = new Read();
-        $Read->FullRead("SELECT * FROM cursos LIMIT $pagina, $itens_por_pagina");
+        $Read->FullRead("SELECT * FROM cursos");
         if($Read->getResult()) {
             foreach($Read->getResult() as $DataCourse) {
                 // Check::var_dump_json($DataCourse);
@@ -78,10 +78,10 @@ $num_paginas = ceil($num_total/$itens_por_pagina);
         <ul class="pagination justify-content-center">
             <li class="page-item disabled">
                 <?php
-                $num_total = $Read->getResult();
-                Check::var_dump_json($num_total);
+                // $num_total = $Read->getResult();
+                // // Check::var_dump_json($num_total);
 
-                $num_paginas = ceil($num_total/$itens_por_pagina);
+                // $num_paginas = ceil($num_total/$itens_por_pagina);
                 ?>
                 <a class="page-link" href="#" tabindex="-1">Anterior</a>
             </li>

@@ -182,7 +182,7 @@ class Component {
         ';
     }
 
-    public function getHeadHtmlDashboard($title = 'PLATAFORMA DE CURSOS') {
+    public function getHeadHtmlDashboard($title = 'SELECT curso_titulo FROM cursos') {
         return '
         <!DOCTYPE html>
         <html lang="pt-BR">
