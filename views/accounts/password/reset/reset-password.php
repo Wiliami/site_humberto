@@ -10,6 +10,7 @@ echo $Component->getLiCoursesDashboard();
 echo $Component->getLiPagesDashboard();
 echo $Component->getMenuDashboard();
 ?>
+<!-- Recuperação de senha (Esqueci senha) -->
 <div class="container">
     <div class="card shadow mb-4"> 
         <div class="card-header d-sm-flex align-items-center justify-content-between mb-4">

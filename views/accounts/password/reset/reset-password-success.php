@@ -10,6 +10,7 @@ echo $Component->getLiCoursesDashboard();
 echo $Component->getLiPagesDashboard();
 echo $Component->getMenuDashboard();
 ?>
+<!-- Recuperação de senha (Esqueci senha) -->
 <div class="product-big-title-area">
     <div class="container">
         <div class="row">

@@ -1,10 +1,10 @@
 <?php
 $Component = new Component();
 echo $Component->getHeadHtmlDashboard();
-echo $Component->getMenuSideBarDashboard();
+echo $Component->getMenuDashboard();
 echo $Component->getBarraMenuOptions();
 ?>
-<!-- lógica de envio do email de recuperação de senha -->
+<!-- Mudar senha -->
 <div class="product-big-title-area">
     <div class="container">
         <div class="row">
