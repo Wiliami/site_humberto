@@ -739,11 +739,11 @@ class Component {
                                 <i class="fas fa-user"></i>
                                 Usuário
                             </a>
-                            <a class="collapse-item" href="' . BASE . '/painel/courses/create">
+                            <a class="collapse-item" href="' . BASE . '/painel/admin/courses/create">
                                 <i class="fas fa-book"></i>
                                 Curso
                             </a>
-                            <a class="collapse-item" href="' . BASE . '/painel/courses/categorias/create">
+                            <a class="collapse-item" href="' . BASE . '/painel/admin/courses/categorias/create">
                                 <i class="fas fa-book"></i>
                                 Categoria de curso
                             </a>

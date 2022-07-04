@@ -24,7 +24,7 @@ $moduleId = filter_input(INPUT_GET, 'delete_module', FILTER_VALIDATE_INT);
     } else {
         Error("Módulo não encontrado!", 'danger');
         ?>
-    <a href="<?= BASE ?>/painel/modules/list" class="btn btn-outline-primary" title="Voltar para a lista de módulos">Voltar</a>    
+    <a href="<?= BASE ?>/painel/admin/modules/list" class="btn btn-outline-primary" title="Voltar para a lista de módulos">Voltar</a>    
     <?php
         die();
     }
@@ -54,7 +54,7 @@ $moduleId = filter_input(INPUT_GET, 'delete_module', FILTER_VALIDATE_INT);
                     <label for="exampleInputEmail1">Ordem</label>
                     <input type="text" class="form-control" id="exampleInputEmail1" name="order" placeholder="Número da ordem do módulo" value="<?= $DataModule['modulo_ordem'] ?>">
                 </div>
-                <a href="<?= BASE ?>/painel/courses/modules/list" class="btn btn-outline-primary mb-2" title="Voltar para lista de módulos">Voltar</a>
+                <a href="<?= BASE ?>/painel/admin/courses/modules/list" class="btn btn-outline-primary mb-2" title="Voltar para lista de módulos">Voltar</a>
                 <!-- <input type="submit" class="btn btn-success" name="delete_module" value="Excluir módulo"> -->
 
                 <button type="button" class="btn btn-danger mb-2" data-toggle="modal" data-target="#exampleModal">

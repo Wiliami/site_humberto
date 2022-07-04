@@ -25,7 +25,7 @@ $moduleId = filter_input(INPUT_GET, 'module', FILTER_VALIDATE_INT);
             <h1 class="h6 mb-0 text-dark">Cadastrar aula no módulo: <b><?= $DataModule['modulo_name'] ?></b></h1>
             <?php
             } else {
-                Error('Módulo não encontrado!', 'danger');
+                die(Error('Módulo não encontrado!', 'danger'));
             }
             ?>
         </div>
@@ -42,7 +42,7 @@ $moduleId = filter_input(INPUT_GET, 'module', FILTER_VALIDATE_INT);
                     $Course->createLessonModule($CreateLesson);
                     if($Course->getResult()) {
                         Error($Course->getError());
-                        header('Location: ' . BASE . '/painel/courses/lesson/list');
+                        header('Location: ' . BASE . '/painel/admin/courses/lesson/list');
                         die();
                     } else {
                         Error($Course->getError(), 'danger');
@@ -64,7 +64,7 @@ $moduleId = filter_input(INPUT_GET, 'module', FILTER_VALIDATE_INT);
                     <input type="text" class="form-control" placeholder="URL da aula" name="url" id="inputPassword"
                     value="<?= isset($Post['url'])? $Post['url']: '' ?>">
                 </div>
-                <a href="<?= BASE ?>/painel/courses/lesson/list" class="btn btn-outline-success mb-2" title="Voltar para lista de categorias">Voltar</a>
+                <a href="<?= BASE ?>/painel/admin/courses/lesson/list" class="btn btn-outline-success mb-2" title="Voltar para lista de categorias">Voltar</a>
                 <input type="submit" class="btn btn-success mb-2" name="create_lesson" value="Cadastrar">
             </form>
         </div>

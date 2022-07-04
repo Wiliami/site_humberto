@@ -58,7 +58,7 @@ $moduleId = filter_input(INPUT_GET, 'module', FILTER_VALIDATE_INT);
                     <label for="exampleInputEmail1">Ordem do módulo</label>
                     <input type="number" class="form-control" id="exampleInputEmail1" name="order" value="<?= $DataModule['modulo_ordem'] ?>">
                 </div>
-                <a href="<?= BASE ?>/painel/courses/modules/list" class="btn btn-outline-success" title="Voltar para lista de módulos">Voltar</a>
+                <a href="<?= BASE ?>/painel/admin/courses/modules/list" class="btn btn-outline-success" title="Voltar para lista de módulos">Voltar</a>
                 <input type="submit" class="btn btn-success" name="update_module" value="Atualizar">
             </form> 
         </div> 

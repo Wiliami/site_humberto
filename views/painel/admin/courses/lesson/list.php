@@ -40,7 +40,6 @@ $moduleId = filter_input(INPUT_GET, 'module', FILTER_VALIDATE_INT);
                     <thead>
                         <tr class="btn-sm" style="font-size: 10px">
                             <th><span>NOME DA AULA</span></th>
-                            <th><span>DURAÇÃO DA AULA</span></th>
                             <th><span>URL DA AULA</span></th>
                             <th><span>CAD. POR</span></th>
                             <th><span>ATU. POR </span></th>
@@ -51,19 +50,16 @@ $moduleId = filter_input(INPUT_GET, 'module', FILTER_VALIDATE_INT);
                         <?php
                         $Read = new Read();
                         $Read->FullRead("SELECT a.*, uc.user_name as create_user, uu.user_name as update_user
-                        FROM aulas a 
-                        LEFT JOIN users uc ON uc.user_id = a.aula_create_user
-                        LEFT JOIN users uu ON uu.user_id = a.aula_update_user
-                        WHERE modulo_id = :mi", "mi={$moduleId}");
+                            FROM aulas a 
+                            LEFT JOIN users uc ON uc.user_id = a.aula_create_user
+                            LEFT JOIN users uu ON uu.user_id = a.aula_update_user
+                            WHERE modulo_id = :mi", "mi={$moduleId}");
                         if($Read->getResult()) {
                             foreach($Read->getResult() as $DataLesson) {
                                 ?>
                         <tr style="font-size: 10px">
                             <td>
                                 <span><?= $DataLesson['aula_name'] ?></span>
-                            </td>
-                            <td class="text-center">
-                                <span><?= $DataLesson["aula_duracao"] ?></span> 
                             </td>
                             <td>
                                 <span><?= $DataLesson['aula_url'] ?></span>
@@ -87,7 +83,6 @@ $moduleId = filter_input(INPUT_GET, 'module', FILTER_VALIDATE_INT);
                     <tfoot>
                         <tr style="font-size: 10px">
                             <th><span>NOME DA AULA</span></th>
-                            <th><span>DURAÇÃO DA AULA</span></th>
                             <th><span>URL DA AULA</span></th>
                             <th><span>CAD. POR</span></th>
                             <th><span>ATU. POR </span></th>

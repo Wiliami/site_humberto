@@ -45,7 +45,7 @@ echo $Component->getMenuDashboard();
                         }
 
                         Error($Course->getError());
-                        header('Location: ' . BASE . '/painel/courses/update&create=true&update_curso=' . $Course->getResult());
+                        header('Location: ' . BASE . '/painel/admin/courses/update&create=true&update_curso=' . $Course->getResult());
                         die();
 
 
@@ -90,7 +90,7 @@ echo $Component->getMenuDashboard();
                         ?>
                         </select>
                 </div>
-                <a href="<?= BASE ?>/painel/courses/list" class="btn btn-outline-success mb-2" title="Voltar para lista de usuários">Voltar</a>
+                <a href="<?= BASE ?>/painel/admin/courses/list" class="btn btn-outline-success mb-2" title="Voltar para lista de usuários">Voltar</a>
                 <input type="submit" class="btn btn-success mb-2" name="create_course" value="Cadastrar">
             </form>
         </div>
