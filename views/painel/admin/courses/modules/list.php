@@ -26,7 +26,7 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
                 $DataCourse = $Read->getResult()[0]; 
                     ?>
                 <div class="h3 m-0 text-dark" style="font-size: 15px;"><b><?= $DataCourse['curso_titulo'] ?></b></div>
-                <a href="<?= BASE ?>/painel/courses/modules/create&course=<?= $DataCourse['curso_id'] ?>" class="btn btn-success rounded-pill" style="border-radius: 50%; font-size: 11px;">Cadastrar módulo</a>
+                <a href="<?= BASE ?>/painel/admin/courses/modules/create&course=<?= $DataCourse['curso_id'] ?>" class="btn btn-success rounded-pill" style="border-radius: 50%; font-size: 11px;">Cadastrar módulo</a>
             <?php
                 } else {
                     die(Error("Curso não encontrado!", "warning"));
@@ -53,22 +53,22 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
                             -- LEFT JOIN users uc ON uc.user_id = m.modulo_create_user
                             WHERE m.curso_id = :mi", "mi={$courseId}");
                         if($Read->getResult()) {
-                            foreach($Read->getResult() as $Modulos) {
+                            foreach($Read->getResult() as $DataModule) {
                                 ?>
                         <tr style="font-size: 10px;">
                             <td>
-                                <?= $Modulos['modulo_name'] ?>
+                                <?= $DataModule['modulo_name'] ?>
                             </td>
                             <td>
-                                <?= $Modulos['user_name'] ?>
+                                <?= $DataModule['user_name'] ?>
                             </td>
                             <td>
-                                <?= $Modulos['update_user'] ?>
+                                <?= $DataModule['update_user'] ?>
                             </td>
                             <td>
-                                <a href="<?= BASE ?>/painel/courses/modules/update&module=<?= $Modulos['modulo_id'] ?>" class="btn-sm" title="Atualizar módulo"><i class="fas fa-edit"></i></a>
-                                <a href="<?= BASE ?>/painel/courses/lesson/list&module=<?= $Modulos['modulo_id'] ?>" class="btn-sm" title="Ver aulas desse módulo" style="color: #1cc88a;"><i class="fas fa-chalkboard-teacher"></i></a>
-                                <a href="<?= BASE ?>/painel/courses/modules/delete&delete_module=<?= $Modulos['modulo_id'] ?>" class="danger btn-sm" title="Excluir módulo" style="color: red;" title="Excluir curso"><i class="fa fa-trash-o"></i></a>
+                                <a href="<?= BASE ?>/painel/admin/courses/modules/update&module=<?= $DataModule['modulo_id'] ?>" class="btn-sm" title="Atualizar módulo"><i class="fas fa-edit"></i></a>
+                                <a href="<?= BASE ?>/painel/admin/courses/lesson/list&module=<?= $DataModule['modulo_id'] ?>" class="btn-sm" title="Ver aulas desse módulo" style="color: #1cc88a;"><i class="fas fa-chalkboard-teacher"></i></a>
+                                <a href="<?= BASE ?>/painel/admin/courses/modules/delete&delete_module=<?= $DataModule['modulo_id'] ?>" class="danger btn-sm" title="Excluir módulo" style="color: red;" title="Excluir curso"><i class="fa fa-trash-o"></i></a>
                             </td>
                         </tr>
                         <?php

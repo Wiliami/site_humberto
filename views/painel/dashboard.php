@@ -11,21 +11,13 @@ echo $Component->getCreatePagesAdmin();
 echo $Component->getListPagesAdmin();
 echo $Component->getMenuDashboard();
 $Username = $_SESSION['login']['user_name'];
-
 // $itens_por_pagina = 10;
-
-// // pegar a pagina atual
+// pegar a pagina atual
 // $pagina = intval($_GET['pagina']);
-
-// // puxar os produtos]
-
-
-// // pegar a quantidade total de objetos no banco de dados por
-
-// // definir o número de páginas
+// puxar os produtos]
+// pegar a quantidade total de objetos no banco de dados por
+// definir o número de páginas
 // $num_paginas = ceil($num_total/$itens_por_pagina);
-
-
 ?>
 <div class="container">
     <div class="d-sm-flex flex-column mb-4 ml-4">

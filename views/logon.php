@@ -9,8 +9,6 @@ if($User->verifyLoginUserON()) {
 <html lang="pt-BR">
     <head>
         <meta charset="utf-8" />
-        <link rel="apple-touch-icon" sizes="76x76" href="./assets/img//apple-icon.png">
-        <link rel="icon" type="image/png" href="./assets/img//favicon.png">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
         <title>Humberto Oliveira| Login</title>
         <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
@@ -66,10 +64,10 @@ if($User->verifyLoginUserON()) {
                                         </form>
                                         <hr>
                                         <div class="text-center">
-                                            <a class="small" href="<?= BASE ?>/pages/forgot-password">Esqueceu a senha?</a>
+                                            <a class="small" href="<?= BASE ?>/accounts/password/reset/reset-password">Esqueceu a senha?</a>
                                         </div>
                                         <div class="text-center">
-                                            <a class="small" href="<?= BASE ?>/pages/cadastro">Criar conta!</a>
+                                            <a class="small" href="<?= BASE ?>/cadastro">Criar conta!</a>
                                         </div>
                                     </div>
                                 </div>

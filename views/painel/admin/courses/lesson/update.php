@@ -13,16 +13,17 @@ echo $Component->getCreatePagesAdmin();
 echo $Component->getListPagesAdmin();
 echo $Component->getMenuDashboard();
 $lessonId = filter_input(INPUT_GET, 'aula', FILTER_VALIDATE_INT);
-
-$Read = new Read();
-$Read->FullRead("SELECT * FROM aulas WHERE aula_id = :ai", "ai={$lessonId}");
-if($Read->getResult()) {
-    $DataLesson = $Read->getResult()[0];
-    } else {
-        die(Error("Aula não encontrada!", "primary"));
-}
 ?>
 <div class="container">
+    <?php
+    $Read = new Read();
+    $Read->FullRead("SELECT * FROM aulas WHERE aula_id = :ai", "ai={$lessonId}");
+    if($Read->getResult()) {
+        $DataLesson = $Read->getResult()[0];
+    } else {
+        die(Error("Aula não encontrada!", "primary"));
+    }
+    ?>
     <div class="card shadow mb-4">
         <div class="card-header py-3 d-sm-flex align-items-center justify-content-between">
             <h1 class="h6 mb-0">Atualizar <b><?= $DataLesson['aula_name'] ?></b></h1>
@@ -40,7 +41,7 @@ if($Read->getResult()) {
                     $Course->updateLesson($updateLesson, $lessonId);
                     if($Course->getResult()) {
                         Error($Course->getError());
-                        header('Location: ' . BASE . '/painel/courses/lesson/list');
+                        header('Location: ' . BASE . '/painel/admin/courses/lesson/list');
                         die();
                     } else {
                         Error($Course->getError(), 'danger');
@@ -59,7 +60,7 @@ if($Read->getResult()) {
                     <label for="exampleInputPassword1">URL</label>
                     <input type="text" class="form-control" placeholder="URL da aula" name="url" id="inputPassword" value="<?= $DataLesson['aula_url'] ?>">
                 </div>
-                <a href="<?= BASE ?>/painel/courses/lesson/list" class="btn btn-outline-success mb-2" title="Voltar para lista de aulas">Voltar</a>
+                <a href="<?= BASE ?>/painel/admin/courses/lesson/list" class="btn btn-outline-success mb-2" title="Voltar para lista de aulas">Voltar</a>
                 <input type="submit" class="btn btn-success mb-2" name="update_lesson" value="Atualizar">
             </form>
         </div>

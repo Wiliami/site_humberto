@@ -9,69 +9,6 @@ class User {
 	private $Error;
 	private $Result;
 
-	public function createLevelUser($createLevel) {
-		if(empty($createLevel['level_desc'])) {
-			$this->Error = "Campo obrigatório!";
-			$this->Result = false; 
-		} else {
-			$createLevel['level_user_create'] = $_SESSION['login']['user_id'];
-			$createLevel['level_create_date'] = date('Y-m-d H:i:s');
-			$Create = new Create();
-			$Create->ExeCreate('users_levels', $createLevel);
-			if ($Create->getResult()) {
-				$this->Result = $Create->getResult();
-				$this->Error = "Nível de usuário cadastrado com sucesso!";
-			} else {
-				$this->Result = false;
-				$this->Error = $Create->getError();
-			}
-		}
-	}
-
-	public function updateLevelUser($updateLevelUser, $levelId) {
-		if(empty($updateLevelUser['level_desc'])) {
-			$this->Error = "Preencha o campo de nome de nível";
-			$this->Result = false;
-		} else {
-			$updateLevelUser['level_user_update'] = $_SESSION['login']['user_id'];
-			$Update = new Update();
-			$Update->ExeUpdate("users_levels", $updateLevelUser, "WHERE level_id = :li", "li={$levelId}");
-			if($Update->getResult()) {
-				$this->Result = false;
-				$this->Error = "O nível foi atualizado com sucesso!";
-			} else {
-				$this->Result = $Update->getResult();
-				$this->Error = $Update->getError();
-			}
-		}
-	}
-
-	public function deleteLevelUser($levelId) {
-		if($this->verifyLevelUser($levelId)) {
-			$this->Result = false;
-			$this->Error = "O nível possui usuários cadastrados!";
-		} else {
-			$Delete = new Delete();
-			$Delete->ExeDelete("users_levels", "WHERE level_id = :li", "li={$levelId}");
-			if($Delete->getResult()) {
-				$this->Result = $Delete->getResult();
-				$this->Error = "Nível excluído com sucesso!";
-			} else {
-				$this->Result = false;
-				$this->Error = $Delete->getError();
-			}
-		}
-	}	
-
-	public function verifyLevelUser($levelId) {
-		$Read = new Read();
-		$Read->FullRead("SELECT * FROM users WHERE user_level = :ul", "ul={$levelId}");
-		if($Read->getResult()) {
-			return true;
-		}
-		return false;
-	}
-
 
 	public function verifyLevelUserModerator() {
 		if($_SESSION['login']['user_level'] >= 6) { 
@@ -206,7 +143,7 @@ class User {
 
 	public function verifyLogon() { 
         if(isset($_SESSION['usuario']) || isset($_SESSION['senha'])) {
-        header("Location: " . BASE . "/pages/login");
+        header("Location: " . BASE . "/logon");
         exit();
         }
     }
@@ -237,7 +174,7 @@ class User {
 			return true;
 		} else {
 			unset($_SESSION['login']);
-			header("Location: " . BASE . "/pages/login");
+			header("Location: " . BASE . "/logon");
 			return false;
 		}
 	}
@@ -259,7 +196,7 @@ class User {
 	public function logout() {
 		session_start();
 		session_destroy();
-		header('Location: ' . BASE . '/pages/logon');
+		header('Location: ' . BASE . '/logon');
 		die();
 	}
 

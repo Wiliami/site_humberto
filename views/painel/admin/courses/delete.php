@@ -22,9 +22,9 @@ $courseId = filter_input(INPUT_GET, 'delete_curso', FILTER_VALIDATE_INT);
     if($Read->getResult()) {
         $DataCourse = $Read->getResult()[0];
     } else {
-        Error("Curso não encontrado!", 'danger')
+        die(Error("Curso não encontrado!", 'danger'));
         ?>
-    <a href="<?= BASE ?>/painel/courses/list" class="btn btn-outline-success" title="Voltar para a lista de cursos">Voltar</a>    
+    <a href="<?= BASE ?>/painel/admin/courses/list" class="btn btn-outline-success" title="Voltar para a lista de cursos">Voltar</a>    
     <?php
     die(); 
     }
@@ -43,14 +43,14 @@ $courseId = filter_input(INPUT_GET, 'delete_curso', FILTER_VALIDATE_INT);
                     $Course->deleteCourse($courseId);
                     if($Course->getResult()) {
                         Error($Course->getError());
-                        header('Location: ' . BASE . '/painel/courses/list');
+                        header('Location: ' . BASE . '/painel/admin/courses/list');
                     } else {
                         Error($Course->getError(), 'warning');
                     }
                 } 
                 ?>
                
-                <a href="<?= BASE ?>/painel/courses/list" class="btn btn-outline-success mb-2" title="Voltar para lista de cursos">Voltar</a>
+                <a href="<?= BASE ?>/painel/admin/courses/list" class="btn btn-outline-success mb-2" title="Voltar para lista de cursos">Voltar</a>
                 <button type="button" class="btn btn-danger mb-2" data-toggle="modal" data-target="#exampleModal">
                     Excluir
                 </button>

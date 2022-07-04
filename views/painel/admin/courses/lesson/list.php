@@ -30,7 +30,7 @@ $moduleId = filter_input(INPUT_GET, 'module', FILTER_VALIDATE_INT);
             }
             ?>
             <div class="d-flex flex-end">
-                <a href="<?= BASE ?>/painel/courses/lesson/create&module=<?= $DataModule['modulo_id'] ?>" class="btn btn-success rounded-pill" style="border-radius: 50%; font-size: 11px;">Cadastrar nova aula</a>
+                <a href="<?= BASE ?>/painel/admin/courses/lesson/create&module=<?= $DataModule['modulo_id'] ?>" class="btn btn-success rounded-pill" style="border-radius: 50%; font-size: 11px;">Cadastrar nova aula</a>
                 <!-- <a href="<?= BASE ?>/painel/courses/lesson/comments/list" class="btn btn-success rounded-pill ml-2" style="border-radius: 50%; font-size: 11px;">Comentários das aulas</a> -->
             </div>
         </div>
@@ -56,27 +56,27 @@ $moduleId = filter_input(INPUT_GET, 'module', FILTER_VALIDATE_INT);
                         LEFT JOIN users uu ON uu.user_id = a.aula_update_user
                         WHERE modulo_id = :mi", "mi={$moduleId}");
                         if($Read->getResult()) {
-                            foreach($Read->getResult() as $Lesson) {
+                            foreach($Read->getResult() as $DataLesson) {
                                 ?>
                         <tr style="font-size: 10px">
                             <td>
-                                <span><?= $Lesson['aula_name'] ?></span>
+                                <span><?= $DataLesson['aula_name'] ?></span>
                             </td>
                             <td class="text-center">
-                                <span><?= $Lesson["aula_duracao"] ?></span> 
+                                <span><?= $DataLesson["aula_duracao"] ?></span> 
                             </td>
                             <td>
-                                <span><?= $Lesson['aula_url'] ?></span>
+                                <span><?= $DataLesson['aula_url'] ?></span>
                             </td>
                             <td>
-                                <span><?= $Lesson['create_user'] ?></span>
+                                <span><?= $DataLesson['create_user'] ?></span>
                             </td>
                             <td>
-                                <span><?= $Lesson['update_user'] ?></span>
+                                <span><?= $DataLesson['update_user'] ?></span>
                             </td>
                             <td>
-                                <a href="<?= BASE ?>/painel/courses/lesson/update&aula=<?= $Lesson['aula_id'] ?>" class="btn-sm" title="Editar <?= $Lesson['aula_name'] ?>"><i class="fa fa-edit"></i></a>
-                                <a href="<?= BASE ?>/painel/courses/lesson/delete&delete_aula=<?= $Lesson['aula_id'] ?>" class="danger btn-sm" title="Excluir <?= $Lesson['aula_name'] ?>" style="color: #e74a3b;"><i class="fa fa-trash-o"></i></a>
+                                <a href="<?= BASE ?>/painel/admin/courses/lesson/update&aula=<?= $DataLesson['aula_id'] ?>" class="btn-sm" title="Editar <?= $DataLesson['aula_name'] ?>"><i class="fa fa-edit"></i></a>
+                                <a href="<?= BASE ?>/painel/admin/courses/lesson/delete&delete_aula=<?= $DataLesson['aula_id'] ?>" class="danger btn-sm" title="Excluir <?= $DataLesson['aula_name'] ?>" style="color: #e74a3b;"><i class="fa fa-trash-o"></i></a>
                             </td>
                         </tr>
                         <?php

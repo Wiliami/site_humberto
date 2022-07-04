@@ -27,7 +27,7 @@ $CreateMsg = filter_input(INPUT_GET, 'create', FILTER_VALIDATE_BOOL);
     } else {
         Error("Curso não encontrado!", 'warning');
             ?>
-        <a href="<?= BASE ?>/painel/courses/list" class="btn btn-outline-success" title="Voltar para a lista de cursos">Voltar</a>
+        <a href="<?= BASE ?>/painel/admin/courses/list" class="btn btn-outline-success" title="Voltar para a lista de cursos">Voltar</a>
     <?php
         die();
     }   
@@ -69,7 +69,7 @@ $CreateMsg = filter_input(INPUT_GET, 'create', FILTER_VALIDATE_BOOL);
                             <label for="exampleInputPassword2">Valor</label>
                             <input type="number" step="0.01" class="form-control" id="exampleInputPassword2" placeholder="Valor do curso" name="valor" value="<?= $DataCourse['curso_valor'] ?>">
                         </div>
-                        <a href="<?= BASE ?>/painel/courses/list" class="btn btn-outline-success" title="Voltar para a lista de cursos">Voltar</a>
+                        <a href="<?= BASE ?>/painel/admin/courses/list" class="btn btn-outline-success" title="Voltar para a lista de cursos">Voltar</a>
                         <input type="submit" class="btn btn-success" name="update_course" value="Atualizar">
                     </form>
                 </div>

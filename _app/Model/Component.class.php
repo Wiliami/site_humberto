@@ -33,7 +33,7 @@ class Component {
                 </ul>
                 <div class=\"col-md-auto text-end\">
                     <!-- <a href=' " . BASE . "/pages/cadastro' type=\"button\" class=\"btn me-1 mb-0\">Cadastro</a> -->
-                    <!-- <a href=' " . BASE . "/pages/login' type=\"button\" class=\"btn btn-warning w-auto me-1 mb-0\">Área de membros</a> -->
+                    <!-- <a href=' " . BASE . "/logon' type=\"button\" class=\"btn btn-warning w-auto me-1 mb-0\">Área de membros</a> -->
                     <li href='"  . BASE . "/' class=\"nav-link px-2 link-secondary\">...</li>
                 </div>   
             </nav>
@@ -182,7 +182,7 @@ class Component {
         ';
     }
 
-    public function getHeadHtmlDashboard($title = 'SELECT curso_titulo FROM cursos') {
+    public function getHeadHtmlDashboard($title = '') {
         return '
         <!DOCTYPE html>
         <html lang="pt-BR">
@@ -374,16 +374,16 @@ class Component {
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="' . BASE . '/painel/profile/pages/profile-user">
+                                <a class="dropdown-item" href="' . BASE . '/accounts/profile-user">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Minha conta
                                 </a>
-                                <a class="dropdown-item" href="' . BASE . '/painel/profile/pages/reset-password">
+                                <a class="dropdown-item" href="' . BASE . '/accounts/password/change">
                                     <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Mudar senha
                                 </a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="' . BASE . '/pages/logout" data-toggle="modal" data-target="#logoutModal">
+                                <a class="dropdown-item" href="' . BASE . '/logout" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Sair
                                 </a>
@@ -570,7 +570,7 @@ class Component {
                                         Mudar senha
                                     </a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="' . BASE . '/pages/logout" data-toggle="modal" data-target="#logoutModal">
+                                    <a class="dropdown-item" href="' . BASE . '/logout" data-toggle="modal" data-target="#logoutModal">
                                         <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                         Logout
                                     </a>
@@ -652,23 +652,23 @@ class Component {
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Páginas admin</h6>
-                        <a class="collapse-item" href="' . BASE . '/painel/admin/pages/cursos-aprovados">
+                        <a class="collapse-item" href="' . BASE . '/painel/admin/cursos-aprovados">
                             <i class="fas fa-book"></i>
                             Cursos em análise
                             </a>
-                        <a class="collapse-item" href="' . BASE . '/painel/admin/pages/historico-compras">
+                        <a class="collapse-item" href="' . BASE . '/painel/admin/historico-compras">
                             <i class="fas fa-history"></i>
                             Histórico de compras
                         </a>
-                        <a class="collapse-item" href="' . BASE . '/painel/admin/pages/settings">
+                        <a class="collapse-item" href="' . BASE . '/painel/admin/settings">
                             <i class="fas fa-cogs"></i>
                             Configurações
                         </a>
-                        <a class="collapse-item" href="' . BASE . '/painel/admin/pages/help">
+                        <a class="collapse-item" href="' . BASE . '/painel/admin/help">
                             <i class="fas fa-hands-helping"></i>
                             Ajuda
                         </a>
-                        <a class="collapse-item" href="' . BASE . '/painel/admin/pages/suporte">
+                        <a class="collapse-item" href="' . BASE . '/painel/admin/suporte">
                             <i class="fas fa-info-circle"></i>
                             Suporte
                         </a>
@@ -702,11 +702,11 @@ class Component {
                             <i class="fas fa-money-bill-alt"></i>
                             Minhas compras
                         </a>
-                        <a class="collapse-item" href="' . BASE . '/painel/profile/pages/suporte">
+                        <a class="collapse-item" href="' . BASE . '/accounts/suporte">
                             <i class="fas fa-info-circle"></i>
                             Suporte
                         </a>
-                        <a class="collapse-item" href="' . BASE . '/painel/profile/pages/settings">
+                        <a class="collapse-item" href="' . BASE . '/accounts/settings">
                             <i class="fas fa-cogs"></i>
                             Configurações
                         </a>
@@ -770,7 +770,7 @@ class Component {
                         <i class="fas fa-user"></i>
                         Usuários
                     </a>
-                    <a class="collapse-item" href="' . BASE . '/painel/courses/list">
+                    <a class="collapse-item" href="' . BASE . '/painel/admin/courses/list">
                         <i class="fas fa-book"></i>
                         Cursos
                     </a>
@@ -778,11 +778,11 @@ class Component {
                         <i class="fas fa-user"></i>
                         Matrículas cursos
                     </a>    
-                    <a class="collapse-item" href="' . BASE . '/painel/courses/categorias/list">
+                    <a class="collapse-item" href="' . BASE . '/painel/admin/courses/categorias/list">
                         <i class="fas fa-book"></i>
                         Categorias cursos
                     </a>
-                    <a class="collapse-item" href="' . BASE . '/painel/courses/lesson/comments/list">
+                    <a class="collapse-item" href="' . BASE . '/painel/admin/courses/lesson/comments/list">
                         <i class="fas fa-solid fa-comments"></i>   
                         Comentários de aulas
                     </a>
@@ -925,7 +925,7 @@ class Component {
                         <div class="modal-body">Selecione "Sair" para encerrar a sua sessão.</div>
                         <div class="modal-footer">
                             <button class="btn btn-outline-dark" type="button" data-dismiss="modal">Cancelar</button>
-                            <a class="btn btn-success" href="' . BASE . '/pages/logout">Sair</a>
+                            <a class="btn btn-success" href="' . BASE . '/logout">Sair</a>
                         </div>
                     </div>
                 </div>
@@ -939,8 +939,8 @@ class Component {
     </html>';
     }
 
-            public function getLinkScriptFooterDashboard() {
-                return '
+    public function getLinkScriptFooterDashboard() {
+        return '
                             <footer class="sticky-footer bg-white">
                             <div class="container my-auto">
                                 <div class="copyright text-center my-auto">
@@ -975,15 +975,14 @@ class Component {
                             </div>
                         </div>
                     </div>
-                <script src="'. BASE .'/assets/assets/js/JQuery/jquery-3.6.0.min.js"></script>
-                <script src="'. BASE .'/assets/site/js/jquery.min.js"></script>
-                <script src="'. BASE .'/assets/site/js/bootstrap.bundle.min.js"></script>
-                <script src="'. BASE .'/assets/site/js/jquery.easing.min.js"></script>
-                <script src="'. BASE .'/assets/site/js/sb-admin-2.min.js"></script>
+                <script src="'. BASE .'/public/js/JQuery/jquery-3.6.0.min.js"></script>
+                <script src="'. BASE .'/public/js/jquery.min.js"></script>
+                <script src="'. BASE .'/public/site/js/bootstrap.bundle.min.js"></script>
+                <script src="'. BASE .'/public/site/js/jquery.easing.min.js"></script>
+                <script src="'. BASE .'/public/site/js/sb-admin-2.min.js"></script>
             </body>
-        </html>
-        ';
-    }
+        </html>';
+        }
 
     public function getBarraMenuOptions() {
     return '
@@ -1085,19 +1084,19 @@ class Component {
 
     public function getOpcoes($Users) {
         return '
-            <a href="' . BASE . '/painel/courses/list" class="table-link" title="Pesquisar '. $Users['user_name'] .'">
+            <a href="' . BASE . '/painel/admin/courses/list" class="table-link" title="Pesquisar '. $Users['user_name'] .'">
                 <span class="fa-stack">
                     <i class="fa fa-square fa-stack-2x"></i>
                     <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
                 </span>
             </a>
-            <a href="' . BASE . '/painel/courses/update" class="table-link" title="Alterar nível de ' . $Users['user_name'] .'">
+            <a href="' . BASE . '/painel/admin/courses/update" class="table-link" title="Alterar nível de ' . $Users['user_name'] .'">
                 <span class="fa-stack">
                     <i class="fa fa-square fa-stack-2x"></i>
                     <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
                 </span>
             </a>
-            <a href="' . BASE . '/painel/courses/delete" class="table-link danger" title="Excluir ' . $Users['user_name'] .'">
+            <a href="' . BASE . '/painel/admin/courses/delete" class="table-link danger" title="Excluir ' . $Users['user_name'] .'">
                 <span class="fa-stack">
                     <i class="fa fa-square fa-stack-2x"></i>
                     <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
@@ -1142,7 +1141,7 @@ class Component {
                     <div class="modal-body">Selecione "Sair" para encerrar a sua sessão.</div>
                     <div class="modal-footer">
                         <button class="btn btn-outline-dark" type="button" data-dismiss="modal">Cancelar</button>
-                        <a class="btn btn-success" href="'. BASE . '/pages/logout">Sair</a>
+                        <a class="btn btn-success" href="'. BASE . '/logout">Sair</a>
                     </div>
                 </div>
             </div>

@@ -17,7 +17,7 @@ echo $Component->getMenuDashboard();
     <div class="card shadow mb-4">
         <div class="card-header py-3 d-sm-flex align-items-center justify-content-between">
             <div class="h5 m-0 text-dark" style="font-size: 14px">Lista de cursos</div>
-            <a href="<?= BASE ?>/painel/courses/create" class="btn btn-success rounded-pill" style="border-radius: 50%; font-size: 11px;">Cadastrar novo curso</a>
+            <a href="<?= BASE ?>/painel/admin/courses/create" class="btn btn-success rounded-pill" style="border-radius: 50%; font-size: 11px;">Cadastrar novo curso</a>
         </div>
         <div class="card-body">
             <div class="table-responsive">
@@ -39,25 +39,25 @@ echo $Component->getMenuDashboard();
                             LEFT JOIN users uc ON uc.user_id = c.curso_user_create
                             LEFT JOIN users uu ON uu.user_id = c.curso_user_update");
                         if($Read->getResult()) {
-                            foreach($Read->getResult() as $Courses) {
+                            foreach($Read->getResult() as $DataCourse) {
                                 ?>
                         <tr class="btn-sm" style="font-size: 10px;">
                             <td>
-                                <?= $Courses['curso_titulo'] ?> 
+                                <?= $DataCourse['curso_titulo'] ?> 
                             </td>
                             <td>
-                                R$<?= number_format($Courses['curso_valor'], 2, ',', '.') ?>    
+                                R$<?= number_format($DataCourse['curso_valor'], 2, ',', '.') ?>    
                             </td>
                             <td>
-                                <?= $Courses['user_create'] ?>  
+                                <?= $DataCourse['user_create'] ?>  
                             </td>
                             <td>
-                                <?= $Courses['user_update'] ?>  
+                                <?= $DataCourse['user_update'] ?>  
                             </td>
                             <td>
-                                <a href="<?= BASE ?>/painel/courses/update&update_curso=<?= $Courses['curso_id'] ?>" class="btn-sm" title="Editar <?= $Courses['curso_titulo'] ?>"><i class="fas fa-edit"></i></a>
-                                <a href="<?= BASE ?>/painel/courses/modules/list&course=<?= $Courses['curso_id'] ?>" class="btn-sm" title="Módulos de <?= $Courses['curso_titulo'] ?>" style="color: #1cc88a;"><i class="fas fa-book"></i></a>
-                                <a href="<?= BASE ?>/painel/courses/delete&delete_curso=<?= $Courses['curso_id'] ?>" class="danger btn-sm" title="Excluir <?= $Courses['curso_titulo'] ?>" style="color: red;"><i class="fa fa-trash-o"></i></a>
+                                <a href="<?= BASE ?>/painel/admin/courses/update&update_curso=<?= $DataCourse['curso_id'] ?>" class="btn-sm" title="Editar <?= $DataCourse['curso_titulo'] ?>"><i class="fas fa-edit"></i></a>
+                                <a href="<?= BASE ?>/painel/admin/courses/modules/list&course=<?= $DataCourse['curso_id'] ?>" class="btn-sm" title="Módulos de <?= $DataCourse['curso_titulo'] ?>" style="color: #1cc88a;"><i class="fas fa-book"></i></a>
+                                <a href="<?= BASE ?>/painel/admin/courses/delete&delete_curso=<?= $DataCourse['curso_id'] ?>" class="danger btn-sm" title="Excluir <?= $DataCourse['curso_titulo'] ?>" style="color: red;"><i class="fa fa-trash-o"></i></a>
                             </td>
                         </tr>
                         <?php

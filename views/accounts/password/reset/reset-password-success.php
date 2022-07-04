@@ -35,7 +35,4 @@ echo $Component->getMenuDashboard();
         </div>
     </div>
 </div> 
-<?php
-    $Component = new Component();
-    echo $Component->getFooterDashboard();
-?>
+<?= $Component->getFooterDashboard(); ?>
