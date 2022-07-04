@@ -34,17 +34,17 @@ echo $Component->getMenuDashboard();
                     </thead>
                     <tbody>
                         <?php
-                            $Read = new Read();
-                            $Read->FullRead("SELECT u.*, ul.level_desc 
-                                    FROM users u 
-                                    LEFT JOIN users_levels ul ON ul.level_id = u.user_level");
-                            if($Read->getResult()) {
-                                foreach($Read->getResult() as $User) {                    
-                                    ?>
+                        $Read = new Read();
+                        $Read->FullRead("SELECT u.*, ul.level_desc 
+                            FROM users u 
+                            LEFT JOIN users_levels ul ON ul.level_id = u.user_level");
+                        if($Read->getResult()) {
+                            foreach($Read->getResult() as $User) {                    
+                                ?>
                         <tr class="btn-sm">
-                            <td>
-                                <span><?= $Component->getAvatarUser(); ?></span>
-                            </td>
+                            <!-- <td>
+                                <span> $Component->getAvatarUser(); </span>
+                            </td> -->
                             <td>
                                 <span><?= $User['user_name'] ?></span>
                             </td>
@@ -87,7 +87,7 @@ echo $Component->getMenuDashboard();
                         <?php 
                             }
                         } else {
-                            Error("Ainda não existem usuários!");
+                            die(Error("Ainda não existem usuários!"));
                         }   
                         ?>
                     </tbody>
@@ -108,8 +108,6 @@ echo $Component->getMenuDashboard();
     </div>
 </div>
 <?= $Component->getFooterDashboard(); ?>
-<script src="<? BASE ?>/src/datatables/jquery.dataTables.min.js"></script>
-<script src="<? BASE ?>/src/datatables/dataTables.bootstrap4.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
 <script type="text/javascript" language="javascript">
