@@ -1,7 +1,6 @@
 <?php 
 $User = new User();
 $User->verifyExistLoginUser();
-$Read = new Read();
 $Component = new Component();
 echo $Component->getBlockPageAdmin();
 echo $Component->getHeadHtmlDashboard();
@@ -12,7 +11,7 @@ echo $Component->getLiPagesDashboard();
 echo $Component->getCreatePagesAdmin();
 echo $Component->getListPagesAdmin();
 echo $Component->getMenuDashboard();
-$userId = filter_input(INPUT_GET, 'user', FILTER_VALIDATE_INT);
+$Read = new Read();
 ?>
 <div class="container">
     <div class="card shadow mb-4">

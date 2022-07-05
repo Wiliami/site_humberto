@@ -41,8 +41,9 @@ $Read = new Read();
                         $Read->FullRead("SELECT * FROM aulas");
                         if($Read->getResult()) {
                             echo "<option value=''>selecionar</option>";
-                            foreach($Read->getResult() as $Aulas) {
-                                echo "<option value='{$Aulas['aula_id']}'>{$Aulas['aula_name']}</option>";
+                            foreach($Read->getResult() as $DataLesson) {
+                                Check::var_dump_json($DataLesson);
+                                echo "<option value='{$DataLesson['aula_id']}'>{$DataLesson['aula_name']}</option>";
                             }
                         } else {
                             echo "<option value=''>Aulas não encontradas!</option>";
@@ -57,8 +58,8 @@ $Read = new Read();
                         $Read->FullRead("SELECT * FROM users");
                         if($Read->getResult()) {
                             echo "<option value=''>selecionar</option>";
-                            foreach($Read->getResult() as $Users) {
-                                echo "<option value='{$Users['user_id']}'>{$Users['user_name']}</option>";
+                            foreach($Read->getResult() as $DataUser) {
+                                echo "<option value='{$DataUser['user_id']}'>{$DataUser['user_name']}</option>";
                             }
                         } else {
                             echo "<option value=''>Cursos não encontrados!</option>";
