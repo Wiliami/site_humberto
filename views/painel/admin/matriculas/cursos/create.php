@@ -44,8 +44,9 @@ $userId = filter_input(INPUT_GET, 'user', FILTER_VALIDATE_INT);
                         $Read->FullRead("SELECT * FROM cursos WHERE user_id = :ui", "ui={$userId}");
                         if($Read->getResult()) {
                             echo "<option value=''>selecionar</option>";
-                            foreach($Read->getResult() as $Cursos) {
-                                echo "<option value='{$Cursos['curso_id']}'>{$Cursos['curso_titulo']}</option>";
+                            foreach($Read->getResult() as $Read) {
+                                Check::var_dump_json($DataCourse);
+                                echo "<option value='{$DataCourse['curso_id']}'>{$DataCourse['curso_titulo']}</option>";
                             }
                         } else {    
                             echo "<option value=''>Cursos não encontrados!</option>";
@@ -61,8 +62,8 @@ $userId = filter_input(INPUT_GET, 'user', FILTER_VALIDATE_INT);
                         $Read->FullRead("SELECT * FROM users WHERE user_id = :ui", "ui={$userId}");
                         if($Read->getResult()) {
                             echo "<option value=''>selecionar</option>";
-                            foreach($Read->getResult() as $User) {
-                                echo "<option value='{$User['user_id']}'>{$User['user_name']}</option>";
+                            foreach($Read->getResult() as $DataUser) {
+                                echo "<option value='{$DataUser['user_id']}'>{$DataUserUser['user_name']}</option>";
                             }
                         } else {    
                             echo "<option value=''>Usuário não encontrado!</option>";
@@ -70,7 +71,7 @@ $userId = filter_input(INPUT_GET, 'user', FILTER_VALIDATE_INT);
                         ?>
                     </select>   
                 </div>
-                <a href="<?= BASE ?>/painel/matriculas/cursos/list" class="btn btn-outline-success mb-2" title="Voltar para lista de matrículas de cursos">Voltar</a>
+                <a href="<?= BASE ?>/painel/admin/matriculas/cursos/list" class="btn btn-outline-success mb-2" title="Voltar para lista de matrículas de cursos">Voltar</a>
                 <input type="submit" class="btn btn-success mb-2" name="create_matriculate" value="Matricular">
             </form>
         </div>
