@@ -66,7 +66,7 @@ $Read = new Read();
                         ?>
                     </select>
                 </div>
-                <a href="<?= BASE ?>/painel/matriculas/aulas/list" class="btn btn-outline-success mb-2" title="Voltar para lista de matrículas de aulas">Voltar</a>
+                <a href="<?= BASE ?>/painel/admin/matriculas/aulas/list" class="btn btn-outline-success mb-2" title="Voltar para lista de matrículas de aulas">Voltar</a>
                 <input type="submit" class="btn btn-success mb-2" name="create_matriculate" value="Matricular">
             </form>
         </div>

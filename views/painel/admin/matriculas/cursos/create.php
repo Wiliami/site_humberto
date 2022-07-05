@@ -1,6 +1,7 @@
 <?php 
 $User = new User();
 $User->verifyExistLoginUser();
+$Read = new Read();
 $Component = new Component();
 echo $Component->getBlockPageAdmin();
 echo $Component->getHeadHtmlDashboard();
@@ -23,12 +24,12 @@ $userId = filter_input(INPUT_GET, 'user', FILTER_VALIDATE_INT);
                 <?php
                 $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
                 if(!empty($Post['create_matriculate'])) {
-                    $matriculateUser['curso_id'] = $Post['matriculate_course'];
-                    $matriculateUser['user_id'] = $Post['matriculate_user'];
+                    $matriculateCourse['curso_id'] = $Post['matriculate_course'];
+                    $matriculateCourse['user_id'] = $Post['matriculate_user'];
                     $Course = new Course();
-                    $Course->matriculateCreateCourse($matriculateUser);
+                    $Course->matriculateCreateCourse($matriculateCourse);
                     if($Course->getResult()) {
-                        Error($Course->getError());
+                        Error($Course->getResult());
                         header('Location: ' . BASE . '/painel/profile/courses/list');
                         die(); 
                     } else {
@@ -40,12 +41,10 @@ $userId = filter_input(INPUT_GET, 'user', FILTER_VALIDATE_INT);
                     <label for="exampleInputEmail1">Curso</label>
                     <select class="form-control" name="matriculate_course" value="<?= isset($Post['matriculate_course'])? $Post['matriculate_course']: '' ?>">
                         <?php
-                        $Read = new Read();
-                        $Read->FullRead("SELECT * FROM cursos WHERE user_id = :ui", "ui={$userId}");
+                        $Read->FullRead("SELECT * FROM cursos");
                         if($Read->getResult()) {
                             echo "<option value=''>selecionar</option>";
                             foreach($Read->getResult() as $Read) {
-                                Check::var_dump_json($DataCourse);
                                 echo "<option value='{$DataCourse['curso_id']}'>{$DataCourse['curso_titulo']}</option>";
                             }
                         } else {    
@@ -58,8 +57,7 @@ $userId = filter_input(INPUT_GET, 'user', FILTER_VALIDATE_INT);
                     <label for="exampleInputEmail1">Usuário</label>
                     <select class="form-control" name="matriculate_user" value="<?= isset($Post['matriculate_user'])? $Post['matriculate_user']: '' ?>">
                         <?php
-                        $Read = new Read();
-                        $Read->FullRead("SELECT * FROM users WHERE user_id = :ui", "ui={$userId}");
+                        $Read->FullRead("SELECT * FROM users");
                         if($Read->getResult()) {
                             echo "<option value=''>selecionar</option>";
                             foreach($Read->getResult() as $DataUser) {
