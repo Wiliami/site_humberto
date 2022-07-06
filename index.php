@@ -10,7 +10,6 @@ $URL[0] = (!empty($URL[0]) ? $URL[0] : 'index');
 
 
 $Location = './views/' . implode('/', $URL) . '.php';
-//Check::var_dump_json($Location, file_exists($Location));
 if(file_exists($Location) && !is_dir($Location)) {
     require_once($Location);
 } else {
