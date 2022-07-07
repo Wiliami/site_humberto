@@ -15,7 +15,8 @@ class Component {
                 <!-- <link rel="stylesheet" href="' . BASE . '/public/css/menu-active.css" type="text/css"> -->
                 <!-- Estiliza todos os ícons de deshboard -->
                 <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
-            </head>';
+            </head>'
+        ;
     }
 
     public function getMenu() {
@@ -37,8 +38,8 @@ class Component {
                     <li href='"  . BASE . "/' class=\"nav-link px-2 link-secondary\">...</li>
                 </div>   
             </nav>
-        </div>
-        ";
+        </div>"
+        ;
     }
 
     public function getHeader() {

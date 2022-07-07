@@ -18,9 +18,9 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
                 <?php
                 $Read = new Read();
                 $Read->FullRead("SELECT mc.*, c.curso_titulo, c.curso_descricao
-                FROM matriculas_cursos mc
-                LEFT JOIN cursos c ON c.curso_id = mc.curso_id
-                WHERE mc.curso_id = :ci", "ci={$courseId}");
+                    FROM matriculas_cursos mc
+                    LEFT JOIN cursos c ON c.curso_id = mc.curso_id
+                    WHERE mc.curso_id = :ci", "ci={$courseId}");
                 if($Read->getResult()) {
                     $DataCourse = $Read->getResult()[0];
                         ?>
@@ -132,4 +132,26 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
         </div>
     </div>
 </div> -->
+
+
+
+
+
+<div class="container">
+    <div class="pos-f-t">
+        <nav class="navbar navbar-dark bg-dark">
+            <!-- <span class="navbar-toggler-icon"></span> -->
+            <div class="" type="text" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                <h4 class="text-white">Nome do módulo</h4>
+            </div>
+        </nav>
+        <div class="collapse" id="navbarToggleExternalContent">
+            <div class="bg-dark p-4">
+            <i class="fas fa-play-circle"></i>
+
+                <a href="" class="text-muted">Nome da aula</a>
+            </div>
+        </div>
+    </div>
+</div>
  <?= $Component->getFooterDashboard(); ?>

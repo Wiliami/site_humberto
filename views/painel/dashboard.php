@@ -37,7 +37,7 @@ $Username = $_SESSION['login']['user_name'];
             foreach($Read->getResult() as $DataCourse) {
                 // Check::var_dump_json($DataCourse);
                 ?>
-        <a href="<?= BASE ?>/painel/profile/area-curso&curso=<?= $DataCourse['curso_id'] ?>">
+        <a href="<?= BASE ?>/painel/area-membros/area-curso&curso=<?= $DataCourse['curso_id'] ?>">
             <div class="col-lg-4 mb-5">
                 <div class="card" style="width: 18rem;">
                     <?php
