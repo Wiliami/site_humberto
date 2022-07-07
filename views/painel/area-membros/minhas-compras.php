@@ -10,7 +10,7 @@ echo $Component->getLiAdministrativoDashboard();
 echo $Component->getLiCoursesDashboard();
 echo $Component->getLiPagesDashboard();
 echo $Component->getMenuDashboard();
-$userId =$_SESSION['login']['user_id'];
+$userId = $_SESSION['login']['user_id'];
 ?>
 <div class="container">
     <div class="d-sm-flex align-items-center justify-content-start mb-4 d-block">
@@ -24,7 +24,7 @@ $userId =$_SESSION['login']['user_id'];
     if($Read->getResult()) {
         foreach($Read->getResult() as $DataPurchaseUser) {
             ?>
-    <a href="<?= BASE ?>/painel/profile/courses/lesson/area-course&course">
+    <a href="<?= BASE ?>/painel/courses/lesson/area-course&course">
         <div class="col-lg-4 mb-5">
             <div class="card" style="width: 18rem;">
                 <img class="card-img-top" src="<?= BASE ?>/assets/images/backstage_data.png" alt="banner do curso">
@@ -38,7 +38,7 @@ $userId =$_SESSION['login']['user_id'];
      <?php
         }
     } else {
-        Error('Compra não encontrada', 'warning');
+        die(Error('Nenhuma correspondência foi encontrada!', 'warning'));
     }
     ?>
 </div>

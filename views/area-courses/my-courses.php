@@ -72,7 +72,7 @@ $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
             foreach($Read->getResult() as $DataMatriculas) {
                 // Check::var_dump_json($DataMatriculas);
                 ?>
-        <a href="<?= BASE ?>/painel/profile/courses/lesson/area-course&course=<?= $DataMatriculas['curso_id'] ?>">
+        <a href="<?= BASE ?>/painel/area-membros/courses/lesson/area-course&course=<?= $DataMatriculas['curso_id'] ?>">
             <div class="col-lg-4 mb-5">
                 <div class="card" style="width: 18rem;">
                 <?php
