@@ -1,1 +1,1 @@
-console.log('ações'.toUpperCase());
+console.log('mês'.toUpperCase());
