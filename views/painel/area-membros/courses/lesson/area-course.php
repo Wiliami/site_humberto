@@ -10,13 +10,13 @@ echo $Component->getLiCoursesDashboard();
 echo $Component->getLiPagesDashboard();
 echo $Component->getMenuDashboard();
 $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
+$Read = new Read();
 ?>
 <div class="container">
     <div class="row">
         <div class="col">
             <div class="card-body">
                 <?php
-                $Read = new Read();
                 $Read->FullRead("SELECT mc.*, c.curso_titulo, c.curso_descricao
                     FROM matriculas_cursos mc
                     LEFT JOIN cursos c ON c.curso_id = mc.curso_id
@@ -57,7 +57,7 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
                         </h5>
                     </div>
 
-                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                    <div id="collapse<?= $DataModule['modulo_id'] ?>" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
                         <div class="card-body">
                             <i class="fas fa-play-circle"></i>
                             Nome da aula
@@ -76,11 +76,10 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
             <div class="card shadow">
                 <div class="card-header py-3">
                     <?php
-                    $Read = new Read();
                     $Read->FullRead("SELECT mc.*, c.curso_titulo, c.curso_descricao
-                    FROM matriculas_cursos mc
-                    LEFT JOIN cursos c ON c.curso_id = mc.curso_id
-                    WHERE mc.curso_id = :ci", "ci={$courseId}");
+                        FROM matriculas_cursos mc
+                        LEFT JOIN cursos c ON c.curso_id = mc.curso_id
+                        WHERE mc.curso_id = :ci", "ci={$courseId}");
                     if($Read->getResult()) {
                         $DataCourse = $Read->getResult()[0];
                             ?>
@@ -139,19 +138,42 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
 
 <div class="container">
     <div class="pos-f-t">
+        <?php
+        $Read->FullRead("SELECT * FROM modulos WHERE curso_id = :ci", "ci={$courseId}");
+        if($Read->getResult()) {
+            foreach($Read->getResult() as $DataModule) {
+                ?>
         <nav class="navbar navbar-dark bg-dark">
             <!-- <span class="navbar-toggler-icon"></span> -->
-            <div class="" type="text" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-                <h4 class="text-white">Nome do módulo</h4>
+            <div class="" type="text" data-toggle="collapse" data-target="#collapse<?= $DataModule['modulo_id'] ?>" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                <h4 class="text-white"><?= $DataModule['modulo_name'] ?></h4>
             </div>
         </nav>
-        <div class="collapse" id="navbarToggleExternalContent">
+        <div class="collapse" id="collapse<?= $DataModule['modulo_id'] ?>">
             <div class="bg-dark p-4">
-            <i class="fas fa-play-circle"></i>
-
-                <a href="" class="text-muted">Nome da aula</a>
+                <?php
+                $Read->FullRead("SELECT * FROM aulas WHERE modulo_id = :mi", "mi={$DataModule['modulo_id']}");
+                if($Read->getResult()) {
+                    foreach($Read->getResult() as $DataLesson) {
+                        ?>
+                <i class="fas fa-play-circle"></i>
+                <a href="" class="text-muted"><?= $DataLesson['aula_name'] ?></a>
+                <?php               
+                    }
+                } else {
+                    die(Error('Aula não encontrada!', 'danger'));
+                }
+                ?>
             </div>
         </div>
+        <?php
+            }
+        } else {
+            die(Error('Módulos não encontrados', 'danger'));
+        }
+        ?>
     </div>
 </div>
+
+<!-- O id se conecta com o data-target da tag  -->
  <?= $Component->getFooterDashboard(); ?>
