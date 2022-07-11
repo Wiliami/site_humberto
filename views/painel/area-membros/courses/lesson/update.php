@@ -25,7 +25,7 @@ $commentId = filter_input(INPUT_GET, 'comment', FILTER_VALIDATE_INT);
                 if($Read->getResult()) {
                     $DataComment = $Read->getResult()[0];
                 } else {
-                    Error('Comentário não excluído', 'warning');
+                    die(Error('Comentário não excluído', 'warning'));
                 }
                 ?>
                 <div class="form-group">

@@ -11,7 +11,6 @@ echo $Component->getLiPagesDashboard();
 echo $Component->getMenuDashboard();
 $Username = $_SESSION['login']['user_name'];
 $userId = $_SESSION['login']['user_id'];
-
 $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 ?>
 <div class="container">

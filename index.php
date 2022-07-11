@@ -16,6 +16,4 @@ if(file_exists($Location) && !is_dir($Location)) {
     require_once('./views/404.php');
 }
 ob_end_flush();
-
-// comentário no index
 ?>

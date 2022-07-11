@@ -93,11 +93,11 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
     </div>
 
     <?php
-    $Read->FullRead("SELECT * FROM aulas WHERE aula_id = :ai", "ai={$aulaId}");
+    $Read->FullRead("SELECT * FROM aulas WHERE modulo_id = :mi", "mi={$DataModule['modulo_id']}");
     if($Read->getResult()) {
-        foreach($Read->getResult() as $Lesson) {
+        foreach($Read->getResult() as $DataLesson) {
             ?>
-    <h1 class="h3 text-gray-900 mb-4 mt-4"><?= $Lesson['aula_name'] ?></h1>
+    <h1 class="h3 text-gray-900 mb-4 mt-4"><?= $DataLesson['aula_name'] ?></h1>
     <?php              
         }
     } else {

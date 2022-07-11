@@ -28,7 +28,7 @@ $Read = new Read();
                 <p class="card-text"><?= $DataCourse['curso_descricao'] ?></p>
                 <?php
                 } else {
-                    die(Error('Curso não encontrado!', 'warning'));
+                    die(Error('Curso não encontrado!', 'danger'));
                 }
                 ?>
                 <small>1h 3m</small>
@@ -39,33 +39,87 @@ $Read = new Read();
         <div class="col-7">
             <div id="accordion" class="mt-4">
                 <div class="card">
+                    <?php
+                    $Read->FullRead("SELECT * FROM modulos WHERE curso_id = :ci", "ci={$courseId}");
+                    if($Read->getResult()) {
+                        foreach($Read->getResult() as $DataModule) {
+                            ?>
                     <div class="card-header" id="headingOne">
                         <h5 class="mb-0">
-                            <?php
-                            $Read->FullRead("SELECT * FROM modulos WHERE curso_id = :ci", "ci={$courseId}");
-                            if($Read->getResult()) {
-                                foreach($Read->getResult() as $DataModule) {
-                                    ?>
                             <a href="" class="nav-link collapsed text-dark" data-toggle="collapse" data-target="#collapse<?= $DataModule['modulo_id'] ?>" aria-expanded="true" aria-controls="collapseOne">
                                 <?= $DataModule['modulo_name'] ?>
                             </a>
-                            <?php }
-                            } else {
-                                die(Error('Curso não encontrado!', 'warning'));
-                            }
-                            ?>
                         </h5>
                     </div>
-
+                    <?php }
+                    } else {
+                        die(Error('Curso não encontrado!', 'danger'));
+                    }
+                    ?>
                     <div id="collapse<?= $DataModule['modulo_id'] ?>" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
                         <div class="card-body">
+                            <?php
+                            $Read->FullRead("SELECT * FROM aulas WHERE modulo_id = :mi", "mi={$DataModule['modulo_id']}");
+                            if($Read->getResult()) {
+                                foreach($Read->getResult() as $DataLesson) {
+                                    ?>
                             <i class="fas fa-play-circle"></i>
-                            Nome da aula
+                            <!-- Nome da aula -->
+                                <?= $DataLesson['aula_name'] ?>
+                            <?php               
+                                }
+                            } else {
+                                die(Error('Aula não encontrada!', 'danger'));
+                            }
+                            ?>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+
+
+    <div class="pos-f-t">
+        <div class="collapse" id="navbarToggleExternalContent">
+            <div class="bg-dark p-4">
+            <h4 class="text-white">Collapsed content</h4>
+            <span class="text-muted">Toggleable via the navbar brand.</span>
+            </div>
+        </div>
+        <nav class="navbar navbar-dark bg-dark">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+        </nav>
+    </div>
+
+    <div class="pos-f-t">
+        <div class="collapse" id="navbarToggleExternalContent">
+            <div class="bg-dark p-4">
+            <h4 class="text-white">Collapsed content</h4>
+            <span class="text-muted">Toggleable via the navbar brand.</span>
+            </div>
+        </div>
+        <nav class="navbar navbar-dark bg-dark">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+        </nav>
+    </div>
+
+    <div class="pos-f-t">
+        <div class="collapse" id="navbarToggleExternalContent">
+            <div class="bg-dark p-4">
+            <h4 class="text-white">Collapsed content</h4>
+            <span class="text-muted">Toggleable via the navbar brand.</span>
+            </div>
+        </div>
+        <nav class="navbar navbar-dark bg-dark">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+        </nav>
     </div>
 </div>
 
