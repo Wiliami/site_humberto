@@ -53,6 +53,7 @@ $Read = new Read();
                     </div>
                     <?php }
                     } else {
+                        // mensagens de saída de erros e exceções
                         die(Error('Curso não encontrado!', 'danger'));
                     }
                     ?>
