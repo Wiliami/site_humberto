@@ -29,7 +29,7 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
                 <a href="<?= BASE ?>/painel/admin/courses/modules/create&course=<?= $DataCourse['curso_id'] ?>" class="btn btn-success rounded-pill" style="border-radius: 50%; font-size: 11px;">Cadastrar módulo</a>
             <?php
                 } else {
-                    die(Error("Curso não encontrado!", "warning"));
+                    die(Error("Curso não encontrado!", "danger"));
                 }
             ?>
         </div>

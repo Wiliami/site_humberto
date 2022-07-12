@@ -13,15 +13,15 @@ echo $Component->getCreatePagesAdmin();
 echo $Component->getListPagesAdmin();
 echo $Component->getMenuDashboard();
 $lessonId = filter_input(INPUT_GET, 'aula', FILTER_VALIDATE_INT);
+$Read = new Read();
 ?>
 <div class="container">
     <?php
-    $Read = new Read();
     $Read->FullRead("SELECT * FROM aulas WHERE aula_id = :ai", "ai={$lessonId}");
     if($Read->getResult()) {
         $DataLesson = $Read->getResult()[0];
     } else {
-        die(Error("Aula não encontrada!", "primary"));
+        die(Error("Aula não encontrada!", "danger"));
     }
     ?>
     <div class="card shadow mb-4">
@@ -54,7 +54,7 @@ $lessonId = filter_input(INPUT_GET, 'aula', FILTER_VALIDATE_INT);
                 </div>
                 <div class="form-group">
                     <label for="exampleInputPassword1">Duração</label>
-                    <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Duração da aula" name="time" value="<?= $DataLesson['aula_duracao'] ?>">
+                    <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Duração da aula" name="time" value="Digite a duração da aula">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputPassword1">URL</label>

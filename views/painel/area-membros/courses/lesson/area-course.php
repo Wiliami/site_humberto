@@ -66,7 +66,7 @@ $Read = new Read();
                                     ?>
                             <i class="fas fa-play-circle"></i>
                             <!-- Nome da aula -->
-                                <?= $DataLesson['aula_name'] ?>
+                               <a href=""><?= $DataLesson['aula_name'] ?></a> 
                             <?php               
                                 }
                             } else {
@@ -167,6 +167,7 @@ $Read = new Read();
                 $Read->FullRead("SELECT * FROM aulas WHERE modulo_id = :mi", "mi={$DataModule['modulo_id']}");
                 if($Read->getResult()) {
                     foreach($Read->getResult() as $DataLesson) {
+                        Check::var_dump_json($DataLesson);
                         ?>
                 <i class="fas fa-play-circle"></i>
                 <a href="" class="text-muted"><?= $DataLesson['aula_name'] ?></a>
@@ -181,7 +182,7 @@ $Read = new Read();
         <?php
             }
         } else {
-            die(Error('Módulos não encontrados', 'danger'));
+            die(Error('Módulos do curso não encontrados', 'danger'));
         }
         ?>
     </div>
