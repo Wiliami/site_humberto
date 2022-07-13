@@ -49,7 +49,7 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
                     </a>
                 <?php 
                 } else {
-                    die(Error('Curso não encontrado!', 'success'));
+                    Error('Curso não encontrado!', 'danger');
                 }
                 ?>
                 <i class="fas fa-solid fa-chevron-right ml-2 text-gray-800"></i>
@@ -63,7 +63,7 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
                     </a>
                 <?php
                 } else {
-                    die(Error('Módulos não encontrados', 'success'));
+                    Error('Módulos do curso não encontrados', 'danger');
                 }
                 ?>       
             </div>
@@ -88,9 +88,20 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
     <button type="button" id="pegarBtn" class="btn btn-success">Pegar butão</button>
     <button type="button" id="pauseBtn" class="btn btn-danger">Pause</button> 
     
-    <div class="progress mt-4">
-        <div class="progress-bar bg-success" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" id="BarraProgress">25%</div>
+    <div class="progress-wrapper">
+        <div class="progress-info d-flex align-items-center justify-content-end">
+            <div class="progress-label">
+                <!-- <span>Tarefa completa</span> -->
+            </div>
+            <div class="progress-percentage">
+                <span>60%</span>
+            </div>
+        </div>
+        <div class="progress">
+            <div class="progress-bar bg-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div>
+        </div>
     </div>
+
 
     <?php
     $Read->FullRead("SELECT * FROM aulas WHERE modulo_id = :mi", "mi={$DataModule['modulo_id']}");
@@ -101,7 +112,7 @@ $courseId = filter_input(INPUT_GET, 'course', FILTER_VALIDATE_INT);
     <?php              
         }
     } else {
-        die(Error('Aula não encontrada!', 'success'));
+        Error('Aula não encontrada!', 'danger');
     }
     ?>
     <hr>

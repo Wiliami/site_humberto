@@ -1,1 +1,1 @@
-console.log('mês'.toUpperCase());
+console.log('vai tomar no c'.toUpperCase());
