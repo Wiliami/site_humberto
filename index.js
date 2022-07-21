@@ -1,1 +1,1 @@
-console.log('vai tomar no c'.toUpperCase());
+console.log('A'.toUpperCase());
