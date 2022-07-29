@@ -11,12 +11,13 @@ echo $Component->getCreatePagesAdmin();
 echo $Component->getListPagesAdmin();
 echo $Component->getMenuDashboard();
 $Username = $_SESSION['login']['user_name'];
-// $itens_por_pagina = 10;
+$itens_por_pagina = 10;
+
 // pegar a pagina atual
-// $pagina = intval($_GET['pagina']);
-// puxar os produtos]
-// pegar a quantidade total de objetos no banco de dados por
-// definir o número de páginas
+$pagina = intval($_GET['pagina']);
+
+// puxar os produtos
+// pegar a quantidade total de objetos no banco de dados por definir o número de páginas
 // $num_paginas = ceil($num_total/$itens_por_pagina);
 ?>
 <div class="container">
@@ -32,7 +33,7 @@ $Username = $_SESSION['login']['user_name'];
     <div class="row gx-5 container">
         <?php
         $Read = new Read();
-        $Read->FullRead("SELECT * FROM cursos");
+        $Read->FullRead("SELECT * FROM cursos LIMIT $pagina, $itens_por_pagina");
         if($Read->getResult()) {
             foreach($Read->getResult() as $DataCourse) {
                 // Check::var_dump_json($DataCourse);

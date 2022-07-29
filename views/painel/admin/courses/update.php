@@ -15,7 +15,7 @@ echo $Component->getListPagesAdmin();
 echo $Component->getMenuDashboard();
 $courseId = filter_input(INPUT_GET, 'update_curso', FILTER_VALIDATE_INT);
 $CreateMsg = filter_input(INPUT_GET, 'create', FILTER_VALIDATE_BOOL);
-?>  
+?>
 <div class="container">
     <?php
     if($CreateMsg) {
