@@ -9,11 +9,19 @@ echo $Component->getLiAdministrativoDashboard();
 echo $Component->getLiCoursesDashboard();
 echo $Component->getLiPagesDashboard();
 echo $Component->getMenuDashboard();
-$profileUserId =$_SESSION['login']['user_id'];
+$profileUserId = $_SESSION['login']['user_id'];
 $Username = $_SESSION['login']['user_name'];
 $UserEmail = $_SESSION['login']['user_email'];
 ?>
-
+<?php
+$Read = new Read();
+$Read->FullRead("SELECT * FROM users WHERE user_id = :ui", "ui={$profileUserId}");
+if($Read->getResult()) {
+    $DataUser = $Read->getResult()[0];
+} else {
+    die(Error('Usuário não encontrado', 'danger'));
+}
+?>
 <div class="container">
     <?php
     $Post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
@@ -39,13 +47,13 @@ $UserEmail = $_SESSION['login']['user_email'];
                 <div class="form-group row">
                     <label for="inputPassword" class="col-sm-2 col-form-label">Nome</label>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control" name="user_name" value="<?= $Username ?>">
+                        <input type="text" class="form-control" name="user_name" value="<?= $DataUser['user_name'] ?>">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="inputPassword" class="col-sm-2 col-form-label">E-mail</label>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control" name="user_email" value="<?= $UserEmail ?>">
+                        <input type="text" class="form-control" name="user_email" value="<?= $DataUser['user_email'] ?>">
                     </div>
                 </div>
                 <div class="form-group row">
