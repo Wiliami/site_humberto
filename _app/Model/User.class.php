@@ -8,7 +8,27 @@ class User {
 	
 	private $Error;
 	private $Result;
-
+	
+	// Update Profle User
+	public function updateProfileUser($updateProfileUser, $profileUserId) {
+		if(empty($updateProfileUser['user_name'])) {
+			$this->Error = "Atualize o nome para continuar";
+			$this->Result = false;
+		} elseif(empty($updateProfileUser['user_email'])) {
+			$this->Error = "Atualize o e-mail para continuar";
+			$this->Result = false;
+		} else {
+			$Update = new Update();
+			$Update->ExeUpdate("users", $updateProfileUser, "WHERE user_id = :id", "id={$profileUserId}");
+			if($Update->getResult()) {
+				$this->Result = $Update->getResult();
+				$this->Error = "Perfil atualizado com sucesso!";
+			} else {
+				$this->Result = false;
+				$this->Error = $Update->getError();
+			}
+		}
+	}
 
 	public function verifyLevelUserModerator() {
 		if($_SESSION['login']['user_level'] >= 6) { 
