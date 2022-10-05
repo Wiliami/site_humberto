@@ -194,8 +194,10 @@ class Component {
                 <meta name="description" content="">
                 <meta name="author" content=""> 
                 <title>' . $title . '</title>
-                <link href="'. BASE .'/public/css/sb-admin-2.min.css" rel="stylesheet">
-                <script src="'. BASE .'/public/js/fontawesome.js"></script>
+                <!-- <link href="'. BASE .'/public/css/sb-admin-2.min.css" rel="stylesheet"> -->
+                <link href="'. BASE .'/public/bootstrap/bootstrap.min.css" rel="stylesheet">
+                
+                <!-- <script src="'. BASE .'/public/js/fontawesome.js"></script> -->
             </head>
             <body id="page-top">
         ';
