@@ -63,7 +63,7 @@ echo $Component->getMenuDashboard();
                         <?php
                             }
                         } else {
-                            die(Error("Cursos não encontrados", 'warning'));
+                            die(Error("Cursos não encontrados", 'c'));
                         }   
                         ?>
                     </tbody>

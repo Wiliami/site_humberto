@@ -3,6 +3,13 @@
 // - getMenuAndSideBarDashboard - exemplo de menu;
 // - 
 class Component {
+    
+    public function getBannerNotfoundCourse() {
+        return '
+            <img style="width: 220; height: 255px;" class="img-thumbnail" src=" '. BASE .'/assets/images/image-not-found.png" />
+        ';
+    }
+
     public function getHeadHtmlHome($title = "Humberto Oliveira") {
         return '
         <!DOCTYPE html>
@@ -194,10 +201,10 @@ class Component {
                 <meta name="description" content="">
                 <meta name="author" content=""> 
                 <title>' . $title . '</title>
-                <!-- <link href="'. BASE .'/public/css/sb-admin-2.min.css" rel="stylesheet"> -->
-                <link href="'. BASE .'/public/bootstrap/bootstrap.min.css" rel="stylesheet">
+                <link href="'. BASE .'/public/css/sb-admin-2.min.css" rel="stylesheet">
+                <!-- <link href="'. BASE .'/public/bootstrap/bootstrap.min.css" rel="stylesheet"> -->
                 
-                <!-- <script src="'. BASE .'/public/js/fontawesome.js"></script> -->
+                <script src="'. BASE .'/public/js/fontawesome.js"></script>
             </head>
             <body id="page-top">
         ';

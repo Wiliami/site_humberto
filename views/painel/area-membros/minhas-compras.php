@@ -2,7 +2,7 @@
 $User = new User();
 $User->verifyExistLoginUser();
 $Component = new Component();
-echo $Component->getBlockPageProfile();
+// echo $Component->getBlockPageProfile();
 echo $Component->getHeadHtmlDashboard();  
 echo $Component->getHeadHtmlDataTable();
 echo $Component->getSideBarDashboard();
