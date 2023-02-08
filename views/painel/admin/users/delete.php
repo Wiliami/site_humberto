@@ -67,7 +67,7 @@ $userId = filter_input(INPUT_GET, 'delete_user', FILTER_VALIDATE_INT);
                                 </button>
                             </div>
                             <div class="modal-body">
-                                Tem certeza que deseja excluir usuário?
+                                Tem certeza que deseja excluir este usuário?
                             </div>
                             <div class="modal-footer">
                                 <button class="btn btn-outline-success mb-2" type="button" data-dismiss="modal">
